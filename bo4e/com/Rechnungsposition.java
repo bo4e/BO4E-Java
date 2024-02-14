@@ -1,7 +1,7 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.BDEWArtikelnummer;
-import com.example.bo4e.enums.Mengeneinheit;
+import bo4e.enums.BDEWArtikelnummer;
+import bo4e.enums.Mengeneinheit;
 import java.time.OffsetDateTime;
 
 /**

@@ -1,4 +1,4 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
 /**
  * Komponente zur Abbildung eines Kostenblocks in den Fremdkosten

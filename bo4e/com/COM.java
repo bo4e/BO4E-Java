@@ -1,6 +1,6 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.ZusatzAttribut;
+import bo4e.ZusatzAttribut;
 
 /**
  * base class for all components

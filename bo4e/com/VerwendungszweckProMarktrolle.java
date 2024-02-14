@@ -1,7 +1,7 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Marktrolle;
-import com.example.bo4e.enums.Verwendungszweck;
+import bo4e.enums.Marktrolle;
+import bo4e.enums.Verwendungszweck;
 
 /**
  * Dient zur Identifizierung des Verwendungszwecks der Marktrolle an der Marktlokation, der

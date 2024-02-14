@@ -1,8 +1,8 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.com.Verbrauch;
-import com.example.bo4e.enums.Lokationstyp;
+import bo4e.enums.Typ;
+import bo4e.com.Verbrauch;
+import bo4e.enums.Lokationstyp;
 
 /**
  * Abbildung von Mengen, die Lokationen zugeordnet sind

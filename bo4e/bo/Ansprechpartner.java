@@ -1,11 +1,11 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.com.Adresse;
-import com.example.bo4e.enums.Anrede;
-import com.example.bo4e.com.Rufnummer;
-import com.example.bo4e.enums.Titel;
-import com.example.bo4e.com.Zustaendigkeit;
+import bo4e.enums.Typ;
+import bo4e.com.Adresse;
+import bo4e.enums.Anrede;
+import bo4e.com.Rufnummer;
+import bo4e.enums.Titel;
+import bo4e.com.Zustaendigkeit;
 
 /**
  * Object containing information about a Ansprechpartner

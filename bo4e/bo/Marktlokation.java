@@ -1,18 +1,18 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.enums.Bilanzierungsmethode;
-import com.example.bo4e.enums.Energierichtung;
-import com.example.bo4e.enums.Gasqualitaet;
-import com.example.bo4e.enums.Gebiettyp;
-import com.example.bo4e.com.Geokoordinaten;
-import com.example.bo4e.com.Katasteradresse;
-import com.example.bo4e.enums.Kundentyp;
-import com.example.bo4e.com.Adresse;
-import com.example.bo4e.enums.Netzebene;
-import com.example.bo4e.enums.Sparte;
-import com.example.bo4e.enums.Verbrauchsart;
-import com.example.bo4e.com.Messlokationszuordnung;
+import bo4e.enums.Typ;
+import bo4e.enums.Bilanzierungsmethode;
+import bo4e.enums.Energierichtung;
+import bo4e.enums.Gasqualitaet;
+import bo4e.enums.Gebiettyp;
+import bo4e.com.Geokoordinaten;
+import bo4e.com.Katasteradresse;
+import bo4e.enums.Kundentyp;
+import bo4e.com.Adresse;
+import bo4e.enums.Netzebene;
+import bo4e.enums.Sparte;
+import bo4e.enums.Verbrauchsart;
+import bo4e.com.Messlokationszuordnung;
 
 /**
  * Object containing information about a Marktlokation

@@ -1,15 +1,15 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.enums.Befestigungsart;
-import com.example.bo4e.enums.Messwerterfassung;
-import com.example.bo4e.enums.Registeranzahl;
-import com.example.bo4e.enums.Sparte;
-import com.example.bo4e.enums.Zaehlerauspraegung;
-import com.example.bo4e.enums.Zaehlergroesse;
-import com.example.bo4e.enums.Zaehlertyp;
-import com.example.bo4e.enums.ZaehlertypSpezifikation;
-import com.example.bo4e.com.Zaehlwerk;
+import bo4e.enums.Typ;
+import bo4e.enums.Befestigungsart;
+import bo4e.enums.Messwerterfassung;
+import bo4e.enums.Registeranzahl;
+import bo4e.enums.Sparte;
+import bo4e.enums.Zaehlerauspraegung;
+import bo4e.enums.Zaehlergroesse;
+import bo4e.enums.Zaehlertyp;
+import bo4e.enums.ZaehlertypSpezifikation;
+import bo4e.com.Zaehlwerk;
 import java.time.OffsetDateTime;
 
 /**

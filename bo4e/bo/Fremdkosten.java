@@ -1,9 +1,9 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.com.Zeitraum;
-import com.example.bo4e.com.Fremdkostenblock;
-import com.example.bo4e.com.Betrag;
+import bo4e.enums.Typ;
+import bo4e.com.Zeitraum;
+import bo4e.com.Fremdkostenblock;
+import bo4e.com.Betrag;
 
 /**
  * Mit diesem BO werden die Fremdkosten, beispielsweise für eine Angebotserstellung oder

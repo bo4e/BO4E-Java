@@ -1,4 +1,4 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
 /**
  * Informationen zum Marktgebiet im Gas.

@@ -1,8 +1,8 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.enums.Geraeteklasse;
-import com.example.bo4e.enums.Geraetetyp;
+import bo4e.enums.Typ;
+import bo4e.enums.Geraeteklasse;
+import bo4e.enums.Geraetetyp;
 
 /**
  * Mit diesem BO werden alle Geräte modelliert, die keine Zähler sind.

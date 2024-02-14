@@ -1,4 +1,4 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
 /**
  * Gibt die Staffelgrenzen der jeweiligen Preise an

@@ -1,13 +1,13 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.enums.Anrede;
-import com.example.bo4e.enums.Geschaeftspartnerrolle;
-import com.example.bo4e.enums.Kontaktart;
-import com.example.bo4e.enums.Marktrolle;
-import com.example.bo4e.com.Adresse;
-import com.example.bo4e.enums.Rollencodetyp;
-import com.example.bo4e.enums.Sparte;
+import bo4e.enums.Typ;
+import bo4e.enums.Anrede;
+import bo4e.enums.Geschaeftspartnerrolle;
+import bo4e.enums.Kontaktart;
+import bo4e.enums.Marktrolle;
+import bo4e.com.Adresse;
+import bo4e.enums.Rollencodetyp;
+import bo4e.enums.Sparte;
 
 /**
  * Objekt zur Aufnahme der Information zu einem Marktteilnehmer

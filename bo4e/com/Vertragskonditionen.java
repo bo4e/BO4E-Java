@@ -1,4 +1,4 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
 /**
  * Abbildung für Vertragskonditionen. Die Komponente wird sowohl im Vertrag als auch im

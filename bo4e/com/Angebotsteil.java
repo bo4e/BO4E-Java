@@ -1,6 +1,6 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.bo.Marktlokation;
+import bo4e.bo.Marktlokation;
 
 /**
  * Mit dieser Komponente wird ein Teil einer Angebotsvariante abgebildet.

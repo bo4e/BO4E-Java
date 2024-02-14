@@ -1,12 +1,12 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.enums.Sparte;
-import com.example.bo4e.com.Unterschrift;
-import com.example.bo4e.enums.Vertragsart;
-import com.example.bo4e.com.Vertragskonditionen;
-import com.example.bo4e.enums.Vertragsstatus;
-import com.example.bo4e.com.Vertragsteil;
+import bo4e.enums.Typ;
+import bo4e.enums.Sparte;
+import bo4e.com.Unterschrift;
+import bo4e.enums.Vertragsart;
+import bo4e.com.Vertragskonditionen;
+import bo4e.enums.Vertragsstatus;
+import bo4e.com.Vertragsteil;
 import java.time.OffsetDateTime;
 
 /**

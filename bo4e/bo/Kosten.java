@@ -1,10 +1,10 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.com.Zeitraum;
-import com.example.bo4e.com.Kostenblock;
-import com.example.bo4e.enums.Kostenklasse;
-import com.example.bo4e.com.Betrag;
+import bo4e.enums.Typ;
+import bo4e.com.Zeitraum;
+import bo4e.com.Kostenblock;
+import bo4e.enums.Kostenklasse;
+import bo4e.com.Betrag;
 
 /**
  * Dieses BO wird zur Übertagung von hierarchischen Kostenstrukturen verwendet.

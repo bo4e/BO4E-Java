@@ -1,12 +1,12 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.enums.Mengeneinheit;
-import com.example.bo4e.enums.Medium;
-import com.example.bo4e.enums.Messart;
-import com.example.bo4e.enums.Messgroesse;
-import com.example.bo4e.com.Zeitreihenwert;
-import com.example.bo4e.enums.Wertermittlungsverfahren;
+import bo4e.enums.Typ;
+import bo4e.enums.Mengeneinheit;
+import bo4e.enums.Medium;
+import bo4e.enums.Messart;
+import bo4e.enums.Messgroesse;
+import bo4e.com.Zeitreihenwert;
+import bo4e.enums.Wertermittlungsverfahren;
 
 /**
  * Abbildung einer allgemeinen Zeitreihe mit einem Wertvektor.

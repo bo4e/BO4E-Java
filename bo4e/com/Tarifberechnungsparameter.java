@@ -1,7 +1,7 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Tarifkalkulationsmethode;
-import com.example.bo4e.enums.Messpreistyp;
+import bo4e.enums.Tarifkalkulationsmethode;
+import bo4e.enums.Messpreistyp;
 
 /**
  * In dieser Komponente sind die Berechnungsparameter für die Ermittlung der Tarifkosten

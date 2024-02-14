@@ -1,9 +1,9 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Sparte;
-import com.example.bo4e.enums.Preismodell;
-import com.example.bo4e.enums.Rechnungslegung;
-import com.example.bo4e.enums.Vertragsform;
+import bo4e.enums.Sparte;
+import bo4e.enums.Preismodell;
+import bo4e.enums.Rechnungslegung;
+import bo4e.enums.Vertragsform;
 
 /**
  * Eine Komponente zur Abbildung einzelner Lose einer Ausschreibung

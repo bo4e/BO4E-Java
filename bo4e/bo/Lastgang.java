@@ -1,10 +1,10 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.enums.Mengeneinheit;
-import com.example.bo4e.enums.Sparte;
-import com.example.bo4e.com.Zeitreihenwert;
-import com.example.bo4e.com.Menge;
+import bo4e.enums.Typ;
+import bo4e.enums.Mengeneinheit;
+import bo4e.enums.Sparte;
+import bo4e.com.Zeitreihenwert;
+import bo4e.com.Menge;
 
 /**
  * Modell zur Abbildung eines Lastganges;

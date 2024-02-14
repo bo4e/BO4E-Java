@@ -1,6 +1,6 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Landescode;
+import bo4e.enums.Landescode;
 
 /**
  * Contains an address that can be used for most purposes.

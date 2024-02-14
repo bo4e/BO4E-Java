@@ -1,12 +1,12 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.enums.Dienstleistungstyp;
-import com.example.bo4e.enums.Bilanzierungsmethode;
-import com.example.bo4e.com.Zeitraum;
-import com.example.bo4e.com.Preisposition;
-import com.example.bo4e.enums.Preisstatus;
-import com.example.bo4e.enums.Sparte;
+import bo4e.enums.Typ;
+import bo4e.enums.Dienstleistungstyp;
+import bo4e.enums.Bilanzierungsmethode;
+import bo4e.com.Zeitraum;
+import bo4e.com.Preisposition;
+import bo4e.enums.Preisstatus;
+import bo4e.enums.Sparte;
 
 /**
  * Variante des Preisblattmodells zur Abbildung der Preise für wahlfreie Dienstleistungen

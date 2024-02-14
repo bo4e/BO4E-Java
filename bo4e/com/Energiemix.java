@@ -1,8 +1,8 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Sparte;
-import com.example.bo4e.enums.Oekolabel;
-import com.example.bo4e.enums.Oekozertifikat;
+import bo4e.enums.Sparte;
+import bo4e.enums.Oekolabel;
+import bo4e.enums.Oekozertifikat;
 
 /**
  * Zusammensetzung der gelieferten Energie aus den verschiedenen Primärenergieformen.

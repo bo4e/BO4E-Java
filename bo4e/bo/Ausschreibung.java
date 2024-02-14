@@ -1,11 +1,11 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.com.Zeitraum;
-import com.example.bo4e.enums.Ausschreibungsportal;
-import com.example.bo4e.enums.Ausschreibungsstatus;
-import com.example.bo4e.enums.Ausschreibungstyp;
-import com.example.bo4e.com.Ausschreibungslos;
+import bo4e.enums.Typ;
+import bo4e.com.Zeitraum;
+import bo4e.enums.Ausschreibungsportal;
+import bo4e.enums.Ausschreibungsstatus;
+import bo4e.enums.Ausschreibungstyp;
+import bo4e.com.Ausschreibungslos;
 import java.time.OffsetDateTime;
 
 /**

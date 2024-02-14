@@ -1,8 +1,8 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Mengeneinheit;
-import com.example.bo4e.enums.Messwertstatus;
-import com.example.bo4e.enums.Wertermittlungsverfahren;
+import bo4e.enums.Mengeneinheit;
+import bo4e.enums.Messwertstatus;
+import bo4e.enums.Wertermittlungsverfahren;
 import java.time.OffsetDateTime;
 
 /**

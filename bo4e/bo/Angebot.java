@@ -1,8 +1,8 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.enums.Sparte;
-import com.example.bo4e.com.Angebotsvariante;
+import bo4e.enums.Typ;
+import bo4e.enums.Sparte;
+import bo4e.com.Angebotsvariante;
 import java.time.OffsetDateTime;
 
 /**

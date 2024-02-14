@@ -1,8 +1,8 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.AufAbschlagstyp;
-import com.example.bo4e.enums.AufAbschlagsziel;
-import com.example.bo4e.enums.Waehrungseinheit;
+import bo4e.enums.AufAbschlagstyp;
+import bo4e.enums.AufAbschlagsziel;
+import bo4e.enums.Waehrungseinheit;
 
 /**
  * Mit dieser Komponente können Auf- und Abschläge verschiedener Typen im Zusammenhang mit

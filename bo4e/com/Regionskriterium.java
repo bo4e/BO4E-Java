@@ -1,7 +1,7 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Gueltigkeitstyp;
-import com.example.bo4e.enums.Regionskriteriumtyp;
+import bo4e.enums.Gueltigkeitstyp;
+import bo4e.enums.Regionskriteriumtyp;
 
 /**
  * Komponente zur Abbildung eines Regionskriteriums

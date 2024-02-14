@@ -1,6 +1,6 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Rufnummernart;
+import bo4e.enums.Rufnummernart;
 
 /**
  * Contains information to call or fax someone

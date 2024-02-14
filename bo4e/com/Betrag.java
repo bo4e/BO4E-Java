@@ -1,6 +1,6 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Waehrungscode;
+import bo4e.enums.Waehrungscode;
 
 /**
  * Die Komponente wird dazu verwendet, Summenbeträge (beispielsweise in Angeboten und

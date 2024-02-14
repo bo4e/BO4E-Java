@@ -1,12 +1,12 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.com.Geokoordinaten;
-import com.example.bo4e.com.Katasteradresse;
-import com.example.bo4e.com.Adresse;
-import com.example.bo4e.com.Dienstleistung;
-import com.example.bo4e.enums.Netzebene;
-import com.example.bo4e.enums.Sparte;
+import bo4e.enums.Typ;
+import bo4e.com.Geokoordinaten;
+import bo4e.com.Katasteradresse;
+import bo4e.com.Adresse;
+import bo4e.com.Dienstleistung;
+import bo4e.enums.Netzebene;
+import bo4e.enums.Sparte;
 
 /**
  * Object containing information about a Messlokation

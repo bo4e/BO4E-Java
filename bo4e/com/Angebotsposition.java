@@ -1,4 +1,4 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
 /**
  * Unterhalb von Angebotsteilen sind die Angebotspositionen eingebunden.

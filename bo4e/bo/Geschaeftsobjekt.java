@@ -1,7 +1,7 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.ZusatzAttribut;
+import bo4e.enums.Typ;
+import bo4e.ZusatzAttribut;
 
 /**
  * Das BO Geschäftsobjekt ist der Master für alle Geschäftsobjekte.

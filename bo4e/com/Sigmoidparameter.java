@@ -1,4 +1,4 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
 /**
  * Die Sigmoid-Funktion, beispielsweise zur Berechnung eines Leistungspreises hat die Form:

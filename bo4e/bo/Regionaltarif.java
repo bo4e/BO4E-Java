@@ -1,19 +1,19 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.com.Tarifberechnungsparameter;
-import com.example.bo4e.com.Energiemix;
-import com.example.bo4e.enums.Kundentyp;
-import com.example.bo4e.com.RegionalePreisgarantie;
-import com.example.bo4e.enums.Registeranzahl;
-import com.example.bo4e.enums.Sparte;
-import com.example.bo4e.com.RegionalerAufAbschlag;
-import com.example.bo4e.com.Tarifeinschraenkung;
-import com.example.bo4e.enums.Tarifmerkmal;
-import com.example.bo4e.com.RegionaleTarifpreisposition;
-import com.example.bo4e.enums.Tariftyp;
-import com.example.bo4e.com.Vertragskonditionen;
-import com.example.bo4e.com.Zeitraum;
+import bo4e.enums.Typ;
+import bo4e.com.Tarifberechnungsparameter;
+import bo4e.com.Energiemix;
+import bo4e.enums.Kundentyp;
+import bo4e.com.RegionalePreisgarantie;
+import bo4e.enums.Registeranzahl;
+import bo4e.enums.Sparte;
+import bo4e.com.RegionalerAufAbschlag;
+import bo4e.com.Tarifeinschraenkung;
+import bo4e.enums.Tarifmerkmal;
+import bo4e.com.RegionaleTarifpreisposition;
+import bo4e.enums.Tariftyp;
+import bo4e.com.Vertragskonditionen;
+import bo4e.com.Zeitraum;
 import java.time.OffsetDateTime;
 
 /**

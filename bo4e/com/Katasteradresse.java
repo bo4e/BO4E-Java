@@ -1,4 +1,4 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
 /**
  * Dient der Adressierung über die Liegenschafts-Information.

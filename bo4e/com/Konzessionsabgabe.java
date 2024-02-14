@@ -1,6 +1,6 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.AbgabeArt;
+import bo4e.enums.AbgabeArt;
 
 /**
  * Diese Komponente wird zur Übertagung der Details zu einer Konzessionsabgabe verwendet.

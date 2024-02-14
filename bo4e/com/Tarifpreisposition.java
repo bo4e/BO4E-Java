@@ -1,8 +1,8 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Mengeneinheit;
-import com.example.bo4e.enums.Waehrungseinheit;
-import com.example.bo4e.enums.Preistyp;
+import bo4e.enums.Mengeneinheit;
+import bo4e.enums.Waehrungseinheit;
+import bo4e.enums.Preistyp;
 
 /**
  * Mit dieser Komponente können Tarifpreise verschiedener Typen abgebildet werden.

@@ -1,6 +1,6 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.ArithmetischeOperation;
+import bo4e.enums.ArithmetischeOperation;
 import java.time.OffsetDateTime;
 
 /**

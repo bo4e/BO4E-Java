@@ -1,12 +1,12 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.BDEWArtikelnummer;
-import com.example.bo4e.enums.Kalkulationsmethode;
-import com.example.bo4e.enums.Mengeneinheit;
-import com.example.bo4e.enums.Leistungstyp;
-import com.example.bo4e.enums.Waehrungseinheit;
-import com.example.bo4e.enums.Tarifzeit;
-import com.example.bo4e.enums.Bemessungsgroesse;
+import bo4e.enums.BDEWArtikelnummer;
+import bo4e.enums.Kalkulationsmethode;
+import bo4e.enums.Mengeneinheit;
+import bo4e.enums.Leistungstyp;
+import bo4e.enums.Waehrungseinheit;
+import bo4e.enums.Tarifzeit;
+import bo4e.enums.Bemessungsgroesse;
 
 /**
  * Preis für eine definierte Lieferung oder Leistung innerhalb eines Preisblattes

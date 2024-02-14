@@ -1,7 +1,7 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.com.Regionskriterium;
+import bo4e.enums.Typ;
+import bo4e.com.Regionskriterium;
 
 /**
  * Modellierung einer Region als Menge von Kriterien, die eine Region beschreiben

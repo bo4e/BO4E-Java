@@ -1,6 +1,6 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Themengebiet;
+import bo4e.enums.Themengebiet;
 
 /**
  * Enthält die zeitliche Zuordnung eines Ansprechpartners zu Abteilungen und

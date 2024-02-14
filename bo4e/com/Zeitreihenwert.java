@@ -1,7 +1,7 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Messwertstatus;
-import com.example.bo4e.enums.Messwertstatuszusatz;
+import bo4e.enums.Messwertstatus;
+import bo4e.enums.Messwertstatuszusatz;
 
 /**
  * Abbildung eines Zeitreihenwertes bestehend aus Zeitraum, Wert und Statusinformationen.

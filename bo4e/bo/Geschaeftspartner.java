@@ -1,10 +1,10 @@
-package com.example.bo4e.bo;
+package bo4e.bo;
 
-import com.example.bo4e.enums.Typ;
-import com.example.bo4e.enums.Anrede;
-import com.example.bo4e.enums.Geschaeftspartnerrolle;
-import com.example.bo4e.enums.Kontaktart;
-import com.example.bo4e.com.Adresse;
+import bo4e.enums.Typ;
+import bo4e.enums.Anrede;
+import bo4e.enums.Geschaeftspartnerrolle;
+import bo4e.enums.Kontaktart;
+import bo4e.com.Adresse;
 
 /**
  * Mit diesem Objekt können Geschäftspartner übertragen werden.

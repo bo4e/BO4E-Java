@@ -1,9 +1,9 @@
-package com.example.bo4e.com;
+package bo4e.com;
 
-import com.example.bo4e.enums.Mengeneinheit;
-import com.example.bo4e.enums.Energierichtung;
-import com.example.bo4e.enums.Verbrauchsart;
-import com.example.bo4e.enums.Waermenutzung;
+import bo4e.enums.Mengeneinheit;
+import bo4e.enums.Energierichtung;
+import bo4e.enums.Verbrauchsart;
+import bo4e.enums.Waermenutzung;
 
 /**
  * Mit dieser Komponente werden Zählwerke modelliert.
