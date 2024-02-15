@@ -22,7 +22,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Rechnung JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/bo/Rechnung.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Rechnung.json>`_
  */
 public class Rechnung extends Geschaeftsobjekt {
     private final Typ typ = Typ.RECHNUNG;

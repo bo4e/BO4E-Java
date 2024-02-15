@@ -10,7 +10,7 @@ package bo4e.com;
  *
  * .. HINT::
  * `Geokoordinaten JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/com/Geokoordinaten.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Geokoordinaten.json>`_
  */
 public class Geokoordinaten extends COM {
     private String breitengrad;

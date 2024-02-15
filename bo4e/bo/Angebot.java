@@ -20,7 +20,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Angebot JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/bo/Angebot.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Angebot.json>`_
  */
 public class Angebot extends Geschaeftsobjekt {
     private final Typ typ = Typ.ANGEBOT;

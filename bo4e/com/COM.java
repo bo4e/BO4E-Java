@@ -11,11 +11,11 @@ import bo4e.ZusatzAttribut;
  *
  * .. HINT::
  * `COM JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/com/COM.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/COM.json>`_
  */
 public abstract class COM {
     private String _id;
-    private final String _version = "202401.0.0";
+    private final String _version = "202401.0.1";
     private ZusatzAttribut[] zusatzAttribute;
 
     public String getId() { return _id; }

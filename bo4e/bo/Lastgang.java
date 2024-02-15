@@ -18,7 +18,7 @@ import bo4e.com.Menge;
  *
  * .. HINT::
  * `Lastgang JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/bo/Lastgang.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Lastgang.json>`_
  */
 public class Lastgang extends Geschaeftsobjekt {
     private final Typ typ = Typ.LASTGANG;
