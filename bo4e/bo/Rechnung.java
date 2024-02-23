@@ -25,7 +25,7 @@ import java.time.OffsetDateTime;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Rechnung.json>`_
  */
 public class Rechnung extends Geschaeftsobjekt {
-    private final Typ typ = Typ.RECHNUNG;
+    private final Typ _typ = Typ.RECHNUNG;
     private OffsetDateTime faelligkeitsdatum;
     private Betrag gesamtbrutto;
     private Betrag gesamtnetto;
@@ -53,7 +53,7 @@ public class Rechnung extends Geschaeftsobjekt {
     private Betrag vorausgezahlt;
     private Betrag zuZahlen;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public OffsetDateTime getFaelligkeitsdatum() { return faelligkeitsdatum; }
     public void setFaelligkeitsdatum(OffsetDateTime value) { this.faelligkeitsdatum = value; }

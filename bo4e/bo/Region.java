@@ -15,12 +15,12 @@ import bo4e.com.Regionskriterium;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Region.json>`_
  */
 public class Region extends Geschaeftsobjekt {
-    private final Typ typ = Typ.REGION;
+    private final Typ _typ = Typ.REGION;
     private String bezeichnung;
     private Regionskriterium[] negativListe;
     private Regionskriterium[] positivListe;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public String getBezeichnung() { return bezeichnung; }
     public void setBezeichnung(String value) { this.bezeichnung = value; }

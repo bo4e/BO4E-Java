@@ -21,7 +21,7 @@ import bo4e.com.Menge;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Lastgang.json>`_
  */
 public class Lastgang extends Geschaeftsobjekt {
-    private final Typ typ = Typ.LASTGANG;
+    private final Typ _typ = Typ.LASTGANG;
     private Marktlokation marktlokation;
     private Mengeneinheit messgroesse;
     private Messlokation messlokation;
@@ -31,7 +31,7 @@ public class Lastgang extends Geschaeftsobjekt {
     private Zeitreihenwert[] werte;
     private Menge zeitIntervallLaenge;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public Marktlokation getMarktlokation() { return marktlokation; }
     public void setMarktlokation(Marktlokation value) { this.marktlokation = value; }

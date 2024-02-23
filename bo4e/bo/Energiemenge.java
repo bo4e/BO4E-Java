@@ -16,12 +16,12 @@ import bo4e.enums.Lokationstyp;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Energiemenge.json>`_
  */
 public class Energiemenge extends Geschaeftsobjekt {
-    private final Typ typ = Typ.ENERGIEMENGE;
+    private final Typ _typ = Typ.ENERGIEMENGE;
     private Verbrauch[] energieverbrauch;
     private String lokationsId;
     private Lokationstyp lokationstyp;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public Verbrauch[] getEnergieverbrauch() { return energieverbrauch; }
     public void setEnergieverbrauch(Verbrauch[] value) { this.energieverbrauch = value; }

@@ -21,7 +21,7 @@ import bo4e.enums.Wertermittlungsverfahren;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Zeitreihe.json>`_
  */
 public class Zeitreihe extends Geschaeftsobjekt {
-    private final Typ typ = Typ.ZEITREIHE;
+    private final Typ _typ = Typ.ZEITREIHE;
     private String beschreibung;
     private String bezeichnung;
     private Mengeneinheit einheit;
@@ -32,7 +32,7 @@ public class Zeitreihe extends Geschaeftsobjekt {
     private Zeitreihenwert[] werte;
     private Wertermittlungsverfahren wertherkunft;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public String getBeschreibung() { return beschreibung; }
     public void setBeschreibung(String value) { this.beschreibung = value; }

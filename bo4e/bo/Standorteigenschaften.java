@@ -17,11 +17,11 @@ import bo4e.com.StandorteigenschaftenStrom;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Standorteigenschaften.json>`_
  */
 public class Standorteigenschaften extends Geschaeftsobjekt {
-    private final Typ typ = Typ.STANDORTEIGENSCHAFTEN;
+    private final Typ _typ = Typ.STANDORTEIGENSCHAFTEN;
     private StandorteigenschaftenGas eigenschaftenGas;
     private StandorteigenschaftenStrom[] eigenschaftenStrom;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public StandorteigenschaftenGas getEigenschaftenGas() { return eigenschaftenGas; }
     public void setEigenschaftenGas(StandorteigenschaftenGas value) { this.eigenschaftenGas = value; }

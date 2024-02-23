@@ -21,12 +21,12 @@ import bo4e.com.Betrag;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Fremdkosten.json>`_
  */
 public class Fremdkosten extends Geschaeftsobjekt {
-    private final Typ typ = Typ.FREMDKOSTEN;
+    private final Typ _typ = Typ.FREMDKOSTEN;
     private Zeitraum gueltigkeit;
     private Fremdkostenblock[] kostenbloecke;
     private Betrag summeKosten;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public Zeitraum getGueltigkeit() { return gueltigkeit; }
     public void setGueltigkeit(Zeitraum value) { this.gueltigkeit = value; }

@@ -23,7 +23,7 @@ import java.time.OffsetDateTime;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Buendelvertrag.json>`_
  */
 public class Buendelvertrag extends Geschaeftsobjekt {
-    private final Typ typ = Typ.BUENDELVERTRAG;
+    private final Typ _typ = Typ.BUENDELVERTRAG;
     private String beschreibung;
     private Vertrag[] einzelvertraege;
     private Sparte sparte;
@@ -38,7 +38,7 @@ public class Buendelvertrag extends Geschaeftsobjekt {
     private Geschaeftspartner vertragspartner2;
     private Vertragsstatus vertragsstatus;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public String getBeschreibung() { return beschreibung; }
     public void setBeschreibung(String value) { this.beschreibung = value; }

@@ -22,7 +22,7 @@ import bo4e.com.Adresse;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Geschaeftspartner.json>`_
  */
 public class Geschaeftspartner extends Geschaeftsobjekt {
-    private final Typ typ = Typ.GESCHAEFTSPARTNER;
+    private final Typ _typ = Typ.GESCHAEFTSPARTNER;
     private String amtsgericht;
     private Anrede anrede;
     private String eMailAdresse;
@@ -38,7 +38,7 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
     private String umsatzsteuerId;
     private String website;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public String getAmtsgericht() { return amtsgericht; }
     public void setAmtsgericht(String value) { this.amtsgericht = value; }

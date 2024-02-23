@@ -23,7 +23,7 @@ import bo4e.enums.Sparte;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/PreisblattMessung.json>`_
  */
 public class PreisblattMessung extends Geschaeftsobjekt {
-    private final Typ typ = Typ.PREISBLATTMESSUNG;
+    private final Typ _typ = Typ.PREISBLATTMESSUNG;
     private String bezeichnung;
     private Bilanzierungsmethode bilanzierungsmethode;
     private Zeitraum gueltigkeit;
@@ -36,7 +36,7 @@ public class PreisblattMessung extends Geschaeftsobjekt {
     private Sparte sparte;
     private Zaehler zaehler;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public String getBezeichnung() { return bezeichnung; }
     public void setBezeichnung(String value) { this.bezeichnung = value; }

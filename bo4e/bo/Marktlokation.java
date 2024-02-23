@@ -27,7 +27,7 @@ import bo4e.com.Messlokationszuordnung;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Marktlokation.json>`_
  */
 public class Marktlokation extends Geschaeftsobjekt {
-    private final Typ typ = Typ.MARKTLOKATION;
+    private final Typ _typ = Typ.MARKTLOKATION;
     private String bilanzierungsgebiet;
     private Bilanzierungsmethode bilanzierungsmethode;
     private Geschaeftspartner endkunde;
@@ -48,7 +48,7 @@ public class Marktlokation extends Geschaeftsobjekt {
     private Verbrauchsart verbrauchsart;
     private Messlokationszuordnung zugehoerigeMesslokation;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public String getBilanzierungsgebiet() { return bilanzierungsgebiet; }
     public void setBilanzierungsgebiet(String value) { this.bilanzierungsgebiet = value; }

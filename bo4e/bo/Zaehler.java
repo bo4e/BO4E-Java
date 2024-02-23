@@ -24,7 +24,7 @@ import java.time.OffsetDateTime;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Zaehler.json>`_
  */
 public class Zaehler extends Geschaeftsobjekt {
-    private final Typ typ = Typ.ZAEHLER;
+    private final Typ _typ = Typ.ZAEHLER;
     private Befestigungsart befestigungsart;
     private OffsetDateTime eichungBis;
     private Geraet[] geraete;
@@ -42,7 +42,7 @@ public class Zaehler extends Geschaeftsobjekt {
     private ZaehlertypSpezifikation zaehlertypSpezifikation;
     private Zaehlwerk[] zaehlwerke;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public Befestigungsart getBefestigungsart() { return befestigungsart; }
     public void setBefestigungsart(Befestigungsart value) { this.befestigungsart = value; }

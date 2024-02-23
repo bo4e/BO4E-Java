@@ -23,7 +23,7 @@ import java.time.OffsetDateTime;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Vertrag.json>`_
  */
 public class Vertrag extends Geschaeftsobjekt {
-    private final Typ typ = Typ.VERTRAG;
+    private final Typ _typ = Typ.VERTRAG;
     private String beschreibung;
     private Sparte sparte;
     private Unterschrift[] unterzeichnervp1;
@@ -38,7 +38,7 @@ public class Vertrag extends Geschaeftsobjekt {
     private Vertragsstatus vertragsstatus;
     private Vertragsteil[] vertragsteile;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public String getBeschreibung() { return beschreibung; }
     public void setBeschreibung(String value) { this.beschreibung = value; }

@@ -27,7 +27,7 @@ import java.time.OffsetDateTime;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/{__gh_version__}/src/bo4e_schemas/bo/Regionaltarif.json>`_
  */
 public class Regionaltarif extends Geschaeftsobjekt {
-    private final Typ typ = Typ.REGIONALTARIF;
+    private final Typ _typ = Typ.REGIONALTARIF;
     private Marktteilnehmer anbieter;
     private String anbietername;
     private OffsetDateTime anwendungVon;
@@ -49,7 +49,7 @@ public class Regionaltarif extends Geschaeftsobjekt {
     private String website;
     private Zeitraum zeitlicheGueltigkeit;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public Marktteilnehmer getAnbieter() { return anbieter; }
     public void setAnbieter(Marktteilnehmer value) { this.anbieter = value; }

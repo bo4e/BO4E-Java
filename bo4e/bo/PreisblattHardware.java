@@ -22,7 +22,7 @@ import bo4e.enums.Sparte;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/PreisblattHardware.json>`_
  */
 public class PreisblattHardware extends Geschaeftsobjekt {
-    private final Typ typ = Typ.PREISBLATTHARDWARE;
+    private final Typ _typ = Typ.PREISBLATTHARDWARE;
     private Geraet basisgeraet;
     private String bezeichnung;
     private Bilanzierungsmethode bilanzierungsmethode;
@@ -35,7 +35,7 @@ public class PreisblattHardware extends Geschaeftsobjekt {
     private Preisstatus preisstatus;
     private Sparte sparte;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public Geraet getBasisgeraet() { return basisgeraet; }
     public void setBasisgeraet(Geraet value) { this.basisgeraet = value; }

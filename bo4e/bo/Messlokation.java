@@ -20,7 +20,7 @@ import bo4e.enums.Sparte;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Messlokation.json>`_
  */
 public class Messlokation extends Geschaeftsobjekt {
-    private final Typ typ = Typ.MESSLOKATION;
+    private final Typ _typ = Typ.MESSLOKATION;
     private Geokoordinaten geoadresse;
     private Geraet[] geraete;
     private String grundzustaendigerMsbCodenr;
@@ -34,7 +34,7 @@ public class Messlokation extends Geschaeftsobjekt {
     private Netzebene netzebeneMessung;
     private Sparte sparte;
 
-    public Typ getTyp() { return typ; }
+    public Typ getTyp() { return _typ; }
 
     public Geokoordinaten getGeoadresse() { return geoadresse; }
     public void setGeoadresse(Geokoordinaten value) { this.geoadresse = value; }
