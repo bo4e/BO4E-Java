@@ -10,28 +10,28 @@ package bo4e.com;
  *
  * .. HINT::
  * `TarifpreisstaffelProOrt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/TarifpreisstaffelProOrt.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/TarifpreisstaffelProOrt.json>`_
  */
 public class TarifpreisstaffelProOrt extends COM {
-    private String arbeitspreis;
-    private String arbeitspreisNT;
-    private String grundpreis;
-    private String staffelgrenzeBis;
-    private String staffelgrenzeVon;
+    private Double arbeitspreis;
+    private Double arbeitspreisNT;
+    private Double grundpreis;
+    private Double staffelgrenzeBis;
+    private Double staffelgrenzeVon;
 
-    public String getArbeitspreis() { return arbeitspreis; }
-    public void setArbeitspreis(String value) { this.arbeitspreis = value; }
+    public Double getArbeitspreis() { return arbeitspreis; }
+    public void setArbeitspreis(Double value) { this.arbeitspreis = value; }
 
-    public String getArbeitspreisNT() { return arbeitspreisNT; }
-    public void setArbeitspreisNT(String value) { this.arbeitspreisNT = value; }
+    public Double getArbeitspreisNT() { return arbeitspreisNT; }
+    public void setArbeitspreisNT(Double value) { this.arbeitspreisNT = value; }
 
-    public String getGrundpreis() { return grundpreis; }
-    public void setGrundpreis(String value) { this.grundpreis = value; }
+    public Double getGrundpreis() { return grundpreis; }
+    public void setGrundpreis(Double value) { this.grundpreis = value; }
 
-    public String getStaffelgrenzeBis() { return staffelgrenzeBis; }
-    public void setStaffelgrenzeBis(String value) { this.staffelgrenzeBis = value; }
+    public Double getStaffelgrenzeBis() { return staffelgrenzeBis; }
+    public void setStaffelgrenzeBis(Double value) { this.staffelgrenzeBis = value; }
 
-    public String getStaffelgrenzeVon() { return staffelgrenzeVon; }
-    public void setStaffelgrenzeVon(String value) { this.staffelgrenzeVon = value; }
+    public Double getStaffelgrenzeVon() { return staffelgrenzeVon; }
+    public void setStaffelgrenzeVon(Double value) { this.staffelgrenzeVon = value; }
 
 }

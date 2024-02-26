@@ -13,12 +13,12 @@ import bo4e.enums.Messwertstatuszusatz;
  *
  * .. HINT::
  * `Zeitreihenwert JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Zeitreihenwert.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/Zeitreihenwert.json>`_
  */
 public class Zeitreihenwert extends COM {
     private Messwertstatus status;
     private Messwertstatuszusatz statuszusatz;
-    private String wert;
+    private Double wert;
     private Zeitspanne zeitspanne;
 
     public Messwertstatus getStatus() { return status; }
@@ -27,8 +27,8 @@ public class Zeitreihenwert extends COM {
     public Messwertstatuszusatz getStatuszusatz() { return statuszusatz; }
     public void setStatuszusatz(Messwertstatuszusatz value) { this.statuszusatz = value; }
 
-    public String getWert() { return wert; }
-    public void setWert(String value) { this.wert = value; }
+    public Double getWert() { return wert; }
+    public void setWert(Double value) { this.wert = value; }
 
     public Zeitspanne getZeitspanne() { return zeitspanne; }
     public void setZeitspanne(Zeitspanne value) { this.zeitspanne = value; }

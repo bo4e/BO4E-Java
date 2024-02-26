@@ -21,7 +21,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Zaehler JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Zaehler.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/bo/Zaehler.json>`_
  */
 public class Zaehler extends Geschaeftsobjekt {
     private final Typ _typ = Typ.ZAEHLER;
@@ -36,7 +36,7 @@ public class Zaehler extends Geschaeftsobjekt {
     private Zaehlerauspraegung zaehlerauspraegung;
     private Zaehlergroesse zaehlergroesse;
     private Geschaeftspartner zaehlerhersteller;
-    private String zaehlerkonstante;
+    private Double zaehlerkonstante;
     private String zaehlernummer;
     private Zaehlertyp zaehlertyp;
     private ZaehlertypSpezifikation zaehlertypSpezifikation;
@@ -77,8 +77,8 @@ public class Zaehler extends Geschaeftsobjekt {
     public Geschaeftspartner getZaehlerhersteller() { return zaehlerhersteller; }
     public void setZaehlerhersteller(Geschaeftspartner value) { this.zaehlerhersteller = value; }
 
-    public String getZaehlerkonstante() { return zaehlerkonstante; }
-    public void setZaehlerkonstante(String value) { this.zaehlerkonstante = value; }
+    public Double getZaehlerkonstante() { return zaehlerkonstante; }
+    public void setZaehlerkonstante(Double value) { this.zaehlerkonstante = value; }
 
     public String getZaehlernummer() { return zaehlernummer; }
     public void setZaehlernummer(String value) { this.zaehlernummer = value; }

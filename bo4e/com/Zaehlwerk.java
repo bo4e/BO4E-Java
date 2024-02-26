@@ -14,7 +14,7 @@ import bo4e.enums.Waermenutzung;
  *
  * .. HINT::
  * `Zaehlwerk JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Zaehlwerk.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/Zaehlwerk.json>`_
  */
 public class Zaehlwerk extends COM {
     private Long anzahlAblesungen;
@@ -32,7 +32,7 @@ public class Zaehlwerk extends COM {
     private VerwendungszweckProMarktrolle[] verwendungszwecke;
     private Long vorkommastelle;
     private Waermenutzung waermenutzung;
-    private String wandlerfaktor;
+    private Double wandlerfaktor;
     private String zaehlwerkId;
     private Zaehlzeitregister zaehlzeitregister;
 
@@ -81,8 +81,8 @@ public class Zaehlwerk extends COM {
     public Waermenutzung getWaermenutzung() { return waermenutzung; }
     public void setWaermenutzung(Waermenutzung value) { this.waermenutzung = value; }
 
-    public String getWandlerfaktor() { return wandlerfaktor; }
-    public void setWandlerfaktor(String value) { this.wandlerfaktor = value; }
+    public Double getWandlerfaktor() { return wandlerfaktor; }
+    public void setWandlerfaktor(Double value) { this.wandlerfaktor = value; }
 
     public String getZaehlwerkId() { return zaehlwerkId; }
     public void setZaehlwerkId(String value) { this.zaehlwerkId = value; }

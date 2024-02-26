@@ -10,17 +10,17 @@ package bo4e.com;
  *
  * .. HINT::
  * `RegionalePreisstaffel JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/RegionalePreisstaffel.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/RegionalePreisstaffel.json>`_
  */
 public class RegionalePreisstaffel extends COM {
-    private String einheitspreis;
+    private Double einheitspreis;
     private RegionaleGueltigkeit regionaleGueltigkeit;
     private Sigmoidparameter sigmoidparameter;
-    private String staffelgrenzeBis;
-    private String staffelgrenzeVon;
+    private Double staffelgrenzeBis;
+    private Double staffelgrenzeVon;
 
-    public String getEinheitspreis() { return einheitspreis; }
-    public void setEinheitspreis(String value) { this.einheitspreis = value; }
+    public Double getEinheitspreis() { return einheitspreis; }
+    public void setEinheitspreis(Double value) { this.einheitspreis = value; }
 
     public RegionaleGueltigkeit getRegionaleGueltigkeit() { return regionaleGueltigkeit; }
     public void setRegionaleGueltigkeit(RegionaleGueltigkeit value) { this.regionaleGueltigkeit = value; }
@@ -28,10 +28,10 @@ public class RegionalePreisstaffel extends COM {
     public Sigmoidparameter getSigmoidparameter() { return sigmoidparameter; }
     public void setSigmoidparameter(Sigmoidparameter value) { this.sigmoidparameter = value; }
 
-    public String getStaffelgrenzeBis() { return staffelgrenzeBis; }
-    public void setStaffelgrenzeBis(String value) { this.staffelgrenzeBis = value; }
+    public Double getStaffelgrenzeBis() { return staffelgrenzeBis; }
+    public void setStaffelgrenzeBis(Double value) { this.staffelgrenzeBis = value; }
 
-    public String getStaffelgrenzeVon() { return staffelgrenzeVon; }
-    public void setStaffelgrenzeVon(String value) { this.staffelgrenzeVon = value; }
+    public Double getStaffelgrenzeVon() { return staffelgrenzeVon; }
+    public void setStaffelgrenzeVon(Double value) { this.staffelgrenzeVon = value; }
 
 }
