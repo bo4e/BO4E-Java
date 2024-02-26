@@ -13,14 +13,14 @@ import bo4e.enums.Oekozertifikat;
  *
  * .. HINT::
  * `Energiemix JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/Energiemix.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Energiemix.json>`_
  */
 public class Energiemix extends COM {
     private Energieherkunft[] anteil;
-    private Double atommuell;
+    private String atommuell;
     private String bemerkung;
     private String bezeichnung;
-    private Double co2Emission;
+    private String co2Emission;
     private Sparte energieart;
     private Long energiemixnummer;
     private Long gueltigkeitsjahr;
@@ -32,8 +32,8 @@ public class Energiemix extends COM {
     public Energieherkunft[] getAnteil() { return anteil; }
     public void setAnteil(Energieherkunft[] value) { this.anteil = value; }
 
-    public Double getAtommuell() { return atommuell; }
-    public void setAtommuell(Double value) { this.atommuell = value; }
+    public String getAtommuell() { return atommuell; }
+    public void setAtommuell(String value) { this.atommuell = value; }
 
     public String getBemerkung() { return bemerkung; }
     public void setBemerkung(String value) { this.bemerkung = value; }
@@ -41,8 +41,8 @@ public class Energiemix extends COM {
     public String getBezeichnung() { return bezeichnung; }
     public void setBezeichnung(String value) { this.bezeichnung = value; }
 
-    public Double getCo2Emission() { return co2Emission; }
-    public void setCo2Emission(Double value) { this.co2Emission = value; }
+    public String getCo2Emission() { return co2Emission; }
+    public void setCo2Emission(String value) { this.co2Emission = value; }
 
     public Sparte getEnergieart() { return energieart; }
     public void setEnergieart(Sparte value) { this.energieart = value; }

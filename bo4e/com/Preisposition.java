@@ -18,14 +18,14 @@ import bo4e.enums.Bemessungsgroesse;
  *
  * .. HINT::
  * `Preisposition JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/Preisposition.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Preisposition.json>`_
  */
 public class Preisposition extends COM {
     private BDEWArtikelnummer bdewArtikelnummer;
     private Kalkulationsmethode berechnungsmethode;
     private Mengeneinheit bezugsgroesse;
-    private Double freimengeBlindarbeit;
-    private Double freimengeLeistungsfaktor;
+    private String freimengeBlindarbeit;
+    private String freimengeLeistungsfaktor;
     private String gruppenartikelId;
     private String leistungsbezeichnung;
     private Leistungstyp leistungstyp;
@@ -44,11 +44,11 @@ public class Preisposition extends COM {
     public Mengeneinheit getBezugsgroesse() { return bezugsgroesse; }
     public void setBezugsgroesse(Mengeneinheit value) { this.bezugsgroesse = value; }
 
-    public Double getFreimengeBlindarbeit() { return freimengeBlindarbeit; }
-    public void setFreimengeBlindarbeit(Double value) { this.freimengeBlindarbeit = value; }
+    public String getFreimengeBlindarbeit() { return freimengeBlindarbeit; }
+    public void setFreimengeBlindarbeit(String value) { this.freimengeBlindarbeit = value; }
 
-    public Double getFreimengeLeistungsfaktor() { return freimengeLeistungsfaktor; }
-    public void setFreimengeLeistungsfaktor(Double value) { this.freimengeLeistungsfaktor = value; }
+    public String getFreimengeLeistungsfaktor() { return freimengeLeistungsfaktor; }
+    public void setFreimengeLeistungsfaktor(String value) { this.freimengeLeistungsfaktor = value; }
 
     public String getGruppenartikelId() { return gruppenartikelId; }
     public void setGruppenartikelId(String value) { this.gruppenartikelId = value; }

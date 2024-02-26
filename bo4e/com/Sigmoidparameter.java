@@ -11,24 +11,24 @@ package bo4e.com;
  *
  * .. HINT::
  * `Sigmoidparameter JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/Sigmoidparameter.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Sigmoidparameter.json>`_
  */
 public class Sigmoidparameter extends COM {
-    private Double A;
-    private Double B;
-    private Double C;
-    private Double D;
+    private String A;
+    private String B;
+    private String C;
+    private String D;
 
-    public Double getA() { return A; }
-    public void setA(Double value) { this.A = value; }
+    public String getA() { return A; }
+    public void setA(String value) { this.A = value; }
 
-    public Double getB() { return B; }
-    public void setB(Double value) { this.B = value; }
+    public String getB() { return B; }
+    public void setB(String value) { this.B = value; }
 
-    public Double getC() { return C; }
-    public void setC(Double value) { this.C = value; }
+    public String getC() { return C; }
+    public void setC(String value) { this.C = value; }
 
-    public Double getD() { return D; }
-    public void setD(Double value) { this.D = value; }
+    public String getD() { return D; }
+    public void setD(String value) { this.D = value; }
 
 }

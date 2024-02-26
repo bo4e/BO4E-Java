@@ -17,12 +17,12 @@ import bo4e.enums.Waehrungseinheit;
  *
  * .. HINT::
  * `PositionsAufAbschlag JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/PositionsAufAbschlag.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/PositionsAufAbschlag.json>`_
  */
 public class PositionsAufAbschlag extends COM {
     private AufAbschlagstyp aufAbschlagstyp;
     private Waehrungseinheit aufAbschlagswaehrung;
-    private Double aufAbschlagswert;
+    private String aufAbschlagswert;
     private String beschreibung;
     private String bezeichnung;
 
@@ -32,8 +32,8 @@ public class PositionsAufAbschlag extends COM {
     public Waehrungseinheit getAufAbschlagswaehrung() { return aufAbschlagswaehrung; }
     public void setAufAbschlagswaehrung(Waehrungseinheit value) { this.aufAbschlagswaehrung = value; }
 
-    public Double getAufAbschlagswert() { return aufAbschlagswert; }
-    public void setAufAbschlagswert(Double value) { this.aufAbschlagswert = value; }
+    public String getAufAbschlagswert() { return aufAbschlagswert; }
+    public void setAufAbschlagswert(String value) { this.aufAbschlagswert = value; }
 
     public String getBeschreibung() { return beschreibung; }
     public void setBeschreibung(String value) { this.beschreibung = value; }

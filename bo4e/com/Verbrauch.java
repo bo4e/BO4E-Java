@@ -14,7 +14,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Verbrauch JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/Verbrauch.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Verbrauch.json>`_
  */
 public class Verbrauch extends COM {
     private Mengeneinheit einheit;
@@ -22,7 +22,7 @@ public class Verbrauch extends COM {
     private Messwertstatus messwertstatus;
     private String obisKennzahl;
     private OffsetDateTime startdatum;
-    private Double wert;
+    private String wert;
     private Wertermittlungsverfahren wertermittlungsverfahren;
 
     public Mengeneinheit getEinheit() { return einheit; }
@@ -40,8 +40,8 @@ public class Verbrauch extends COM {
     public OffsetDateTime getStartdatum() { return startdatum; }
     public void setStartdatum(OffsetDateTime value) { this.startdatum = value; }
 
-    public Double getWert() { return wert; }
-    public void setWert(Double value) { this.wert = value; }
+    public String getWert() { return wert; }
+    public void setWert(String value) { this.wert = value; }
 
     public Wertermittlungsverfahren getWertermittlungsverfahren() { return wertermittlungsverfahren; }
     public void setWertermittlungsverfahren(Wertermittlungsverfahren value) { this.wertermittlungsverfahren = value; }

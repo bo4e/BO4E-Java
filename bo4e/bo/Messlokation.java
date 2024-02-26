@@ -17,7 +17,7 @@ import bo4e.enums.Sparte;
  *
  * .. HINT::
  * `Messlokation JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/bo/Messlokation.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Messlokation.json>`_
  */
 public class Messlokation extends Geschaeftsobjekt {
     private final Typ _typ = Typ.MESSLOKATION;

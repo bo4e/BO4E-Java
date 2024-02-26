@@ -24,7 +24,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Regionaltarif JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/{__gh_version__}/src/bo4e_schemas/bo/Regionaltarif.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/{__gh_version__}/src/bo4e_schemas/bo/Regionaltarif.json>`_
  */
 public class Regionaltarif extends Geschaeftsobjekt {
     private final Typ _typ = Typ.REGIONALTARIF;

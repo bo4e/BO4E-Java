@@ -14,7 +14,7 @@ import bo4e.enums.Preisstatus;
  *
  * .. HINT::
  * `Tarifpreis JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/Tarifpreis.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Tarifpreis.json>`_
  */
 public class Tarifpreis extends COM {
     private String beschreibung;
@@ -22,7 +22,7 @@ public class Tarifpreis extends COM {
     private Waehrungseinheit einheit;
     private Preistyp preistyp;
     private Preisstatus status;
-    private Double wert;
+    private String wert;
 
     public String getBeschreibung() { return beschreibung; }
     public void setBeschreibung(String value) { this.beschreibung = value; }
@@ -39,7 +39,7 @@ public class Tarifpreis extends COM {
     public Preisstatus getStatus() { return status; }
     public void setStatus(Preisstatus value) { this.status = value; }
 
-    public Double getWert() { return wert; }
-    public void setWert(Double value) { this.wert = value; }
+    public String getWert() { return wert; }
+    public void setWert(String value) { this.wert = value; }
 
 }

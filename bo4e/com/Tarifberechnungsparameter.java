@@ -13,7 +13,7 @@ import bo4e.enums.Messpreistyp;
  *
  * .. HINT::
  * `Tarifberechnungsparameter JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/Tarifberechnungsparameter.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Tarifberechnungsparameter.json>`_
  */
 public class Tarifberechnungsparameter extends COM {
     private Tarifkalkulationsmethode berechnungsmethode;
@@ -21,8 +21,8 @@ public class Tarifberechnungsparameter extends COM {
     private Preis hoechstpreisNT;
     private Boolean istMesspreisInGrundpreisEnthalten;
     private Boolean istMesspreisZuBeruecksichtigen;
-    private Double kwInklusive;
-    private Double kwWeitereMengen;
+    private String kwInklusive;
+    private String kwWeitereMengen;
     private Messpreistyp messpreistyp;
     private Preis mindestpreis;
     private Tarifpreis[] zusatzpreise;
@@ -42,11 +42,11 @@ public class Tarifberechnungsparameter extends COM {
     public Boolean getIstMesspreisZuBeruecksichtigen() { return istMesspreisZuBeruecksichtigen; }
     public void setIstMesspreisZuBeruecksichtigen(Boolean value) { this.istMesspreisZuBeruecksichtigen = value; }
 
-    public Double getKwInklusive() { return kwInklusive; }
-    public void setKwInklusive(Double value) { this.kwInklusive = value; }
+    public String getKwInklusive() { return kwInklusive; }
+    public void setKwInklusive(String value) { this.kwInklusive = value; }
 
-    public Double getKwWeitereMengen() { return kwWeitereMengen; }
-    public void setKwWeitereMengen(Double value) { this.kwWeitereMengen = value; }
+    public String getKwWeitereMengen() { return kwWeitereMengen; }
+    public void setKwWeitereMengen(String value) { this.kwWeitereMengen = value; }
 
     public Messpreistyp getMesspreistyp() { return messpreistyp; }
     public void setMesspreistyp(Messpreistyp value) { this.messpreistyp = value; }
