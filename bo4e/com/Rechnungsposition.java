@@ -15,7 +15,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Rechnungsposition JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/Rechnungsposition.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/com/Rechnungsposition.json>`_
  */
 public class Rechnungsposition extends COM {
     private String artikelId;

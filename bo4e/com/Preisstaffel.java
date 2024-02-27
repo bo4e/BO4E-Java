@@ -10,24 +10,24 @@ package bo4e.com;
  *
  * .. HINT::
  * `Preisstaffel JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/Preisstaffel.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/com/Preisstaffel.json>`_
  */
 public class Preisstaffel extends COM {
-    private Double einheitspreis;
+    private String einheitspreis;
     private Sigmoidparameter sigmoidparameter;
-    private Double staffelgrenzeBis;
-    private Double staffelgrenzeVon;
+    private String staffelgrenzeBis;
+    private String staffelgrenzeVon;
 
-    public Double getEinheitspreis() { return einheitspreis; }
-    public void setEinheitspreis(Double value) { this.einheitspreis = value; }
+    public String getEinheitspreis() { return einheitspreis; }
+    public void setEinheitspreis(String value) { this.einheitspreis = value; }
 
     public Sigmoidparameter getSigmoidparameter() { return sigmoidparameter; }
     public void setSigmoidparameter(Sigmoidparameter value) { this.sigmoidparameter = value; }
 
-    public Double getStaffelgrenzeBis() { return staffelgrenzeBis; }
-    public void setStaffelgrenzeBis(Double value) { this.staffelgrenzeBis = value; }
+    public String getStaffelgrenzeBis() { return staffelgrenzeBis; }
+    public void setStaffelgrenzeBis(String value) { this.staffelgrenzeBis = value; }
 
-    public Double getStaffelgrenzeVon() { return staffelgrenzeVon; }
-    public void setStaffelgrenzeVon(Double value) { this.staffelgrenzeVon = value; }
+    public String getStaffelgrenzeVon() { return staffelgrenzeVon; }
+    public void setStaffelgrenzeVon(String value) { this.staffelgrenzeVon = value; }
 
 }

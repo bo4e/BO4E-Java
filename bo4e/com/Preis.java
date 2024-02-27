@@ -13,13 +13,13 @@ import bo4e.enums.Preisstatus;
  *
  * .. HINT::
  * `Preis JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/Preis.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/com/Preis.json>`_
  */
 public class Preis extends COM {
     private Mengeneinheit bezugswert;
     private Waehrungseinheit einheit;
     private Preisstatus status;
-    private Double wert;
+    private String wert;
 
     public Mengeneinheit getBezugswert() { return bezugswert; }
     public void setBezugswert(Mengeneinheit value) { this.bezugswert = value; }
@@ -30,7 +30,7 @@ public class Preis extends COM {
     public Preisstatus getStatus() { return status; }
     public void setStatus(Preisstatus value) { this.status = value; }
 
-    public Double getWert() { return wert; }
-    public void setWert(Double value) { this.wert = value; }
+    public String getWert() { return wert; }
+    public void setWert(String value) { this.wert = value; }
 
 }

@@ -20,7 +20,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Angebot JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/bo/Angebot.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/bo/Angebot.json>`_
  */
 public class Angebot extends Geschaeftsobjekt {
     private final Typ _typ = Typ.ANGEBOT;
@@ -31,8 +31,8 @@ public class Angebot extends Geschaeftsobjekt {
     private String angebotsnummer;
     private OffsetDateTime bindefrist;
     private Sparte sparte;
-    private Person unterzeichnerAngebotsgeber;
-    private Person unterzeichnerAngebotsnehmer;
+    private Ansprechpartner unterzeichnerAngebotsgeber;
+    private Ansprechpartner unterzeichnerAngebotsnehmer;
     private Angebotsvariante[] varianten;
 
     public Typ getTyp() { return _typ; }
@@ -58,11 +58,11 @@ public class Angebot extends Geschaeftsobjekt {
     public Sparte getSparte() { return sparte; }
     public void setSparte(Sparte value) { this.sparte = value; }
 
-    public Person getUnterzeichnerAngebotsgeber() { return unterzeichnerAngebotsgeber; }
-    public void setUnterzeichnerAngebotsgeber(Person value) { this.unterzeichnerAngebotsgeber = value; }
+    public Ansprechpartner getUnterzeichnerAngebotsgeber() { return unterzeichnerAngebotsgeber; }
+    public void setUnterzeichnerAngebotsgeber(Ansprechpartner value) { this.unterzeichnerAngebotsgeber = value; }
 
-    public Person getUnterzeichnerAngebotsnehmer() { return unterzeichnerAngebotsnehmer; }
-    public void setUnterzeichnerAngebotsnehmer(Person value) { this.unterzeichnerAngebotsnehmer = value; }
+    public Ansprechpartner getUnterzeichnerAngebotsnehmer() { return unterzeichnerAngebotsnehmer; }
+    public void setUnterzeichnerAngebotsnehmer(Ansprechpartner value) { this.unterzeichnerAngebotsnehmer = value; }
 
     public Angebotsvariante[] getVarianten() { return varianten; }
     public void setVarianten(Angebotsvariante[] value) { this.varianten = value; }

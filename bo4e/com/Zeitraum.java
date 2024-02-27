@@ -17,18 +17,18 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Zeitraum JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc1/src/bo4e_schemas/com/Zeitraum.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/com/Zeitraum.json>`_
  */
 public class Zeitraum extends COM {
-    private Double dauer;
+    private String dauer;
     private Mengeneinheit einheit;
     private OffsetDateTime enddatum;
     private OffsetDateTime endzeitpunkt;
     private OffsetDateTime startdatum;
     private OffsetDateTime startzeitpunkt;
 
-    public Double getDauer() { return dauer; }
-    public void setDauer(Double value) { this.dauer = value; }
+    public String getDauer() { return dauer; }
+    public void setDauer(String value) { this.dauer = value; }
 
     public Mengeneinheit getEinheit() { return einheit; }
     public void setEinheit(Mengeneinheit value) { this.einheit = value; }
