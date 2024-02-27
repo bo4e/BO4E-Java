@@ -18,7 +18,7 @@ import bo4e.enums.Bemessungsgroesse;
  *
  * .. HINT::
  * `Preisposition JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/com/Preisposition.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Preisposition.json>`_
  */
 public class Preisposition extends COM {
     private BDEWArtikelnummer bdewArtikelnummer;

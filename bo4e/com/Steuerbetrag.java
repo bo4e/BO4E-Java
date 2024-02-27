@@ -13,7 +13,7 @@ import bo4e.enums.Waehrungscode;
  *
  * .. HINT::
  * `Steuerbetrag JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/com/Steuerbetrag.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Steuerbetrag.json>`_
  */
 public class Steuerbetrag extends COM {
     private String basiswert;

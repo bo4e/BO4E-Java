@@ -11,7 +11,7 @@ import bo4e.enums.Rufnummernart;
  *
  * .. HINT::
  * `Rufnummer JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/com/Rufnummer.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Rufnummer.json>`_
  */
 public class Rufnummer extends COM {
     private Rufnummernart nummerntyp;

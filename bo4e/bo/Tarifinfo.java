@@ -21,7 +21,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Tarifinfo JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/bo/Tarifinfo.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Tarifinfo.json>`_
  */
 public class Tarifinfo extends Geschaeftsobjekt {
     private final Typ _typ = Typ.TARIFINFO;

@@ -17,7 +17,7 @@ import bo4e.com.Zustaendigkeit;
  *
  * .. HINT::
  * `Ansprechpartner JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/bo/Ansprechpartner.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Ansprechpartner.json>`_
  */
 public class Ansprechpartner extends Geschaeftsobjekt {
     private final Typ _typ = Typ.ANSPRECHPARTNER;

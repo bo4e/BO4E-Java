@@ -17,7 +17,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Zeitraum JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/com/Zeitraum.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Zeitraum.json>`_
  */
 public class Zeitraum extends COM {
     private String dauer;

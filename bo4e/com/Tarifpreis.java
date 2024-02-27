@@ -14,7 +14,7 @@ import bo4e.enums.Preisstatus;
  *
  * .. HINT::
  * `Tarifpreis JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/com/Tarifpreis.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/Tarifpreis.json>`_
  */
 public class Tarifpreis extends COM {
     private String beschreibung;

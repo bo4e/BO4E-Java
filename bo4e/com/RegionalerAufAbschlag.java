@@ -19,7 +19,7 @@ import bo4e.enums.Waehrungseinheit;
  *
  * .. HINT::
  * `RegionalerAufAbschlag JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.0-/src/bo4e_schemas/com/RegionalerAufAbschlag.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/RegionalerAufAbschlag.json>`_
  */
 public class RegionalerAufAbschlag extends COM {
     private AufAbschlagstyp aufAbschlagstyp;
