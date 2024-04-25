@@ -13,7 +13,7 @@ import bo4e.enums.Messpreistyp;
  *
  * .. HINT::
  * `Tarifberechnungsparameter JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc2/src/bo4e_schemas/com/Tarifberechnungsparameter.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc3/src/bo4e_schemas/com/Tarifberechnungsparameter.json>`_
  */
 public class Tarifberechnungsparameter extends COM {
     private Tarifkalkulationsmethode berechnungsmethode;

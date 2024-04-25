@@ -19,7 +19,7 @@ import bo4e.ZusatzAttribut;
 public abstract class Geschaeftsobjekt {
     private String _id;
     private final Typ _typ = Typ.GESCHAEFTSOBJEKT;
-    private final String _version = "202401.1.0-rc2";
+    private final String _version = "202401.1.0-rc3";
     private ZusatzAttribut[] zusatzAttribute;
 
     public String getId() { return _id; }

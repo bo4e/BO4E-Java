@@ -12,8 +12,6 @@ import bo4e.com.Adresse;
 import bo4e.enums.Netzebene;
 import bo4e.enums.Sparte;
 import bo4e.enums.Verbrauchsart;
-import bo4e.com.Verbrauch;
-import bo4e.com.Zaehlwerk;
 import bo4e.com.Messlokationszuordnung;
 
 /**
@@ -26,7 +24,7 @@ import bo4e.com.Messlokationszuordnung;
  *
  * .. HINT::
  * `Marktlokation JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc2/src/bo4e_schemas/bo/Marktlokation.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc3/src/bo4e_schemas/bo/Marktlokation.json>`_
  */
 public class Marktlokation extends Geschaeftsobjekt {
     private final Typ _typ = Typ.MARKTLOKATION,;
@@ -42,17 +40,12 @@ public class Marktlokation extends Geschaeftsobjekt {
     private Katasteradresse katasterinformation;
     private Kundentyp[] kundengruppen;
     private Adresse lokationsadresse;
-    private String marktgebiet;
     private String marktlokationsId;
     private String netzbetreibercodenr;
     private Netzebene netzebene;
     private String netzgebietsnr;
-    private String regelzone;
     private Sparte sparte;
     private Verbrauchsart verbrauchsart;
-    private Verbrauch[] verbrauchsmengen;
-    private Zaehlwerk[] zaehlwerke;
-    private Zaehlwerk[] zaehlwerkeDerBeteiligtenMarktrolle;
     private Messlokationszuordnung zugehoerigeMesslokation;
 
     /**
@@ -142,13 +135,6 @@ public class Marktlokation extends Geschaeftsobjekt {
     public void setLokationsadresse(Adresse value) { this.lokationsadresse = value; }
 
     /**
-     * für Strom. Code vom EIC,
-     * https://www.entsoe.eu/data/energy-identification-codes-eic/eic-approved-codes/
-     */
-    public String getMarktgebiet() { return marktgebiet; }
-    public void setMarktgebiet(String value) { this.marktgebiet = value; }
-
-    /**
      * Identifikationsnummer einer Marktlokation, an der Energie entweder verbraucht, oder
      * erzeugt wird.
      */
@@ -176,12 +162,6 @@ public class Marktlokation extends Geschaeftsobjekt {
     public void setNetzgebietsnr(String value) { this.netzgebietsnr = value; }
 
     /**
-     * Kundengruppen der Marktlokation
-     */
-    public String getRegelzone() { return regelzone; }
-    public void setRegelzone(String value) { this.regelzone = value; }
-
-    /**
      * Sparte der Marktlokation, z.B. Gas oder Strom
      */
     public Sparte getSparte() { return sparte; }
@@ -192,18 +172,6 @@ public class Marktlokation extends Geschaeftsobjekt {
      */
     public Verbrauchsart getVerbrauchsart() { return verbrauchsart; }
     public void setVerbrauchsart(Verbrauchsart value) { this.verbrauchsart = value; }
-
-    public Verbrauch[] getVerbrauchsmengen() { return verbrauchsmengen; }
-    public void setVerbrauchsmengen(Verbrauch[] value) { this.verbrauchsmengen = value; }
-
-    /**
-     * für Gas. Code vom EIC, https://www.entsog.eu/data/data-portal/codes-list
-     */
-    public Zaehlwerk[] getZaehlwerke() { return zaehlwerke; }
-    public void setZaehlwerke(Zaehlwerk[] value) { this.zaehlwerke = value; }
-
-    public Zaehlwerk[] getZaehlwerkeDerBeteiligtenMarktrolle() { return zaehlwerkeDerBeteiligtenMarktrolle; }
-    public void setZaehlwerkeDerBeteiligtenMarktrolle(Zaehlwerk[] value) { this.zaehlwerkeDerBeteiligtenMarktrolle = value; }
 
     public Messlokationszuordnung getZugehoerigeMesslokation() { return zugehoerigeMesslokation; }
     public void setZugehoerigeMesslokation(Messlokationszuordnung value) { this.zugehoerigeMesslokation = value; }
