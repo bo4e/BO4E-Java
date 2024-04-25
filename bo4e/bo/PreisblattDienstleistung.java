@@ -18,7 +18,7 @@ import bo4e.enums.Sparte;
  *
  * .. HINT::
  * `PreisblattDienstleistung JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc2/src/bo4e_schemas/bo/PreisblattDienstleistung.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc3/src/bo4e_schemas/bo/PreisblattDienstleistung.json>`_
  */
 public class PreisblattDienstleistung extends Geschaeftsobjekt {
     private final Typ _typ = Typ.PREISBLATTDIENSTLEISTUNG;
