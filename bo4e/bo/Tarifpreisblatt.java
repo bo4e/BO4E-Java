@@ -26,10 +26,10 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Tarifpreisblatt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc3/src/bo4e_schemas/bo/Tarifpreisblatt.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc2/src/bo4e_schemas/bo/Tarifpreisblatt.json>`_
  */
 public class Tarifpreisblatt extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.TARIFPREISBLATT,;
+    private final Typ _typ = Typ.TARIFPREISBLATT;
     private Marktteilnehmer anbieter;
     private String anbietername;
     private OffsetDateTime anwendungVon;

@@ -17,10 +17,10 @@ import bo4e.enums.Sparte;
  *
  * .. HINT::
  * `PreisblattKonzessionsabgabe JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc3/src/bo4e_schemas/bo/PreisblattKonzessionsabgabe.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc2/src/bo4e_schemas/bo/PreisblattKonzessionsabgabe.json>`_
  */
 public class PreisblattKonzessionsabgabe extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.PREISBLATTKONZESSIONSABGABE,;
+    private final Typ _typ = Typ.PREISBLATTKONZESSIONSABGABE;
     private String bezeichnung;
     private Zeitraum gueltigkeit;
     private Marktteilnehmer herausgeber;

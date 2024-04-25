@@ -18,10 +18,10 @@ import bo4e.com.Betrag;
  *
  * .. HINT::
  * `Fremdkosten JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc3/src/bo4e_schemas/bo/Fremdkosten.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc2/src/bo4e_schemas/bo/Fremdkosten.json>`_
  */
 public class Fremdkosten extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.FREMDKOSTEN,;
+    private final Typ _typ = Typ.FREMDKOSTEN;
     private Zeitraum gueltigkeit;
     private Fremdkostenblock[] kostenbloecke;
     private Betrag summeKosten;
