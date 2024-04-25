@@ -14,7 +14,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Verbrauch JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc3/src/bo4e_schemas/com/Verbrauch.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.0.3/src/bo4e_schemas/com/Verbrauch.json>`_
  */
 public class Verbrauch extends COM {
     private Mengeneinheit einheit;

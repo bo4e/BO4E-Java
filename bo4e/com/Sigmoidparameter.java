@@ -11,7 +11,7 @@ package bo4e.com;
  *
  * .. HINT::
  * `Sigmoidparameter JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.0-rc3/src/bo4e_schemas/com/Sigmoidparameter.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.0.3/src/bo4e_schemas/com/Sigmoidparameter.json>`_
  */
 public class Sigmoidparameter extends COM {
     private Double A;
