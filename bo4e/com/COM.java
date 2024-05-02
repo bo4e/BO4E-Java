@@ -15,7 +15,7 @@ import bo4e.ZusatzAttribut;
  */
 public abstract class COM {
     private String _id;
-    private final String _version = "202401.1.0";
+    private final String _version = "202401.1.1";
     private ZusatzAttribut[] zusatzAttribute;
 
     public String getId() { return _id; }
