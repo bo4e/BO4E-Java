@@ -20,7 +20,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Tarifkosten JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1/src/bo4e_schemas/bo/Tarifkosten.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/bo/Tarifkosten.json>`_
  */
 public class Tarifkosten extends Geschaeftsobjekt {
     private final Typ _typ = Typ.TARIFKOSTEN;

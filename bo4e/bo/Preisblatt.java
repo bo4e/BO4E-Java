@@ -22,7 +22,7 @@ import bo4e.enums.Sparte;
  *
  * .. HINT::
  * `Preisblatt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1/src/bo4e_schemas/bo/Preisblatt.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/bo/Preisblatt.json>`_
  */
 public class Preisblatt extends Geschaeftsobjekt {
     private final Typ _typ = Typ.PREISBLATT;
