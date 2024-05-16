@@ -26,7 +26,7 @@ import bo4e.com.Messlokationszuordnung;
  *
  * .. HINT::
  * `Marktlokation JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/bo/Marktlokation.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/bo/Marktlokation.json>`_
  */
 public class Marktlokation extends Geschaeftsobjekt {
     private final Typ _typ = Typ.MARKTLOKATION;
@@ -104,7 +104,7 @@ public class Marktlokation extends Geschaeftsobjekt {
     public void setGebietstyp(Gebiettyp value) { this.gebietstyp = value; }
 
     /**
-     * katasterinformation: Optional[Katasteradresse] = None
+     * katasterinformation: Optional["Katasteradresse"] = None
      */
     public Geokoordinaten getGeoadresse() { return geoadresse; }
     public void setGeoadresse(Geokoordinaten value) { this.geoadresse = value; }
@@ -142,8 +142,7 @@ public class Marktlokation extends Geschaeftsobjekt {
     public void setLokationsadresse(Adresse value) { this.lokationsadresse = value; }
 
     /**
-     * für Strom. Code vom EIC,
-     * https://www.entsoe.eu/data/energy-identification-codes-eic/eic-approved-codes/
+     * für Gas. Code vom EIC, https://www.entsog.eu/data/data-portal/codes-list
      */
     public String getMarktgebiet() { return marktgebiet; }
     public void setMarktgebiet(String value) { this.marktgebiet = value; }

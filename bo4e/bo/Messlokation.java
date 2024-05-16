@@ -17,7 +17,7 @@ import bo4e.enums.Sparte;
  *
  * .. HINT::
  * `Messlokation JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/bo/Messlokation.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/bo/Messlokation.json>`_
  */
 public class Messlokation extends Geschaeftsobjekt {
     private final Typ _typ = Typ.MESSLOKATION;
@@ -46,7 +46,7 @@ public class Messlokation extends Geschaeftsobjekt {
      * Version der BO-Struktur aka "fachliche Versionierung"
      */
     /**
-     * katasterinformation: Optional[Katasteradresse] = None
+     * katasterinformation: Optional["Katasteradresse"] = None
      */
     public Geokoordinaten getGeoadresse() { return geoadresse; }
     public void setGeoadresse(Geokoordinaten value) { this.geoadresse = value; }
@@ -65,7 +65,7 @@ public class Messlokation extends Geschaeftsobjekt {
 
     /**
      * # only one of the following three optional address attributes can be set
-     * messadresse: Optional[Adresse] = None
+     * messadresse: Optional["Adresse"] = None
      */
     public String getGrundzustaendigerMsbimCodenr() { return grundzustaendigerMsbimCodenr; }
     public void setGrundzustaendigerMsbimCodenr(String value) { this.grundzustaendigerMsbimCodenr = value; }
@@ -79,7 +79,7 @@ public class Messlokation extends Geschaeftsobjekt {
     public void setKatasterinformation(Katasteradresse value) { this.katasterinformation = value; }
 
     /**
-     * geoadresse: Optional[Geokoordinaten] = None
+     * geoadresse: Optional["Geokoordinaten"] = None
      */
     public Adresse getMessadresse() { return messadresse; }
     public void setMessadresse(Adresse value) { this.messadresse = value; }

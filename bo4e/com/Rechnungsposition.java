@@ -15,7 +15,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Rechnungsposition JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/com/Rechnungsposition.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/com/Rechnungsposition.json>`_
  */
 public class Rechnungsposition extends COM {
     private String artikelId;
@@ -34,7 +34,7 @@ public class Rechnungsposition extends COM {
     private Mengeneinheit zeiteinheit;
 
     /**
-     * zusatz_attribute: Optional[list[ZusatzAttribut]] = None
+     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
      *
      * # pylint: disable=duplicate-code
      * model_config = ConfigDict(
@@ -72,7 +72,7 @@ public class Rechnungsposition extends COM {
     public void setEinzelpreis(Preis value) { this.einzelpreis = value; }
 
     /**
-     * Start der Lieferung für die abgerechnete Leistung (inklusiv)
+     * Ende der Lieferung für die abgerechnete Leistung (exklusiv)
      */
     public OffsetDateTime getLieferungBis() { return lieferungBis; }
     public void setLieferungBis(OffsetDateTime value) { this.lieferungBis = value; }
@@ -119,17 +119,17 @@ public class Rechnungsposition extends COM {
      * # see https://github.com/Hochfrequenz/BO4E-python/issues/126
      *
      * #: Auf die Position entfallende Steuer, bestehend aus Steuersatz und Betrag
-     * teilsumme_steuer: Optional[Steuerbetrag] = None
+     * teilsumme_steuer: Optional["Steuerbetrag"] = None
      *
      * #: Falls sich der Preis auf eine Zeit bezieht, steht hier die Einheit
-     * zeiteinheit: Optional[Mengeneinheit] = None
+     * zeiteinheit: Optional["Mengeneinheit"] = None
      *
      * #: Kennzeichnung der Rechnungsposition mit der Standard-Artikelnummer des BDEW
-     * artikelnummer: Optional[BDEWArtikelnummer] = None
+     * artikelnummer: Optional["BDEWArtikelnummer"] = None
      * #: Marktlokation, die zu dieser Position gehört
      * lokations_id: Optional[str] = None
      *
-     * zeitbezogene_menge: Optional[Menge] = None
+     * zeitbezogene_menge: Optional["Menge"] = None
      */
     public Betrag getTeilsummeNetto() { return teilsummeNetto; }
     public void setTeilsummeNetto(Betrag value) { this.teilsummeNetto = value; }

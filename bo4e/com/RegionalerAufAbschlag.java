@@ -19,7 +19,7 @@ import bo4e.enums.Waehrungseinheit;
  *
  * .. HINT::
  * `RegionalerAufAbschlag JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/com/RegionalerAufAbschlag.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/com/RegionalerAufAbschlag.json>`_
  */
 public class RegionalerAufAbschlag extends COM {
     private AufAbschlagstyp aufAbschlagstyp;
@@ -39,7 +39,7 @@ public class RegionalerAufAbschlag extends COM {
     private String[] zusatzprodukte;
 
     /**
-     * zusatz_attribute: Optional[list[ZusatzAttribut]] = None
+     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
      *
      * # pylint: disable=duplicate-code
      * model_config = ConfigDict(
@@ -97,13 +97,13 @@ public class RegionalerAufAbschlag extends COM {
     public void setEinschraenkungsaenderung(Tarifeinschraenkung value) { this.einschraenkungsaenderung = value; }
 
     /**
-     * vertagskonditionsaenderung: Optional[Vertragskonditionen] = None
+     * vertagskonditionsaenderung: Optional["Vertragskonditionen"] = None
      */
     public Energiemix getEnergiemixaenderung() { return energiemixaenderung; }
     public void setEnergiemixaenderung(Energiemix value) { this.energiemixaenderung = value; }
 
     /**
-     * einschraenkungsaenderung: Optional[Tarifeinschraenkung] = None
+     * einschraenkungsaenderung: Optional["Tarifeinschraenkung"] = None
      */
     public Preisgarantie getGarantieaenderung() { return garantieaenderung; }
     public void setGarantieaenderung(Preisgarantie value) { this.garantieaenderung = value; }
@@ -127,7 +127,7 @@ public class RegionalerAufAbschlag extends COM {
     public void setTarifnamensaenderungen(String value) { this.tarifnamensaenderungen = value; }
 
     /**
-     * garantieaenderung: Optional[Preisgarantie] = None
+     * garantieaenderung: Optional["Preisgarantie"] = None
      */
     public Vertragskonditionen getVertagskonditionsaenderung() { return vertagskonditionsaenderung; }
     public void setVertagskonditionsaenderung(Vertragskonditionen value) { this.vertagskonditionsaenderung = value; }

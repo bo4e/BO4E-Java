@@ -13,7 +13,7 @@ import bo4e.enums.Regionskriteriumtyp;
  *
  * .. HINT::
  * `Regionskriterium JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/com/Regionskriterium.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/com/Regionskriterium.json>`_
  */
 public class Regionskriterium extends COM {
     private Gueltigkeitstyp gueltigkeitstyp;
@@ -21,7 +21,7 @@ public class Regionskriterium extends COM {
     private String wert;
 
     /**
-     * zusatz_attribute: Optional[list[ZusatzAttribut]] = None
+     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
      *
      * # pylint: disable=duplicate-code
      * model_config = ConfigDict(
@@ -47,14 +47,14 @@ public class Regionskriterium extends COM {
     public void setGueltigkeitstyp(Gueltigkeitstyp value) { this.gueltigkeitstyp = value; }
 
     /**
-     * Hier wird festgelegt, ob es sich um ein einschließendes oder ausschließendes Kriterium
-     * handelt.
+     * Hier wird das Kriterium selbst angegeben, z.B. Bundesland.
      */
     public Regionskriteriumtyp getRegionskriteriumtyp() { return regionskriteriumtyp; }
     public void setRegionskriteriumtyp(Regionskriteriumtyp value) { this.regionskriteriumtyp = value; }
 
     /**
-     * Hier wird das Kriterium selbst angegeben, z.B. Bundesland.
+     * Der Wert, den das Kriterium annehmen kann, z.B. NRW.
+     * Im Falle des Regionskriteriumstyp BUNDESWEIT spielt dieser Wert keine Rolle.
      */
     public String getWert() { return wert; }
     public void setWert(String value) { this.wert = value; }

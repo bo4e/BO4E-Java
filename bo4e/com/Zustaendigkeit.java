@@ -13,7 +13,7 @@ import bo4e.enums.Themengebiet;
  *
  * .. HINT::
  * `Zustaendigkeit JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/com/Zustaendigkeit.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/com/Zustaendigkeit.json>`_
  */
 public class Zustaendigkeit extends COM {
     private String abteilung;
@@ -21,7 +21,7 @@ public class Zustaendigkeit extends COM {
     private Themengebiet themengebiet;
 
     /**
-     * zusatz_attribute: Optional[list[ZusatzAttribut]] = None
+     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
      *
      * # pylint: disable=duplicate-code
      * model_config = ConfigDict(

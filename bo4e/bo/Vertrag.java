@@ -20,7 +20,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Vertrag JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/bo/Vertrag.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/bo/Vertrag.json>`_
  */
 public class Vertrag extends Geschaeftsobjekt {
     private final Typ _typ = Typ.VERTRAG;
@@ -112,7 +112,7 @@ public class Vertrag extends Geschaeftsobjekt {
     public void setVertragspartner1(Geschaeftspartner value) { this.vertragspartner1 = value; }
 
     /**
-     * vertragsteile: Optional[list[Vertragsteil]] = None
+     * vertragsteile: Optional[list["Vertragsteil"]] = None
      */
     public Geschaeftspartner getVertragspartner2() { return vertragspartner2; }
     public void setVertragspartner2(Geschaeftspartner value) { this.vertragspartner2 = value; }

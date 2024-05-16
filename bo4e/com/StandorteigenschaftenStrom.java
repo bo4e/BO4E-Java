@@ -10,7 +10,7 @@ package bo4e.com;
  *
  * .. HINT::
  * `StandorteigenschaftenStrom JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_
  */
 public class StandorteigenschaftenStrom extends COM {
     private String bilanzierungsgebietEic;
@@ -18,7 +18,7 @@ public class StandorteigenschaftenStrom extends COM {
     private String regelzoneEic;
 
     /**
-     * zusatz_attribute: Optional[list[ZusatzAttribut]] = None
+     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
      *
      * # pylint: disable=duplicate-code
      * model_config = ConfigDict(

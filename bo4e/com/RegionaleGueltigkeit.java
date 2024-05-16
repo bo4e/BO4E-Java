@@ -13,14 +13,14 @@ import bo4e.enums.Gueltigkeitstyp;
  *
  * .. HINT::
  * `RegionaleGueltigkeit JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/com/RegionaleGueltigkeit.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/com/RegionaleGueltigkeit.json>`_
  */
 public class RegionaleGueltigkeit extends COM {
     private Gueltigkeitstyp gueltigkeitstyp;
     private KriteriumWert[] kriteriumsWerte;
 
     /**
-     * zusatz_attribute: Optional[list[ZusatzAttribut]] = None
+     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
      *
      * # pylint: disable=duplicate-code
      * model_config = ConfigDict(
@@ -45,7 +45,7 @@ public class RegionaleGueltigkeit extends COM {
     public void setGueltigkeitstyp(Gueltigkeitstyp value) { this.gueltigkeitstyp = value; }
 
     /**
-     * Unterscheidung ob Positivliste oder Negativliste übertragen wird
+     * Hier stehen die Kriterien, die die regionale Gültigkeit festlegen
      */
     public KriteriumWert[] getKriteriumsWerte() { return kriteriumsWerte; }
     public void setKriteriumsWerte(KriteriumWert[] value) { this.kriteriumsWerte = value; }

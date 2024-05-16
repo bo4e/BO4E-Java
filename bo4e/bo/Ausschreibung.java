@@ -19,7 +19,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Ausschreibung JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/bo/Ausschreibung.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/bo/Ausschreibung.json>`_
  */
 public class Ausschreibung extends Geschaeftsobjekt {
     private final Typ _typ = Typ.AUSSCHREIBUNG;
@@ -47,13 +47,13 @@ public class Ausschreibung extends Geschaeftsobjekt {
      * Version der BO-Struktur aka "fachliche Versionierung"
      */
     /**
-     * bindefrist: Optional[Zeitraum] = None
+     * bindefrist: Optional["Zeitraum"] = None
      */
     public Zeitraum getAbgabefrist() { return abgabefrist; }
     public void setAbgabefrist(Zeitraum value) { this.abgabefrist = value; }
 
     /**
-     * abgabefrist: Optional[Zeitraum] = None
+     * abgabefrist: Optional["Zeitraum"] = None
      */
     public Geschaeftspartner getAusschreibender() { return ausschreibender; }
     public void setAusschreibender(Geschaeftspartner value) { this.ausschreibender = value; }

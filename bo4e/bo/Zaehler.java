@@ -21,7 +21,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Zaehler JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/bo/Zaehler.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/bo/Zaehler.json>`_
  */
 public class Zaehler extends Geschaeftsobjekt {
     private final Typ _typ = Typ.ZAEHLER;
@@ -114,7 +114,7 @@ public class Zaehler extends Geschaeftsobjekt {
     public void setZaehlergroesse(Zaehlergroesse value) { this.zaehlergroesse = value; }
 
     /**
-     * Zu diesem Datum fand die letzte Eichprüfung des Zählers statt.
+     * Der Hersteller des Zählers
      */
     public Geschaeftspartner getZaehlerhersteller() { return zaehlerhersteller; }
     public void setZaehlerhersteller(Geschaeftspartner value) { this.zaehlerhersteller = value; }

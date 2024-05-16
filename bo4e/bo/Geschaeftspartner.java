@@ -11,7 +11,7 @@ import bo4e.enums.Titel;
 /**
  * Mit diesem Objekt können Geschäftspartner übertragen werden.
  * Sowohl Unternehmen, als auch Privatpersonen können Geschäftspartner sein.
- * Hinweis: Marktteilnehmer haben ein eigenes BO, welches sich von diesem BO ableitet.
+ * Hinweis: "Marktteilnehmer" haben ein eigenes BO, welches sich von diesem BO ableitet.
  * Hier sollte daher keine Zuordnung zu Marktrollen erfolgen.
  *
  * .. raw:: html
@@ -21,7 +21,7 @@ import bo4e.enums.Titel;
  *
  * .. HINT::
  * `Geschaeftspartner JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/bo/Geschaeftspartner.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/bo/Geschaeftspartner.json>`_
  */
 public class Geschaeftspartner extends Geschaeftsobjekt {
     private final Typ _typ = Typ.GESCHAEFTSPARTNER;

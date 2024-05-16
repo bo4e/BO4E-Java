@@ -14,7 +14,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Vertragsteil JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/com/Vertragsteil.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/com/Vertragsteil.json>`_
  */
 public class Vertragsteil extends COM {
     private String lokation;
@@ -25,7 +25,7 @@ public class Vertragsteil extends COM {
     private OffsetDateTime vertragsteilende;
 
     /**
-     * zusatz_attribute: Optional[list[ZusatzAttribut]] = None
+     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
      *
      * # pylint: disable=duplicate-code
      * model_config = ConfigDict(
@@ -44,7 +44,7 @@ public class Vertragsteil extends COM {
      * Version der BO-Struktur aka "fachliche Versionierung"
      */
     /**
-     * vertraglich_fixierte_menge: Optional[Menge] = None
+     * vertraglich_fixierte_menge: Optional["Menge"] = None
      */
     public String getLokation() { return lokation; }
     public void setLokation(String value) { this.lokation = value; }
@@ -56,13 +56,13 @@ public class Vertragsteil extends COM {
     public void setMaximaleAbnahmemenge(Menge value) { this.maximaleAbnahmemenge = value; }
 
     /**
-     * maximale_abnahmemenge: Optional[Menge] = None
+     * maximale_abnahmemenge: Optional["Menge"] = None
      */
     public Menge getMinimaleAbnahmemenge() { return minimaleAbnahmemenge; }
     public void setMinimaleAbnahmemenge(Menge value) { this.minimaleAbnahmemenge = value; }
 
     /**
-     * minimale_abnahmemenge: Optional[Menge] = None
+     * minimale_abnahmemenge: Optional["Menge"] = None
      */
     public Menge getVertraglichFixierteMenge() { return vertraglichFixierteMenge; }
     public void setVertraglichFixierteMenge(Menge value) { this.vertraglichFixierteMenge = value; }

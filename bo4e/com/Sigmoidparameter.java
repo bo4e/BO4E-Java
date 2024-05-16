@@ -11,7 +11,7 @@ package bo4e.com;
  *
  * .. HINT::
  * `Sigmoidparameter JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/com/Sigmoidparameter.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/com/Sigmoidparameter.json>`_
  */
 public class Sigmoidparameter extends COM {
     private Double A;
@@ -20,7 +20,7 @@ public class Sigmoidparameter extends COM {
     private Double D;
 
     /**
-     * zusatz_attribute: Optional[list[ZusatzAttribut]] = None
+     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
      *
      * # pylint: disable=duplicate-code
      * model_config = ConfigDict(

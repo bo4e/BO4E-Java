@@ -16,7 +16,7 @@ import java.time.OffsetDateTime;
  *
  * .. HINT::
  * `Messlokationszuordnung JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc4/src/bo4e_schemas/com/Messlokationszuordnung.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/com/Messlokationszuordnung.json>`_
  */
 public class Messlokationszuordnung extends COM {
     private ArithmetischeOperation arithmetik;
@@ -25,7 +25,7 @@ public class Messlokationszuordnung extends COM {
     private String messlokationsId;
 
     /**
-     * zusatz_attribute: Optional[list[ZusatzAttribut]] = None
+     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
      *
      * # pylint: disable=duplicate-code
      * model_config = ConfigDict(
@@ -59,7 +59,7 @@ public class Messlokationszuordnung extends COM {
     public void setGueltigSeit(OffsetDateTime value) { this.gueltigSeit = value; }
 
     /**
-     * arithmetik: Optional[ArithmetischeOperation] = None
+     * arithmetik: Optional["ArithmetischeOperation"] = None
      *
      * gueltig_seit: Optional[pydantic.AwareDatetime] = None
      */
