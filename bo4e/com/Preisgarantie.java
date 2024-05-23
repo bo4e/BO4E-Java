@@ -12,7 +12,7 @@ import bo4e.enums.Preisgarantietyp;
  *
  * .. HINT::
  * `Preisgarantie JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/com/Preisgarantie.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.2-rc14/src/bo4e_schemas/com/Preisgarantie.json>`_
  */
 public class Preisgarantie extends COM {
     private String beschreibung;

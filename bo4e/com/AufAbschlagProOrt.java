@@ -11,7 +11,7 @@ package bo4e.com;
  *
  * .. HINT::
  * `AufAbschlagProOrt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.1-rc6/src/bo4e_schemas/com/AufAbschlagProOrt.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.2-rc14/src/bo4e_schemas/com/AufAbschlagProOrt.json>`_
  */
 public class AufAbschlagProOrt extends COM {
     private String netznr;
