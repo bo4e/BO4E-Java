@@ -12,7 +12,7 @@ import bo4e.enums.AbgabeArt;
  *
  * .. HINT::
  * `Konzessionsabgabe JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.2-rc14/src/bo4e_schemas/com/Konzessionsabgabe.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.2-rc15/src/bo4e_schemas/com/Konzessionsabgabe.json>`_
  */
 public class Konzessionsabgabe extends COM {
     private String kategorie;

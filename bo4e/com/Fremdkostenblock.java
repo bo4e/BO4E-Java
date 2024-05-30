@@ -10,7 +10,7 @@ package bo4e.com;
  *
  * .. HINT::
  * `Fremdkostenblock JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.2-rc14/src/bo4e_schemas/com/Fremdkostenblock.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.2-rc15/src/bo4e_schemas/com/Fremdkostenblock.json>`_
  */
 public class Fremdkostenblock extends COM {
     private String kostenblockbezeichnung;

@@ -12,7 +12,7 @@ import bo4e.enums.Kontaktart;
  *
  * .. HINT::
  * `Kontakt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.2-rc14/src/bo4e_schemas/com/Kontakt.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.2-rc15/src/bo4e_schemas/com/Kontakt.json>`_
  */
 public class Kontaktweg extends COM {
     private String beschreibung;
