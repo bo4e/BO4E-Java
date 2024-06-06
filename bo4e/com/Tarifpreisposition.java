@@ -14,7 +14,7 @@ import bo4e.enums.Preistyp;
  *
  * .. HINT::
  * `Tarifpreisposition JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.1.2-rc15/src/bo4e_schemas/com/Tarifpreisposition.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.0/src/bo4e_schemas/com/Tarifpreisposition.json>`_
  */
 public class Tarifpreisposition extends COM {
     private Mengeneinheit bezugseinheit;
