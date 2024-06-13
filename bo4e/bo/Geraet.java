@@ -13,7 +13,7 @@ import bo4e.enums.Geraetetyp;
  *
  * .. HINT::
  * `Geraet JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.0/src/bo4e_schemas/bo/Geraet.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1.1/src/bo4e_schemas/bo/Geraet.json>`_
  */
 public class Geraet extends Geschaeftsobjekt {
     private final Typ _typ = Typ.GERAET;
@@ -22,38 +22,17 @@ public class Geraet extends Geschaeftsobjekt {
     private String geraetenummer;
     private Geraetetyp geraetetyp;
 
-    /**
-     * Hier können IDs anderer Systeme hinterlegt werden (z.B. eine SAP-GP-Nummer oder eine GUID)
-     */
-    /**
-     * Die auf dem Gerät aufgedruckte Nummer, die vom MSB vergeben wird.
-     */
     public Typ getTyp() { return _typ; }
 
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
-    /**
-     * Bezeichnung des Geräts
-     */
     public String getBezeichnung() { return bezeichnung; }
     public void setBezeichnung(String value) { this.bezeichnung = value; }
 
-    /**
-     * Die übergreifende Klasse eines Geräts, beispielsweise Wandler
-     */
     public Geraeteklasse getGeraeteklasse() { return geraeteklasse; }
     public void setGeraeteklasse(Geraeteklasse value) { this.geraeteklasse = value; }
 
-    /**
-     * Die auf dem Gerät aufgedruckte Nummer, die vom MSB vergeben wird.
-     */
     public String getGeraetenummer() { return geraetenummer; }
     public void setGeraetenummer(String value) { this.geraetenummer = value; }
 
-    /**
-     * Der speziellere Typ eines Gerätes, beispielsweise Stromwandler
-     */
     public Geraetetyp getGeraetetyp() { return geraetetyp; }
     public void setGeraetetyp(Geraetetyp value) { this.geraetetyp = value; }
 

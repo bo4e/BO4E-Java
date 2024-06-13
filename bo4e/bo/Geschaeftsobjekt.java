@@ -14,12 +14,12 @@ import bo4e.ZusatzAttribut;
  *
  * .. HINT::
  * `Geschaeftsobjekt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Geschaeftsobjekt.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1.1/src/bo4e_schemas/bo/Geschaeftsobjekt.json>`_
  */
 public abstract class Geschaeftsobjekt {
     private String _id;
     private final Typ _typ = Typ.GESCHAEFTSOBJEKT;
-    private final String _version = "202401.2.0";
+    private final String _version = "202401.0.1.1";
     private ZusatzAttribut[] zusatzAttribute;
 
     public String getId() { return _id; }
