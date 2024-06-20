@@ -6,7 +6,7 @@ import java.io.IOException;
  * Einheit: Messgrößen, die per Messung oder Vorgabe ermittelt werden können.
  */
 public enum Mengeneinheit {
-    HALBJAHR, JAHR, KUBIKMETER, KVAR, KVARH, KW, KWH, MINUTE, MONAT, MW, MWH, PROZENT, QUARTAL, SEKUNDE, STUECK, STUNDE, TAG, VIERTEL_STUNDE, W, WH, WOCHE;
+    HALBJAHR, JAHR, KUBIKMETER, KVAR, KVARH, KW, KWH, KWHK, MINUTE, MONAT, MW, MWH, PROZENT, QUARTAL, SEKUNDE, STUECK, STUNDE, TAG, VAR, VARH, VIERTEL_STUNDE, W, WH, WOCHE;
 
     public String toValue() {
         switch (this) {
@@ -17,6 +17,7 @@ public enum Mengeneinheit {
             case KVARH: return "KVARH";
             case KW: return "KW";
             case KWH: return "KWH";
+            case KWHK: return "KWHK";
             case MINUTE: return "MINUTE";
             case MONAT: return "MONAT";
             case MW: return "MW";
@@ -27,6 +28,8 @@ public enum Mengeneinheit {
             case STUECK: return "STUECK";
             case STUNDE: return "STUNDE";
             case TAG: return "TAG";
+            case VAR: return "VAR";
+            case VARH: return "VARH";
             case VIERTEL_STUNDE: return "VIERTEL_STUNDE";
             case W: return "W";
             case WH: return "WH";
@@ -43,6 +46,7 @@ public enum Mengeneinheit {
         if (value.equals("KVARH")) return KVARH;
         if (value.equals("KW")) return KW;
         if (value.equals("KWH")) return KWH;
+        if (value.equals("KWHK")) return KWHK;
         if (value.equals("MINUTE")) return MINUTE;
         if (value.equals("MONAT")) return MONAT;
         if (value.equals("MW")) return MW;
@@ -53,6 +57,8 @@ public enum Mengeneinheit {
         if (value.equals("STUECK")) return STUECK;
         if (value.equals("STUNDE")) return STUNDE;
         if (value.equals("TAG")) return TAG;
+        if (value.equals("VAR")) return VAR;
+        if (value.equals("VARH")) return VARH;
         if (value.equals("VIERTEL_STUNDE")) return VIERTEL_STUNDE;
         if (value.equals("W")) return W;
         if (value.equals("WH")) return WH;

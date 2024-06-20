@@ -13,15 +13,21 @@ package bo4e;
  *
  * .. HINT::
  * `ZusatzAttribut JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1.1/src/bo4e_schemas/ZusatzAttribut.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/ZusatzAttribut.json>`_
  */
 public class ZusatzAttribut {
     private String name;
     private Object wert;
 
+    /**
+     * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
+     */
     public String getName() { return name; }
     public void setName(String value) { this.name = value; }
 
+    /**
+     * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
+     */
     public Object getWert() { return wert; }
     public void setWert(Object value) { this.wert = value; }
 }

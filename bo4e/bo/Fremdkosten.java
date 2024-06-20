@@ -18,7 +18,7 @@ import bo4e.com.Betrag;
  *
  * .. HINT::
  * `Fremdkosten JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1.1/src/bo4e_schemas/bo/Fremdkosten.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Fremdkosten.json>`_
  */
 public class Fremdkosten extends Geschaeftsobjekt {
     private final Typ _typ = Typ.FREMDKOSTEN;
@@ -26,14 +26,33 @@ public class Fremdkosten extends Geschaeftsobjekt {
     private Fremdkostenblock[] kostenbloecke;
     private Betrag summeKosten;
 
+    /**
+     * Hier können IDs anderer Systeme hinterlegt werden (z.B. eine SAP-GP-Nummer oder eine GUID)
+     */
+    /**
+     * Für diesen Zeitraum wurden die Kosten ermittelt
+     */
     public Typ getTyp() { return _typ; }
 
+    /**
+     * Version der BO-Struktur aka "fachliche Versionierung"
+     */
+    /**
+     * Für diesen Zeitraum wurden die Kosten ermittelt
+     */
     public Zeitraum getGueltigkeit() { return gueltigkeit; }
     public void setGueltigkeit(Zeitraum value) { this.gueltigkeit = value; }
 
+    /**
+     * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
+     * Steuern etc
+     */
     public Fremdkostenblock[] getKostenbloecke() { return kostenbloecke; }
     public void setKostenbloecke(Fremdkostenblock[] value) { this.kostenbloecke = value; }
 
+    /**
+     * Die Gesamtsumme über alle Kostenblöcke und -positionen
+     */
     public Betrag getSummeKosten() { return summeKosten; }
     public void setSummeKosten(Betrag value) { this.summeKosten = value; }
 
