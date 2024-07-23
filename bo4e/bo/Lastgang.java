@@ -1,10 +1,13 @@
 package bo4e.bo;
 
-import bo4e.enums.Typ;
+import bo4e.ZusatzAttribut;
+import bo4e.com.Menge;
+import bo4e.com.Zeitreihenwert;
 import bo4e.enums.Mengeneinheit;
 import bo4e.enums.Sparte;
-import bo4e.com.Zeitreihenwert;
-import bo4e.com.Menge;
+import bo4e.enums.Typ;
+
+import java.util.List;
 
 /**
  * Modell zur Abbildung eines Lastganges;
@@ -21,68 +24,240 @@ import bo4e.com.Menge;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Lastgang.json>`_
  */
 public class Lastgang extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.LASTGANG;
-    private Marktlokation marktlokation;
-    private Mengeneinheit messgroesse;
-    private Messlokation messlokation;
-    private String obisKennzahl;
-    private Sparte sparte;
-    private String version;
-    private Zeitreihenwert[] werte;
-    private Menge zeitIntervallLaenge;
-
     /**
-     * Hier können IDs anderer Systeme hinterlegt werden (z.B. eine SAP-GP-Nummer oder eine GUID)
+     * Typ des Geschaeftsobjekts
      */
-    /**
-     * Angabe, ob es sich um einen Gas- oder Stromlastgang handelt
-     */
-    public Typ getTyp() { return _typ; }
-
+    private final Typ typ = Typ.LASTGANG;
     /**
      * Marktlokation, zu der der Lastgang gehört
      */
-    public Marktlokation getMarktlokation() { return marktlokation; }
-    public void setMarktlokation(Marktlokation value) { this.marktlokation = value; }
-
+    private Marktlokation marktlokation;
     /**
      * Definition der gemessenen Größe anhand ihrer Einheit
      */
-    public Mengeneinheit getMessgroesse() { return messgroesse; }
-    public void setMessgroesse(Mengeneinheit value) { this.messgroesse = value; }
-
+    private Mengeneinheit messgroesse;
     /**
      * Marktlokation, zu der der Lastgang gehört
      */
-    public Messlokation getMesslokation() { return messlokation; }
-    public void setMesslokation(Messlokation value) { this.messlokation = value; }
-
+    private Messlokation messlokation;
     /**
      * Die OBIS-Kennzahl für den Wert, die festlegt, welche Größe mit dem Stand gemeldet wird,
      * z.B. '1-0:1.8.1'
      */
-    public String getObisKennzahl() { return obisKennzahl; }
-    public void setObisKennzahl(String value) { this.obisKennzahl = value; }
-
+    private String obisKennzahl;
     /**
      * Angabe, ob es sich um einen Gas- oder Stromlastgang handelt
      */
-    public Sparte getSparte() { return sparte; }
-    public void setSparte(Sparte value) { this.sparte = value; }
-
+    private Sparte sparte;
     /**
      * Versionsnummer des Lastgangs
      */
-    public String getVersion() { return version; }
-    public void setVersion(String value) { this.version = value; }
-
+    private String version;
     /**
      * Die im Lastgang enthaltenen Messwerte
      */
-    public Zeitreihenwert[] getWerte() { return werte; }
-    public void setWerte(Zeitreihenwert[] value) { this.werte = value; }
+    private List<Zeitreihenwert> werte;
+    private Menge zeitIntervallLaenge;
 
-    public Menge getZeitIntervallLaenge() { return zeitIntervallLaenge; }
-    public void setZeitIntervallLaenge(Menge value) { this.zeitIntervallLaenge = value; }
+    public Lastgang() {
+    }
 
+    private Lastgang(LastgangBuilder builder) {
+        super(builder);
+        this.marktlokation = builder.marktlokation;
+        this.messgroesse = builder.messgroesse;
+        this.messlokation = builder.messlokation;
+        this.obisKennzahl = builder.obisKennzahl;
+        this.sparte = builder.sparte;
+        this.version = builder.version;
+        this.werte = builder.werte;
+        this.zeitIntervallLaenge = builder.zeitIntervallLaenge;
+    }
+
+    public Typ getTyp() {
+        return typ;
+    }
+
+    public Marktlokation getMarktlokation() {
+        return marktlokation;
+    }
+
+    public void setMarktlokation(Marktlokation marktlokation) {
+        this.marktlokation = marktlokation;
+    }
+
+    public Mengeneinheit getMessgroesse() {
+        return messgroesse;
+    }
+
+    public void setMessgroesse(Mengeneinheit messgroesse) {
+        this.messgroesse = messgroesse;
+    }
+
+    public Messlokation getMesslokation() {
+        return messlokation;
+    }
+
+    public void setMesslokation(Messlokation messlokation) {
+        this.messlokation = messlokation;
+    }
+
+    public String getObisKennzahl() {
+        return obisKennzahl;
+    }
+
+    public void setObisKennzahl(String obisKennzahl) {
+        this.obisKennzahl = obisKennzahl;
+    }
+
+    public Sparte getSparte() {
+        return sparte;
+    }
+
+    public void setSparte(Sparte sparte) {
+        this.sparte = sparte;
+    }
+
+    public String getVersion() {
+        return version;
+    }
+
+    public void setVersion(String version) {
+        this.version = version;
+    }
+
+    public List<Zeitreihenwert> getWerte() {
+        return werte;
+    }
+
+    public void setWerte(List<Zeitreihenwert> werte) {
+        this.werte = werte;
+    }
+
+    public Menge getZeitIntervallLaenge() {
+        return zeitIntervallLaenge;
+    }
+
+    public void setZeitIntervallLaenge(Menge zeitIntervallLaenge) {
+        this.zeitIntervallLaenge = zeitIntervallLaenge;
+    }
+
+    public static class LastgangBuilder extends GeschaeftsobjektBuilder {
+        /**
+         * Marktlokation, zu der der Lastgang gehört
+         */
+        private Marktlokation marktlokation;
+        /**
+         * Definition der gemessenen Größe anhand ihrer Einheit
+         */
+        private Mengeneinheit messgroesse;
+        /**
+         * Marktlokation, zu der der Lastgang gehört
+         */
+        private Messlokation messlokation;
+        /**
+         * Die OBIS-Kennzahl für den Wert, die festlegt, welche Größe mit dem Stand gemeldet wird,
+         * z.B. '1-0:1.8.1'
+         */
+        private String obisKennzahl;
+        /**
+         * Angabe, ob es sich um einen Gas- oder Stromlastgang handelt
+         */
+        private Sparte sparte;
+        /**
+         * Versionsnummer des Lastgangs
+         */
+        private String version;
+        /**
+         * Die im Lastgang enthaltenen Messwerte
+         */
+        private List<Zeitreihenwert> werte;
+        private Menge zeitIntervallLaenge;
+    
+        public Marktlokation getMarktlokation() {
+            return marktlokation;
+        }
+    
+        public LastgangBuilder setMarktlokation(Marktlokation marktlokation) {
+            this.marktlokation = marktlokation;
+            return this;
+        }
+    
+        public Mengeneinheit getMessgroesse() {
+            return messgroesse;
+        }
+    
+        public LastgangBuilder setMessgroesse(Mengeneinheit messgroesse) {
+            this.messgroesse = messgroesse;
+            return this;
+        }
+    
+        public Messlokation getMesslokation() {
+            return messlokation;
+        }
+    
+        public LastgangBuilder setMesslokation(Messlokation messlokation) {
+            this.messlokation = messlokation;
+            return this;
+        }
+    
+        public String getObisKennzahl() {
+            return obisKennzahl;
+        }
+    
+        public LastgangBuilder setObisKennzahl(String obisKennzahl) {
+            this.obisKennzahl = obisKennzahl;
+            return this;
+        }
+    
+        public Sparte getSparte() {
+            return sparte;
+        }
+    
+        public LastgangBuilder setSparte(Sparte sparte) {
+            this.sparte = sparte;
+            return this;
+        }
+    
+        public String getVersion() {
+            return version;
+        }
+    
+        public LastgangBuilder setVersion(String version) {
+            this.version = version;
+            return this;
+        }
+    
+        public List<Zeitreihenwert> getWerte() {
+            return werte;
+        }
+    
+        public LastgangBuilder setWerte(List<Zeitreihenwert> werte) {
+            this.werte = werte;
+            return this;
+        }
+    
+        public Menge getZeitIntervallLaenge() {
+            return zeitIntervallLaenge;
+        }
+    
+        public LastgangBuilder setZeitIntervallLaenge(Menge zeitIntervallLaenge) {
+            this.zeitIntervallLaenge = zeitIntervallLaenge;
+            return this;
+        }
+    
+        public LastgangBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public LastgangBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public Lastgang build() {
+            return new Lastgang(this);
+        }
+    }
 }

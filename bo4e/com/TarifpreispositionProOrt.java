@@ -1,5 +1,9 @@
 package bo4e.com;
 
+import bo4e.ZusatzAttribut;
+
+import java.util.List;
+
 /**
  * Mit dieser Komponente können Tarifpreise verschiedener Typen abgebildet werden
  *
@@ -13,49 +17,126 @@ package bo4e.com;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/TarifpreispositionProOrt.json>`_
  */
 public class TarifpreispositionProOrt extends COM {
-    private String netznr;
-    private String ort;
-    private String postleitzahl;
-    private TarifpreisstaffelProOrt[] preisstaffeln;
-
-    /**
-     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
-     *
-     * # pylint: disable=duplicate-code
-     * model_config = ConfigDict(
-     * alias_generator=camelize,
-     * populate_by_name=True,
-     * extra="allow",
-     * # json_encoders is deprecated, but there is no easy-to-use alternative. The best way
-     * would be to create
-     * # an annotated version of Decimal, but you would have to use it everywhere in the
-     * pydantic models.
-     * # See this issue for more info: https://github.com/pydantic/pydantic/issues/6375
-     * json_encoders={Decimal: str},
-     * )
-     */
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
     /**
      * ene't-Netznummer des Netzes in dem der Preis gilt
      */
-    public String getNetznr() { return netznr; }
-    public void setNetznr(String value) { this.netznr = value; }
-
+    private String netznr;
     /**
      * Ort für den der Preis gilt
      */
-    public String getOrt() { return ort; }
-    public void setOrt(String value) { this.ort = value; }
-
+    private String ort;
     /**
      * Postleitzahl des Ortes für den der Preis gilt
      */
-    public String getPostleitzahl() { return postleitzahl; }
-    public void setPostleitzahl(String value) { this.postleitzahl = value; }
+    private String postleitzahl;
+    private List<TarifpreisstaffelProOrt> preisstaffeln;
 
-    public TarifpreisstaffelProOrt[] getPreisstaffeln() { return preisstaffeln; }
-    public void setPreisstaffeln(TarifpreisstaffelProOrt[] value) { this.preisstaffeln = value; }
+    public TarifpreispositionProOrt() {
+    }
 
+    private TarifpreispositionProOrt(TarifpreispositionProOrtBuilder builder) {
+        super(builder);
+        this.netznr = builder.netznr;
+        this.ort = builder.ort;
+        this.postleitzahl = builder.postleitzahl;
+        this.preisstaffeln = builder.preisstaffeln;
+    }
+
+    public String getNetznr() {
+        return netznr;
+    }
+
+    public void setNetznr(String netznr) {
+        this.netznr = netznr;
+    }
+
+    public String getOrt() {
+        return ort;
+    }
+
+    public void setOrt(String ort) {
+        this.ort = ort;
+    }
+
+    public String getPostleitzahl() {
+        return postleitzahl;
+    }
+
+    public void setPostleitzahl(String postleitzahl) {
+        this.postleitzahl = postleitzahl;
+    }
+
+    public List<TarifpreisstaffelProOrt> getPreisstaffeln() {
+        return preisstaffeln;
+    }
+
+    public void setPreisstaffeln(List<TarifpreisstaffelProOrt> preisstaffeln) {
+        this.preisstaffeln = preisstaffeln;
+    }
+
+    public static class TarifpreispositionProOrtBuilder extends COMBuilder {
+        /**
+         * ene't-Netznummer des Netzes in dem der Preis gilt
+         */
+        private String netznr;
+        /**
+         * Ort für den der Preis gilt
+         */
+        private String ort;
+        /**
+         * Postleitzahl des Ortes für den der Preis gilt
+         */
+        private String postleitzahl;
+        private List<TarifpreisstaffelProOrt> preisstaffeln;
+    
+        public String getNetznr() {
+            return netznr;
+        }
+    
+        public TarifpreispositionProOrtBuilder setNetznr(String netznr) {
+            this.netznr = netznr;
+            return this;
+        }
+    
+        public String getOrt() {
+            return ort;
+        }
+    
+        public TarifpreispositionProOrtBuilder setOrt(String ort) {
+            this.ort = ort;
+            return this;
+        }
+    
+        public String getPostleitzahl() {
+            return postleitzahl;
+        }
+    
+        public TarifpreispositionProOrtBuilder setPostleitzahl(String postleitzahl) {
+            this.postleitzahl = postleitzahl;
+            return this;
+        }
+    
+        public List<TarifpreisstaffelProOrt> getPreisstaffeln() {
+            return preisstaffeln;
+        }
+    
+        public TarifpreispositionProOrtBuilder setPreisstaffeln(List<TarifpreisstaffelProOrt> preisstaffeln) {
+            this.preisstaffeln = preisstaffeln;
+            return this;
+        }
+    
+        public TarifpreispositionProOrtBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public TarifpreispositionProOrtBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public TarifpreispositionProOrt build() {
+            return new TarifpreispositionProOrt(this);
+        }
+    }
 }

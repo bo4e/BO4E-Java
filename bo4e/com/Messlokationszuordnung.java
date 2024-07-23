@@ -1,7 +1,10 @@
 package bo4e.com;
 
+import bo4e.ZusatzAttribut;
 import bo4e.enums.ArithmetischeOperation;
+
 import java.time.OffsetDateTime;
+import java.util.List;
 
 /**
  * Mit dieser Komponente werden Messlokationen zu Marktlokationen zugeordnet.
@@ -20,50 +23,129 @@ import java.time.OffsetDateTime;
  */
 public class Messlokationszuordnung extends COM {
     private ArithmetischeOperation arithmetik;
-    private OffsetDateTime gueltigBis;
-    private OffsetDateTime gueltigSeit;
-    private String messlokationsId;
-
-    /**
-     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
-     *
-     * # pylint: disable=duplicate-code
-     * model_config = ConfigDict(
-     * alias_generator=camelize,
-     * populate_by_name=True,
-     * extra="allow",
-     * # json_encoders is deprecated, but there is no easy-to-use alternative. The best way
-     * would be to create
-     * # an annotated version of Decimal, but you would have to use it everywhere in the
-     * pydantic models.
-     * # See this issue for more info: https://github.com/pydantic/pydantic/issues/6375
-     * json_encoders={Decimal: str},
-     * )
-     */
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
-    public ArithmetischeOperation getArithmetik() { return arithmetik; }
-    public void setArithmetik(ArithmetischeOperation value) { this.arithmetik = value; }
-
     /**
      * exklusives Endedatum
      */
-    public OffsetDateTime getGueltigBis() { return gueltigBis; }
-    public void setGueltigBis(OffsetDateTime value) { this.gueltigBis = value; }
-
+    private OffsetDateTime gueltigBis;
     /**
      * gueltig_bis: Optional[pydantic.AwareDatetime] = None
      */
-    public OffsetDateTime getGueltigSeit() { return gueltigSeit; }
-    public void setGueltigSeit(OffsetDateTime value) { this.gueltigSeit = value; }
-
+    private OffsetDateTime gueltigSeit;
     /**
      * arithmetik: Optional["ArithmetischeOperation"] = None
      *
      * gueltig_seit: Optional[pydantic.AwareDatetime] = None
      */
-    public String getMesslokationsId() { return messlokationsId; }
-    public void setMesslokationsId(String value) { this.messlokationsId = value; }
+    private String messlokationsId;
 
+    public Messlokationszuordnung() {
+    }
+
+    private Messlokationszuordnung(MesslokationszuordnungBuilder builder) {
+        super(builder);
+        this.arithmetik = builder.arithmetik;
+        this.gueltigBis = builder.gueltigBis;
+        this.gueltigSeit = builder.gueltigSeit;
+        this.messlokationsId = builder.messlokationsId;
+    }
+
+    public ArithmetischeOperation getArithmetik() {
+        return arithmetik;
+    }
+
+    public void setArithmetik(ArithmetischeOperation arithmetik) {
+        this.arithmetik = arithmetik;
+    }
+
+    public OffsetDateTime getGueltigBis() {
+        return gueltigBis;
+    }
+
+    public void setGueltigBis(OffsetDateTime gueltigBis) {
+        this.gueltigBis = gueltigBis;
+    }
+
+    public OffsetDateTime getGueltigSeit() {
+        return gueltigSeit;
+    }
+
+    public void setGueltigSeit(OffsetDateTime gueltigSeit) {
+        this.gueltigSeit = gueltigSeit;
+    }
+
+    public String getMesslokationsId() {
+        return messlokationsId;
+    }
+
+    public void setMesslokationsId(String messlokationsId) {
+        this.messlokationsId = messlokationsId;
+    }
+
+    public static class MesslokationszuordnungBuilder extends COMBuilder {
+        private ArithmetischeOperation arithmetik;
+        /**
+         * exklusives Endedatum
+         */
+        private OffsetDateTime gueltigBis;
+        /**
+         * gueltig_bis: Optional[pydantic.AwareDatetime] = None
+         */
+        private OffsetDateTime gueltigSeit;
+        /**
+         * arithmetik: Optional["ArithmetischeOperation"] = None
+         *
+         * gueltig_seit: Optional[pydantic.AwareDatetime] = None
+         */
+        private String messlokationsId;
+    
+        public ArithmetischeOperation getArithmetik() {
+            return arithmetik;
+        }
+    
+        public MesslokationszuordnungBuilder setArithmetik(ArithmetischeOperation arithmetik) {
+            this.arithmetik = arithmetik;
+            return this;
+        }
+    
+        public OffsetDateTime getGueltigBis() {
+            return gueltigBis;
+        }
+    
+        public MesslokationszuordnungBuilder setGueltigBis(OffsetDateTime gueltigBis) {
+            this.gueltigBis = gueltigBis;
+            return this;
+        }
+    
+        public OffsetDateTime getGueltigSeit() {
+            return gueltigSeit;
+        }
+    
+        public MesslokationszuordnungBuilder setGueltigSeit(OffsetDateTime gueltigSeit) {
+            this.gueltigSeit = gueltigSeit;
+            return this;
+        }
+    
+        public String getMesslokationsId() {
+            return messlokationsId;
+        }
+    
+        public MesslokationszuordnungBuilder setMesslokationsId(String messlokationsId) {
+            this.messlokationsId = messlokationsId;
+            return this;
+        }
+    
+        public MesslokationszuordnungBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public MesslokationszuordnungBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public Messlokationszuordnung build() {
+            return new Messlokationszuordnung(this);
+        }
+    }
 }

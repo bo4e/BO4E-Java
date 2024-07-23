@@ -1,8 +1,11 @@
 package bo4e.com;
 
-import bo4e.enums.Sparte;
+import bo4e.ZusatzAttribut;
 import bo4e.enums.Oekolabel;
 import bo4e.enums.Oekozertifikat;
+import bo4e.enums.Sparte;
+
+import java.util.List;
 
 /**
  * Zusammensetzung der gelieferten Energie aus den verschiedenen Primärenergieformen.
@@ -16,108 +19,340 @@ import bo4e.enums.Oekozertifikat;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Energiemix.json>`_
  */
 public class Energiemix extends COM {
-    private Energieherkunft[] anteil;
-    private Double atommuell;
-    private String bemerkung;
-    private String bezeichnung;
-    private Double co2Emission;
-    private Sparte energieart;
-    private Long energiemixnummer;
-    private Long gueltigkeitsjahr;
-    private Boolean istInOekoTopTen;
-    private Oekolabel[] oekolabel;
-    private Oekozertifikat[] oekozertifikate;
-    private String website;
-
-    /**
-     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
-     *
-     * # pylint: disable=duplicate-code
-     * model_config = ConfigDict(
-     * alias_generator=camelize,
-     * populate_by_name=True,
-     * extra="allow",
-     * # json_encoders is deprecated, but there is no easy-to-use alternative. The best way
-     * would be to create
-     * # an annotated version of Decimal, but you would have to use it everywhere in the
-     * pydantic models.
-     * # See this issue for more info: https://github.com/pydantic/pydantic/issues/6375
-     * json_encoders={Decimal: str},
-     * )
-     */
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
     /**
      * Anteile der jeweiligen Erzeugungsart
      */
-    public Energieherkunft[] getAnteil() { return anteil; }
-    public void setAnteil(Energieherkunft[] value) { this.anteil = value; }
-
+    private List<Energieherkunft> anteil;
     /**
      * Höhe des erzeugten Atommülls in g/kWh
      */
-    public Double getAtommuell() { return atommuell; }
-    public void setAtommuell(Double value) { this.atommuell = value; }
-
+    private Double atommuell;
     /**
      * Bemerkung zum Energiemix
      */
-    public String getBemerkung() { return bemerkung; }
-    public void setBemerkung(String value) { this.bemerkung = value; }
-
+    private String bemerkung;
     /**
      * Bezeichnung des Energiemix
      */
-    public String getBezeichnung() { return bezeichnung; }
-    public void setBezeichnung(String value) { this.bezeichnung = value; }
-
+    private String bezeichnung;
     /**
      * Höhe des erzeugten CO2-Ausstosses in g/kWh
      */
-    public Double getCo2Emission() { return co2Emission; }
-    public void setCo2Emission(Double value) { this.co2Emission = value; }
-
+    private Double co2Emission;
     /**
      * Strom oder Gas etc.
      */
-    public Sparte getEnergieart() { return energieart; }
-    public void setEnergieart(Sparte value) { this.energieart = value; }
-
+    private Sparte energieart;
     /**
      * Eindeutige Nummer zur Identifizierung des Energiemixes
      */
-    public Long getEnergiemixnummer() { return energiemixnummer; }
-    public void setEnergiemixnummer(Long value) { this.energiemixnummer = value; }
-
+    private Long energiemixnummer;
     /**
      * Jahr, für das der Energiemix gilt
      */
-    public Long getGueltigkeitsjahr() { return gueltigkeitsjahr; }
-    public void setGueltigkeitsjahr(Long value) { this.gueltigkeitsjahr = value; }
-
+    private Long gueltigkeitsjahr;
     /**
      * Kennzeichen, ob der Versorger zu den Öko Top Ten gehört
      */
-    public Boolean getIstInOekoTopTen() { return istInOekoTopTen; }
-    public void setIstInOekoTopTen(Boolean value) { this.istInOekoTopTen = value; }
-
+    private Boolean istInOekoTopTen;
     /**
      * Ökolabel für den Energiemix
      */
-    public Oekolabel[] getOekolabel() { return oekolabel; }
-    public void setOekolabel(Oekolabel[] value) { this.oekolabel = value; }
-
+    private List<Oekolabel> oekolabel;
     /**
      * Zertifikate für den Energiemix
      */
-    public Oekozertifikat[] getOekozertifikate() { return oekozertifikate; }
-    public void setOekozertifikate(Oekozertifikat[] value) { this.oekozertifikate = value; }
-
+    private List<Oekozertifikat> oekozertifikate;
     /**
      * Internetseite, auf der die Strommixdaten veröffentlicht sind
      */
-    public String getWebsite() { return website; }
-    public void setWebsite(String value) { this.website = value; }
+    private String website;
 
+    public Energiemix() {
+    }
+
+    private Energiemix(EnergiemixBuilder builder) {
+        super(builder);
+        this.anteil = builder.anteil;
+        this.atommuell = builder.atommuell;
+        this.bemerkung = builder.bemerkung;
+        this.bezeichnung = builder.bezeichnung;
+        this.co2Emission = builder.co2Emission;
+        this.energieart = builder.energieart;
+        this.energiemixnummer = builder.energiemixnummer;
+        this.gueltigkeitsjahr = builder.gueltigkeitsjahr;
+        this.istInOekoTopTen = builder.istInOekoTopTen;
+        this.oekolabel = builder.oekolabel;
+        this.oekozertifikate = builder.oekozertifikate;
+        this.website = builder.website;
+    }
+
+    public List<Energieherkunft> getAnteil() {
+        return anteil;
+    }
+
+    public void setAnteil(List<Energieherkunft> anteil) {
+        this.anteil = anteil;
+    }
+
+    public Double getAtommuell() {
+        return atommuell;
+    }
+
+    public void setAtommuell(Double atommuell) {
+        this.atommuell = atommuell;
+    }
+
+    public String getBemerkung() {
+        return bemerkung;
+    }
+
+    public void setBemerkung(String bemerkung) {
+        this.bemerkung = bemerkung;
+    }
+
+    public String getBezeichnung() {
+        return bezeichnung;
+    }
+
+    public void setBezeichnung(String bezeichnung) {
+        this.bezeichnung = bezeichnung;
+    }
+
+    public Double getCo2Emission() {
+        return co2Emission;
+    }
+
+    public void setCo2Emission(Double co2Emission) {
+        this.co2Emission = co2Emission;
+    }
+
+    public Sparte getEnergieart() {
+        return energieart;
+    }
+
+    public void setEnergieart(Sparte energieart) {
+        this.energieart = energieart;
+    }
+
+    public Long getEnergiemixnummer() {
+        return energiemixnummer;
+    }
+
+    public void setEnergiemixnummer(Long energiemixnummer) {
+        this.energiemixnummer = energiemixnummer;
+    }
+
+    public Long getGueltigkeitsjahr() {
+        return gueltigkeitsjahr;
+    }
+
+    public void setGueltigkeitsjahr(Long gueltigkeitsjahr) {
+        this.gueltigkeitsjahr = gueltigkeitsjahr;
+    }
+
+    public Boolean getIstInOekoTopTen() {
+        return istInOekoTopTen;
+    }
+
+    public void setIstInOekoTopTen(Boolean istInOekoTopTen) {
+        this.istInOekoTopTen = istInOekoTopTen;
+    }
+
+    public List<Oekolabel> getOekolabel() {
+        return oekolabel;
+    }
+
+    public void setOekolabel(List<Oekolabel> oekolabel) {
+        this.oekolabel = oekolabel;
+    }
+
+    public List<Oekozertifikat> getOekozertifikate() {
+        return oekozertifikate;
+    }
+
+    public void setOekozertifikate(List<Oekozertifikat> oekozertifikate) {
+        this.oekozertifikate = oekozertifikate;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public static class EnergiemixBuilder extends COMBuilder {
+        /**
+         * Anteile der jeweiligen Erzeugungsart
+         */
+        private List<Energieherkunft> anteil;
+        /**
+         * Höhe des erzeugten Atommülls in g/kWh
+         */
+        private Double atommuell;
+        /**
+         * Bemerkung zum Energiemix
+         */
+        private String bemerkung;
+        /**
+         * Bezeichnung des Energiemix
+         */
+        private String bezeichnung;
+        /**
+         * Höhe des erzeugten CO2-Ausstosses in g/kWh
+         */
+        private Double co2Emission;
+        /**
+         * Strom oder Gas etc.
+         */
+        private Sparte energieart;
+        /**
+         * Eindeutige Nummer zur Identifizierung des Energiemixes
+         */
+        private Long energiemixnummer;
+        /**
+         * Jahr, für das der Energiemix gilt
+         */
+        private Long gueltigkeitsjahr;
+        /**
+         * Kennzeichen, ob der Versorger zu den Öko Top Ten gehört
+         */
+        private Boolean istInOekoTopTen;
+        /**
+         * Ökolabel für den Energiemix
+         */
+        private List<Oekolabel> oekolabel;
+        /**
+         * Zertifikate für den Energiemix
+         */
+        private List<Oekozertifikat> oekozertifikate;
+        /**
+         * Internetseite, auf der die Strommixdaten veröffentlicht sind
+         */
+        private String website;
+    
+        public List<Energieherkunft> getAnteil() {
+            return anteil;
+        }
+    
+        public EnergiemixBuilder setAnteil(List<Energieherkunft> anteil) {
+            this.anteil = anteil;
+            return this;
+        }
+    
+        public Double getAtommuell() {
+            return atommuell;
+        }
+    
+        public EnergiemixBuilder setAtommuell(Double atommuell) {
+            this.atommuell = atommuell;
+            return this;
+        }
+    
+        public String getBemerkung() {
+            return bemerkung;
+        }
+    
+        public EnergiemixBuilder setBemerkung(String bemerkung) {
+            this.bemerkung = bemerkung;
+            return this;
+        }
+    
+        public String getBezeichnung() {
+            return bezeichnung;
+        }
+    
+        public EnergiemixBuilder setBezeichnung(String bezeichnung) {
+            this.bezeichnung = bezeichnung;
+            return this;
+        }
+    
+        public Double getCo2Emission() {
+            return co2Emission;
+        }
+    
+        public EnergiemixBuilder setCo2Emission(Double co2Emission) {
+            this.co2Emission = co2Emission;
+            return this;
+        }
+    
+        public Sparte getEnergieart() {
+            return energieart;
+        }
+    
+        public EnergiemixBuilder setEnergieart(Sparte energieart) {
+            this.energieart = energieart;
+            return this;
+        }
+    
+        public Long getEnergiemixnummer() {
+            return energiemixnummer;
+        }
+    
+        public EnergiemixBuilder setEnergiemixnummer(Long energiemixnummer) {
+            this.energiemixnummer = energiemixnummer;
+            return this;
+        }
+    
+        public Long getGueltigkeitsjahr() {
+            return gueltigkeitsjahr;
+        }
+    
+        public EnergiemixBuilder setGueltigkeitsjahr(Long gueltigkeitsjahr) {
+            this.gueltigkeitsjahr = gueltigkeitsjahr;
+            return this;
+        }
+    
+        public Boolean getIstInOekoTopTen() {
+            return istInOekoTopTen;
+        }
+    
+        public EnergiemixBuilder setIstInOekoTopTen(Boolean istInOekoTopTen) {
+            this.istInOekoTopTen = istInOekoTopTen;
+            return this;
+        }
+    
+        public List<Oekolabel> getOekolabel() {
+            return oekolabel;
+        }
+    
+        public EnergiemixBuilder setOekolabel(List<Oekolabel> oekolabel) {
+            this.oekolabel = oekolabel;
+            return this;
+        }
+    
+        public List<Oekozertifikat> getOekozertifikate() {
+            return oekozertifikate;
+        }
+    
+        public EnergiemixBuilder setOekozertifikate(List<Oekozertifikat> oekozertifikate) {
+            this.oekozertifikate = oekozertifikate;
+            return this;
+        }
+    
+        public String getWebsite() {
+            return website;
+        }
+    
+        public EnergiemixBuilder setWebsite(String website) {
+            this.website = website;
+            return this;
+        }
+    
+        public EnergiemixBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public EnergiemixBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public Energiemix build() {
+            return new Energiemix(this);
+        }
+    }
 }

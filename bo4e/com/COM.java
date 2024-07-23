@@ -2,6 +2,8 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 
+import java.util.List;
+
 /**
  * base class for all components
  *
@@ -14,15 +16,67 @@ import bo4e.ZusatzAttribut;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/COM.json>`_
  */
 public abstract class COM {
-    private String _id;
-    private final String _version = "202401.2.1";
-    private ZusatzAttribut[] zusatzAttribute;
+    /**
+     * Hier können IDs anderer Systeme hinterlegt werden (z.B. eine SAP-GP-Nummer oder eine GUID)
+     */
+    private String id;
+    /**
+     * Version der BO-Struktur aka "fachliche Versionierung"
+     */
+    private final String boVersion = "202401.2.1";
+    private List<ZusatzAttribut> zusatzAttribute;
 
-    public String getId() { return _id; }
-    public void setId(String value) { this._id = value; }
+    public COM() {
+    }
 
-    public String getSchemaVersion() { return _version; }
+    protected COM(COMBuilder builder) {
+        this.id = builder.id;
+        this.zusatzAttribute = builder.zusatzAttribute;
+    }
 
-    public ZusatzAttribut[] getZusatzAttribute() { return zusatzAttribute; }
-    public void setZusatzAttribute(ZusatzAttribut[] value) { this.zusatzAttribute = value; }
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String value) {
+        this.id = value;
+    }
+
+    public String getBoVersion() {
+        return boVersion;
+    }
+
+    public List<ZusatzAttribut> getZusatzAttribute() {
+        return zusatzAttribute;
+    }
+
+    public void setZusatzAttribute(List<ZusatzAttribut> value) {
+        this.zusatzAttribute = value;
+    }
+
+    public abstract static class COMBuilder {
+        /**
+         * Hier können IDs anderer Systeme hinterlegt werden (z.B. eine SAP-GP-Nummer oder eine GUID)
+         */
+        private String id;
+        private List<ZusatzAttribut> zusatzAttribute;
+
+        public String getId() {
+            return id;
+        }
+
+        public COMBuilder setId(String value) {
+            this.id = value;
+            return this;
+        }
+
+        public List<ZusatzAttribut> getZusatzAttribute() {
+            return zusatzAttribute;
+        }
+
+        public COMBuilder setZusatzAttribute(List<ZusatzAttribut> value) {
+            this.zusatzAttribute = value;
+            return this;
+        }
+    }
 }

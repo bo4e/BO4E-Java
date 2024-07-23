@@ -1,7 +1,10 @@
 package bo4e.com;
 
+import bo4e.ZusatzAttribut;
 import bo4e.enums.Steuerkennzeichen;
 import bo4e.enums.Waehrungscode;
+
+import java.util.List;
 
 /**
  * Abbildung eines Steuerbetrages.
@@ -16,52 +19,132 @@ import bo4e.enums.Waehrungscode;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Steuerbetrag.json>`_
  */
 public class Steuerbetrag extends COM {
-    private Double basiswert;
-    private Steuerkennzeichen steuerkennzeichen;
-    private Double steuerwert;
-    private Waehrungscode waehrung;
-
-    /**
-     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
-     *
-     * # pylint: disable=duplicate-code
-     * model_config = ConfigDict(
-     * alias_generator=camelize,
-     * populate_by_name=True,
-     * extra="allow",
-     * # json_encoders is deprecated, but there is no easy-to-use alternative. The best way
-     * would be to create
-     * # an annotated version of Decimal, but you would have to use it everywhere in the
-     * pydantic models.
-     * # See this issue for more info: https://github.com/pydantic/pydantic/issues/6375
-     * json_encoders={Decimal: str},
-     * )
-     */
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
     /**
      * Nettobetrag für den die Steuer berechnet wurde. Z.B. 100
      */
-    public Double getBasiswert() { return basiswert; }
-    public void setBasiswert(Double value) { this.basiswert = value; }
-
+    private Double basiswert;
     /**
      * Kennzeichnung des Steuersatzes, bzw. Verfahrens.
      */
-    public Steuerkennzeichen getSteuerkennzeichen() { return steuerkennzeichen; }
-    public void setSteuerkennzeichen(Steuerkennzeichen value) { this.steuerkennzeichen = value; }
-
+    private Steuerkennzeichen steuerkennzeichen;
     /**
      * Aus dem Basiswert berechnete Steuer. Z.B. 19 (bei UST_19)
      */
-    public Double getSteuerwert() { return steuerwert; }
-    public void setSteuerwert(Double value) { this.steuerwert = value; }
-
+    private Double steuerwert;
     /**
      * Währung. Z.B. Euro.
      */
-    public Waehrungscode getWaehrung() { return waehrung; }
-    public void setWaehrung(Waehrungscode value) { this.waehrung = value; }
+    private Waehrungscode waehrung;
 
+    public Steuerbetrag() {
+    }
+
+    private Steuerbetrag(SteuerbetragBuilder builder) {
+        super(builder);
+        this.basiswert = builder.basiswert;
+        this.steuerkennzeichen = builder.steuerkennzeichen;
+        this.steuerwert = builder.steuerwert;
+        this.waehrung = builder.waehrung;
+    }
+
+    public Double getBasiswert() {
+        return basiswert;
+    }
+
+    public void setBasiswert(Double basiswert) {
+        this.basiswert = basiswert;
+    }
+
+    public Steuerkennzeichen getSteuerkennzeichen() {
+        return steuerkennzeichen;
+    }
+
+    public void setSteuerkennzeichen(Steuerkennzeichen steuerkennzeichen) {
+        this.steuerkennzeichen = steuerkennzeichen;
+    }
+
+    public Double getSteuerwert() {
+        return steuerwert;
+    }
+
+    public void setSteuerwert(Double steuerwert) {
+        this.steuerwert = steuerwert;
+    }
+
+    public Waehrungscode getWaehrung() {
+        return waehrung;
+    }
+
+    public void setWaehrung(Waehrungscode waehrung) {
+        this.waehrung = waehrung;
+    }
+
+    public static class SteuerbetragBuilder extends COMBuilder {
+        /**
+         * Nettobetrag für den die Steuer berechnet wurde. Z.B. 100
+         */
+        private Double basiswert;
+        /**
+         * Kennzeichnung des Steuersatzes, bzw. Verfahrens.
+         */
+        private Steuerkennzeichen steuerkennzeichen;
+        /**
+         * Aus dem Basiswert berechnete Steuer. Z.B. 19 (bei UST_19)
+         */
+        private Double steuerwert;
+        /**
+         * Währung. Z.B. Euro.
+         */
+        private Waehrungscode waehrung;
+    
+        public Double getBasiswert() {
+            return basiswert;
+        }
+    
+        public SteuerbetragBuilder setBasiswert(Double basiswert) {
+            this.basiswert = basiswert;
+            return this;
+        }
+    
+        public Steuerkennzeichen getSteuerkennzeichen() {
+            return steuerkennzeichen;
+        }
+    
+        public SteuerbetragBuilder setSteuerkennzeichen(Steuerkennzeichen steuerkennzeichen) {
+            this.steuerkennzeichen = steuerkennzeichen;
+            return this;
+        }
+    
+        public Double getSteuerwert() {
+            return steuerwert;
+        }
+    
+        public SteuerbetragBuilder setSteuerwert(Double steuerwert) {
+            this.steuerwert = steuerwert;
+            return this;
+        }
+    
+        public Waehrungscode getWaehrung() {
+            return waehrung;
+        }
+    
+        public SteuerbetragBuilder setWaehrung(Waehrungscode waehrung) {
+            this.waehrung = waehrung;
+            return this;
+        }
+    
+        public SteuerbetragBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public SteuerbetragBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public Steuerbetrag build() {
+            return new Steuerbetrag(this);
+        }
+    }
 }

@@ -1,7 +1,10 @@
 package bo4e.com;
 
+import bo4e.ZusatzAttribut;
 import bo4e.enums.Gueltigkeitstyp;
 import bo4e.enums.Regionskriteriumtyp;
+
+import java.util.List;
 
 /**
  * Komponente zur Abbildung eines Regionskriteriums
@@ -16,47 +19,110 @@ import bo4e.enums.Regionskriteriumtyp;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Regionskriterium.json>`_
  */
 public class Regionskriterium extends COM {
-    private Gueltigkeitstyp gueltigkeitstyp;
-    private Regionskriteriumtyp regionskriteriumtyp;
-    private String wert;
-
-    /**
-     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
-     *
-     * # pylint: disable=duplicate-code
-     * model_config = ConfigDict(
-     * alias_generator=camelize,
-     * populate_by_name=True,
-     * extra="allow",
-     * # json_encoders is deprecated, but there is no easy-to-use alternative. The best way
-     * would be to create
-     * # an annotated version of Decimal, but you would have to use it everywhere in the
-     * pydantic models.
-     * # See this issue for more info: https://github.com/pydantic/pydantic/issues/6375
-     * json_encoders={Decimal: str},
-     * )
-     */
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
     /**
      * Hier wird festgelegt, ob es sich um ein einschließendes oder ausschließendes Kriterium
      * handelt.
      */
-    public Gueltigkeitstyp getGueltigkeitstyp() { return gueltigkeitstyp; }
-    public void setGueltigkeitstyp(Gueltigkeitstyp value) { this.gueltigkeitstyp = value; }
-
+    private Gueltigkeitstyp gueltigkeitstyp;
     /**
      * Hier wird das Kriterium selbst angegeben, z.B. Bundesland.
      */
-    public Regionskriteriumtyp getRegionskriteriumtyp() { return regionskriteriumtyp; }
-    public void setRegionskriteriumtyp(Regionskriteriumtyp value) { this.regionskriteriumtyp = value; }
-
+    private Regionskriteriumtyp regionskriteriumtyp;
     /**
      * Der Wert, den das Kriterium annehmen kann, z.B. NRW.
      * Im Falle des Regionskriteriumstyp BUNDESWEIT spielt dieser Wert keine Rolle.
      */
-    public String getWert() { return wert; }
-    public void setWert(String value) { this.wert = value; }
+    private String wert;
 
+    public Regionskriterium() {
+    }
+
+    private Regionskriterium(RegionskriteriumBuilder builder) {
+        super(builder);
+        this.gueltigkeitstyp = builder.gueltigkeitstyp;
+        this.regionskriteriumtyp = builder.regionskriteriumtyp;
+        this.wert = builder.wert;
+    }
+
+    public Gueltigkeitstyp getGueltigkeitstyp() {
+        return gueltigkeitstyp;
+    }
+
+    public void setGueltigkeitstyp(Gueltigkeitstyp gueltigkeitstyp) {
+        this.gueltigkeitstyp = gueltigkeitstyp;
+    }
+
+    public Regionskriteriumtyp getRegionskriteriumtyp() {
+        return regionskriteriumtyp;
+    }
+
+    public void setRegionskriteriumtyp(Regionskriteriumtyp regionskriteriumtyp) {
+        this.regionskriteriumtyp = regionskriteriumtyp;
+    }
+
+    public String getWert() {
+        return wert;
+    }
+
+    public void setWert(String wert) {
+        this.wert = wert;
+    }
+
+    public static class RegionskriteriumBuilder extends COMBuilder {
+        /**
+         * Hier wird festgelegt, ob es sich um ein einschließendes oder ausschließendes Kriterium
+         * handelt.
+         */
+        private Gueltigkeitstyp gueltigkeitstyp;
+        /**
+         * Hier wird das Kriterium selbst angegeben, z.B. Bundesland.
+         */
+        private Regionskriteriumtyp regionskriteriumtyp;
+        /**
+         * Der Wert, den das Kriterium annehmen kann, z.B. NRW.
+         * Im Falle des Regionskriteriumstyp BUNDESWEIT spielt dieser Wert keine Rolle.
+         */
+        private String wert;
+    
+        public Gueltigkeitstyp getGueltigkeitstyp() {
+            return gueltigkeitstyp;
+        }
+    
+        public RegionskriteriumBuilder setGueltigkeitstyp(Gueltigkeitstyp gueltigkeitstyp) {
+            this.gueltigkeitstyp = gueltigkeitstyp;
+            return this;
+        }
+    
+        public Regionskriteriumtyp getRegionskriteriumtyp() {
+            return regionskriteriumtyp;
+        }
+    
+        public RegionskriteriumBuilder setRegionskriteriumtyp(Regionskriteriumtyp regionskriteriumtyp) {
+            this.regionskriteriumtyp = regionskriteriumtyp;
+            return this;
+        }
+    
+        public String getWert() {
+            return wert;
+        }
+    
+        public RegionskriteriumBuilder setWert(String wert) {
+            this.wert = wert;
+            return this;
+        }
+    
+        public RegionskriteriumBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public RegionskriteriumBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public Regionskriterium build() {
+            return new Regionskriterium(this);
+        }
+    }
 }

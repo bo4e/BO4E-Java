@@ -1,9 +1,12 @@
 package bo4e.bo;
 
-import bo4e.enums.Typ;
-import bo4e.com.Zeitraum;
-import bo4e.com.Fremdkostenblock;
+import bo4e.ZusatzAttribut;
 import bo4e.com.Betrag;
+import bo4e.com.Fremdkostenblock;
+import bo4e.com.Zeitraum;
+import bo4e.enums.Typ;
+
+import java.util.List;
 
 /**
  * Mit diesem BO werden die Fremdkosten, beispielsweise für eine Angebotserstellung oder
@@ -21,39 +24,116 @@ import bo4e.com.Betrag;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Fremdkosten.json>`_
  */
 public class Fremdkosten extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.FREMDKOSTEN;
+    /**
+     * Typ des Geschaeftsobjekts
+     */
+    private final Typ typ = Typ.FREMDKOSTEN;
+    /**
+     * Für diesen Zeitraum wurden die Kosten ermittelt
+     */
     private Zeitraum gueltigkeit;
-    private Fremdkostenblock[] kostenbloecke;
-    private Betrag summeKosten;
-
-    /**
-     * Hier können IDs anderer Systeme hinterlegt werden (z.B. eine SAP-GP-Nummer oder eine GUID)
-     */
-    /**
-     * Für diesen Zeitraum wurden die Kosten ermittelt
-     */
-    public Typ getTyp() { return _typ; }
-
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
-    /**
-     * Für diesen Zeitraum wurden die Kosten ermittelt
-     */
-    public Zeitraum getGueltigkeit() { return gueltigkeit; }
-    public void setGueltigkeit(Zeitraum value) { this.gueltigkeit = value; }
-
     /**
      * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
      * Steuern etc
      */
-    public Fremdkostenblock[] getKostenbloecke() { return kostenbloecke; }
-    public void setKostenbloecke(Fremdkostenblock[] value) { this.kostenbloecke = value; }
-
+    private List<Fremdkostenblock> kostenbloecke;
     /**
      * Die Gesamtsumme über alle Kostenblöcke und -positionen
      */
-    public Betrag getSummeKosten() { return summeKosten; }
-    public void setSummeKosten(Betrag value) { this.summeKosten = value; }
+    private Betrag summeKosten;
 
+    public Fremdkosten() {
+    }
+
+    private Fremdkosten(FremdkostenBuilder builder) {
+        super(builder);
+        this.gueltigkeit = builder.gueltigkeit;
+        this.kostenbloecke = builder.kostenbloecke;
+        this.summeKosten = builder.summeKosten;
+    }
+
+    public Typ getTyp() {
+        return typ;
+    }
+
+    public Zeitraum getGueltigkeit() {
+        return gueltigkeit;
+    }
+
+    public void setGueltigkeit(Zeitraum gueltigkeit) {
+        this.gueltigkeit = gueltigkeit;
+    }
+
+    public List<Fremdkostenblock> getKostenbloecke() {
+        return kostenbloecke;
+    }
+
+    public void setKostenbloecke(List<Fremdkostenblock> kostenbloecke) {
+        this.kostenbloecke = kostenbloecke;
+    }
+
+    public Betrag getSummeKosten() {
+        return summeKosten;
+    }
+
+    public void setSummeKosten(Betrag summeKosten) {
+        this.summeKosten = summeKosten;
+    }
+
+    public static class FremdkostenBuilder extends GeschaeftsobjektBuilder {
+        /**
+         * Für diesen Zeitraum wurden die Kosten ermittelt
+         */
+        private Zeitraum gueltigkeit;
+        /**
+         * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
+         * Steuern etc
+         */
+        private List<Fremdkostenblock> kostenbloecke;
+        /**
+         * Die Gesamtsumme über alle Kostenblöcke und -positionen
+         */
+        private Betrag summeKosten;
+    
+        public Zeitraum getGueltigkeit() {
+            return gueltigkeit;
+        }
+    
+        public FremdkostenBuilder setGueltigkeit(Zeitraum gueltigkeit) {
+            this.gueltigkeit = gueltigkeit;
+            return this;
+        }
+    
+        public List<Fremdkostenblock> getKostenbloecke() {
+            return kostenbloecke;
+        }
+    
+        public FremdkostenBuilder setKostenbloecke(List<Fremdkostenblock> kostenbloecke) {
+            this.kostenbloecke = kostenbloecke;
+            return this;
+        }
+    
+        public Betrag getSummeKosten() {
+            return summeKosten;
+        }
+    
+        public FremdkostenBuilder setSummeKosten(Betrag summeKosten) {
+            this.summeKosten = summeKosten;
+            return this;
+        }
+    
+        public FremdkostenBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public FremdkostenBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public Fremdkosten build() {
+            return new Fremdkosten(this);
+        }
+    }
 }

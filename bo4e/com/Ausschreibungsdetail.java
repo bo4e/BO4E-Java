@@ -1,6 +1,9 @@
 package bo4e.com;
 
+import bo4e.ZusatzAttribut;
 import bo4e.enums.Zaehlertyp;
+
+import java.util.List;
 
 /**
  * Die Komponente Ausschreibungsdetail wird verwendet um die Informationen zu einer
@@ -17,131 +20,422 @@ import bo4e.enums.Zaehlertyp;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Ausschreibungsdetail.json>`_
  */
 public class Ausschreibungsdetail extends COM {
-    private Boolean istLastgangVorhanden;
-    private String kunde;
-    private Zeitraum lieferzeitraum;
-    private Adresse marktlokationsadresse;
-    private String marktlokationsbezeichnung;
-    private String marktlokationsId;
-    private String netzbetreiber;
-    private String netzebeneLieferung;
-    private String netzebeneMessung;
-    private Menge prognoseArbeitLieferzeitraum;
-    private Menge prognoseJahresarbeit;
-    private Menge prognoseLeistung;
-    private Adresse rechnungsadresse;
-    private String zaehlernummer;
-    private Zaehlertyp zaehlertechnik;
-
-    /**
-     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
-     *
-     * # pylint: disable=duplicate-code
-     * model_config = ConfigDict(
-     * alias_generator=camelize,
-     * populate_by_name=True,
-     * extra="allow",
-     * # json_encoders is deprecated, but there is no easy-to-use alternative. The best way
-     * would be to create
-     * # an annotated version of Decimal, but you would have to use it everywhere in the
-     * pydantic models.
-     * # See this issue for more info: https://github.com/pydantic/pydantic/issues/6375
-     * json_encoders={Decimal: str},
-     * )
-     */
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
     /**
      * Prognosewert für die Jahresarbeit der ausgeschriebenen Lokation
      */
-    public Boolean getIstLastgangVorhanden() { return istLastgangVorhanden; }
-    public void setIstLastgangVorhanden(Boolean value) { this.istLastgangVorhanden = value; }
-
+    private Boolean istLastgangVorhanden;
     /**
      * Bezeichnung des Kunden, der die Marktlokation nutzt
      */
-    public String getKunde() { return kunde; }
-    public void setKunde(String value) { this.kunde = value; }
-
+    private String kunde;
     /**
      * Angefragter Zeitraum für die ausgeschriebene Belieferung
      */
-    public Zeitraum getLieferzeitraum() { return lieferzeitraum; }
-    public void setLieferzeitraum(Zeitraum value) { this.lieferzeitraum = value; }
-
+    private Zeitraum lieferzeitraum;
     /**
      * Die Adresse an der die Marktlokation sich befindet
      */
-    public Adresse getMarktlokationsadresse() { return marktlokationsadresse; }
-    public void setMarktlokationsadresse(Adresse value) { this.marktlokationsadresse = value; }
-
+    private Adresse marktlokationsadresse;
     /**
      * Bezeichnung für die Lokation, z.B. 'Zentraler Einkauf, Hamburg'
      */
-    public String getMarktlokationsbezeichnung() { return marktlokationsbezeichnung; }
-    public void setMarktlokationsbezeichnung(String value) { this.marktlokationsbezeichnung = value; }
-
+    private String marktlokationsbezeichnung;
     /**
      * Identifikation einer ausgeschriebenen Marktlokation
      */
-    public String getMarktlokationsId() { return marktlokationsId; }
-    public void setMarktlokationsId(String value) { this.marktlokationsId = value; }
-
+    private String marktlokationsId;
     /**
      * Bezeichnung des zuständigen Netzbetreibers, z.B. 'Stromnetz Hamburg GmbH'
      */
-    public String getNetzbetreiber() { return netzbetreiber; }
-    public void setNetzbetreiber(String value) { this.netzbetreiber = value; }
-
+    private String netzbetreiber;
     /**
      * In der angegebenen Netzebene wird die Marktlokation versorgt, z.B. MSP für Mittelspannung
      */
-    public String getNetzebeneLieferung() { return netzebeneLieferung; }
-    public void setNetzebeneLieferung(String value) { this.netzebeneLieferung = value; }
-
+    private String netzebeneLieferung;
     /**
      * In der angegebenen Netzebene wird die Lokation gemessen, z.B. NSP für Niederspannung
      */
-    public String getNetzebeneMessung() { return netzebeneMessung; }
-    public void setNetzebeneMessung(String value) { this.netzebeneMessung = value; }
-
+    private String netzebeneMessung;
     /**
      * Ein Prognosewert für die Arbeit innerhalb des angefragten Lieferzeitraums der
      * ausgeschriebenen Lokation
      */
-    public Menge getPrognoseArbeitLieferzeitraum() { return prognoseArbeitLieferzeitraum; }
-    public void setPrognoseArbeitLieferzeitraum(Menge value) { this.prognoseArbeitLieferzeitraum = value; }
-
+    private Menge prognoseArbeitLieferzeitraum;
     /**
      * Prognosewert für die Jahresarbeit der ausgeschriebenen Lokation
      */
-    public Menge getPrognoseJahresarbeit() { return prognoseJahresarbeit; }
-    public void setPrognoseJahresarbeit(Menge value) { this.prognoseJahresarbeit = value; }
-
+    private Menge prognoseJahresarbeit;
     /**
      * Prognosewert für die abgenommene maximale Leistung der ausgeschriebenen Lokation
      */
-    public Menge getPrognoseLeistung() { return prognoseLeistung; }
-    public void setPrognoseLeistung(Menge value) { this.prognoseLeistung = value; }
-
+    private Menge prognoseLeistung;
     /**
      * Die (evtl. abweichende) Rechnungsadresse
      */
-    public Adresse getRechnungsadresse() { return rechnungsadresse; }
-    public void setRechnungsadresse(Adresse value) { this.rechnungsadresse = value; }
-
+    private Adresse rechnungsadresse;
     /**
      * Die Bezeichnung des Zählers an der Marktlokation
      */
-    public String getZaehlernummer() { return zaehlernummer; }
-    public void setZaehlernummer(String value) { this.zaehlernummer = value; }
-
+    private String zaehlernummer;
     /**
      * Spezifikation, um welche Zählertechnik es sich im vorliegenden Fall handelt, z.B.
      * Leistungsmessung
      */
-    public Zaehlertyp getZaehlertechnik() { return zaehlertechnik; }
-    public void setZaehlertechnik(Zaehlertyp value) { this.zaehlertechnik = value; }
+    private Zaehlertyp zaehlertechnik;
 
+    public Ausschreibungsdetail() {
+    }
+
+    private Ausschreibungsdetail(AusschreibungsdetailBuilder builder) {
+        super(builder);
+        this.istLastgangVorhanden = builder.istLastgangVorhanden;
+        this.kunde = builder.kunde;
+        this.lieferzeitraum = builder.lieferzeitraum;
+        this.marktlokationsadresse = builder.marktlokationsadresse;
+        this.marktlokationsbezeichnung = builder.marktlokationsbezeichnung;
+        this.marktlokationsId = builder.marktlokationsId;
+        this.netzbetreiber = builder.netzbetreiber;
+        this.netzebeneLieferung = builder.netzebeneLieferung;
+        this.netzebeneMessung = builder.netzebeneMessung;
+        this.prognoseArbeitLieferzeitraum = builder.prognoseArbeitLieferzeitraum;
+        this.prognoseJahresarbeit = builder.prognoseJahresarbeit;
+        this.prognoseLeistung = builder.prognoseLeistung;
+        this.rechnungsadresse = builder.rechnungsadresse;
+        this.zaehlernummer = builder.zaehlernummer;
+        this.zaehlertechnik = builder.zaehlertechnik;
+    }
+
+    public Boolean getIstLastgangVorhanden() {
+        return istLastgangVorhanden;
+    }
+
+    public void setIstLastgangVorhanden(Boolean istLastgangVorhanden) {
+        this.istLastgangVorhanden = istLastgangVorhanden;
+    }
+
+    public String getKunde() {
+        return kunde;
+    }
+
+    public void setKunde(String kunde) {
+        this.kunde = kunde;
+    }
+
+    public Zeitraum getLieferzeitraum() {
+        return lieferzeitraum;
+    }
+
+    public void setLieferzeitraum(Zeitraum lieferzeitraum) {
+        this.lieferzeitraum = lieferzeitraum;
+    }
+
+    public Adresse getMarktlokationsadresse() {
+        return marktlokationsadresse;
+    }
+
+    public void setMarktlokationsadresse(Adresse marktlokationsadresse) {
+        this.marktlokationsadresse = marktlokationsadresse;
+    }
+
+    public String getMarktlokationsbezeichnung() {
+        return marktlokationsbezeichnung;
+    }
+
+    public void setMarktlokationsbezeichnung(String marktlokationsbezeichnung) {
+        this.marktlokationsbezeichnung = marktlokationsbezeichnung;
+    }
+
+    public String getMarktlokationsId() {
+        return marktlokationsId;
+    }
+
+    public void setMarktlokationsId(String marktlokationsId) {
+        this.marktlokationsId = marktlokationsId;
+    }
+
+    public String getNetzbetreiber() {
+        return netzbetreiber;
+    }
+
+    public void setNetzbetreiber(String netzbetreiber) {
+        this.netzbetreiber = netzbetreiber;
+    }
+
+    public String getNetzebeneLieferung() {
+        return netzebeneLieferung;
+    }
+
+    public void setNetzebeneLieferung(String netzebeneLieferung) {
+        this.netzebeneLieferung = netzebeneLieferung;
+    }
+
+    public String getNetzebeneMessung() {
+        return netzebeneMessung;
+    }
+
+    public void setNetzebeneMessung(String netzebeneMessung) {
+        this.netzebeneMessung = netzebeneMessung;
+    }
+
+    public Menge getPrognoseArbeitLieferzeitraum() {
+        return prognoseArbeitLieferzeitraum;
+    }
+
+    public void setPrognoseArbeitLieferzeitraum(Menge prognoseArbeitLieferzeitraum) {
+        this.prognoseArbeitLieferzeitraum = prognoseArbeitLieferzeitraum;
+    }
+
+    public Menge getPrognoseJahresarbeit() {
+        return prognoseJahresarbeit;
+    }
+
+    public void setPrognoseJahresarbeit(Menge prognoseJahresarbeit) {
+        this.prognoseJahresarbeit = prognoseJahresarbeit;
+    }
+
+    public Menge getPrognoseLeistung() {
+        return prognoseLeistung;
+    }
+
+    public void setPrognoseLeistung(Menge prognoseLeistung) {
+        this.prognoseLeistung = prognoseLeistung;
+    }
+
+    public Adresse getRechnungsadresse() {
+        return rechnungsadresse;
+    }
+
+    public void setRechnungsadresse(Adresse rechnungsadresse) {
+        this.rechnungsadresse = rechnungsadresse;
+    }
+
+    public String getZaehlernummer() {
+        return zaehlernummer;
+    }
+
+    public void setZaehlernummer(String zaehlernummer) {
+        this.zaehlernummer = zaehlernummer;
+    }
+
+    public Zaehlertyp getZaehlertechnik() {
+        return zaehlertechnik;
+    }
+
+    public void setZaehlertechnik(Zaehlertyp zaehlertechnik) {
+        this.zaehlertechnik = zaehlertechnik;
+    }
+
+    public static class AusschreibungsdetailBuilder extends COMBuilder {
+        /**
+         * Prognosewert für die Jahresarbeit der ausgeschriebenen Lokation
+         */
+        private Boolean istLastgangVorhanden;
+        /**
+         * Bezeichnung des Kunden, der die Marktlokation nutzt
+         */
+        private String kunde;
+        /**
+         * Angefragter Zeitraum für die ausgeschriebene Belieferung
+         */
+        private Zeitraum lieferzeitraum;
+        /**
+         * Die Adresse an der die Marktlokation sich befindet
+         */
+        private Adresse marktlokationsadresse;
+        /**
+         * Bezeichnung für die Lokation, z.B. 'Zentraler Einkauf, Hamburg'
+         */
+        private String marktlokationsbezeichnung;
+        /**
+         * Identifikation einer ausgeschriebenen Marktlokation
+         */
+        private String marktlokationsId;
+        /**
+         * Bezeichnung des zuständigen Netzbetreibers, z.B. 'Stromnetz Hamburg GmbH'
+         */
+        private String netzbetreiber;
+        /**
+         * In der angegebenen Netzebene wird die Marktlokation versorgt, z.B. MSP für Mittelspannung
+         */
+        private String netzebeneLieferung;
+        /**
+         * In der angegebenen Netzebene wird die Lokation gemessen, z.B. NSP für Niederspannung
+         */
+        private String netzebeneMessung;
+        /**
+         * Ein Prognosewert für die Arbeit innerhalb des angefragten Lieferzeitraums der
+         * ausgeschriebenen Lokation
+         */
+        private Menge prognoseArbeitLieferzeitraum;
+        /**
+         * Prognosewert für die Jahresarbeit der ausgeschriebenen Lokation
+         */
+        private Menge prognoseJahresarbeit;
+        /**
+         * Prognosewert für die abgenommene maximale Leistung der ausgeschriebenen Lokation
+         */
+        private Menge prognoseLeistung;
+        /**
+         * Die (evtl. abweichende) Rechnungsadresse
+         */
+        private Adresse rechnungsadresse;
+        /**
+         * Die Bezeichnung des Zählers an der Marktlokation
+         */
+        private String zaehlernummer;
+        /**
+         * Spezifikation, um welche Zählertechnik es sich im vorliegenden Fall handelt, z.B.
+         * Leistungsmessung
+         */
+        private Zaehlertyp zaehlertechnik;
+    
+        public Boolean getIstLastgangVorhanden() {
+            return istLastgangVorhanden;
+        }
+    
+        public AusschreibungsdetailBuilder setIstLastgangVorhanden(Boolean istLastgangVorhanden) {
+            this.istLastgangVorhanden = istLastgangVorhanden;
+            return this;
+        }
+    
+        public String getKunde() {
+            return kunde;
+        }
+    
+        public AusschreibungsdetailBuilder setKunde(String kunde) {
+            this.kunde = kunde;
+            return this;
+        }
+    
+        public Zeitraum getLieferzeitraum() {
+            return lieferzeitraum;
+        }
+    
+        public AusschreibungsdetailBuilder setLieferzeitraum(Zeitraum lieferzeitraum) {
+            this.lieferzeitraum = lieferzeitraum;
+            return this;
+        }
+    
+        public Adresse getMarktlokationsadresse() {
+            return marktlokationsadresse;
+        }
+    
+        public AusschreibungsdetailBuilder setMarktlokationsadresse(Adresse marktlokationsadresse) {
+            this.marktlokationsadresse = marktlokationsadresse;
+            return this;
+        }
+    
+        public String getMarktlokationsbezeichnung() {
+            return marktlokationsbezeichnung;
+        }
+    
+        public AusschreibungsdetailBuilder setMarktlokationsbezeichnung(String marktlokationsbezeichnung) {
+            this.marktlokationsbezeichnung = marktlokationsbezeichnung;
+            return this;
+        }
+    
+        public String getMarktlokationsId() {
+            return marktlokationsId;
+        }
+    
+        public AusschreibungsdetailBuilder setMarktlokationsId(String marktlokationsId) {
+            this.marktlokationsId = marktlokationsId;
+            return this;
+        }
+    
+        public String getNetzbetreiber() {
+            return netzbetreiber;
+        }
+    
+        public AusschreibungsdetailBuilder setNetzbetreiber(String netzbetreiber) {
+            this.netzbetreiber = netzbetreiber;
+            return this;
+        }
+    
+        public String getNetzebeneLieferung() {
+            return netzebeneLieferung;
+        }
+    
+        public AusschreibungsdetailBuilder setNetzebeneLieferung(String netzebeneLieferung) {
+            this.netzebeneLieferung = netzebeneLieferung;
+            return this;
+        }
+    
+        public String getNetzebeneMessung() {
+            return netzebeneMessung;
+        }
+    
+        public AusschreibungsdetailBuilder setNetzebeneMessung(String netzebeneMessung) {
+            this.netzebeneMessung = netzebeneMessung;
+            return this;
+        }
+    
+        public Menge getPrognoseArbeitLieferzeitraum() {
+            return prognoseArbeitLieferzeitraum;
+        }
+    
+        public AusschreibungsdetailBuilder setPrognoseArbeitLieferzeitraum(Menge prognoseArbeitLieferzeitraum) {
+            this.prognoseArbeitLieferzeitraum = prognoseArbeitLieferzeitraum;
+            return this;
+        }
+    
+        public Menge getPrognoseJahresarbeit() {
+            return prognoseJahresarbeit;
+        }
+    
+        public AusschreibungsdetailBuilder setPrognoseJahresarbeit(Menge prognoseJahresarbeit) {
+            this.prognoseJahresarbeit = prognoseJahresarbeit;
+            return this;
+        }
+    
+        public Menge getPrognoseLeistung() {
+            return prognoseLeistung;
+        }
+    
+        public AusschreibungsdetailBuilder setPrognoseLeistung(Menge prognoseLeistung) {
+            this.prognoseLeistung = prognoseLeistung;
+            return this;
+        }
+    
+        public Adresse getRechnungsadresse() {
+            return rechnungsadresse;
+        }
+    
+        public AusschreibungsdetailBuilder setRechnungsadresse(Adresse rechnungsadresse) {
+            this.rechnungsadresse = rechnungsadresse;
+            return this;
+        }
+    
+        public String getZaehlernummer() {
+            return zaehlernummer;
+        }
+    
+        public AusschreibungsdetailBuilder setZaehlernummer(String zaehlernummer) {
+            this.zaehlernummer = zaehlernummer;
+            return this;
+        }
+    
+        public Zaehlertyp getZaehlertechnik() {
+            return zaehlertechnik;
+        }
+    
+        public AusschreibungsdetailBuilder setZaehlertechnik(Zaehlertyp zaehlertechnik) {
+            this.zaehlertechnik = zaehlertechnik;
+            return this;
+        }
+    
+        public AusschreibungsdetailBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public AusschreibungsdetailBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public Ausschreibungsdetail build() {
+            return new Ausschreibungsdetail(this);
+        }
+    }
 }

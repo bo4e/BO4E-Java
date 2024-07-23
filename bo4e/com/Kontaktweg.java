@@ -1,6 +1,9 @@
 package bo4e.com;
 
+import bo4e.ZusatzAttribut;
 import bo4e.enums.Kontaktart;
+
+import java.util.List;
 
 /**
  * Die Komponente wird dazu verwendet, die Kontaktwege innerhalb des BOs Person
@@ -15,52 +18,132 @@ import bo4e.enums.Kontaktart;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Kontakt.json>`_
  */
 public class Kontaktweg extends COM {
-    private String beschreibung;
-    private Boolean istBevorzugterKontaktweg;
-    private Kontaktart kontaktart;
-    private String kontaktwert;
-
-    /**
-     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
-     *
-     * # pylint: disable=duplicate-code
-     * model_config = ConfigDict(
-     * alias_generator=camelize,
-     * populate_by_name=True,
-     * extra="allow",
-     * # json_encoders is deprecated, but there is no easy-to-use alternative. The best way
-     * would be to create
-     * # an annotated version of Decimal, but you would have to use it everywhere in the
-     * pydantic models.
-     * # See this issue for more info: https://github.com/pydantic/pydantic/issues/6375
-     * json_encoders={Decimal: str},
-     * )
-     */
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
     /**
      * Spezifikation, beispielsweise "Durchwahl", "Sammelnummer" etc.
      */
-    public String getBeschreibung() { return beschreibung; }
-    public void setBeschreibung(String value) { this.beschreibung = value; }
-
+    private String beschreibung;
     /**
      * Gibt an, ob es sich um den bevorzugten Kontaktweg handelt.
      */
-    public Boolean getIstBevorzugterKontaktweg() { return istBevorzugterKontaktweg; }
-    public void setIstBevorzugterKontaktweg(Boolean value) { this.istBevorzugterKontaktweg = value; }
-
+    private Boolean istBevorzugterKontaktweg;
     /**
      * Gibt die Kontaktart des Kontaktes an.
      */
-    public Kontaktart getKontaktart() { return kontaktart; }
-    public void setKontaktart(Kontaktart value) { this.kontaktart = value; }
-
+    private Kontaktart kontaktart;
     /**
      * Die Nummer oder E-Mail-Adresse.
      */
-    public String getKontaktwert() { return kontaktwert; }
-    public void setKontaktwert(String value) { this.kontaktwert = value; }
+    private String kontaktwert;
 
+    public Kontaktweg() {
+    }
+
+    private Kontaktweg(KontaktwegBuilder builder) {
+        super(builder);
+        this.beschreibung = builder.beschreibung;
+        this.istBevorzugterKontaktweg = builder.istBevorzugterKontaktweg;
+        this.kontaktart = builder.kontaktart;
+        this.kontaktwert = builder.kontaktwert;
+    }
+
+    public String getBeschreibung() {
+        return beschreibung;
+    }
+
+    public void setBeschreibung(String beschreibung) {
+        this.beschreibung = beschreibung;
+    }
+
+    public Boolean getIstBevorzugterKontaktweg() {
+        return istBevorzugterKontaktweg;
+    }
+
+    public void setIstBevorzugterKontaktweg(Boolean istBevorzugterKontaktweg) {
+        this.istBevorzugterKontaktweg = istBevorzugterKontaktweg;
+    }
+
+    public Kontaktart getKontaktart() {
+        return kontaktart;
+    }
+
+    public void setKontaktart(Kontaktart kontaktart) {
+        this.kontaktart = kontaktart;
+    }
+
+    public String getKontaktwert() {
+        return kontaktwert;
+    }
+
+    public void setKontaktwert(String kontaktwert) {
+        this.kontaktwert = kontaktwert;
+    }
+
+    public static class KontaktwegBuilder extends COMBuilder {
+        /**
+         * Spezifikation, beispielsweise "Durchwahl", "Sammelnummer" etc.
+         */
+        private String beschreibung;
+        /**
+         * Gibt an, ob es sich um den bevorzugten Kontaktweg handelt.
+         */
+        private Boolean istBevorzugterKontaktweg;
+        /**
+         * Gibt die Kontaktart des Kontaktes an.
+         */
+        private Kontaktart kontaktart;
+        /**
+         * Die Nummer oder E-Mail-Adresse.
+         */
+        private String kontaktwert;
+    
+        public String getBeschreibung() {
+            return beschreibung;
+        }
+    
+        public KontaktwegBuilder setBeschreibung(String beschreibung) {
+            this.beschreibung = beschreibung;
+            return this;
+        }
+    
+        public Boolean getIstBevorzugterKontaktweg() {
+            return istBevorzugterKontaktweg;
+        }
+    
+        public KontaktwegBuilder setIstBevorzugterKontaktweg(Boolean istBevorzugterKontaktweg) {
+            this.istBevorzugterKontaktweg = istBevorzugterKontaktweg;
+            return this;
+        }
+    
+        public Kontaktart getKontaktart() {
+            return kontaktart;
+        }
+    
+        public KontaktwegBuilder setKontaktart(Kontaktart kontaktart) {
+            this.kontaktart = kontaktart;
+            return this;
+        }
+    
+        public String getKontaktwert() {
+            return kontaktwert;
+        }
+    
+        public KontaktwegBuilder setKontaktwert(String kontaktwert) {
+            this.kontaktwert = kontaktwert;
+            return this;
+        }
+    
+        public KontaktwegBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public KontaktwegBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public Kontaktweg build() {
+            return new Kontaktweg(this);
+        }
+    }
 }

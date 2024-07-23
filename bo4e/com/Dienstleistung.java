@@ -1,6 +1,9 @@
 package bo4e.com;
 
+import bo4e.ZusatzAttribut;
 import bo4e.enums.Dienstleistungstyp;
+
+import java.util.List;
 
 /**
  * Abbildung einer abrechenbaren Dienstleistung.
@@ -15,38 +18,80 @@ import bo4e.enums.Dienstleistungstyp;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Dienstleistung.json>`_
  */
 public class Dienstleistung extends COM {
-    private String bezeichnung;
-    private Dienstleistungstyp dienstleistungstyp;
-
-    /**
-     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
-     *
-     * # pylint: disable=duplicate-code
-     * model_config = ConfigDict(
-     * alias_generator=camelize,
-     * populate_by_name=True,
-     * extra="allow",
-     * # json_encoders is deprecated, but there is no easy-to-use alternative. The best way
-     * would be to create
-     * # an annotated version of Decimal, but you would have to use it everywhere in the
-     * pydantic models.
-     * # See this issue for more info: https://github.com/pydantic/pydantic/issues/6375
-     * json_encoders={Decimal: str},
-     * )
-     */
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
     /**
      * Bezeichnung der Dienstleistung
      */
-    public String getBezeichnung() { return bezeichnung; }
-    public void setBezeichnung(String value) { this.bezeichnung = value; }
-
+    private String bezeichnung;
     /**
      * Kennzeichnung der Dienstleistung
      */
-    public Dienstleistungstyp getDienstleistungstyp() { return dienstleistungstyp; }
-    public void setDienstleistungstyp(Dienstleistungstyp value) { this.dienstleistungstyp = value; }
+    private Dienstleistungstyp dienstleistungstyp;
 
+    public Dienstleistung() {
+    }
+
+    private Dienstleistung(DienstleistungBuilder builder) {
+        super(builder);
+        this.bezeichnung = builder.bezeichnung;
+        this.dienstleistungstyp = builder.dienstleistungstyp;
+    }
+
+    public String getBezeichnung() {
+        return bezeichnung;
+    }
+
+    public void setBezeichnung(String bezeichnung) {
+        this.bezeichnung = bezeichnung;
+    }
+
+    public Dienstleistungstyp getDienstleistungstyp() {
+        return dienstleistungstyp;
+    }
+
+    public void setDienstleistungstyp(Dienstleistungstyp dienstleistungstyp) {
+        this.dienstleistungstyp = dienstleistungstyp;
+    }
+
+    public static class DienstleistungBuilder extends COMBuilder {
+        /**
+         * Bezeichnung der Dienstleistung
+         */
+        private String bezeichnung;
+        /**
+         * Kennzeichnung der Dienstleistung
+         */
+        private Dienstleistungstyp dienstleistungstyp;
+    
+        public String getBezeichnung() {
+            return bezeichnung;
+        }
+    
+        public DienstleistungBuilder setBezeichnung(String bezeichnung) {
+            this.bezeichnung = bezeichnung;
+            return this;
+        }
+    
+        public Dienstleistungstyp getDienstleistungstyp() {
+            return dienstleistungstyp;
+        }
+    
+        public DienstleistungBuilder setDienstleistungstyp(Dienstleistungstyp dienstleistungstyp) {
+            this.dienstleistungstyp = dienstleistungstyp;
+            return this;
+        }
+    
+        public DienstleistungBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public DienstleistungBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public Dienstleistung build() {
+            return new Dienstleistung(this);
+        }
+    }
 }

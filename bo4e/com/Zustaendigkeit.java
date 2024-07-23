@@ -1,6 +1,9 @@
 package bo4e.com;
 
+import bo4e.ZusatzAttribut;
 import bo4e.enums.Themengebiet;
+
+import java.util.List;
 
 /**
  * Enthält die zeitliche Zuordnung eines Ansprechpartners zu Abteilungen und
@@ -16,45 +19,106 @@ import bo4e.enums.Themengebiet;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Zustaendigkeit.json>`_
  */
 public class Zustaendigkeit extends COM {
+    /**
+     * Berufliche Rolle des Ansprechpartners/ der Person
+     */
     private String abteilung;
+    /**
+     * Berufliche Rolle des Ansprechpartners/ der Person
+     */
     private String position;
-    private Themengebiet themengebiet;
-
-    /**
-     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
-     *
-     * # pylint: disable=duplicate-code
-     * model_config = ConfigDict(
-     * alias_generator=camelize,
-     * populate_by_name=True,
-     * extra="allow",
-     * # json_encoders is deprecated, but there is no easy-to-use alternative. The best way
-     * would be to create
-     * # an annotated version of Decimal, but you would have to use it everywhere in the
-     * pydantic models.
-     * # See this issue for more info: https://github.com/pydantic/pydantic/issues/6375
-     * json_encoders={Decimal: str},
-     * )
-     */
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
-    /**
-     * Berufliche Rolle des Ansprechpartners/ der Person
-     */
-    public String getAbteilung() { return abteilung; }
-    public void setAbteilung(String value) { this.abteilung = value; }
-
-    /**
-     * Berufliche Rolle des Ansprechpartners/ der Person
-     */
-    public String getPosition() { return position; }
-    public void setPosition(String value) { this.position = value; }
-
     /**
      * Hier kann eine thematische Zuordnung des Ansprechpartners bzw. der Person angegeben werden
      */
-    public Themengebiet getThemengebiet() { return themengebiet; }
-    public void setThemengebiet(Themengebiet value) { this.themengebiet = value; }
+    private Themengebiet themengebiet;
 
+    public Zustaendigkeit() {
+    }
+
+    private Zustaendigkeit(ZustaendigkeitBuilder builder) {
+        super(builder);
+        this.abteilung = builder.abteilung;
+        this.position = builder.position;
+        this.themengebiet = builder.themengebiet;
+    }
+
+    public String getAbteilung() {
+        return abteilung;
+    }
+
+    public void setAbteilung(String abteilung) {
+        this.abteilung = abteilung;
+    }
+
+    public String getPosition() {
+        return position;
+    }
+
+    public void setPosition(String position) {
+        this.position = position;
+    }
+
+    public Themengebiet getThemengebiet() {
+        return themengebiet;
+    }
+
+    public void setThemengebiet(Themengebiet themengebiet) {
+        this.themengebiet = themengebiet;
+    }
+
+    public static class ZustaendigkeitBuilder extends COMBuilder {
+        /**
+         * Berufliche Rolle des Ansprechpartners/ der Person
+         */
+        private String abteilung;
+        /**
+         * Berufliche Rolle des Ansprechpartners/ der Person
+         */
+        private String position;
+        /**
+         * Hier kann eine thematische Zuordnung des Ansprechpartners bzw. der Person angegeben werden
+         */
+        private Themengebiet themengebiet;
+    
+        public String getAbteilung() {
+            return abteilung;
+        }
+    
+        public ZustaendigkeitBuilder setAbteilung(String abteilung) {
+            this.abteilung = abteilung;
+            return this;
+        }
+    
+        public String getPosition() {
+            return position;
+        }
+    
+        public ZustaendigkeitBuilder setPosition(String position) {
+            this.position = position;
+            return this;
+        }
+    
+        public Themengebiet getThemengebiet() {
+            return themengebiet;
+        }
+    
+        public ZustaendigkeitBuilder setThemengebiet(Themengebiet themengebiet) {
+            this.themengebiet = themengebiet;
+            return this;
+        }
+    
+        public ZustaendigkeitBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public ZustaendigkeitBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public Zustaendigkeit build() {
+            return new Zustaendigkeit(this);
+        }
+    }
 }

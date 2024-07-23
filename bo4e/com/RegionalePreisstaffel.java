@@ -1,5 +1,9 @@
 package bo4e.com;
 
+import bo4e.ZusatzAttribut;
+
+import java.util.List;
+
 /**
  * Abbildung einer Preisstaffel mit regionaler Abgrenzung
  *
@@ -13,60 +17,160 @@ package bo4e.com;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/RegionalePreisstaffel.json>`_
  */
 public class RegionalePreisstaffel extends COM {
-    private Double einheitspreis;
-    private RegionaleGueltigkeit regionaleGueltigkeit;
-    private Sigmoidparameter sigmoidparameter;
-    private Double staffelgrenzeBis;
-    private Double staffelgrenzeVon;
-
-    /**
-     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
-     *
-     * # pylint: disable=duplicate-code
-     * model_config = ConfigDict(
-     * alias_generator=camelize,
-     * populate_by_name=True,
-     * extra="allow",
-     * # json_encoders is deprecated, but there is no easy-to-use alternative. The best way
-     * would be to create
-     * # an annotated version of Decimal, but you would have to use it everywhere in the
-     * pydantic models.
-     * # See this issue for more info: https://github.com/pydantic/pydantic/issues/6375
-     * json_encoders={Decimal: str},
-     * )
-     */
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
     /**
      * Preis pro abgerechneter Mengeneinheit
      */
-    public Double getEinheitspreis() { return einheitspreis; }
-    public void setEinheitspreis(Double value) { this.einheitspreis = value; }
-
+    private Double einheitspreis;
     /**
      * Regionale Eingrenzung der Preisstaffel
      */
-    public RegionaleGueltigkeit getRegionaleGueltigkeit() { return regionaleGueltigkeit; }
-    public void setRegionaleGueltigkeit(RegionaleGueltigkeit value) { this.regionaleGueltigkeit = value; }
-
+    private RegionaleGueltigkeit regionaleGueltigkeit;
     /**
      * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
      * Parameter
      */
-    public Sigmoidparameter getSigmoidparameter() { return sigmoidparameter; }
-    public void setSigmoidparameter(Sigmoidparameter value) { this.sigmoidparameter = value; }
-
+    private Sigmoidparameter sigmoidparameter;
     /**
      * Exklusiver oberer Wert, bis zu dem die Staffel gilt
      */
-    public Double getStaffelgrenzeBis() { return staffelgrenzeBis; }
-    public void setStaffelgrenzeBis(Double value) { this.staffelgrenzeBis = value; }
-
+    private Double staffelgrenzeBis;
     /**
      * Inklusiver unterer Wert, ab dem die Staffel gilt
      */
-    public Double getStaffelgrenzeVon() { return staffelgrenzeVon; }
-    public void setStaffelgrenzeVon(Double value) { this.staffelgrenzeVon = value; }
+    private Double staffelgrenzeVon;
 
+    public RegionalePreisstaffel() {
+    }
+
+    private RegionalePreisstaffel(RegionalePreisstaffelBuilder builder) {
+        super(builder);
+        this.einheitspreis = builder.einheitspreis;
+        this.regionaleGueltigkeit = builder.regionaleGueltigkeit;
+        this.sigmoidparameter = builder.sigmoidparameter;
+        this.staffelgrenzeBis = builder.staffelgrenzeBis;
+        this.staffelgrenzeVon = builder.staffelgrenzeVon;
+    }
+
+    public Double getEinheitspreis() {
+        return einheitspreis;
+    }
+
+    public void setEinheitspreis(Double einheitspreis) {
+        this.einheitspreis = einheitspreis;
+    }
+
+    public RegionaleGueltigkeit getRegionaleGueltigkeit() {
+        return regionaleGueltigkeit;
+    }
+
+    public void setRegionaleGueltigkeit(RegionaleGueltigkeit regionaleGueltigkeit) {
+        this.regionaleGueltigkeit = regionaleGueltigkeit;
+    }
+
+    public Sigmoidparameter getSigmoidparameter() {
+        return sigmoidparameter;
+    }
+
+    public void setSigmoidparameter(Sigmoidparameter sigmoidparameter) {
+        this.sigmoidparameter = sigmoidparameter;
+    }
+
+    public Double getStaffelgrenzeBis() {
+        return staffelgrenzeBis;
+    }
+
+    public void setStaffelgrenzeBis(Double staffelgrenzeBis) {
+        this.staffelgrenzeBis = staffelgrenzeBis;
+    }
+
+    public Double getStaffelgrenzeVon() {
+        return staffelgrenzeVon;
+    }
+
+    public void setStaffelgrenzeVon(Double staffelgrenzeVon) {
+        this.staffelgrenzeVon = staffelgrenzeVon;
+    }
+
+    public static class RegionalePreisstaffelBuilder extends COMBuilder {
+        /**
+         * Preis pro abgerechneter Mengeneinheit
+         */
+        private Double einheitspreis;
+        /**
+         * Regionale Eingrenzung der Preisstaffel
+         */
+        private RegionaleGueltigkeit regionaleGueltigkeit;
+        /**
+         * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
+         * Parameter
+         */
+        private Sigmoidparameter sigmoidparameter;
+        /**
+         * Exklusiver oberer Wert, bis zu dem die Staffel gilt
+         */
+        private Double staffelgrenzeBis;
+        /**
+         * Inklusiver unterer Wert, ab dem die Staffel gilt
+         */
+        private Double staffelgrenzeVon;
+    
+        public Double getEinheitspreis() {
+            return einheitspreis;
+        }
+    
+        public RegionalePreisstaffelBuilder setEinheitspreis(Double einheitspreis) {
+            this.einheitspreis = einheitspreis;
+            return this;
+        }
+    
+        public RegionaleGueltigkeit getRegionaleGueltigkeit() {
+            return regionaleGueltigkeit;
+        }
+    
+        public RegionalePreisstaffelBuilder setRegionaleGueltigkeit(RegionaleGueltigkeit regionaleGueltigkeit) {
+            this.regionaleGueltigkeit = regionaleGueltigkeit;
+            return this;
+        }
+    
+        public Sigmoidparameter getSigmoidparameter() {
+            return sigmoidparameter;
+        }
+    
+        public RegionalePreisstaffelBuilder setSigmoidparameter(Sigmoidparameter sigmoidparameter) {
+            this.sigmoidparameter = sigmoidparameter;
+            return this;
+        }
+    
+        public Double getStaffelgrenzeBis() {
+            return staffelgrenzeBis;
+        }
+    
+        public RegionalePreisstaffelBuilder setStaffelgrenzeBis(Double staffelgrenzeBis) {
+            this.staffelgrenzeBis = staffelgrenzeBis;
+            return this;
+        }
+    
+        public Double getStaffelgrenzeVon() {
+            return staffelgrenzeVon;
+        }
+    
+        public RegionalePreisstaffelBuilder setStaffelgrenzeVon(Double staffelgrenzeVon) {
+            this.staffelgrenzeVon = staffelgrenzeVon;
+            return this;
+        }
+    
+        public RegionalePreisstaffelBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public RegionalePreisstaffelBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public RegionalePreisstaffel build() {
+            return new RegionalePreisstaffel(this);
+        }
+    }
 }

@@ -1,9 +1,12 @@
 package bo4e.bo;
 
-import bo4e.enums.Typ;
+import bo4e.ZusatzAttribut;
 import bo4e.enums.Marktrolle;
 import bo4e.enums.Rollencodetyp;
 import bo4e.enums.Sparte;
+import bo4e.enums.Typ;
+
+import java.util.List;
 
 /**
  * Objekt zur Aufnahme der Information zu einem Marktteilnehmer
@@ -18,60 +21,194 @@ import bo4e.enums.Sparte;
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Marktteilnehmer.json>`_
  */
 public class Marktteilnehmer extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.MARKTTEILNEHMER;
-    private Geschaeftspartner geschaeftspartner;
-    private String[] makoadresse;
-    private Marktrolle marktrolle;
-    private String rollencodenummer;
-    private Rollencodetyp rollencodetyp;
-    private Sparte sparte;
-
     /**
-     * Hier können IDs anderer Systeme hinterlegt werden (z.B. eine SAP-GP-Nummer oder eine GUID)
+     * Typ des Geschaeftsobjekts
      */
-    /**
-     * Gibt im Klartext die Bezeichnung der Marktrolle an
-     */
-    public Typ getTyp() { return _typ; }
-
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
+    private final Typ typ = Typ.MARKTTEILNEHMER;
     /**
      * Der zu diesem Marktteilnehmer gehörende Geschäftspartner
      */
-    public Geschaeftspartner getGeschaeftspartner() { return geschaeftspartner; }
-    public void setGeschaeftspartner(Geschaeftspartner value) { this.geschaeftspartner = value; }
-
+    private Geschaeftspartner geschaeftspartner;
     /**
      * Die 1:1-Kommunikationsadresse des Marktteilnehmers. Diese wird in der Marktkommunikation
      * verwendet. Konkret kann dies eine eMail-Adresse oder ein AS4-Endpunkt sein.
      */
-    public String[] getMakoadresse() { return makoadresse; }
-    public void setMakoadresse(String[] value) { this.makoadresse = value; }
-
+    private List<String> makoadresse;
     /**
      * Gibt im Klartext die Bezeichnung der Marktrolle an
      */
-    public Marktrolle getMarktrolle() { return marktrolle; }
-    public void setMarktrolle(Marktrolle value) { this.marktrolle = value; }
-
+    private Marktrolle marktrolle;
     /**
      * Gibt die Codenummer der Marktrolle an
      */
-    public String getRollencodenummer() { return rollencodenummer; }
-    public void setRollencodenummer(String value) { this.rollencodenummer = value; }
-
+    private String rollencodenummer;
     /**
      * Gibt den Typ des Codes an
      */
-    public Rollencodetyp getRollencodetyp() { return rollencodetyp; }
-    public void setRollencodetyp(Rollencodetyp value) { this.rollencodetyp = value; }
-
+    private Rollencodetyp rollencodetyp;
     /**
      * Sparte des Marktteilnehmers, z.B. Gas oder Strom
      */
-    public Sparte getSparte() { return sparte; }
-    public void setSparte(Sparte value) { this.sparte = value; }
+    private Sparte sparte;
 
+    public Marktteilnehmer() {
+    }
+
+    private Marktteilnehmer(MarktteilnehmerBuilder builder) {
+        super(builder);
+        this.geschaeftspartner = builder.geschaeftspartner;
+        this.makoadresse = builder.makoadresse;
+        this.marktrolle = builder.marktrolle;
+        this.rollencodenummer = builder.rollencodenummer;
+        this.rollencodetyp = builder.rollencodetyp;
+        this.sparte = builder.sparte;
+    }
+
+    public Typ getTyp() {
+        return typ;
+    }
+
+    public Geschaeftspartner getGeschaeftspartner() {
+        return geschaeftspartner;
+    }
+
+    public void setGeschaeftspartner(Geschaeftspartner geschaeftspartner) {
+        this.geschaeftspartner = geschaeftspartner;
+    }
+
+    public List<String> getMakoadresse() {
+        return makoadresse;
+    }
+
+    public void setMakoadresse(List<String> makoadresse) {
+        this.makoadresse = makoadresse;
+    }
+
+    public Marktrolle getMarktrolle() {
+        return marktrolle;
+    }
+
+    public void setMarktrolle(Marktrolle marktrolle) {
+        this.marktrolle = marktrolle;
+    }
+
+    public String getRollencodenummer() {
+        return rollencodenummer;
+    }
+
+    public void setRollencodenummer(String rollencodenummer) {
+        this.rollencodenummer = rollencodenummer;
+    }
+
+    public Rollencodetyp getRollencodetyp() {
+        return rollencodetyp;
+    }
+
+    public void setRollencodetyp(Rollencodetyp rollencodetyp) {
+        this.rollencodetyp = rollencodetyp;
+    }
+
+    public Sparte getSparte() {
+        return sparte;
+    }
+
+    public void setSparte(Sparte sparte) {
+        this.sparte = sparte;
+    }
+
+    public static class MarktteilnehmerBuilder extends GeschaeftsobjektBuilder {
+        /**
+         * Der zu diesem Marktteilnehmer gehörende Geschäftspartner
+         */
+        private Geschaeftspartner geschaeftspartner;
+        /**
+         * Die 1:1-Kommunikationsadresse des Marktteilnehmers. Diese wird in der Marktkommunikation
+         * verwendet. Konkret kann dies eine eMail-Adresse oder ein AS4-Endpunkt sein.
+         */
+        private List<String> makoadresse;
+        /**
+         * Gibt im Klartext die Bezeichnung der Marktrolle an
+         */
+        private Marktrolle marktrolle;
+        /**
+         * Gibt die Codenummer der Marktrolle an
+         */
+        private String rollencodenummer;
+        /**
+         * Gibt den Typ des Codes an
+         */
+        private Rollencodetyp rollencodetyp;
+        /**
+         * Sparte des Marktteilnehmers, z.B. Gas oder Strom
+         */
+        private Sparte sparte;
+    
+        public Geschaeftspartner getGeschaeftspartner() {
+            return geschaeftspartner;
+        }
+    
+        public MarktteilnehmerBuilder setGeschaeftspartner(Geschaeftspartner geschaeftspartner) {
+            this.geschaeftspartner = geschaeftspartner;
+            return this;
+        }
+    
+        public List<String> getMakoadresse() {
+            return makoadresse;
+        }
+    
+        public MarktteilnehmerBuilder setMakoadresse(List<String> makoadresse) {
+            this.makoadresse = makoadresse;
+            return this;
+        }
+    
+        public Marktrolle getMarktrolle() {
+            return marktrolle;
+        }
+    
+        public MarktteilnehmerBuilder setMarktrolle(Marktrolle marktrolle) {
+            this.marktrolle = marktrolle;
+            return this;
+        }
+    
+        public String getRollencodenummer() {
+            return rollencodenummer;
+        }
+    
+        public MarktteilnehmerBuilder setRollencodenummer(String rollencodenummer) {
+            this.rollencodenummer = rollencodenummer;
+            return this;
+        }
+    
+        public Rollencodetyp getRollencodetyp() {
+            return rollencodetyp;
+        }
+    
+        public MarktteilnehmerBuilder setRollencodetyp(Rollencodetyp rollencodetyp) {
+            this.rollencodetyp = rollencodetyp;
+            return this;
+        }
+    
+        public Sparte getSparte() {
+            return sparte;
+        }
+    
+        public MarktteilnehmerBuilder setSparte(Sparte sparte) {
+            this.sparte = sparte;
+            return this;
+        }
+    
+        public MarktteilnehmerBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public MarktteilnehmerBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public Marktteilnehmer build() {
+            return new Marktteilnehmer(this);
+        }
+    }
 }

@@ -1,5 +1,9 @@
 package bo4e.com;
 
+import bo4e.ZusatzAttribut;
+
+import java.util.List;
+
 /**
  * This component provides the geo-coordinates for a location.
  *
@@ -16,29 +20,65 @@ public class Geokoordinaten extends COM {
     private Double breitengrad;
     private Double laengengrad;
 
-    /**
-     * zusatz_attribute: Optional[list["ZusatzAttribut"]] = None
-     *
-     * # pylint: disable=duplicate-code
-     * model_config = ConfigDict(
-     * alias_generator=camelize,
-     * populate_by_name=True,
-     * extra="allow",
-     * # json_encoders is deprecated, but there is no easy-to-use alternative. The best way
-     * would be to create
-     * # an annotated version of Decimal, but you would have to use it everywhere in the
-     * pydantic models.
-     * # See this issue for more info: https://github.com/pydantic/pydantic/issues/6375
-     * json_encoders={Decimal: str},
-     * )
-     */
-    /**
-     * Version der BO-Struktur aka "fachliche Versionierung"
-     */
-    public Double getBreitengrad() { return breitengrad; }
-    public void setBreitengrad(Double value) { this.breitengrad = value; }
+    public Geokoordinaten() {
+    }
 
-    public Double getLaengengrad() { return laengengrad; }
-    public void setLaengengrad(Double value) { this.laengengrad = value; }
+    private Geokoordinaten(GeokoordinatenBuilder builder) {
+        super(builder);
+        this.breitengrad = builder.breitengrad;
+        this.laengengrad = builder.laengengrad;
+    }
 
+    public Double getBreitengrad() {
+        return breitengrad;
+    }
+
+    public void setBreitengrad(Double breitengrad) {
+        this.breitengrad = breitengrad;
+    }
+
+    public Double getLaengengrad() {
+        return laengengrad;
+    }
+
+    public void setLaengengrad(Double laengengrad) {
+        this.laengengrad = laengengrad;
+    }
+
+    public static class GeokoordinatenBuilder extends COMBuilder {
+        private Double breitengrad;
+        private Double laengengrad;
+    
+        public Double getBreitengrad() {
+            return breitengrad;
+        }
+    
+        public GeokoordinatenBuilder setBreitengrad(Double breitengrad) {
+            this.breitengrad = breitengrad;
+            return this;
+        }
+    
+        public Double getLaengengrad() {
+            return laengengrad;
+        }
+    
+        public GeokoordinatenBuilder setLaengengrad(Double laengengrad) {
+            this.laengengrad = laengengrad;
+            return this;
+        }
+    
+        public GeokoordinatenBuilder setId(String id) {
+            super.setId(id);
+            return this;
+        }
+    
+        public GeokoordinatenBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
+            super.setZusatzAttribute(zusatzAttribute);
+            return this;
+        }
+    
+        public Geokoordinaten build() {
+            return new Geokoordinaten(this);
+        }
+    }
 }
