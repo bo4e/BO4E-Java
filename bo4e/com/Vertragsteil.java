@@ -17,11 +17,13 @@ import java.util.List;
  *
  * .. HINT::
  * `Vertragsteil JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Vertragsteil.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Vertragsteil.json>`_
  */
 public class Vertragsteil extends COM {
     /**
-     * vertraglich_fixierte_menge: Optional["Menge"] = None
+     * Der Identifier für diejenigen Markt- oder Messlokation, die zu diesem Vertragsteil
+     * gehören.
+     * Verträge für mehrere Lokationen werden mit mehreren Vertragsteilen abgebildet
      */
     private String lokation;
     /**
@@ -29,19 +31,19 @@ public class Vertragsteil extends COM {
      */
     private Menge maximaleAbnahmemenge;
     /**
-     * maximale_abnahmemenge: Optional["Menge"] = None
+     * Für die Lokation festgelegte Mindestabnahmemenge (inklusiv)
      */
     private Menge minimaleAbnahmemenge;
     /**
-     * minimale_abnahmemenge: Optional["Menge"] = None
+     * Für die Lokation festgeschriebene Abnahmemenge
      */
     private Menge vertraglichFixierteMenge;
     /**
-     * vertragsteilende: Optional[pydantic.AwareDatetime] = None
+     * Start der Gültigkeit des Vertragsteils (inklusiv)
      */
     private OffsetDateTime vertragsteilbeginn;
     /**
-     * lokation: Optional[str] = None
+     * Ende der Gültigkeit des Vertragsteils (exklusiv)
      */
     private OffsetDateTime vertragsteilende;
 
@@ -108,7 +110,9 @@ public class Vertragsteil extends COM {
 
     public static class VertragsteilBuilder extends COMBuilder {
         /**
-         * vertraglich_fixierte_menge: Optional["Menge"] = None
+         * Der Identifier für diejenigen Markt- oder Messlokation, die zu diesem Vertragsteil
+         * gehören.
+         * Verträge für mehrere Lokationen werden mit mehreren Vertragsteilen abgebildet
          */
         private String lokation;
         /**
@@ -116,19 +120,19 @@ public class Vertragsteil extends COM {
          */
         private Menge maximaleAbnahmemenge;
         /**
-         * maximale_abnahmemenge: Optional["Menge"] = None
+         * Für die Lokation festgelegte Mindestabnahmemenge (inklusiv)
          */
         private Menge minimaleAbnahmemenge;
         /**
-         * minimale_abnahmemenge: Optional["Menge"] = None
+         * Für die Lokation festgeschriebene Abnahmemenge
          */
         private Menge vertraglichFixierteMenge;
         /**
-         * vertragsteilende: Optional[pydantic.AwareDatetime] = None
+         * Start der Gültigkeit des Vertragsteils (inklusiv)
          */
         private OffsetDateTime vertragsteilbeginn;
         /**
-         * lokation: Optional[str] = None
+         * Ende der Gültigkeit des Vertragsteils (exklusiv)
          */
         private OffsetDateTime vertragsteilende;
     

@@ -23,7 +23,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Vertrag JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Vertrag.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Vertrag.json>`_
  */
 public class Vertrag extends Geschaeftsobjekt {
     /**
@@ -66,15 +66,7 @@ public class Vertrag extends Geschaeftsobjekt {
      * Eine im Verwendungskontext eindeutige Nummer für den Vertrag
      */
     private String vertragsnummer;
-    /**
-     * Der "erstgenannte" Vertragspartner.
-     * In der Regel der Aussteller des Vertrags.
-     * Beispiel: "Vertrag zwischen Vertragspartner 1 ..."
-     */
     private Geschaeftspartner vertragspartner1;
-    /**
-     * vertragsteile: Optional[list["Vertragsteil"]] = None
-     */
     private Geschaeftspartner vertragspartner2;
     /**
      * Gibt den Status des Vertrags an
@@ -250,15 +242,7 @@ public class Vertrag extends Geschaeftsobjekt {
          * Eine im Verwendungskontext eindeutige Nummer für den Vertrag
          */
         private String vertragsnummer;
-        /**
-         * Der "erstgenannte" Vertragspartner.
-         * In der Regel der Aussteller des Vertrags.
-         * Beispiel: "Vertrag zwischen Vertragspartner 1 ..."
-         */
         private Geschaeftspartner vertragspartner1;
-        /**
-         * vertragsteile: Optional[list["Vertragsteil"]] = None
-         */
         private Geschaeftspartner vertragspartner2;
         /**
          * Gibt den Status des Vertrags an

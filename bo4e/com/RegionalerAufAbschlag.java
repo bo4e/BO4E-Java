@@ -22,7 +22,7 @@ import java.util.List;
  *
  * .. HINT::
  * `RegionalerAufAbschlag JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/RegionalerAufAbschlag.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/RegionalerAufAbschlag.json>`_
  */
 public class RegionalerAufAbschlag extends COM {
     /**
@@ -53,11 +53,14 @@ public class RegionalerAufAbschlag extends COM {
      */
     private Tarifeinschraenkung einschraenkungsaenderung;
     /**
-     * vertagskonditionsaenderung: Optional["Vertragskonditionen"] = None
+     * Der Energiemix kann sich durch einen AufAbschlag ändern (z.B. zwei Cent Aufschlag für
+     * Ökostrom).
+     * Sollte dies der Fall sein, wird hier die neue Zusammensetzung des Energiemix angegeben.
      */
     private Energiemix energiemixaenderung;
     /**
-     * einschraenkungsaenderung: Optional["Tarifeinschraenkung"] = None
+     * Änderungen in den Garantievereinbarungen;
+     * Falls in dieser Komponenten angegeben, werden die Tarifparameter hiermit überschrieben.
      */
     private Preisgarantie garantieaenderung;
     /**
@@ -73,7 +76,8 @@ public class RegionalerAufAbschlag extends COM {
      */
     private String tarifnamensaenderungen;
     /**
-     * garantieaenderung: Optional["Preisgarantie"] = None
+     * Änderungen in den Vertragskonditionen;
+     * Falls in dieser Komponenten angegeben, werden die Tarifparameter hiermit überschrieben.
      */
     private Vertragskonditionen vertagskonditionsaenderung;
     /**
@@ -261,11 +265,14 @@ public class RegionalerAufAbschlag extends COM {
          */
         private Tarifeinschraenkung einschraenkungsaenderung;
         /**
-         * vertagskonditionsaenderung: Optional["Vertragskonditionen"] = None
+         * Der Energiemix kann sich durch einen AufAbschlag ändern (z.B. zwei Cent Aufschlag für
+         * Ökostrom).
+         * Sollte dies der Fall sein, wird hier die neue Zusammensetzung des Energiemix angegeben.
          */
         private Energiemix energiemixaenderung;
         /**
-         * einschraenkungsaenderung: Optional["Tarifeinschraenkung"] = None
+         * Änderungen in den Garantievereinbarungen;
+         * Falls in dieser Komponenten angegeben, werden die Tarifparameter hiermit überschrieben.
          */
         private Preisgarantie garantieaenderung;
         /**
@@ -281,7 +288,8 @@ public class RegionalerAufAbschlag extends COM {
          */
         private String tarifnamensaenderungen;
         /**
-         * garantieaenderung: Optional["Preisgarantie"] = None
+         * Änderungen in den Vertragskonditionen;
+         * Falls in dieser Komponenten angegeben, werden die Tarifparameter hiermit überschrieben.
          */
         private Vertragskonditionen vertagskonditionsaenderung;
         /**

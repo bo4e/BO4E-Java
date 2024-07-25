@@ -16,7 +16,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Energiemenge JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Energiemenge.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Energiemenge.json>`_
  */
 public class Energiemenge extends Geschaeftsobjekt {
     /**

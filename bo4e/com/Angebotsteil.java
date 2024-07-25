@@ -20,7 +20,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Angebotsteil JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Angebotsteil.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Angebotsteil.json>`_
  */
 public class Angebotsteil extends COM {
     /**
@@ -37,7 +37,8 @@ public class Angebotsteil extends COM {
      */
     private Menge gesamtmengeangebotsteil;
     /**
-     * Summe der Verbräuche aller in diesem Angebotsteil eingeschlossenen Lieferstellen
+     * Marktlokationen, für die dieses Angebotsteil gilt, falls vorhanden.
+     * Durch die Marktlokation ist auch die Lieferadresse festgelegt
      */
     private List<Marktlokation> lieferstellenangebotsteil;
     /**
@@ -125,7 +126,8 @@ public class Angebotsteil extends COM {
          */
         private Menge gesamtmengeangebotsteil;
         /**
-         * Summe der Verbräuche aller in diesem Angebotsteil eingeschlossenen Lieferstellen
+         * Marktlokationen, für die dieses Angebotsteil gilt, falls vorhanden.
+         * Durch die Marktlokation ist auch die Lieferadresse festgelegt
          */
         private List<Marktlokation> lieferstellenangebotsteil;
         /**

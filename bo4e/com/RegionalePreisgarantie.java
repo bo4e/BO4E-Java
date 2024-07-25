@@ -15,7 +15,7 @@ import java.util.List;
  *
  * .. HINT::
  * `RegionalePreisgarantie JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/RegionalePreisgarantie.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/RegionalePreisgarantie.json>`_
  */
 public class RegionalePreisgarantie extends COM {
     /**
@@ -31,7 +31,8 @@ public class RegionalePreisgarantie extends COM {
      */
     private RegionaleGueltigkeit regionaleGueltigkeit;
     /**
-     * Freitext zur Beschreibung der Preisgarantie.
+     * Zeitraum, bis zu dem die Preisgarantie gilt, z.B. bis zu einem absolutem / fixem Datum
+     * oder als Laufzeit in Monaten.
      */
     private Zeitraum zeitlicheGueltigkeit;
 
@@ -92,7 +93,8 @@ public class RegionalePreisgarantie extends COM {
          */
         private RegionaleGueltigkeit regionaleGueltigkeit;
         /**
-         * Freitext zur Beschreibung der Preisgarantie.
+         * Zeitraum, bis zu dem die Preisgarantie gilt, z.B. bis zu einem absolutem / fixem Datum
+         * oder als Laufzeit in Monaten.
          */
         private Zeitraum zeitlicheGueltigkeit;
     

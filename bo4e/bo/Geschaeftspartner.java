@@ -24,7 +24,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Geschaeftspartner JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Geschaeftspartner.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Geschaeftspartner.json>`_
  */
 public class Geschaeftspartner extends Geschaeftsobjekt {
     /**
@@ -56,11 +56,6 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
      * Handelsregisternummer des Geschäftspartners
      */
     private String handelsregisternummer;
-    /**
-     * Im Falle einer nicht standardisierten Anrede kann hier eine frei definierbare Anrede
-     * vorgegeben werden.
-     * Beispiel: "Vereinsgemeinschaft", "Pfarrer", "Hochwürdigster Herr Abt".
-     */
     private String individuelleAnrede;
     /**
      * Kontaktwege des Geschäftspartners
@@ -74,9 +69,6 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
      * Kontaktwege des Geschäftspartners
      */
     private String organisationsname;
-    /**
-     * organisationsname: Optional[str] = None
-     */
     private Organisationstyp organisationstyp;
     /**
      * Möglicher Titel der Person
@@ -276,11 +268,6 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
          * Handelsregisternummer des Geschäftspartners
          */
         private String handelsregisternummer;
-        /**
-         * Im Falle einer nicht standardisierten Anrede kann hier eine frei definierbare Anrede
-         * vorgegeben werden.
-         * Beispiel: "Vereinsgemeinschaft", "Pfarrer", "Hochwürdigster Herr Abt".
-         */
         private String individuelleAnrede;
         /**
          * Kontaktwege des Geschäftspartners
@@ -294,9 +281,6 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
          * Kontaktwege des Geschäftspartners
          */
         private String organisationsname;
-        /**
-         * organisationsname: Optional[str] = None
-         */
         private Organisationstyp organisationstyp;
         /**
          * Möglicher Titel der Person

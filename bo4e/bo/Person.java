@@ -20,7 +20,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Person JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Person.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Person.json>`_
  */
 public class Person extends Geschaeftsobjekt {
     /**
@@ -39,11 +39,6 @@ public class Person extends Geschaeftsobjekt {
      * Geburtsdatum der Person
      */
     private OffsetDateTime geburtsdatum;
-    /**
-     * Im Falle einer nicht standardisierten Anrede kann hier eine frei definierbare Anrede
-     * vorgegeben werden.
-     * Beispiel: "Vereinsgemeinschaft", "Pfarrer", "Hochwürdigster Herr Abt".
-     */
     private String individuelleAnrede;
     /**
      * Weitere Informationen zur Person
@@ -184,11 +179,6 @@ public class Person extends Geschaeftsobjekt {
          * Geburtsdatum der Person
          */
         private OffsetDateTime geburtsdatum;
-        /**
-         * Im Falle einer nicht standardisierten Anrede kann hier eine frei definierbare Anrede
-         * vorgegeben werden.
-         * Beispiel: "Vereinsgemeinschaft", "Pfarrer", "Hochwürdigster Herr Abt".
-         */
         private String individuelleAnrede;
         /**
          * Weitere Informationen zur Person

@@ -14,7 +14,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Katasteradresse JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Katasteradresse.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Katasteradresse.json>`_
  */
 public class Katasteradresse extends COM {
     private String flurstueck;

@@ -16,7 +16,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Angebotsvariante JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Angebotsvariante.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Angebotsvariante.json>`_
  */
 public class Angebotsvariante extends COM {
     /**
@@ -40,7 +40,10 @@ public class Angebotsvariante extends COM {
      */
     private Menge gesamtmenge;
     /**
-     * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
+     * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
+     * erzeugt.
+     * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
+     * Eine Variante besteht mindestens aus einem Angebotsteil.
      */
     private List<Angebotsteil> teile;
 
@@ -127,7 +130,10 @@ public class Angebotsvariante extends COM {
          */
         private Menge gesamtmenge;
         /**
-         * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
+         * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
+         * erzeugt.
+         * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
+         * Eine Variante besteht mindestens aus einem Angebotsteil.
          */
         private List<Angebotsteil> teile;
     

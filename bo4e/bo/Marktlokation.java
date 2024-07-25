@@ -4,7 +4,6 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Adresse;
 import bo4e.com.Geokoordinaten;
 import bo4e.com.Katasteradresse;
-import bo4e.com.Messlokationszuordnung;
 import bo4e.com.Verbrauch;
 import bo4e.com.Zaehlwerk;
 import bo4e.enums.Bilanzierungsmethode;
@@ -29,7 +28,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Marktlokation JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Marktlokation.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Marktlokation.json>`_
  */
 public class Marktlokation extends Geschaeftsobjekt {
     /**
@@ -60,9 +59,6 @@ public class Marktlokation extends Geschaeftsobjekt {
      * Typ des Netzgebietes, z.B. Verteilnetz
      */
     private Gebiettyp gebietstyp;
-    /**
-     * katasterinformation: Optional["Katasteradresse"] = None
-     */
     private Geokoordinaten geoadresse;
     /**
      * Codenummer des Grundversorgers, der für diese Marktlokation zuständig ist
@@ -72,11 +68,6 @@ public class Marktlokation extends Geschaeftsobjekt {
      * Gibt an, ob es sich um eine unterbrechbare Belieferung handelt
      */
     private Boolean istUnterbrechbar;
-    /**
-     * Alternativ zu einer postalischen Adresse und Geokoordinaten kann hier eine Ortsangabe
-     * mittels Gemarkung und
-     * Flurstück erfolgen.
-     */
     private Katasteradresse katasterinformation;
     /**
      * Kundengruppen der Marktlokation
@@ -86,6 +77,15 @@ public class Marktlokation extends Geschaeftsobjekt {
      * Die Adresse, an der die Energie-Lieferung oder -Einspeisung erfolgt
      */
     private Adresse lokationsadresse;
+    /**
+     * Lokationsbuendel Code, der die Funktion dieses BOs an der Lokationsbuendelstruktur
+     * beschreibt.
+     */
+    private String lokationsbuendelObjektcode;
+    /**
+     * Lokationszuordnung, um bspw. die zugehörigen Messlokationen anzugeben
+     */
+    private List<Lokationszuordnung> lokationszuordnungen;
     /**
      * für Gas. Code vom EIC, https://www.entsog.eu/data/data-portal/codes-list
      */
@@ -99,11 +99,6 @@ public class Marktlokation extends Geschaeftsobjekt {
      * Codenummer des Netzbetreibers, an dessen Netz diese Marktlokation angeschlossen ist.
      */
     private String netzbetreibercodenr;
-    /**
-     * Netzebene, in der der Bezug der Energie erfolgt.
-     * Bei Strom Spannungsebene der Lieferung, bei Gas Druckstufe.
-     * Beispiel Strom: Niederspannung Beispiel Gas: Niederdruck.
-     */
     private Netzebene netzebene;
     /**
      * Die ID des Gebietes in der ene't-Datenbank
@@ -126,8 +121,10 @@ public class Marktlokation extends Geschaeftsobjekt {
      * für Gas. Code vom EIC, https://www.entsog.eu/data/data-portal/codes-list
      */
     private List<Zaehlwerk> zaehlwerke;
+    /**
+     * Lokationszuordnung, um bspw. die zugehörigen Messlokationen anzugeben
+     */
     private List<Zaehlwerk> zaehlwerkeDerBeteiligtenMarktrolle;
-    private Messlokationszuordnung zugehoerigeMesslokation;
 
     public Marktlokation() {
     }
@@ -146,6 +143,8 @@ public class Marktlokation extends Geschaeftsobjekt {
         this.katasterinformation = builder.katasterinformation;
         this.kundengruppen = builder.kundengruppen;
         this.lokationsadresse = builder.lokationsadresse;
+        this.lokationsbuendelObjektcode = builder.lokationsbuendelObjektcode;
+        this.lokationszuordnungen = builder.lokationszuordnungen;
         this.marktgebiet = builder.marktgebiet;
         this.marktlokationsId = builder.marktlokationsId;
         this.netzbetreibercodenr = builder.netzbetreibercodenr;
@@ -157,7 +156,6 @@ public class Marktlokation extends Geschaeftsobjekt {
         this.verbrauchsmengen = builder.verbrauchsmengen;
         this.zaehlwerke = builder.zaehlwerke;
         this.zaehlwerkeDerBeteiligtenMarktrolle = builder.zaehlwerkeDerBeteiligtenMarktrolle;
-        this.zugehoerigeMesslokation = builder.zugehoerigeMesslokation;
     }
 
     public Typ getTyp() {
@@ -260,6 +258,22 @@ public class Marktlokation extends Geschaeftsobjekt {
         this.lokationsadresse = lokationsadresse;
     }
 
+    public String getLokationsbuendelObjektcode() {
+        return lokationsbuendelObjektcode;
+    }
+
+    public void setLokationsbuendelObjektcode(String lokationsbuendelObjektcode) {
+        this.lokationsbuendelObjektcode = lokationsbuendelObjektcode;
+    }
+
+    public List<Lokationszuordnung> getLokationszuordnungen() {
+        return lokationszuordnungen;
+    }
+
+    public void setLokationszuordnungen(List<Lokationszuordnung> lokationszuordnungen) {
+        this.lokationszuordnungen = lokationszuordnungen;
+    }
+
     public String getMarktgebiet() {
         return marktgebiet;
     }
@@ -348,14 +362,6 @@ public class Marktlokation extends Geschaeftsobjekt {
         this.zaehlwerkeDerBeteiligtenMarktrolle = zaehlwerkeDerBeteiligtenMarktrolle;
     }
 
-    public Messlokationszuordnung getZugehoerigeMesslokation() {
-        return zugehoerigeMesslokation;
-    }
-
-    public void setZugehoerigeMesslokation(Messlokationszuordnung zugehoerigeMesslokation) {
-        this.zugehoerigeMesslokation = zugehoerigeMesslokation;
-    }
-
     public static class MarktlokationBuilder extends GeschaeftsobjektBuilder {
         /**
          * Bilanzierungsgebiet, dem das Netzgebiet zugeordnet ist - im Falle eines Strom Netzes
@@ -381,9 +387,6 @@ public class Marktlokation extends Geschaeftsobjekt {
          * Typ des Netzgebietes, z.B. Verteilnetz
          */
         private Gebiettyp gebietstyp;
-        /**
-         * katasterinformation: Optional["Katasteradresse"] = None
-         */
         private Geokoordinaten geoadresse;
         /**
          * Codenummer des Grundversorgers, der für diese Marktlokation zuständig ist
@@ -393,11 +396,6 @@ public class Marktlokation extends Geschaeftsobjekt {
          * Gibt an, ob es sich um eine unterbrechbare Belieferung handelt
          */
         private Boolean istUnterbrechbar;
-        /**
-         * Alternativ zu einer postalischen Adresse und Geokoordinaten kann hier eine Ortsangabe
-         * mittels Gemarkung und
-         * Flurstück erfolgen.
-         */
         private Katasteradresse katasterinformation;
         /**
          * Kundengruppen der Marktlokation
@@ -407,6 +405,15 @@ public class Marktlokation extends Geschaeftsobjekt {
          * Die Adresse, an der die Energie-Lieferung oder -Einspeisung erfolgt
          */
         private Adresse lokationsadresse;
+        /**
+         * Lokationsbuendel Code, der die Funktion dieses BOs an der Lokationsbuendelstruktur
+         * beschreibt.
+         */
+        private String lokationsbuendelObjektcode;
+        /**
+         * Lokationszuordnung, um bspw. die zugehörigen Messlokationen anzugeben
+         */
+        private List<Lokationszuordnung> lokationszuordnungen;
         /**
          * für Gas. Code vom EIC, https://www.entsog.eu/data/data-portal/codes-list
          */
@@ -420,11 +427,6 @@ public class Marktlokation extends Geschaeftsobjekt {
          * Codenummer des Netzbetreibers, an dessen Netz diese Marktlokation angeschlossen ist.
          */
         private String netzbetreibercodenr;
-        /**
-         * Netzebene, in der der Bezug der Energie erfolgt.
-         * Bei Strom Spannungsebene der Lieferung, bei Gas Druckstufe.
-         * Beispiel Strom: Niederspannung Beispiel Gas: Niederdruck.
-         */
         private Netzebene netzebene;
         /**
          * Die ID des Gebietes in der ene't-Datenbank
@@ -447,8 +449,10 @@ public class Marktlokation extends Geschaeftsobjekt {
          * für Gas. Code vom EIC, https://www.entsog.eu/data/data-portal/codes-list
          */
         private List<Zaehlwerk> zaehlwerke;
+        /**
+         * Lokationszuordnung, um bspw. die zugehörigen Messlokationen anzugeben
+         */
         private List<Zaehlwerk> zaehlwerkeDerBeteiligtenMarktrolle;
-        private Messlokationszuordnung zugehoerigeMesslokation;
     
         public String getBilanzierungsgebiet() {
             return bilanzierungsgebiet;
@@ -558,6 +562,24 @@ public class Marktlokation extends Geschaeftsobjekt {
             return this;
         }
     
+        public String getLokationsbuendelObjektcode() {
+            return lokationsbuendelObjektcode;
+        }
+    
+        public MarktlokationBuilder setLokationsbuendelObjektcode(String lokationsbuendelObjektcode) {
+            this.lokationsbuendelObjektcode = lokationsbuendelObjektcode;
+            return this;
+        }
+    
+        public List<Lokationszuordnung> getLokationszuordnungen() {
+            return lokationszuordnungen;
+        }
+    
+        public MarktlokationBuilder setLokationszuordnungen(List<Lokationszuordnung> lokationszuordnungen) {
+            this.lokationszuordnungen = lokationszuordnungen;
+            return this;
+        }
+    
         public String getMarktgebiet() {
             return marktgebiet;
         }
@@ -654,15 +676,6 @@ public class Marktlokation extends Geschaeftsobjekt {
     
         public MarktlokationBuilder setZaehlwerkeDerBeteiligtenMarktrolle(List<Zaehlwerk> zaehlwerkeDerBeteiligtenMarktrolle) {
             this.zaehlwerkeDerBeteiligtenMarktrolle = zaehlwerkeDerBeteiligtenMarktrolle;
-            return this;
-        }
-    
-        public Messlokationszuordnung getZugehoerigeMesslokation() {
-            return zugehoerigeMesslokation;
-        }
-    
-        public MarktlokationBuilder setZugehoerigeMesslokation(Messlokationszuordnung zugehoerigeMesslokation) {
-            this.zugehoerigeMesslokation = zugehoerigeMesslokation;
             return this;
         }
     

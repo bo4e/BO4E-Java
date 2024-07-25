@@ -16,7 +16,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Tarifberechnungsparameter JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Tarifberechnungsparameter.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Tarifberechnungsparameter.json>`_
  */
 public class Tarifberechnungsparameter extends COM {
     /**
@@ -36,7 +36,9 @@ public class Tarifberechnungsparameter extends COM {
      */
     private Boolean istMesspreisInGrundpreisEnthalten;
     /**
-     * Typ des Messpreises
+     * True, falls bei der Bildung des Durchschnittspreises für die Höchst- und
+     * Mindestpreisbetrachtung der Messpreis mit
+     * berücksichtigt wird
      */
     private Boolean istMesspreisZuBeruecksichtigen;
     /**
@@ -176,7 +178,9 @@ public class Tarifberechnungsparameter extends COM {
          */
         private Boolean istMesspreisInGrundpreisEnthalten;
         /**
-         * Typ des Messpreises
+         * True, falls bei der Bildung des Durchschnittspreises für die Höchst- und
+         * Mindestpreisbetrachtung der Messpreis mit
+         * berücksichtigt wird
          */
         private Boolean istMesspreisZuBeruecksichtigen;
         /**

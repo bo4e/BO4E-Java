@@ -15,7 +15,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Fremdkostenposition JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Fremdkostenposition.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Fremdkostenposition.json>`_
  */
 public class Fremdkostenposition extends COM {
     /**
@@ -72,7 +72,9 @@ public class Fremdkostenposition extends COM {
      */
     private OffsetDateTime von;
     /**
-     * Detaillierung des Artikels (optional). Beispiel: 'Drehstromzähler'
+     * Wenn es einen zeitbasierten Preis gibt (z.B. €/Jahr), dann ist hier die Menge angegeben
+     * mit der die Kosten berechnet
+     * wurden. Z.B. 138 Tage.
      */
     private Menge zeitmenge;
 
@@ -255,7 +257,9 @@ public class Fremdkostenposition extends COM {
          */
         private OffsetDateTime von;
         /**
-         * Detaillierung des Artikels (optional). Beispiel: 'Drehstromzähler'
+         * Wenn es einen zeitbasierten Preis gibt (z.B. €/Jahr), dann ist hier die Menge angegeben
+         * mit der die Kosten berechnet
+         * wurden. Z.B. 138 Tage.
          */
         private Menge zeitmenge;
     

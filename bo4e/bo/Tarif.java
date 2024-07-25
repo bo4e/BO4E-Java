@@ -28,7 +28,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Tarif JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Tarif.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Tarif.json>`_
  */
 public class Tarif extends Geschaeftsobjekt {
     /**
@@ -43,11 +43,6 @@ public class Tarif extends Geschaeftsobjekt {
      * Der Name des Marktpartners, der den Tarif anbietet
      */
     private String anbietername;
-    /**
-     * Angabe des inklusiven Zeitpunkts, ab dem der Tarif bzw. der Preis angewendet und
-     * abgerechnet wird,
-     * z.B. "2021-07-20T18:31:48Z"
-     */
     private OffsetDateTime anwendungVon;
     /**
      * Freitext
@@ -318,11 +313,6 @@ public class Tarif extends Geschaeftsobjekt {
          * Der Name des Marktpartners, der den Tarif anbietet
          */
         private String anbietername;
-        /**
-         * Angabe des inklusiven Zeitpunkts, ab dem der Tarif bzw. der Preis angewendet und
-         * abgerechnet wird,
-         * z.B. "2021-07-20T18:31:48Z"
-         */
         private OffsetDateTime anwendungVon;
         /**
          * Freitext

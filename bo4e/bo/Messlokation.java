@@ -20,39 +20,33 @@ import java.util.List;
  *
  * .. HINT::
  * `Messlokation JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Messlokation.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Messlokation.json>`_
  */
 public class Messlokation extends Geschaeftsobjekt {
     /**
      * Typ des Geschaeftsobjekts
      */
     private final Typ typ = Typ.MESSLOKATION;
-    /**
-     * katasterinformation: Optional["Katasteradresse"] = None
-     */
     private Geokoordinaten geoadresse;
     /**
      * Liste der Geräte, die zu dieser Messstelle gehört
      */
     private List<Geraet> geraete;
-    /**
-     * grundzustaendiger_msbim_codenr: Optional[str] = None
-     */
     private String grundzustaendigerMsbCodenr;
-    /**
-     * # only one of the following three optional address attributes can be set
-     * messadresse: Optional["Adresse"] = None
-     */
     private String grundzustaendigerMsbimCodenr;
     /**
-     * Alternativ zu einer postalischen Adresse und Geokoordinaten kann hier eine Ortsangabe
-     * mittels Gemarkung und
-     * Flurstück erfolgen.
+     * Lokationszuordnung, um bspw. die zugehörigen Marktlokationen anzugeben
      */
     private Katasteradresse katasterinformation;
     /**
-     * geoadresse: Optional["Geokoordinaten"] = None
+     * Lokationsbuendel Code, der die Funktion dieses BOs an der Lokationsbuendelstruktur
+     * beschreibt.
      */
+    private String lokationsbuendelObjektcode;
+    /**
+     * Lokationszuordnung, um bspw. die zugehörigen Marktlokationen anzugeben
+     */
+    private List<Lokationszuordnung> lokationszuordnungen;
     private Adresse messadresse;
     /**
      * Liste der Messdienstleistungen, die zu dieser Messstelle gehört
@@ -89,6 +83,8 @@ public class Messlokation extends Geschaeftsobjekt {
         this.grundzustaendigerMsbCodenr = builder.grundzustaendigerMsbCodenr;
         this.grundzustaendigerMsbimCodenr = builder.grundzustaendigerMsbimCodenr;
         this.katasterinformation = builder.katasterinformation;
+        this.lokationsbuendelObjektcode = builder.lokationsbuendelObjektcode;
+        this.lokationszuordnungen = builder.lokationszuordnungen;
         this.messadresse = builder.messadresse;
         this.messdienstleistung = builder.messdienstleistung;
         this.messgebietnr = builder.messgebietnr;
@@ -140,6 +136,22 @@ public class Messlokation extends Geschaeftsobjekt {
 
     public void setKatasterinformation(Katasteradresse katasterinformation) {
         this.katasterinformation = katasterinformation;
+    }
+
+    public String getLokationsbuendelObjektcode() {
+        return lokationsbuendelObjektcode;
+    }
+
+    public void setLokationsbuendelObjektcode(String lokationsbuendelObjektcode) {
+        this.lokationsbuendelObjektcode = lokationsbuendelObjektcode;
+    }
+
+    public List<Lokationszuordnung> getLokationszuordnungen() {
+        return lokationszuordnungen;
+    }
+
+    public void setLokationszuordnungen(List<Lokationszuordnung> lokationszuordnungen) {
+        this.lokationszuordnungen = lokationszuordnungen;
     }
 
     public Adresse getMessadresse() {
@@ -199,32 +211,26 @@ public class Messlokation extends Geschaeftsobjekt {
     }
 
     public static class MesslokationBuilder extends GeschaeftsobjektBuilder {
-        /**
-         * katasterinformation: Optional["Katasteradresse"] = None
-         */
         private Geokoordinaten geoadresse;
         /**
          * Liste der Geräte, die zu dieser Messstelle gehört
          */
         private List<Geraet> geraete;
-        /**
-         * grundzustaendiger_msbim_codenr: Optional[str] = None
-         */
         private String grundzustaendigerMsbCodenr;
-        /**
-         * # only one of the following three optional address attributes can be set
-         * messadresse: Optional["Adresse"] = None
-         */
         private String grundzustaendigerMsbimCodenr;
         /**
-         * Alternativ zu einer postalischen Adresse und Geokoordinaten kann hier eine Ortsangabe
-         * mittels Gemarkung und
-         * Flurstück erfolgen.
+         * Lokationszuordnung, um bspw. die zugehörigen Marktlokationen anzugeben
          */
         private Katasteradresse katasterinformation;
         /**
-         * geoadresse: Optional["Geokoordinaten"] = None
+         * Lokationsbuendel Code, der die Funktion dieses BOs an der Lokationsbuendelstruktur
+         * beschreibt.
          */
+        private String lokationsbuendelObjektcode;
+        /**
+         * Lokationszuordnung, um bspw. die zugehörigen Marktlokationen anzugeben
+         */
+        private List<Lokationszuordnung> lokationszuordnungen;
         private Adresse messadresse;
         /**
          * Liste der Messdienstleistungen, die zu dieser Messstelle gehört
@@ -293,6 +299,24 @@ public class Messlokation extends Geschaeftsobjekt {
     
         public MesslokationBuilder setKatasterinformation(Katasteradresse katasterinformation) {
             this.katasterinformation = katasterinformation;
+            return this;
+        }
+    
+        public String getLokationsbuendelObjektcode() {
+            return lokationsbuendelObjektcode;
+        }
+    
+        public MesslokationBuilder setLokationsbuendelObjektcode(String lokationsbuendelObjektcode) {
+            this.lokationsbuendelObjektcode = lokationsbuendelObjektcode;
+            return this;
+        }
+    
+        public List<Lokationszuordnung> getLokationszuordnungen() {
+            return lokationszuordnungen;
+        }
+    
+        public MesslokationBuilder setLokationszuordnungen(List<Lokationszuordnung> lokationszuordnungen) {
+            this.lokationszuordnungen = lokationszuordnungen;
             return this;
         }
     

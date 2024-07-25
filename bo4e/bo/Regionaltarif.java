@@ -42,11 +42,6 @@ public class Regionaltarif extends Geschaeftsobjekt {
      * Der Name des Marktpartners, der den Tarif anbietet
      */
     private String anbietername;
-    /**
-     * Angabe des inklusiven Zeitpunkts, ab dem der Tarif bzw. der Preis angewendet und
-     * abgerechnet wird,
-     * z.B. "2021-07-20T18:31:48Z"
-     */
     private OffsetDateTime anwendungVon;
     /**
      * Freitext
@@ -299,11 +294,6 @@ public class Regionaltarif extends Geschaeftsobjekt {
          * Der Name des Marktpartners, der den Tarif anbietet
          */
         private String anbietername;
-        /**
-         * Angabe des inklusiven Zeitpunkts, ab dem der Tarif bzw. der Preis angewendet und
-         * abgerechnet wird,
-         * z.B. "2021-07-20T18:31:48Z"
-         */
         private OffsetDateTime anwendungVon;
         /**
          * Freitext

@@ -22,20 +22,14 @@ import java.util.List;
  *
  * .. HINT::
  * `Ausschreibung JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Ausschreibung.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Ausschreibung.json>`_
  */
 public class Ausschreibung extends Geschaeftsobjekt {
     /**
      * Typ des Geschaeftsobjekts
      */
     private final Typ typ = Typ.AUSSCHREIBUNG;
-    /**
-     * bindefrist: Optional["Zeitraum"] = None
-     */
     private Zeitraum abgabefrist;
-    /**
-     * abgabefrist: Optional["Zeitraum"] = None
-     */
     private Geschaeftspartner ausschreibender;
     /**
      * Aufzählung der unterstützten Ausschreibungsportale
@@ -185,13 +179,7 @@ public class Ausschreibung extends Geschaeftsobjekt {
     }
 
     public static class AusschreibungBuilder extends GeschaeftsobjektBuilder {
-        /**
-         * bindefrist: Optional["Zeitraum"] = None
-         */
         private Zeitraum abgabefrist;
-        /**
-         * abgabefrist: Optional["Zeitraum"] = None
-         */
         private Geschaeftspartner ausschreibender;
         /**
          * Aufzählung der unterstützten Ausschreibungsportale

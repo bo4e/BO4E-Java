@@ -18,7 +18,7 @@ import java.util.List;
  *
  * .. HINT::
  * `AufAbschlag JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/AufAbschlag.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/AufAbschlag.json>`_
  */
 public class AufAbschlag extends COM {
     /**
@@ -39,7 +39,8 @@ public class AufAbschlag extends COM {
      */
     private String bezeichnung;
     /**
-     * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
+     * Gibt an in welcher Währungseinheit der Auf/Abschlag berechnet wird. Euro oder Ct..
+     * (Nur im Falle absoluter Aufschlagstypen).
      */
     private Waehrungseinheit einheit;
     /**
@@ -153,7 +154,8 @@ public class AufAbschlag extends COM {
          */
         private String bezeichnung;
         /**
-         * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
+         * Gibt an in welcher Währungseinheit der Auf/Abschlag berechnet wird. Euro oder Ct..
+         * (Nur im Falle absoluter Aufschlagstypen).
          */
         private Waehrungseinheit einheit;
         /**

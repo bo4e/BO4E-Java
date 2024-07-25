@@ -18,7 +18,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Ausschreibungslos JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Ausschreibungslos.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Ausschreibungslos.json>`_
  */
 public class Ausschreibungslos extends COM {
     /**
@@ -63,7 +63,8 @@ public class Ausschreibungslos extends COM {
      */
     private Preismodell preismodell;
     /**
-     * Kundenwunsch zur Kündigungsfrist in der Ausschreibung
+     * In welchem Intervall die Angebotsabgabe wiederholt werden darf.
+     * Angabe nur gesetzt für die 2. Phase bei öffentlich-rechtlichen Ausschreibungen
      */
     private Zeitraum wiederholungsintervall;
     /**
@@ -294,7 +295,8 @@ public class Ausschreibungslos extends COM {
          */
         private Preismodell preismodell;
         /**
-         * Kundenwunsch zur Kündigungsfrist in der Ausschreibung
+         * In welchem Intervall die Angebotsabgabe wiederholt werden darf.
+         * Angabe nur gesetzt für die 2. Phase bei öffentlich-rechtlichen Ausschreibungen
          */
         private Zeitraum wiederholungsintervall;
         /**

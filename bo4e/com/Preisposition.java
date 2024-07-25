@@ -21,12 +21,12 @@ import java.util.List;
  *
  * .. HINT::
  * `Preisposition JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Preisposition.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Preisposition.json>`_
  */
 public class Preisposition extends COM {
     /**
-     * Mit der Menge der hier angegebenen Größe wird die Staffelung/Zonung durchgeführt. Z.B.
-     * Vollbenutzungsstunden
+     * Eine vom BDEW standardisierte Bezeichnug für die abgerechnete Leistungserbringung;
+     * Diese Artikelnummer wird auch im Rechnungsteil der INVOIC verwendet.
      */
     private BDEWArtikelnummer bdewArtikelnummer;
     /**
@@ -43,7 +43,9 @@ public class Preisposition extends COM {
      */
     private Double freimengeBlindarbeit;
     /**
-     * gruppenartikel_id: Optional[str] = None
+     * Der cos phi (Verhältnis Wirkleistung/Scheinleistung) aus dem die Freimenge für die
+     * Blindarbeit berechnet wird als
+     * tan phi (Verhältnis Blindleistung/Wirkleistung)
      */
     private Double freimengeLeistungsfaktor;
     /**
@@ -71,7 +73,8 @@ public class Preisposition extends COM {
      */
     private Tarifzeit tarifzeit;
     /**
-     * Festlegung, für welche Tarifzeit der Preis hier festgelegt ist
+     * Die Zeit(dauer) auf die sich der Preis bezieht.
+     * Z.B. ein Jahr für einen Leistungspreis der in €/kW/Jahr ausgegeben wird
      */
     private Mengeneinheit zeitbasis;
     /**
@@ -206,8 +209,8 @@ public class Preisposition extends COM {
 
     public static class PreispositionBuilder extends COMBuilder {
         /**
-         * Mit der Menge der hier angegebenen Größe wird die Staffelung/Zonung durchgeführt. Z.B.
-         * Vollbenutzungsstunden
+         * Eine vom BDEW standardisierte Bezeichnug für die abgerechnete Leistungserbringung;
+         * Diese Artikelnummer wird auch im Rechnungsteil der INVOIC verwendet.
          */
         private BDEWArtikelnummer bdewArtikelnummer;
         /**
@@ -224,7 +227,9 @@ public class Preisposition extends COM {
          */
         private Double freimengeBlindarbeit;
         /**
-         * gruppenartikel_id: Optional[str] = None
+         * Der cos phi (Verhältnis Wirkleistung/Scheinleistung) aus dem die Freimenge für die
+         * Blindarbeit berechnet wird als
+         * tan phi (Verhältnis Blindleistung/Wirkleistung)
          */
         private Double freimengeLeistungsfaktor;
         /**
@@ -252,7 +257,8 @@ public class Preisposition extends COM {
          */
         private Tarifzeit tarifzeit;
         /**
-         * Festlegung, für welche Tarifzeit der Preis hier festgelegt ist
+         * Die Zeit(dauer) auf die sich der Preis bezieht.
+         * Z.B. ein Jahr für einen Leistungspreis der in €/kW/Jahr ausgegeben wird
          */
         private Mengeneinheit zeitbasis;
         /**

@@ -15,7 +15,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Preisgarantie JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Preisgarantie.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Preisgarantie.json>`_
  */
 public class Preisgarantie extends COM {
     /**
@@ -27,7 +27,8 @@ public class Preisgarantie extends COM {
      */
     private Preisgarantietyp preisgarantietyp;
     /**
-     * Freitext zur Beschreibung der Preisgarantie.
+     * Zeitraum, bis zu dem die Preisgarantie gilt, z.B. bis zu einem absolutem / fixem Datum
+     * oder als Laufzeit in Monaten.
      */
     private Zeitraum zeitlicheGueltigkeit;
 
@@ -75,7 +76,8 @@ public class Preisgarantie extends COM {
          */
         private Preisgarantietyp preisgarantietyp;
         /**
-         * Freitext zur Beschreibung der Preisgarantie.
+         * Zeitraum, bis zu dem die Preisgarantie gilt, z.B. bis zu einem absolutem / fixem Datum
+         * oder als Laufzeit in Monaten.
          */
         private Zeitraum zeitlicheGueltigkeit;
     

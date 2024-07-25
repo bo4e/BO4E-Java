@@ -17,11 +17,12 @@ import java.util.List;
  *
  * .. HINT::
  * `Ausschreibungsdetail JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Ausschreibungsdetail.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Ausschreibungsdetail.json>`_
  */
 public class Ausschreibungsdetail extends COM {
     /**
-     * Prognosewert für die Jahresarbeit der ausgeschriebenen Lokation
+     * Zeigt an, ob es zu der Marktlokation einen Lastgang gibt.
+     * Falls ja, kann dieser abgerufen werden und daraus die Verbrauchswerte ermittelt werden
      */
     private Boolean istLastgangVorhanden;
     /**
@@ -227,7 +228,8 @@ public class Ausschreibungsdetail extends COM {
 
     public static class AusschreibungsdetailBuilder extends COMBuilder {
         /**
-         * Prognosewert für die Jahresarbeit der ausgeschriebenen Lokation
+         * Zeigt an, ob es zu der Marktlokation einen Lastgang gibt.
+         * Falls ja, kann dieser abgerufen werden und daraus die Verbrauchswerte ermittelt werden
          */
         private Boolean istLastgangVorhanden;
         /**

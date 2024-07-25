@@ -6,7 +6,7 @@ import java.io.IOException;
  * Auflistung sämtlicher existierender Geschäftsobjekte.
  */
 public enum Typ {
-    ANGEBOT, AUSSCHREIBUNG, BUENDELVERTRAG, ENERGIEMENGE, FREMDKOSTEN, GERAET, GESCHAEFTSOBJEKT, GESCHAEFTSPARTNER, KOSTEN, LASTGANG, MARKTLOKATION, MARKTTEILNEHMER, MESSLOKATION, NETZNUTZUNGSRECHNUNG, PERSON, PREISBLATT, PREISBLATTDIENSTLEISTUNG, PREISBLATTHARDWARE, PREISBLATTKONZESSIONSABGABE, PREISBLATTMESSUNG, PREISBLATTNETZNUTZUNG, PREISBLATTUMLAGEN, RECHNUNG, REGION, REGIONALTARIF, STANDORTEIGENSCHAFTEN, TARIF, TARIFINFO, TARIFKOSTEN, TARIFPREISBLATT, VERTRAG, ZAEHLER, ZEITREIHE;
+    ANGEBOT, AUSSCHREIBUNG, BUENDELVERTRAG, ENERGIEMENGE, FREMDKOSTEN, GERAET, GESCHAEFTSOBJEKT, GESCHAEFTSPARTNER, KOSTEN, LASTGANG, LOKATIONSZUORDNUNG, MARKTLOKATION, MARKTTEILNEHMER, MESSLOKATION, NETZLOKATION, NETZNUTZUNGSRECHNUNG, PERSON, PREISBLATT, PREISBLATTDIENSTLEISTUNG, PREISBLATTHARDWARE, PREISBLATTKONZESSIONSABGABE, PREISBLATTMESSUNG, PREISBLATTNETZNUTZUNG, PREISBLATTUMLAGEN, RECHNUNG, REGION, REGIONALTARIF, STANDORTEIGENSCHAFTEN, STEUERBARERESSOURCE, TARIF, TARIFINFO, TARIFKOSTEN, TARIFPREISBLATT, TECHNISCHERESSOURCE, VERTRAG, ZAEHLER, ZEITREIHE;
 
     public String toValue() {
         switch (this) {
@@ -20,9 +20,11 @@ public enum Typ {
             case GESCHAEFTSPARTNER: return "GESCHAEFTSPARTNER";
             case KOSTEN: return "KOSTEN";
             case LASTGANG: return "LASTGANG";
+            case LOKATIONSZUORDNUNG: return "LOKATIONSZUORDNUNG";
             case MARKTLOKATION: return "MARKTLOKATION";
             case MARKTTEILNEHMER: return "MARKTTEILNEHMER";
             case MESSLOKATION: return "MESSLOKATION";
+            case NETZLOKATION: return "NETZLOKATION";
             case NETZNUTZUNGSRECHNUNG: return "NETZNUTZUNGSRECHNUNG";
             case PERSON: return "PERSON";
             case PREISBLATT: return "PREISBLATT";
@@ -36,10 +38,12 @@ public enum Typ {
             case REGION: return "REGION";
             case REGIONALTARIF: return "REGIONALTARIF";
             case STANDORTEIGENSCHAFTEN: return "STANDORTEIGENSCHAFTEN";
+            case STEUERBARERESSOURCE: return "STEUERBARERESSOURCE";
             case TARIF: return "TARIF";
             case TARIFINFO: return "TARIFINFO";
             case TARIFKOSTEN: return "TARIFKOSTEN";
             case TARIFPREISBLATT: return "TARIFPREISBLATT";
+            case TECHNISCHERESSOURCE: return "TECHNISCHERESSOURCE";
             case VERTRAG: return "VERTRAG";
             case ZAEHLER: return "ZAEHLER";
             case ZEITREIHE: return "ZEITREIHE";
@@ -58,9 +62,11 @@ public enum Typ {
         if (value.equals("GESCHAEFTSPARTNER")) return GESCHAEFTSPARTNER;
         if (value.equals("KOSTEN")) return KOSTEN;
         if (value.equals("LASTGANG")) return LASTGANG;
+        if (value.equals("LOKATIONSZUORDNUNG")) return LOKATIONSZUORDNUNG;
         if (value.equals("MARKTLOKATION")) return MARKTLOKATION;
         if (value.equals("MARKTTEILNEHMER")) return MARKTTEILNEHMER;
         if (value.equals("MESSLOKATION")) return MESSLOKATION;
+        if (value.equals("NETZLOKATION")) return NETZLOKATION;
         if (value.equals("NETZNUTZUNGSRECHNUNG")) return NETZNUTZUNGSRECHNUNG;
         if (value.equals("PERSON")) return PERSON;
         if (value.equals("PREISBLATT")) return PREISBLATT;
@@ -74,10 +80,12 @@ public enum Typ {
         if (value.equals("REGION")) return REGION;
         if (value.equals("REGIONALTARIF")) return REGIONALTARIF;
         if (value.equals("STANDORTEIGENSCHAFTEN")) return STANDORTEIGENSCHAFTEN;
+        if (value.equals("STEUERBARERESSOURCE")) return STEUERBARERESSOURCE;
         if (value.equals("TARIF")) return TARIF;
         if (value.equals("TARIFINFO")) return TARIFINFO;
         if (value.equals("TARIFKOSTEN")) return TARIFKOSTEN;
         if (value.equals("TARIFPREISBLATT")) return TARIFPREISBLATT;
+        if (value.equals("TECHNISCHERESSOURCE")) return TECHNISCHERESSOURCE;
         if (value.equals("VERTRAG")) return VERTRAG;
         if (value.equals("ZAEHLER")) return ZAEHLER;
         if (value.equals("ZEITREIHE")) return ZEITREIHE;

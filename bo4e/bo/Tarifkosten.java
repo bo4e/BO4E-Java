@@ -23,7 +23,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Tarifkosten JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Tarifkosten.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Tarifkosten.json>`_
  */
 public class Tarifkosten extends Geschaeftsobjekt {
     /**
@@ -38,11 +38,6 @@ public class Tarifkosten extends Geschaeftsobjekt {
      * Der Name des Marktpartners, der den Tarif anbietet
      */
     private String anbietername;
-    /**
-     * Angabe des inklusiven Zeitpunkts, ab dem der Tarif bzw. der Preis angewendet und
-     * abgerechnet wird,
-     * z.B. "2021-07-20T18:31:48Z"
-     */
     private OffsetDateTime anwendungVon;
     /**
      * Freitext
@@ -56,10 +51,6 @@ public class Tarifkosten extends Geschaeftsobjekt {
      * Der Energiemix, der für diesen Tarif gilt
      */
     private Energiemix energiemix;
-    /**
-     * Referenz (Link) zu einem Kostenobjekt, in dem die Kosten für die Anwendung
-     * des Tarifs auf eine Abnahmesituation berechnet wurden
-     */
     private Kosten kosten;
     /**
      * Kundentypen für den der Tarif gilt, z.B. Privatkunden
@@ -249,11 +240,6 @@ public class Tarifkosten extends Geschaeftsobjekt {
          * Der Name des Marktpartners, der den Tarif anbietet
          */
         private String anbietername;
-        /**
-         * Angabe des inklusiven Zeitpunkts, ab dem der Tarif bzw. der Preis angewendet und
-         * abgerechnet wird,
-         * z.B. "2021-07-20T18:31:48Z"
-         */
         private OffsetDateTime anwendungVon;
         /**
          * Freitext
@@ -267,10 +253,6 @@ public class Tarifkosten extends Geschaeftsobjekt {
          * Der Energiemix, der für diesen Tarif gilt
          */
         private Energiemix energiemix;
-        /**
-         * Referenz (Link) zu einem Kostenobjekt, in dem die Kosten für die Anwendung
-         * des Tarifs auf eine Abnahmesituation berechnet wurden
-         */
         private Kosten kosten;
         /**
          * Kundentypen für den der Tarif gilt, z.B. Privatkunden

@@ -15,7 +15,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Energieherkunft JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/com/Energieherkunft.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Energieherkunft.json>`_
  */
 public class Energieherkunft extends COM {
     /**

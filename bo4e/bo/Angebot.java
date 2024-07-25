@@ -23,7 +23,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Angebot JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.2.1/src/bo4e_schemas/bo/Angebot.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Angebot.json>`_
  */
 public class Angebot extends Geschaeftsobjekt {
     /**
@@ -66,10 +66,6 @@ public class Angebot extends Geschaeftsobjekt {
      * Person, die als Angebotsnehmer das Angebot angenommen hat
      */
     private Person unterzeichnerAngebotsnehmer;
-    /**
-     * Eine oder mehrere Varianten des Angebots mit den Angebotsteilen;
-     * Ein Angebot besteht mindestens aus einer Variante.
-     */
     private List<Angebotsvariante> varianten;
 
     public Angebot() {
@@ -210,10 +206,6 @@ public class Angebot extends Geschaeftsobjekt {
          * Person, die als Angebotsnehmer das Angebot angenommen hat
          */
         private Person unterzeichnerAngebotsnehmer;
-        /**
-         * Eine oder mehrere Varianten des Angebots mit den Angebotsteilen;
-         * Ein Angebot besteht mindestens aus einer Variante.
-         */
         private List<Angebotsvariante> varianten;
     
         public String getAnfragereferenz() {
