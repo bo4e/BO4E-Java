@@ -16,16 +16,10 @@ import java.util.List;
  *
  * .. HINT::
  * `RegionaleGueltigkeit JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/RegionaleGueltigkeit.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/RegionaleGueltigkeit.json>`_
  */
 public class RegionaleGueltigkeit extends COM {
-    /**
-     * Unterscheidung ob Positivliste oder Negativliste übertragen wird
-     */
     private Gueltigkeitstyp gueltigkeitstyp;
-    /**
-     * Hier stehen die Kriterien, die die regionale Gültigkeit festlegen
-     */
     private List<KriteriumWert> kriteriumsWerte;
 
     public RegionaleGueltigkeit() {
@@ -37,60 +31,85 @@ public class RegionaleGueltigkeit extends COM {
         this.kriteriumsWerte = builder.kriteriumsWerte;
     }
 
+    /**
+     * Unterscheidung ob Positivliste oder Negativliste übertragen wird
+     */
     public Gueltigkeitstyp getGueltigkeitstyp() {
         return gueltigkeitstyp;
     }
 
+    /**
+     * Unterscheidung ob Positivliste oder Negativliste übertragen wird
+     */
     public void setGueltigkeitstyp(Gueltigkeitstyp gueltigkeitstyp) {
         this.gueltigkeitstyp = gueltigkeitstyp;
     }
 
+    /**
+     * Hier stehen die Kriterien, die die regionale Gültigkeit festlegen
+     */
     public List<KriteriumWert> getKriteriumsWerte() {
         return kriteriumsWerte;
     }
 
+    /**
+     * Hier stehen die Kriterien, die die regionale Gültigkeit festlegen
+     */
     public void setKriteriumsWerte(List<KriteriumWert> kriteriumsWerte) {
         this.kriteriumsWerte = kriteriumsWerte;
     }
 
+    public static RegionaleGueltigkeitBuilder builder() {
+        return new RegionaleGueltigkeitBuilder();
+    }
+
     public static class RegionaleGueltigkeitBuilder extends COMBuilder {
+        private Gueltigkeitstyp gueltigkeitstyp;
+        private List<KriteriumWert> kriteriumsWerte;
+
+        private RegionaleGueltigkeitBuilder() {
+        }
+
         /**
          * Unterscheidung ob Positivliste oder Negativliste übertragen wird
          */
-        private Gueltigkeitstyp gueltigkeitstyp;
-        /**
-         * Hier stehen die Kriterien, die die regionale Gültigkeit festlegen
-         */
-        private List<KriteriumWert> kriteriumsWerte;
-    
         public Gueltigkeitstyp getGueltigkeitstyp() {
             return gueltigkeitstyp;
         }
-    
+
+        /**
+         * Unterscheidung ob Positivliste oder Negativliste übertragen wird
+         */
         public RegionaleGueltigkeitBuilder setGueltigkeitstyp(Gueltigkeitstyp gueltigkeitstyp) {
             this.gueltigkeitstyp = gueltigkeitstyp;
             return this;
         }
-    
+
+        /**
+         * Hier stehen die Kriterien, die die regionale Gültigkeit festlegen
+         */
         public List<KriteriumWert> getKriteriumsWerte() {
             return kriteriumsWerte;
         }
-    
+
+        /**
+         * Hier stehen die Kriterien, die die regionale Gültigkeit festlegen
+         */
         public RegionaleGueltigkeitBuilder setKriteriumsWerte(List<KriteriumWert> kriteriumsWerte) {
             this.kriteriumsWerte = kriteriumsWerte;
             return this;
         }
-    
+
         public RegionaleGueltigkeitBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public RegionaleGueltigkeitBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public RegionaleGueltigkeit build() {
             return new RegionaleGueltigkeit(this);
         }

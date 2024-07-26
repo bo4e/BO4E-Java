@@ -15,16 +15,10 @@ import java.util.List;
  *
  * .. HINT::
  * `KriteriumWert JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/KriteriumWert.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/KriteriumWert.json>`_
  */
 public class KriteriumWert extends COM {
-    /**
-     * Hier steht, für welches Kriterium der Wert gilt. Z.B. Postleitzahlen
-     */
     private Tarifregionskriterium kriterium;
-    /**
-     * Ein Wert, passend zum Kriterium. Z.B. eine Postleitzahl.
-     */
     private String wert;
 
     public KriteriumWert() {
@@ -36,60 +30,85 @@ public class KriteriumWert extends COM {
         this.wert = builder.wert;
     }
 
+    /**
+     * Hier steht, für welches Kriterium der Wert gilt. Z.B. Postleitzahlen
+     */
     public Tarifregionskriterium getKriterium() {
         return kriterium;
     }
 
+    /**
+     * Hier steht, für welches Kriterium der Wert gilt. Z.B. Postleitzahlen
+     */
     public void setKriterium(Tarifregionskriterium kriterium) {
         this.kriterium = kriterium;
     }
 
+    /**
+     * Ein Wert, passend zum Kriterium. Z.B. eine Postleitzahl.
+     */
     public String getWert() {
         return wert;
     }
 
+    /**
+     * Ein Wert, passend zum Kriterium. Z.B. eine Postleitzahl.
+     */
     public void setWert(String wert) {
         this.wert = wert;
     }
 
+    public static KriteriumWertBuilder builder() {
+        return new KriteriumWertBuilder();
+    }
+
     public static class KriteriumWertBuilder extends COMBuilder {
+        private Tarifregionskriterium kriterium;
+        private String wert;
+
+        private KriteriumWertBuilder() {
+        }
+
         /**
          * Hier steht, für welches Kriterium der Wert gilt. Z.B. Postleitzahlen
          */
-        private Tarifregionskriterium kriterium;
-        /**
-         * Ein Wert, passend zum Kriterium. Z.B. eine Postleitzahl.
-         */
-        private String wert;
-    
         public Tarifregionskriterium getKriterium() {
             return kriterium;
         }
-    
+
+        /**
+         * Hier steht, für welches Kriterium der Wert gilt. Z.B. Postleitzahlen
+         */
         public KriteriumWertBuilder setKriterium(Tarifregionskriterium kriterium) {
             this.kriterium = kriterium;
             return this;
         }
-    
+
+        /**
+         * Ein Wert, passend zum Kriterium. Z.B. eine Postleitzahl.
+         */
         public String getWert() {
             return wert;
         }
-    
+
+        /**
+         * Ein Wert, passend zum Kriterium. Z.B. eine Postleitzahl.
+         */
         public KriteriumWertBuilder setWert(String wert) {
             this.wert = wert;
             return this;
         }
-    
+
         public KriteriumWertBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public KriteriumWertBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public KriteriumWert build() {
             return new KriteriumWert(this);
         }

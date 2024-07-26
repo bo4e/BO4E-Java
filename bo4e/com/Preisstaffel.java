@@ -14,25 +14,12 @@ import java.util.List;
  *
  * .. HINT::
  * `Preisstaffel JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Preisstaffel.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Preisstaffel.json>`_
  */
 public class Preisstaffel extends COM {
-    /**
-     * Preis pro abgerechneter Mengeneinheit
-     */
     private Double einheitspreis;
-    /**
-     * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
-     * Parameter
-     */
     private Sigmoidparameter sigmoidparameter;
-    /**
-     * Exklusiver oberer Wert, bis zu dem die Staffel gilt
-     */
     private Double staffelgrenzeBis;
-    /**
-     * Inklusiver unterer Wert, ab dem die Staffel gilt
-     */
     private Double staffelgrenzeVon;
 
     public Preisstaffel() {
@@ -46,103 +33,149 @@ public class Preisstaffel extends COM {
         this.staffelgrenzeVon = builder.staffelgrenzeVon;
     }
 
+    /**
+     * Preis pro abgerechneter Mengeneinheit
+     */
     public Double getEinheitspreis() {
         return einheitspreis;
     }
 
+    /**
+     * Preis pro abgerechneter Mengeneinheit
+     */
     public void setEinheitspreis(Double einheitspreis) {
         this.einheitspreis = einheitspreis;
     }
 
+    /**
+     * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
+     * Parameter
+     */
     public Sigmoidparameter getSigmoidparameter() {
         return sigmoidparameter;
     }
 
+    /**
+     * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
+     * Parameter
+     */
     public void setSigmoidparameter(Sigmoidparameter sigmoidparameter) {
         this.sigmoidparameter = sigmoidparameter;
     }
 
+    /**
+     * Exklusiver oberer Wert, bis zu dem die Staffel gilt
+     */
     public Double getStaffelgrenzeBis() {
         return staffelgrenzeBis;
     }
 
+    /**
+     * Exklusiver oberer Wert, bis zu dem die Staffel gilt
+     */
     public void setStaffelgrenzeBis(Double staffelgrenzeBis) {
         this.staffelgrenzeBis = staffelgrenzeBis;
     }
 
+    /**
+     * Inklusiver unterer Wert, ab dem die Staffel gilt
+     */
     public Double getStaffelgrenzeVon() {
         return staffelgrenzeVon;
     }
 
+    /**
+     * Inklusiver unterer Wert, ab dem die Staffel gilt
+     */
     public void setStaffelgrenzeVon(Double staffelgrenzeVon) {
         this.staffelgrenzeVon = staffelgrenzeVon;
     }
 
+    public static PreisstaffelBuilder builder() {
+        return new PreisstaffelBuilder();
+    }
+
     public static class PreisstaffelBuilder extends COMBuilder {
+        private Double einheitspreis;
+        private Sigmoidparameter sigmoidparameter;
+        private Double staffelgrenzeBis;
+        private Double staffelgrenzeVon;
+
+        private PreisstaffelBuilder() {
+        }
+
         /**
          * Preis pro abgerechneter Mengeneinheit
          */
-        private Double einheitspreis;
-        /**
-         * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
-         * Parameter
-         */
-        private Sigmoidparameter sigmoidparameter;
-        /**
-         * Exklusiver oberer Wert, bis zu dem die Staffel gilt
-         */
-        private Double staffelgrenzeBis;
-        /**
-         * Inklusiver unterer Wert, ab dem die Staffel gilt
-         */
-        private Double staffelgrenzeVon;
-    
         public Double getEinheitspreis() {
             return einheitspreis;
         }
-    
+
+        /**
+         * Preis pro abgerechneter Mengeneinheit
+         */
         public PreisstaffelBuilder setEinheitspreis(Double einheitspreis) {
             this.einheitspreis = einheitspreis;
             return this;
         }
-    
+
+        /**
+         * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
+         * Parameter
+         */
         public Sigmoidparameter getSigmoidparameter() {
             return sigmoidparameter;
         }
-    
+
+        /**
+         * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
+         * Parameter
+         */
         public PreisstaffelBuilder setSigmoidparameter(Sigmoidparameter sigmoidparameter) {
             this.sigmoidparameter = sigmoidparameter;
             return this;
         }
-    
+
+        /**
+         * Exklusiver oberer Wert, bis zu dem die Staffel gilt
+         */
         public Double getStaffelgrenzeBis() {
             return staffelgrenzeBis;
         }
-    
+
+        /**
+         * Exklusiver oberer Wert, bis zu dem die Staffel gilt
+         */
         public PreisstaffelBuilder setStaffelgrenzeBis(Double staffelgrenzeBis) {
             this.staffelgrenzeBis = staffelgrenzeBis;
             return this;
         }
-    
+
+        /**
+         * Inklusiver unterer Wert, ab dem die Staffel gilt
+         */
         public Double getStaffelgrenzeVon() {
             return staffelgrenzeVon;
         }
-    
+
+        /**
+         * Inklusiver unterer Wert, ab dem die Staffel gilt
+         */
         public PreisstaffelBuilder setStaffelgrenzeVon(Double staffelgrenzeVon) {
             this.staffelgrenzeVon = staffelgrenzeVon;
             return this;
         }
-    
+
         public PreisstaffelBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public PreisstaffelBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Preisstaffel build() {
             return new Preisstaffel(this);
         }

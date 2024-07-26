@@ -14,20 +14,11 @@ import java.util.List;
  *
  * .. HINT::
  * `StandorteigenschaftenStrom JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_
  */
 public class StandorteigenschaftenStrom extends COM {
-    /**
-     * Die EIC-Nummer des Bilanzierungsgebietes
-     */
     private String bilanzierungsgebietEic;
-    /**
-     * Der Name der Regelzone
-     */
     private String regelzone;
-    /**
-     * De EIC-Nummer der Regelzone
-     */
     private String regelzoneEic;
 
     public StandorteigenschaftenStrom() {
@@ -40,81 +31,115 @@ public class StandorteigenschaftenStrom extends COM {
         this.regelzoneEic = builder.regelzoneEic;
     }
 
+    /**
+     * Die EIC-Nummer des Bilanzierungsgebietes
+     */
     public String getBilanzierungsgebietEic() {
         return bilanzierungsgebietEic;
     }
 
+    /**
+     * Die EIC-Nummer des Bilanzierungsgebietes
+     */
     public void setBilanzierungsgebietEic(String bilanzierungsgebietEic) {
         this.bilanzierungsgebietEic = bilanzierungsgebietEic;
     }
 
+    /**
+     * Der Name der Regelzone
+     */
     public String getRegelzone() {
         return regelzone;
     }
 
+    /**
+     * Der Name der Regelzone
+     */
     public void setRegelzone(String regelzone) {
         this.regelzone = regelzone;
     }
 
+    /**
+     * De EIC-Nummer der Regelzone
+     */
     public String getRegelzoneEic() {
         return regelzoneEic;
     }
 
+    /**
+     * De EIC-Nummer der Regelzone
+     */
     public void setRegelzoneEic(String regelzoneEic) {
         this.regelzoneEic = regelzoneEic;
     }
 
+    public static StandorteigenschaftenStromBuilder builder() {
+        return new StandorteigenschaftenStromBuilder();
+    }
+
     public static class StandorteigenschaftenStromBuilder extends COMBuilder {
+        private String bilanzierungsgebietEic;
+        private String regelzone;
+        private String regelzoneEic;
+
+        private StandorteigenschaftenStromBuilder() {
+        }
+
         /**
          * Die EIC-Nummer des Bilanzierungsgebietes
          */
-        private String bilanzierungsgebietEic;
-        /**
-         * Der Name der Regelzone
-         */
-        private String regelzone;
-        /**
-         * De EIC-Nummer der Regelzone
-         */
-        private String regelzoneEic;
-    
         public String getBilanzierungsgebietEic() {
             return bilanzierungsgebietEic;
         }
-    
+
+        /**
+         * Die EIC-Nummer des Bilanzierungsgebietes
+         */
         public StandorteigenschaftenStromBuilder setBilanzierungsgebietEic(String bilanzierungsgebietEic) {
             this.bilanzierungsgebietEic = bilanzierungsgebietEic;
             return this;
         }
-    
+
+        /**
+         * Der Name der Regelzone
+         */
         public String getRegelzone() {
             return regelzone;
         }
-    
+
+        /**
+         * Der Name der Regelzone
+         */
         public StandorteigenschaftenStromBuilder setRegelzone(String regelzone) {
             this.regelzone = regelzone;
             return this;
         }
-    
+
+        /**
+         * De EIC-Nummer der Regelzone
+         */
         public String getRegelzoneEic() {
             return regelzoneEic;
         }
-    
+
+        /**
+         * De EIC-Nummer der Regelzone
+         */
         public StandorteigenschaftenStromBuilder setRegelzoneEic(String regelzoneEic) {
             this.regelzoneEic = regelzoneEic;
             return this;
         }
-    
+
         public StandorteigenschaftenStromBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public StandorteigenschaftenStromBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public StandorteigenschaftenStrom build() {
             return new StandorteigenschaftenStrom(this);
         }

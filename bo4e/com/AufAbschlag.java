@@ -18,42 +18,16 @@ import java.util.List;
  *
  * .. HINT::
  * `AufAbschlag JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/AufAbschlag.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/AufAbschlag.json>`_
  */
 public class AufAbschlag extends COM {
-    /**
-     * Typ des Aufabschlages (z.B. absolut oder prozentual).
-     */
     private AufAbschlagstyp aufAbschlagstyp;
-    /**
-     * Diesem Preis oder den Kosten ist der Auf/Abschlag zugeordnet. Z.B. Arbeitspreis,
-     * Gesamtpreis etc..
-     */
     private AufAbschlagsziel aufAbschlagsziel;
-    /**
-     * Beschreibung zum Auf-/Abschlag
-     */
     private String beschreibung;
-    /**
-     * Bezeichnung des Auf-/Abschlags
-     */
     private String bezeichnung;
-    /**
-     * Gibt an in welcher Währungseinheit der Auf/Abschlag berechnet wird. Euro oder Ct..
-     * (Nur im Falle absoluter Aufschlagstypen).
-     */
     private Waehrungseinheit einheit;
-    /**
-     * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
-     */
     private Zeitraum gueltigkeitszeitraum;
-    /**
-     * Werte für die gestaffelten Auf/Abschläge.
-     */
     private List<Preisstaffel> staffeln;
-    /**
-     * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
-     */
     private String website;
 
     public AufAbschlag() {
@@ -71,188 +45,273 @@ public class AufAbschlag extends COM {
         this.website = builder.website;
     }
 
+    /**
+     * Typ des Aufabschlages (z.B. absolut oder prozentual).
+     */
     public AufAbschlagstyp getAufAbschlagstyp() {
         return aufAbschlagstyp;
     }
 
+    /**
+     * Typ des Aufabschlages (z.B. absolut oder prozentual).
+     */
     public void setAufAbschlagstyp(AufAbschlagstyp aufAbschlagstyp) {
         this.aufAbschlagstyp = aufAbschlagstyp;
     }
 
+    /**
+     * Diesem Preis oder den Kosten ist der Auf/Abschlag zugeordnet. Z.B. Arbeitspreis,
+     * Gesamtpreis etc..
+     */
     public AufAbschlagsziel getAufAbschlagsziel() {
         return aufAbschlagsziel;
     }
 
+    /**
+     * Diesem Preis oder den Kosten ist der Auf/Abschlag zugeordnet. Z.B. Arbeitspreis,
+     * Gesamtpreis etc..
+     */
     public void setAufAbschlagsziel(AufAbschlagsziel aufAbschlagsziel) {
         this.aufAbschlagsziel = aufAbschlagsziel;
     }
 
+    /**
+     * Beschreibung zum Auf-/Abschlag
+     */
     public String getBeschreibung() {
         return beschreibung;
     }
 
+    /**
+     * Beschreibung zum Auf-/Abschlag
+     */
     public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
     }
 
+    /**
+     * Bezeichnung des Auf-/Abschlags
+     */
     public String getBezeichnung() {
         return bezeichnung;
     }
 
+    /**
+     * Bezeichnung des Auf-/Abschlags
+     */
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;
     }
 
+    /**
+     * Gibt an in welcher Währungseinheit der Auf/Abschlag berechnet wird. Euro oder Ct..
+     * (Nur im Falle absoluter Aufschlagstypen).
+     */
     public Waehrungseinheit getEinheit() {
         return einheit;
     }
 
+    /**
+     * Gibt an in welcher Währungseinheit der Auf/Abschlag berechnet wird. Euro oder Ct..
+     * (Nur im Falle absoluter Aufschlagstypen).
+     */
     public void setEinheit(Waehrungseinheit einheit) {
         this.einheit = einheit;
     }
 
+    /**
+     * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
+     */
     public Zeitraum getGueltigkeitszeitraum() {
         return gueltigkeitszeitraum;
     }
 
+    /**
+     * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
+     */
     public void setGueltigkeitszeitraum(Zeitraum gueltigkeitszeitraum) {
         this.gueltigkeitszeitraum = gueltigkeitszeitraum;
     }
 
+    /**
+     * Werte für die gestaffelten Auf/Abschläge.
+     */
     public List<Preisstaffel> getStaffeln() {
         return staffeln;
     }
 
+    /**
+     * Werte für die gestaffelten Auf/Abschläge.
+     */
     public void setStaffeln(List<Preisstaffel> staffeln) {
         this.staffeln = staffeln;
     }
 
+    /**
+     * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
+     */
     public String getWebsite() {
         return website;
     }
 
+    /**
+     * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
+     */
     public void setWebsite(String website) {
         this.website = website;
     }
 
+    public static AufAbschlagBuilder builder() {
+        return new AufAbschlagBuilder();
+    }
+
     public static class AufAbschlagBuilder extends COMBuilder {
+        private AufAbschlagstyp aufAbschlagstyp;
+        private AufAbschlagsziel aufAbschlagsziel;
+        private String beschreibung;
+        private String bezeichnung;
+        private Waehrungseinheit einheit;
+        private Zeitraum gueltigkeitszeitraum;
+        private List<Preisstaffel> staffeln;
+        private String website;
+
+        private AufAbschlagBuilder() {
+        }
+
         /**
          * Typ des Aufabschlages (z.B. absolut oder prozentual).
          */
-        private AufAbschlagstyp aufAbschlagstyp;
-        /**
-         * Diesem Preis oder den Kosten ist der Auf/Abschlag zugeordnet. Z.B. Arbeitspreis,
-         * Gesamtpreis etc..
-         */
-        private AufAbschlagsziel aufAbschlagsziel;
-        /**
-         * Beschreibung zum Auf-/Abschlag
-         */
-        private String beschreibung;
-        /**
-         * Bezeichnung des Auf-/Abschlags
-         */
-        private String bezeichnung;
-        /**
-         * Gibt an in welcher Währungseinheit der Auf/Abschlag berechnet wird. Euro oder Ct..
-         * (Nur im Falle absoluter Aufschlagstypen).
-         */
-        private Waehrungseinheit einheit;
-        /**
-         * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
-         */
-        private Zeitraum gueltigkeitszeitraum;
-        /**
-         * Werte für die gestaffelten Auf/Abschläge.
-         */
-        private List<Preisstaffel> staffeln;
-        /**
-         * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
-         */
-        private String website;
-    
         public AufAbschlagstyp getAufAbschlagstyp() {
             return aufAbschlagstyp;
         }
-    
+
+        /**
+         * Typ des Aufabschlages (z.B. absolut oder prozentual).
+         */
         public AufAbschlagBuilder setAufAbschlagstyp(AufAbschlagstyp aufAbschlagstyp) {
             this.aufAbschlagstyp = aufAbschlagstyp;
             return this;
         }
-    
+
+        /**
+         * Diesem Preis oder den Kosten ist der Auf/Abschlag zugeordnet. Z.B. Arbeitspreis,
+         * Gesamtpreis etc..
+         */
         public AufAbschlagsziel getAufAbschlagsziel() {
             return aufAbschlagsziel;
         }
-    
+
+        /**
+         * Diesem Preis oder den Kosten ist der Auf/Abschlag zugeordnet. Z.B. Arbeitspreis,
+         * Gesamtpreis etc..
+         */
         public AufAbschlagBuilder setAufAbschlagsziel(AufAbschlagsziel aufAbschlagsziel) {
             this.aufAbschlagsziel = aufAbschlagsziel;
             return this;
         }
-    
+
+        /**
+         * Beschreibung zum Auf-/Abschlag
+         */
         public String getBeschreibung() {
             return beschreibung;
         }
-    
+
+        /**
+         * Beschreibung zum Auf-/Abschlag
+         */
         public AufAbschlagBuilder setBeschreibung(String beschreibung) {
             this.beschreibung = beschreibung;
             return this;
         }
-    
+
+        /**
+         * Bezeichnung des Auf-/Abschlags
+         */
         public String getBezeichnung() {
             return bezeichnung;
         }
-    
+
+        /**
+         * Bezeichnung des Auf-/Abschlags
+         */
         public AufAbschlagBuilder setBezeichnung(String bezeichnung) {
             this.bezeichnung = bezeichnung;
             return this;
         }
-    
+
+        /**
+         * Gibt an in welcher Währungseinheit der Auf/Abschlag berechnet wird. Euro oder Ct..
+         * (Nur im Falle absoluter Aufschlagstypen).
+         */
         public Waehrungseinheit getEinheit() {
             return einheit;
         }
-    
+
+        /**
+         * Gibt an in welcher Währungseinheit der Auf/Abschlag berechnet wird. Euro oder Ct..
+         * (Nur im Falle absoluter Aufschlagstypen).
+         */
         public AufAbschlagBuilder setEinheit(Waehrungseinheit einheit) {
             this.einheit = einheit;
             return this;
         }
-    
+
+        /**
+         * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
+         */
         public Zeitraum getGueltigkeitszeitraum() {
             return gueltigkeitszeitraum;
         }
-    
+
+        /**
+         * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
+         */
         public AufAbschlagBuilder setGueltigkeitszeitraum(Zeitraum gueltigkeitszeitraum) {
             this.gueltigkeitszeitraum = gueltigkeitszeitraum;
             return this;
         }
-    
+
+        /**
+         * Werte für die gestaffelten Auf/Abschläge.
+         */
         public List<Preisstaffel> getStaffeln() {
             return staffeln;
         }
-    
+
+        /**
+         * Werte für die gestaffelten Auf/Abschläge.
+         */
         public AufAbschlagBuilder setStaffeln(List<Preisstaffel> staffeln) {
             this.staffeln = staffeln;
             return this;
         }
-    
+
+        /**
+         * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
+         */
         public String getWebsite() {
             return website;
         }
-    
+
+        /**
+         * Internetseite, auf der die Informationen zum Auf-/Abschlag veröffentlicht sind.
+         */
         public AufAbschlagBuilder setWebsite(String website) {
             this.website = website;
             return this;
         }
-    
+
         public AufAbschlagBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public AufAbschlagBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public AufAbschlag build() {
             return new AufAbschlag(this);
         }

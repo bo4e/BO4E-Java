@@ -20,7 +20,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Zeitraum JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Zeitraum.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Zeitraum.json>`_
  */
 public class Zeitraum extends COM {
     private Double dauer;
@@ -91,6 +91,10 @@ public class Zeitraum extends COM {
         this.startzeitpunkt = startzeitpunkt;
     }
 
+    public static ZeitraumBuilder builder() {
+        return new ZeitraumBuilder();
+    }
+
     public static class ZeitraumBuilder extends COMBuilder {
         private Double dauer;
         private Mengeneinheit einheit;
@@ -98,71 +102,74 @@ public class Zeitraum extends COM {
         private OffsetDateTime endzeitpunkt;
         private OffsetDateTime startdatum;
         private OffsetDateTime startzeitpunkt;
-    
+
+        private ZeitraumBuilder() {
+        }
+
         public Double getDauer() {
             return dauer;
         }
-    
+
         public ZeitraumBuilder setDauer(Double dauer) {
             this.dauer = dauer;
             return this;
         }
-    
+
         public Mengeneinheit getEinheit() {
             return einheit;
         }
-    
+
         public ZeitraumBuilder setEinheit(Mengeneinheit einheit) {
             this.einheit = einheit;
             return this;
         }
-    
+
         public OffsetDateTime getEnddatum() {
             return enddatum;
         }
-    
+
         public ZeitraumBuilder setEnddatum(OffsetDateTime enddatum) {
             this.enddatum = enddatum;
             return this;
         }
-    
+
         public OffsetDateTime getEndzeitpunkt() {
             return endzeitpunkt;
         }
-    
+
         public ZeitraumBuilder setEndzeitpunkt(OffsetDateTime endzeitpunkt) {
             this.endzeitpunkt = endzeitpunkt;
             return this;
         }
-    
+
         public OffsetDateTime getStartdatum() {
             return startdatum;
         }
-    
+
         public ZeitraumBuilder setStartdatum(OffsetDateTime startdatum) {
             this.startdatum = startdatum;
             return this;
         }
-    
+
         public OffsetDateTime getStartzeitpunkt() {
             return startzeitpunkt;
         }
-    
+
         public ZeitraumBuilder setStartzeitpunkt(OffsetDateTime startzeitpunkt) {
             this.startzeitpunkt = startzeitpunkt;
             return this;
         }
-    
+
         public ZeitraumBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public ZeitraumBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Zeitraum build() {
             return new Zeitraum(this);
         }

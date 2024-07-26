@@ -14,20 +14,11 @@ import java.util.List;
  *
  * .. HINT::
  * `AufAbschlagstaffelProOrt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/AufAbschlagstaffelProOrt.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/AufAbschlagstaffelProOrt.json>`_
  */
 public class AufAbschlagstaffelProOrt extends COM {
-    /**
-     * Oberer Wert, bis zu dem die Staffel gilt.
-     */
     private Double staffelgrenzeBis;
-    /**
-     * Unterer Wert, ab dem die Staffel gilt.
-     */
     private Double staffelgrenzeVon;
-    /**
-     * Der Wert für den Auf- oder Abschlag.
-     */
     private Double wert;
 
     public AufAbschlagstaffelProOrt() {
@@ -40,81 +31,115 @@ public class AufAbschlagstaffelProOrt extends COM {
         this.wert = builder.wert;
     }
 
+    /**
+     * Oberer Wert, bis zu dem die Staffel gilt.
+     */
     public Double getStaffelgrenzeBis() {
         return staffelgrenzeBis;
     }
 
+    /**
+     * Oberer Wert, bis zu dem die Staffel gilt.
+     */
     public void setStaffelgrenzeBis(Double staffelgrenzeBis) {
         this.staffelgrenzeBis = staffelgrenzeBis;
     }
 
+    /**
+     * Unterer Wert, ab dem die Staffel gilt.
+     */
     public Double getStaffelgrenzeVon() {
         return staffelgrenzeVon;
     }
 
+    /**
+     * Unterer Wert, ab dem die Staffel gilt.
+     */
     public void setStaffelgrenzeVon(Double staffelgrenzeVon) {
         this.staffelgrenzeVon = staffelgrenzeVon;
     }
 
+    /**
+     * Der Wert für den Auf- oder Abschlag.
+     */
     public Double getWert() {
         return wert;
     }
 
+    /**
+     * Der Wert für den Auf- oder Abschlag.
+     */
     public void setWert(Double wert) {
         this.wert = wert;
     }
 
+    public static AufAbschlagstaffelProOrtBuilder builder() {
+        return new AufAbschlagstaffelProOrtBuilder();
+    }
+
     public static class AufAbschlagstaffelProOrtBuilder extends COMBuilder {
+        private Double staffelgrenzeBis;
+        private Double staffelgrenzeVon;
+        private Double wert;
+
+        private AufAbschlagstaffelProOrtBuilder() {
+        }
+
         /**
          * Oberer Wert, bis zu dem die Staffel gilt.
          */
-        private Double staffelgrenzeBis;
-        /**
-         * Unterer Wert, ab dem die Staffel gilt.
-         */
-        private Double staffelgrenzeVon;
-        /**
-         * Der Wert für den Auf- oder Abschlag.
-         */
-        private Double wert;
-    
         public Double getStaffelgrenzeBis() {
             return staffelgrenzeBis;
         }
-    
+
+        /**
+         * Oberer Wert, bis zu dem die Staffel gilt.
+         */
         public AufAbschlagstaffelProOrtBuilder setStaffelgrenzeBis(Double staffelgrenzeBis) {
             this.staffelgrenzeBis = staffelgrenzeBis;
             return this;
         }
-    
+
+        /**
+         * Unterer Wert, ab dem die Staffel gilt.
+         */
         public Double getStaffelgrenzeVon() {
             return staffelgrenzeVon;
         }
-    
+
+        /**
+         * Unterer Wert, ab dem die Staffel gilt.
+         */
         public AufAbschlagstaffelProOrtBuilder setStaffelgrenzeVon(Double staffelgrenzeVon) {
             this.staffelgrenzeVon = staffelgrenzeVon;
             return this;
         }
-    
+
+        /**
+         * Der Wert für den Auf- oder Abschlag.
+         */
         public Double getWert() {
             return wert;
         }
-    
+
+        /**
+         * Der Wert für den Auf- oder Abschlag.
+         */
         public AufAbschlagstaffelProOrtBuilder setWert(Double wert) {
             this.wert = wert;
             return this;
         }
-    
+
         public AufAbschlagstaffelProOrtBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public AufAbschlagstaffelProOrtBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public AufAbschlagstaffelProOrt build() {
             return new AufAbschlagstaffelProOrt(this);
         }

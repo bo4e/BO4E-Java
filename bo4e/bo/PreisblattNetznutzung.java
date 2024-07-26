@@ -22,46 +22,18 @@ import java.util.List;
  *
  * .. HINT::
  * `PreisblattNetznutzung JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/PreisblattNetznutzung.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/bo/PreisblattNetznutzung.json>`_
  */
 public class PreisblattNetznutzung extends Geschaeftsobjekt {
-    /**
-     * Typ des Geschaeftsobjekts
-     */
     private final Typ typ = Typ.PREISBLATTNETZNUTZUNG;
-    /**
-     * Eine Bezeichnung für das Preisblatt
-     */
     private String bezeichnung;
-    /**
-     * Die Preise gelten für Marktlokationen der angebebenen Bilanzierungsmethode
-     */
     private Bilanzierungsmethode bilanzierungsmethode;
-    /**
-     * Der Zeitraum für den der Preis festgelegt ist
-     */
     private Zeitraum gueltigkeit;
-    /**
-     * Der Netzbetreiber, der die Preise veröffentlicht hat
-     */
     private Marktteilnehmer herausgeber;
     private Kundengruppe kundengruppe;
-    /**
-     * Die Preise gelten für Marktlokationen in der angebebenen Netzebene
-     */
     private Netzebene netzebene;
-    /**
-     * Die einzelnen Positionen, die mit dem Preisblatt abgerechnet werden können. Z.B.
-     * Arbeitspreis, Grundpreis etc
-     */
     private List<Preisposition> preispositionen;
-    /**
-     * Merkmal, das anzeigt, ob es sich um vorläufige oder endgültige Preise handelt
-     */
     private Preisstatus preisstatus;
-    /**
-     * Preisblatt gilt für angegebene Sparte
-     */
     private Sparte sparte;
 
     public PreisblattNetznutzung() {
@@ -84,34 +56,58 @@ public class PreisblattNetznutzung extends Geschaeftsobjekt {
         return typ;
     }
 
+    /**
+     * Eine Bezeichnung für das Preisblatt
+     */
     public String getBezeichnung() {
         return bezeichnung;
     }
 
+    /**
+     * Eine Bezeichnung für das Preisblatt
+     */
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;
     }
 
+    /**
+     * Die Preise gelten für Marktlokationen der angebebenen Bilanzierungsmethode
+     */
     public Bilanzierungsmethode getBilanzierungsmethode() {
         return bilanzierungsmethode;
     }
 
+    /**
+     * Die Preise gelten für Marktlokationen der angebebenen Bilanzierungsmethode
+     */
     public void setBilanzierungsmethode(Bilanzierungsmethode bilanzierungsmethode) {
         this.bilanzierungsmethode = bilanzierungsmethode;
     }
 
+    /**
+     * Der Zeitraum für den der Preis festgelegt ist
+     */
     public Zeitraum getGueltigkeit() {
         return gueltigkeit;
     }
 
+    /**
+     * Der Zeitraum für den der Preis festgelegt ist
+     */
     public void setGueltigkeit(Zeitraum gueltigkeit) {
         this.gueltigkeit = gueltigkeit;
     }
 
+    /**
+     * Der Netzbetreiber, der die Preise veröffentlicht hat
+     */
     public Marktteilnehmer getHerausgeber() {
         return herausgeber;
     }
 
+    /**
+     * Der Netzbetreiber, der die Preise veröffentlicht hat
+     */
     public void setHerausgeber(Marktteilnehmer herausgeber) {
         this.herausgeber = herausgeber;
     }
@@ -124,165 +120,223 @@ public class PreisblattNetznutzung extends Geschaeftsobjekt {
         this.kundengruppe = kundengruppe;
     }
 
+    /**
+     * Die Preise gelten für Marktlokationen in der angebebenen Netzebene
+     */
     public Netzebene getNetzebene() {
         return netzebene;
     }
 
+    /**
+     * Die Preise gelten für Marktlokationen in der angebebenen Netzebene
+     */
     public void setNetzebene(Netzebene netzebene) {
         this.netzebene = netzebene;
     }
 
+    /**
+     * Die einzelnen Positionen, die mit dem Preisblatt abgerechnet werden können. Z.B.
+     * Arbeitspreis, Grundpreis etc
+     */
     public List<Preisposition> getPreispositionen() {
         return preispositionen;
     }
 
+    /**
+     * Die einzelnen Positionen, die mit dem Preisblatt abgerechnet werden können. Z.B.
+     * Arbeitspreis, Grundpreis etc
+     */
     public void setPreispositionen(List<Preisposition> preispositionen) {
         this.preispositionen = preispositionen;
     }
 
+    /**
+     * Merkmal, das anzeigt, ob es sich um vorläufige oder endgültige Preise handelt
+     */
     public Preisstatus getPreisstatus() {
         return preisstatus;
     }
 
+    /**
+     * Merkmal, das anzeigt, ob es sich um vorläufige oder endgültige Preise handelt
+     */
     public void setPreisstatus(Preisstatus preisstatus) {
         this.preisstatus = preisstatus;
     }
 
+    /**
+     * Preisblatt gilt für angegebene Sparte
+     */
     public Sparte getSparte() {
         return sparte;
     }
 
+    /**
+     * Preisblatt gilt für angegebene Sparte
+     */
     public void setSparte(Sparte sparte) {
         this.sparte = sparte;
     }
 
+    public static PreisblattNetznutzungBuilder builder() {
+        return new PreisblattNetznutzungBuilder();
+    }
+
     public static class PreisblattNetznutzungBuilder extends GeschaeftsobjektBuilder {
+        private String bezeichnung;
+        private Bilanzierungsmethode bilanzierungsmethode;
+        private Zeitraum gueltigkeit;
+        private Marktteilnehmer herausgeber;
+        private Kundengruppe kundengruppe;
+        private Netzebene netzebene;
+        private List<Preisposition> preispositionen;
+        private Preisstatus preisstatus;
+        private Sparte sparte;
+
+        private PreisblattNetznutzungBuilder() {
+        }
+
         /**
          * Eine Bezeichnung für das Preisblatt
          */
-        private String bezeichnung;
-        /**
-         * Die Preise gelten für Marktlokationen der angebebenen Bilanzierungsmethode
-         */
-        private Bilanzierungsmethode bilanzierungsmethode;
-        /**
-         * Der Zeitraum für den der Preis festgelegt ist
-         */
-        private Zeitraum gueltigkeit;
-        /**
-         * Der Netzbetreiber, der die Preise veröffentlicht hat
-         */
-        private Marktteilnehmer herausgeber;
-        private Kundengruppe kundengruppe;
-        /**
-         * Die Preise gelten für Marktlokationen in der angebebenen Netzebene
-         */
-        private Netzebene netzebene;
-        /**
-         * Die einzelnen Positionen, die mit dem Preisblatt abgerechnet werden können. Z.B.
-         * Arbeitspreis, Grundpreis etc
-         */
-        private List<Preisposition> preispositionen;
-        /**
-         * Merkmal, das anzeigt, ob es sich um vorläufige oder endgültige Preise handelt
-         */
-        private Preisstatus preisstatus;
-        /**
-         * Preisblatt gilt für angegebene Sparte
-         */
-        private Sparte sparte;
-    
         public String getBezeichnung() {
             return bezeichnung;
         }
-    
+
+        /**
+         * Eine Bezeichnung für das Preisblatt
+         */
         public PreisblattNetznutzungBuilder setBezeichnung(String bezeichnung) {
             this.bezeichnung = bezeichnung;
             return this;
         }
-    
+
+        /**
+         * Die Preise gelten für Marktlokationen der angebebenen Bilanzierungsmethode
+         */
         public Bilanzierungsmethode getBilanzierungsmethode() {
             return bilanzierungsmethode;
         }
-    
+
+        /**
+         * Die Preise gelten für Marktlokationen der angebebenen Bilanzierungsmethode
+         */
         public PreisblattNetznutzungBuilder setBilanzierungsmethode(Bilanzierungsmethode bilanzierungsmethode) {
             this.bilanzierungsmethode = bilanzierungsmethode;
             return this;
         }
-    
+
+        /**
+         * Der Zeitraum für den der Preis festgelegt ist
+         */
         public Zeitraum getGueltigkeit() {
             return gueltigkeit;
         }
-    
+
+        /**
+         * Der Zeitraum für den der Preis festgelegt ist
+         */
         public PreisblattNetznutzungBuilder setGueltigkeit(Zeitraum gueltigkeit) {
             this.gueltigkeit = gueltigkeit;
             return this;
         }
-    
+
+        /**
+         * Der Netzbetreiber, der die Preise veröffentlicht hat
+         */
         public Marktteilnehmer getHerausgeber() {
             return herausgeber;
         }
-    
+
+        /**
+         * Der Netzbetreiber, der die Preise veröffentlicht hat
+         */
         public PreisblattNetznutzungBuilder setHerausgeber(Marktteilnehmer herausgeber) {
             this.herausgeber = herausgeber;
             return this;
         }
-    
+
         public Kundengruppe getKundengruppe() {
             return kundengruppe;
         }
-    
+
         public PreisblattNetznutzungBuilder setKundengruppe(Kundengruppe kundengruppe) {
             this.kundengruppe = kundengruppe;
             return this;
         }
-    
+
+        /**
+         * Die Preise gelten für Marktlokationen in der angebebenen Netzebene
+         */
         public Netzebene getNetzebene() {
             return netzebene;
         }
-    
+
+        /**
+         * Die Preise gelten für Marktlokationen in der angebebenen Netzebene
+         */
         public PreisblattNetznutzungBuilder setNetzebene(Netzebene netzebene) {
             this.netzebene = netzebene;
             return this;
         }
-    
+
+        /**
+         * Die einzelnen Positionen, die mit dem Preisblatt abgerechnet werden können. Z.B.
+         * Arbeitspreis, Grundpreis etc
+         */
         public List<Preisposition> getPreispositionen() {
             return preispositionen;
         }
-    
+
+        /**
+         * Die einzelnen Positionen, die mit dem Preisblatt abgerechnet werden können. Z.B.
+         * Arbeitspreis, Grundpreis etc
+         */
         public PreisblattNetznutzungBuilder setPreispositionen(List<Preisposition> preispositionen) {
             this.preispositionen = preispositionen;
             return this;
         }
-    
+
+        /**
+         * Merkmal, das anzeigt, ob es sich um vorläufige oder endgültige Preise handelt
+         */
         public Preisstatus getPreisstatus() {
             return preisstatus;
         }
-    
+
+        /**
+         * Merkmal, das anzeigt, ob es sich um vorläufige oder endgültige Preise handelt
+         */
         public PreisblattNetznutzungBuilder setPreisstatus(Preisstatus preisstatus) {
             this.preisstatus = preisstatus;
             return this;
         }
-    
+
+        /**
+         * Preisblatt gilt für angegebene Sparte
+         */
         public Sparte getSparte() {
             return sparte;
         }
-    
+
+        /**
+         * Preisblatt gilt für angegebene Sparte
+         */
         public PreisblattNetznutzungBuilder setSparte(Sparte sparte) {
             this.sparte = sparte;
             return this;
         }
-    
+
         public PreisblattNetznutzungBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public PreisblattNetznutzungBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public PreisblattNetznutzung build() {
             return new PreisblattNetznutzung(this);
         }

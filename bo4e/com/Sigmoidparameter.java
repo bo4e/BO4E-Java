@@ -15,24 +15,12 @@ import java.util.List;
  *
  * .. HINT::
  * `Sigmoidparameter JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Sigmoidparameter.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Sigmoidparameter.json>`_
  */
 public class Sigmoidparameter extends COM {
-    /**
-     * Briefmarke Ortsverteilnetz (EUR/kWh)
-     */
     private Double a;
-    /**
-     * Briefmarke Ortsverteilnetz (EUR/kWh)
-     */
     private Double b;
-    /**
-     * Wendepunkt für die bepreiste Menge (kW)
-     */
     private Double c;
-    /**
-     * Exponent (einheitenlos)
-     */
     private Double d;
 
     public Sigmoidparameter() {
@@ -46,102 +34,145 @@ public class Sigmoidparameter extends COM {
         this.d = builder.d;
     }
 
+    /**
+     * Briefmarke Ortsverteilnetz (EUR/kWh)
+     */
     public Double getA() {
         return a;
     }
 
+    /**
+     * Briefmarke Ortsverteilnetz (EUR/kWh)
+     */
     public void setA(Double a) {
         this.a = a;
     }
 
+    /**
+     * Briefmarke Ortsverteilnetz (EUR/kWh)
+     */
     public Double getB() {
         return b;
     }
 
+    /**
+     * Briefmarke Ortsverteilnetz (EUR/kWh)
+     */
     public void setB(Double b) {
         this.b = b;
     }
 
+    /**
+     * Wendepunkt für die bepreiste Menge (kW)
+     */
     public Double getC() {
         return c;
     }
 
+    /**
+     * Wendepunkt für die bepreiste Menge (kW)
+     */
     public void setC(Double c) {
         this.c = c;
     }
 
+    /**
+     * Exponent (einheitenlos)
+     */
     public Double getD() {
         return d;
     }
 
+    /**
+     * Exponent (einheitenlos)
+     */
     public void setD(Double d) {
         this.d = d;
     }
 
+    public static SigmoidparameterBuilder builder() {
+        return new SigmoidparameterBuilder();
+    }
+
     public static class SigmoidparameterBuilder extends COMBuilder {
-        /**
-         * Briefmarke Ortsverteilnetz (EUR/kWh)
-         */
         private Double a;
+        private Double b;
+        private Double c;
+        private Double d;
+
+        private SigmoidparameterBuilder() {
+        }
+
         /**
          * Briefmarke Ortsverteilnetz (EUR/kWh)
          */
-        private Double b;
-        /**
-         * Wendepunkt für die bepreiste Menge (kW)
-         */
-        private Double c;
-        /**
-         * Exponent (einheitenlos)
-         */
-        private Double d;
-    
         public Double getA() {
             return a;
         }
-    
+
+        /**
+         * Briefmarke Ortsverteilnetz (EUR/kWh)
+         */
         public SigmoidparameterBuilder setA(Double a) {
             this.a = a;
             return this;
         }
-    
+
+        /**
+         * Briefmarke Ortsverteilnetz (EUR/kWh)
+         */
         public Double getB() {
             return b;
         }
-    
+
+        /**
+         * Briefmarke Ortsverteilnetz (EUR/kWh)
+         */
         public SigmoidparameterBuilder setB(Double b) {
             this.b = b;
             return this;
         }
-    
+
+        /**
+         * Wendepunkt für die bepreiste Menge (kW)
+         */
         public Double getC() {
             return c;
         }
-    
+
+        /**
+         * Wendepunkt für die bepreiste Menge (kW)
+         */
         public SigmoidparameterBuilder setC(Double c) {
             this.c = c;
             return this;
         }
-    
+
+        /**
+         * Exponent (einheitenlos)
+         */
         public Double getD() {
             return d;
         }
-    
+
+        /**
+         * Exponent (einheitenlos)
+         */
         public SigmoidparameterBuilder setD(Double d) {
             this.d = d;
             return this;
         }
-    
+
         public SigmoidparameterBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public SigmoidparameterBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Sigmoidparameter build() {
             return new Sigmoidparameter(this);
         }

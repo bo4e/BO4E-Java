@@ -14,7 +14,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Geokoordinaten JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Geokoordinaten.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Geokoordinaten.json>`_
  */
 public class Geokoordinaten extends COM {
     private Double breitengrad;
@@ -45,38 +45,45 @@ public class Geokoordinaten extends COM {
         this.laengengrad = laengengrad;
     }
 
+    public static GeokoordinatenBuilder builder() {
+        return new GeokoordinatenBuilder();
+    }
+
     public static class GeokoordinatenBuilder extends COMBuilder {
         private Double breitengrad;
         private Double laengengrad;
-    
+
+        private GeokoordinatenBuilder() {
+        }
+
         public Double getBreitengrad() {
             return breitengrad;
         }
-    
+
         public GeokoordinatenBuilder setBreitengrad(Double breitengrad) {
             this.breitengrad = breitengrad;
             return this;
         }
-    
+
         public Double getLaengengrad() {
             return laengengrad;
         }
-    
+
         public GeokoordinatenBuilder setLaengengrad(Double laengengrad) {
             this.laengengrad = laengengrad;
             return this;
         }
-    
+
         public GeokoordinatenBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public GeokoordinatenBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Geokoordinaten build() {
             return new Geokoordinaten(this);
         }

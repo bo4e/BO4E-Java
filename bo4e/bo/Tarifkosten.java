@@ -23,66 +23,24 @@ import java.util.List;
  *
  * .. HINT::
  * `Tarifkosten JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Tarifkosten.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/bo/Tarifkosten.json>`_
  */
 public class Tarifkosten extends Geschaeftsobjekt {
-    /**
-     * Typ des Geschaeftsobjekts
-     */
     private final Typ typ = Typ.TARIFKOSTEN;
-    /**
-     * Der Marktteilnehmer (Lieferant), der diesen Tarif anbietet
-     */
     private Marktteilnehmer anbieter;
-    /**
-     * Der Name des Marktpartners, der den Tarif anbietet
-     */
     private String anbietername;
     private OffsetDateTime anwendungVon;
-    /**
-     * Freitext
-     */
     private String bemerkung;
-    /**
-     * Name des Tarifs
-     */
     private String bezeichnung;
-    /**
-     * Der Energiemix, der für diesen Tarif gilt
-     */
     private Energiemix energiemix;
     private Kosten kosten;
-    /**
-     * Kundentypen für den der Tarif gilt, z.B. Privatkunden
-     */
     private List<Kundentyp> kundentypen;
-    /**
-     * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
-     */
     private Registeranzahl registeranzahl;
-    /**
-     * Strom oder Gas, etc.
-     */
     private Sparte sparte;
-    /**
-     * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
-     */
     private List<Tarifmerkmal> tarifmerkmale;
-    /**
-     * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
-     */
     private Tariftyp tariftyp;
-    /**
-     * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
-     */
     private Vertragskonditionen vertragskonditionen;
-    /**
-     * Internetseite auf dem der Tarif zu finden ist
-     */
     private String website;
-    /**
-     * Angabe, in welchem Zeitraum der Tarif gültig ist
-     */
     private Zeitraum zeitlicheGueltigkeit;
 
     public Tarifkosten() {
@@ -111,18 +69,30 @@ public class Tarifkosten extends Geschaeftsobjekt {
         return typ;
     }
 
+    /**
+     * Der Marktteilnehmer (Lieferant), der diesen Tarif anbietet
+     */
     public Marktteilnehmer getAnbieter() {
         return anbieter;
     }
 
+    /**
+     * Der Marktteilnehmer (Lieferant), der diesen Tarif anbietet
+     */
     public void setAnbieter(Marktteilnehmer anbieter) {
         this.anbieter = anbieter;
     }
 
+    /**
+     * Der Name des Marktpartners, der den Tarif anbietet
+     */
     public String getAnbietername() {
         return anbietername;
     }
 
+    /**
+     * Der Name des Marktpartners, der den Tarif anbietet
+     */
     public void setAnbietername(String anbietername) {
         this.anbietername = anbietername;
     }
@@ -135,26 +105,44 @@ public class Tarifkosten extends Geschaeftsobjekt {
         this.anwendungVon = anwendungVon;
     }
 
+    /**
+     * Freitext
+     */
     public String getBemerkung() {
         return bemerkung;
     }
 
+    /**
+     * Freitext
+     */
     public void setBemerkung(String bemerkung) {
         this.bemerkung = bemerkung;
     }
 
+    /**
+     * Name des Tarifs
+     */
     public String getBezeichnung() {
         return bezeichnung;
     }
 
+    /**
+     * Name des Tarifs
+     */
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;
     }
 
+    /**
+     * Der Energiemix, der für diesen Tarif gilt
+     */
     public Energiemix getEnergiemix() {
         return energiemix;
     }
 
+    /**
+     * Der Energiemix, der für diesen Tarif gilt
+     */
     public void setEnergiemix(Energiemix energiemix) {
         this.energiemix = energiemix;
     }
@@ -167,271 +155,365 @@ public class Tarifkosten extends Geschaeftsobjekt {
         this.kosten = kosten;
     }
 
+    /**
+     * Kundentypen für den der Tarif gilt, z.B. Privatkunden
+     */
     public List<Kundentyp> getKundentypen() {
         return kundentypen;
     }
 
+    /**
+     * Kundentypen für den der Tarif gilt, z.B. Privatkunden
+     */
     public void setKundentypen(List<Kundentyp> kundentypen) {
         this.kundentypen = kundentypen;
     }
 
+    /**
+     * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
+     */
     public Registeranzahl getRegisteranzahl() {
         return registeranzahl;
     }
 
+    /**
+     * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
+     */
     public void setRegisteranzahl(Registeranzahl registeranzahl) {
         this.registeranzahl = registeranzahl;
     }
 
+    /**
+     * Strom oder Gas, etc.
+     */
     public Sparte getSparte() {
         return sparte;
     }
 
+    /**
+     * Strom oder Gas, etc.
+     */
     public void setSparte(Sparte sparte) {
         this.sparte = sparte;
     }
 
+    /**
+     * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
+     */
     public List<Tarifmerkmal> getTarifmerkmale() {
         return tarifmerkmale;
     }
 
+    /**
+     * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
+     */
     public void setTarifmerkmale(List<Tarifmerkmal> tarifmerkmale) {
         this.tarifmerkmale = tarifmerkmale;
     }
 
+    /**
+     * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
+     */
     public Tariftyp getTariftyp() {
         return tariftyp;
     }
 
+    /**
+     * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
+     */
     public void setTariftyp(Tariftyp tariftyp) {
         this.tariftyp = tariftyp;
     }
 
+    /**
+     * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
+     */
     public Vertragskonditionen getVertragskonditionen() {
         return vertragskonditionen;
     }
 
+    /**
+     * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
+     */
     public void setVertragskonditionen(Vertragskonditionen vertragskonditionen) {
         this.vertragskonditionen = vertragskonditionen;
     }
 
+    /**
+     * Internetseite auf dem der Tarif zu finden ist
+     */
     public String getWebsite() {
         return website;
     }
 
+    /**
+     * Internetseite auf dem der Tarif zu finden ist
+     */
     public void setWebsite(String website) {
         this.website = website;
     }
 
+    /**
+     * Angabe, in welchem Zeitraum der Tarif gültig ist
+     */
     public Zeitraum getZeitlicheGueltigkeit() {
         return zeitlicheGueltigkeit;
     }
 
+    /**
+     * Angabe, in welchem Zeitraum der Tarif gültig ist
+     */
     public void setZeitlicheGueltigkeit(Zeitraum zeitlicheGueltigkeit) {
         this.zeitlicheGueltigkeit = zeitlicheGueltigkeit;
     }
 
+    public static TarifkostenBuilder builder() {
+        return new TarifkostenBuilder();
+    }
+
     public static class TarifkostenBuilder extends GeschaeftsobjektBuilder {
+        private Marktteilnehmer anbieter;
+        private String anbietername;
+        private OffsetDateTime anwendungVon;
+        private String bemerkung;
+        private String bezeichnung;
+        private Energiemix energiemix;
+        private Kosten kosten;
+        private List<Kundentyp> kundentypen;
+        private Registeranzahl registeranzahl;
+        private Sparte sparte;
+        private List<Tarifmerkmal> tarifmerkmale;
+        private Tariftyp tariftyp;
+        private Vertragskonditionen vertragskonditionen;
+        private String website;
+        private Zeitraum zeitlicheGueltigkeit;
+
+        private TarifkostenBuilder() {
+        }
+
         /**
          * Der Marktteilnehmer (Lieferant), der diesen Tarif anbietet
          */
-        private Marktteilnehmer anbieter;
-        /**
-         * Der Name des Marktpartners, der den Tarif anbietet
-         */
-        private String anbietername;
-        private OffsetDateTime anwendungVon;
-        /**
-         * Freitext
-         */
-        private String bemerkung;
-        /**
-         * Name des Tarifs
-         */
-        private String bezeichnung;
-        /**
-         * Der Energiemix, der für diesen Tarif gilt
-         */
-        private Energiemix energiemix;
-        private Kosten kosten;
-        /**
-         * Kundentypen für den der Tarif gilt, z.B. Privatkunden
-         */
-        private List<Kundentyp> kundentypen;
-        /**
-         * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
-         */
-        private Registeranzahl registeranzahl;
-        /**
-         * Strom oder Gas, etc.
-         */
-        private Sparte sparte;
-        /**
-         * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
-         */
-        private List<Tarifmerkmal> tarifmerkmale;
-        /**
-         * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
-         */
-        private Tariftyp tariftyp;
-        /**
-         * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
-         */
-        private Vertragskonditionen vertragskonditionen;
-        /**
-         * Internetseite auf dem der Tarif zu finden ist
-         */
-        private String website;
-        /**
-         * Angabe, in welchem Zeitraum der Tarif gültig ist
-         */
-        private Zeitraum zeitlicheGueltigkeit;
-    
         public Marktteilnehmer getAnbieter() {
             return anbieter;
         }
-    
+
+        /**
+         * Der Marktteilnehmer (Lieferant), der diesen Tarif anbietet
+         */
         public TarifkostenBuilder setAnbieter(Marktteilnehmer anbieter) {
             this.anbieter = anbieter;
             return this;
         }
-    
+
+        /**
+         * Der Name des Marktpartners, der den Tarif anbietet
+         */
         public String getAnbietername() {
             return anbietername;
         }
-    
+
+        /**
+         * Der Name des Marktpartners, der den Tarif anbietet
+         */
         public TarifkostenBuilder setAnbietername(String anbietername) {
             this.anbietername = anbietername;
             return this;
         }
-    
+
         public OffsetDateTime getAnwendungVon() {
             return anwendungVon;
         }
-    
+
         public TarifkostenBuilder setAnwendungVon(OffsetDateTime anwendungVon) {
             this.anwendungVon = anwendungVon;
             return this;
         }
-    
+
+        /**
+         * Freitext
+         */
         public String getBemerkung() {
             return bemerkung;
         }
-    
+
+        /**
+         * Freitext
+         */
         public TarifkostenBuilder setBemerkung(String bemerkung) {
             this.bemerkung = bemerkung;
             return this;
         }
-    
+
+        /**
+         * Name des Tarifs
+         */
         public String getBezeichnung() {
             return bezeichnung;
         }
-    
+
+        /**
+         * Name des Tarifs
+         */
         public TarifkostenBuilder setBezeichnung(String bezeichnung) {
             this.bezeichnung = bezeichnung;
             return this;
         }
-    
+
+        /**
+         * Der Energiemix, der für diesen Tarif gilt
+         */
         public Energiemix getEnergiemix() {
             return energiemix;
         }
-    
+
+        /**
+         * Der Energiemix, der für diesen Tarif gilt
+         */
         public TarifkostenBuilder setEnergiemix(Energiemix energiemix) {
             this.energiemix = energiemix;
             return this;
         }
-    
+
         public Kosten getKosten() {
             return kosten;
         }
-    
+
         public TarifkostenBuilder setKosten(Kosten kosten) {
             this.kosten = kosten;
             return this;
         }
-    
+
+        /**
+         * Kundentypen für den der Tarif gilt, z.B. Privatkunden
+         */
         public List<Kundentyp> getKundentypen() {
             return kundentypen;
         }
-    
+
+        /**
+         * Kundentypen für den der Tarif gilt, z.B. Privatkunden
+         */
         public TarifkostenBuilder setKundentypen(List<Kundentyp> kundentypen) {
             this.kundentypen = kundentypen;
             return this;
         }
-    
+
+        /**
+         * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
+         */
         public Registeranzahl getRegisteranzahl() {
             return registeranzahl;
         }
-    
+
+        /**
+         * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
+         */
         public TarifkostenBuilder setRegisteranzahl(Registeranzahl registeranzahl) {
             this.registeranzahl = registeranzahl;
             return this;
         }
-    
+
+        /**
+         * Strom oder Gas, etc.
+         */
         public Sparte getSparte() {
             return sparte;
         }
-    
+
+        /**
+         * Strom oder Gas, etc.
+         */
         public TarifkostenBuilder setSparte(Sparte sparte) {
             this.sparte = sparte;
             return this;
         }
-    
+
+        /**
+         * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
+         */
         public List<Tarifmerkmal> getTarifmerkmale() {
             return tarifmerkmale;
         }
-    
+
+        /**
+         * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
+         */
         public TarifkostenBuilder setTarifmerkmale(List<Tarifmerkmal> tarifmerkmale) {
             this.tarifmerkmale = tarifmerkmale;
             return this;
         }
-    
+
+        /**
+         * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
+         */
         public Tariftyp getTariftyp() {
             return tariftyp;
         }
-    
+
+        /**
+         * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
+         */
         public TarifkostenBuilder setTariftyp(Tariftyp tariftyp) {
             this.tariftyp = tariftyp;
             return this;
         }
-    
+
+        /**
+         * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
+         */
         public Vertragskonditionen getVertragskonditionen() {
             return vertragskonditionen;
         }
-    
+
+        /**
+         * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
+         */
         public TarifkostenBuilder setVertragskonditionen(Vertragskonditionen vertragskonditionen) {
             this.vertragskonditionen = vertragskonditionen;
             return this;
         }
-    
+
+        /**
+         * Internetseite auf dem der Tarif zu finden ist
+         */
         public String getWebsite() {
             return website;
         }
-    
+
+        /**
+         * Internetseite auf dem der Tarif zu finden ist
+         */
         public TarifkostenBuilder setWebsite(String website) {
             this.website = website;
             return this;
         }
-    
+
+        /**
+         * Angabe, in welchem Zeitraum der Tarif gültig ist
+         */
         public Zeitraum getZeitlicheGueltigkeit() {
             return zeitlicheGueltigkeit;
         }
-    
+
+        /**
+         * Angabe, in welchem Zeitraum der Tarif gültig ist
+         */
         public TarifkostenBuilder setZeitlicheGueltigkeit(Zeitraum zeitlicheGueltigkeit) {
             this.zeitlicheGueltigkeit = zeitlicheGueltigkeit;
             return this;
         }
-    
+
         public TarifkostenBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public TarifkostenBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Tarifkosten build() {
             return new Tarifkosten(this);
         }

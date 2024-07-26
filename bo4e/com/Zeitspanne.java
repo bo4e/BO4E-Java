@@ -18,16 +18,10 @@ import java.util.List;
  *
  * .. HINT::
  * `Zeitspanne JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Zeitspanne.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Zeitspanne.json>`_
  */
 public class Zeitspanne extends COM {
-    /**
-     * inklusiver Beginn
-     */
     private OffsetDateTime ende;
-    /**
-     * inklusiver Beginn
-     */
     private OffsetDateTime start;
 
     public Zeitspanne() {
@@ -39,60 +33,85 @@ public class Zeitspanne extends COM {
         this.start = builder.start;
     }
 
+    /**
+     * inklusiver Beginn
+     */
     public OffsetDateTime getEnde() {
         return ende;
     }
 
+    /**
+     * inklusiver Beginn
+     */
     public void setEnde(OffsetDateTime ende) {
         this.ende = ende;
     }
 
+    /**
+     * inklusiver Beginn
+     */
     public OffsetDateTime getStart() {
         return start;
     }
 
+    /**
+     * inklusiver Beginn
+     */
     public void setStart(OffsetDateTime start) {
         this.start = start;
     }
 
+    public static ZeitspanneBuilder builder() {
+        return new ZeitspanneBuilder();
+    }
+
     public static class ZeitspanneBuilder extends COMBuilder {
-        /**
-         * inklusiver Beginn
-         */
         private OffsetDateTime ende;
+        private OffsetDateTime start;
+
+        private ZeitspanneBuilder() {
+        }
+
         /**
          * inklusiver Beginn
          */
-        private OffsetDateTime start;
-    
         public OffsetDateTime getEnde() {
             return ende;
         }
-    
+
+        /**
+         * inklusiver Beginn
+         */
         public ZeitspanneBuilder setEnde(OffsetDateTime ende) {
             this.ende = ende;
             return this;
         }
-    
+
+        /**
+         * inklusiver Beginn
+         */
         public OffsetDateTime getStart() {
             return start;
         }
-    
+
+        /**
+         * inklusiver Beginn
+         */
         public ZeitspanneBuilder setStart(OffsetDateTime start) {
             this.start = start;
             return this;
         }
-    
+
         public ZeitspanneBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public ZeitspanneBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Zeitspanne build() {
             return new Zeitspanne(this);
         }

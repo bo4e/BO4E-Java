@@ -16,24 +16,12 @@ import java.util.List;
  *
  * .. HINT::
  * `Steuerbetrag JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Steuerbetrag.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Steuerbetrag.json>`_
  */
 public class Steuerbetrag extends COM {
-    /**
-     * Nettobetrag für den die Steuer berechnet wurde. Z.B. 100
-     */
     private Double basiswert;
-    /**
-     * Kennzeichnung des Steuersatzes, bzw. Verfahrens.
-     */
     private Steuerkennzeichen steuerkennzeichen;
-    /**
-     * Aus dem Basiswert berechnete Steuer. Z.B. 19 (bei UST_19)
-     */
     private Double steuerwert;
-    /**
-     * Währung. Z.B. Euro.
-     */
     private Waehrungscode waehrung;
 
     public Steuerbetrag() {
@@ -47,102 +35,145 @@ public class Steuerbetrag extends COM {
         this.waehrung = builder.waehrung;
     }
 
+    /**
+     * Nettobetrag für den die Steuer berechnet wurde. Z.B. 100
+     */
     public Double getBasiswert() {
         return basiswert;
     }
 
+    /**
+     * Nettobetrag für den die Steuer berechnet wurde. Z.B. 100
+     */
     public void setBasiswert(Double basiswert) {
         this.basiswert = basiswert;
     }
 
+    /**
+     * Kennzeichnung des Steuersatzes, bzw. Verfahrens.
+     */
     public Steuerkennzeichen getSteuerkennzeichen() {
         return steuerkennzeichen;
     }
 
+    /**
+     * Kennzeichnung des Steuersatzes, bzw. Verfahrens.
+     */
     public void setSteuerkennzeichen(Steuerkennzeichen steuerkennzeichen) {
         this.steuerkennzeichen = steuerkennzeichen;
     }
 
+    /**
+     * Aus dem Basiswert berechnete Steuer. Z.B. 19 (bei UST_19)
+     */
     public Double getSteuerwert() {
         return steuerwert;
     }
 
+    /**
+     * Aus dem Basiswert berechnete Steuer. Z.B. 19 (bei UST_19)
+     */
     public void setSteuerwert(Double steuerwert) {
         this.steuerwert = steuerwert;
     }
 
+    /**
+     * Währung. Z.B. Euro.
+     */
     public Waehrungscode getWaehrung() {
         return waehrung;
     }
 
+    /**
+     * Währung. Z.B. Euro.
+     */
     public void setWaehrung(Waehrungscode waehrung) {
         this.waehrung = waehrung;
     }
 
+    public static SteuerbetragBuilder builder() {
+        return new SteuerbetragBuilder();
+    }
+
     public static class SteuerbetragBuilder extends COMBuilder {
+        private Double basiswert;
+        private Steuerkennzeichen steuerkennzeichen;
+        private Double steuerwert;
+        private Waehrungscode waehrung;
+
+        private SteuerbetragBuilder() {
+        }
+
         /**
          * Nettobetrag für den die Steuer berechnet wurde. Z.B. 100
          */
-        private Double basiswert;
-        /**
-         * Kennzeichnung des Steuersatzes, bzw. Verfahrens.
-         */
-        private Steuerkennzeichen steuerkennzeichen;
-        /**
-         * Aus dem Basiswert berechnete Steuer. Z.B. 19 (bei UST_19)
-         */
-        private Double steuerwert;
-        /**
-         * Währung. Z.B. Euro.
-         */
-        private Waehrungscode waehrung;
-    
         public Double getBasiswert() {
             return basiswert;
         }
-    
+
+        /**
+         * Nettobetrag für den die Steuer berechnet wurde. Z.B. 100
+         */
         public SteuerbetragBuilder setBasiswert(Double basiswert) {
             this.basiswert = basiswert;
             return this;
         }
-    
+
+        /**
+         * Kennzeichnung des Steuersatzes, bzw. Verfahrens.
+         */
         public Steuerkennzeichen getSteuerkennzeichen() {
             return steuerkennzeichen;
         }
-    
+
+        /**
+         * Kennzeichnung des Steuersatzes, bzw. Verfahrens.
+         */
         public SteuerbetragBuilder setSteuerkennzeichen(Steuerkennzeichen steuerkennzeichen) {
             this.steuerkennzeichen = steuerkennzeichen;
             return this;
         }
-    
+
+        /**
+         * Aus dem Basiswert berechnete Steuer. Z.B. 19 (bei UST_19)
+         */
         public Double getSteuerwert() {
             return steuerwert;
         }
-    
+
+        /**
+         * Aus dem Basiswert berechnete Steuer. Z.B. 19 (bei UST_19)
+         */
         public SteuerbetragBuilder setSteuerwert(Double steuerwert) {
             this.steuerwert = steuerwert;
             return this;
         }
-    
+
+        /**
+         * Währung. Z.B. Euro.
+         */
         public Waehrungscode getWaehrung() {
             return waehrung;
         }
-    
+
+        /**
+         * Währung. Z.B. Euro.
+         */
         public SteuerbetragBuilder setWaehrung(Waehrungscode waehrung) {
             this.waehrung = waehrung;
             return this;
         }
-    
+
         public SteuerbetragBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public SteuerbetragBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Steuerbetrag build() {
             return new Steuerbetrag(this);
         }

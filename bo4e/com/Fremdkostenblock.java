@@ -14,22 +14,11 @@ import java.util.List;
  *
  * .. HINT::
  * `Fremdkostenblock JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Fremdkostenblock.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Fremdkostenblock.json>`_
  */
 public class Fremdkostenblock extends COM {
-    /**
-     * Bezeichnung für einen Kostenblock. Z.B. Netzkosten, Messkosten, Umlagen, etc.
-     */
     private String kostenblockbezeichnung;
-    /**
-     * Hier sind die Details zu einer Kostenposition aufgeführt. Z.B.:
-     * Alliander Netz Heinsberg GmbH, 2018-02-01, 2019-01-01, Arbeitspreis HT, 3.660 kWh,
-     * 5,8200 ct/kWh, 213,01 €
-     */
     private List<Fremdkostenposition> kostenpositionen;
-    /**
-     * Die Summe aller Kostenpositionen dieses Blocks
-     */
     private Betrag summeKostenblock;
 
     public Fremdkostenblock() {
@@ -42,83 +31,123 @@ public class Fremdkostenblock extends COM {
         this.summeKostenblock = builder.summeKostenblock;
     }
 
+    /**
+     * Bezeichnung für einen Kostenblock. Z.B. Netzkosten, Messkosten, Umlagen, etc.
+     */
     public String getKostenblockbezeichnung() {
         return kostenblockbezeichnung;
     }
 
+    /**
+     * Bezeichnung für einen Kostenblock. Z.B. Netzkosten, Messkosten, Umlagen, etc.
+     */
     public void setKostenblockbezeichnung(String kostenblockbezeichnung) {
         this.kostenblockbezeichnung = kostenblockbezeichnung;
     }
 
+    /**
+     * Hier sind die Details zu einer Kostenposition aufgeführt. Z.B.:
+     * Alliander Netz Heinsberg GmbH, 2018-02-01, 2019-01-01, Arbeitspreis HT, 3.660 kWh,
+     * 5,8200 ct/kWh, 213,01 €
+     */
     public List<Fremdkostenposition> getKostenpositionen() {
         return kostenpositionen;
     }
 
+    /**
+     * Hier sind die Details zu einer Kostenposition aufgeführt. Z.B.:
+     * Alliander Netz Heinsberg GmbH, 2018-02-01, 2019-01-01, Arbeitspreis HT, 3.660 kWh,
+     * 5,8200 ct/kWh, 213,01 €
+     */
     public void setKostenpositionen(List<Fremdkostenposition> kostenpositionen) {
         this.kostenpositionen = kostenpositionen;
     }
 
+    /**
+     * Die Summe aller Kostenpositionen dieses Blocks
+     */
     public Betrag getSummeKostenblock() {
         return summeKostenblock;
     }
 
+    /**
+     * Die Summe aller Kostenpositionen dieses Blocks
+     */
     public void setSummeKostenblock(Betrag summeKostenblock) {
         this.summeKostenblock = summeKostenblock;
     }
 
+    public static FremdkostenblockBuilder builder() {
+        return new FremdkostenblockBuilder();
+    }
+
     public static class FremdkostenblockBuilder extends COMBuilder {
+        private String kostenblockbezeichnung;
+        private List<Fremdkostenposition> kostenpositionen;
+        private Betrag summeKostenblock;
+
+        private FremdkostenblockBuilder() {
+        }
+
         /**
          * Bezeichnung für einen Kostenblock. Z.B. Netzkosten, Messkosten, Umlagen, etc.
          */
-        private String kostenblockbezeichnung;
+        public String getKostenblockbezeichnung() {
+            return kostenblockbezeichnung;
+        }
+
+        /**
+         * Bezeichnung für einen Kostenblock. Z.B. Netzkosten, Messkosten, Umlagen, etc.
+         */
+        public FremdkostenblockBuilder setKostenblockbezeichnung(String kostenblockbezeichnung) {
+            this.kostenblockbezeichnung = kostenblockbezeichnung;
+            return this;
+        }
+
         /**
          * Hier sind die Details zu einer Kostenposition aufgeführt. Z.B.:
          * Alliander Netz Heinsberg GmbH, 2018-02-01, 2019-01-01, Arbeitspreis HT, 3.660 kWh,
          * 5,8200 ct/kWh, 213,01 €
          */
-        private List<Fremdkostenposition> kostenpositionen;
-        /**
-         * Die Summe aller Kostenpositionen dieses Blocks
-         */
-        private Betrag summeKostenblock;
-    
-        public String getKostenblockbezeichnung() {
-            return kostenblockbezeichnung;
-        }
-    
-        public FremdkostenblockBuilder setKostenblockbezeichnung(String kostenblockbezeichnung) {
-            this.kostenblockbezeichnung = kostenblockbezeichnung;
-            return this;
-        }
-    
         public List<Fremdkostenposition> getKostenpositionen() {
             return kostenpositionen;
         }
-    
+
+        /**
+         * Hier sind die Details zu einer Kostenposition aufgeführt. Z.B.:
+         * Alliander Netz Heinsberg GmbH, 2018-02-01, 2019-01-01, Arbeitspreis HT, 3.660 kWh,
+         * 5,8200 ct/kWh, 213,01 €
+         */
         public FremdkostenblockBuilder setKostenpositionen(List<Fremdkostenposition> kostenpositionen) {
             this.kostenpositionen = kostenpositionen;
             return this;
         }
-    
+
+        /**
+         * Die Summe aller Kostenpositionen dieses Blocks
+         */
         public Betrag getSummeKostenblock() {
             return summeKostenblock;
         }
-    
+
+        /**
+         * Die Summe aller Kostenpositionen dieses Blocks
+         */
         public FremdkostenblockBuilder setSummeKostenblock(Betrag summeKostenblock) {
             this.summeKostenblock = summeKostenblock;
             return this;
         }
-    
+
         public FremdkostenblockBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public FremdkostenblockBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Fremdkostenblock build() {
             return new Fremdkostenblock(this);
         }

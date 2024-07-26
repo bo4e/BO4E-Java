@@ -18,69 +18,22 @@ import java.util.List;
  *
  * .. HINT::
  * `Rechnungsposition JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Rechnungsposition.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Rechnungsposition.json>`_
  */
 public class Rechnungsposition extends COM {
-    /**
-     * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
-     * BDEW-Artikelnummer ablöst
-     */
     private String artikelId;
-    /**
-     * Kennzeichnung der Rechnungsposition mit der Standard-Artikelnummer des BDEW
-     */
     private BDEWArtikelnummer artikelnummer;
-    /**
-     * Der Preis für eine Einheit der energetischen Menge
-     */
     private Preis einzelpreis;
-    /**
-     * Ende der Lieferung für die abgerechnete Leistung (exklusiv)
-     */
     private OffsetDateTime lieferungBis;
-    /**
-     * Start der Lieferung für die abgerechnete Leistung (inklusiv)
-     */
     private OffsetDateTime lieferungVon;
-    /**
-     * Marktlokation, die zu dieser Position gehört
-     */
     private String lokationsId;
-    /**
-     * Die abgerechnete Menge mit Einheit
-     */
     private Menge positionsMenge;
-    /**
-     * Fortlaufende Nummer für die Rechnungsposition
-     */
     private Long positionsnummer;
-    /**
-     * Bezeichung für die abgerechnete Position
-     */
     private String positionstext;
-    /**
-     * Nettobetrag für den Rabatt dieser Position
-     */
     private Betrag teilrabattNetto;
-    /**
-     * Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus
-     * zeitbezogeneMenge).
-     * Z.B. 12,60€ * 120 kW * 3/12 (für 3 Monate).
-     */
     private Betrag teilsummeNetto;
-    /**
-     * Auf die Position entfallende Steuer, bestehend aus Steuersatz und Betrag
-     */
     private Steuerbetrag teilsummeSteuer;
-    /**
-     * Eine auf die Zeiteinheit bezogene Untermenge.
-     * Z.B. bei einem Jahrespreis, 3 Monate oder 146 Tage.
-     * Basierend darauf wird der Preis aufgeteilt.
-     */
     private Menge zeitbezogeneMenge;
-    /**
-     * Falls sich der Preis auf eine Zeit bezieht, steht hier die Einheit
-     */
     private Mengeneinheit zeiteinheit;
 
     public Rechnungsposition() {
@@ -104,317 +57,465 @@ public class Rechnungsposition extends COM {
         this.zeiteinheit = builder.zeiteinheit;
     }
 
+    /**
+     * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
+     * BDEW-Artikelnummer ablöst
+     */
     public String getArtikelId() {
         return artikelId;
     }
 
+    /**
+     * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
+     * BDEW-Artikelnummer ablöst
+     */
     public void setArtikelId(String artikelId) {
         this.artikelId = artikelId;
     }
 
+    /**
+     * Kennzeichnung der Rechnungsposition mit der Standard-Artikelnummer des BDEW
+     */
     public BDEWArtikelnummer getArtikelnummer() {
         return artikelnummer;
     }
 
+    /**
+     * Kennzeichnung der Rechnungsposition mit der Standard-Artikelnummer des BDEW
+     */
     public void setArtikelnummer(BDEWArtikelnummer artikelnummer) {
         this.artikelnummer = artikelnummer;
     }
 
+    /**
+     * Der Preis für eine Einheit der energetischen Menge
+     */
     public Preis getEinzelpreis() {
         return einzelpreis;
     }
 
+    /**
+     * Der Preis für eine Einheit der energetischen Menge
+     */
     public void setEinzelpreis(Preis einzelpreis) {
         this.einzelpreis = einzelpreis;
     }
 
+    /**
+     * Ende der Lieferung für die abgerechnete Leistung (exklusiv)
+     */
     public OffsetDateTime getLieferungBis() {
         return lieferungBis;
     }
 
+    /**
+     * Ende der Lieferung für die abgerechnete Leistung (exklusiv)
+     */
     public void setLieferungBis(OffsetDateTime lieferungBis) {
         this.lieferungBis = lieferungBis;
     }
 
+    /**
+     * Start der Lieferung für die abgerechnete Leistung (inklusiv)
+     */
     public OffsetDateTime getLieferungVon() {
         return lieferungVon;
     }
 
+    /**
+     * Start der Lieferung für die abgerechnete Leistung (inklusiv)
+     */
     public void setLieferungVon(OffsetDateTime lieferungVon) {
         this.lieferungVon = lieferungVon;
     }
 
+    /**
+     * Marktlokation, die zu dieser Position gehört
+     */
     public String getLokationsId() {
         return lokationsId;
     }
 
+    /**
+     * Marktlokation, die zu dieser Position gehört
+     */
     public void setLokationsId(String lokationsId) {
         this.lokationsId = lokationsId;
     }
 
+    /**
+     * Die abgerechnete Menge mit Einheit
+     */
     public Menge getPositionsMenge() {
         return positionsMenge;
     }
 
+    /**
+     * Die abgerechnete Menge mit Einheit
+     */
     public void setPositionsMenge(Menge positionsMenge) {
         this.positionsMenge = positionsMenge;
     }
 
+    /**
+     * Fortlaufende Nummer für die Rechnungsposition
+     */
     public Long getPositionsnummer() {
         return positionsnummer;
     }
 
+    /**
+     * Fortlaufende Nummer für die Rechnungsposition
+     */
     public void setPositionsnummer(Long positionsnummer) {
         this.positionsnummer = positionsnummer;
     }
 
+    /**
+     * Bezeichung für die abgerechnete Position
+     */
     public String getPositionstext() {
         return positionstext;
     }
 
+    /**
+     * Bezeichung für die abgerechnete Position
+     */
     public void setPositionstext(String positionstext) {
         this.positionstext = positionstext;
     }
 
+    /**
+     * Nettobetrag für den Rabatt dieser Position
+     */
     public Betrag getTeilrabattNetto() {
         return teilrabattNetto;
     }
 
+    /**
+     * Nettobetrag für den Rabatt dieser Position
+     */
     public void setTeilrabattNetto(Betrag teilrabattNetto) {
         this.teilrabattNetto = teilrabattNetto;
     }
 
+    /**
+     * Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus
+     * zeitbezogeneMenge).
+     * Z.B. 12,60€ * 120 kW * 3/12 (für 3 Monate).
+     */
     public Betrag getTeilsummeNetto() {
         return teilsummeNetto;
     }
 
+    /**
+     * Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus
+     * zeitbezogeneMenge).
+     * Z.B. 12,60€ * 120 kW * 3/12 (für 3 Monate).
+     */
     public void setTeilsummeNetto(Betrag teilsummeNetto) {
         this.teilsummeNetto = teilsummeNetto;
     }
 
+    /**
+     * Auf die Position entfallende Steuer, bestehend aus Steuersatz und Betrag
+     */
     public Steuerbetrag getTeilsummeSteuer() {
         return teilsummeSteuer;
     }
 
+    /**
+     * Auf die Position entfallende Steuer, bestehend aus Steuersatz und Betrag
+     */
     public void setTeilsummeSteuer(Steuerbetrag teilsummeSteuer) {
         this.teilsummeSteuer = teilsummeSteuer;
     }
 
+    /**
+     * Eine auf die Zeiteinheit bezogene Untermenge.
+     * Z.B. bei einem Jahrespreis, 3 Monate oder 146 Tage.
+     * Basierend darauf wird der Preis aufgeteilt.
+     */
     public Menge getZeitbezogeneMenge() {
         return zeitbezogeneMenge;
     }
 
+    /**
+     * Eine auf die Zeiteinheit bezogene Untermenge.
+     * Z.B. bei einem Jahrespreis, 3 Monate oder 146 Tage.
+     * Basierend darauf wird der Preis aufgeteilt.
+     */
     public void setZeitbezogeneMenge(Menge zeitbezogeneMenge) {
         this.zeitbezogeneMenge = zeitbezogeneMenge;
     }
 
+    /**
+     * Falls sich der Preis auf eine Zeit bezieht, steht hier die Einheit
+     */
     public Mengeneinheit getZeiteinheit() {
         return zeiteinheit;
     }
 
+    /**
+     * Falls sich der Preis auf eine Zeit bezieht, steht hier die Einheit
+     */
     public void setZeiteinheit(Mengeneinheit zeiteinheit) {
         this.zeiteinheit = zeiteinheit;
     }
 
+    public static RechnungspositionBuilder builder() {
+        return new RechnungspositionBuilder();
+    }
+
     public static class RechnungspositionBuilder extends COMBuilder {
+        private String artikelId;
+        private BDEWArtikelnummer artikelnummer;
+        private Preis einzelpreis;
+        private OffsetDateTime lieferungBis;
+        private OffsetDateTime lieferungVon;
+        private String lokationsId;
+        private Menge positionsMenge;
+        private Long positionsnummer;
+        private String positionstext;
+        private Betrag teilrabattNetto;
+        private Betrag teilsummeNetto;
+        private Steuerbetrag teilsummeSteuer;
+        private Menge zeitbezogeneMenge;
+        private Mengeneinheit zeiteinheit;
+
+        private RechnungspositionBuilder() {
+        }
+
         /**
          * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
          * BDEW-Artikelnummer ablöst
          */
-        private String artikelId;
+        public String getArtikelId() {
+            return artikelId;
+        }
+
+        /**
+         * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
+         * BDEW-Artikelnummer ablöst
+         */
+        public RechnungspositionBuilder setArtikelId(String artikelId) {
+            this.artikelId = artikelId;
+            return this;
+        }
+
         /**
          * Kennzeichnung der Rechnungsposition mit der Standard-Artikelnummer des BDEW
          */
-        private BDEWArtikelnummer artikelnummer;
+        public BDEWArtikelnummer getArtikelnummer() {
+            return artikelnummer;
+        }
+
+        /**
+         * Kennzeichnung der Rechnungsposition mit der Standard-Artikelnummer des BDEW
+         */
+        public RechnungspositionBuilder setArtikelnummer(BDEWArtikelnummer artikelnummer) {
+            this.artikelnummer = artikelnummer;
+            return this;
+        }
+
         /**
          * Der Preis für eine Einheit der energetischen Menge
          */
-        private Preis einzelpreis;
+        public Preis getEinzelpreis() {
+            return einzelpreis;
+        }
+
+        /**
+         * Der Preis für eine Einheit der energetischen Menge
+         */
+        public RechnungspositionBuilder setEinzelpreis(Preis einzelpreis) {
+            this.einzelpreis = einzelpreis;
+            return this;
+        }
+
         /**
          * Ende der Lieferung für die abgerechnete Leistung (exklusiv)
          */
-        private OffsetDateTime lieferungBis;
+        public OffsetDateTime getLieferungBis() {
+            return lieferungBis;
+        }
+
+        /**
+         * Ende der Lieferung für die abgerechnete Leistung (exklusiv)
+         */
+        public RechnungspositionBuilder setLieferungBis(OffsetDateTime lieferungBis) {
+            this.lieferungBis = lieferungBis;
+            return this;
+        }
+
         /**
          * Start der Lieferung für die abgerechnete Leistung (inklusiv)
          */
-        private OffsetDateTime lieferungVon;
+        public OffsetDateTime getLieferungVon() {
+            return lieferungVon;
+        }
+
+        /**
+         * Start der Lieferung für die abgerechnete Leistung (inklusiv)
+         */
+        public RechnungspositionBuilder setLieferungVon(OffsetDateTime lieferungVon) {
+            this.lieferungVon = lieferungVon;
+            return this;
+        }
+
         /**
          * Marktlokation, die zu dieser Position gehört
          */
-        private String lokationsId;
+        public String getLokationsId() {
+            return lokationsId;
+        }
+
+        /**
+         * Marktlokation, die zu dieser Position gehört
+         */
+        public RechnungspositionBuilder setLokationsId(String lokationsId) {
+            this.lokationsId = lokationsId;
+            return this;
+        }
+
         /**
          * Die abgerechnete Menge mit Einheit
          */
-        private Menge positionsMenge;
+        public Menge getPositionsMenge() {
+            return positionsMenge;
+        }
+
+        /**
+         * Die abgerechnete Menge mit Einheit
+         */
+        public RechnungspositionBuilder setPositionsMenge(Menge positionsMenge) {
+            this.positionsMenge = positionsMenge;
+            return this;
+        }
+
         /**
          * Fortlaufende Nummer für die Rechnungsposition
          */
-        private Long positionsnummer;
+        public Long getPositionsnummer() {
+            return positionsnummer;
+        }
+
+        /**
+         * Fortlaufende Nummer für die Rechnungsposition
+         */
+        public RechnungspositionBuilder setPositionsnummer(Long positionsnummer) {
+            this.positionsnummer = positionsnummer;
+            return this;
+        }
+
         /**
          * Bezeichung für die abgerechnete Position
          */
-        private String positionstext;
+        public String getPositionstext() {
+            return positionstext;
+        }
+
+        /**
+         * Bezeichung für die abgerechnete Position
+         */
+        public RechnungspositionBuilder setPositionstext(String positionstext) {
+            this.positionstext = positionstext;
+            return this;
+        }
+
         /**
          * Nettobetrag für den Rabatt dieser Position
          */
-        private Betrag teilrabattNetto;
+        public Betrag getTeilrabattNetto() {
+            return teilrabattNetto;
+        }
+
+        /**
+         * Nettobetrag für den Rabatt dieser Position
+         */
+        public RechnungspositionBuilder setTeilrabattNetto(Betrag teilrabattNetto) {
+            this.teilrabattNetto = teilrabattNetto;
+            return this;
+        }
+
         /**
          * Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus
          * zeitbezogeneMenge).
          * Z.B. 12,60€ * 120 kW * 3/12 (für 3 Monate).
          */
-        private Betrag teilsummeNetto;
+        public Betrag getTeilsummeNetto() {
+            return teilsummeNetto;
+        }
+
+        /**
+         * Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus
+         * zeitbezogeneMenge).
+         * Z.B. 12,60€ * 120 kW * 3/12 (für 3 Monate).
+         */
+        public RechnungspositionBuilder setTeilsummeNetto(Betrag teilsummeNetto) {
+            this.teilsummeNetto = teilsummeNetto;
+            return this;
+        }
+
         /**
          * Auf die Position entfallende Steuer, bestehend aus Steuersatz und Betrag
          */
-        private Steuerbetrag teilsummeSteuer;
+        public Steuerbetrag getTeilsummeSteuer() {
+            return teilsummeSteuer;
+        }
+
+        /**
+         * Auf die Position entfallende Steuer, bestehend aus Steuersatz und Betrag
+         */
+        public RechnungspositionBuilder setTeilsummeSteuer(Steuerbetrag teilsummeSteuer) {
+            this.teilsummeSteuer = teilsummeSteuer;
+            return this;
+        }
+
         /**
          * Eine auf die Zeiteinheit bezogene Untermenge.
          * Z.B. bei einem Jahrespreis, 3 Monate oder 146 Tage.
          * Basierend darauf wird der Preis aufgeteilt.
          */
-        private Menge zeitbezogeneMenge;
-        /**
-         * Falls sich der Preis auf eine Zeit bezieht, steht hier die Einheit
-         */
-        private Mengeneinheit zeiteinheit;
-    
-        public String getArtikelId() {
-            return artikelId;
-        }
-    
-        public RechnungspositionBuilder setArtikelId(String artikelId) {
-            this.artikelId = artikelId;
-            return this;
-        }
-    
-        public BDEWArtikelnummer getArtikelnummer() {
-            return artikelnummer;
-        }
-    
-        public RechnungspositionBuilder setArtikelnummer(BDEWArtikelnummer artikelnummer) {
-            this.artikelnummer = artikelnummer;
-            return this;
-        }
-    
-        public Preis getEinzelpreis() {
-            return einzelpreis;
-        }
-    
-        public RechnungspositionBuilder setEinzelpreis(Preis einzelpreis) {
-            this.einzelpreis = einzelpreis;
-            return this;
-        }
-    
-        public OffsetDateTime getLieferungBis() {
-            return lieferungBis;
-        }
-    
-        public RechnungspositionBuilder setLieferungBis(OffsetDateTime lieferungBis) {
-            this.lieferungBis = lieferungBis;
-            return this;
-        }
-    
-        public OffsetDateTime getLieferungVon() {
-            return lieferungVon;
-        }
-    
-        public RechnungspositionBuilder setLieferungVon(OffsetDateTime lieferungVon) {
-            this.lieferungVon = lieferungVon;
-            return this;
-        }
-    
-        public String getLokationsId() {
-            return lokationsId;
-        }
-    
-        public RechnungspositionBuilder setLokationsId(String lokationsId) {
-            this.lokationsId = lokationsId;
-            return this;
-        }
-    
-        public Menge getPositionsMenge() {
-            return positionsMenge;
-        }
-    
-        public RechnungspositionBuilder setPositionsMenge(Menge positionsMenge) {
-            this.positionsMenge = positionsMenge;
-            return this;
-        }
-    
-        public Long getPositionsnummer() {
-            return positionsnummer;
-        }
-    
-        public RechnungspositionBuilder setPositionsnummer(Long positionsnummer) {
-            this.positionsnummer = positionsnummer;
-            return this;
-        }
-    
-        public String getPositionstext() {
-            return positionstext;
-        }
-    
-        public RechnungspositionBuilder setPositionstext(String positionstext) {
-            this.positionstext = positionstext;
-            return this;
-        }
-    
-        public Betrag getTeilrabattNetto() {
-            return teilrabattNetto;
-        }
-    
-        public RechnungspositionBuilder setTeilrabattNetto(Betrag teilrabattNetto) {
-            this.teilrabattNetto = teilrabattNetto;
-            return this;
-        }
-    
-        public Betrag getTeilsummeNetto() {
-            return teilsummeNetto;
-        }
-    
-        public RechnungspositionBuilder setTeilsummeNetto(Betrag teilsummeNetto) {
-            this.teilsummeNetto = teilsummeNetto;
-            return this;
-        }
-    
-        public Steuerbetrag getTeilsummeSteuer() {
-            return teilsummeSteuer;
-        }
-    
-        public RechnungspositionBuilder setTeilsummeSteuer(Steuerbetrag teilsummeSteuer) {
-            this.teilsummeSteuer = teilsummeSteuer;
-            return this;
-        }
-    
         public Menge getZeitbezogeneMenge() {
             return zeitbezogeneMenge;
         }
-    
+
+        /**
+         * Eine auf die Zeiteinheit bezogene Untermenge.
+         * Z.B. bei einem Jahrespreis, 3 Monate oder 146 Tage.
+         * Basierend darauf wird der Preis aufgeteilt.
+         */
         public RechnungspositionBuilder setZeitbezogeneMenge(Menge zeitbezogeneMenge) {
             this.zeitbezogeneMenge = zeitbezogeneMenge;
             return this;
         }
-    
+
+        /**
+         * Falls sich der Preis auf eine Zeit bezieht, steht hier die Einheit
+         */
         public Mengeneinheit getZeiteinheit() {
             return zeiteinheit;
         }
-    
+
+        /**
+         * Falls sich der Preis auf eine Zeit bezieht, steht hier die Einheit
+         */
         public RechnungspositionBuilder setZeiteinheit(Mengeneinheit zeiteinheit) {
             this.zeiteinheit = zeiteinheit;
             return this;
         }
-    
+
         public RechnungspositionBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public RechnungspositionBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Rechnungsposition build() {
             return new Rechnungsposition(this);
         }

@@ -16,20 +16,11 @@ import java.util.List;
  *
  * .. HINT::
  * `Zustaendigkeit JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Zustaendigkeit.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Zustaendigkeit.json>`_
  */
 public class Zustaendigkeit extends COM {
-    /**
-     * Berufliche Rolle des Ansprechpartners/ der Person
-     */
     private String abteilung;
-    /**
-     * Berufliche Rolle des Ansprechpartners/ der Person
-     */
     private String position;
-    /**
-     * Hier kann eine thematische Zuordnung des Ansprechpartners bzw. der Person angegeben werden
-     */
     private Themengebiet themengebiet;
 
     public Zustaendigkeit() {
@@ -42,81 +33,115 @@ public class Zustaendigkeit extends COM {
         this.themengebiet = builder.themengebiet;
     }
 
+    /**
+     * Berufliche Rolle des Ansprechpartners/ der Person
+     */
     public String getAbteilung() {
         return abteilung;
     }
 
+    /**
+     * Berufliche Rolle des Ansprechpartners/ der Person
+     */
     public void setAbteilung(String abteilung) {
         this.abteilung = abteilung;
     }
 
+    /**
+     * Berufliche Rolle des Ansprechpartners/ der Person
+     */
     public String getPosition() {
         return position;
     }
 
+    /**
+     * Berufliche Rolle des Ansprechpartners/ der Person
+     */
     public void setPosition(String position) {
         this.position = position;
     }
 
+    /**
+     * Hier kann eine thematische Zuordnung des Ansprechpartners bzw. der Person angegeben werden
+     */
     public Themengebiet getThemengebiet() {
         return themengebiet;
     }
 
+    /**
+     * Hier kann eine thematische Zuordnung des Ansprechpartners bzw. der Person angegeben werden
+     */
     public void setThemengebiet(Themengebiet themengebiet) {
         this.themengebiet = themengebiet;
     }
 
+    public static ZustaendigkeitBuilder builder() {
+        return new ZustaendigkeitBuilder();
+    }
+
     public static class ZustaendigkeitBuilder extends COMBuilder {
-        /**
-         * Berufliche Rolle des Ansprechpartners/ der Person
-         */
         private String abteilung;
+        private String position;
+        private Themengebiet themengebiet;
+
+        private ZustaendigkeitBuilder() {
+        }
+
         /**
          * Berufliche Rolle des Ansprechpartners/ der Person
          */
-        private String position;
-        /**
-         * Hier kann eine thematische Zuordnung des Ansprechpartners bzw. der Person angegeben werden
-         */
-        private Themengebiet themengebiet;
-    
         public String getAbteilung() {
             return abteilung;
         }
-    
+
+        /**
+         * Berufliche Rolle des Ansprechpartners/ der Person
+         */
         public ZustaendigkeitBuilder setAbteilung(String abteilung) {
             this.abteilung = abteilung;
             return this;
         }
-    
+
+        /**
+         * Berufliche Rolle des Ansprechpartners/ der Person
+         */
         public String getPosition() {
             return position;
         }
-    
+
+        /**
+         * Berufliche Rolle des Ansprechpartners/ der Person
+         */
         public ZustaendigkeitBuilder setPosition(String position) {
             this.position = position;
             return this;
         }
-    
+
+        /**
+         * Hier kann eine thematische Zuordnung des Ansprechpartners bzw. der Person angegeben werden
+         */
         public Themengebiet getThemengebiet() {
             return themengebiet;
         }
-    
+
+        /**
+         * Hier kann eine thematische Zuordnung des Ansprechpartners bzw. der Person angegeben werden
+         */
         public ZustaendigkeitBuilder setThemengebiet(Themengebiet themengebiet) {
             this.themengebiet = themengebiet;
             return this;
         }
-    
+
         public ZustaendigkeitBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public ZustaendigkeitBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Zustaendigkeit build() {
             return new Zustaendigkeit(this);
         }

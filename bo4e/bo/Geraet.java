@@ -16,28 +16,13 @@ import java.util.List;
  *
  * .. HINT::
  * `Geraet JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Geraet.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/bo/Geraet.json>`_
  */
 public class Geraet extends Geschaeftsobjekt {
-    /**
-     * Typ des Geschaeftsobjekts
-     */
     private final Typ typ = Typ.GERAET;
-    /**
-     * Bezeichnung des Geräts
-     */
     private String bezeichnung;
-    /**
-     * Die übergreifende Klasse eines Geräts, beispielsweise Wandler
-     */
     private Geraeteklasse geraeteklasse;
-    /**
-     * Die auf dem Gerät aufgedruckte Nummer, die vom MSB vergeben wird.
-     */
     private String geraetenummer;
-    /**
-     * Der speziellere Typ eines Gerätes, beispielsweise Stromwandler
-     */
     private Geraetetyp geraetetyp;
 
     public Geraet() {
@@ -55,102 +40,145 @@ public class Geraet extends Geschaeftsobjekt {
         return typ;
     }
 
+    /**
+     * Bezeichnung des Geräts
+     */
     public String getBezeichnung() {
         return bezeichnung;
     }
 
+    /**
+     * Bezeichnung des Geräts
+     */
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;
     }
 
+    /**
+     * Die übergreifende Klasse eines Geräts, beispielsweise Wandler
+     */
     public Geraeteklasse getGeraeteklasse() {
         return geraeteklasse;
     }
 
+    /**
+     * Die übergreifende Klasse eines Geräts, beispielsweise Wandler
+     */
     public void setGeraeteklasse(Geraeteklasse geraeteklasse) {
         this.geraeteklasse = geraeteklasse;
     }
 
+    /**
+     * Die auf dem Gerät aufgedruckte Nummer, die vom MSB vergeben wird.
+     */
     public String getGeraetenummer() {
         return geraetenummer;
     }
 
+    /**
+     * Die auf dem Gerät aufgedruckte Nummer, die vom MSB vergeben wird.
+     */
     public void setGeraetenummer(String geraetenummer) {
         this.geraetenummer = geraetenummer;
     }
 
+    /**
+     * Der speziellere Typ eines Gerätes, beispielsweise Stromwandler
+     */
     public Geraetetyp getGeraetetyp() {
         return geraetetyp;
     }
 
+    /**
+     * Der speziellere Typ eines Gerätes, beispielsweise Stromwandler
+     */
     public void setGeraetetyp(Geraetetyp geraetetyp) {
         this.geraetetyp = geraetetyp;
     }
 
+    public static GeraetBuilder builder() {
+        return new GeraetBuilder();
+    }
+
     public static class GeraetBuilder extends GeschaeftsobjektBuilder {
+        private String bezeichnung;
+        private Geraeteklasse geraeteklasse;
+        private String geraetenummer;
+        private Geraetetyp geraetetyp;
+
+        private GeraetBuilder() {
+        }
+
         /**
          * Bezeichnung des Geräts
          */
-        private String bezeichnung;
-        /**
-         * Die übergreifende Klasse eines Geräts, beispielsweise Wandler
-         */
-        private Geraeteklasse geraeteklasse;
-        /**
-         * Die auf dem Gerät aufgedruckte Nummer, die vom MSB vergeben wird.
-         */
-        private String geraetenummer;
-        /**
-         * Der speziellere Typ eines Gerätes, beispielsweise Stromwandler
-         */
-        private Geraetetyp geraetetyp;
-    
         public String getBezeichnung() {
             return bezeichnung;
         }
-    
+
+        /**
+         * Bezeichnung des Geräts
+         */
         public GeraetBuilder setBezeichnung(String bezeichnung) {
             this.bezeichnung = bezeichnung;
             return this;
         }
-    
+
+        /**
+         * Die übergreifende Klasse eines Geräts, beispielsweise Wandler
+         */
         public Geraeteklasse getGeraeteklasse() {
             return geraeteklasse;
         }
-    
+
+        /**
+         * Die übergreifende Klasse eines Geräts, beispielsweise Wandler
+         */
         public GeraetBuilder setGeraeteklasse(Geraeteklasse geraeteklasse) {
             this.geraeteklasse = geraeteklasse;
             return this;
         }
-    
+
+        /**
+         * Die auf dem Gerät aufgedruckte Nummer, die vom MSB vergeben wird.
+         */
         public String getGeraetenummer() {
             return geraetenummer;
         }
-    
+
+        /**
+         * Die auf dem Gerät aufgedruckte Nummer, die vom MSB vergeben wird.
+         */
         public GeraetBuilder setGeraetenummer(String geraetenummer) {
             this.geraetenummer = geraetenummer;
             return this;
         }
-    
+
+        /**
+         * Der speziellere Typ eines Gerätes, beispielsweise Stromwandler
+         */
         public Geraetetyp getGeraetetyp() {
             return geraetetyp;
         }
-    
+
+        /**
+         * Der speziellere Typ eines Gerätes, beispielsweise Stromwandler
+         */
         public GeraetBuilder setGeraetetyp(Geraetetyp geraetetyp) {
             this.geraetetyp = geraetetyp;
             return this;
         }
-    
+
         public GeraetBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public GeraetBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Geraet build() {
             return new Geraet(this);
         }

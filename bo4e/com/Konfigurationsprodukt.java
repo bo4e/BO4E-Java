@@ -15,7 +15,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Konfigurationsprodukt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Konfigurationsprodukt.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/bo/Konfigurationsprodukt.json>`_
  */
 public class Konfigurationsprodukt extends COM {
     private String leistungskurvendefinition;
@@ -66,58 +66,65 @@ public class Konfigurationsprodukt extends COM {
         this.schaltzeitdefinition = schaltzeitdefinition;
     }
 
+    public static KonfigurationsproduktBuilder builder() {
+        return new KonfigurationsproduktBuilder();
+    }
+
     public static class KonfigurationsproduktBuilder extends COMBuilder {
         private String leistungskurvendefinition;
         private Marktteilnehmer marktpartner;
         private String produktcode;
         private String schaltzeitdefinition;
-    
+
+        private KonfigurationsproduktBuilder() {
+        }
+
         public String getLeistungskurvendefinition() {
             return leistungskurvendefinition;
         }
-    
+
         public KonfigurationsproduktBuilder setLeistungskurvendefinition(String leistungskurvendefinition) {
             this.leistungskurvendefinition = leistungskurvendefinition;
             return this;
         }
-    
+
         public Marktteilnehmer getMarktpartner() {
             return marktpartner;
         }
-    
+
         public KonfigurationsproduktBuilder setMarktpartner(Marktteilnehmer marktpartner) {
             this.marktpartner = marktpartner;
             return this;
         }
-    
+
         public String getProduktcode() {
             return produktcode;
         }
-    
+
         public KonfigurationsproduktBuilder setProduktcode(String produktcode) {
             this.produktcode = produktcode;
             return this;
         }
-    
+
         public String getSchaltzeitdefinition() {
             return schaltzeitdefinition;
         }
-    
+
         public KonfigurationsproduktBuilder setSchaltzeitdefinition(String schaltzeitdefinition) {
             this.schaltzeitdefinition = schaltzeitdefinition;
             return this;
         }
-    
+
         public KonfigurationsproduktBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public KonfigurationsproduktBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Konfigurationsprodukt build() {
             return new Konfigurationsprodukt(this);
         }

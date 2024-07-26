@@ -16,24 +16,12 @@ import java.util.List;
  *
  * .. HINT::
  * `Energiemenge JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Energiemenge.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/bo/Energiemenge.json>`_
  */
 public class Energiemenge extends Geschaeftsobjekt {
-    /**
-     * Typ des Geschaeftsobjekts
-     */
     private final Typ typ = Typ.ENERGIEMENGE;
-    /**
-     * Gibt den Verbrauch in einer Zeiteinheit an
-     */
     private List<Verbrauch> energieverbrauch;
-    /**
-     * Eindeutige Nummer der Marktlokation bzw. der Messlokation, zu der die Energiemenge gehört
-     */
     private String lokationsId;
-    /**
-     * Gibt an, ob es sich um eine Markt- oder Messlokation handelt
-     */
     private Lokationstyp lokationstyp;
 
     public Energiemenge() {
@@ -50,81 +38,115 @@ public class Energiemenge extends Geschaeftsobjekt {
         return typ;
     }
 
+    /**
+     * Gibt den Verbrauch in einer Zeiteinheit an
+     */
     public List<Verbrauch> getEnergieverbrauch() {
         return energieverbrauch;
     }
 
+    /**
+     * Gibt den Verbrauch in einer Zeiteinheit an
+     */
     public void setEnergieverbrauch(List<Verbrauch> energieverbrauch) {
         this.energieverbrauch = energieverbrauch;
     }
 
+    /**
+     * Eindeutige Nummer der Marktlokation bzw. der Messlokation, zu der die Energiemenge gehört
+     */
     public String getLokationsId() {
         return lokationsId;
     }
 
+    /**
+     * Eindeutige Nummer der Marktlokation bzw. der Messlokation, zu der die Energiemenge gehört
+     */
     public void setLokationsId(String lokationsId) {
         this.lokationsId = lokationsId;
     }
 
+    /**
+     * Gibt an, ob es sich um eine Markt- oder Messlokation handelt
+     */
     public Lokationstyp getLokationstyp() {
         return lokationstyp;
     }
 
+    /**
+     * Gibt an, ob es sich um eine Markt- oder Messlokation handelt
+     */
     public void setLokationstyp(Lokationstyp lokationstyp) {
         this.lokationstyp = lokationstyp;
     }
 
+    public static EnergiemengeBuilder builder() {
+        return new EnergiemengeBuilder();
+    }
+
     public static class EnergiemengeBuilder extends GeschaeftsobjektBuilder {
+        private List<Verbrauch> energieverbrauch;
+        private String lokationsId;
+        private Lokationstyp lokationstyp;
+
+        private EnergiemengeBuilder() {
+        }
+
         /**
          * Gibt den Verbrauch in einer Zeiteinheit an
          */
-        private List<Verbrauch> energieverbrauch;
-        /**
-         * Eindeutige Nummer der Marktlokation bzw. der Messlokation, zu der die Energiemenge gehört
-         */
-        private String lokationsId;
-        /**
-         * Gibt an, ob es sich um eine Markt- oder Messlokation handelt
-         */
-        private Lokationstyp lokationstyp;
-    
         public List<Verbrauch> getEnergieverbrauch() {
             return energieverbrauch;
         }
-    
+
+        /**
+         * Gibt den Verbrauch in einer Zeiteinheit an
+         */
         public EnergiemengeBuilder setEnergieverbrauch(List<Verbrauch> energieverbrauch) {
             this.energieverbrauch = energieverbrauch;
             return this;
         }
-    
+
+        /**
+         * Eindeutige Nummer der Marktlokation bzw. der Messlokation, zu der die Energiemenge gehört
+         */
         public String getLokationsId() {
             return lokationsId;
         }
-    
+
+        /**
+         * Eindeutige Nummer der Marktlokation bzw. der Messlokation, zu der die Energiemenge gehört
+         */
         public EnergiemengeBuilder setLokationsId(String lokationsId) {
             this.lokationsId = lokationsId;
             return this;
         }
-    
+
+        /**
+         * Gibt an, ob es sich um eine Markt- oder Messlokation handelt
+         */
         public Lokationstyp getLokationstyp() {
             return lokationstyp;
         }
-    
+
+        /**
+         * Gibt an, ob es sich um eine Markt- oder Messlokation handelt
+         */
         public EnergiemengeBuilder setLokationstyp(Lokationstyp lokationstyp) {
             this.lokationstyp = lokationstyp;
             return this;
         }
-    
+
         public EnergiemengeBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public EnergiemengeBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Energiemenge build() {
             return new Energiemenge(this);
         }

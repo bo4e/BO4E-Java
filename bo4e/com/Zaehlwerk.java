@@ -17,62 +17,26 @@ import java.util.List;
  *
  * .. HINT::
  * `Zaehlwerk JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Zaehlwerk.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Zaehlwerk.json>`_
  */
 public class Zaehlwerk extends COM {
-    /**
-     * Abrechnungsrelevant
-     */
     private Long anzahlAblesungen;
     private String bezeichnung;
     private Mengeneinheit einheit;
-    /**
-     * Anzahl der Nachkommastellen
-     */
     private Boolean istAbrechnungsrelevant;
-    /**
-     * Schwachlastfaehigkeit
-     */
     private Boolean istSchwachlastfaehig;
-    /**
-     * Konzessionsabgabe
-     */
     private Boolean istSteuerbefreit;
-    /**
-     * Stromverbrauchsart/Verbrauchsart Marktlokation
-     */
     private Boolean istUnterbrechbar;
-    /**
-     * Wärmenutzung Marktlokation
-     */
     private Konzessionsabgabe konzessionsabgabe;
-    /**
-     * Anzahl der Vorkommastellen
-     */
     private Long nachkommastelle;
     private String obisKennzahl;
     private Energierichtung richtung;
-    /**
-     * Stromverbrauchsart/Verbrauchsart Marktlokation
-     */
     private Verbrauchsart verbrauchsart;
-    /**
-     * Schwachlastfaehigkeit
-     */
     private List<VerwendungszweckProMarktrolle> verwendungszwecke;
-    /**
-     * Steuerbefreiung
-     */
     private Long vorkommastelle;
-    /**
-     * Unterbrechbarkeit Marktlokation
-     */
     private Waermenutzung waermenutzung;
     private Double wandlerfaktor;
     private String zaehlwerkId;
-    /**
-     * Anzahl Ablesungen pro Jahr
-     */
     private Zaehlzeitregister zaehlzeitregister;
 
     public Zaehlwerk() {
@@ -100,10 +64,16 @@ public class Zaehlwerk extends COM {
         this.zaehlzeitregister = builder.zaehlzeitregister;
     }
 
+    /**
+     * Abrechnungsrelevant
+     */
     public Long getAnzahlAblesungen() {
         return anzahlAblesungen;
     }
 
+    /**
+     * Abrechnungsrelevant
+     */
     public void setAnzahlAblesungen(Long anzahlAblesungen) {
         this.anzahlAblesungen = anzahlAblesungen;
     }
@@ -124,50 +94,86 @@ public class Zaehlwerk extends COM {
         this.einheit = einheit;
     }
 
+    /**
+     * Anzahl der Nachkommastellen
+     */
     public Boolean getIstAbrechnungsrelevant() {
         return istAbrechnungsrelevant;
     }
 
+    /**
+     * Anzahl der Nachkommastellen
+     */
     public void setIstAbrechnungsrelevant(Boolean istAbrechnungsrelevant) {
         this.istAbrechnungsrelevant = istAbrechnungsrelevant;
     }
 
+    /**
+     * Schwachlastfaehigkeit
+     */
     public Boolean getIstSchwachlastfaehig() {
         return istSchwachlastfaehig;
     }
 
+    /**
+     * Schwachlastfaehigkeit
+     */
     public void setIstSchwachlastfaehig(Boolean istSchwachlastfaehig) {
         this.istSchwachlastfaehig = istSchwachlastfaehig;
     }
 
+    /**
+     * Konzessionsabgabe
+     */
     public Boolean getIstSteuerbefreit() {
         return istSteuerbefreit;
     }
 
+    /**
+     * Konzessionsabgabe
+     */
     public void setIstSteuerbefreit(Boolean istSteuerbefreit) {
         this.istSteuerbefreit = istSteuerbefreit;
     }
 
+    /**
+     * Stromverbrauchsart/Verbrauchsart Marktlokation
+     */
     public Boolean getIstUnterbrechbar() {
         return istUnterbrechbar;
     }
 
+    /**
+     * Stromverbrauchsart/Verbrauchsart Marktlokation
+     */
     public void setIstUnterbrechbar(Boolean istUnterbrechbar) {
         this.istUnterbrechbar = istUnterbrechbar;
     }
 
+    /**
+     * Wärmenutzung Marktlokation
+     */
     public Konzessionsabgabe getKonzessionsabgabe() {
         return konzessionsabgabe;
     }
 
+    /**
+     * Wärmenutzung Marktlokation
+     */
     public void setKonzessionsabgabe(Konzessionsabgabe konzessionsabgabe) {
         this.konzessionsabgabe = konzessionsabgabe;
     }
 
+    /**
+     * Anzahl der Vorkommastellen
+     */
     public Long getNachkommastelle() {
         return nachkommastelle;
     }
 
+    /**
+     * Anzahl der Vorkommastellen
+     */
     public void setNachkommastelle(Long nachkommastelle) {
         this.nachkommastelle = nachkommastelle;
     }
@@ -188,34 +194,58 @@ public class Zaehlwerk extends COM {
         this.richtung = richtung;
     }
 
+    /**
+     * Stromverbrauchsart/Verbrauchsart Marktlokation
+     */
     public Verbrauchsart getVerbrauchsart() {
         return verbrauchsart;
     }
 
+    /**
+     * Stromverbrauchsart/Verbrauchsart Marktlokation
+     */
     public void setVerbrauchsart(Verbrauchsart verbrauchsart) {
         this.verbrauchsart = verbrauchsart;
     }
 
+    /**
+     * Schwachlastfaehigkeit
+     */
     public List<VerwendungszweckProMarktrolle> getVerwendungszwecke() {
         return verwendungszwecke;
     }
 
+    /**
+     * Schwachlastfaehigkeit
+     */
     public void setVerwendungszwecke(List<VerwendungszweckProMarktrolle> verwendungszwecke) {
         this.verwendungszwecke = verwendungszwecke;
     }
 
+    /**
+     * Steuerbefreiung
+     */
     public Long getVorkommastelle() {
         return vorkommastelle;
     }
 
+    /**
+     * Steuerbefreiung
+     */
     public void setVorkommastelle(Long vorkommastelle) {
         this.vorkommastelle = vorkommastelle;
     }
 
+    /**
+     * Unterbrechbarkeit Marktlokation
+     */
     public Waermenutzung getWaermenutzung() {
         return waermenutzung;
     }
 
+    /**
+     * Unterbrechbarkeit Marktlokation
+     */
     public void setWaermenutzung(Waermenutzung waermenutzung) {
         this.waermenutzung = waermenutzung;
     }
@@ -236,242 +266,291 @@ public class Zaehlwerk extends COM {
         this.zaehlwerkId = zaehlwerkId;
     }
 
+    /**
+     * Anzahl Ablesungen pro Jahr
+     */
     public Zaehlzeitregister getZaehlzeitregister() {
         return zaehlzeitregister;
     }
 
+    /**
+     * Anzahl Ablesungen pro Jahr
+     */
     public void setZaehlzeitregister(Zaehlzeitregister zaehlzeitregister) {
         this.zaehlzeitregister = zaehlzeitregister;
     }
 
+    public static ZaehlwerkBuilder builder() {
+        return new ZaehlwerkBuilder();
+    }
+
     public static class ZaehlwerkBuilder extends COMBuilder {
-        /**
-         * Abrechnungsrelevant
-         */
         private Long anzahlAblesungen;
         private String bezeichnung;
         private Mengeneinheit einheit;
-        /**
-         * Anzahl der Nachkommastellen
-         */
         private Boolean istAbrechnungsrelevant;
-        /**
-         * Schwachlastfaehigkeit
-         */
         private Boolean istSchwachlastfaehig;
-        /**
-         * Konzessionsabgabe
-         */
         private Boolean istSteuerbefreit;
-        /**
-         * Stromverbrauchsart/Verbrauchsart Marktlokation
-         */
         private Boolean istUnterbrechbar;
-        /**
-         * Wärmenutzung Marktlokation
-         */
         private Konzessionsabgabe konzessionsabgabe;
-        /**
-         * Anzahl der Vorkommastellen
-         */
         private Long nachkommastelle;
         private String obisKennzahl;
         private Energierichtung richtung;
-        /**
-         * Stromverbrauchsart/Verbrauchsart Marktlokation
-         */
         private Verbrauchsart verbrauchsart;
-        /**
-         * Schwachlastfaehigkeit
-         */
         private List<VerwendungszweckProMarktrolle> verwendungszwecke;
-        /**
-         * Steuerbefreiung
-         */
         private Long vorkommastelle;
-        /**
-         * Unterbrechbarkeit Marktlokation
-         */
         private Waermenutzung waermenutzung;
         private Double wandlerfaktor;
         private String zaehlwerkId;
-        /**
-         * Anzahl Ablesungen pro Jahr
-         */
         private Zaehlzeitregister zaehlzeitregister;
-    
+
+        private ZaehlwerkBuilder() {
+        }
+
+        /**
+         * Abrechnungsrelevant
+         */
         public Long getAnzahlAblesungen() {
             return anzahlAblesungen;
         }
-    
+
+        /**
+         * Abrechnungsrelevant
+         */
         public ZaehlwerkBuilder setAnzahlAblesungen(Long anzahlAblesungen) {
             this.anzahlAblesungen = anzahlAblesungen;
             return this;
         }
-    
+
         public String getBezeichnung() {
             return bezeichnung;
         }
-    
+
         public ZaehlwerkBuilder setBezeichnung(String bezeichnung) {
             this.bezeichnung = bezeichnung;
             return this;
         }
-    
+
         public Mengeneinheit getEinheit() {
             return einheit;
         }
-    
+
         public ZaehlwerkBuilder setEinheit(Mengeneinheit einheit) {
             this.einheit = einheit;
             return this;
         }
-    
+
+        /**
+         * Anzahl der Nachkommastellen
+         */
         public Boolean getIstAbrechnungsrelevant() {
             return istAbrechnungsrelevant;
         }
-    
+
+        /**
+         * Anzahl der Nachkommastellen
+         */
         public ZaehlwerkBuilder setIstAbrechnungsrelevant(Boolean istAbrechnungsrelevant) {
             this.istAbrechnungsrelevant = istAbrechnungsrelevant;
             return this;
         }
-    
+
+        /**
+         * Schwachlastfaehigkeit
+         */
         public Boolean getIstSchwachlastfaehig() {
             return istSchwachlastfaehig;
         }
-    
+
+        /**
+         * Schwachlastfaehigkeit
+         */
         public ZaehlwerkBuilder setIstSchwachlastfaehig(Boolean istSchwachlastfaehig) {
             this.istSchwachlastfaehig = istSchwachlastfaehig;
             return this;
         }
-    
+
+        /**
+         * Konzessionsabgabe
+         */
         public Boolean getIstSteuerbefreit() {
             return istSteuerbefreit;
         }
-    
+
+        /**
+         * Konzessionsabgabe
+         */
         public ZaehlwerkBuilder setIstSteuerbefreit(Boolean istSteuerbefreit) {
             this.istSteuerbefreit = istSteuerbefreit;
             return this;
         }
-    
+
+        /**
+         * Stromverbrauchsart/Verbrauchsart Marktlokation
+         */
         public Boolean getIstUnterbrechbar() {
             return istUnterbrechbar;
         }
-    
+
+        /**
+         * Stromverbrauchsart/Verbrauchsart Marktlokation
+         */
         public ZaehlwerkBuilder setIstUnterbrechbar(Boolean istUnterbrechbar) {
             this.istUnterbrechbar = istUnterbrechbar;
             return this;
         }
-    
+
+        /**
+         * Wärmenutzung Marktlokation
+         */
         public Konzessionsabgabe getKonzessionsabgabe() {
             return konzessionsabgabe;
         }
-    
+
+        /**
+         * Wärmenutzung Marktlokation
+         */
         public ZaehlwerkBuilder setKonzessionsabgabe(Konzessionsabgabe konzessionsabgabe) {
             this.konzessionsabgabe = konzessionsabgabe;
             return this;
         }
-    
+
+        /**
+         * Anzahl der Vorkommastellen
+         */
         public Long getNachkommastelle() {
             return nachkommastelle;
         }
-    
+
+        /**
+         * Anzahl der Vorkommastellen
+         */
         public ZaehlwerkBuilder setNachkommastelle(Long nachkommastelle) {
             this.nachkommastelle = nachkommastelle;
             return this;
         }
-    
+
         public String getObisKennzahl() {
             return obisKennzahl;
         }
-    
+
         public ZaehlwerkBuilder setObisKennzahl(String obisKennzahl) {
             this.obisKennzahl = obisKennzahl;
             return this;
         }
-    
+
         public Energierichtung getRichtung() {
             return richtung;
         }
-    
+
         public ZaehlwerkBuilder setRichtung(Energierichtung richtung) {
             this.richtung = richtung;
             return this;
         }
-    
+
+        /**
+         * Stromverbrauchsart/Verbrauchsart Marktlokation
+         */
         public Verbrauchsart getVerbrauchsart() {
             return verbrauchsart;
         }
-    
+
+        /**
+         * Stromverbrauchsart/Verbrauchsart Marktlokation
+         */
         public ZaehlwerkBuilder setVerbrauchsart(Verbrauchsart verbrauchsart) {
             this.verbrauchsart = verbrauchsart;
             return this;
         }
-    
+
+        /**
+         * Schwachlastfaehigkeit
+         */
         public List<VerwendungszweckProMarktrolle> getVerwendungszwecke() {
             return verwendungszwecke;
         }
-    
+
+        /**
+         * Schwachlastfaehigkeit
+         */
         public ZaehlwerkBuilder setVerwendungszwecke(List<VerwendungszweckProMarktrolle> verwendungszwecke) {
             this.verwendungszwecke = verwendungszwecke;
             return this;
         }
-    
+
+        /**
+         * Steuerbefreiung
+         */
         public Long getVorkommastelle() {
             return vorkommastelle;
         }
-    
+
+        /**
+         * Steuerbefreiung
+         */
         public ZaehlwerkBuilder setVorkommastelle(Long vorkommastelle) {
             this.vorkommastelle = vorkommastelle;
             return this;
         }
-    
+
+        /**
+         * Unterbrechbarkeit Marktlokation
+         */
         public Waermenutzung getWaermenutzung() {
             return waermenutzung;
         }
-    
+
+        /**
+         * Unterbrechbarkeit Marktlokation
+         */
         public ZaehlwerkBuilder setWaermenutzung(Waermenutzung waermenutzung) {
             this.waermenutzung = waermenutzung;
             return this;
         }
-    
+
         public Double getWandlerfaktor() {
             return wandlerfaktor;
         }
-    
+
         public ZaehlwerkBuilder setWandlerfaktor(Double wandlerfaktor) {
             this.wandlerfaktor = wandlerfaktor;
             return this;
         }
-    
+
         public String getZaehlwerkId() {
             return zaehlwerkId;
         }
-    
+
         public ZaehlwerkBuilder setZaehlwerkId(String zaehlwerkId) {
             this.zaehlwerkId = zaehlwerkId;
             return this;
         }
-    
+
+        /**
+         * Anzahl Ablesungen pro Jahr
+         */
         public Zaehlzeitregister getZaehlzeitregister() {
             return zaehlzeitregister;
         }
-    
+
+        /**
+         * Anzahl Ablesungen pro Jahr
+         */
         public ZaehlwerkBuilder setZaehlzeitregister(Zaehlzeitregister zaehlzeitregister) {
             this.zaehlzeitregister = zaehlzeitregister;
             return this;
         }
-    
+
         public ZaehlwerkBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public ZaehlwerkBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Zaehlwerk build() {
             return new Zaehlwerk(this);
         }

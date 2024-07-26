@@ -13,16 +13,10 @@ package bo4e;
  *
  * .. HINT::
  * `ZusatzAttribut JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/ZusatzAttribut.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/ZusatzAttribut.json>`_
  */
 public class ZusatzAttribut {
-    /**
-     * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
-     */
     private String name;
-    /**
-     * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
-     */
     private Object wert;
 
     public ZusatzAttribut() {
@@ -33,50 +27,75 @@ public class ZusatzAttribut {
         this.wert = builder.wert;
     }
 
+    /**
+     * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
+     */
     public Object getWert() {
         return wert;
     }
 
+    /**
+     * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
+     */
     public void setWert(Object wert) {
         this.wert = wert;
     }
 
+    public static ZusatzAttributBuilder builder() {
+        return new ZusatzAttributBuilder();
+    }
+
     public static class ZusatzAttributBuilder {
-        /**
-         * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
-         */
         private String name;
+        private Object wert;
+
+        private ZusatzAttributBuilder() {
+        }
+
         /**
          * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
          */
-        private Object wert;
-    
         public String getName() {
             return name;
         }
-    
+
+        /**
+         * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
+         */
         public ZusatzAttributBuilder setName(String name) {
             this.name = name;
             return this;
         }
-    
+
+        /**
+         * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
+         */
         public Object getWert() {
             return wert;
         }
-    
+
+        /**
+         * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
+         */
         public ZusatzAttributBuilder setWert(Object wert) {
             this.wert = wert;
             return this;
         }
-    
+
         public ZusatzAttribut build() {
             return new ZusatzAttribut(this);
         }

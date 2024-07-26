@@ -16,22 +16,11 @@ import java.util.List;
  *
  * .. HINT::
  * `Regionskriterium JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Regionskriterium.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Regionskriterium.json>`_
  */
 public class Regionskriterium extends COM {
-    /**
-     * Hier wird festgelegt, ob es sich um ein einschließendes oder ausschließendes Kriterium
-     * handelt.
-     */
     private Gueltigkeitstyp gueltigkeitstyp;
-    /**
-     * Hier wird das Kriterium selbst angegeben, z.B. Bundesland.
-     */
     private Regionskriteriumtyp regionskriteriumtyp;
-    /**
-     * Der Wert, den das Kriterium annehmen kann, z.B. NRW.
-     * Im Falle des Regionskriteriumstyp BUNDESWEIT spielt dieser Wert keine Rolle.
-     */
     private String wert;
 
     public Regionskriterium() {
@@ -44,83 +33,123 @@ public class Regionskriterium extends COM {
         this.wert = builder.wert;
     }
 
+    /**
+     * Hier wird festgelegt, ob es sich um ein einschließendes oder ausschließendes Kriterium
+     * handelt.
+     */
     public Gueltigkeitstyp getGueltigkeitstyp() {
         return gueltigkeitstyp;
     }
 
+    /**
+     * Hier wird festgelegt, ob es sich um ein einschließendes oder ausschließendes Kriterium
+     * handelt.
+     */
     public void setGueltigkeitstyp(Gueltigkeitstyp gueltigkeitstyp) {
         this.gueltigkeitstyp = gueltigkeitstyp;
     }
 
+    /**
+     * Hier wird das Kriterium selbst angegeben, z.B. Bundesland.
+     */
     public Regionskriteriumtyp getRegionskriteriumtyp() {
         return regionskriteriumtyp;
     }
 
+    /**
+     * Hier wird das Kriterium selbst angegeben, z.B. Bundesland.
+     */
     public void setRegionskriteriumtyp(Regionskriteriumtyp regionskriteriumtyp) {
         this.regionskriteriumtyp = regionskriteriumtyp;
     }
 
+    /**
+     * Der Wert, den das Kriterium annehmen kann, z.B. NRW.
+     * Im Falle des Regionskriteriumstyp BUNDESWEIT spielt dieser Wert keine Rolle.
+     */
     public String getWert() {
         return wert;
     }
 
+    /**
+     * Der Wert, den das Kriterium annehmen kann, z.B. NRW.
+     * Im Falle des Regionskriteriumstyp BUNDESWEIT spielt dieser Wert keine Rolle.
+     */
     public void setWert(String wert) {
         this.wert = wert;
     }
 
+    public static RegionskriteriumBuilder builder() {
+        return new RegionskriteriumBuilder();
+    }
+
     public static class RegionskriteriumBuilder extends COMBuilder {
+        private Gueltigkeitstyp gueltigkeitstyp;
+        private Regionskriteriumtyp regionskriteriumtyp;
+        private String wert;
+
+        private RegionskriteriumBuilder() {
+        }
+
         /**
          * Hier wird festgelegt, ob es sich um ein einschließendes oder ausschließendes Kriterium
          * handelt.
          */
-        private Gueltigkeitstyp gueltigkeitstyp;
-        /**
-         * Hier wird das Kriterium selbst angegeben, z.B. Bundesland.
-         */
-        private Regionskriteriumtyp regionskriteriumtyp;
-        /**
-         * Der Wert, den das Kriterium annehmen kann, z.B. NRW.
-         * Im Falle des Regionskriteriumstyp BUNDESWEIT spielt dieser Wert keine Rolle.
-         */
-        private String wert;
-    
         public Gueltigkeitstyp getGueltigkeitstyp() {
             return gueltigkeitstyp;
         }
-    
+
+        /**
+         * Hier wird festgelegt, ob es sich um ein einschließendes oder ausschließendes Kriterium
+         * handelt.
+         */
         public RegionskriteriumBuilder setGueltigkeitstyp(Gueltigkeitstyp gueltigkeitstyp) {
             this.gueltigkeitstyp = gueltigkeitstyp;
             return this;
         }
-    
+
+        /**
+         * Hier wird das Kriterium selbst angegeben, z.B. Bundesland.
+         */
         public Regionskriteriumtyp getRegionskriteriumtyp() {
             return regionskriteriumtyp;
         }
-    
+
+        /**
+         * Hier wird das Kriterium selbst angegeben, z.B. Bundesland.
+         */
         public RegionskriteriumBuilder setRegionskriteriumtyp(Regionskriteriumtyp regionskriteriumtyp) {
             this.regionskriteriumtyp = regionskriteriumtyp;
             return this;
         }
-    
+
+        /**
+         * Der Wert, den das Kriterium annehmen kann, z.B. NRW.
+         * Im Falle des Regionskriteriumstyp BUNDESWEIT spielt dieser Wert keine Rolle.
+         */
         public String getWert() {
             return wert;
         }
-    
+
+        /**
+         * Der Wert, den das Kriterium annehmen kann, z.B. NRW.
+         * Im Falle des Regionskriteriumstyp BUNDESWEIT spielt dieser Wert keine Rolle.
+         */
         public RegionskriteriumBuilder setWert(String wert) {
             this.wert = wert;
             return this;
         }
-    
+
         public RegionskriteriumBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public RegionskriteriumBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Regionskriterium build() {
             return new Regionskriterium(this);
         }

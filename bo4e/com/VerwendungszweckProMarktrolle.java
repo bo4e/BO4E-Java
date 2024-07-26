@@ -17,16 +17,10 @@ import java.util.List;
  *
  * .. HINT::
  * `Verwendungszweck JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Verwendungszweck.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Verwendungszweck.json>`_
  */
 public class VerwendungszweckProMarktrolle extends COM {
-    /**
-     * Marktrolle, für die die Daten relevant sind
-     */
     private Marktrolle marktrolle;
-    /**
-     * Verwendungszwecke
-     */
     private List<Verwendungszweck> zwecke;
 
     public VerwendungszweckProMarktrolle() {
@@ -38,60 +32,85 @@ public class VerwendungszweckProMarktrolle extends COM {
         this.zwecke = builder.zwecke;
     }
 
+    /**
+     * Marktrolle, für die die Daten relevant sind
+     */
     public Marktrolle getMarktrolle() {
         return marktrolle;
     }
 
+    /**
+     * Marktrolle, für die die Daten relevant sind
+     */
     public void setMarktrolle(Marktrolle marktrolle) {
         this.marktrolle = marktrolle;
     }
 
+    /**
+     * Verwendungszwecke
+     */
     public List<Verwendungszweck> getZwecke() {
         return zwecke;
     }
 
+    /**
+     * Verwendungszwecke
+     */
     public void setZwecke(List<Verwendungszweck> zwecke) {
         this.zwecke = zwecke;
     }
 
+    public static VerwendungszweckProMarktrolleBuilder builder() {
+        return new VerwendungszweckProMarktrolleBuilder();
+    }
+
     public static class VerwendungszweckProMarktrolleBuilder extends COMBuilder {
+        private Marktrolle marktrolle;
+        private List<Verwendungszweck> zwecke;
+
+        private VerwendungszweckProMarktrolleBuilder() {
+        }
+
         /**
          * Marktrolle, für die die Daten relevant sind
          */
-        private Marktrolle marktrolle;
-        /**
-         * Verwendungszwecke
-         */
-        private List<Verwendungszweck> zwecke;
-    
         public Marktrolle getMarktrolle() {
             return marktrolle;
         }
-    
+
+        /**
+         * Marktrolle, für die die Daten relevant sind
+         */
         public VerwendungszweckProMarktrolleBuilder setMarktrolle(Marktrolle marktrolle) {
             this.marktrolle = marktrolle;
             return this;
         }
-    
+
+        /**
+         * Verwendungszwecke
+         */
         public List<Verwendungszweck> getZwecke() {
             return zwecke;
         }
-    
+
+        /**
+         * Verwendungszwecke
+         */
         public VerwendungszweckProMarktrolleBuilder setZwecke(List<Verwendungszweck> zwecke) {
             this.zwecke = zwecke;
             return this;
         }
-    
+
         public VerwendungszweckProMarktrolleBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public VerwendungszweckProMarktrolleBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public VerwendungszweckProMarktrolle build() {
             return new VerwendungszweckProMarktrolle(this);
         }

@@ -20,29 +20,13 @@ import java.util.List;
  *
  * .. HINT::
  * `Kosten JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Kosten.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/bo/Kosten.json>`_
  */
 public class Kosten extends Geschaeftsobjekt {
-    /**
-     * Typ des Geschaeftsobjekts
-     */
     private final Typ typ = Typ.KOSTEN;
-    /**
-     * Für diesen Zeitraum wurden die Kosten ermittelt
-     */
     private Zeitraum gueltigkeit;
-    /**
-     * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
-     * Steuern etc
-     */
     private List<Kostenblock> kostenbloecke;
-    /**
-     * Klasse der Kosten, beispielsweise Fremdkosten
-     */
     private Kostenklasse kostenklasse;
-    /**
-     * Die Gesamtsumme über alle Kostenblöcke und -positionen
-     */
     private List<Betrag> summeKosten;
 
     public Kosten() {
@@ -60,103 +44,149 @@ public class Kosten extends Geschaeftsobjekt {
         return typ;
     }
 
+    /**
+     * Für diesen Zeitraum wurden die Kosten ermittelt
+     */
     public Zeitraum getGueltigkeit() {
         return gueltigkeit;
     }
 
+    /**
+     * Für diesen Zeitraum wurden die Kosten ermittelt
+     */
     public void setGueltigkeit(Zeitraum gueltigkeit) {
         this.gueltigkeit = gueltigkeit;
     }
 
+    /**
+     * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
+     * Steuern etc
+     */
     public List<Kostenblock> getKostenbloecke() {
         return kostenbloecke;
     }
 
+    /**
+     * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
+     * Steuern etc
+     */
     public void setKostenbloecke(List<Kostenblock> kostenbloecke) {
         this.kostenbloecke = kostenbloecke;
     }
 
+    /**
+     * Klasse der Kosten, beispielsweise Fremdkosten
+     */
     public Kostenklasse getKostenklasse() {
         return kostenklasse;
     }
 
+    /**
+     * Klasse der Kosten, beispielsweise Fremdkosten
+     */
     public void setKostenklasse(Kostenklasse kostenklasse) {
         this.kostenklasse = kostenklasse;
     }
 
+    /**
+     * Die Gesamtsumme über alle Kostenblöcke und -positionen
+     */
     public List<Betrag> getSummeKosten() {
         return summeKosten;
     }
 
+    /**
+     * Die Gesamtsumme über alle Kostenblöcke und -positionen
+     */
     public void setSummeKosten(List<Betrag> summeKosten) {
         this.summeKosten = summeKosten;
     }
 
+    public static KostenBuilder builder() {
+        return new KostenBuilder();
+    }
+
     public static class KostenBuilder extends GeschaeftsobjektBuilder {
+        private Zeitraum gueltigkeit;
+        private List<Kostenblock> kostenbloecke;
+        private Kostenklasse kostenklasse;
+        private List<Betrag> summeKosten;
+
+        private KostenBuilder() {
+        }
+
         /**
          * Für diesen Zeitraum wurden die Kosten ermittelt
          */
-        private Zeitraum gueltigkeit;
-        /**
-         * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
-         * Steuern etc
-         */
-        private List<Kostenblock> kostenbloecke;
-        /**
-         * Klasse der Kosten, beispielsweise Fremdkosten
-         */
-        private Kostenklasse kostenklasse;
-        /**
-         * Die Gesamtsumme über alle Kostenblöcke und -positionen
-         */
-        private List<Betrag> summeKosten;
-    
         public Zeitraum getGueltigkeit() {
             return gueltigkeit;
         }
-    
+
+        /**
+         * Für diesen Zeitraum wurden die Kosten ermittelt
+         */
         public KostenBuilder setGueltigkeit(Zeitraum gueltigkeit) {
             this.gueltigkeit = gueltigkeit;
             return this;
         }
-    
+
+        /**
+         * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
+         * Steuern etc
+         */
         public List<Kostenblock> getKostenbloecke() {
             return kostenbloecke;
         }
-    
+
+        /**
+         * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
+         * Steuern etc
+         */
         public KostenBuilder setKostenbloecke(List<Kostenblock> kostenbloecke) {
             this.kostenbloecke = kostenbloecke;
             return this;
         }
-    
+
+        /**
+         * Klasse der Kosten, beispielsweise Fremdkosten
+         */
         public Kostenklasse getKostenklasse() {
             return kostenklasse;
         }
-    
+
+        /**
+         * Klasse der Kosten, beispielsweise Fremdkosten
+         */
         public KostenBuilder setKostenklasse(Kostenklasse kostenklasse) {
             this.kostenklasse = kostenklasse;
             return this;
         }
-    
+
+        /**
+         * Die Gesamtsumme über alle Kostenblöcke und -positionen
+         */
         public List<Betrag> getSummeKosten() {
             return summeKosten;
         }
-    
+
+        /**
+         * Die Gesamtsumme über alle Kostenblöcke und -positionen
+         */
         public KostenBuilder setSummeKosten(List<Betrag> summeKosten) {
             this.summeKosten = summeKosten;
             return this;
         }
-    
+
         public KostenBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public KostenBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Kosten build() {
             return new Kosten(this);
         }

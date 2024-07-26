@@ -22,50 +22,20 @@ import java.util.List;
  *
  * .. HINT::
  * `Ausschreibung JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Ausschreibung.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/bo/Ausschreibung.json>`_
  */
 public class Ausschreibung extends Geschaeftsobjekt {
-    /**
-     * Typ des Geschaeftsobjekts
-     */
     private final Typ typ = Typ.AUSSCHREIBUNG;
     private Zeitraum abgabefrist;
     private Geschaeftspartner ausschreibender;
-    /**
-     * Aufzählung der unterstützten Ausschreibungsportale
-     */
     private Ausschreibungsportal ausschreibungportal;
-    /**
-     * Vom Herausgeber der Ausschreibung vergebene eindeutige Nummer
-     */
     private String ausschreibungsnummer;
-    /**
-     * Bezeichnungen für die Ausschreibungsphasen
-     */
     private Ausschreibungsstatus ausschreibungsstatus;
-    /**
-     * Aufzählung für die Typisierung von Ausschreibungen
-     */
     private Ausschreibungstyp ausschreibungstyp;
-    /**
-     * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
-     */
     private Zeitraum bindefrist;
-    /**
-     * Kennzeichen, ob die Ausschreibung kostenpflichtig ist
-     */
     private Boolean istKostenpflichtig;
-    /**
-     * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
-     */
     private List<Ausschreibungslos> lose;
-    /**
-     * Gibt den Veröffentlichungszeitpunkt der Ausschreibung an
-     */
     private OffsetDateTime veroeffentlichungszeitpunkt;
-    /**
-     * Internetseite, auf der die Ausschreibung veröffentlicht wurde (falls vorhanden)
-     */
     private String webseite;
 
     public Ausschreibung() {
@@ -106,227 +76,315 @@ public class Ausschreibung extends Geschaeftsobjekt {
         this.ausschreibender = ausschreibender;
     }
 
+    /**
+     * Aufzählung der unterstützten Ausschreibungsportale
+     */
     public Ausschreibungsportal getAusschreibungportal() {
         return ausschreibungportal;
     }
 
+    /**
+     * Aufzählung der unterstützten Ausschreibungsportale
+     */
     public void setAusschreibungportal(Ausschreibungsportal ausschreibungportal) {
         this.ausschreibungportal = ausschreibungportal;
     }
 
+    /**
+     * Vom Herausgeber der Ausschreibung vergebene eindeutige Nummer
+     */
     public String getAusschreibungsnummer() {
         return ausschreibungsnummer;
     }
 
+    /**
+     * Vom Herausgeber der Ausschreibung vergebene eindeutige Nummer
+     */
     public void setAusschreibungsnummer(String ausschreibungsnummer) {
         this.ausschreibungsnummer = ausschreibungsnummer;
     }
 
+    /**
+     * Bezeichnungen für die Ausschreibungsphasen
+     */
     public Ausschreibungsstatus getAusschreibungsstatus() {
         return ausschreibungsstatus;
     }
 
+    /**
+     * Bezeichnungen für die Ausschreibungsphasen
+     */
     public void setAusschreibungsstatus(Ausschreibungsstatus ausschreibungsstatus) {
         this.ausschreibungsstatus = ausschreibungsstatus;
     }
 
+    /**
+     * Aufzählung für die Typisierung von Ausschreibungen
+     */
     public Ausschreibungstyp getAusschreibungstyp() {
         return ausschreibungstyp;
     }
 
+    /**
+     * Aufzählung für die Typisierung von Ausschreibungen
+     */
     public void setAusschreibungstyp(Ausschreibungstyp ausschreibungstyp) {
         this.ausschreibungstyp = ausschreibungstyp;
     }
 
+    /**
+     * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
+     */
     public Zeitraum getBindefrist() {
         return bindefrist;
     }
 
+    /**
+     * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
+     */
     public void setBindefrist(Zeitraum bindefrist) {
         this.bindefrist = bindefrist;
     }
 
+    /**
+     * Kennzeichen, ob die Ausschreibung kostenpflichtig ist
+     */
     public Boolean getIstKostenpflichtig() {
         return istKostenpflichtig;
     }
 
+    /**
+     * Kennzeichen, ob die Ausschreibung kostenpflichtig ist
+     */
     public void setIstKostenpflichtig(Boolean istKostenpflichtig) {
         this.istKostenpflichtig = istKostenpflichtig;
     }
 
+    /**
+     * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
+     */
     public List<Ausschreibungslos> getLose() {
         return lose;
     }
 
+    /**
+     * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
+     */
     public void setLose(List<Ausschreibungslos> lose) {
         this.lose = lose;
     }
 
+    /**
+     * Gibt den Veröffentlichungszeitpunkt der Ausschreibung an
+     */
     public OffsetDateTime getVeroeffentlichungszeitpunkt() {
         return veroeffentlichungszeitpunkt;
     }
 
+    /**
+     * Gibt den Veröffentlichungszeitpunkt der Ausschreibung an
+     */
     public void setVeroeffentlichungszeitpunkt(OffsetDateTime veroeffentlichungszeitpunkt) {
         this.veroeffentlichungszeitpunkt = veroeffentlichungszeitpunkt;
     }
 
+    /**
+     * Internetseite, auf der die Ausschreibung veröffentlicht wurde (falls vorhanden)
+     */
     public String getWebseite() {
         return webseite;
     }
 
+    /**
+     * Internetseite, auf der die Ausschreibung veröffentlicht wurde (falls vorhanden)
+     */
     public void setWebseite(String webseite) {
         this.webseite = webseite;
+    }
+
+    public static AusschreibungBuilder builder() {
+        return new AusschreibungBuilder();
     }
 
     public static class AusschreibungBuilder extends GeschaeftsobjektBuilder {
         private Zeitraum abgabefrist;
         private Geschaeftspartner ausschreibender;
-        /**
-         * Aufzählung der unterstützten Ausschreibungsportale
-         */
         private Ausschreibungsportal ausschreibungportal;
-        /**
-         * Vom Herausgeber der Ausschreibung vergebene eindeutige Nummer
-         */
         private String ausschreibungsnummer;
-        /**
-         * Bezeichnungen für die Ausschreibungsphasen
-         */
         private Ausschreibungsstatus ausschreibungsstatus;
-        /**
-         * Aufzählung für die Typisierung von Ausschreibungen
-         */
         private Ausschreibungstyp ausschreibungstyp;
-        /**
-         * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
-         */
         private Zeitraum bindefrist;
-        /**
-         * Kennzeichen, ob die Ausschreibung kostenpflichtig ist
-         */
         private Boolean istKostenpflichtig;
-        /**
-         * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
-         */
         private List<Ausschreibungslos> lose;
-        /**
-         * Gibt den Veröffentlichungszeitpunkt der Ausschreibung an
-         */
         private OffsetDateTime veroeffentlichungszeitpunkt;
-        /**
-         * Internetseite, auf der die Ausschreibung veröffentlicht wurde (falls vorhanden)
-         */
         private String webseite;
-    
+
+        private AusschreibungBuilder() {
+        }
+
         public Zeitraum getAbgabefrist() {
             return abgabefrist;
         }
-    
+
         public AusschreibungBuilder setAbgabefrist(Zeitraum abgabefrist) {
             this.abgabefrist = abgabefrist;
             return this;
         }
-    
+
         public Geschaeftspartner getAusschreibender() {
             return ausschreibender;
         }
-    
+
         public AusschreibungBuilder setAusschreibender(Geschaeftspartner ausschreibender) {
             this.ausschreibender = ausschreibender;
             return this;
         }
-    
+
+        /**
+         * Aufzählung der unterstützten Ausschreibungsportale
+         */
         public Ausschreibungsportal getAusschreibungportal() {
             return ausschreibungportal;
         }
-    
+
+        /**
+         * Aufzählung der unterstützten Ausschreibungsportale
+         */
         public AusschreibungBuilder setAusschreibungportal(Ausschreibungsportal ausschreibungportal) {
             this.ausschreibungportal = ausschreibungportal;
             return this;
         }
-    
+
+        /**
+         * Vom Herausgeber der Ausschreibung vergebene eindeutige Nummer
+         */
         public String getAusschreibungsnummer() {
             return ausschreibungsnummer;
         }
-    
+
+        /**
+         * Vom Herausgeber der Ausschreibung vergebene eindeutige Nummer
+         */
         public AusschreibungBuilder setAusschreibungsnummer(String ausschreibungsnummer) {
             this.ausschreibungsnummer = ausschreibungsnummer;
             return this;
         }
-    
+
+        /**
+         * Bezeichnungen für die Ausschreibungsphasen
+         */
         public Ausschreibungsstatus getAusschreibungsstatus() {
             return ausschreibungsstatus;
         }
-    
+
+        /**
+         * Bezeichnungen für die Ausschreibungsphasen
+         */
         public AusschreibungBuilder setAusschreibungsstatus(Ausschreibungsstatus ausschreibungsstatus) {
             this.ausschreibungsstatus = ausschreibungsstatus;
             return this;
         }
-    
+
+        /**
+         * Aufzählung für die Typisierung von Ausschreibungen
+         */
         public Ausschreibungstyp getAusschreibungstyp() {
             return ausschreibungstyp;
         }
-    
+
+        /**
+         * Aufzählung für die Typisierung von Ausschreibungen
+         */
         public AusschreibungBuilder setAusschreibungstyp(Ausschreibungstyp ausschreibungstyp) {
             this.ausschreibungstyp = ausschreibungstyp;
             return this;
         }
-    
+
+        /**
+         * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
+         */
         public Zeitraum getBindefrist() {
             return bindefrist;
         }
-    
+
+        /**
+         * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
+         */
         public AusschreibungBuilder setBindefrist(Zeitraum bindefrist) {
             this.bindefrist = bindefrist;
             return this;
         }
-    
+
+        /**
+         * Kennzeichen, ob die Ausschreibung kostenpflichtig ist
+         */
         public Boolean getIstKostenpflichtig() {
             return istKostenpflichtig;
         }
-    
+
+        /**
+         * Kennzeichen, ob die Ausschreibung kostenpflichtig ist
+         */
         public AusschreibungBuilder setIstKostenpflichtig(Boolean istKostenpflichtig) {
             this.istKostenpflichtig = istKostenpflichtig;
             return this;
         }
-    
+
+        /**
+         * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
+         */
         public List<Ausschreibungslos> getLose() {
             return lose;
         }
-    
+
+        /**
+         * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
+         */
         public AusschreibungBuilder setLose(List<Ausschreibungslos> lose) {
             this.lose = lose;
             return this;
         }
-    
+
+        /**
+         * Gibt den Veröffentlichungszeitpunkt der Ausschreibung an
+         */
         public OffsetDateTime getVeroeffentlichungszeitpunkt() {
             return veroeffentlichungszeitpunkt;
         }
-    
+
+        /**
+         * Gibt den Veröffentlichungszeitpunkt der Ausschreibung an
+         */
         public AusschreibungBuilder setVeroeffentlichungszeitpunkt(OffsetDateTime veroeffentlichungszeitpunkt) {
             this.veroeffentlichungszeitpunkt = veroeffentlichungszeitpunkt;
             return this;
         }
-    
+
+        /**
+         * Internetseite, auf der die Ausschreibung veröffentlicht wurde (falls vorhanden)
+         */
         public String getWebseite() {
             return webseite;
         }
-    
+
+        /**
+         * Internetseite, auf der die Ausschreibung veröffentlicht wurde (falls vorhanden)
+         */
         public AusschreibungBuilder setWebseite(String webseite) {
             this.webseite = webseite;
             return this;
         }
-    
+
         public AusschreibungBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public AusschreibungBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Ausschreibung build() {
             return new Ausschreibung(this);
         }

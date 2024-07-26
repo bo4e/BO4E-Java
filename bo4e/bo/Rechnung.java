@@ -25,119 +25,35 @@ import java.util.List;
  *
  * .. HINT::
  * `Rechnung JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/Rechnung.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/bo/Rechnung.json>`_
  */
 public class Rechnung extends Geschaeftsobjekt {
-    /**
-     * Typ des Geschaeftsobjekts
-     */
     private final Typ typ = Typ.RECHNUNG;
-    /**
-     * Zu diesem Datum ist die Zahlung fällig
-     */
     private OffsetDateTime faelligkeitsdatum;
-    /**
-     * Die Summe aus Netto- und Steuerbetrag
-     */
     private Betrag gesamtbrutto;
-    /**
-     * Die Summe der Nettobeträge der Rechnungsteile
-     */
     private Betrag gesamtnetto;
-    /**
-     * Die Summe der Steuerbeträge der Rechnungsteile
-     */
     private Betrag gesamtsteuer;
-    /**
-     * Kennzeichen, ob es sich um ein Original (true) oder eine Kopie handelt (false)
-     */
     private Boolean istOriginal;
-    /**
-     * Kennzeichen, ob es sich um eine simulierte Rechnung, z.B. zur Rechnungsprüfung handelt
-     */
     private Boolean istSimuliert;
-    /**
-     * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
-     */
     private Boolean istStorno;
-    /**
-     * Marktlokation, auf die sich die Rechnung bezieht
-     */
     private Marktlokation marktlokation;
-    /**
-     * Messlokation, auf die sich die Rechnung bezieht
-     */
     private Messlokation messlokation;
-    /**
-     * Aus der INVOIC entnommen, befüllt wenn es sich um eine Netznutzungsrechnung handelt
-     */
     private NetznutzungRechnungsart netznutzungrechnungsart;
-    /**
-     * Aus der INVOIC entnommen, befüllt wenn es sich um eine Netznutzungsrechnung handelt
-     */
     private NetznutzungRechnungstyp netznutzungrechnungstyp;
-    /**
-     * Im Falle einer Stornorechnung (storno = true) steht hier die Rechnungsnummer der
-     * stornierten Rechnung
-     */
     private String originalRechnungsnummer;
-    /**
-     * Gesamtrabatt auf den Bruttobetrag
-     */
     private Betrag rabattBrutto;
-    /**
-     * Ausstellungsdatum der Rechnung
-     */
     private OffsetDateTime rechnungsdatum;
-    /**
-     * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
-     * verlinkten Marktteilnehmer
-     */
     private Geschaeftspartner rechnungsempfaenger;
-    /**
-     * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
-     * verlinkten Marktteilnehmer
-     */
     private Geschaeftspartner rechnungsersteller;
-    /**
-     * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
-     */
     private String rechnungsnummer;
-    /**
-     * Der Zeitraum der zugrunde liegenden Lieferung zur Rechnung
-     */
     private Zeitraum rechnungsperiode;
-    /**
-     * Die Rechnungspositionen
-     */
     private List<Rechnungsposition> rechnungspositionen;
-    /**
-     * Status der Rechnung zur Kennzeichnung des Bearbeitungsstandes
-     */
     private Rechnungsstatus rechnungsstatus;
-    /**
-     * Bezeichnung für die vorliegende Rechnung
-     */
     private String rechnungstitel;
-    /**
-     * Ein kontextbezogender Rechnungstyp, z.B. Netznutzungsrechnung
-     */
     private Rechnungstyp rechnungstyp;
-    /**
-     * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
-     */
     private Sparte sparte;
-    /**
-     * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
-     */
     private List<Steuerbetrag> steuerbetraege;
-    /**
-     * Die Summe evtl. vorausgezahlter Beträge, z.B. Abschläge. Angabe als Bruttowert
-     */
     private Betrag vorausgezahlt;
-    /**
-     * Der zu zahlende Betrag, der sich aus (gesamtbrutto - vorausbezahlt - rabattBrutto) ergibt
-     */
     private Betrag zuZahlen;
 
     public Rechnung() {
@@ -177,567 +93,817 @@ public class Rechnung extends Geschaeftsobjekt {
         return typ;
     }
 
+    /**
+     * Zu diesem Datum ist die Zahlung fällig
+     */
     public OffsetDateTime getFaelligkeitsdatum() {
         return faelligkeitsdatum;
     }
 
+    /**
+     * Zu diesem Datum ist die Zahlung fällig
+     */
     public void setFaelligkeitsdatum(OffsetDateTime faelligkeitsdatum) {
         this.faelligkeitsdatum = faelligkeitsdatum;
     }
 
+    /**
+     * Die Summe aus Netto- und Steuerbetrag
+     */
     public Betrag getGesamtbrutto() {
         return gesamtbrutto;
     }
 
+    /**
+     * Die Summe aus Netto- und Steuerbetrag
+     */
     public void setGesamtbrutto(Betrag gesamtbrutto) {
         this.gesamtbrutto = gesamtbrutto;
     }
 
+    /**
+     * Die Summe der Nettobeträge der Rechnungsteile
+     */
     public Betrag getGesamtnetto() {
         return gesamtnetto;
     }
 
+    /**
+     * Die Summe der Nettobeträge der Rechnungsteile
+     */
     public void setGesamtnetto(Betrag gesamtnetto) {
         this.gesamtnetto = gesamtnetto;
     }
 
+    /**
+     * Die Summe der Steuerbeträge der Rechnungsteile
+     */
     public Betrag getGesamtsteuer() {
         return gesamtsteuer;
     }
 
+    /**
+     * Die Summe der Steuerbeträge der Rechnungsteile
+     */
     public void setGesamtsteuer(Betrag gesamtsteuer) {
         this.gesamtsteuer = gesamtsteuer;
     }
 
+    /**
+     * Kennzeichen, ob es sich um ein Original (true) oder eine Kopie handelt (false)
+     */
     public Boolean getIstOriginal() {
         return istOriginal;
     }
 
+    /**
+     * Kennzeichen, ob es sich um ein Original (true) oder eine Kopie handelt (false)
+     */
     public void setIstOriginal(Boolean istOriginal) {
         this.istOriginal = istOriginal;
     }
 
+    /**
+     * Kennzeichen, ob es sich um eine simulierte Rechnung, z.B. zur Rechnungsprüfung handelt
+     */
     public Boolean getIstSimuliert() {
         return istSimuliert;
     }
 
+    /**
+     * Kennzeichen, ob es sich um eine simulierte Rechnung, z.B. zur Rechnungsprüfung handelt
+     */
     public void setIstSimuliert(Boolean istSimuliert) {
         this.istSimuliert = istSimuliert;
     }
 
+    /**
+     * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
+     */
     public Boolean getIstStorno() {
         return istStorno;
     }
 
+    /**
+     * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
+     */
     public void setIstStorno(Boolean istStorno) {
         this.istStorno = istStorno;
     }
 
+    /**
+     * Marktlokation, auf die sich die Rechnung bezieht
+     */
     public Marktlokation getMarktlokation() {
         return marktlokation;
     }
 
+    /**
+     * Marktlokation, auf die sich die Rechnung bezieht
+     */
     public void setMarktlokation(Marktlokation marktlokation) {
         this.marktlokation = marktlokation;
     }
 
+    /**
+     * Messlokation, auf die sich die Rechnung bezieht
+     */
     public Messlokation getMesslokation() {
         return messlokation;
     }
 
+    /**
+     * Messlokation, auf die sich die Rechnung bezieht
+     */
     public void setMesslokation(Messlokation messlokation) {
         this.messlokation = messlokation;
     }
 
+    /**
+     * Aus der INVOIC entnommen, befüllt wenn es sich um eine Netznutzungsrechnung handelt
+     */
     public NetznutzungRechnungsart getNetznutzungrechnungsart() {
         return netznutzungrechnungsart;
     }
 
+    /**
+     * Aus der INVOIC entnommen, befüllt wenn es sich um eine Netznutzungsrechnung handelt
+     */
     public void setNetznutzungrechnungsart(NetznutzungRechnungsart netznutzungrechnungsart) {
         this.netznutzungrechnungsart = netznutzungrechnungsart;
     }
 
+    /**
+     * Aus der INVOIC entnommen, befüllt wenn es sich um eine Netznutzungsrechnung handelt
+     */
     public NetznutzungRechnungstyp getNetznutzungrechnungstyp() {
         return netznutzungrechnungstyp;
     }
 
+    /**
+     * Aus der INVOIC entnommen, befüllt wenn es sich um eine Netznutzungsrechnung handelt
+     */
     public void setNetznutzungrechnungstyp(NetznutzungRechnungstyp netznutzungrechnungstyp) {
         this.netznutzungrechnungstyp = netznutzungrechnungstyp;
     }
 
+    /**
+     * Im Falle einer Stornorechnung (storno = true) steht hier die Rechnungsnummer der
+     * stornierten Rechnung
+     */
     public String getOriginalRechnungsnummer() {
         return originalRechnungsnummer;
     }
 
+    /**
+     * Im Falle einer Stornorechnung (storno = true) steht hier die Rechnungsnummer der
+     * stornierten Rechnung
+     */
     public void setOriginalRechnungsnummer(String originalRechnungsnummer) {
         this.originalRechnungsnummer = originalRechnungsnummer;
     }
 
+    /**
+     * Gesamtrabatt auf den Bruttobetrag
+     */
     public Betrag getRabattBrutto() {
         return rabattBrutto;
     }
 
+    /**
+     * Gesamtrabatt auf den Bruttobetrag
+     */
     public void setRabattBrutto(Betrag rabattBrutto) {
         this.rabattBrutto = rabattBrutto;
     }
 
+    /**
+     * Ausstellungsdatum der Rechnung
+     */
     public OffsetDateTime getRechnungsdatum() {
         return rechnungsdatum;
     }
 
+    /**
+     * Ausstellungsdatum der Rechnung
+     */
     public void setRechnungsdatum(OffsetDateTime rechnungsdatum) {
         this.rechnungsdatum = rechnungsdatum;
     }
 
+    /**
+     * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
+     * verlinkten Marktteilnehmer
+     */
     public Geschaeftspartner getRechnungsempfaenger() {
         return rechnungsempfaenger;
     }
 
+    /**
+     * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
+     * verlinkten Marktteilnehmer
+     */
     public void setRechnungsempfaenger(Geschaeftspartner rechnungsempfaenger) {
         this.rechnungsempfaenger = rechnungsempfaenger;
     }
 
+    /**
+     * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
+     * verlinkten Marktteilnehmer
+     */
     public Geschaeftspartner getRechnungsersteller() {
         return rechnungsersteller;
     }
 
+    /**
+     * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
+     * verlinkten Marktteilnehmer
+     */
     public void setRechnungsersteller(Geschaeftspartner rechnungsersteller) {
         this.rechnungsersteller = rechnungsersteller;
     }
 
+    /**
+     * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
+     */
     public String getRechnungsnummer() {
         return rechnungsnummer;
     }
 
+    /**
+     * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
+     */
     public void setRechnungsnummer(String rechnungsnummer) {
         this.rechnungsnummer = rechnungsnummer;
     }
 
+    /**
+     * Der Zeitraum der zugrunde liegenden Lieferung zur Rechnung
+     */
     public Zeitraum getRechnungsperiode() {
         return rechnungsperiode;
     }
 
+    /**
+     * Der Zeitraum der zugrunde liegenden Lieferung zur Rechnung
+     */
     public void setRechnungsperiode(Zeitraum rechnungsperiode) {
         this.rechnungsperiode = rechnungsperiode;
     }
 
+    /**
+     * Die Rechnungspositionen
+     */
     public List<Rechnungsposition> getRechnungspositionen() {
         return rechnungspositionen;
     }
 
+    /**
+     * Die Rechnungspositionen
+     */
     public void setRechnungspositionen(List<Rechnungsposition> rechnungspositionen) {
         this.rechnungspositionen = rechnungspositionen;
     }
 
+    /**
+     * Status der Rechnung zur Kennzeichnung des Bearbeitungsstandes
+     */
     public Rechnungsstatus getRechnungsstatus() {
         return rechnungsstatus;
     }
 
+    /**
+     * Status der Rechnung zur Kennzeichnung des Bearbeitungsstandes
+     */
     public void setRechnungsstatus(Rechnungsstatus rechnungsstatus) {
         this.rechnungsstatus = rechnungsstatus;
     }
 
+    /**
+     * Bezeichnung für die vorliegende Rechnung
+     */
     public String getRechnungstitel() {
         return rechnungstitel;
     }
 
+    /**
+     * Bezeichnung für die vorliegende Rechnung
+     */
     public void setRechnungstitel(String rechnungstitel) {
         this.rechnungstitel = rechnungstitel;
     }
 
+    /**
+     * Ein kontextbezogender Rechnungstyp, z.B. Netznutzungsrechnung
+     */
     public Rechnungstyp getRechnungstyp() {
         return rechnungstyp;
     }
 
+    /**
+     * Ein kontextbezogender Rechnungstyp, z.B. Netznutzungsrechnung
+     */
     public void setRechnungstyp(Rechnungstyp rechnungstyp) {
         this.rechnungstyp = rechnungstyp;
     }
 
+    /**
+     * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
+     */
     public Sparte getSparte() {
         return sparte;
     }
 
+    /**
+     * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
+     */
     public void setSparte(Sparte sparte) {
         this.sparte = sparte;
     }
 
+    /**
+     * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
+     */
     public List<Steuerbetrag> getSteuerbetraege() {
         return steuerbetraege;
     }
 
+    /**
+     * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
+     */
     public void setSteuerbetraege(List<Steuerbetrag> steuerbetraege) {
         this.steuerbetraege = steuerbetraege;
     }
 
+    /**
+     * Die Summe evtl. vorausgezahlter Beträge, z.B. Abschläge. Angabe als Bruttowert
+     */
     public Betrag getVorausgezahlt() {
         return vorausgezahlt;
     }
 
+    /**
+     * Die Summe evtl. vorausgezahlter Beträge, z.B. Abschläge. Angabe als Bruttowert
+     */
     public void setVorausgezahlt(Betrag vorausgezahlt) {
         this.vorausgezahlt = vorausgezahlt;
     }
 
+    /**
+     * Der zu zahlende Betrag, der sich aus (gesamtbrutto - vorausbezahlt - rabattBrutto) ergibt
+     */
     public Betrag getZuZahlen() {
         return zuZahlen;
     }
 
+    /**
+     * Der zu zahlende Betrag, der sich aus (gesamtbrutto - vorausbezahlt - rabattBrutto) ergibt
+     */
     public void setZuZahlen(Betrag zuZahlen) {
         this.zuZahlen = zuZahlen;
     }
 
+    public static RechnungBuilder builder() {
+        return new RechnungBuilder();
+    }
+
     public static class RechnungBuilder extends GeschaeftsobjektBuilder {
+        private OffsetDateTime faelligkeitsdatum;
+        private Betrag gesamtbrutto;
+        private Betrag gesamtnetto;
+        private Betrag gesamtsteuer;
+        private Boolean istOriginal;
+        private Boolean istSimuliert;
+        private Boolean istStorno;
+        private Marktlokation marktlokation;
+        private Messlokation messlokation;
+        private NetznutzungRechnungsart netznutzungrechnungsart;
+        private NetznutzungRechnungstyp netznutzungrechnungstyp;
+        private String originalRechnungsnummer;
+        private Betrag rabattBrutto;
+        private OffsetDateTime rechnungsdatum;
+        private Geschaeftspartner rechnungsempfaenger;
+        private Geschaeftspartner rechnungsersteller;
+        private String rechnungsnummer;
+        private Zeitraum rechnungsperiode;
+        private List<Rechnungsposition> rechnungspositionen;
+        private Rechnungsstatus rechnungsstatus;
+        private String rechnungstitel;
+        private Rechnungstyp rechnungstyp;
+        private Sparte sparte;
+        private List<Steuerbetrag> steuerbetraege;
+        private Betrag vorausgezahlt;
+        private Betrag zuZahlen;
+
+        private RechnungBuilder() {
+        }
+
         /**
          * Zu diesem Datum ist die Zahlung fällig
          */
-        private OffsetDateTime faelligkeitsdatum;
-        /**
-         * Die Summe aus Netto- und Steuerbetrag
-         */
-        private Betrag gesamtbrutto;
-        /**
-         * Die Summe der Nettobeträge der Rechnungsteile
-         */
-        private Betrag gesamtnetto;
-        /**
-         * Die Summe der Steuerbeträge der Rechnungsteile
-         */
-        private Betrag gesamtsteuer;
-        /**
-         * Kennzeichen, ob es sich um ein Original (true) oder eine Kopie handelt (false)
-         */
-        private Boolean istOriginal;
-        /**
-         * Kennzeichen, ob es sich um eine simulierte Rechnung, z.B. zur Rechnungsprüfung handelt
-         */
-        private Boolean istSimuliert;
-        /**
-         * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
-         */
-        private Boolean istStorno;
-        /**
-         * Marktlokation, auf die sich die Rechnung bezieht
-         */
-        private Marktlokation marktlokation;
-        /**
-         * Messlokation, auf die sich die Rechnung bezieht
-         */
-        private Messlokation messlokation;
-        /**
-         * Aus der INVOIC entnommen, befüllt wenn es sich um eine Netznutzungsrechnung handelt
-         */
-        private NetznutzungRechnungsart netznutzungrechnungsart;
-        /**
-         * Aus der INVOIC entnommen, befüllt wenn es sich um eine Netznutzungsrechnung handelt
-         */
-        private NetznutzungRechnungstyp netznutzungrechnungstyp;
-        /**
-         * Im Falle einer Stornorechnung (storno = true) steht hier die Rechnungsnummer der
-         * stornierten Rechnung
-         */
-        private String originalRechnungsnummer;
-        /**
-         * Gesamtrabatt auf den Bruttobetrag
-         */
-        private Betrag rabattBrutto;
-        /**
-         * Ausstellungsdatum der Rechnung
-         */
-        private OffsetDateTime rechnungsdatum;
-        /**
-         * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
-         * verlinkten Marktteilnehmer
-         */
-        private Geschaeftspartner rechnungsempfaenger;
-        /**
-         * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
-         * verlinkten Marktteilnehmer
-         */
-        private Geschaeftspartner rechnungsersteller;
-        /**
-         * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
-         */
-        private String rechnungsnummer;
-        /**
-         * Der Zeitraum der zugrunde liegenden Lieferung zur Rechnung
-         */
-        private Zeitraum rechnungsperiode;
-        /**
-         * Die Rechnungspositionen
-         */
-        private List<Rechnungsposition> rechnungspositionen;
-        /**
-         * Status der Rechnung zur Kennzeichnung des Bearbeitungsstandes
-         */
-        private Rechnungsstatus rechnungsstatus;
-        /**
-         * Bezeichnung für die vorliegende Rechnung
-         */
-        private String rechnungstitel;
-        /**
-         * Ein kontextbezogender Rechnungstyp, z.B. Netznutzungsrechnung
-         */
-        private Rechnungstyp rechnungstyp;
-        /**
-         * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
-         */
-        private Sparte sparte;
-        /**
-         * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
-         */
-        private List<Steuerbetrag> steuerbetraege;
-        /**
-         * Die Summe evtl. vorausgezahlter Beträge, z.B. Abschläge. Angabe als Bruttowert
-         */
-        private Betrag vorausgezahlt;
-        /**
-         * Der zu zahlende Betrag, der sich aus (gesamtbrutto - vorausbezahlt - rabattBrutto) ergibt
-         */
-        private Betrag zuZahlen;
-    
         public OffsetDateTime getFaelligkeitsdatum() {
             return faelligkeitsdatum;
         }
-    
+
+        /**
+         * Zu diesem Datum ist die Zahlung fällig
+         */
         public RechnungBuilder setFaelligkeitsdatum(OffsetDateTime faelligkeitsdatum) {
             this.faelligkeitsdatum = faelligkeitsdatum;
             return this;
         }
-    
+
+        /**
+         * Die Summe aus Netto- und Steuerbetrag
+         */
         public Betrag getGesamtbrutto() {
             return gesamtbrutto;
         }
-    
+
+        /**
+         * Die Summe aus Netto- und Steuerbetrag
+         */
         public RechnungBuilder setGesamtbrutto(Betrag gesamtbrutto) {
             this.gesamtbrutto = gesamtbrutto;
             return this;
         }
-    
+
+        /**
+         * Die Summe der Nettobeträge der Rechnungsteile
+         */
         public Betrag getGesamtnetto() {
             return gesamtnetto;
         }
-    
+
+        /**
+         * Die Summe der Nettobeträge der Rechnungsteile
+         */
         public RechnungBuilder setGesamtnetto(Betrag gesamtnetto) {
             this.gesamtnetto = gesamtnetto;
             return this;
         }
-    
+
+        /**
+         * Die Summe der Steuerbeträge der Rechnungsteile
+         */
         public Betrag getGesamtsteuer() {
             return gesamtsteuer;
         }
-    
+
+        /**
+         * Die Summe der Steuerbeträge der Rechnungsteile
+         */
         public RechnungBuilder setGesamtsteuer(Betrag gesamtsteuer) {
             this.gesamtsteuer = gesamtsteuer;
             return this;
         }
-    
+
+        /**
+         * Kennzeichen, ob es sich um ein Original (true) oder eine Kopie handelt (false)
+         */
         public Boolean getIstOriginal() {
             return istOriginal;
         }
-    
+
+        /**
+         * Kennzeichen, ob es sich um ein Original (true) oder eine Kopie handelt (false)
+         */
         public RechnungBuilder setIstOriginal(Boolean istOriginal) {
             this.istOriginal = istOriginal;
             return this;
         }
-    
+
+        /**
+         * Kennzeichen, ob es sich um eine simulierte Rechnung, z.B. zur Rechnungsprüfung handelt
+         */
         public Boolean getIstSimuliert() {
             return istSimuliert;
         }
-    
+
+        /**
+         * Kennzeichen, ob es sich um eine simulierte Rechnung, z.B. zur Rechnungsprüfung handelt
+         */
         public RechnungBuilder setIstSimuliert(Boolean istSimuliert) {
             this.istSimuliert = istSimuliert;
             return this;
         }
-    
+
+        /**
+         * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
+         */
         public Boolean getIstStorno() {
             return istStorno;
         }
-    
+
+        /**
+         * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
+         */
         public RechnungBuilder setIstStorno(Boolean istStorno) {
             this.istStorno = istStorno;
             return this;
         }
-    
+
+        /**
+         * Marktlokation, auf die sich die Rechnung bezieht
+         */
         public Marktlokation getMarktlokation() {
             return marktlokation;
         }
-    
+
+        /**
+         * Marktlokation, auf die sich die Rechnung bezieht
+         */
         public RechnungBuilder setMarktlokation(Marktlokation marktlokation) {
             this.marktlokation = marktlokation;
             return this;
         }
-    
+
+        /**
+         * Messlokation, auf die sich die Rechnung bezieht
+         */
         public Messlokation getMesslokation() {
             return messlokation;
         }
-    
+
+        /**
+         * Messlokation, auf die sich die Rechnung bezieht
+         */
         public RechnungBuilder setMesslokation(Messlokation messlokation) {
             this.messlokation = messlokation;
             return this;
         }
-    
+
+        /**
+         * Aus der INVOIC entnommen, befüllt wenn es sich um eine Netznutzungsrechnung handelt
+         */
         public NetznutzungRechnungsart getNetznutzungrechnungsart() {
             return netznutzungrechnungsart;
         }
-    
+
+        /**
+         * Aus der INVOIC entnommen, befüllt wenn es sich um eine Netznutzungsrechnung handelt
+         */
         public RechnungBuilder setNetznutzungrechnungsart(NetznutzungRechnungsart netznutzungrechnungsart) {
             this.netznutzungrechnungsart = netznutzungrechnungsart;
             return this;
         }
-    
+
+        /**
+         * Aus der INVOIC entnommen, befüllt wenn es sich um eine Netznutzungsrechnung handelt
+         */
         public NetznutzungRechnungstyp getNetznutzungrechnungstyp() {
             return netznutzungrechnungstyp;
         }
-    
+
+        /**
+         * Aus der INVOIC entnommen, befüllt wenn es sich um eine Netznutzungsrechnung handelt
+         */
         public RechnungBuilder setNetznutzungrechnungstyp(NetznutzungRechnungstyp netznutzungrechnungstyp) {
             this.netznutzungrechnungstyp = netznutzungrechnungstyp;
             return this;
         }
-    
+
+        /**
+         * Im Falle einer Stornorechnung (storno = true) steht hier die Rechnungsnummer der
+         * stornierten Rechnung
+         */
         public String getOriginalRechnungsnummer() {
             return originalRechnungsnummer;
         }
-    
+
+        /**
+         * Im Falle einer Stornorechnung (storno = true) steht hier die Rechnungsnummer der
+         * stornierten Rechnung
+         */
         public RechnungBuilder setOriginalRechnungsnummer(String originalRechnungsnummer) {
             this.originalRechnungsnummer = originalRechnungsnummer;
             return this;
         }
-    
+
+        /**
+         * Gesamtrabatt auf den Bruttobetrag
+         */
         public Betrag getRabattBrutto() {
             return rabattBrutto;
         }
-    
+
+        /**
+         * Gesamtrabatt auf den Bruttobetrag
+         */
         public RechnungBuilder setRabattBrutto(Betrag rabattBrutto) {
             this.rabattBrutto = rabattBrutto;
             return this;
         }
-    
+
+        /**
+         * Ausstellungsdatum der Rechnung
+         */
         public OffsetDateTime getRechnungsdatum() {
             return rechnungsdatum;
         }
-    
+
+        /**
+         * Ausstellungsdatum der Rechnung
+         */
         public RechnungBuilder setRechnungsdatum(OffsetDateTime rechnungsdatum) {
             this.rechnungsdatum = rechnungsdatum;
             return this;
         }
-    
+
+        /**
+         * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
+         * verlinkten Marktteilnehmer
+         */
         public Geschaeftspartner getRechnungsempfaenger() {
             return rechnungsempfaenger;
         }
-    
+
+        /**
+         * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
+         * verlinkten Marktteilnehmer
+         */
         public RechnungBuilder setRechnungsempfaenger(Geschaeftspartner rechnungsempfaenger) {
             this.rechnungsempfaenger = rechnungsempfaenger;
             return this;
         }
-    
+
+        /**
+         * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
+         * verlinkten Marktteilnehmer
+         */
         public Geschaeftspartner getRechnungsersteller() {
             return rechnungsersteller;
         }
-    
+
+        /**
+         * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
+         * verlinkten Marktteilnehmer
+         */
         public RechnungBuilder setRechnungsersteller(Geschaeftspartner rechnungsersteller) {
             this.rechnungsersteller = rechnungsersteller;
             return this;
         }
-    
+
+        /**
+         * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
+         */
         public String getRechnungsnummer() {
             return rechnungsnummer;
         }
-    
+
+        /**
+         * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
+         */
         public RechnungBuilder setRechnungsnummer(String rechnungsnummer) {
             this.rechnungsnummer = rechnungsnummer;
             return this;
         }
-    
+
+        /**
+         * Der Zeitraum der zugrunde liegenden Lieferung zur Rechnung
+         */
         public Zeitraum getRechnungsperiode() {
             return rechnungsperiode;
         }
-    
+
+        /**
+         * Der Zeitraum der zugrunde liegenden Lieferung zur Rechnung
+         */
         public RechnungBuilder setRechnungsperiode(Zeitraum rechnungsperiode) {
             this.rechnungsperiode = rechnungsperiode;
             return this;
         }
-    
+
+        /**
+         * Die Rechnungspositionen
+         */
         public List<Rechnungsposition> getRechnungspositionen() {
             return rechnungspositionen;
         }
-    
+
+        /**
+         * Die Rechnungspositionen
+         */
         public RechnungBuilder setRechnungspositionen(List<Rechnungsposition> rechnungspositionen) {
             this.rechnungspositionen = rechnungspositionen;
             return this;
         }
-    
+
+        /**
+         * Status der Rechnung zur Kennzeichnung des Bearbeitungsstandes
+         */
         public Rechnungsstatus getRechnungsstatus() {
             return rechnungsstatus;
         }
-    
+
+        /**
+         * Status der Rechnung zur Kennzeichnung des Bearbeitungsstandes
+         */
         public RechnungBuilder setRechnungsstatus(Rechnungsstatus rechnungsstatus) {
             this.rechnungsstatus = rechnungsstatus;
             return this;
         }
-    
+
+        /**
+         * Bezeichnung für die vorliegende Rechnung
+         */
         public String getRechnungstitel() {
             return rechnungstitel;
         }
-    
+
+        /**
+         * Bezeichnung für die vorliegende Rechnung
+         */
         public RechnungBuilder setRechnungstitel(String rechnungstitel) {
             this.rechnungstitel = rechnungstitel;
             return this;
         }
-    
+
+        /**
+         * Ein kontextbezogender Rechnungstyp, z.B. Netznutzungsrechnung
+         */
         public Rechnungstyp getRechnungstyp() {
             return rechnungstyp;
         }
-    
+
+        /**
+         * Ein kontextbezogender Rechnungstyp, z.B. Netznutzungsrechnung
+         */
         public RechnungBuilder setRechnungstyp(Rechnungstyp rechnungstyp) {
             this.rechnungstyp = rechnungstyp;
             return this;
         }
-    
+
+        /**
+         * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
+         */
         public Sparte getSparte() {
             return sparte;
         }
-    
+
+        /**
+         * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
+         */
         public RechnungBuilder setSparte(Sparte sparte) {
             this.sparte = sparte;
             return this;
         }
-    
+
+        /**
+         * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
+         */
         public List<Steuerbetrag> getSteuerbetraege() {
             return steuerbetraege;
         }
-    
+
+        /**
+         * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
+         */
         public RechnungBuilder setSteuerbetraege(List<Steuerbetrag> steuerbetraege) {
             this.steuerbetraege = steuerbetraege;
             return this;
         }
-    
+
+        /**
+         * Die Summe evtl. vorausgezahlter Beträge, z.B. Abschläge. Angabe als Bruttowert
+         */
         public Betrag getVorausgezahlt() {
             return vorausgezahlt;
         }
-    
+
+        /**
+         * Die Summe evtl. vorausgezahlter Beträge, z.B. Abschläge. Angabe als Bruttowert
+         */
         public RechnungBuilder setVorausgezahlt(Betrag vorausgezahlt) {
             this.vorausgezahlt = vorausgezahlt;
             return this;
         }
-    
+
+        /**
+         * Der zu zahlende Betrag, der sich aus (gesamtbrutto - vorausbezahlt - rabattBrutto) ergibt
+         */
         public Betrag getZuZahlen() {
             return zuZahlen;
         }
-    
+
+        /**
+         * Der zu zahlende Betrag, der sich aus (gesamtbrutto - vorausbezahlt - rabattBrutto) ergibt
+         */
         public RechnungBuilder setZuZahlen(Betrag zuZahlen) {
             this.zuZahlen = zuZahlen;
             return this;
         }
-    
+
         public RechnungBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public RechnungBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Rechnung build() {
             return new Rechnung(this);
         }

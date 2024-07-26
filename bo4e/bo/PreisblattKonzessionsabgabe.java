@@ -20,41 +20,16 @@ import java.util.List;
  *
  * .. HINT::
  * `PreisblattKonzessionsabgabe JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/bo/PreisblattKonzessionsabgabe.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/bo/PreisblattKonzessionsabgabe.json>`_
  */
 public class PreisblattKonzessionsabgabe extends Geschaeftsobjekt {
-    /**
-     * Typ des Geschaeftsobjekts
-     */
     private final Typ typ = Typ.PREISBLATTKONZESSIONSABGABE;
-    /**
-     * Eine Bezeichnung für das Preisblatt
-     */
     private String bezeichnung;
-    /**
-     * Der Zeitraum für den der Preis festgelegt ist
-     */
     private Zeitraum gueltigkeit;
-    /**
-     * Der Netzbetreiber, der die Preise veröffentlicht hat
-     */
     private Marktteilnehmer herausgeber;
-    /**
-     * Kundegruppe anhand derer die Höhe der Konzessionabgabe festgelegt ist
-     */
     private KundengruppeKA kundengruppeKA;
-    /**
-     * Die einzelnen Positionen, die mit dem Preisblatt abgerechnet werden können. Z.B.
-     * Arbeitspreis, Grundpreis etc
-     */
     private List<Preisposition> preispositionen;
-    /**
-     * Merkmal, das anzeigt, ob es sich um vorläufige oder endgültige Preise handelt
-     */
     private Preisstatus preisstatus;
-    /**
-     * Preisblatt gilt für angegebene Sparte
-     */
     private Sparte sparte;
 
     public PreisblattKonzessionsabgabe() {
@@ -75,166 +50,239 @@ public class PreisblattKonzessionsabgabe extends Geschaeftsobjekt {
         return typ;
     }
 
+    /**
+     * Eine Bezeichnung für das Preisblatt
+     */
     public String getBezeichnung() {
         return bezeichnung;
     }
 
+    /**
+     * Eine Bezeichnung für das Preisblatt
+     */
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;
     }
 
+    /**
+     * Der Zeitraum für den der Preis festgelegt ist
+     */
     public Zeitraum getGueltigkeit() {
         return gueltigkeit;
     }
 
+    /**
+     * Der Zeitraum für den der Preis festgelegt ist
+     */
     public void setGueltigkeit(Zeitraum gueltigkeit) {
         this.gueltigkeit = gueltigkeit;
     }
 
+    /**
+     * Der Netzbetreiber, der die Preise veröffentlicht hat
+     */
     public Marktteilnehmer getHerausgeber() {
         return herausgeber;
     }
 
+    /**
+     * Der Netzbetreiber, der die Preise veröffentlicht hat
+     */
     public void setHerausgeber(Marktteilnehmer herausgeber) {
         this.herausgeber = herausgeber;
     }
 
+    /**
+     * Kundegruppe anhand derer die Höhe der Konzessionabgabe festgelegt ist
+     */
     public KundengruppeKA getKundengruppeKA() {
         return kundengruppeKA;
     }
 
+    /**
+     * Kundegruppe anhand derer die Höhe der Konzessionabgabe festgelegt ist
+     */
     public void setKundengruppeKA(KundengruppeKA kundengruppeKA) {
         this.kundengruppeKA = kundengruppeKA;
     }
 
+    /**
+     * Die einzelnen Positionen, die mit dem Preisblatt abgerechnet werden können. Z.B.
+     * Arbeitspreis, Grundpreis etc
+     */
     public List<Preisposition> getPreispositionen() {
         return preispositionen;
     }
 
+    /**
+     * Die einzelnen Positionen, die mit dem Preisblatt abgerechnet werden können. Z.B.
+     * Arbeitspreis, Grundpreis etc
+     */
     public void setPreispositionen(List<Preisposition> preispositionen) {
         this.preispositionen = preispositionen;
     }
 
+    /**
+     * Merkmal, das anzeigt, ob es sich um vorläufige oder endgültige Preise handelt
+     */
     public Preisstatus getPreisstatus() {
         return preisstatus;
     }
 
+    /**
+     * Merkmal, das anzeigt, ob es sich um vorläufige oder endgültige Preise handelt
+     */
     public void setPreisstatus(Preisstatus preisstatus) {
         this.preisstatus = preisstatus;
     }
 
+    /**
+     * Preisblatt gilt für angegebene Sparte
+     */
     public Sparte getSparte() {
         return sparte;
     }
 
+    /**
+     * Preisblatt gilt für angegebene Sparte
+     */
     public void setSparte(Sparte sparte) {
         this.sparte = sparte;
     }
 
+    public static PreisblattKonzessionsabgabeBuilder builder() {
+        return new PreisblattKonzessionsabgabeBuilder();
+    }
+
     public static class PreisblattKonzessionsabgabeBuilder extends GeschaeftsobjektBuilder {
+        private String bezeichnung;
+        private Zeitraum gueltigkeit;
+        private Marktteilnehmer herausgeber;
+        private KundengruppeKA kundengruppeKA;
+        private List<Preisposition> preispositionen;
+        private Preisstatus preisstatus;
+        private Sparte sparte;
+
+        private PreisblattKonzessionsabgabeBuilder() {
+        }
+
         /**
          * Eine Bezeichnung für das Preisblatt
          */
-        private String bezeichnung;
-        /**
-         * Der Zeitraum für den der Preis festgelegt ist
-         */
-        private Zeitraum gueltigkeit;
-        /**
-         * Der Netzbetreiber, der die Preise veröffentlicht hat
-         */
-        private Marktteilnehmer herausgeber;
-        /**
-         * Kundegruppe anhand derer die Höhe der Konzessionabgabe festgelegt ist
-         */
-        private KundengruppeKA kundengruppeKA;
-        /**
-         * Die einzelnen Positionen, die mit dem Preisblatt abgerechnet werden können. Z.B.
-         * Arbeitspreis, Grundpreis etc
-         */
-        private List<Preisposition> preispositionen;
-        /**
-         * Merkmal, das anzeigt, ob es sich um vorläufige oder endgültige Preise handelt
-         */
-        private Preisstatus preisstatus;
-        /**
-         * Preisblatt gilt für angegebene Sparte
-         */
-        private Sparte sparte;
-    
         public String getBezeichnung() {
             return bezeichnung;
         }
-    
+
+        /**
+         * Eine Bezeichnung für das Preisblatt
+         */
         public PreisblattKonzessionsabgabeBuilder setBezeichnung(String bezeichnung) {
             this.bezeichnung = bezeichnung;
             return this;
         }
-    
+
+        /**
+         * Der Zeitraum für den der Preis festgelegt ist
+         */
         public Zeitraum getGueltigkeit() {
             return gueltigkeit;
         }
-    
+
+        /**
+         * Der Zeitraum für den der Preis festgelegt ist
+         */
         public PreisblattKonzessionsabgabeBuilder setGueltigkeit(Zeitraum gueltigkeit) {
             this.gueltigkeit = gueltigkeit;
             return this;
         }
-    
+
+        /**
+         * Der Netzbetreiber, der die Preise veröffentlicht hat
+         */
         public Marktteilnehmer getHerausgeber() {
             return herausgeber;
         }
-    
+
+        /**
+         * Der Netzbetreiber, der die Preise veröffentlicht hat
+         */
         public PreisblattKonzessionsabgabeBuilder setHerausgeber(Marktteilnehmer herausgeber) {
             this.herausgeber = herausgeber;
             return this;
         }
-    
+
+        /**
+         * Kundegruppe anhand derer die Höhe der Konzessionabgabe festgelegt ist
+         */
         public KundengruppeKA getKundengruppeKA() {
             return kundengruppeKA;
         }
-    
+
+        /**
+         * Kundegruppe anhand derer die Höhe der Konzessionabgabe festgelegt ist
+         */
         public PreisblattKonzessionsabgabeBuilder setKundengruppeKA(KundengruppeKA kundengruppeKA) {
             this.kundengruppeKA = kundengruppeKA;
             return this;
         }
-    
+
+        /**
+         * Die einzelnen Positionen, die mit dem Preisblatt abgerechnet werden können. Z.B.
+         * Arbeitspreis, Grundpreis etc
+         */
         public List<Preisposition> getPreispositionen() {
             return preispositionen;
         }
-    
+
+        /**
+         * Die einzelnen Positionen, die mit dem Preisblatt abgerechnet werden können. Z.B.
+         * Arbeitspreis, Grundpreis etc
+         */
         public PreisblattKonzessionsabgabeBuilder setPreispositionen(List<Preisposition> preispositionen) {
             this.preispositionen = preispositionen;
             return this;
         }
-    
+
+        /**
+         * Merkmal, das anzeigt, ob es sich um vorläufige oder endgültige Preise handelt
+         */
         public Preisstatus getPreisstatus() {
             return preisstatus;
         }
-    
+
+        /**
+         * Merkmal, das anzeigt, ob es sich um vorläufige oder endgültige Preise handelt
+         */
         public PreisblattKonzessionsabgabeBuilder setPreisstatus(Preisstatus preisstatus) {
             this.preisstatus = preisstatus;
             return this;
         }
-    
+
+        /**
+         * Preisblatt gilt für angegebene Sparte
+         */
         public Sparte getSparte() {
             return sparte;
         }
-    
+
+        /**
+         * Preisblatt gilt für angegebene Sparte
+         */
         public PreisblattKonzessionsabgabeBuilder setSparte(Sparte sparte) {
             this.sparte = sparte;
             return this;
         }
-    
+
         public PreisblattKonzessionsabgabeBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public PreisblattKonzessionsabgabeBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public PreisblattKonzessionsabgabe build() {
             return new PreisblattKonzessionsabgabe(this);
         }

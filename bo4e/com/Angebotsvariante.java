@@ -16,35 +16,14 @@ import java.util.List;
  *
  * .. HINT::
  * `Angebotsvariante JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.1/src/bo4e_schemas/com/Angebotsvariante.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Angebotsvariante.json>`_
  */
 public class Angebotsvariante extends COM {
-    /**
-     * Gibt den Status eines Angebotes an.
-     */
     private Angebotsstatus angebotsstatus;
-    /**
-     * Bis zu diesem Zeitpunkt gilt die Angebotsvariante
-     */
     private OffsetDateTime bindefrist;
-    /**
-     * Datum der Erstellung der Angebotsvariante
-     */
     private OffsetDateTime erstellungsdatum;
-    /**
-     * Aufsummierte Kosten aller Angebotsteile
-     */
     private Betrag gesamtkosten;
-    /**
-     * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
-     */
     private Menge gesamtmenge;
-    /**
-     * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
-     * erzeugt.
-     * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
-     * Eine Variante besteht mindestens aus einem Angebotsteil.
-     */
     private List<Angebotsteil> teile;
 
     public Angebotsvariante() {
@@ -60,147 +39,217 @@ public class Angebotsvariante extends COM {
         this.teile = builder.teile;
     }
 
+    /**
+     * Gibt den Status eines Angebotes an.
+     */
     public Angebotsstatus getAngebotsstatus() {
         return angebotsstatus;
     }
 
+    /**
+     * Gibt den Status eines Angebotes an.
+     */
     public void setAngebotsstatus(Angebotsstatus angebotsstatus) {
         this.angebotsstatus = angebotsstatus;
     }
 
+    /**
+     * Bis zu diesem Zeitpunkt gilt die Angebotsvariante
+     */
     public OffsetDateTime getBindefrist() {
         return bindefrist;
     }
 
+    /**
+     * Bis zu diesem Zeitpunkt gilt die Angebotsvariante
+     */
     public void setBindefrist(OffsetDateTime bindefrist) {
         this.bindefrist = bindefrist;
     }
 
+    /**
+     * Datum der Erstellung der Angebotsvariante
+     */
     public OffsetDateTime getErstellungsdatum() {
         return erstellungsdatum;
     }
 
+    /**
+     * Datum der Erstellung der Angebotsvariante
+     */
     public void setErstellungsdatum(OffsetDateTime erstellungsdatum) {
         this.erstellungsdatum = erstellungsdatum;
     }
 
+    /**
+     * Aufsummierte Kosten aller Angebotsteile
+     */
     public Betrag getGesamtkosten() {
         return gesamtkosten;
     }
 
+    /**
+     * Aufsummierte Kosten aller Angebotsteile
+     */
     public void setGesamtkosten(Betrag gesamtkosten) {
         this.gesamtkosten = gesamtkosten;
     }
 
+    /**
+     * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
+     */
     public Menge getGesamtmenge() {
         return gesamtmenge;
     }
 
+    /**
+     * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
+     */
     public void setGesamtmenge(Menge gesamtmenge) {
         this.gesamtmenge = gesamtmenge;
     }
 
+    /**
+     * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
+     * erzeugt.
+     * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
+     * Eine Variante besteht mindestens aus einem Angebotsteil.
+     */
     public List<Angebotsteil> getTeile() {
         return teile;
     }
 
+    /**
+     * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
+     * erzeugt.
+     * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
+     * Eine Variante besteht mindestens aus einem Angebotsteil.
+     */
     public void setTeile(List<Angebotsteil> teile) {
         this.teile = teile;
     }
 
+    public static AngebotsvarianteBuilder builder() {
+        return new AngebotsvarianteBuilder();
+    }
+
     public static class AngebotsvarianteBuilder extends COMBuilder {
+        private Angebotsstatus angebotsstatus;
+        private OffsetDateTime bindefrist;
+        private OffsetDateTime erstellungsdatum;
+        private Betrag gesamtkosten;
+        private Menge gesamtmenge;
+        private List<Angebotsteil> teile;
+
+        private AngebotsvarianteBuilder() {
+        }
+
         /**
          * Gibt den Status eines Angebotes an.
          */
-        private Angebotsstatus angebotsstatus;
+        public Angebotsstatus getAngebotsstatus() {
+            return angebotsstatus;
+        }
+
+        /**
+         * Gibt den Status eines Angebotes an.
+         */
+        public AngebotsvarianteBuilder setAngebotsstatus(Angebotsstatus angebotsstatus) {
+            this.angebotsstatus = angebotsstatus;
+            return this;
+        }
+
         /**
          * Bis zu diesem Zeitpunkt gilt die Angebotsvariante
          */
-        private OffsetDateTime bindefrist;
+        public OffsetDateTime getBindefrist() {
+            return bindefrist;
+        }
+
+        /**
+         * Bis zu diesem Zeitpunkt gilt die Angebotsvariante
+         */
+        public AngebotsvarianteBuilder setBindefrist(OffsetDateTime bindefrist) {
+            this.bindefrist = bindefrist;
+            return this;
+        }
+
         /**
          * Datum der Erstellung der Angebotsvariante
          */
-        private OffsetDateTime erstellungsdatum;
+        public OffsetDateTime getErstellungsdatum() {
+            return erstellungsdatum;
+        }
+
+        /**
+         * Datum der Erstellung der Angebotsvariante
+         */
+        public AngebotsvarianteBuilder setErstellungsdatum(OffsetDateTime erstellungsdatum) {
+            this.erstellungsdatum = erstellungsdatum;
+            return this;
+        }
+
         /**
          * Aufsummierte Kosten aller Angebotsteile
          */
-        private Betrag gesamtkosten;
+        public Betrag getGesamtkosten() {
+            return gesamtkosten;
+        }
+
+        /**
+         * Aufsummierte Kosten aller Angebotsteile
+         */
+        public AngebotsvarianteBuilder setGesamtkosten(Betrag gesamtkosten) {
+            this.gesamtkosten = gesamtkosten;
+            return this;
+        }
+
         /**
          * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
          */
-        private Menge gesamtmenge;
+        public Menge getGesamtmenge() {
+            return gesamtmenge;
+        }
+
+        /**
+         * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
+         */
+        public AngebotsvarianteBuilder setGesamtmenge(Menge gesamtmenge) {
+            this.gesamtmenge = gesamtmenge;
+            return this;
+        }
+
         /**
          * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
          * erzeugt.
          * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
          * Eine Variante besteht mindestens aus einem Angebotsteil.
          */
-        private List<Angebotsteil> teile;
-    
-        public Angebotsstatus getAngebotsstatus() {
-            return angebotsstatus;
-        }
-    
-        public AngebotsvarianteBuilder setAngebotsstatus(Angebotsstatus angebotsstatus) {
-            this.angebotsstatus = angebotsstatus;
-            return this;
-        }
-    
-        public OffsetDateTime getBindefrist() {
-            return bindefrist;
-        }
-    
-        public AngebotsvarianteBuilder setBindefrist(OffsetDateTime bindefrist) {
-            this.bindefrist = bindefrist;
-            return this;
-        }
-    
-        public OffsetDateTime getErstellungsdatum() {
-            return erstellungsdatum;
-        }
-    
-        public AngebotsvarianteBuilder setErstellungsdatum(OffsetDateTime erstellungsdatum) {
-            this.erstellungsdatum = erstellungsdatum;
-            return this;
-        }
-    
-        public Betrag getGesamtkosten() {
-            return gesamtkosten;
-        }
-    
-        public AngebotsvarianteBuilder setGesamtkosten(Betrag gesamtkosten) {
-            this.gesamtkosten = gesamtkosten;
-            return this;
-        }
-    
-        public Menge getGesamtmenge() {
-            return gesamtmenge;
-        }
-    
-        public AngebotsvarianteBuilder setGesamtmenge(Menge gesamtmenge) {
-            this.gesamtmenge = gesamtmenge;
-            return this;
-        }
-    
         public List<Angebotsteil> getTeile() {
             return teile;
         }
-    
+
+        /**
+         * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
+         * erzeugt.
+         * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
+         * Eine Variante besteht mindestens aus einem Angebotsteil.
+         */
         public AngebotsvarianteBuilder setTeile(List<Angebotsteil> teile) {
             this.teile = teile;
             return this;
         }
-    
+
         public AngebotsvarianteBuilder setId(String id) {
             super.setId(id);
             return this;
         }
-    
+
         public AngebotsvarianteBuilder setZusatzAttribute(List<ZusatzAttribut> zusatzAttribute) {
             super.setZusatzAttribute(zusatzAttribute);
             return this;
         }
-    
+
         public Angebotsvariante build() {
             return new Angebotsvariante(this);
         }
