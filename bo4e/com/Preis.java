@@ -16,7 +16,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Preis JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Preis.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Preis.json>`_
  */
 public class Preis extends COM {
     private Mengeneinheit bezugswert;

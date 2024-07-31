@@ -19,7 +19,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Netzlokation JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/bo/Netzlokation.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Netzlokation.json>`_
  */
 public class Netzlokation extends Geschaeftsobjekt {
     private final Typ typ = Typ.NETZLOKATION;

@@ -16,7 +16,7 @@ import java.util.List;
  *
  * .. HINT::
  * `Zeitreihenwert JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.3.2/src/bo4e_schemas/com/Zeitreihenwert.json>`_
+ * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zeitreihenwert.json>`_
  */
 public class Zeitreihenwert extends COM {
     private Messwertstatus status;

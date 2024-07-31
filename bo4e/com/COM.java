@@ -17,7 +17,7 @@ import java.util.List;
  */
 public abstract class COM {
     private String id;
-    private final String boVersion = "202401.3.2";
+    private final String boVersion = "202401.4.0";
     private List<ZusatzAttribut> zusatzAttribute;
 
     public COM() {
