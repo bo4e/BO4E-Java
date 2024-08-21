@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.enums.Gueltigkeitstyp;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * `RegionaleGueltigkeit JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/RegionaleGueltigkeit.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class RegionaleGueltigkeit extends COM {
     private Gueltigkeitstyp gueltigkeitstyp;
     private List<KriteriumWert> kriteriumsWerte;
@@ -63,6 +65,7 @@ public class RegionaleGueltigkeit extends COM {
         return new RegionaleGueltigkeitBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class RegionaleGueltigkeitBuilder extends COMBuilder {
         private Gueltigkeitstyp gueltigkeitstyp;
         private List<KriteriumWert> kriteriumsWerte;

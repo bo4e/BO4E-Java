@@ -8,6 +8,7 @@ import bo4e.enums.Dienstleistungstyp;
 import bo4e.enums.Preisstatus;
 import bo4e.enums.Sparte;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ import java.util.List;
  * `PreisblattDienstleistung JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/PreisblattDienstleistung.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PreisblattDienstleistung extends Geschaeftsobjekt {
     private final Typ typ = Typ.PREISBLATTDIENSTLEISTUNG;
     private Dienstleistungstyp basisdienstleistung;
@@ -203,6 +205,7 @@ public class PreisblattDienstleistung extends Geschaeftsobjekt {
         return new PreisblattDienstleistungBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class PreisblattDienstleistungBuilder extends GeschaeftsobjektBuilder {
         private Dienstleistungstyp basisdienstleistung;
         private String bezeichnung;

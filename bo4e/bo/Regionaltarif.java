@@ -15,6 +15,7 @@ import bo4e.enums.Sparte;
 import bo4e.enums.Tarifmerkmal;
 import bo4e.enums.Tariftyp;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -29,6 +30,7 @@ import java.util.List;
  * `Regionaltarif JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/{__gh_version__}/src/bo4e_schemas/bo/Regionaltarif.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Regionaltarif extends Geschaeftsobjekt {
     private final Typ typ = Typ.REGIONALTARIF;
     private Marktteilnehmer anbieter;
@@ -325,6 +327,7 @@ public class Regionaltarif extends Geschaeftsobjekt {
         return new RegionaltarifBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class RegionaltarifBuilder extends GeschaeftsobjektBuilder {
         private Marktteilnehmer anbieter;
         private String anbietername;

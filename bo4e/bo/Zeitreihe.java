@@ -8,6 +8,7 @@ import bo4e.enums.Messart;
 import bo4e.enums.Messgroesse;
 import bo4e.enums.Typ;
 import bo4e.enums.Wertermittlungsverfahren;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ import java.util.List;
  * `Zeitreihe JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Zeitreihe.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zeitreihe extends Geschaeftsobjekt {
     private final Typ typ = Typ.ZEITREIHE;
     private String beschreibung;
@@ -185,6 +187,7 @@ public class Zeitreihe extends Geschaeftsobjekt {
         return new ZeitreiheBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class ZeitreiheBuilder extends GeschaeftsobjektBuilder {
         private String beschreibung;
         private String bezeichnung;

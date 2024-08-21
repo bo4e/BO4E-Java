@@ -1,5 +1,6 @@
 package bo4e.bo;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import bo4e.enums.Typ;
 import bo4e.ZusatzAttribut;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * `Geschaeftsobjekt JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/bo/Geschaeftsobjekt.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class Geschaeftsobjekt {
     private String id;
     private final Typ typ = Typ.GESCHAEFTSOBJEKT;

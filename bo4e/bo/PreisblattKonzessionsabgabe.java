@@ -7,6 +7,7 @@ import bo4e.enums.KundengruppeKA;
 import bo4e.enums.Preisstatus;
 import bo4e.enums.Sparte;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ import java.util.List;
  * `PreisblattKonzessionsabgabe JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/PreisblattKonzessionsabgabe.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PreisblattKonzessionsabgabe extends Geschaeftsobjekt {
     private final Typ typ = Typ.PREISBLATTKONZESSIONSABGABE;
     private String bezeichnung;
@@ -154,6 +156,7 @@ public class PreisblattKonzessionsabgabe extends Geschaeftsobjekt {
         return new PreisblattKonzessionsabgabeBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class PreisblattKonzessionsabgabeBuilder extends GeschaeftsobjektBuilder {
         private String bezeichnung;
         private Zeitraum gueltigkeit;

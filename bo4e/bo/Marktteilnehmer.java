@@ -5,6 +5,7 @@ import bo4e.enums.Marktrolle;
 import bo4e.enums.Rollencodetyp;
 import bo4e.enums.Sparte;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ import java.util.List;
  * `Marktteilnehmer JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Marktteilnehmer.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Marktteilnehmer extends Geschaeftsobjekt {
     private final Typ typ = Typ.MARKTTEILNEHMER;
     private Geschaeftspartner geschaeftspartner;
@@ -136,6 +138,7 @@ public class Marktteilnehmer extends Geschaeftsobjekt {
         return new MarktteilnehmerBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class MarktteilnehmerBuilder extends GeschaeftsobjektBuilder {
         private Geschaeftspartner geschaeftspartner;
         private List<String> makoadresse;

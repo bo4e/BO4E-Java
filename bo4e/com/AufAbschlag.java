@@ -4,6 +4,7 @@ import bo4e.ZusatzAttribut;
 import bo4e.enums.AufAbschlagstyp;
 import bo4e.enums.AufAbschlagsziel;
 import bo4e.enums.Waehrungseinheit;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ import java.util.List;
  * `AufAbschlag JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/AufAbschlag.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AufAbschlag extends COM {
     private AufAbschlagstyp aufAbschlagstyp;
     private AufAbschlagsziel aufAbschlagsziel;
@@ -165,6 +167,7 @@ public class AufAbschlag extends COM {
         return new AufAbschlagBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class AufAbschlagBuilder extends COMBuilder {
         private AufAbschlagstyp aufAbschlagstyp;
         private AufAbschlagsziel aufAbschlagsziel;

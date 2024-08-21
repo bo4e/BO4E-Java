@@ -4,6 +4,7 @@ import bo4e.ZusatzAttribut;
 import bo4e.enums.Mengeneinheit;
 import bo4e.enums.Preistyp;
 import bo4e.enums.Waehrungseinheit;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ import java.util.List;
  * `Tarifpreisposition JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Tarifpreisposition.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tarifpreisposition extends COM {
     private Mengeneinheit bezugseinheit;
     private Waehrungseinheit einheit;
@@ -114,6 +116,7 @@ public class Tarifpreisposition extends COM {
         return new TarifpreispositionBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class TarifpreispositionBuilder extends COMBuilder {
         private Mengeneinheit bezugseinheit;
         private Waehrungseinheit einheit;

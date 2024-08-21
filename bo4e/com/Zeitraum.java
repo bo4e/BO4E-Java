@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.enums.Mengeneinheit;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -22,6 +23,7 @@ import java.util.List;
  * `Zeitraum JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zeitraum.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zeitraum extends COM {
     private Double dauer;
     private Mengeneinheit einheit;
@@ -95,6 +97,7 @@ public class Zeitraum extends COM {
         return new ZeitraumBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class ZeitraumBuilder extends COMBuilder {
         private Double dauer;
         private Mengeneinheit einheit;

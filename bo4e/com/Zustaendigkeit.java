@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.enums.Themengebiet;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * `Zustaendigkeit JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zustaendigkeit.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zustaendigkeit extends COM {
     private String abteilung;
     private String position;
@@ -79,6 +81,7 @@ public class Zustaendigkeit extends COM {
         return new ZustaendigkeitBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class ZustaendigkeitBuilder extends COMBuilder {
         private String abteilung;
         private String position;

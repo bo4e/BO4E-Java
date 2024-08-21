@@ -9,6 +9,7 @@ import bo4e.enums.TechnischeRessourceNutzung;
 import bo4e.enums.TechnischeRessourceVerbrauchsart;
 import bo4e.enums.Typ;
 import bo4e.enums.Waermenutzung;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -24,6 +25,7 @@ import java.util.List;
  * `TechnischeRessource JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/TechnischeRessource.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class TechnischeRessource extends Geschaeftsobjekt {
     private final Typ typ = Typ.TECHNISCHERESSOURCE;
     private EMobilitaetsart emobilitaetsart;
@@ -284,6 +286,7 @@ public class TechnischeRessource extends Geschaeftsobjekt {
         return new TechnischeRessourceBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class TechnischeRessourceBuilder extends GeschaeftsobjektBuilder {
         private EMobilitaetsart emobilitaetsart;
         private Erzeugungsart erzeugungsart;

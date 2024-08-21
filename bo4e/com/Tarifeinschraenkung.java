@@ -3,6 +3,7 @@ package bo4e.com;
 import bo4e.ZusatzAttribut;
 import bo4e.bo.Geraet;
 import bo4e.enums.Voraussetzungen;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * `Tarifeinschraenkung JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Tarifeinschraenkung.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tarifeinschraenkung extends COM {
     private List<Menge> einschraenkungleistung;
     private List<Geraet> einschraenkungzaehler;
@@ -105,6 +107,7 @@ public class Tarifeinschraenkung extends COM {
         return new TarifeinschraenkungBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class TarifeinschraenkungBuilder extends COMBuilder {
         private List<Menge> einschraenkungleistung;
         private List<Geraet> einschraenkungzaehler;

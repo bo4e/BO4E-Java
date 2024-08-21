@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.enums.Tarifregionskriterium;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
  * `KriteriumWert JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/KriteriumWert.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class KriteriumWert extends COM {
     private Tarifregionskriterium kriterium;
     private String wert;
@@ -62,6 +64,7 @@ public class KriteriumWert extends COM {
         return new KriteriumWertBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class KriteriumWertBuilder extends COMBuilder {
         private Tarifregionskriterium kriterium;
         private String wert;

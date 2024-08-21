@@ -15,6 +15,7 @@ import java.util.List;
  * `COM JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/Hochfrequenz/BO4E-Schemas/v202401.0.1-/src/bo4e_schemas/com/COM.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class COM {
     private String id;
     private final String boVersion = "202401.4.0";

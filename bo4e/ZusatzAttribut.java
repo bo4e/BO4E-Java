@@ -1,5 +1,7 @@
 package bo4e;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 /**
  * Viele Datenobjekte weisen in unterschiedlichen Systemen eine eindeutige ID (Kundennummer,
  * GP-Nummer etc.) auf.
@@ -15,6 +17,7 @@ package bo4e;
  * `ZusatzAttribut JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/ZusatzAttribut.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class ZusatzAttribut {
     private String name;
     private Object wert;
@@ -59,6 +62,7 @@ public class ZusatzAttribut {
         return new ZusatzAttributBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class ZusatzAttributBuilder {
         private String name;
         private Object wert;

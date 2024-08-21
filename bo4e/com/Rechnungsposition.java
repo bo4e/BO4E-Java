@@ -3,6 +3,7 @@ package bo4e.com;
 import bo4e.ZusatzAttribut;
 import bo4e.enums.BDEWArtikelnummer;
 import bo4e.enums.Mengeneinheit;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -20,6 +21,7 @@ import java.util.List;
  * `Rechnungsposition JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Rechnungsposition.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Rechnungsposition extends COM {
     private String artikelId;
     private BDEWArtikelnummer artikelnummer;
@@ -267,6 +269,7 @@ public class Rechnungsposition extends COM {
         return new RechnungspositionBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class RechnungspositionBuilder extends COMBuilder {
         private String artikelId;
         private BDEWArtikelnummer artikelnummer;

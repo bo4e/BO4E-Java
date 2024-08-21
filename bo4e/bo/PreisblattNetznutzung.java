@@ -9,6 +9,7 @@ import bo4e.enums.Netzebene;
 import bo4e.enums.Preisstatus;
 import bo4e.enums.Sparte;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -24,6 +25,7 @@ import java.util.List;
  * `PreisblattNetznutzung JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/PreisblattNetznutzung.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PreisblattNetznutzung extends Geschaeftsobjekt {
     private final Typ typ = Typ.PREISBLATTNETZNUTZUNG;
     private String bezeichnung;
@@ -182,6 +184,7 @@ public class PreisblattNetznutzung extends Geschaeftsobjekt {
         return new PreisblattNetznutzungBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class PreisblattNetznutzungBuilder extends GeschaeftsobjektBuilder {
         private String bezeichnung;
         private Bilanzierungsmethode bilanzierungsmethode;

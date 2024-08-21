@@ -15,6 +15,7 @@ import bo4e.enums.Netzebene;
 import bo4e.enums.Sparte;
 import bo4e.enums.Typ;
 import bo4e.enums.Verbrauchsart;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -30,6 +31,7 @@ import java.util.List;
  * `Marktlokation JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Marktlokation.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Marktlokation extends Geschaeftsobjekt {
     private final Typ typ = Typ.MARKTLOKATION;
     private String bilanzierungsgebiet;
@@ -428,6 +430,7 @@ public class Marktlokation extends Geschaeftsobjekt {
         return new MarktlokationBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class MarktlokationBuilder extends GeschaeftsobjektBuilder {
         private String bilanzierungsgebiet;
         private Bilanzierungsmethode bilanzierungsmethode;

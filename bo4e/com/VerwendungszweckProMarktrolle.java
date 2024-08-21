@@ -3,6 +3,7 @@ package bo4e.com;
 import bo4e.ZusatzAttribut;
 import bo4e.enums.Marktrolle;
 import bo4e.enums.Verwendungszweck;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ import java.util.List;
  * `Verwendungszweck JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Verwendungszweck.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class VerwendungszweckProMarktrolle extends COM {
     private Marktrolle marktrolle;
     private List<Verwendungszweck> zwecke;
@@ -64,6 +66,7 @@ public class VerwendungszweckProMarktrolle extends COM {
         return new VerwendungszweckProMarktrolleBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class VerwendungszweckProMarktrolleBuilder extends COMBuilder {
         private Marktrolle marktrolle;
         private List<Verwendungszweck> zwecke;

@@ -5,6 +5,7 @@ import bo4e.com.Betrag;
 import bo4e.com.Fremdkostenblock;
 import bo4e.com.Zeitraum;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ import java.util.List;
  * `Fremdkosten JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Fremdkosten.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Fremdkosten extends Geschaeftsobjekt {
     private final Typ typ = Typ.FREMDKOSTEN;
     private Zeitraum gueltigkeit;
@@ -91,6 +93,7 @@ public class Fremdkosten extends Geschaeftsobjekt {
         return new FremdkostenBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class FremdkostenBuilder extends GeschaeftsobjektBuilder {
         private Zeitraum gueltigkeit;
         private List<Fremdkostenblock> kostenbloecke;

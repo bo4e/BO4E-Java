@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
  * `AufAbschlagProOrt JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/AufAbschlagProOrt.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AufAbschlagProOrt extends COM {
     private String netznr;
     private String ort;
@@ -94,6 +96,7 @@ public class AufAbschlagProOrt extends COM {
         return new AufAbschlagProOrtBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class AufAbschlagProOrtBuilder extends COMBuilder {
         private String netznr;
         private String ort;

@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * `AufAbschlagstaffelProOrt JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/AufAbschlagstaffelProOrt.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AufAbschlagstaffelProOrt extends COM {
     private Double staffelgrenzeBis;
     private Double staffelgrenzeVon;
@@ -77,6 +79,7 @@ public class AufAbschlagstaffelProOrt extends COM {
         return new AufAbschlagstaffelProOrtBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class AufAbschlagstaffelProOrtBuilder extends COMBuilder {
         private Double staffelgrenzeBis;
         private Double staffelgrenzeVon;

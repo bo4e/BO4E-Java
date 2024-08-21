@@ -4,6 +4,7 @@ import bo4e.ZusatzAttribut;
 import bo4e.enums.Oekolabel;
 import bo4e.enums.Oekozertifikat;
 import bo4e.enums.Sparte;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * `Energiemix JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Energiemix.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Energiemix extends COM {
     private List<Energieherkunft> anteil;
     private Double atommuell;
@@ -223,6 +225,7 @@ public class Energiemix extends COM {
         return new EnergiemixBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class EnergiemixBuilder extends COMBuilder {
         private List<Energieherkunft> anteil;
         private Double atommuell;

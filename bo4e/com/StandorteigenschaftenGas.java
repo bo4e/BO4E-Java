@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * `StandorteigenschaftenGas JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/StandorteigenschaftenGas.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class StandorteigenschaftenGas extends COM {
     private List<MarktgebietInfo> marktgebiete;
     private List<String> netzkontonummern;
@@ -61,6 +63,7 @@ public class StandorteigenschaftenGas extends COM {
         return new StandorteigenschaftenGasBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class StandorteigenschaftenGasBuilder extends COMBuilder {
         private List<MarktgebietInfo> marktgebiete;
         private List<String> netzkontonummern;

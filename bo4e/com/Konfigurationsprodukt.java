@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.bo.Marktteilnehmer;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
  * `Konfigurationsprodukt JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Konfigurationsprodukt.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Konfigurationsprodukt extends COM {
     private String leistungskurvendefinition;
     private Marktteilnehmer marktpartner;
@@ -70,6 +72,7 @@ public class Konfigurationsprodukt extends COM {
         return new KonfigurationsproduktBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class KonfigurationsproduktBuilder extends COMBuilder {
         private String leistungskurvendefinition;
         private Marktteilnehmer marktpartner;

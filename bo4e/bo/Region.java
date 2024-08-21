@@ -3,6 +3,7 @@ package bo4e.bo;
 import bo4e.ZusatzAttribut;
 import bo4e.com.Regionskriterium;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
  * `Region JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Region.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Region extends Geschaeftsobjekt {
     private final Typ typ = Typ.REGION;
     private String bezeichnung;
@@ -83,6 +85,7 @@ public class Region extends Geschaeftsobjekt {
         return new RegionBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class RegionBuilder extends GeschaeftsobjektBuilder {
         private String bezeichnung;
         private List<Regionskriterium> negativListe;

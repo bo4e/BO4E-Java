@@ -10,6 +10,7 @@ import bo4e.enums.Sparte;
 import bo4e.enums.Tarifmerkmal;
 import bo4e.enums.Tariftyp;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -25,6 +26,7 @@ import java.util.List;
  * `Tarifkosten JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Tarifkosten.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tarifkosten extends Geschaeftsobjekt {
     private final Typ typ = Typ.TARIFKOSTEN;
     private Marktteilnehmer anbieter;
@@ -271,6 +273,7 @@ public class Tarifkosten extends Geschaeftsobjekt {
         return new TarifkostenBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class TarifkostenBuilder extends GeschaeftsobjektBuilder {
         private Marktteilnehmer anbieter;
         private String anbietername;

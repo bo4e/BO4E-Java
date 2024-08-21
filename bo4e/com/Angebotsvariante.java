@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.enums.Angebotsstatus;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.List;
  * `Angebotsvariante JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Angebotsvariante.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Angebotsvariante extends COM {
     private Angebotsstatus angebotsstatus;
     private OffsetDateTime bindefrist;
@@ -133,6 +135,7 @@ public class Angebotsvariante extends COM {
         return new AngebotsvarianteBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class AngebotsvarianteBuilder extends COMBuilder {
         private Angebotsstatus angebotsstatus;
         private OffsetDateTime bindefrist;

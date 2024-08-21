@@ -8,6 +8,7 @@ import bo4e.com.Katasteradresse;
 import bo4e.enums.Netzebene;
 import bo4e.enums.Sparte;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ import java.util.List;
  * `Messlokation JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Messlokation.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Messlokation extends Geschaeftsobjekt {
     private final Typ typ = Typ.MESSLOKATION;
     private Geokoordinaten geoadresse;
@@ -242,6 +244,7 @@ public class Messlokation extends Geschaeftsobjekt {
         return new MesslokationBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class MesslokationBuilder extends GeschaeftsobjektBuilder {
         private Geokoordinaten geoadresse;
         private List<Geraet> geraete;

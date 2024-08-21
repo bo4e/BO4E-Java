@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.enums.Erzeugungsart;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
  * `Energieherkunft JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Energieherkunft.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Energieherkunft extends COM {
     private Double anteilProzent;
     private Erzeugungsart erzeugungsart;
@@ -62,6 +64,7 @@ public class Energieherkunft extends COM {
         return new EnergieherkunftBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class EnergieherkunftBuilder extends COMBuilder {
         private Double anteilProzent;
         private Erzeugungsart erzeugungsart;

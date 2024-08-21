@@ -4,6 +4,7 @@ import bo4e.ZusatzAttribut;
 import bo4e.enums.Mengeneinheit;
 import bo4e.enums.Preistyp;
 import bo4e.enums.Waehrungseinheit;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ import java.util.List;
  * `RegionaleTarifpreisposition JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/RegionaleTarifpreisposition.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class RegionaleTarifpreisposition extends COM {
     private Mengeneinheit bezugseinheit;
     private Waehrungseinheit einheit;
@@ -116,6 +118,7 @@ public class RegionaleTarifpreisposition extends COM {
         return new RegionaleTarifpreispositionBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class RegionaleTarifpreispositionBuilder extends COMBuilder {
         private Mengeneinheit bezugseinheit;
         private Waehrungseinheit einheit;

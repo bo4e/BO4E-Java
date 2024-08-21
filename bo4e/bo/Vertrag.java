@@ -8,6 +8,7 @@ import bo4e.enums.Sparte;
 import bo4e.enums.Typ;
 import bo4e.enums.Vertragsart;
 import bo4e.enums.Vertragsstatus;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -25,6 +26,7 @@ import java.util.List;
  * `Vertrag JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Vertrag.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Vertrag extends Geschaeftsobjekt {
     private final Typ typ = Typ.VERTRAG;
     private String beschreibung;
@@ -239,6 +241,7 @@ public class Vertrag extends Geschaeftsobjekt {
         return new VertragBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class VertragBuilder extends GeschaeftsobjektBuilder {
         private String beschreibung;
         private Sparte sparte;

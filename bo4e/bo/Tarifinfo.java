@@ -10,6 +10,7 @@ import bo4e.enums.Sparte;
 import bo4e.enums.Tarifmerkmal;
 import bo4e.enums.Tariftyp;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -26,6 +27,7 @@ import java.util.List;
  * `Tarifinfo JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Tarifinfo.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tarifinfo extends Geschaeftsobjekt {
     private final Typ typ = Typ.TARIFINFO;
     private Marktteilnehmer anbieter;
@@ -262,6 +264,7 @@ public class Tarifinfo extends Geschaeftsobjekt {
         return new TarifinfoBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class TarifinfoBuilder extends GeschaeftsobjektBuilder {
         private Marktteilnehmer anbieter;
         private String anbietername;

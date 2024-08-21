@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.enums.Waehrungscode;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * `Betrag JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Betrag.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Betrag extends COM {
     private Waehrungscode waehrung;
     private Double wert;
@@ -63,6 +65,7 @@ public class Betrag extends COM {
         return new BetragBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class BetragBuilder extends COMBuilder {
         private Waehrungscode waehrung;
         private Double wert;

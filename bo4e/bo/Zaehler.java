@@ -11,6 +11,7 @@ import bo4e.enums.Zaehlerauspraegung;
 import bo4e.enums.Zaehlergroesse;
 import bo4e.enums.Zaehlertyp;
 import bo4e.enums.ZaehlertypSpezifikation;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -26,6 +27,7 @@ import java.util.List;
  * `Zaehler JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Zaehler.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zaehler extends Geschaeftsobjekt {
     private final Typ typ = Typ.ZAEHLER;
     private Befestigungsart befestigungsart;
@@ -300,6 +302,7 @@ public class Zaehler extends Geschaeftsobjekt {
         return new ZaehlerBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class ZaehlerBuilder extends GeschaeftsobjektBuilder {
         private Befestigungsart befestigungsart;
         private OffsetDateTime eichungBis;

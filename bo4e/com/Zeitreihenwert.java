@@ -3,6 +3,7 @@ package bo4e.com;
 import bo4e.ZusatzAttribut;
 import bo4e.enums.Messwertstatus;
 import bo4e.enums.Messwertstatuszusatz;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * `Zeitreihenwert JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zeitreihenwert.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zeitreihenwert extends COM {
     private Messwertstatus status;
     private Messwertstatuszusatz statuszusatz;
@@ -95,6 +97,7 @@ public class Zeitreihenwert extends COM {
         return new ZeitreihenwertBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class ZeitreihenwertBuilder extends COMBuilder {
         private Messwertstatus status;
         private Messwertstatuszusatz statuszusatz;

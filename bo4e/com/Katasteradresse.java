@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * `Katasteradresse JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Katasteradresse.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Katasteradresse extends COM {
     private String flurstueck;
     private String gemarkungFlur;
@@ -49,6 +51,7 @@ public class Katasteradresse extends COM {
         return new KatasteradresseBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class KatasteradresseBuilder extends COMBuilder {
         private String flurstueck;
         private String gemarkungFlur;

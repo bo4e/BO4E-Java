@@ -4,6 +4,7 @@ import bo4e.ZusatzAttribut;
 import bo4e.enums.Mengeneinheit;
 import bo4e.enums.Messwertstatus;
 import bo4e.enums.Wertermittlungsverfahren;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -19,6 +20,7 @@ import java.util.List;
  * `Verbrauch JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Verbrauch.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Verbrauch extends COM {
     private Mengeneinheit einheit;
     private OffsetDateTime enddatum;
@@ -146,6 +148,7 @@ public class Verbrauch extends COM {
         return new VerbrauchBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class VerbrauchBuilder extends COMBuilder {
         private Mengeneinheit einheit;
         private OffsetDateTime enddatum;

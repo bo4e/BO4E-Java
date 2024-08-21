@@ -4,6 +4,7 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Angebotsvariante;
 import bo4e.enums.Sparte;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -25,6 +26,7 @@ import java.util.List;
  * `Angebot JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Angebot.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Angebot extends Geschaeftsobjekt {
     private final Typ typ = Typ.ANGEBOT;
     private String anfragereferenz;
@@ -197,6 +199,7 @@ public class Angebot extends Geschaeftsobjekt {
         return new AngebotBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class AngebotBuilder extends GeschaeftsobjektBuilder {
         private String anfragereferenz;
         private OffsetDateTime angebotsdatum;

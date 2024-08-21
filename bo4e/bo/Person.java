@@ -7,6 +7,7 @@ import bo4e.com.Zustaendigkeit;
 import bo4e.enums.Anrede;
 import bo4e.enums.Titel;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -22,6 +23,7 @@ import java.util.List;
  * `Person JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Person.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Person extends Geschaeftsobjekt {
     private final Typ typ = Typ.PERSON;
     private Adresse adresse;
@@ -194,6 +196,7 @@ public class Person extends Geschaeftsobjekt {
         return new PersonBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class PersonBuilder extends GeschaeftsobjektBuilder {
         private Adresse adresse;
         private Anrede anrede;

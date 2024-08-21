@@ -5,6 +5,7 @@ import bo4e.enums.Preismodell;
 import bo4e.enums.Rechnungslegung;
 import bo4e.enums.Sparte;
 import bo4e.enums.Vertragsform;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ import java.util.List;
  * `Ausschreibungslos JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Ausschreibungslos.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Ausschreibungslos extends COM {
     private Long anzahlLieferstellen;
     private String bemerkung;
@@ -309,6 +311,7 @@ public class Ausschreibungslos extends COM {
         return new AusschreibungslosBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class AusschreibungslosBuilder extends COMBuilder {
         private Long anzahlLieferstellen;
         private String bemerkung;

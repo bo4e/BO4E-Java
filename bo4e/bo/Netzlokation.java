@@ -7,6 +7,7 @@ import bo4e.com.VerwendungszweckProMarktrolle;
 import bo4e.enums.Marktrolle;
 import bo4e.enums.Sparte;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ import java.util.List;
  * `Netzlokation JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Netzlokation.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Netzlokation extends Geschaeftsobjekt {
     private final Typ typ = Typ.NETZLOKATION;
     private Marktrolle eigenschaftMsbLokation;
@@ -223,6 +225,7 @@ public class Netzlokation extends Geschaeftsobjekt {
         return new NetzlokationBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class NetzlokationBuilder extends GeschaeftsobjektBuilder {
         private Marktrolle eigenschaftMsbLokation;
         private String grundzustaendigerMsbCodenr;

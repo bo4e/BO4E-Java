@@ -4,6 +4,7 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Verbrauch;
 import bo4e.enums.Lokationstyp;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ import java.util.List;
  * `Energiemenge JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Energiemenge.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Energiemenge extends Geschaeftsobjekt {
     private final Typ typ = Typ.ENERGIEMENGE;
     private List<Verbrauch> energieverbrauch;
@@ -84,6 +86,7 @@ public class Energiemenge extends Geschaeftsobjekt {
         return new EnergiemengeBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class EnergiemengeBuilder extends GeschaeftsobjektBuilder {
         private List<Verbrauch> energieverbrauch;
         private String lokationsId;

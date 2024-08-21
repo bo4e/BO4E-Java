@@ -11,6 +11,7 @@ import bo4e.enums.Rechnungsstatus;
 import bo4e.enums.Rechnungstyp;
 import bo4e.enums.Sparte;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -27,6 +28,7 @@ import java.util.List;
  * `Rechnung JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Rechnung.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Rechnung extends Geschaeftsobjekt {
     private final Typ typ = Typ.RECHNUNG;
     private OffsetDateTime faelligkeitsdatum;
@@ -467,6 +469,7 @@ public class Rechnung extends Geschaeftsobjekt {
         return new RechnungBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class RechnungBuilder extends GeschaeftsobjektBuilder {
         private OffsetDateTime faelligkeitsdatum;
         private Betrag gesamtbrutto;

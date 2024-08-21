@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.List;
  * `Kostenposition JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Kostenposition.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Kostenposition extends COM {
     private String artikelbezeichnung;
     private String artikeldetail;
@@ -184,6 +186,7 @@ public class Kostenposition extends COM {
         return new KostenpositionBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class KostenpositionBuilder extends COMBuilder {
         private String artikelbezeichnung;
         private String artikeldetail;

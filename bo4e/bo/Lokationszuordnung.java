@@ -3,6 +3,7 @@ package bo4e.bo;
 import bo4e.ZusatzAttribut;
 import bo4e.com.Zeitspanne;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -21,6 +22,7 @@ import java.util.List;
  * `Lokationszuordnung JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Lokationszuordnung.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Lokationszuordnung extends Geschaeftsobjekt {
     private final Typ typ = Typ.LOKATIONSZUORDNUNG;
     private Zeitspanne gueltigkeit;
@@ -169,6 +171,7 @@ public class Lokationszuordnung extends Geschaeftsobjekt {
         return new LokationszuordnungBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class LokationszuordnungBuilder extends GeschaeftsobjektBuilder {
         private Zeitspanne gueltigkeit;
         private String lokationsbuendelcode;

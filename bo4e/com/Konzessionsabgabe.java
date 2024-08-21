@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.enums.AbgabeArt;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -17,6 +18,7 @@ import java.util.List;
  * `Konzessionsabgabe JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Konzessionsabgabe.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Konzessionsabgabe extends COM {
     private String kategorie;
     private Double kosten;
@@ -78,6 +80,7 @@ public class Konzessionsabgabe extends COM {
         return new KonzessionsabgabeBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class KonzessionsabgabeBuilder extends COMBuilder {
         private String kategorie;
         private Double kosten;

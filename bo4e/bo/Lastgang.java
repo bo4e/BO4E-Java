@@ -6,6 +6,7 @@ import bo4e.com.Zeitreihenwert;
 import bo4e.enums.Mengeneinheit;
 import bo4e.enums.Sparte;
 import bo4e.enums.Typ;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -23,6 +24,7 @@ import java.util.List;
  * `Lastgang JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Lastgang.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Lastgang extends Geschaeftsobjekt {
     private final Typ typ = Typ.LASTGANG;
     private Marktlokation marktlokation;
@@ -165,6 +167,7 @@ public class Lastgang extends Geschaeftsobjekt {
         return new LastgangBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class LastgangBuilder extends GeschaeftsobjektBuilder {
         private Marktlokation marktlokation;
         private Mengeneinheit messgroesse;

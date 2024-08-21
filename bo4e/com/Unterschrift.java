@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.List;
  * `Unterschrift JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Unterschrift.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Unterschrift extends COM {
     private OffsetDateTime datum;
     private String name;
@@ -78,6 +80,7 @@ public class Unterschrift extends COM {
         return new UnterschriftBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class UnterschriftBuilder extends COMBuilder {
         private OffsetDateTime datum;
         private String name;

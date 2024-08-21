@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
  * `Fremdkostenblock JSON Schema
  * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Fremdkostenblock.json>`_
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Fremdkostenblock extends COM {
     private String kostenblockbezeichnung;
     private List<Fremdkostenposition> kostenpositionen;
@@ -81,6 +83,7 @@ public class Fremdkostenblock extends COM {
         return new FremdkostenblockBuilder();
     }
 
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class FremdkostenblockBuilder extends COMBuilder {
         private String kostenblockbezeichnung;
         private List<Fremdkostenposition> kostenpositionen;
