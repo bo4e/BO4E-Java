@@ -9,16 +9,16 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 /**
- * Abbildung eines zeitlich abgegrenzten Verbrauchs
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Verbrauch.svg" type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Verbrauch JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Verbrauch.json>`_
- */
+* Abbildung eines zeitlich abgegrenzten Verbrauchs
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Verbrauch.svg" type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Verbrauch JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Verbrauch.json>`_
+*/
 public class Verbrauch extends COM {
     private Mengeneinheit einheit;
     private OffsetDateTime enddatum;
@@ -43,101 +43,101 @@ public class Verbrauch extends COM {
     }
 
     /**
-     * Gibt die Einheit zum jeweiligen Wert an
-     */
+    * Gibt die Einheit zum jeweiligen Wert an
+    */
     public Mengeneinheit getEinheit() {
         return einheit;
     }
 
     /**
-     * Gibt die Einheit zum jeweiligen Wert an
-     */
+    * Gibt die Einheit zum jeweiligen Wert an
+    */
     public void setEinheit(Mengeneinheit einheit) {
         this.einheit = einheit;
     }
 
     /**
-     * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird
-     */
+    * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird
+    */
     public OffsetDateTime getEnddatum() {
         return enddatum;
     }
 
     /**
-     * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird
-     */
+    * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird
+    */
     public void setEnddatum(OffsetDateTime enddatum) {
         this.enddatum = enddatum;
     }
 
     /**
-     * Messwertstatus includes the plausibility of the value
-     */
+    * Messwertstatus includes the plausibility of the value
+    */
     public Messwertstatus getMesswertstatus() {
         return messwertstatus;
     }
 
     /**
-     * Messwertstatus includes the plausibility of the value
-     */
+    * Messwertstatus includes the plausibility of the value
+    */
     public void setMesswertstatus(Messwertstatus messwertstatus) {
         this.messwertstatus = messwertstatus;
     }
 
     /**
-     * Die OBIS-Kennzahl für den Wert, die festlegt, welche Größe mit dem Stand gemeldet wird,
-     * z.B. '1-0:
-     */
+    * Die OBIS-Kennzahl für den Wert, die festlegt, welche Größe mit dem Stand gemeldet wird,
+    * z.B. '1-0:
+    */
     public String getObisKennzahl() {
         return obisKennzahl;
     }
 
     /**
-     * Die OBIS-Kennzahl für den Wert, die festlegt, welche Größe mit dem Stand gemeldet wird,
-     * z.B. '1-0:
-     */
+    * Die OBIS-Kennzahl für den Wert, die festlegt, welche Größe mit dem Stand gemeldet wird,
+    * z.B. '1-0:
+    */
     public void setObisKennzahl(String obisKennzahl) {
         this.obisKennzahl = obisKennzahl;
     }
 
     /**
-     * Inklusiver Beginn des Zeitraumes, für den der Verbrauch angegeben wird
-     */
+    * Inklusiver Beginn des Zeitraumes, für den der Verbrauch angegeben wird
+    */
     public OffsetDateTime getStartdatum() {
         return startdatum;
     }
 
     /**
-     * Inklusiver Beginn des Zeitraumes, für den der Verbrauch angegeben wird
-     */
+    * Inklusiver Beginn des Zeitraumes, für den der Verbrauch angegeben wird
+    */
     public void setStartdatum(OffsetDateTime startdatum) {
         this.startdatum = startdatum;
     }
 
     /**
-     * Gibt den absoluten Wert der Menge an
-     */
+    * Gibt den absoluten Wert der Menge an
+    */
     public Double getWert() {
         return wert;
     }
 
     /**
-     * Gibt den absoluten Wert der Menge an
-     */
+    * Gibt den absoluten Wert der Menge an
+    */
     public void setWert(Double wert) {
         this.wert = wert;
     }
 
     /**
-     * Gibt an, ob es sich um eine PROGNOSE oder eine MESSUNG handelt
-     */
+    * Gibt an, ob es sich um eine PROGNOSE oder eine MESSUNG handelt
+    */
     public Wertermittlungsverfahren getWertermittlungsverfahren() {
         return wertermittlungsverfahren;
     }
 
     /**
-     * Gibt an, ob es sich um eine PROGNOSE oder eine MESSUNG handelt
-     */
+    * Gibt an, ob es sich um eine PROGNOSE oder eine MESSUNG handelt
+    */
     public void setWertermittlungsverfahren(Wertermittlungsverfahren wertermittlungsverfahren) {
         this.wertermittlungsverfahren = wertermittlungsverfahren;
     }
@@ -159,107 +159,57 @@ public class Verbrauch extends COM {
         }
 
         /**
-         * Gibt die Einheit zum jeweiligen Wert an
-         */
-        public Mengeneinheit getEinheit() {
-            return einheit;
-        }
-
-        /**
-         * Gibt die Einheit zum jeweiligen Wert an
-         */
+        * Gibt die Einheit zum jeweiligen Wert an
+        */
         public VerbrauchBuilder setEinheit(Mengeneinheit einheit) {
             this.einheit = einheit;
             return this;
         }
 
         /**
-         * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird
-         */
-        public OffsetDateTime getEnddatum() {
-            return enddatum;
-        }
-
-        /**
-         * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird
-         */
+        * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird
+        */
         public VerbrauchBuilder setEnddatum(OffsetDateTime enddatum) {
             this.enddatum = enddatum;
             return this;
         }
 
         /**
-         * Messwertstatus includes the plausibility of the value
-         */
-        public Messwertstatus getMesswertstatus() {
-            return messwertstatus;
-        }
-
-        /**
-         * Messwertstatus includes the plausibility of the value
-         */
+        * Messwertstatus includes the plausibility of the value
+        */
         public VerbrauchBuilder setMesswertstatus(Messwertstatus messwertstatus) {
             this.messwertstatus = messwertstatus;
             return this;
         }
 
         /**
-         * Die OBIS-Kennzahl für den Wert, die festlegt, welche Größe mit dem Stand gemeldet wird,
-         * z.B. '1-0:
-         */
-        public String getObisKennzahl() {
-            return obisKennzahl;
-        }
-
-        /**
-         * Die OBIS-Kennzahl für den Wert, die festlegt, welche Größe mit dem Stand gemeldet wird,
-         * z.B. '1-0:
-         */
+        * Die OBIS-Kennzahl für den Wert, die festlegt, welche Größe mit dem Stand gemeldet wird,
+        * z.B. '1-0:
+        */
         public VerbrauchBuilder setObisKennzahl(String obisKennzahl) {
             this.obisKennzahl = obisKennzahl;
             return this;
         }
 
         /**
-         * Inklusiver Beginn des Zeitraumes, für den der Verbrauch angegeben wird
-         */
-        public OffsetDateTime getStartdatum() {
-            return startdatum;
-        }
-
-        /**
-         * Inklusiver Beginn des Zeitraumes, für den der Verbrauch angegeben wird
-         */
+        * Inklusiver Beginn des Zeitraumes, für den der Verbrauch angegeben wird
+        */
         public VerbrauchBuilder setStartdatum(OffsetDateTime startdatum) {
             this.startdatum = startdatum;
             return this;
         }
 
         /**
-         * Gibt den absoluten Wert der Menge an
-         */
-        public Double getWert() {
-            return wert;
-        }
-
-        /**
-         * Gibt den absoluten Wert der Menge an
-         */
+        * Gibt den absoluten Wert der Menge an
+        */
         public VerbrauchBuilder setWert(Double wert) {
             this.wert = wert;
             return this;
         }
 
         /**
-         * Gibt an, ob es sich um eine PROGNOSE oder eine MESSUNG handelt
-         */
-        public Wertermittlungsverfahren getWertermittlungsverfahren() {
-            return wertermittlungsverfahren;
-        }
-
-        /**
-         * Gibt an, ob es sich um eine PROGNOSE oder eine MESSUNG handelt
-         */
+        * Gibt an, ob es sich um eine PROGNOSE oder eine MESSUNG handelt
+        */
         public VerbrauchBuilder setWertermittlungsverfahren(Wertermittlungsverfahren wertermittlungsverfahren) {
             this.wertermittlungsverfahren = wertermittlungsverfahren;
             return this;

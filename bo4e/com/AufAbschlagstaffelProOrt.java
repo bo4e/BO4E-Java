@@ -5,17 +5,17 @@ import bo4e.ZusatzAttribut;
 import java.util.List;
 
 /**
- * Gibt den Wert eines Auf- oder Abschlags und dessen Staffelgrenzen an
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/AufAbschlagstaffelProOrt.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `AufAbschlagstaffelProOrt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/AufAbschlagstaffelProOrt.json>`_
- */
+* Gibt den Wert eines Auf- oder Abschlags und dessen Staffelgrenzen an
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/AufAbschlagstaffelProOrt.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `AufAbschlagstaffelProOrt JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/AufAbschlagstaffelProOrt.json>`_
+*/
 public class AufAbschlagstaffelProOrt extends COM {
     private Double staffelgrenzeBis;
     private Double staffelgrenzeVon;
@@ -32,43 +32,43 @@ public class AufAbschlagstaffelProOrt extends COM {
     }
 
     /**
-     * Oberer Wert, bis zu dem die Staffel gilt.
-     */
+    * Oberer Wert, bis zu dem die Staffel gilt.
+    */
     public Double getStaffelgrenzeBis() {
         return staffelgrenzeBis;
     }
 
     /**
-     * Oberer Wert, bis zu dem die Staffel gilt.
-     */
+    * Oberer Wert, bis zu dem die Staffel gilt.
+    */
     public void setStaffelgrenzeBis(Double staffelgrenzeBis) {
         this.staffelgrenzeBis = staffelgrenzeBis;
     }
 
     /**
-     * Unterer Wert, ab dem die Staffel gilt.
-     */
+    * Unterer Wert, ab dem die Staffel gilt.
+    */
     public Double getStaffelgrenzeVon() {
         return staffelgrenzeVon;
     }
 
     /**
-     * Unterer Wert, ab dem die Staffel gilt.
-     */
+    * Unterer Wert, ab dem die Staffel gilt.
+    */
     public void setStaffelgrenzeVon(Double staffelgrenzeVon) {
         this.staffelgrenzeVon = staffelgrenzeVon;
     }
 
     /**
-     * Der Wert für den Auf- oder Abschlag.
-     */
+    * Der Wert für den Auf- oder Abschlag.
+    */
     public Double getWert() {
         return wert;
     }
 
     /**
-     * Der Wert für den Auf- oder Abschlag.
-     */
+    * Der Wert für den Auf- oder Abschlag.
+    */
     public void setWert(Double wert) {
         this.wert = wert;
     }
@@ -86,45 +86,24 @@ public class AufAbschlagstaffelProOrt extends COM {
         }
 
         /**
-         * Oberer Wert, bis zu dem die Staffel gilt.
-         */
-        public Double getStaffelgrenzeBis() {
-            return staffelgrenzeBis;
-        }
-
-        /**
-         * Oberer Wert, bis zu dem die Staffel gilt.
-         */
+        * Oberer Wert, bis zu dem die Staffel gilt.
+        */
         public AufAbschlagstaffelProOrtBuilder setStaffelgrenzeBis(Double staffelgrenzeBis) {
             this.staffelgrenzeBis = staffelgrenzeBis;
             return this;
         }
 
         /**
-         * Unterer Wert, ab dem die Staffel gilt.
-         */
-        public Double getStaffelgrenzeVon() {
-            return staffelgrenzeVon;
-        }
-
-        /**
-         * Unterer Wert, ab dem die Staffel gilt.
-         */
+        * Unterer Wert, ab dem die Staffel gilt.
+        */
         public AufAbschlagstaffelProOrtBuilder setStaffelgrenzeVon(Double staffelgrenzeVon) {
             this.staffelgrenzeVon = staffelgrenzeVon;
             return this;
         }
 
         /**
-         * Der Wert für den Auf- oder Abschlag.
-         */
-        public Double getWert() {
-            return wert;
-        }
-
-        /**
-         * Der Wert für den Auf- oder Abschlag.
-         */
+        * Der Wert für den Auf- oder Abschlag.
+        */
         public AufAbschlagstaffelProOrtBuilder setWert(Double wert) {
             this.wert = wert;
             return this;

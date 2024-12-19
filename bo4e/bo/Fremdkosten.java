@@ -9,20 +9,20 @@ import bo4e.enums.Typ;
 import java.util.List;
 
 /**
- * Mit diesem BO werden die Fremdkosten, beispielsweise für eine Angebotserstellung oder
- * eine Rechnungsprüfung,
- * übertragen.
- * Die Fremdkosten enthalten dabei alle Kostenblöcke, die von anderen Marktteilnehmern oder
- * Instanzen erhoben werden.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/bo/Fremdkosten.svg" type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Fremdkosten JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Fremdkosten.json>`_
- */
+* Mit diesem BO werden die Fremdkosten, beispielsweise für eine Angebotserstellung oder
+* eine Rechnungsprüfung,
+* übertragen.
+* Die Fremdkosten enthalten dabei alle Kostenblöcke, die von anderen Marktteilnehmern oder
+* Instanzen erhoben werden.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/bo/Fremdkosten.svg" type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Fremdkosten JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Fremdkosten.json>`_
+*/
 public class Fremdkosten extends Geschaeftsobjekt {
     private final Typ typ = Typ.FREMDKOSTEN;
     private Zeitraum gueltigkeit;
@@ -44,45 +44,45 @@ public class Fremdkosten extends Geschaeftsobjekt {
     }
 
     /**
-     * Für diesen Zeitraum wurden die Kosten ermittelt
-     */
+    * Für diesen Zeitraum wurden die Kosten ermittelt
+    */
     public Zeitraum getGueltigkeit() {
         return gueltigkeit;
     }
 
     /**
-     * Für diesen Zeitraum wurden die Kosten ermittelt
-     */
+    * Für diesen Zeitraum wurden die Kosten ermittelt
+    */
     public void setGueltigkeit(Zeitraum gueltigkeit) {
         this.gueltigkeit = gueltigkeit;
     }
 
     /**
-     * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
-     * Steuern etc
-     */
+    * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
+    * Steuern etc
+    */
     public List<Fremdkostenblock> getKostenbloecke() {
         return kostenbloecke;
     }
 
     /**
-     * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
-     * Steuern etc
-     */
+    * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
+    * Steuern etc
+    */
     public void setKostenbloecke(List<Fremdkostenblock> kostenbloecke) {
         this.kostenbloecke = kostenbloecke;
     }
 
     /**
-     * Die Gesamtsumme über alle Kostenblöcke und -positionen
-     */
+    * Die Gesamtsumme über alle Kostenblöcke und -positionen
+    */
     public Betrag getSummeKosten() {
         return summeKosten;
     }
 
     /**
-     * Die Gesamtsumme über alle Kostenblöcke und -positionen
-     */
+    * Die Gesamtsumme über alle Kostenblöcke und -positionen
+    */
     public void setSummeKosten(Betrag summeKosten) {
         this.summeKosten = summeKosten;
     }
@@ -100,47 +100,25 @@ public class Fremdkosten extends Geschaeftsobjekt {
         }
 
         /**
-         * Für diesen Zeitraum wurden die Kosten ermittelt
-         */
-        public Zeitraum getGueltigkeit() {
-            return gueltigkeit;
-        }
-
-        /**
-         * Für diesen Zeitraum wurden die Kosten ermittelt
-         */
+        * Für diesen Zeitraum wurden die Kosten ermittelt
+        */
         public FremdkostenBuilder setGueltigkeit(Zeitraum gueltigkeit) {
             this.gueltigkeit = gueltigkeit;
             return this;
         }
 
         /**
-         * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
-         * Steuern etc
-         */
-        public List<Fremdkostenblock> getKostenbloecke() {
-            return kostenbloecke;
-        }
-
-        /**
-         * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
-         * Steuern etc
-         */
+        * In Kostenblöcken werden Kostenpositionen zusammengefasst. Beispiele: Netzkosten, Umlagen,
+        * Steuern etc
+        */
         public FremdkostenBuilder setKostenbloecke(List<Fremdkostenblock> kostenbloecke) {
             this.kostenbloecke = kostenbloecke;
             return this;
         }
 
         /**
-         * Die Gesamtsumme über alle Kostenblöcke und -positionen
-         */
-        public Betrag getSummeKosten() {
-            return summeKosten;
-        }
-
-        /**
-         * Die Gesamtsumme über alle Kostenblöcke und -positionen
-         */
+        * Die Gesamtsumme über alle Kostenblöcke und -positionen
+        */
         public FremdkostenBuilder setSummeKosten(Betrag summeKosten) {
             this.summeKosten = summeKosten;
             return this;

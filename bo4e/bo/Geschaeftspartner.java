@@ -12,20 +12,20 @@ import bo4e.enums.Typ;
 import java.util.List;
 
 /**
- * Mit diesem Objekt können Geschäftspartner übertragen werden.
- * Sowohl Unternehmen, als auch Privatpersonen können Geschäftspartner sein.
- * Hinweis: "Marktteilnehmer" haben ein eigenes BO, welches sich von diesem BO ableitet.
- * Hier sollte daher keine Zuordnung zu Marktrollen erfolgen.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/bo/Geschaeftspartner.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Geschaeftspartner JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Geschaeftspartner.json>`_
- */
+* Mit diesem Objekt können Geschäftspartner übertragen werden.
+* Sowohl Unternehmen, als auch Privatpersonen können Geschäftspartner sein.
+* Hinweis: "Marktteilnehmer" haben ein eigenes BO, welches sich von diesem BO ableitet.
+* Hier sollte daher keine Zuordnung zu Marktrollen erfolgen.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/bo/Geschaeftspartner.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Geschaeftspartner JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Geschaeftspartner.json>`_
+*/
 public class Geschaeftspartner extends Geschaeftsobjekt {
     private final Typ typ = Typ.GESCHAEFTSPARTNER;
     private Adresse adresse;
@@ -73,43 +73,43 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
     }
 
     /**
-     * Adresse des Geschäftspartners
-     */
+    * Adresse des Geschäftspartners
+    */
     public Adresse getAdresse() {
         return adresse;
     }
 
     /**
-     * Adresse des Geschäftspartners
-     */
+    * Adresse des Geschäftspartners
+    */
     public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
 
     /**
-     * Amtsgericht bzw Handelsregistergericht, das die Handelsregisternummer herausgegeben hat
-     */
+    * Amtsgericht bzw Handelsregistergericht, das die Handelsregisternummer herausgegeben hat
+    */
     public String getAmtsgericht() {
         return amtsgericht;
     }
 
     /**
-     * Amtsgericht bzw Handelsregistergericht, das die Handelsregisternummer herausgegeben hat
-     */
+    * Amtsgericht bzw Handelsregistergericht, das die Handelsregisternummer herausgegeben hat
+    */
     public void setAmtsgericht(String amtsgericht) {
         this.amtsgericht = amtsgericht;
     }
 
     /**
-     * Mögliche Anrede der Person
-     */
+    * Mögliche Anrede der Person
+    */
     public Anrede getAnrede() {
         return anrede;
     }
 
     /**
-     * Mögliche Anrede der Person
-     */
+    * Mögliche Anrede der Person
+    */
     public void setAnrede(Anrede anrede) {
         this.anrede = anrede;
     }
@@ -123,43 +123,43 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
     }
 
     /**
-     * Rollen, die die Geschäftspartner inne haben (z.B. Interessent, Kunde)
-     */
+    * Rollen, die die Geschäftspartner inne haben (z.B. Interessent, Kunde)
+    */
     public List<Geschaeftspartnerrolle> getGeschaeftspartnerrollen() {
         return geschaeftspartnerrollen;
     }
 
     /**
-     * Rollen, die die Geschäftspartner inne haben (z.B. Interessent, Kunde)
-     */
+    * Rollen, die die Geschäftspartner inne haben (z.B. Interessent, Kunde)
+    */
     public void setGeschaeftspartnerrollen(List<Geschaeftspartnerrolle> geschaeftspartnerrollen) {
         this.geschaeftspartnerrollen = geschaeftspartnerrollen;
     }
 
     /**
-     * Die Gläubiger-ID welche im Zahlungsverkehr verwendet wird; Z.B. "DE 47116789"
-     */
+    * Die Gläubiger-ID welche im Zahlungsverkehr verwendet wird; Z.B. "DE 47116789"
+    */
     public String getGlaeubigerId() {
         return glaeubigerId;
     }
 
     /**
-     * Die Gläubiger-ID welche im Zahlungsverkehr verwendet wird; Z.B. "DE 47116789"
-     */
+    * Die Gläubiger-ID welche im Zahlungsverkehr verwendet wird; Z.B. "DE 47116789"
+    */
     public void setGlaeubigerId(String glaeubigerId) {
         this.glaeubigerId = glaeubigerId;
     }
 
     /**
-     * Handelsregisternummer des Geschäftspartners
-     */
+    * Handelsregisternummer des Geschäftspartners
+    */
     public String getHandelsregisternummer() {
         return handelsregisternummer;
     }
 
     /**
-     * Handelsregisternummer des Geschäftspartners
-     */
+    * Handelsregisternummer des Geschäftspartners
+    */
     public void setHandelsregisternummer(String handelsregisternummer) {
         this.handelsregisternummer = handelsregisternummer;
     }
@@ -173,43 +173,43 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
     }
 
     /**
-     * Kontaktwege des Geschäftspartners
-     */
+    * Kontaktwege des Geschäftspartners
+    */
     public List<Kontaktweg> getKontaktwege() {
         return kontaktwege;
     }
 
     /**
-     * Kontaktwege des Geschäftspartners
-     */
+    * Kontaktwege des Geschäftspartners
+    */
     public void setKontaktwege(List<Kontaktweg> kontaktwege) {
         this.kontaktwege = kontaktwege;
     }
 
     /**
-     * Nachname (Familienname) der Person
-     */
+    * Nachname (Familienname) der Person
+    */
     public String getNachname() {
         return nachname;
     }
 
     /**
-     * Nachname (Familienname) der Person
-     */
+    * Nachname (Familienname) der Person
+    */
     public void setNachname(String nachname) {
         this.nachname = nachname;
     }
 
     /**
-     * Kontaktwege des Geschäftspartners
-     */
+    * Kontaktwege des Geschäftspartners
+    */
     public String getOrganisationsname() {
         return organisationsname;
     }
 
     /**
-     * Kontaktwege des Geschäftspartners
-     */
+    * Kontaktwege des Geschäftspartners
+    */
     public void setOrganisationsname(String organisationsname) {
         this.organisationsname = organisationsname;
     }
@@ -223,57 +223,57 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
     }
 
     /**
-     * Möglicher Titel der Person
-     */
+    * Möglicher Titel der Person
+    */
     public Titel getTitel() {
         return titel;
     }
 
     /**
-     * Möglicher Titel der Person
-     */
+    * Möglicher Titel der Person
+    */
     public void setTitel(Titel titel) {
         this.titel = titel;
     }
 
     /**
-     * Die Steuer-ID des Geschäftspartners; Beispiel: "DE 813281825"
-     */
+    * Die Steuer-ID des Geschäftspartners; Beispiel: "DE 813281825"
+    */
     public String getUmsatzsteuerId() {
         return umsatzsteuerId;
     }
 
     /**
-     * Die Steuer-ID des Geschäftspartners; Beispiel: "DE 813281825"
-     */
+    * Die Steuer-ID des Geschäftspartners; Beispiel: "DE 813281825"
+    */
     public void setUmsatzsteuerId(String umsatzsteuerId) {
         this.umsatzsteuerId = umsatzsteuerId;
     }
 
     /**
-     * Vorname der Person
-     */
+    * Vorname der Person
+    */
     public String getVorname() {
         return vorname;
     }
 
     /**
-     * Vorname der Person
-     */
+    * Vorname der Person
+    */
     public void setVorname(String vorname) {
         this.vorname = vorname;
     }
 
     /**
-     * Internetseite des Marktpartners
-     */
+    * Internetseite des Marktpartners
+    */
     public String getWebsite() {
         return website;
     }
 
     /**
-     * Internetseite des Marktpartners
-     */
+    * Internetseite des Marktpartners
+    */
     public void setWebsite(String website) {
         this.website = website;
     }
@@ -304,52 +304,27 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
         }
 
         /**
-         * Adresse des Geschäftspartners
-         */
-        public Adresse getAdresse() {
-            return adresse;
-        }
-
-        /**
-         * Adresse des Geschäftspartners
-         */
+        * Adresse des Geschäftspartners
+        */
         public GeschaeftspartnerBuilder setAdresse(Adresse adresse) {
             this.adresse = adresse;
             return this;
         }
 
         /**
-         * Amtsgericht bzw Handelsregistergericht, das die Handelsregisternummer herausgegeben hat
-         */
-        public String getAmtsgericht() {
-            return amtsgericht;
-        }
-
-        /**
-         * Amtsgericht bzw Handelsregistergericht, das die Handelsregisternummer herausgegeben hat
-         */
+        * Amtsgericht bzw Handelsregistergericht, das die Handelsregisternummer herausgegeben hat
+        */
         public GeschaeftspartnerBuilder setAmtsgericht(String amtsgericht) {
             this.amtsgericht = amtsgericht;
             return this;
         }
 
         /**
-         * Mögliche Anrede der Person
-         */
-        public Anrede getAnrede() {
-            return anrede;
-        }
-
-        /**
-         * Mögliche Anrede der Person
-         */
+        * Mögliche Anrede der Person
+        */
         public GeschaeftspartnerBuilder setAnrede(Anrede anrede) {
             this.anrede = anrede;
             return this;
-        }
-
-        public List<Person> getAnsprechpartner() {
-            return ansprechpartner;
         }
 
         public GeschaeftspartnerBuilder setAnsprechpartner(List<Person> ansprechpartner) {
@@ -358,52 +333,27 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
         }
 
         /**
-         * Rollen, die die Geschäftspartner inne haben (z.B. Interessent, Kunde)
-         */
-        public List<Geschaeftspartnerrolle> getGeschaeftspartnerrollen() {
-            return geschaeftspartnerrollen;
-        }
-
-        /**
-         * Rollen, die die Geschäftspartner inne haben (z.B. Interessent, Kunde)
-         */
+        * Rollen, die die Geschäftspartner inne haben (z.B. Interessent, Kunde)
+        */
         public GeschaeftspartnerBuilder setGeschaeftspartnerrollen(List<Geschaeftspartnerrolle> geschaeftspartnerrollen) {
             this.geschaeftspartnerrollen = geschaeftspartnerrollen;
             return this;
         }
 
         /**
-         * Die Gläubiger-ID welche im Zahlungsverkehr verwendet wird; Z.B. "DE 47116789"
-         */
-        public String getGlaeubigerId() {
-            return glaeubigerId;
-        }
-
-        /**
-         * Die Gläubiger-ID welche im Zahlungsverkehr verwendet wird; Z.B. "DE 47116789"
-         */
+        * Die Gläubiger-ID welche im Zahlungsverkehr verwendet wird; Z.B. "DE 47116789"
+        */
         public GeschaeftspartnerBuilder setGlaeubigerId(String glaeubigerId) {
             this.glaeubigerId = glaeubigerId;
             return this;
         }
 
         /**
-         * Handelsregisternummer des Geschäftspartners
-         */
-        public String getHandelsregisternummer() {
-            return handelsregisternummer;
-        }
-
-        /**
-         * Handelsregisternummer des Geschäftspartners
-         */
+        * Handelsregisternummer des Geschäftspartners
+        */
         public GeschaeftspartnerBuilder setHandelsregisternummer(String handelsregisternummer) {
             this.handelsregisternummer = handelsregisternummer;
             return this;
-        }
-
-        public String getIndividuelleAnrede() {
-            return individuelleAnrede;
         }
 
         public GeschaeftspartnerBuilder setIndividuelleAnrede(String individuelleAnrede) {
@@ -412,52 +362,27 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
         }
 
         /**
-         * Kontaktwege des Geschäftspartners
-         */
-        public List<Kontaktweg> getKontaktwege() {
-            return kontaktwege;
-        }
-
-        /**
-         * Kontaktwege des Geschäftspartners
-         */
+        * Kontaktwege des Geschäftspartners
+        */
         public GeschaeftspartnerBuilder setKontaktwege(List<Kontaktweg> kontaktwege) {
             this.kontaktwege = kontaktwege;
             return this;
         }
 
         /**
-         * Nachname (Familienname) der Person
-         */
-        public String getNachname() {
-            return nachname;
-        }
-
-        /**
-         * Nachname (Familienname) der Person
-         */
+        * Nachname (Familienname) der Person
+        */
         public GeschaeftspartnerBuilder setNachname(String nachname) {
             this.nachname = nachname;
             return this;
         }
 
         /**
-         * Kontaktwege des Geschäftspartners
-         */
-        public String getOrganisationsname() {
-            return organisationsname;
-        }
-
-        /**
-         * Kontaktwege des Geschäftspartners
-         */
+        * Kontaktwege des Geschäftspartners
+        */
         public GeschaeftspartnerBuilder setOrganisationsname(String organisationsname) {
             this.organisationsname = organisationsname;
             return this;
-        }
-
-        public Organisationstyp getOrganisationstyp() {
-            return organisationstyp;
         }
 
         public GeschaeftspartnerBuilder setOrganisationstyp(Organisationstyp organisationstyp) {
@@ -466,60 +391,32 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
         }
 
         /**
-         * Möglicher Titel der Person
-         */
-        public Titel getTitel() {
-            return titel;
-        }
-
-        /**
-         * Möglicher Titel der Person
-         */
+        * Möglicher Titel der Person
+        */
         public GeschaeftspartnerBuilder setTitel(Titel titel) {
             this.titel = titel;
             return this;
         }
 
         /**
-         * Die Steuer-ID des Geschäftspartners; Beispiel: "DE 813281825"
-         */
-        public String getUmsatzsteuerId() {
-            return umsatzsteuerId;
-        }
-
-        /**
-         * Die Steuer-ID des Geschäftspartners; Beispiel: "DE 813281825"
-         */
+        * Die Steuer-ID des Geschäftspartners; Beispiel: "DE 813281825"
+        */
         public GeschaeftspartnerBuilder setUmsatzsteuerId(String umsatzsteuerId) {
             this.umsatzsteuerId = umsatzsteuerId;
             return this;
         }
 
         /**
-         * Vorname der Person
-         */
-        public String getVorname() {
-            return vorname;
-        }
-
-        /**
-         * Vorname der Person
-         */
+        * Vorname der Person
+        */
         public GeschaeftspartnerBuilder setVorname(String vorname) {
             this.vorname = vorname;
             return this;
         }
 
         /**
-         * Internetseite des Marktpartners
-         */
-        public String getWebsite() {
-            return website;
-        }
-
-        /**
-         * Internetseite des Marktpartners
-         */
+        * Internetseite des Marktpartners
+        */
         public GeschaeftspartnerBuilder setWebsite(String website) {
             this.website = website;
             return this;

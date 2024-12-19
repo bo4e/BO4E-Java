@@ -6,16 +6,16 @@ import bo4e.enums.Mengeneinheit;
 import java.util.List;
 
 /**
- * Abbildung einer Menge mit Wert und Einheit.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Menge.svg" type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Menge JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Menge.json>`_
- */
+* Abbildung einer Menge mit Wert und Einheit.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Menge.svg" type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Menge JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Menge.json>`_
+*/
 public class Menge extends COM {
     private Mengeneinheit einheit;
     private Double wert;
@@ -30,29 +30,29 @@ public class Menge extends COM {
     }
 
     /**
-     * Gibt die Einheit zum jeweiligen Wert an
-     */
+    * Gibt die Einheit zum jeweiligen Wert an
+    */
     public Mengeneinheit getEinheit() {
         return einheit;
     }
 
     /**
-     * Gibt die Einheit zum jeweiligen Wert an
-     */
+    * Gibt die Einheit zum jeweiligen Wert an
+    */
     public void setEinheit(Mengeneinheit einheit) {
         this.einheit = einheit;
     }
 
     /**
-     * Gibt den absoluten Wert der Menge an
-     */
+    * Gibt den absoluten Wert der Menge an
+    */
     public Double getWert() {
         return wert;
     }
 
     /**
-     * Gibt den absoluten Wert der Menge an
-     */
+    * Gibt den absoluten Wert der Menge an
+    */
     public void setWert(Double wert) {
         this.wert = wert;
     }
@@ -69,30 +69,16 @@ public class Menge extends COM {
         }
 
         /**
-         * Gibt die Einheit zum jeweiligen Wert an
-         */
-        public Mengeneinheit getEinheit() {
-            return einheit;
-        }
-
-        /**
-         * Gibt die Einheit zum jeweiligen Wert an
-         */
+        * Gibt die Einheit zum jeweiligen Wert an
+        */
         public MengeBuilder setEinheit(Mengeneinheit einheit) {
             this.einheit = einheit;
             return this;
         }
 
         /**
-         * Gibt den absoluten Wert der Menge an
-         */
-        public Double getWert() {
-            return wert;
-        }
-
-        /**
-         * Gibt den absoluten Wert der Menge an
-         */
+        * Gibt den absoluten Wert der Menge an
+        */
         public MengeBuilder setWert(Double wert) {
             this.wert = wert;
             return this;

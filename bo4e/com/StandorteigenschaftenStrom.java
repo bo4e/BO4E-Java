@@ -5,17 +5,17 @@ import bo4e.ZusatzAttribut;
 import java.util.List;
 
 /**
- * Standorteigenschaften der Sparte Strom
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/StandorteigenschaftenStrom.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `StandorteigenschaftenStrom JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_
- */
+* Standorteigenschaften der Sparte Strom
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/StandorteigenschaftenStrom.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `StandorteigenschaftenStrom JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_
+*/
 public class StandorteigenschaftenStrom extends COM {
     private String bilanzierungsgebietEic;
     private String regelzone;
@@ -32,43 +32,43 @@ public class StandorteigenschaftenStrom extends COM {
     }
 
     /**
-     * Die EIC-Nummer des Bilanzierungsgebietes
-     */
+    * Die EIC-Nummer des Bilanzierungsgebietes
+    */
     public String getBilanzierungsgebietEic() {
         return bilanzierungsgebietEic;
     }
 
     /**
-     * Die EIC-Nummer des Bilanzierungsgebietes
-     */
+    * Die EIC-Nummer des Bilanzierungsgebietes
+    */
     public void setBilanzierungsgebietEic(String bilanzierungsgebietEic) {
         this.bilanzierungsgebietEic = bilanzierungsgebietEic;
     }
 
     /**
-     * Der Name der Regelzone
-     */
+    * Der Name der Regelzone
+    */
     public String getRegelzone() {
         return regelzone;
     }
 
     /**
-     * Der Name der Regelzone
-     */
+    * Der Name der Regelzone
+    */
     public void setRegelzone(String regelzone) {
         this.regelzone = regelzone;
     }
 
     /**
-     * De EIC-Nummer der Regelzone
-     */
+    * De EIC-Nummer der Regelzone
+    */
     public String getRegelzoneEic() {
         return regelzoneEic;
     }
 
     /**
-     * De EIC-Nummer der Regelzone
-     */
+    * De EIC-Nummer der Regelzone
+    */
     public void setRegelzoneEic(String regelzoneEic) {
         this.regelzoneEic = regelzoneEic;
     }
@@ -86,45 +86,24 @@ public class StandorteigenschaftenStrom extends COM {
         }
 
         /**
-         * Die EIC-Nummer des Bilanzierungsgebietes
-         */
-        public String getBilanzierungsgebietEic() {
-            return bilanzierungsgebietEic;
-        }
-
-        /**
-         * Die EIC-Nummer des Bilanzierungsgebietes
-         */
+        * Die EIC-Nummer des Bilanzierungsgebietes
+        */
         public StandorteigenschaftenStromBuilder setBilanzierungsgebietEic(String bilanzierungsgebietEic) {
             this.bilanzierungsgebietEic = bilanzierungsgebietEic;
             return this;
         }
 
         /**
-         * Der Name der Regelzone
-         */
-        public String getRegelzone() {
-            return regelzone;
-        }
-
-        /**
-         * Der Name der Regelzone
-         */
+        * Der Name der Regelzone
+        */
         public StandorteigenschaftenStromBuilder setRegelzone(String regelzone) {
             this.regelzone = regelzone;
             return this;
         }
 
         /**
-         * De EIC-Nummer der Regelzone
-         */
-        public String getRegelzoneEic() {
-            return regelzoneEic;
-        }
-
-        /**
-         * De EIC-Nummer der Regelzone
-         */
+        * De EIC-Nummer der Regelzone
+        */
         public StandorteigenschaftenStromBuilder setRegelzoneEic(String regelzoneEic) {
             this.regelzoneEic = regelzoneEic;
             return this;

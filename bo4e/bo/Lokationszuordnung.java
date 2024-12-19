@@ -7,20 +7,20 @@ import bo4e.enums.Typ;
 import java.util.List;
 
 /**
- * Modell für die Abbildung der Referenz auf die Lokationsbündelstruktur. Diese gibt an
- * welche Marktlokationen,
- * Messlokationen, Netzlokationen, technische/steuerbaren Ressourcen an einer Lokation
- * vorhanden sind.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/bo/Lokationszuordnung.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Lokationszuordnung JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Lokationszuordnung.json>`_
- */
+* Modell für die Abbildung der Referenz auf die Lokationsbündelstruktur. Diese gibt an
+* welche Marktlokationen,
+* Messlokationen, Netzlokationen, technische/steuerbaren Ressourcen an einer Lokation
+* vorhanden sind.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/bo/Lokationszuordnung.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Lokationszuordnung JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Lokationszuordnung.json>`_
+*/
 public class Lokationszuordnung extends Geschaeftsobjekt {
     private final Typ typ = Typ.LOKATIONSZUORDNUNG;
     private Zeitspanne gueltigkeit;
@@ -52,115 +52,115 @@ public class Lokationszuordnung extends Geschaeftsobjekt {
     }
 
     /**
-     * Zeitspanne der Gültigkeit
-     */
+    * Zeitspanne der Gültigkeit
+    */
     public Zeitspanne getGueltigkeit() {
         return gueltigkeit;
     }
 
     /**
-     * Zeitspanne der Gültigkeit
-     */
+    * Zeitspanne der Gültigkeit
+    */
     public void setGueltigkeit(Zeitspanne gueltigkeit) {
         this.gueltigkeit = gueltigkeit;
     }
 
     /**
-     * Code, der angibt wie die Lokationsbündelstruktur zusammengesetzt ist (zu finden unter
-     * "Codeliste der Lokationsbündelstrukturen" auf https://www.edi-energy.de/index.php?id=38)
-     */
+    * Code, der angibt wie die Lokationsbündelstruktur zusammengesetzt ist (zu finden unter
+    * "Codeliste der Lokationsbündelstrukturen" auf https://www.edi-energy.de/index.php?id=38)
+    */
     public String getLokationsbuendelcode() {
         return lokationsbuendelcode;
     }
 
     /**
-     * Code, der angibt wie die Lokationsbündelstruktur zusammengesetzt ist (zu finden unter
-     * "Codeliste der Lokationsbündelstrukturen" auf https://www.edi-energy.de/index.php?id=38)
-     */
+    * Code, der angibt wie die Lokationsbündelstruktur zusammengesetzt ist (zu finden unter
+    * "Codeliste der Lokationsbündelstrukturen" auf https://www.edi-energy.de/index.php?id=38)
+    */
     public void setLokationsbuendelcode(String lokationsbuendelcode) {
         this.lokationsbuendelcode = lokationsbuendelcode;
     }
 
     /**
-     * Liste mit referenzierten Marktlokationen
-     */
+    * Liste mit referenzierten Marktlokationen
+    */
     public List<Marktlokation> getMarktlokationen() {
         return marktlokationen;
     }
 
     /**
-     * Liste mit referenzierten Marktlokationen
-     */
+    * Liste mit referenzierten Marktlokationen
+    */
     public void setMarktlokationen(List<Marktlokation> marktlokationen) {
         this.marktlokationen = marktlokationen;
     }
 
     /**
-     * Liste mit referenzierten Messlokationen
-     */
+    * Liste mit referenzierten Messlokationen
+    */
     public List<Messlokation> getMesslokationen() {
         return messlokationen;
     }
 
     /**
-     * Liste mit referenzierten Messlokationen
-     */
+    * Liste mit referenzierten Messlokationen
+    */
     public void setMesslokationen(List<Messlokation> messlokationen) {
         this.messlokationen = messlokationen;
     }
 
     /**
-     * Liste mit referenzierten Netzlokationen
-     */
+    * Liste mit referenzierten Netzlokationen
+    */
     public List<Netzlokation> getNetzlokationen() {
         return netzlokationen;
     }
 
     /**
-     * Liste mit referenzierten Netzlokationen
-     */
+    * Liste mit referenzierten Netzlokationen
+    */
     public void setNetzlokationen(List<Netzlokation> netzlokationen) {
         this.netzlokationen = netzlokationen;
     }
 
     /**
-     * Liste mit referenzierten steuerbaren Ressourcen
-     */
+    * Liste mit referenzierten steuerbaren Ressourcen
+    */
     public List<SteuerbareRessource> getSteuerbareRessourcen() {
         return steuerbareRessourcen;
     }
 
     /**
-     * Liste mit referenzierten steuerbaren Ressourcen
-     */
+    * Liste mit referenzierten steuerbaren Ressourcen
+    */
     public void setSteuerbareRessourcen(List<SteuerbareRessource> steuerbareRessourcen) {
         this.steuerbareRessourcen = steuerbareRessourcen;
     }
 
     /**
-     * Liste mit referenzierten technischen Ressourcen
-     */
+    * Liste mit referenzierten technischen Ressourcen
+    */
     public List<TechnischeRessource> getTechnischeRessourcen() {
         return technischeRessourcen;
     }
 
     /**
-     * Liste mit referenzierten technischen Ressourcen
-     */
+    * Liste mit referenzierten technischen Ressourcen
+    */
     public void setTechnischeRessourcen(List<TechnischeRessource> technischeRessourcen) {
         this.technischeRessourcen = technischeRessourcen;
     }
 
     /**
-     * Verknüpfungsrichtung z.B. Malo-Melo [TODO: Eventuell anderer Datentyp]
-     */
+    * Verknüpfungsrichtung z.B. Malo-Melo [TODO: Eventuell anderer Datentyp]
+    */
     public String getZuordnungstyp() {
         return zuordnungstyp;
     }
 
     /**
-     * Verknüpfungsrichtung z.B. Malo-Melo [TODO: Eventuell anderer Datentyp]
-     */
+    * Verknüpfungsrichtung z.B. Malo-Melo [TODO: Eventuell anderer Datentyp]
+    */
     public void setZuordnungstyp(String zuordnungstyp) {
         this.zuordnungstyp = zuordnungstyp;
     }
@@ -183,122 +183,65 @@ public class Lokationszuordnung extends Geschaeftsobjekt {
         }
 
         /**
-         * Zeitspanne der Gültigkeit
-         */
-        public Zeitspanne getGueltigkeit() {
-            return gueltigkeit;
-        }
-
-        /**
-         * Zeitspanne der Gültigkeit
-         */
+        * Zeitspanne der Gültigkeit
+        */
         public LokationszuordnungBuilder setGueltigkeit(Zeitspanne gueltigkeit) {
             this.gueltigkeit = gueltigkeit;
             return this;
         }
 
         /**
-         * Code, der angibt wie die Lokationsbündelstruktur zusammengesetzt ist (zu finden unter
-         * "Codeliste der Lokationsbündelstrukturen" auf https://www.edi-energy.de/index.php?id=38)
-         */
-        public String getLokationsbuendelcode() {
-            return lokationsbuendelcode;
-        }
-
-        /**
-         * Code, der angibt wie die Lokationsbündelstruktur zusammengesetzt ist (zu finden unter
-         * "Codeliste der Lokationsbündelstrukturen" auf https://www.edi-energy.de/index.php?id=38)
-         */
+        * Code, der angibt wie die Lokationsbündelstruktur zusammengesetzt ist (zu finden unter
+        * "Codeliste der Lokationsbündelstrukturen" auf https://www.edi-energy.de/index.php?id=38)
+        */
         public LokationszuordnungBuilder setLokationsbuendelcode(String lokationsbuendelcode) {
             this.lokationsbuendelcode = lokationsbuendelcode;
             return this;
         }
 
         /**
-         * Liste mit referenzierten Marktlokationen
-         */
-        public List<Marktlokation> getMarktlokationen() {
-            return marktlokationen;
-        }
-
-        /**
-         * Liste mit referenzierten Marktlokationen
-         */
+        * Liste mit referenzierten Marktlokationen
+        */
         public LokationszuordnungBuilder setMarktlokationen(List<Marktlokation> marktlokationen) {
             this.marktlokationen = marktlokationen;
             return this;
         }
 
         /**
-         * Liste mit referenzierten Messlokationen
-         */
-        public List<Messlokation> getMesslokationen() {
-            return messlokationen;
-        }
-
-        /**
-         * Liste mit referenzierten Messlokationen
-         */
+        * Liste mit referenzierten Messlokationen
+        */
         public LokationszuordnungBuilder setMesslokationen(List<Messlokation> messlokationen) {
             this.messlokationen = messlokationen;
             return this;
         }
 
         /**
-         * Liste mit referenzierten Netzlokationen
-         */
-        public List<Netzlokation> getNetzlokationen() {
-            return netzlokationen;
-        }
-
-        /**
-         * Liste mit referenzierten Netzlokationen
-         */
+        * Liste mit referenzierten Netzlokationen
+        */
         public LokationszuordnungBuilder setNetzlokationen(List<Netzlokation> netzlokationen) {
             this.netzlokationen = netzlokationen;
             return this;
         }
 
         /**
-         * Liste mit referenzierten steuerbaren Ressourcen
-         */
-        public List<SteuerbareRessource> getSteuerbareRessourcen() {
-            return steuerbareRessourcen;
-        }
-
-        /**
-         * Liste mit referenzierten steuerbaren Ressourcen
-         */
+        * Liste mit referenzierten steuerbaren Ressourcen
+        */
         public LokationszuordnungBuilder setSteuerbareRessourcen(List<SteuerbareRessource> steuerbareRessourcen) {
             this.steuerbareRessourcen = steuerbareRessourcen;
             return this;
         }
 
         /**
-         * Liste mit referenzierten technischen Ressourcen
-         */
-        public List<TechnischeRessource> getTechnischeRessourcen() {
-            return technischeRessourcen;
-        }
-
-        /**
-         * Liste mit referenzierten technischen Ressourcen
-         */
+        * Liste mit referenzierten technischen Ressourcen
+        */
         public LokationszuordnungBuilder setTechnischeRessourcen(List<TechnischeRessource> technischeRessourcen) {
             this.technischeRessourcen = technischeRessourcen;
             return this;
         }
 
         /**
-         * Verknüpfungsrichtung z.B. Malo-Melo [TODO: Eventuell anderer Datentyp]
-         */
-        public String getZuordnungstyp() {
-            return zuordnungstyp;
-        }
-
-        /**
-         * Verknüpfungsrichtung z.B. Malo-Melo [TODO: Eventuell anderer Datentyp]
-         */
+        * Verknüpfungsrichtung z.B. Malo-Melo [TODO: Eventuell anderer Datentyp]
+        */
         public LokationszuordnungBuilder setZuordnungstyp(String zuordnungstyp) {
             this.zuordnungstyp = zuordnungstyp;
             return this;

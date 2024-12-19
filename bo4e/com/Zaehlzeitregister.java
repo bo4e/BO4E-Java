@@ -5,19 +5,19 @@ import bo4e.ZusatzAttribut;
 import java.util.List;
 
 /**
- * Mit dieser Komponente werden Zählzeitregister modelliert. Ein Zählzeitregister beschreibt
- * eine erweiterte Definition der Zählzeit
- * in Bezug auf ein Register. Dabei werden alle Codes dazu vom Netzbetreiber vergeben.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Zaehlzeitregister.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Zaehlzeitregister JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zaehlzeitregister.json>`_
- */
+* Mit dieser Komponente werden Zählzeitregister modelliert. Ein Zählzeitregister beschreibt
+* eine erweiterte Definition der Zählzeit
+* in Bezug auf ein Register. Dabei werden alle Codes dazu vom Netzbetreiber vergeben.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Zaehlzeitregister.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Zaehlzeitregister JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zaehlzeitregister.json>`_
+*/
 public class Zaehlzeitregister extends COM {
     private Boolean istSchwachlastfaehig;
     private String zaehlzeitDefinition;
@@ -34,43 +34,43 @@ public class Zaehlzeitregister extends COM {
     }
 
     /**
-     * Zählzeitregister
-     */
+    * Zählzeitregister
+    */
     public Boolean getIstSchwachlastfaehig() {
         return istSchwachlastfaehig;
     }
 
     /**
-     * Zählzeitregister
-     */
+    * Zählzeitregister
+    */
     public void setIstSchwachlastfaehig(Boolean istSchwachlastfaehig) {
         this.istSchwachlastfaehig = istSchwachlastfaehig;
     }
 
     /**
-     * Zählzeitdefinition
-     */
+    * Zählzeitdefinition
+    */
     public String getZaehlzeitDefinition() {
         return zaehlzeitDefinition;
     }
 
     /**
-     * Zählzeitdefinition
-     */
+    * Zählzeitdefinition
+    */
     public void setZaehlzeitDefinition(String zaehlzeitDefinition) {
         this.zaehlzeitDefinition = zaehlzeitDefinition;
     }
 
     /**
-     * Zählzeitdefinition
-     */
+    * Zählzeitdefinition
+    */
     public String getZaehlzeitRegister() {
         return zaehlzeitRegister;
     }
 
     /**
-     * Zählzeitdefinition
-     */
+    * Zählzeitdefinition
+    */
     public void setZaehlzeitRegister(String zaehlzeitRegister) {
         this.zaehlzeitRegister = zaehlzeitRegister;
     }
@@ -88,45 +88,24 @@ public class Zaehlzeitregister extends COM {
         }
 
         /**
-         * Zählzeitregister
-         */
-        public Boolean getIstSchwachlastfaehig() {
-            return istSchwachlastfaehig;
-        }
-
-        /**
-         * Zählzeitregister
-         */
+        * Zählzeitregister
+        */
         public ZaehlzeitregisterBuilder setIstSchwachlastfaehig(Boolean istSchwachlastfaehig) {
             this.istSchwachlastfaehig = istSchwachlastfaehig;
             return this;
         }
 
         /**
-         * Zählzeitdefinition
-         */
-        public String getZaehlzeitDefinition() {
-            return zaehlzeitDefinition;
-        }
-
-        /**
-         * Zählzeitdefinition
-         */
+        * Zählzeitdefinition
+        */
         public ZaehlzeitregisterBuilder setZaehlzeitDefinition(String zaehlzeitDefinition) {
             this.zaehlzeitDefinition = zaehlzeitDefinition;
             return this;
         }
 
         /**
-         * Zählzeitdefinition
-         */
-        public String getZaehlzeitRegister() {
-            return zaehlzeitRegister;
-        }
-
-        /**
-         * Zählzeitdefinition
-         */
+        * Zählzeitdefinition
+        */
         public ZaehlzeitregisterBuilder setZaehlzeitRegister(String zaehlzeitRegister) {
             this.zaehlzeitRegister = zaehlzeitRegister;
             return this;

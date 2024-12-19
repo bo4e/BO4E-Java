@@ -8,17 +8,17 @@ import bo4e.enums.Typ;
 import java.util.List;
 
 /**
- * Modelliert die regionalen und spartenspezifischen Eigenschaften einer gegebenen Adresse.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/bo/Standorteigenschaften.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Standorteigenschaften JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Standorteigenschaften.json>`_
- */
+* Modelliert die regionalen und spartenspezifischen Eigenschaften einer gegebenen Adresse.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/bo/Standorteigenschaften.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Standorteigenschaften JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Standorteigenschaften.json>`_
+*/
 public class Standorteigenschaften extends Geschaeftsobjekt {
     private final Typ typ = Typ.STANDORTEIGENSCHAFTEN;
     private StandorteigenschaftenGas eigenschaftenGas;
@@ -38,29 +38,29 @@ public class Standorteigenschaften extends Geschaeftsobjekt {
     }
 
     /**
-     * Eigenschaften zur Sparte Gas
-     */
+    * Eigenschaften zur Sparte Gas
+    */
     public StandorteigenschaftenGas getEigenschaftenGas() {
         return eigenschaftenGas;
     }
 
     /**
-     * Eigenschaften zur Sparte Gas
-     */
+    * Eigenschaften zur Sparte Gas
+    */
     public void setEigenschaftenGas(StandorteigenschaftenGas eigenschaftenGas) {
         this.eigenschaftenGas = eigenschaftenGas;
     }
 
     /**
-     * Eigenschaften zur Sparte Strom
-     */
+    * Eigenschaften zur Sparte Strom
+    */
     public List<StandorteigenschaftenStrom> getEigenschaftenStrom() {
         return eigenschaftenStrom;
     }
 
     /**
-     * Eigenschaften zur Sparte Strom
-     */
+    * Eigenschaften zur Sparte Strom
+    */
     public void setEigenschaftenStrom(List<StandorteigenschaftenStrom> eigenschaftenStrom) {
         this.eigenschaftenStrom = eigenschaftenStrom;
     }
@@ -77,30 +77,16 @@ public class Standorteigenschaften extends Geschaeftsobjekt {
         }
 
         /**
-         * Eigenschaften zur Sparte Gas
-         */
-        public StandorteigenschaftenGas getEigenschaftenGas() {
-            return eigenschaftenGas;
-        }
-
-        /**
-         * Eigenschaften zur Sparte Gas
-         */
+        * Eigenschaften zur Sparte Gas
+        */
         public StandorteigenschaftenBuilder setEigenschaftenGas(StandorteigenschaftenGas eigenschaftenGas) {
             this.eigenschaftenGas = eigenschaftenGas;
             return this;
         }
 
         /**
-         * Eigenschaften zur Sparte Strom
-         */
-        public List<StandorteigenschaftenStrom> getEigenschaftenStrom() {
-            return eigenschaftenStrom;
-        }
-
-        /**
-         * Eigenschaften zur Sparte Strom
-         */
+        * Eigenschaften zur Sparte Strom
+        */
         public StandorteigenschaftenBuilder setEigenschaftenStrom(List<StandorteigenschaftenStrom> eigenschaftenStrom) {
             this.eigenschaftenStrom = eigenschaftenStrom;
             return this;

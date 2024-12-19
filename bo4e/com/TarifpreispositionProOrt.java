@@ -5,17 +5,17 @@ import bo4e.ZusatzAttribut;
 import java.util.List;
 
 /**
- * Mit dieser Komponente können Tarifpreise verschiedener Typen abgebildet werden
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/TarifpreispositionProOrt.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `TarifpreispositionProOrt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/TarifpreispositionProOrt.json>`_
- */
+* Mit dieser Komponente können Tarifpreise verschiedener Typen abgebildet werden
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/TarifpreispositionProOrt.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `TarifpreispositionProOrt JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/TarifpreispositionProOrt.json>`_
+*/
 public class TarifpreispositionProOrt extends COM {
     private String netznr;
     private String ort;
@@ -34,43 +34,43 @@ public class TarifpreispositionProOrt extends COM {
     }
 
     /**
-     * ene't-Netznummer des Netzes in dem der Preis gilt
-     */
+    * ene't-Netznummer des Netzes in dem der Preis gilt
+    */
     public String getNetznr() {
         return netznr;
     }
 
     /**
-     * ene't-Netznummer des Netzes in dem der Preis gilt
-     */
+    * ene't-Netznummer des Netzes in dem der Preis gilt
+    */
     public void setNetznr(String netznr) {
         this.netznr = netznr;
     }
 
     /**
-     * Ort für den der Preis gilt
-     */
+    * Ort für den der Preis gilt
+    */
     public String getOrt() {
         return ort;
     }
 
     /**
-     * Ort für den der Preis gilt
-     */
+    * Ort für den der Preis gilt
+    */
     public void setOrt(String ort) {
         this.ort = ort;
     }
 
     /**
-     * Postleitzahl des Ortes für den der Preis gilt
-     */
+    * Postleitzahl des Ortes für den der Preis gilt
+    */
     public String getPostleitzahl() {
         return postleitzahl;
     }
 
     /**
-     * Postleitzahl des Ortes für den der Preis gilt
-     */
+    * Postleitzahl des Ortes für den der Preis gilt
+    */
     public void setPostleitzahl(String postleitzahl) {
         this.postleitzahl = postleitzahl;
     }
@@ -97,52 +97,27 @@ public class TarifpreispositionProOrt extends COM {
         }
 
         /**
-         * ene't-Netznummer des Netzes in dem der Preis gilt
-         */
-        public String getNetznr() {
-            return netznr;
-        }
-
-        /**
-         * ene't-Netznummer des Netzes in dem der Preis gilt
-         */
+        * ene't-Netznummer des Netzes in dem der Preis gilt
+        */
         public TarifpreispositionProOrtBuilder setNetznr(String netznr) {
             this.netznr = netznr;
             return this;
         }
 
         /**
-         * Ort für den der Preis gilt
-         */
-        public String getOrt() {
-            return ort;
-        }
-
-        /**
-         * Ort für den der Preis gilt
-         */
+        * Ort für den der Preis gilt
+        */
         public TarifpreispositionProOrtBuilder setOrt(String ort) {
             this.ort = ort;
             return this;
         }
 
         /**
-         * Postleitzahl des Ortes für den der Preis gilt
-         */
-        public String getPostleitzahl() {
-            return postleitzahl;
-        }
-
-        /**
-         * Postleitzahl des Ortes für den der Preis gilt
-         */
+        * Postleitzahl des Ortes für den der Preis gilt
+        */
         public TarifpreispositionProOrtBuilder setPostleitzahl(String postleitzahl) {
             this.postleitzahl = postleitzahl;
             return this;
-        }
-
-        public List<TarifpreisstaffelProOrt> getPreisstaffeln() {
-            return preisstaffeln;
         }
 
         public TarifpreispositionProOrtBuilder setPreisstaffeln(List<TarifpreisstaffelProOrt> preisstaffeln) {

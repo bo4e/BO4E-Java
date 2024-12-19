@@ -5,18 +5,18 @@ import bo4e.ZusatzAttribut;
 import java.util.List;
 
 /**
- * Die Sigmoid-Funktion, beispielsweise zur Berechnung eines Leistungspreises hat die Form:
- * LP=A/(1+(P/B)^C)+D
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Sigmoidparameter.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Sigmoidparameter JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Sigmoidparameter.json>`_
- */
+* Die Sigmoid-Funktion, beispielsweise zur Berechnung eines Leistungspreises hat die Form:
+* LP=A/(1+(P/B)^C)+D
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Sigmoidparameter.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Sigmoidparameter JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Sigmoidparameter.json>`_
+*/
 public class Sigmoidparameter extends COM {
     private Double a;
     private Double b;
@@ -35,57 +35,57 @@ public class Sigmoidparameter extends COM {
     }
 
     /**
-     * Briefmarke Ortsverteilnetz (EUR/kWh)
-     */
+    * Briefmarke Ortsverteilnetz (EUR/kWh)
+    */
     public Double getA() {
         return a;
     }
 
     /**
-     * Briefmarke Ortsverteilnetz (EUR/kWh)
-     */
+    * Briefmarke Ortsverteilnetz (EUR/kWh)
+    */
     public void setA(Double a) {
         this.a = a;
     }
 
     /**
-     * Briefmarke Ortsverteilnetz (EUR/kWh)
-     */
+    * Briefmarke Ortsverteilnetz (EUR/kWh)
+    */
     public Double getB() {
         return b;
     }
 
     /**
-     * Briefmarke Ortsverteilnetz (EUR/kWh)
-     */
+    * Briefmarke Ortsverteilnetz (EUR/kWh)
+    */
     public void setB(Double b) {
         this.b = b;
     }
 
     /**
-     * Wendepunkt für die bepreiste Menge (kW)
-     */
+    * Wendepunkt für die bepreiste Menge (kW)
+    */
     public Double getC() {
         return c;
     }
 
     /**
-     * Wendepunkt für die bepreiste Menge (kW)
-     */
+    * Wendepunkt für die bepreiste Menge (kW)
+    */
     public void setC(Double c) {
         this.c = c;
     }
 
     /**
-     * Exponent (einheitenlos)
-     */
+    * Exponent (einheitenlos)
+    */
     public Double getD() {
         return d;
     }
 
     /**
-     * Exponent (einheitenlos)
-     */
+    * Exponent (einheitenlos)
+    */
     public void setD(Double d) {
         this.d = d;
     }
@@ -104,60 +104,32 @@ public class Sigmoidparameter extends COM {
         }
 
         /**
-         * Briefmarke Ortsverteilnetz (EUR/kWh)
-         */
-        public Double getA() {
-            return a;
-        }
-
-        /**
-         * Briefmarke Ortsverteilnetz (EUR/kWh)
-         */
+        * Briefmarke Ortsverteilnetz (EUR/kWh)
+        */
         public SigmoidparameterBuilder setA(Double a) {
             this.a = a;
             return this;
         }
 
         /**
-         * Briefmarke Ortsverteilnetz (EUR/kWh)
-         */
-        public Double getB() {
-            return b;
-        }
-
-        /**
-         * Briefmarke Ortsverteilnetz (EUR/kWh)
-         */
+        * Briefmarke Ortsverteilnetz (EUR/kWh)
+        */
         public SigmoidparameterBuilder setB(Double b) {
             this.b = b;
             return this;
         }
 
         /**
-         * Wendepunkt für die bepreiste Menge (kW)
-         */
-        public Double getC() {
-            return c;
-        }
-
-        /**
-         * Wendepunkt für die bepreiste Menge (kW)
-         */
+        * Wendepunkt für die bepreiste Menge (kW)
+        */
         public SigmoidparameterBuilder setC(Double c) {
             this.c = c;
             return this;
         }
 
         /**
-         * Exponent (einheitenlos)
-         */
-        public Double getD() {
-            return d;
-        }
-
-        /**
-         * Exponent (einheitenlos)
-         */
+        * Exponent (einheitenlos)
+        */
         public SigmoidparameterBuilder setD(Double d) {
             this.d = d;
             return this;

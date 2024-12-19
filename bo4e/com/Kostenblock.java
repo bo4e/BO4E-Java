@@ -5,16 +5,16 @@ import bo4e.ZusatzAttribut;
 import java.util.List;
 
 /**
- * Mit dieser Komponente werden mehrere Kostenpositionen zusammengefasst.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Kostenblock.svg" type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Kostenblock JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Kostenblock.json>`_
- */
+* Mit dieser Komponente werden mehrere Kostenpositionen zusammengefasst.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Kostenblock.svg" type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Kostenblock JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Kostenblock.json>`_
+*/
 public class Kostenblock extends COM {
     private String kostenblockbezeichnung;
     private List<Kostenposition> kostenpositionen;
@@ -31,47 +31,47 @@ public class Kostenblock extends COM {
     }
 
     /**
-     * Bezeichnung für einen Kostenblock. Z.B. Netzkosten, Messkosten, Umlagen, etc.
-     */
+    * Bezeichnung für einen Kostenblock. Z.B. Netzkosten, Messkosten, Umlagen, etc.
+    */
     public String getKostenblockbezeichnung() {
         return kostenblockbezeichnung;
     }
 
     /**
-     * Bezeichnung für einen Kostenblock. Z.B. Netzkosten, Messkosten, Umlagen, etc.
-     */
+    * Bezeichnung für einen Kostenblock. Z.B. Netzkosten, Messkosten, Umlagen, etc.
+    */
     public void setKostenblockbezeichnung(String kostenblockbezeichnung) {
         this.kostenblockbezeichnung = kostenblockbezeichnung;
     }
 
     /**
-     * Hier sind die Details zu einer Kostenposition aufgeführt. Z.B.:
-     * Alliander Netz Heinsberg GmbH, 01.02.2018, 31.12.2018, Arbeitspreis HT, 3.660 kWh, 5,8200
-     * ct/kWh, 213,01 €
-     */
+    * Hier sind die Details zu einer Kostenposition aufgeführt. Z.B.:
+    * Alliander Netz Heinsberg GmbH, 01.02.2018, 31.12.2018, Arbeitspreis HT, 3.660 kWh, 5,8200
+    * ct/kWh, 213,01 €
+    */
     public List<Kostenposition> getKostenpositionen() {
         return kostenpositionen;
     }
 
     /**
-     * Hier sind die Details zu einer Kostenposition aufgeführt. Z.B.:
-     * Alliander Netz Heinsberg GmbH, 01.02.2018, 31.12.2018, Arbeitspreis HT, 3.660 kWh, 5,8200
-     * ct/kWh, 213,01 €
-     */
+    * Hier sind die Details zu einer Kostenposition aufgeführt. Z.B.:
+    * Alliander Netz Heinsberg GmbH, 01.02.2018, 31.12.2018, Arbeitspreis HT, 3.660 kWh, 5,8200
+    * ct/kWh, 213,01 €
+    */
     public void setKostenpositionen(List<Kostenposition> kostenpositionen) {
         this.kostenpositionen = kostenpositionen;
     }
 
     /**
-     * Die Summe aller Kostenpositionen dieses Blocks
-     */
+    * Die Summe aller Kostenpositionen dieses Blocks
+    */
     public Betrag getSummeKostenblock() {
         return summeKostenblock;
     }
 
     /**
-     * Die Summe aller Kostenpositionen dieses Blocks
-     */
+    * Die Summe aller Kostenpositionen dieses Blocks
+    */
     public void setSummeKostenblock(Betrag summeKostenblock) {
         this.summeKostenblock = summeKostenblock;
     }
@@ -89,49 +89,26 @@ public class Kostenblock extends COM {
         }
 
         /**
-         * Bezeichnung für einen Kostenblock. Z.B. Netzkosten, Messkosten, Umlagen, etc.
-         */
-        public String getKostenblockbezeichnung() {
-            return kostenblockbezeichnung;
-        }
-
-        /**
-         * Bezeichnung für einen Kostenblock. Z.B. Netzkosten, Messkosten, Umlagen, etc.
-         */
+        * Bezeichnung für einen Kostenblock. Z.B. Netzkosten, Messkosten, Umlagen, etc.
+        */
         public KostenblockBuilder setKostenblockbezeichnung(String kostenblockbezeichnung) {
             this.kostenblockbezeichnung = kostenblockbezeichnung;
             return this;
         }
 
         /**
-         * Hier sind die Details zu einer Kostenposition aufgeführt. Z.B.:
-         * Alliander Netz Heinsberg GmbH, 01.02.2018, 31.12.2018, Arbeitspreis HT, 3.660 kWh, 5,8200
-         * ct/kWh, 213,01 €
-         */
-        public List<Kostenposition> getKostenpositionen() {
-            return kostenpositionen;
-        }
-
-        /**
-         * Hier sind die Details zu einer Kostenposition aufgeführt. Z.B.:
-         * Alliander Netz Heinsberg GmbH, 01.02.2018, 31.12.2018, Arbeitspreis HT, 3.660 kWh, 5,8200
-         * ct/kWh, 213,01 €
-         */
+        * Hier sind die Details zu einer Kostenposition aufgeführt. Z.B.:
+        * Alliander Netz Heinsberg GmbH, 01.02.2018, 31.12.2018, Arbeitspreis HT, 3.660 kWh, 5,8200
+        * ct/kWh, 213,01 €
+        */
         public KostenblockBuilder setKostenpositionen(List<Kostenposition> kostenpositionen) {
             this.kostenpositionen = kostenpositionen;
             return this;
         }
 
         /**
-         * Die Summe aller Kostenpositionen dieses Blocks
-         */
-        public Betrag getSummeKostenblock() {
-            return summeKostenblock;
-        }
-
-        /**
-         * Die Summe aller Kostenpositionen dieses Blocks
-         */
+        * Die Summe aller Kostenpositionen dieses Blocks
+        */
         public KostenblockBuilder setSummeKostenblock(Betrag summeKostenblock) {
             this.summeKostenblock = summeKostenblock;
             return this;

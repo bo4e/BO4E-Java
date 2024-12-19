@@ -8,17 +8,17 @@ import bo4e.enums.Waehrungseinheit;
 import java.util.List;
 
 /**
- * Mit dieser Komponente können Tarifpreise verschiedener Typen abgebildet werden.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Tarifpreisposition.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Tarifpreisposition JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Tarifpreisposition.json>`_
- */
+* Mit dieser Komponente können Tarifpreise verschiedener Typen abgebildet werden.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Tarifpreisposition.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Tarifpreisposition JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Tarifpreisposition.json>`_
+*/
 public class Tarifpreisposition extends COM {
     private Mengeneinheit bezugseinheit;
     private Waehrungseinheit einheit;
@@ -39,73 +39,73 @@ public class Tarifpreisposition extends COM {
     }
 
     /**
-     * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
-     */
+    * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
+    */
     public Mengeneinheit getBezugseinheit() {
         return bezugseinheit;
     }
 
     /**
-     * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
-     */
+    * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
+    */
     public void setBezugseinheit(Mengeneinheit bezugseinheit) {
         this.bezugseinheit = bezugseinheit;
     }
 
     /**
-     * Einheit des Preises (z.B. EURO)
-     */
+    * Einheit des Preises (z.B. EURO)
+    */
     public Waehrungseinheit getEinheit() {
         return einheit;
     }
 
     /**
-     * Einheit des Preises (z.B. EURO)
-     */
+    * Einheit des Preises (z.B. EURO)
+    */
     public void setEinheit(Waehrungseinheit einheit) {
         this.einheit = einheit;
     }
 
     /**
-     * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
-     * Jahresstromverbrauch in kWh)
-     */
+    * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
+    * Jahresstromverbrauch in kWh)
+    */
     public Mengeneinheit getMengeneinheitstaffel() {
         return mengeneinheitstaffel;
     }
 
     /**
-     * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
-     * Jahresstromverbrauch in kWh)
-     */
+    * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
+    * Jahresstromverbrauch in kWh)
+    */
     public void setMengeneinheitstaffel(Mengeneinheit mengeneinheitstaffel) {
         this.mengeneinheitstaffel = mengeneinheitstaffel;
     }
 
     /**
-     * Hier sind die Staffeln mit ihren Preisenangaben definiert
-     */
+    * Hier sind die Staffeln mit ihren Preisenangaben definiert
+    */
     public List<Preisstaffel> getPreisstaffeln() {
         return preisstaffeln;
     }
 
     /**
-     * Hier sind die Staffeln mit ihren Preisenangaben definiert
-     */
+    * Hier sind die Staffeln mit ihren Preisenangaben definiert
+    */
     public void setPreisstaffeln(List<Preisstaffel> preisstaffeln) {
         this.preisstaffeln = preisstaffeln;
     }
 
     /**
-     * Angabe des Preistypes (z.B. Grundpreis)
-     */
+    * Angabe des Preistypes (z.B. Grundpreis)
+    */
     public Preistyp getPreistyp() {
         return preistyp;
     }
 
     /**
-     * Angabe des Preistypes (z.B. Grundpreis)
-     */
+    * Angabe des Preistypes (z.B. Grundpreis)
+    */
     public void setPreistyp(Preistyp preistyp) {
         this.preistyp = preistyp;
     }
@@ -125,77 +125,41 @@ public class Tarifpreisposition extends COM {
         }
 
         /**
-         * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
-         */
-        public Mengeneinheit getBezugseinheit() {
-            return bezugseinheit;
-        }
-
-        /**
-         * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
-         */
+        * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
+        */
         public TarifpreispositionBuilder setBezugseinheit(Mengeneinheit bezugseinheit) {
             this.bezugseinheit = bezugseinheit;
             return this;
         }
 
         /**
-         * Einheit des Preises (z.B. EURO)
-         */
-        public Waehrungseinheit getEinheit() {
-            return einheit;
-        }
-
-        /**
-         * Einheit des Preises (z.B. EURO)
-         */
+        * Einheit des Preises (z.B. EURO)
+        */
         public TarifpreispositionBuilder setEinheit(Waehrungseinheit einheit) {
             this.einheit = einheit;
             return this;
         }
 
         /**
-         * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
-         * Jahresstromverbrauch in kWh)
-         */
-        public Mengeneinheit getMengeneinheitstaffel() {
-            return mengeneinheitstaffel;
-        }
-
-        /**
-         * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
-         * Jahresstromverbrauch in kWh)
-         */
+        * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
+        * Jahresstromverbrauch in kWh)
+        */
         public TarifpreispositionBuilder setMengeneinheitstaffel(Mengeneinheit mengeneinheitstaffel) {
             this.mengeneinheitstaffel = mengeneinheitstaffel;
             return this;
         }
 
         /**
-         * Hier sind die Staffeln mit ihren Preisenangaben definiert
-         */
-        public List<Preisstaffel> getPreisstaffeln() {
-            return preisstaffeln;
-        }
-
-        /**
-         * Hier sind die Staffeln mit ihren Preisenangaben definiert
-         */
+        * Hier sind die Staffeln mit ihren Preisenangaben definiert
+        */
         public TarifpreispositionBuilder setPreisstaffeln(List<Preisstaffel> preisstaffeln) {
             this.preisstaffeln = preisstaffeln;
             return this;
         }
 
         /**
-         * Angabe des Preistypes (z.B. Grundpreis)
-         */
-        public Preistyp getPreistyp() {
-            return preistyp;
-        }
-
-        /**
-         * Angabe des Preistypes (z.B. Grundpreis)
-         */
+        * Angabe des Preistypes (z.B. Grundpreis)
+        */
         public TarifpreispositionBuilder setPreistyp(Preistyp preistyp) {
             this.preistyp = preistyp;
             return this;

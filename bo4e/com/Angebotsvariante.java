@@ -7,17 +7,17 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 /**
- * Führt die verschiedenen Ausprägungen der Angebotsberechnung auf
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Angebotsvariante.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Angebotsvariante JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Angebotsvariante.json>`_
- */
+* Führt die verschiedenen Ausprägungen der Angebotsberechnung auf
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Angebotsvariante.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Angebotsvariante JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Angebotsvariante.json>`_
+*/
 public class Angebotsvariante extends COM {
     private Angebotsstatus angebotsstatus;
     private OffsetDateTime bindefrist;
@@ -40,91 +40,91 @@ public class Angebotsvariante extends COM {
     }
 
     /**
-     * Gibt den Status eines Angebotes an.
-     */
+    * Gibt den Status eines Angebotes an.
+    */
     public Angebotsstatus getAngebotsstatus() {
         return angebotsstatus;
     }
 
     /**
-     * Gibt den Status eines Angebotes an.
-     */
+    * Gibt den Status eines Angebotes an.
+    */
     public void setAngebotsstatus(Angebotsstatus angebotsstatus) {
         this.angebotsstatus = angebotsstatus;
     }
 
     /**
-     * Bis zu diesem Zeitpunkt gilt die Angebotsvariante
-     */
+    * Bis zu diesem Zeitpunkt gilt die Angebotsvariante
+    */
     public OffsetDateTime getBindefrist() {
         return bindefrist;
     }
 
     /**
-     * Bis zu diesem Zeitpunkt gilt die Angebotsvariante
-     */
+    * Bis zu diesem Zeitpunkt gilt die Angebotsvariante
+    */
     public void setBindefrist(OffsetDateTime bindefrist) {
         this.bindefrist = bindefrist;
     }
 
     /**
-     * Datum der Erstellung der Angebotsvariante
-     */
+    * Datum der Erstellung der Angebotsvariante
+    */
     public OffsetDateTime getErstellungsdatum() {
         return erstellungsdatum;
     }
 
     /**
-     * Datum der Erstellung der Angebotsvariante
-     */
+    * Datum der Erstellung der Angebotsvariante
+    */
     public void setErstellungsdatum(OffsetDateTime erstellungsdatum) {
         this.erstellungsdatum = erstellungsdatum;
     }
 
     /**
-     * Aufsummierte Kosten aller Angebotsteile
-     */
+    * Aufsummierte Kosten aller Angebotsteile
+    */
     public Betrag getGesamtkosten() {
         return gesamtkosten;
     }
 
     /**
-     * Aufsummierte Kosten aller Angebotsteile
-     */
+    * Aufsummierte Kosten aller Angebotsteile
+    */
     public void setGesamtkosten(Betrag gesamtkosten) {
         this.gesamtkosten = gesamtkosten;
     }
 
     /**
-     * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
-     */
+    * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
+    */
     public Menge getGesamtmenge() {
         return gesamtmenge;
     }
 
     /**
-     * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
-     */
+    * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
+    */
     public void setGesamtmenge(Menge gesamtmenge) {
         this.gesamtmenge = gesamtmenge;
     }
 
     /**
-     * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
-     * erzeugt.
-     * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
-     * Eine Variante besteht mindestens aus einem Angebotsteil.
-     */
+    * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
+    * erzeugt.
+    * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
+    * Eine Variante besteht mindestens aus einem Angebotsteil.
+    */
     public List<Angebotsteil> getTeile() {
         return teile;
     }
 
     /**
-     * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
-     * erzeugt.
-     * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
-     * Eine Variante besteht mindestens aus einem Angebotsteil.
-     */
+    * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
+    * erzeugt.
+    * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
+    * Eine Variante besteht mindestens aus einem Angebotsteil.
+    */
     public void setTeile(List<Angebotsteil> teile) {
         this.teile = teile;
     }
@@ -145,96 +145,51 @@ public class Angebotsvariante extends COM {
         }
 
         /**
-         * Gibt den Status eines Angebotes an.
-         */
-        public Angebotsstatus getAngebotsstatus() {
-            return angebotsstatus;
-        }
-
-        /**
-         * Gibt den Status eines Angebotes an.
-         */
+        * Gibt den Status eines Angebotes an.
+        */
         public AngebotsvarianteBuilder setAngebotsstatus(Angebotsstatus angebotsstatus) {
             this.angebotsstatus = angebotsstatus;
             return this;
         }
 
         /**
-         * Bis zu diesem Zeitpunkt gilt die Angebotsvariante
-         */
-        public OffsetDateTime getBindefrist() {
-            return bindefrist;
-        }
-
-        /**
-         * Bis zu diesem Zeitpunkt gilt die Angebotsvariante
-         */
+        * Bis zu diesem Zeitpunkt gilt die Angebotsvariante
+        */
         public AngebotsvarianteBuilder setBindefrist(OffsetDateTime bindefrist) {
             this.bindefrist = bindefrist;
             return this;
         }
 
         /**
-         * Datum der Erstellung der Angebotsvariante
-         */
-        public OffsetDateTime getErstellungsdatum() {
-            return erstellungsdatum;
-        }
-
-        /**
-         * Datum der Erstellung der Angebotsvariante
-         */
+        * Datum der Erstellung der Angebotsvariante
+        */
         public AngebotsvarianteBuilder setErstellungsdatum(OffsetDateTime erstellungsdatum) {
             this.erstellungsdatum = erstellungsdatum;
             return this;
         }
 
         /**
-         * Aufsummierte Kosten aller Angebotsteile
-         */
-        public Betrag getGesamtkosten() {
-            return gesamtkosten;
-        }
-
-        /**
-         * Aufsummierte Kosten aller Angebotsteile
-         */
+        * Aufsummierte Kosten aller Angebotsteile
+        */
         public AngebotsvarianteBuilder setGesamtkosten(Betrag gesamtkosten) {
             this.gesamtkosten = gesamtkosten;
             return this;
         }
 
         /**
-         * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
-         */
-        public Menge getGesamtmenge() {
-            return gesamtmenge;
-        }
-
-        /**
-         * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
-         */
+        * Aufsummierte Wirkarbeitsmenge aller Angebotsteile
+        */
         public AngebotsvarianteBuilder setGesamtmenge(Menge gesamtmenge) {
             this.gesamtmenge = gesamtmenge;
             return this;
         }
 
         /**
-         * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
-         * erzeugt.
-         * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
-         * Eine Variante besteht mindestens aus einem Angebotsteil.
-         */
-        public List<Angebotsteil> getTeile() {
-            return teile;
-        }
-
-        /**
-         * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
-         * erzeugt.
-         * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
-         * Eine Variante besteht mindestens aus einem Angebotsteil.
-         */
+        * Angebotsteile werden im einfachsten Fall für eine Marktlokation oder Lieferstellenadresse
+        * erzeugt.
+        * Hier werden die Mengen und Gesamtkosten aller Angebotspositionen zusammengefasst.
+        * Eine Variante besteht mindestens aus einem Angebotsteil.
+        */
         public AngebotsvarianteBuilder setTeile(List<Angebotsteil> teile) {
             this.teile = teile;
             return this;

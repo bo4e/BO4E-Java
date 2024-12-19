@@ -7,16 +7,16 @@ import bo4e.enums.Typ;
 import java.util.List;
 
 /**
- * Modellierung einer Region als Menge von Kriterien, die eine Region beschreiben
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/bo/Region.svg" type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Region JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Region.json>`_
- */
+* Modellierung einer Region als Menge von Kriterien, die eine Region beschreiben
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/bo/Region.svg" type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Region JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Region.json>`_
+*/
 public class Region extends Geschaeftsobjekt {
     private final Typ typ = Typ.REGION;
     private String bezeichnung;
@@ -38,43 +38,43 @@ public class Region extends Geschaeftsobjekt {
     }
 
     /**
-     * Bezeichnung der Region
-     */
+    * Bezeichnung der Region
+    */
     public String getBezeichnung() {
         return bezeichnung;
     }
 
     /**
-     * Bezeichnung der Region
-     */
+    * Bezeichnung der Region
+    */
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;
     }
 
     /**
-     * Negativliste der Kriterien zur Definition der Region
-     */
+    * Negativliste der Kriterien zur Definition der Region
+    */
     public List<Regionskriterium> getNegativListe() {
         return negativListe;
     }
 
     /**
-     * Negativliste der Kriterien zur Definition der Region
-     */
+    * Negativliste der Kriterien zur Definition der Region
+    */
     public void setNegativListe(List<Regionskriterium> negativListe) {
         this.negativListe = negativListe;
     }
 
     /**
-     * Positivliste der Kriterien zur Definition der Region
-     */
+    * Positivliste der Kriterien zur Definition der Region
+    */
     public List<Regionskriterium> getPositivListe() {
         return positivListe;
     }
 
     /**
-     * Positivliste der Kriterien zur Definition der Region
-     */
+    * Positivliste der Kriterien zur Definition der Region
+    */
     public void setPositivListe(List<Regionskriterium> positivListe) {
         this.positivListe = positivListe;
     }
@@ -92,45 +92,24 @@ public class Region extends Geschaeftsobjekt {
         }
 
         /**
-         * Bezeichnung der Region
-         */
-        public String getBezeichnung() {
-            return bezeichnung;
-        }
-
-        /**
-         * Bezeichnung der Region
-         */
+        * Bezeichnung der Region
+        */
         public RegionBuilder setBezeichnung(String bezeichnung) {
             this.bezeichnung = bezeichnung;
             return this;
         }
 
         /**
-         * Negativliste der Kriterien zur Definition der Region
-         */
-        public List<Regionskriterium> getNegativListe() {
-            return negativListe;
-        }
-
-        /**
-         * Negativliste der Kriterien zur Definition der Region
-         */
+        * Negativliste der Kriterien zur Definition der Region
+        */
         public RegionBuilder setNegativListe(List<Regionskriterium> negativListe) {
             this.negativListe = negativListe;
             return this;
         }
 
         /**
-         * Positivliste der Kriterien zur Definition der Region
-         */
-        public List<Regionskriterium> getPositivListe() {
-            return positivListe;
-        }
-
-        /**
-         * Positivliste der Kriterien zur Definition der Region
-         */
+        * Positivliste der Kriterien zur Definition der Region
+        */
         public RegionBuilder setPositivListe(List<Regionskriterium> positivListe) {
             this.positivListe = positivListe;
             return this;

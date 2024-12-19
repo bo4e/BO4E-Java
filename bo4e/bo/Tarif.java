@@ -20,16 +20,16 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 /**
- * Abbildung eines Tarifs mit regionaler Zuordnung von Preisen und Auf- und Abschlägen
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/bo/Tarif.svg" type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Tarif JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Tarif.json>`_
- */
+* Abbildung eines Tarifs mit regionaler Zuordnung von Preisen und Auf- und Abschlägen
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/bo/Tarif.svg" type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Tarif JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Tarif.json>`_
+*/
 public class Tarif extends Geschaeftsobjekt {
     private final Typ typ = Typ.TARIF;
     private Marktteilnehmer anbieter;
@@ -85,29 +85,29 @@ public class Tarif extends Geschaeftsobjekt {
     }
 
     /**
-     * Der Marktteilnehmer (Lieferant), der diesen Tarif anbietet
-     */
+    * Der Marktteilnehmer (Lieferant), der diesen Tarif anbietet
+    */
     public Marktteilnehmer getAnbieter() {
         return anbieter;
     }
 
     /**
-     * Der Marktteilnehmer (Lieferant), der diesen Tarif anbietet
-     */
+    * Der Marktteilnehmer (Lieferant), der diesen Tarif anbietet
+    */
     public void setAnbieter(Marktteilnehmer anbieter) {
         this.anbieter = anbieter;
     }
 
     /**
-     * Der Name des Marktpartners, der den Tarif anbietet
-     */
+    * Der Name des Marktpartners, der den Tarif anbietet
+    */
     public String getAnbietername() {
         return anbietername;
     }
 
     /**
-     * Der Name des Marktpartners, der den Tarif anbietet
-     */
+    * Der Name des Marktpartners, der den Tarif anbietet
+    */
     public void setAnbietername(String anbietername) {
         this.anbietername = anbietername;
     }
@@ -121,239 +121,239 @@ public class Tarif extends Geschaeftsobjekt {
     }
 
     /**
-     * Freitext
-     */
+    * Freitext
+    */
     public String getBemerkung() {
         return bemerkung;
     }
 
     /**
-     * Freitext
-     */
+    * Freitext
+    */
     public void setBemerkung(String bemerkung) {
         this.bemerkung = bemerkung;
     }
 
     /**
-     * Für die Berechnung der Kosten sind die hier abgebildeten Parameter heranzuziehen
-     */
+    * Für die Berechnung der Kosten sind die hier abgebildeten Parameter heranzuziehen
+    */
     public Tarifberechnungsparameter getBerechnungsparameter() {
         return berechnungsparameter;
     }
 
     /**
-     * Für die Berechnung der Kosten sind die hier abgebildeten Parameter heranzuziehen
-     */
+    * Für die Berechnung der Kosten sind die hier abgebildeten Parameter heranzuziehen
+    */
     public void setBerechnungsparameter(Tarifberechnungsparameter berechnungsparameter) {
         this.berechnungsparameter = berechnungsparameter;
     }
 
     /**
-     * Name des Tarifs
-     */
+    * Name des Tarifs
+    */
     public String getBezeichnung() {
         return bezeichnung;
     }
 
     /**
-     * Name des Tarifs
-     */
+    * Name des Tarifs
+    */
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;
     }
 
     /**
-     * Der Energiemix, der für diesen Tarif gilt
-     */
+    * Der Energiemix, der für diesen Tarif gilt
+    */
     public Energiemix getEnergiemix() {
         return energiemix;
     }
 
     /**
-     * Der Energiemix, der für diesen Tarif gilt
-     */
+    * Der Energiemix, der für diesen Tarif gilt
+    */
     public void setEnergiemix(Energiemix energiemix) {
         this.energiemix = energiemix;
     }
 
     /**
-     * Kundentypen für den der Tarif gilt, z.B. Privatkunden
-     */
+    * Kundentypen für den der Tarif gilt, z.B. Privatkunden
+    */
     public List<Kundentyp> getKundentypen() {
         return kundentypen;
     }
 
     /**
-     * Kundentypen für den der Tarif gilt, z.B. Privatkunden
-     */
+    * Kundentypen für den der Tarif gilt, z.B. Privatkunden
+    */
     public void setKundentypen(List<Kundentyp> kundentypen) {
         this.kundentypen = kundentypen;
     }
 
     /**
-     * Preisgarantie für diesen Tarif
-     */
+    * Preisgarantie für diesen Tarif
+    */
     public Preisgarantie getPreisgarantie() {
         return preisgarantie;
     }
 
     /**
-     * Preisgarantie für diesen Tarif
-     */
+    * Preisgarantie für diesen Tarif
+    */
     public void setPreisgarantie(Preisgarantie preisgarantie) {
         this.preisgarantie = preisgarantie;
     }
 
     /**
-     * Gibt an, wann der Preis zuletzt angepasst wurde
-     */
+    * Gibt an, wann der Preis zuletzt angepasst wurde
+    */
     public OffsetDateTime getPreisstand() {
         return preisstand;
     }
 
     /**
-     * Gibt an, wann der Preis zuletzt angepasst wurde
-     */
+    * Gibt an, wann der Preis zuletzt angepasst wurde
+    */
     public void setPreisstand(OffsetDateTime preisstand) {
         this.preisstand = preisstand;
     }
 
     /**
-     * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
-     */
+    * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
+    */
     public Registeranzahl getRegisteranzahl() {
         return registeranzahl;
     }
 
     /**
-     * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
-     */
+    * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
+    */
     public void setRegisteranzahl(Registeranzahl registeranzahl) {
         this.registeranzahl = registeranzahl;
     }
 
     /**
-     * Strom oder Gas, etc.
-     */
+    * Strom oder Gas, etc.
+    */
     public Sparte getSparte() {
         return sparte;
     }
 
     /**
-     * Strom oder Gas, etc.
-     */
+    * Strom oder Gas, etc.
+    */
     public void setSparte(Sparte sparte) {
         this.sparte = sparte;
     }
 
     /**
-     * Auf- und Abschläge auf die Preise oder Kosten mit regionaler Eingrenzung
-     */
+    * Auf- und Abschläge auf die Preise oder Kosten mit regionaler Eingrenzung
+    */
     public List<AufAbschlagRegional> getTarifAufAbschlaege() {
         return tarifAufAbschlaege;
     }
 
     /**
-     * Auf- und Abschläge auf die Preise oder Kosten mit regionaler Eingrenzung
-     */
+    * Auf- und Abschläge auf die Preise oder Kosten mit regionaler Eingrenzung
+    */
     public void setTarifAufAbschlaege(List<AufAbschlagRegional> tarifAufAbschlaege) {
         this.tarifAufAbschlaege = tarifAufAbschlaege;
     }
 
     /**
-     * Die Bedingungen und Einschränkungen unter denen ein Tarif angewendet werden kann
-     */
+    * Die Bedingungen und Einschränkungen unter denen ein Tarif angewendet werden kann
+    */
     public Tarifeinschraenkung getTarifeinschraenkung() {
         return tarifeinschraenkung;
     }
 
     /**
-     * Die Bedingungen und Einschränkungen unter denen ein Tarif angewendet werden kann
-     */
+    * Die Bedingungen und Einschränkungen unter denen ein Tarif angewendet werden kann
+    */
     public void setTarifeinschraenkung(Tarifeinschraenkung tarifeinschraenkung) {
         this.tarifeinschraenkung = tarifeinschraenkung;
     }
 
     /**
-     * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
-     */
+    * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
+    */
     public List<Tarifmerkmal> getTarifmerkmale() {
         return tarifmerkmale;
     }
 
     /**
-     * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
-     */
+    * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
+    */
     public void setTarifmerkmale(List<Tarifmerkmal> tarifmerkmale) {
         this.tarifmerkmale = tarifmerkmale;
     }
 
     /**
-     * Die festgelegten Preise mit regionaler Eingrenzung z.B. für Arbeitspreis, Grundpreis etc.
-     */
+    * Die festgelegten Preise mit regionaler Eingrenzung z.B. für Arbeitspreis, Grundpreis etc.
+    */
     public List<TarifpreispositionProOrt> getTarifpreise() {
         return tarifpreise;
     }
 
     /**
-     * Die festgelegten Preise mit regionaler Eingrenzung z.B. für Arbeitspreis, Grundpreis etc.
-     */
+    * Die festgelegten Preise mit regionaler Eingrenzung z.B. für Arbeitspreis, Grundpreis etc.
+    */
     public void setTarifpreise(List<TarifpreispositionProOrt> tarifpreise) {
         this.tarifpreise = tarifpreise;
     }
 
     /**
-     * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
-     */
+    * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
+    */
     public Tariftyp getTariftyp() {
         return tariftyp;
     }
 
     /**
-     * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
-     */
+    * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
+    */
     public void setTariftyp(Tariftyp tariftyp) {
         this.tariftyp = tariftyp;
     }
 
     /**
-     * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
-     */
+    * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
+    */
     public Vertragskonditionen getVertragskonditionen() {
         return vertragskonditionen;
     }
 
     /**
-     * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
-     */
+    * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
+    */
     public void setVertragskonditionen(Vertragskonditionen vertragskonditionen) {
         this.vertragskonditionen = vertragskonditionen;
     }
 
     /**
-     * Internetseite auf dem der Tarif zu finden ist
-     */
+    * Internetseite auf dem der Tarif zu finden ist
+    */
     public String getWebsite() {
         return website;
     }
 
     /**
-     * Internetseite auf dem der Tarif zu finden ist
-     */
+    * Internetseite auf dem der Tarif zu finden ist
+    */
     public void setWebsite(String website) {
         this.website = website;
     }
 
     /**
-     * Angabe, in welchem Zeitraum der Tarif gültig ist
-     */
+    * Angabe, in welchem Zeitraum der Tarif gültig ist
+    */
     public Zeitraum getZeitlicheGueltigkeit() {
         return zeitlicheGueltigkeit;
     }
 
     /**
-     * Angabe, in welchem Zeitraum der Tarif gültig ist
-     */
+    * Angabe, in welchem Zeitraum der Tarif gültig ist
+    */
     public void setZeitlicheGueltigkeit(Zeitraum zeitlicheGueltigkeit) {
         this.zeitlicheGueltigkeit = zeitlicheGueltigkeit;
     }
@@ -388,37 +388,19 @@ public class Tarif extends Geschaeftsobjekt {
         }
 
         /**
-         * Der Marktteilnehmer (Lieferant), der diesen Tarif anbietet
-         */
-        public Marktteilnehmer getAnbieter() {
-            return anbieter;
-        }
-
-        /**
-         * Der Marktteilnehmer (Lieferant), der diesen Tarif anbietet
-         */
+        * Der Marktteilnehmer (Lieferant), der diesen Tarif anbietet
+        */
         public TarifBuilder setAnbieter(Marktteilnehmer anbieter) {
             this.anbieter = anbieter;
             return this;
         }
 
         /**
-         * Der Name des Marktpartners, der den Tarif anbietet
-         */
-        public String getAnbietername() {
-            return anbietername;
-        }
-
-        /**
-         * Der Name des Marktpartners, der den Tarif anbietet
-         */
+        * Der Name des Marktpartners, der den Tarif anbietet
+        */
         public TarifBuilder setAnbietername(String anbietername) {
             this.anbietername = anbietername;
             return this;
-        }
-
-        public OffsetDateTime getAnwendungVon() {
-            return anwendungVon;
         }
 
         public TarifBuilder setAnwendungVon(OffsetDateTime anwendungVon) {
@@ -427,255 +409,136 @@ public class Tarif extends Geschaeftsobjekt {
         }
 
         /**
-         * Freitext
-         */
-        public String getBemerkung() {
-            return bemerkung;
-        }
-
-        /**
-         * Freitext
-         */
+        * Freitext
+        */
         public TarifBuilder setBemerkung(String bemerkung) {
             this.bemerkung = bemerkung;
             return this;
         }
 
         /**
-         * Für die Berechnung der Kosten sind die hier abgebildeten Parameter heranzuziehen
-         */
-        public Tarifberechnungsparameter getBerechnungsparameter() {
-            return berechnungsparameter;
-        }
-
-        /**
-         * Für die Berechnung der Kosten sind die hier abgebildeten Parameter heranzuziehen
-         */
+        * Für die Berechnung der Kosten sind die hier abgebildeten Parameter heranzuziehen
+        */
         public TarifBuilder setBerechnungsparameter(Tarifberechnungsparameter berechnungsparameter) {
             this.berechnungsparameter = berechnungsparameter;
             return this;
         }
 
         /**
-         * Name des Tarifs
-         */
-        public String getBezeichnung() {
-            return bezeichnung;
-        }
-
-        /**
-         * Name des Tarifs
-         */
+        * Name des Tarifs
+        */
         public TarifBuilder setBezeichnung(String bezeichnung) {
             this.bezeichnung = bezeichnung;
             return this;
         }
 
         /**
-         * Der Energiemix, der für diesen Tarif gilt
-         */
-        public Energiemix getEnergiemix() {
-            return energiemix;
-        }
-
-        /**
-         * Der Energiemix, der für diesen Tarif gilt
-         */
+        * Der Energiemix, der für diesen Tarif gilt
+        */
         public TarifBuilder setEnergiemix(Energiemix energiemix) {
             this.energiemix = energiemix;
             return this;
         }
 
         /**
-         * Kundentypen für den der Tarif gilt, z.B. Privatkunden
-         */
-        public List<Kundentyp> getKundentypen() {
-            return kundentypen;
-        }
-
-        /**
-         * Kundentypen für den der Tarif gilt, z.B. Privatkunden
-         */
+        * Kundentypen für den der Tarif gilt, z.B. Privatkunden
+        */
         public TarifBuilder setKundentypen(List<Kundentyp> kundentypen) {
             this.kundentypen = kundentypen;
             return this;
         }
 
         /**
-         * Preisgarantie für diesen Tarif
-         */
-        public Preisgarantie getPreisgarantie() {
-            return preisgarantie;
-        }
-
-        /**
-         * Preisgarantie für diesen Tarif
-         */
+        * Preisgarantie für diesen Tarif
+        */
         public TarifBuilder setPreisgarantie(Preisgarantie preisgarantie) {
             this.preisgarantie = preisgarantie;
             return this;
         }
 
         /**
-         * Gibt an, wann der Preis zuletzt angepasst wurde
-         */
-        public OffsetDateTime getPreisstand() {
-            return preisstand;
-        }
-
-        /**
-         * Gibt an, wann der Preis zuletzt angepasst wurde
-         */
+        * Gibt an, wann der Preis zuletzt angepasst wurde
+        */
         public TarifBuilder setPreisstand(OffsetDateTime preisstand) {
             this.preisstand = preisstand;
             return this;
         }
 
         /**
-         * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
-         */
-        public Registeranzahl getRegisteranzahl() {
-            return registeranzahl;
-        }
-
-        /**
-         * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
-         */
+        * Die Art des Tarifes, z.B. Eintarif oder Mehrtarif
+        */
         public TarifBuilder setRegisteranzahl(Registeranzahl registeranzahl) {
             this.registeranzahl = registeranzahl;
             return this;
         }
 
         /**
-         * Strom oder Gas, etc.
-         */
-        public Sparte getSparte() {
-            return sparte;
-        }
-
-        /**
-         * Strom oder Gas, etc.
-         */
+        * Strom oder Gas, etc.
+        */
         public TarifBuilder setSparte(Sparte sparte) {
             this.sparte = sparte;
             return this;
         }
 
         /**
-         * Auf- und Abschläge auf die Preise oder Kosten mit regionaler Eingrenzung
-         */
-        public List<AufAbschlagRegional> getTarifAufAbschlaege() {
-            return tarifAufAbschlaege;
-        }
-
-        /**
-         * Auf- und Abschläge auf die Preise oder Kosten mit regionaler Eingrenzung
-         */
+        * Auf- und Abschläge auf die Preise oder Kosten mit regionaler Eingrenzung
+        */
         public TarifBuilder setTarifAufAbschlaege(List<AufAbschlagRegional> tarifAufAbschlaege) {
             this.tarifAufAbschlaege = tarifAufAbschlaege;
             return this;
         }
 
         /**
-         * Die Bedingungen und Einschränkungen unter denen ein Tarif angewendet werden kann
-         */
-        public Tarifeinschraenkung getTarifeinschraenkung() {
-            return tarifeinschraenkung;
-        }
-
-        /**
-         * Die Bedingungen und Einschränkungen unter denen ein Tarif angewendet werden kann
-         */
+        * Die Bedingungen und Einschränkungen unter denen ein Tarif angewendet werden kann
+        */
         public TarifBuilder setTarifeinschraenkung(Tarifeinschraenkung tarifeinschraenkung) {
             this.tarifeinschraenkung = tarifeinschraenkung;
             return this;
         }
 
         /**
-         * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
-         */
-        public List<Tarifmerkmal> getTarifmerkmale() {
-            return tarifmerkmale;
-        }
-
-        /**
-         * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
-         */
+        * Weitere Merkmale des Tarifs, z.B. Festpreis oder Vorkasse
+        */
         public TarifBuilder setTarifmerkmale(List<Tarifmerkmal> tarifmerkmale) {
             this.tarifmerkmale = tarifmerkmale;
             return this;
         }
 
         /**
-         * Die festgelegten Preise mit regionaler Eingrenzung z.B. für Arbeitspreis, Grundpreis etc.
-         */
-        public List<TarifpreispositionProOrt> getTarifpreise() {
-            return tarifpreise;
-        }
-
-        /**
-         * Die festgelegten Preise mit regionaler Eingrenzung z.B. für Arbeitspreis, Grundpreis etc.
-         */
+        * Die festgelegten Preise mit regionaler Eingrenzung z.B. für Arbeitspreis, Grundpreis etc.
+        */
         public TarifBuilder setTarifpreise(List<TarifpreispositionProOrt> tarifpreise) {
             this.tarifpreise = tarifpreise;
             return this;
         }
 
         /**
-         * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
-         */
-        public Tariftyp getTariftyp() {
-            return tariftyp;
-        }
-
-        /**
-         * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
-         */
+        * Hinweis auf den Tariftyp, z.B. Grundversorgung oder Sondertarif
+        */
         public TarifBuilder setTariftyp(Tariftyp tariftyp) {
             this.tariftyp = tariftyp;
             return this;
         }
 
         /**
-         * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
-         */
-        public Vertragskonditionen getVertragskonditionen() {
-            return vertragskonditionen;
-        }
-
-        /**
-         * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
-         */
+        * Mindestlaufzeiten und Kündigungsfristen zusammengefasst
+        */
         public TarifBuilder setVertragskonditionen(Vertragskonditionen vertragskonditionen) {
             this.vertragskonditionen = vertragskonditionen;
             return this;
         }
 
         /**
-         * Internetseite auf dem der Tarif zu finden ist
-         */
-        public String getWebsite() {
-            return website;
-        }
-
-        /**
-         * Internetseite auf dem der Tarif zu finden ist
-         */
+        * Internetseite auf dem der Tarif zu finden ist
+        */
         public TarifBuilder setWebsite(String website) {
             this.website = website;
             return this;
         }
 
         /**
-         * Angabe, in welchem Zeitraum der Tarif gültig ist
-         */
-        public Zeitraum getZeitlicheGueltigkeit() {
-            return zeitlicheGueltigkeit;
-        }
-
-        /**
-         * Angabe, in welchem Zeitraum der Tarif gültig ist
-         */
+        * Angabe, in welchem Zeitraum der Tarif gültig ist
+        */
         public TarifBuilder setZeitlicheGueltigkeit(Zeitraum zeitlicheGueltigkeit) {
             this.zeitlicheGueltigkeit = zeitlicheGueltigkeit;
             return this;

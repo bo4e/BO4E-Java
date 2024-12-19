@@ -7,21 +7,21 @@ import bo4e.enums.Waehrungseinheit;
 import java.util.List;
 
 /**
- * Differenzierung der zu betrachtenden Produkte anhand der preiserhöhenden (Aufschlag)
- * bzw. preisvermindernden (Abschlag) Zusatzvereinbarungen,
- * die individuell zu einem neuen oder bestehenden Liefervertrag abgeschlossen werden
- * können.
- * Es können mehrere Auf-/Abschläge gleichzeitig ausgewählt werden.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/PositionsAufAbschlag.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `PositionsAufAbschlag JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/PositionsAufAbschlag.json>`_
- */
+* Differenzierung der zu betrachtenden Produkte anhand der preiserhöhenden (Aufschlag)
+* bzw. preisvermindernden (Abschlag) Zusatzvereinbarungen,
+* die individuell zu einem neuen oder bestehenden Liefervertrag abgeschlossen werden
+* können.
+* Es können mehrere Auf-/Abschläge gleichzeitig ausgewählt werden.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/PositionsAufAbschlag.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `PositionsAufAbschlag JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/PositionsAufAbschlag.json>`_
+*/
 public class PositionsAufAbschlag extends COM {
     private AufAbschlagstyp aufAbschlagstyp;
     private Waehrungseinheit aufAbschlagswaehrung;
@@ -42,71 +42,71 @@ public class PositionsAufAbschlag extends COM {
     }
 
     /**
-     * Typ des AufAbschlages
-     */
+    * Typ des AufAbschlages
+    */
     public AufAbschlagstyp getAufAbschlagstyp() {
         return aufAbschlagstyp;
     }
 
     /**
-     * Typ des AufAbschlages
-     */
+    * Typ des AufAbschlages
+    */
     public void setAufAbschlagstyp(AufAbschlagstyp aufAbschlagstyp) {
         this.aufAbschlagstyp = aufAbschlagstyp;
     }
 
     /**
-     * Einheit, in der der Auf-/Abschlag angegeben ist (z.B. ct/kWh).
-     */
+    * Einheit, in der der Auf-/Abschlag angegeben ist (z.B. ct/kWh).
+    */
     public Waehrungseinheit getAufAbschlagswaehrung() {
         return aufAbschlagswaehrung;
     }
 
     /**
-     * Einheit, in der der Auf-/Abschlag angegeben ist (z.B. ct/kWh).
-     */
+    * Einheit, in der der Auf-/Abschlag angegeben ist (z.B. ct/kWh).
+    */
     public void setAufAbschlagswaehrung(Waehrungseinheit aufAbschlagswaehrung) {
         this.aufAbschlagswaehrung = aufAbschlagswaehrung;
     }
 
     /**
-     * Höhe des Auf-/Abschlages
-     */
+    * Höhe des Auf-/Abschlages
+    */
     public Double getAufAbschlagswert() {
         return aufAbschlagswert;
     }
 
     /**
-     * Höhe des Auf-/Abschlages
-     */
+    * Höhe des Auf-/Abschlages
+    */
     public void setAufAbschlagswert(Double aufAbschlagswert) {
         this.aufAbschlagswert = aufAbschlagswert;
     }
 
     /**
-     * Beschreibung zum Auf-/Abschlag
-     */
+    * Beschreibung zum Auf-/Abschlag
+    */
     public String getBeschreibung() {
         return beschreibung;
     }
 
     /**
-     * Beschreibung zum Auf-/Abschlag
-     */
+    * Beschreibung zum Auf-/Abschlag
+    */
     public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
     }
 
     /**
-     * Bezeichnung des Auf-/Abschlags
-     */
+    * Bezeichnung des Auf-/Abschlags
+    */
     public String getBezeichnung() {
         return bezeichnung;
     }
 
     /**
-     * Bezeichnung des Auf-/Abschlags
-     */
+    * Bezeichnung des Auf-/Abschlags
+    */
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;
     }
@@ -126,75 +126,40 @@ public class PositionsAufAbschlag extends COM {
         }
 
         /**
-         * Typ des AufAbschlages
-         */
-        public AufAbschlagstyp getAufAbschlagstyp() {
-            return aufAbschlagstyp;
-        }
-
-        /**
-         * Typ des AufAbschlages
-         */
+        * Typ des AufAbschlages
+        */
         public PositionsAufAbschlagBuilder setAufAbschlagstyp(AufAbschlagstyp aufAbschlagstyp) {
             this.aufAbschlagstyp = aufAbschlagstyp;
             return this;
         }
 
         /**
-         * Einheit, in der der Auf-/Abschlag angegeben ist (z.B. ct/kWh).
-         */
-        public Waehrungseinheit getAufAbschlagswaehrung() {
-            return aufAbschlagswaehrung;
-        }
-
-        /**
-         * Einheit, in der der Auf-/Abschlag angegeben ist (z.B. ct/kWh).
-         */
+        * Einheit, in der der Auf-/Abschlag angegeben ist (z.B. ct/kWh).
+        */
         public PositionsAufAbschlagBuilder setAufAbschlagswaehrung(Waehrungseinheit aufAbschlagswaehrung) {
             this.aufAbschlagswaehrung = aufAbschlagswaehrung;
             return this;
         }
 
         /**
-         * Höhe des Auf-/Abschlages
-         */
-        public Double getAufAbschlagswert() {
-            return aufAbschlagswert;
-        }
-
-        /**
-         * Höhe des Auf-/Abschlages
-         */
+        * Höhe des Auf-/Abschlages
+        */
         public PositionsAufAbschlagBuilder setAufAbschlagswert(Double aufAbschlagswert) {
             this.aufAbschlagswert = aufAbschlagswert;
             return this;
         }
 
         /**
-         * Beschreibung zum Auf-/Abschlag
-         */
-        public String getBeschreibung() {
-            return beschreibung;
-        }
-
-        /**
-         * Beschreibung zum Auf-/Abschlag
-         */
+        * Beschreibung zum Auf-/Abschlag
+        */
         public PositionsAufAbschlagBuilder setBeschreibung(String beschreibung) {
             this.beschreibung = beschreibung;
             return this;
         }
 
         /**
-         * Bezeichnung des Auf-/Abschlags
-         */
-        public String getBezeichnung() {
-            return bezeichnung;
-        }
-
-        /**
-         * Bezeichnung des Auf-/Abschlags
-         */
+        * Bezeichnung des Auf-/Abschlags
+        */
         public PositionsAufAbschlagBuilder setBezeichnung(String bezeichnung) {
             this.bezeichnung = bezeichnung;
             return this;

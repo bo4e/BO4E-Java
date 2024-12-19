@@ -6,17 +6,17 @@ import bo4e.enums.Preisgarantietyp;
 import java.util.List;
 
 /**
- * Definition für eine Preisgarantie mit der Möglichkeit verschiedener Ausprägungen.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Preisgarantie.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Preisgarantie JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Preisgarantie.json>`_
- */
+* Definition für eine Preisgarantie mit der Möglichkeit verschiedener Ausprägungen.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Preisgarantie.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Preisgarantie JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Preisgarantie.json>`_
+*/
 public class Preisgarantie extends COM {
     private String beschreibung;
     private Preisgarantietyp preisgarantietyp;
@@ -33,45 +33,45 @@ public class Preisgarantie extends COM {
     }
 
     /**
-     * Freitext zur Beschreibung der Preisgarantie.
-     */
+    * Freitext zur Beschreibung der Preisgarantie.
+    */
     public String getBeschreibung() {
         return beschreibung;
     }
 
     /**
-     * Freitext zur Beschreibung der Preisgarantie.
-     */
+    * Freitext zur Beschreibung der Preisgarantie.
+    */
     public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
     }
 
     /**
-     * Festlegung, auf welche Preisbestandteile die Garantie gewährt wird.
-     */
+    * Festlegung, auf welche Preisbestandteile die Garantie gewährt wird.
+    */
     public Preisgarantietyp getPreisgarantietyp() {
         return preisgarantietyp;
     }
 
     /**
-     * Festlegung, auf welche Preisbestandteile die Garantie gewährt wird.
-     */
+    * Festlegung, auf welche Preisbestandteile die Garantie gewährt wird.
+    */
     public void setPreisgarantietyp(Preisgarantietyp preisgarantietyp) {
         this.preisgarantietyp = preisgarantietyp;
     }
 
     /**
-     * Zeitraum, bis zu dem die Preisgarantie gilt, z.B. bis zu einem absolutem / fixem Datum
-     * oder als Laufzeit in Monaten.
-     */
+    * Zeitraum, bis zu dem die Preisgarantie gilt, z.B. bis zu einem absolutem / fixem Datum
+    * oder als Laufzeit in Monaten.
+    */
     public Zeitraum getZeitlicheGueltigkeit() {
         return zeitlicheGueltigkeit;
     }
 
     /**
-     * Zeitraum, bis zu dem die Preisgarantie gilt, z.B. bis zu einem absolutem / fixem Datum
-     * oder als Laufzeit in Monaten.
-     */
+    * Zeitraum, bis zu dem die Preisgarantie gilt, z.B. bis zu einem absolutem / fixem Datum
+    * oder als Laufzeit in Monaten.
+    */
     public void setZeitlicheGueltigkeit(Zeitraum zeitlicheGueltigkeit) {
         this.zeitlicheGueltigkeit = zeitlicheGueltigkeit;
     }
@@ -89,47 +89,25 @@ public class Preisgarantie extends COM {
         }
 
         /**
-         * Freitext zur Beschreibung der Preisgarantie.
-         */
-        public String getBeschreibung() {
-            return beschreibung;
-        }
-
-        /**
-         * Freitext zur Beschreibung der Preisgarantie.
-         */
+        * Freitext zur Beschreibung der Preisgarantie.
+        */
         public PreisgarantieBuilder setBeschreibung(String beschreibung) {
             this.beschreibung = beschreibung;
             return this;
         }
 
         /**
-         * Festlegung, auf welche Preisbestandteile die Garantie gewährt wird.
-         */
-        public Preisgarantietyp getPreisgarantietyp() {
-            return preisgarantietyp;
-        }
-
-        /**
-         * Festlegung, auf welche Preisbestandteile die Garantie gewährt wird.
-         */
+        * Festlegung, auf welche Preisbestandteile die Garantie gewährt wird.
+        */
         public PreisgarantieBuilder setPreisgarantietyp(Preisgarantietyp preisgarantietyp) {
             this.preisgarantietyp = preisgarantietyp;
             return this;
         }
 
         /**
-         * Zeitraum, bis zu dem die Preisgarantie gilt, z.B. bis zu einem absolutem / fixem Datum
-         * oder als Laufzeit in Monaten.
-         */
-        public Zeitraum getZeitlicheGueltigkeit() {
-            return zeitlicheGueltigkeit;
-        }
-
-        /**
-         * Zeitraum, bis zu dem die Preisgarantie gilt, z.B. bis zu einem absolutem / fixem Datum
-         * oder als Laufzeit in Monaten.
-         */
+        * Zeitraum, bis zu dem die Preisgarantie gilt, z.B. bis zu einem absolutem / fixem Datum
+        * oder als Laufzeit in Monaten.
+        */
         public PreisgarantieBuilder setZeitlicheGueltigkeit(Zeitraum zeitlicheGueltigkeit) {
             this.zeitlicheGueltigkeit = zeitlicheGueltigkeit;
             return this;

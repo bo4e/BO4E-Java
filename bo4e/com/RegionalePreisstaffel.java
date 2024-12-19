@@ -5,17 +5,17 @@ import bo4e.ZusatzAttribut;
 import java.util.List;
 
 /**
- * Abbildung einer Preisstaffel mit regionaler Abgrenzung
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/RegionalePreisstaffel.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `RegionalePreisstaffel JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/RegionalePreisstaffel.json>`_
- */
+* Abbildung einer Preisstaffel mit regionaler Abgrenzung
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/RegionalePreisstaffel.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `RegionalePreisstaffel JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/RegionalePreisstaffel.json>`_
+*/
 public class RegionalePreisstaffel extends COM {
     private Double einheitspreis;
     private RegionaleGueltigkeit regionaleGueltigkeit;
@@ -36,73 +36,73 @@ public class RegionalePreisstaffel extends COM {
     }
 
     /**
-     * Preis pro abgerechneter Mengeneinheit
-     */
+    * Preis pro abgerechneter Mengeneinheit
+    */
     public Double getEinheitspreis() {
         return einheitspreis;
     }
 
     /**
-     * Preis pro abgerechneter Mengeneinheit
-     */
+    * Preis pro abgerechneter Mengeneinheit
+    */
     public void setEinheitspreis(Double einheitspreis) {
         this.einheitspreis = einheitspreis;
     }
 
     /**
-     * Regionale Eingrenzung der Preisstaffel
-     */
+    * Regionale Eingrenzung der Preisstaffel
+    */
     public RegionaleGueltigkeit getRegionaleGueltigkeit() {
         return regionaleGueltigkeit;
     }
 
     /**
-     * Regionale Eingrenzung der Preisstaffel
-     */
+    * Regionale Eingrenzung der Preisstaffel
+    */
     public void setRegionaleGueltigkeit(RegionaleGueltigkeit regionaleGueltigkeit) {
         this.regionaleGueltigkeit = regionaleGueltigkeit;
     }
 
     /**
-     * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
-     * Parameter
-     */
+    * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
+    * Parameter
+    */
     public Sigmoidparameter getSigmoidparameter() {
         return sigmoidparameter;
     }
 
     /**
-     * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
-     * Parameter
-     */
+    * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
+    * Parameter
+    */
     public void setSigmoidparameter(Sigmoidparameter sigmoidparameter) {
         this.sigmoidparameter = sigmoidparameter;
     }
 
     /**
-     * Exklusiver oberer Wert, bis zu dem die Staffel gilt
-     */
+    * Exklusiver oberer Wert, bis zu dem die Staffel gilt
+    */
     public Double getStaffelgrenzeBis() {
         return staffelgrenzeBis;
     }
 
     /**
-     * Exklusiver oberer Wert, bis zu dem die Staffel gilt
-     */
+    * Exklusiver oberer Wert, bis zu dem die Staffel gilt
+    */
     public void setStaffelgrenzeBis(Double staffelgrenzeBis) {
         this.staffelgrenzeBis = staffelgrenzeBis;
     }
 
     /**
-     * Inklusiver unterer Wert, ab dem die Staffel gilt
-     */
+    * Inklusiver unterer Wert, ab dem die Staffel gilt
+    */
     public Double getStaffelgrenzeVon() {
         return staffelgrenzeVon;
     }
 
     /**
-     * Inklusiver unterer Wert, ab dem die Staffel gilt
-     */
+    * Inklusiver unterer Wert, ab dem die Staffel gilt
+    */
     public void setStaffelgrenzeVon(Double staffelgrenzeVon) {
         this.staffelgrenzeVon = staffelgrenzeVon;
     }
@@ -122,77 +122,41 @@ public class RegionalePreisstaffel extends COM {
         }
 
         /**
-         * Preis pro abgerechneter Mengeneinheit
-         */
-        public Double getEinheitspreis() {
-            return einheitspreis;
-        }
-
-        /**
-         * Preis pro abgerechneter Mengeneinheit
-         */
+        * Preis pro abgerechneter Mengeneinheit
+        */
         public RegionalePreisstaffelBuilder setEinheitspreis(Double einheitspreis) {
             this.einheitspreis = einheitspreis;
             return this;
         }
 
         /**
-         * Regionale Eingrenzung der Preisstaffel
-         */
-        public RegionaleGueltigkeit getRegionaleGueltigkeit() {
-            return regionaleGueltigkeit;
-        }
-
-        /**
-         * Regionale Eingrenzung der Preisstaffel
-         */
+        * Regionale Eingrenzung der Preisstaffel
+        */
         public RegionalePreisstaffelBuilder setRegionaleGueltigkeit(RegionaleGueltigkeit regionaleGueltigkeit) {
             this.regionaleGueltigkeit = regionaleGueltigkeit;
             return this;
         }
 
         /**
-         * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
-         * Parameter
-         */
-        public Sigmoidparameter getSigmoidparameter() {
-            return sigmoidparameter;
-        }
-
-        /**
-         * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
-         * Parameter
-         */
+        * Parameter zur Berechnung des Preises anhand der Jahresmenge und weiterer netzbezogener
+        * Parameter
+        */
         public RegionalePreisstaffelBuilder setSigmoidparameter(Sigmoidparameter sigmoidparameter) {
             this.sigmoidparameter = sigmoidparameter;
             return this;
         }
 
         /**
-         * Exklusiver oberer Wert, bis zu dem die Staffel gilt
-         */
-        public Double getStaffelgrenzeBis() {
-            return staffelgrenzeBis;
-        }
-
-        /**
-         * Exklusiver oberer Wert, bis zu dem die Staffel gilt
-         */
+        * Exklusiver oberer Wert, bis zu dem die Staffel gilt
+        */
         public RegionalePreisstaffelBuilder setStaffelgrenzeBis(Double staffelgrenzeBis) {
             this.staffelgrenzeBis = staffelgrenzeBis;
             return this;
         }
 
         /**
-         * Inklusiver unterer Wert, ab dem die Staffel gilt
-         */
-        public Double getStaffelgrenzeVon() {
-            return staffelgrenzeVon;
-        }
-
-        /**
-         * Inklusiver unterer Wert, ab dem die Staffel gilt
-         */
+        * Inklusiver unterer Wert, ab dem die Staffel gilt
+        */
         public RegionalePreisstaffelBuilder setStaffelgrenzeVon(Double staffelgrenzeVon) {
             this.staffelgrenzeVon = staffelgrenzeVon;
             return this;

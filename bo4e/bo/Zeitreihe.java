@@ -12,17 +12,17 @@ import bo4e.enums.Wertermittlungsverfahren;
 import java.util.List;
 
 /**
- * Abbildung einer allgemeinen Zeitreihe mit einem Wertvektor.
- * Die Werte können mit wahlfreier zeitlicher Distanz im Vektor abgelegt sein.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/bo/Zeitreihe.svg" type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Zeitreihe JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Zeitreihe.json>`_
- */
+* Abbildung einer allgemeinen Zeitreihe mit einem Wertvektor.
+* Die Werte können mit wahlfreier zeitlicher Distanz im Vektor abgelegt sein.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/bo/Zeitreihe.svg" type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Zeitreihe JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Zeitreihe.json>`_
+*/
 public class Zeitreihe extends Geschaeftsobjekt {
     private final Typ typ = Typ.ZEITREIHE;
     private String beschreibung;
@@ -56,127 +56,127 @@ public class Zeitreihe extends Geschaeftsobjekt {
     }
 
     /**
-     * Beschreibt die Verwendung der Zeitreihe
-     */
+    * Beschreibt die Verwendung der Zeitreihe
+    */
     public String getBeschreibung() {
         return beschreibung;
     }
 
     /**
-     * Beschreibt die Verwendung der Zeitreihe
-     */
+    * Beschreibt die Verwendung der Zeitreihe
+    */
     public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
     }
 
     /**
-     * Bezeichnung für die Zeitreihe
-     */
+    * Bezeichnung für die Zeitreihe
+    */
     public String getBezeichnung() {
         return bezeichnung;
     }
 
     /**
-     * Bezeichnung für die Zeitreihe
-     */
+    * Bezeichnung für die Zeitreihe
+    */
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;
     }
 
     /**
-     * Alle Werte in der Tabelle haben die Einheit, die hier angegeben ist
-     */
+    * Alle Werte in der Tabelle haben die Einheit, die hier angegeben ist
+    */
     public Mengeneinheit getEinheit() {
         return einheit;
     }
 
     /**
-     * Alle Werte in der Tabelle haben die Einheit, die hier angegeben ist
-     */
+    * Alle Werte in der Tabelle haben die Einheit, die hier angegeben ist
+    */
     public void setEinheit(Mengeneinheit einheit) {
         this.einheit = einheit;
     }
 
     /**
-     * Medium, das gemessen wurde (z.B. Wasser, Dampf, Strom, Gas)
-     */
+    * Medium, das gemessen wurde (z.B. Wasser, Dampf, Strom, Gas)
+    */
     public Medium getMedium() {
         return medium;
     }
 
     /**
-     * Medium, das gemessen wurde (z.B. Wasser, Dampf, Strom, Gas)
-     */
+    * Medium, das gemessen wurde (z.B. Wasser, Dampf, Strom, Gas)
+    */
     public void setMedium(Medium medium) {
         this.medium = medium;
     }
 
     /**
-     * Beschreibt die Art der Messung (z.B. aktueller Wert, mittlerer Wert, maximaler Wert)
-     */
+    * Beschreibt die Art der Messung (z.B. aktueller Wert, mittlerer Wert, maximaler Wert)
+    */
     public Messart getMessart() {
         return messart;
     }
 
     /**
-     * Beschreibt die Art der Messung (z.B. aktueller Wert, mittlerer Wert, maximaler Wert)
-     */
+    * Beschreibt die Art der Messung (z.B. aktueller Wert, mittlerer Wert, maximaler Wert)
+    */
     public void setMessart(Messart messart) {
         this.messart = messart;
     }
 
     /**
-     * Beschreibt, was gemessen wurde (z.B. Strom, Spannung, Wirkleistung, Scheinleistung)
-     */
+    * Beschreibt, was gemessen wurde (z.B. Strom, Spannung, Wirkleistung, Scheinleistung)
+    */
     public Messgroesse getMessgroesse() {
         return messgroesse;
     }
 
     /**
-     * Beschreibt, was gemessen wurde (z.B. Strom, Spannung, Wirkleistung, Scheinleistung)
-     */
+    * Beschreibt, was gemessen wurde (z.B. Strom, Spannung, Wirkleistung, Scheinleistung)
+    */
     public void setMessgroesse(Messgroesse messgroesse) {
         this.messgroesse = messgroesse;
     }
 
     /**
-     * Version der Zeitreihe
-     */
+    * Version der Zeitreihe
+    */
     public String getVersion() {
         return version;
     }
 
     /**
-     * Version der Zeitreihe
-     */
+    * Version der Zeitreihe
+    */
     public void setVersion(String version) {
         this.version = version;
     }
 
     /**
-     * Hier liegen jeweils die Werte
-     */
+    * Hier liegen jeweils die Werte
+    */
     public List<Zeitreihenwert> getWerte() {
         return werte;
     }
 
     /**
-     * Hier liegen jeweils die Werte
-     */
+    * Hier liegen jeweils die Werte
+    */
     public void setWerte(List<Zeitreihenwert> werte) {
         this.werte = werte;
     }
 
     /**
-     * Kennzeichnung, wie die Werte entstanden sind, z.B. durch Messung
-     */
+    * Kennzeichnung, wie die Werte entstanden sind, z.B. durch Messung
+    */
     public Wertermittlungsverfahren getWertherkunft() {
         return wertherkunft;
     }
 
     /**
-     * Kennzeichnung, wie die Werte entstanden sind, z.B. durch Messung
-     */
+    * Kennzeichnung, wie die Werte entstanden sind, z.B. durch Messung
+    */
     public void setWertherkunft(Wertermittlungsverfahren wertherkunft) {
         this.wertherkunft = wertherkunft;
     }
@@ -200,135 +200,72 @@ public class Zeitreihe extends Geschaeftsobjekt {
         }
 
         /**
-         * Beschreibt die Verwendung der Zeitreihe
-         */
-        public String getBeschreibung() {
-            return beschreibung;
-        }
-
-        /**
-         * Beschreibt die Verwendung der Zeitreihe
-         */
+        * Beschreibt die Verwendung der Zeitreihe
+        */
         public ZeitreiheBuilder setBeschreibung(String beschreibung) {
             this.beschreibung = beschreibung;
             return this;
         }
 
         /**
-         * Bezeichnung für die Zeitreihe
-         */
-        public String getBezeichnung() {
-            return bezeichnung;
-        }
-
-        /**
-         * Bezeichnung für die Zeitreihe
-         */
+        * Bezeichnung für die Zeitreihe
+        */
         public ZeitreiheBuilder setBezeichnung(String bezeichnung) {
             this.bezeichnung = bezeichnung;
             return this;
         }
 
         /**
-         * Alle Werte in der Tabelle haben die Einheit, die hier angegeben ist
-         */
-        public Mengeneinheit getEinheit() {
-            return einheit;
-        }
-
-        /**
-         * Alle Werte in der Tabelle haben die Einheit, die hier angegeben ist
-         */
+        * Alle Werte in der Tabelle haben die Einheit, die hier angegeben ist
+        */
         public ZeitreiheBuilder setEinheit(Mengeneinheit einheit) {
             this.einheit = einheit;
             return this;
         }
 
         /**
-         * Medium, das gemessen wurde (z.B. Wasser, Dampf, Strom, Gas)
-         */
-        public Medium getMedium() {
-            return medium;
-        }
-
-        /**
-         * Medium, das gemessen wurde (z.B. Wasser, Dampf, Strom, Gas)
-         */
+        * Medium, das gemessen wurde (z.B. Wasser, Dampf, Strom, Gas)
+        */
         public ZeitreiheBuilder setMedium(Medium medium) {
             this.medium = medium;
             return this;
         }
 
         /**
-         * Beschreibt die Art der Messung (z.B. aktueller Wert, mittlerer Wert, maximaler Wert)
-         */
-        public Messart getMessart() {
-            return messart;
-        }
-
-        /**
-         * Beschreibt die Art der Messung (z.B. aktueller Wert, mittlerer Wert, maximaler Wert)
-         */
+        * Beschreibt die Art der Messung (z.B. aktueller Wert, mittlerer Wert, maximaler Wert)
+        */
         public ZeitreiheBuilder setMessart(Messart messart) {
             this.messart = messart;
             return this;
         }
 
         /**
-         * Beschreibt, was gemessen wurde (z.B. Strom, Spannung, Wirkleistung, Scheinleistung)
-         */
-        public Messgroesse getMessgroesse() {
-            return messgroesse;
-        }
-
-        /**
-         * Beschreibt, was gemessen wurde (z.B. Strom, Spannung, Wirkleistung, Scheinleistung)
-         */
+        * Beschreibt, was gemessen wurde (z.B. Strom, Spannung, Wirkleistung, Scheinleistung)
+        */
         public ZeitreiheBuilder setMessgroesse(Messgroesse messgroesse) {
             this.messgroesse = messgroesse;
             return this;
         }
 
         /**
-         * Version der Zeitreihe
-         */
-        public String getVersion() {
-            return version;
-        }
-
-        /**
-         * Version der Zeitreihe
-         */
+        * Version der Zeitreihe
+        */
         public ZeitreiheBuilder setVersion(String version) {
             this.version = version;
             return this;
         }
 
         /**
-         * Hier liegen jeweils die Werte
-         */
-        public List<Zeitreihenwert> getWerte() {
-            return werte;
-        }
-
-        /**
-         * Hier liegen jeweils die Werte
-         */
+        * Hier liegen jeweils die Werte
+        */
         public ZeitreiheBuilder setWerte(List<Zeitreihenwert> werte) {
             this.werte = werte;
             return this;
         }
 
         /**
-         * Kennzeichnung, wie die Werte entstanden sind, z.B. durch Messung
-         */
-        public Wertermittlungsverfahren getWertherkunft() {
-            return wertherkunft;
-        }
-
-        /**
-         * Kennzeichnung, wie die Werte entstanden sind, z.B. durch Messung
-         */
+        * Kennzeichnung, wie die Werte entstanden sind, z.B. durch Messung
+        */
         public ZeitreiheBuilder setWertherkunft(Wertermittlungsverfahren wertherkunft) {
             this.wertherkunft = wertherkunft;
             return this;
