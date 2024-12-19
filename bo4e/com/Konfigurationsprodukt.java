@@ -7,17 +7,17 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
 
 /**
- * Object containing information about a Konfigurationsprodukt
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/bo/Konfigurationsprodukt.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Konfigurationsprodukt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Konfigurationsprodukt.json>`_
- */
+* Object containing information about a Konfigurationsprodukt
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/bo/Konfigurationsprodukt.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Konfigurationsprodukt JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Konfigurationsprodukt.json>`_
+*/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Konfigurationsprodukt extends COM {
     private String leistungskurvendefinition;
@@ -82,17 +82,9 @@ public class Konfigurationsprodukt extends COM {
         private KonfigurationsproduktBuilder() {
         }
 
-        public String getLeistungskurvendefinition() {
-            return leistungskurvendefinition;
-        }
-
         public KonfigurationsproduktBuilder setLeistungskurvendefinition(String leistungskurvendefinition) {
             this.leistungskurvendefinition = leistungskurvendefinition;
             return this;
-        }
-
-        public Marktteilnehmer getMarktpartner() {
-            return marktpartner;
         }
 
         public KonfigurationsproduktBuilder setMarktpartner(Marktteilnehmer marktpartner) {
@@ -100,17 +92,9 @@ public class Konfigurationsprodukt extends COM {
             return this;
         }
 
-        public String getProduktcode() {
-            return produktcode;
-        }
-
         public KonfigurationsproduktBuilder setProduktcode(String produktcode) {
             this.produktcode = produktcode;
             return this;
-        }
-
-        public String getSchaltzeitdefinition() {
-            return schaltzeitdefinition;
         }
 
         public KonfigurationsproduktBuilder setSchaltzeitdefinition(String schaltzeitdefinition) {

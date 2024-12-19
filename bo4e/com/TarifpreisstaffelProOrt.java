@@ -6,17 +6,17 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
 
 /**
- * Gibt die Staffelgrenzen der jeweiligen Preise an
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/TarifpreisstaffelProOrt.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `TarifpreisstaffelProOrt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/TarifpreisstaffelProOrt.json>`_
- */
+* Gibt die Staffelgrenzen der jeweiligen Preise an
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/TarifpreisstaffelProOrt.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `TarifpreisstaffelProOrt JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/TarifpreisstaffelProOrt.json>`_
+*/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TarifpreisstaffelProOrt extends COM {
     private Double arbeitspreis;
@@ -38,71 +38,71 @@ public class TarifpreisstaffelProOrt extends COM {
     }
 
     /**
-     * Der Arbeitspreis in ct/kWh
-     */
+    * Der Arbeitspreis in ct/kWh
+    */
     public Double getArbeitspreis() {
         return arbeitspreis;
     }
 
     /**
-     * Der Arbeitspreis in ct/kWh
-     */
+    * Der Arbeitspreis in ct/kWh
+    */
     public void setArbeitspreis(Double arbeitspreis) {
         this.arbeitspreis = arbeitspreis;
     }
 
     /**
-     * Der Arbeitspreis für Verbräuche in der Niedertarifzeit in ct/kWh
-     */
+    * Der Arbeitspreis für Verbräuche in der Niedertarifzeit in ct/kWh
+    */
     public Double getArbeitspreisNT() {
         return arbeitspreisNT;
     }
 
     /**
-     * Der Arbeitspreis für Verbräuche in der Niedertarifzeit in ct/kWh
-     */
+    * Der Arbeitspreis für Verbräuche in der Niedertarifzeit in ct/kWh
+    */
     public void setArbeitspreisNT(Double arbeitspreisNT) {
         this.arbeitspreisNT = arbeitspreisNT;
     }
 
     /**
-     * Der Grundpreis in Euro/Jahr
-     */
+    * Der Grundpreis in Euro/Jahr
+    */
     public Double getGrundpreis() {
         return grundpreis;
     }
 
     /**
-     * Der Grundpreis in Euro/Jahr
-     */
+    * Der Grundpreis in Euro/Jahr
+    */
     public void setGrundpreis(Double grundpreis) {
         this.grundpreis = grundpreis;
     }
 
     /**
-     * Oberer Wert, bis zu dem die Staffel gilt (exklusive)
-     */
+    * Oberer Wert, bis zu dem die Staffel gilt (exklusive)
+    */
     public Double getStaffelgrenzeBis() {
         return staffelgrenzeBis;
     }
 
     /**
-     * Oberer Wert, bis zu dem die Staffel gilt (exklusive)
-     */
+    * Oberer Wert, bis zu dem die Staffel gilt (exklusive)
+    */
     public void setStaffelgrenzeBis(Double staffelgrenzeBis) {
         this.staffelgrenzeBis = staffelgrenzeBis;
     }
 
     /**
-     * Unterer Wert, ab dem die Staffel gilt (inklusive)
-     */
+    * Unterer Wert, ab dem die Staffel gilt (inklusive)
+    */
     public Double getStaffelgrenzeVon() {
         return staffelgrenzeVon;
     }
 
     /**
-     * Unterer Wert, ab dem die Staffel gilt (inklusive)
-     */
+    * Unterer Wert, ab dem die Staffel gilt (inklusive)
+    */
     public void setStaffelgrenzeVon(Double staffelgrenzeVon) {
         this.staffelgrenzeVon = staffelgrenzeVon;
     }
@@ -123,75 +123,40 @@ public class TarifpreisstaffelProOrt extends COM {
         }
 
         /**
-         * Der Arbeitspreis in ct/kWh
-         */
-        public Double getArbeitspreis() {
-            return arbeitspreis;
-        }
-
-        /**
-         * Der Arbeitspreis in ct/kWh
-         */
+        * Der Arbeitspreis in ct/kWh
+        */
         public TarifpreisstaffelProOrtBuilder setArbeitspreis(Double arbeitspreis) {
             this.arbeitspreis = arbeitspreis;
             return this;
         }
 
         /**
-         * Der Arbeitspreis für Verbräuche in der Niedertarifzeit in ct/kWh
-         */
-        public Double getArbeitspreisNT() {
-            return arbeitspreisNT;
-        }
-
-        /**
-         * Der Arbeitspreis für Verbräuche in der Niedertarifzeit in ct/kWh
-         */
+        * Der Arbeitspreis für Verbräuche in der Niedertarifzeit in ct/kWh
+        */
         public TarifpreisstaffelProOrtBuilder setArbeitspreisNT(Double arbeitspreisNT) {
             this.arbeitspreisNT = arbeitspreisNT;
             return this;
         }
 
         /**
-         * Der Grundpreis in Euro/Jahr
-         */
-        public Double getGrundpreis() {
-            return grundpreis;
-        }
-
-        /**
-         * Der Grundpreis in Euro/Jahr
-         */
+        * Der Grundpreis in Euro/Jahr
+        */
         public TarifpreisstaffelProOrtBuilder setGrundpreis(Double grundpreis) {
             this.grundpreis = grundpreis;
             return this;
         }
 
         /**
-         * Oberer Wert, bis zu dem die Staffel gilt (exklusive)
-         */
-        public Double getStaffelgrenzeBis() {
-            return staffelgrenzeBis;
-        }
-
-        /**
-         * Oberer Wert, bis zu dem die Staffel gilt (exklusive)
-         */
+        * Oberer Wert, bis zu dem die Staffel gilt (exklusive)
+        */
         public TarifpreisstaffelProOrtBuilder setStaffelgrenzeBis(Double staffelgrenzeBis) {
             this.staffelgrenzeBis = staffelgrenzeBis;
             return this;
         }
 
         /**
-         * Unterer Wert, ab dem die Staffel gilt (inklusive)
-         */
-        public Double getStaffelgrenzeVon() {
-            return staffelgrenzeVon;
-        }
-
-        /**
-         * Unterer Wert, ab dem die Staffel gilt (inklusive)
-         */
+        * Unterer Wert, ab dem die Staffel gilt (inklusive)
+        */
         public TarifpreisstaffelProOrtBuilder setStaffelgrenzeVon(Double staffelgrenzeVon) {
             this.staffelgrenzeVon = staffelgrenzeVon;
             return this;

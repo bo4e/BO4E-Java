@@ -6,17 +6,17 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
 
 /**
- * Dient der Adressierung über die Liegenschafts-Information.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Katasteradresse.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Katasteradresse JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Katasteradresse.json>`_
- */
+* Dient der Adressierung über die Liegenschafts-Information.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Katasteradresse.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Katasteradresse JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Katasteradresse.json>`_
+*/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Katasteradresse extends COM {
     private String flurstueck;
@@ -59,17 +59,9 @@ public class Katasteradresse extends COM {
         private KatasteradresseBuilder() {
         }
 
-        public String getFlurstueck() {
-            return flurstueck;
-        }
-
         public KatasteradresseBuilder setFlurstueck(String flurstueck) {
             this.flurstueck = flurstueck;
             return this;
-        }
-
-        public String getGemarkungFlur() {
-            return gemarkungFlur;
         }
 
         public KatasteradresseBuilder setGemarkungFlur(String gemarkungFlur) {

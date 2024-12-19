@@ -6,17 +6,17 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
 
 /**
- * Standorteigenschaften der Sparte Gas
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/StandorteigenschaftenGas.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `StandorteigenschaftenGas JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/StandorteigenschaftenGas.json>`_
- */
+* Standorteigenschaften der Sparte Gas
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/StandorteigenschaftenGas.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `StandorteigenschaftenGas JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/StandorteigenschaftenGas.json>`_
+*/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StandorteigenschaftenGas extends COM {
     private List<MarktgebietInfo> marktgebiete;
@@ -32,29 +32,29 @@ public class StandorteigenschaftenGas extends COM {
     }
 
     /**
-     * Netzkontonummern der Gasnetze
-     */
+    * Netzkontonummern der Gasnetze
+    */
     public List<MarktgebietInfo> getMarktgebiete() {
         return marktgebiete;
     }
 
     /**
-     * Netzkontonummern der Gasnetze
-     */
+    * Netzkontonummern der Gasnetze
+    */
     public void setMarktgebiete(List<MarktgebietInfo> marktgebiete) {
         this.marktgebiete = marktgebiete;
     }
 
     /**
-     * Netzkontonummern der Gasnetze
-     */
+    * Netzkontonummern der Gasnetze
+    */
     public List<String> getNetzkontonummern() {
         return netzkontonummern;
     }
 
     /**
-     * Netzkontonummern der Gasnetze
-     */
+    * Netzkontonummern der Gasnetze
+    */
     public void setNetzkontonummern(List<String> netzkontonummern) {
         this.netzkontonummern = netzkontonummern;
     }
@@ -72,30 +72,16 @@ public class StandorteigenschaftenGas extends COM {
         }
 
         /**
-         * Netzkontonummern der Gasnetze
-         */
-        public List<MarktgebietInfo> getMarktgebiete() {
-            return marktgebiete;
-        }
-
-        /**
-         * Netzkontonummern der Gasnetze
-         */
+        * Netzkontonummern der Gasnetze
+        */
         public StandorteigenschaftenGasBuilder setMarktgebiete(List<MarktgebietInfo> marktgebiete) {
             this.marktgebiete = marktgebiete;
             return this;
         }
 
         /**
-         * Netzkontonummern der Gasnetze
-         */
-        public List<String> getNetzkontonummern() {
-            return netzkontonummern;
-        }
-
-        /**
-         * Netzkontonummern der Gasnetze
-         */
+        * Netzkontonummern der Gasnetze
+        */
         public StandorteigenschaftenGasBuilder setNetzkontonummern(List<String> netzkontonummern) {
             this.netzkontonummern = netzkontonummern;
             return this;

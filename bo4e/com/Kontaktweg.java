@@ -7,17 +7,17 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
 
 /**
- * Die Komponente wird dazu verwendet, die Kontaktwege innerhalb des BOs Person
- * darzustellen
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Kontakt.svg" type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Kontakt JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Kontakt.json>`_
- */
+* Die Komponente wird dazu verwendet, die Kontaktwege innerhalb des BOs Person
+* darzustellen
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Kontakt.svg" type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Kontakt JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Kontakt.json>`_
+*/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Kontaktweg extends COM {
     private String beschreibung;
@@ -37,57 +37,57 @@ public class Kontaktweg extends COM {
     }
 
     /**
-     * Spezifikation, beispielsweise "Durchwahl", "Sammelnummer" etc.
-     */
+    * Spezifikation, beispielsweise "Durchwahl", "Sammelnummer" etc.
+    */
     public String getBeschreibung() {
         return beschreibung;
     }
 
     /**
-     * Spezifikation, beispielsweise "Durchwahl", "Sammelnummer" etc.
-     */
+    * Spezifikation, beispielsweise "Durchwahl", "Sammelnummer" etc.
+    */
     public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
     }
 
     /**
-     * Gibt an, ob es sich um den bevorzugten Kontaktweg handelt.
-     */
+    * Gibt an, ob es sich um den bevorzugten Kontaktweg handelt.
+    */
     public Boolean getIstBevorzugterKontaktweg() {
         return istBevorzugterKontaktweg;
     }
 
     /**
-     * Gibt an, ob es sich um den bevorzugten Kontaktweg handelt.
-     */
+    * Gibt an, ob es sich um den bevorzugten Kontaktweg handelt.
+    */
     public void setIstBevorzugterKontaktweg(Boolean istBevorzugterKontaktweg) {
         this.istBevorzugterKontaktweg = istBevorzugterKontaktweg;
     }
 
     /**
-     * Gibt die Kontaktart des Kontaktes an.
-     */
+    * Gibt die Kontaktart des Kontaktes an.
+    */
     public Kontaktart getKontaktart() {
         return kontaktart;
     }
 
     /**
-     * Gibt die Kontaktart des Kontaktes an.
-     */
+    * Gibt die Kontaktart des Kontaktes an.
+    */
     public void setKontaktart(Kontaktart kontaktart) {
         this.kontaktart = kontaktart;
     }
 
     /**
-     * Die Nummer oder E-Mail-Adresse.
-     */
+    * Die Nummer oder E-Mail-Adresse.
+    */
     public String getKontaktwert() {
         return kontaktwert;
     }
 
     /**
-     * Die Nummer oder E-Mail-Adresse.
-     */
+    * Die Nummer oder E-Mail-Adresse.
+    */
     public void setKontaktwert(String kontaktwert) {
         this.kontaktwert = kontaktwert;
     }
@@ -107,60 +107,32 @@ public class Kontaktweg extends COM {
         }
 
         /**
-         * Spezifikation, beispielsweise "Durchwahl", "Sammelnummer" etc.
-         */
-        public String getBeschreibung() {
-            return beschreibung;
-        }
-
-        /**
-         * Spezifikation, beispielsweise "Durchwahl", "Sammelnummer" etc.
-         */
+        * Spezifikation, beispielsweise "Durchwahl", "Sammelnummer" etc.
+        */
         public KontaktwegBuilder setBeschreibung(String beschreibung) {
             this.beschreibung = beschreibung;
             return this;
         }
 
         /**
-         * Gibt an, ob es sich um den bevorzugten Kontaktweg handelt.
-         */
-        public Boolean getIstBevorzugterKontaktweg() {
-            return istBevorzugterKontaktweg;
-        }
-
-        /**
-         * Gibt an, ob es sich um den bevorzugten Kontaktweg handelt.
-         */
+        * Gibt an, ob es sich um den bevorzugten Kontaktweg handelt.
+        */
         public KontaktwegBuilder setIstBevorzugterKontaktweg(Boolean istBevorzugterKontaktweg) {
             this.istBevorzugterKontaktweg = istBevorzugterKontaktweg;
             return this;
         }
 
         /**
-         * Gibt die Kontaktart des Kontaktes an.
-         */
-        public Kontaktart getKontaktart() {
-            return kontaktart;
-        }
-
-        /**
-         * Gibt die Kontaktart des Kontaktes an.
-         */
+        * Gibt die Kontaktart des Kontaktes an.
+        */
         public KontaktwegBuilder setKontaktart(Kontaktart kontaktart) {
             this.kontaktart = kontaktart;
             return this;
         }
 
         /**
-         * Die Nummer oder E-Mail-Adresse.
-         */
-        public String getKontaktwert() {
-            return kontaktwert;
-        }
-
-        /**
-         * Die Nummer oder E-Mail-Adresse.
-         */
+        * Die Nummer oder E-Mail-Adresse.
+        */
         public KontaktwegBuilder setKontaktwert(String kontaktwert) {
             this.kontaktwert = kontaktwert;
             return this;

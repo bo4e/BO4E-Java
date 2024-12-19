@@ -7,17 +7,17 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
 
 /**
- * Diese Komponente wird zur Übertagung der Details zu einer Konzessionsabgabe verwendet.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Konzessionsabgabe.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Konzessionsabgabe JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Konzessionsabgabe.json>`_
- */
+* Diese Komponente wird zur Übertagung der Details zu einer Konzessionsabgabe verwendet.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Konzessionsabgabe.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Konzessionsabgabe JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Konzessionsabgabe.json>`_
+*/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Konzessionsabgabe extends COM {
     private String kategorie;
@@ -35,43 +35,43 @@ public class Konzessionsabgabe extends COM {
     }
 
     /**
-     * Gebührenkategorie der Konzessionsabgabe
-     */
+    * Gebührenkategorie der Konzessionsabgabe
+    */
     public String getKategorie() {
         return kategorie;
     }
 
     /**
-     * Gebührenkategorie der Konzessionsabgabe
-     */
+    * Gebührenkategorie der Konzessionsabgabe
+    */
     public void setKategorie(String kategorie) {
         this.kategorie = kategorie;
     }
 
     /**
-     * Konzessionsabgabe in E/kWh
-     */
+    * Konzessionsabgabe in E/kWh
+    */
     public Double getKosten() {
         return kosten;
     }
 
     /**
-     * Konzessionsabgabe in E/kWh
-     */
+    * Konzessionsabgabe in E/kWh
+    */
     public void setKosten(Double kosten) {
         this.kosten = kosten;
     }
 
     /**
-     * Art der Abgabe
-     */
+    * Art der Abgabe
+    */
     public AbgabeArt getSatz() {
         return satz;
     }
 
     /**
-     * Art der Abgabe
-     */
+    * Art der Abgabe
+    */
     public void setSatz(AbgabeArt satz) {
         this.satz = satz;
     }
@@ -90,45 +90,24 @@ public class Konzessionsabgabe extends COM {
         }
 
         /**
-         * Gebührenkategorie der Konzessionsabgabe
-         */
-        public String getKategorie() {
-            return kategorie;
-        }
-
-        /**
-         * Gebührenkategorie der Konzessionsabgabe
-         */
+        * Gebührenkategorie der Konzessionsabgabe
+        */
         public KonzessionsabgabeBuilder setKategorie(String kategorie) {
             this.kategorie = kategorie;
             return this;
         }
 
         /**
-         * Konzessionsabgabe in E/kWh
-         */
-        public Double getKosten() {
-            return kosten;
-        }
-
-        /**
-         * Konzessionsabgabe in E/kWh
-         */
+        * Konzessionsabgabe in E/kWh
+        */
         public KonzessionsabgabeBuilder setKosten(Double kosten) {
             this.kosten = kosten;
             return this;
         }
 
         /**
-         * Art der Abgabe
-         */
-        public AbgabeArt getSatz() {
-            return satz;
-        }
-
-        /**
-         * Art der Abgabe
-         */
+        * Art der Abgabe
+        */
         public KonzessionsabgabeBuilder setSatz(AbgabeArt satz) {
             this.satz = satz;
             return this;

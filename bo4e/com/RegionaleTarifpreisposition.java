@@ -9,19 +9,19 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
 
 /**
- * Mit dieser Komponente können Tarifpreise verschiedener Typen im Zusammenhang mit
- * regionalen Gültigkeiten abgebildet
- * werden.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/RegionaleTarifpreisposition.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `RegionaleTarifpreisposition JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/RegionaleTarifpreisposition.json>`_
- */
+* Mit dieser Komponente können Tarifpreise verschiedener Typen im Zusammenhang mit
+* regionalen Gültigkeiten abgebildet
+* werden.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/RegionaleTarifpreisposition.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `RegionaleTarifpreisposition JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/RegionaleTarifpreisposition.json>`_
+*/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RegionaleTarifpreisposition extends COM {
     private Mengeneinheit bezugseinheit;
@@ -43,73 +43,73 @@ public class RegionaleTarifpreisposition extends COM {
     }
 
     /**
-     * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
-     */
+    * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
+    */
     public Mengeneinheit getBezugseinheit() {
         return bezugseinheit;
     }
 
     /**
-     * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
-     */
+    * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
+    */
     public void setBezugseinheit(Mengeneinheit bezugseinheit) {
         this.bezugseinheit = bezugseinheit;
     }
 
     /**
-     * Einheit des Preises (z.B. EURO)
-     */
+    * Einheit des Preises (z.B. EURO)
+    */
     public Waehrungseinheit getEinheit() {
         return einheit;
     }
 
     /**
-     * Einheit des Preises (z.B. EURO)
-     */
+    * Einheit des Preises (z.B. EURO)
+    */
     public void setEinheit(Waehrungseinheit einheit) {
         this.einheit = einheit;
     }
 
     /**
-     * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
-     * Jahresstromverbrauch in kWh)
-     */
+    * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
+    * Jahresstromverbrauch in kWh)
+    */
     public Mengeneinheit getMengeneinheitstaffel() {
         return mengeneinheitstaffel;
     }
 
     /**
-     * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
-     * Jahresstromverbrauch in kWh)
-     */
+    * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
+    * Jahresstromverbrauch in kWh)
+    */
     public void setMengeneinheitstaffel(Mengeneinheit mengeneinheitstaffel) {
         this.mengeneinheitstaffel = mengeneinheitstaffel;
     }
 
     /**
-     * Hier sind die Staffeln mit ihren Preisangaben und regionalen Gültigkeiten definiert
-     */
+    * Hier sind die Staffeln mit ihren Preisangaben und regionalen Gültigkeiten definiert
+    */
     public List<RegionalePreisstaffel> getPreisstaffeln() {
         return preisstaffeln;
     }
 
     /**
-     * Hier sind die Staffeln mit ihren Preisangaben und regionalen Gültigkeiten definiert
-     */
+    * Hier sind die Staffeln mit ihren Preisangaben und regionalen Gültigkeiten definiert
+    */
     public void setPreisstaffeln(List<RegionalePreisstaffel> preisstaffeln) {
         this.preisstaffeln = preisstaffeln;
     }
 
     /**
-     * Angabe des Preistypes (z.B. Grundpreis)
-     */
+    * Angabe des Preistypes (z.B. Grundpreis)
+    */
     public Preistyp getPreistyp() {
         return preistyp;
     }
 
     /**
-     * Angabe des Preistypes (z.B. Grundpreis)
-     */
+    * Angabe des Preistypes (z.B. Grundpreis)
+    */
     public void setPreistyp(Preistyp preistyp) {
         this.preistyp = preistyp;
     }
@@ -130,77 +130,41 @@ public class RegionaleTarifpreisposition extends COM {
         }
 
         /**
-         * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
-         */
-        public Mengeneinheit getBezugseinheit() {
-            return bezugseinheit;
-        }
-
-        /**
-         * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
-         */
+        * Größe, auf die sich die Einheit bezieht, beispielsweise kWh, Jahr
+        */
         public RegionaleTarifpreispositionBuilder setBezugseinheit(Mengeneinheit bezugseinheit) {
             this.bezugseinheit = bezugseinheit;
             return this;
         }
 
         /**
-         * Einheit des Preises (z.B. EURO)
-         */
-        public Waehrungseinheit getEinheit() {
-            return einheit;
-        }
-
-        /**
-         * Einheit des Preises (z.B. EURO)
-         */
+        * Einheit des Preises (z.B. EURO)
+        */
         public RegionaleTarifpreispositionBuilder setEinheit(Waehrungseinheit einheit) {
             this.einheit = einheit;
             return this;
         }
 
         /**
-         * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
-         * Jahresstromverbrauch in kWh)
-         */
-        public Mengeneinheit getMengeneinheitstaffel() {
-            return mengeneinheitstaffel;
-        }
-
-        /**
-         * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
-         * Jahresstromverbrauch in kWh)
-         */
+        * Gibt an, nach welcher Menge die vorgenannte Einschränkung erfolgt (z.B.
+        * Jahresstromverbrauch in kWh)
+        */
         public RegionaleTarifpreispositionBuilder setMengeneinheitstaffel(Mengeneinheit mengeneinheitstaffel) {
             this.mengeneinheitstaffel = mengeneinheitstaffel;
             return this;
         }
 
         /**
-         * Hier sind die Staffeln mit ihren Preisangaben und regionalen Gültigkeiten definiert
-         */
-        public List<RegionalePreisstaffel> getPreisstaffeln() {
-            return preisstaffeln;
-        }
-
-        /**
-         * Hier sind die Staffeln mit ihren Preisangaben und regionalen Gültigkeiten definiert
-         */
+        * Hier sind die Staffeln mit ihren Preisangaben und regionalen Gültigkeiten definiert
+        */
         public RegionaleTarifpreispositionBuilder setPreisstaffeln(List<RegionalePreisstaffel> preisstaffeln) {
             this.preisstaffeln = preisstaffeln;
             return this;
         }
 
         /**
-         * Angabe des Preistypes (z.B. Grundpreis)
-         */
-        public Preistyp getPreistyp() {
-            return preistyp;
-        }
-
-        /**
-         * Angabe des Preistypes (z.B. Grundpreis)
-         */
+        * Angabe des Preistypes (z.B. Grundpreis)
+        */
         public RegionaleTarifpreispositionBuilder setPreistyp(Preistyp preistyp) {
             this.preistyp = preistyp;
             return this;

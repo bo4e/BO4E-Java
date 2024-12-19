@@ -6,17 +6,17 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
 
 /**
- * Informationen zum Marktgebiet im Gas.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/MarktgebietInfo.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `MarktgebietInfo JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/MarktgebietInfo.json>`_
- */
+* Informationen zum Marktgebiet im Gas.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/MarktgebietInfo.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `MarktgebietInfo JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/MarktgebietInfo.json>`_
+*/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MarktgebietInfo extends COM {
     private String marktgebiet;
@@ -32,29 +32,29 @@ public class MarktgebietInfo extends COM {
     }
 
     /**
-     * Der Name des Marktgebietes
-     */
+    * Der Name des Marktgebietes
+    */
     public String getMarktgebiet() {
         return marktgebiet;
     }
 
     /**
-     * Der Name des Marktgebietes
-     */
+    * Der Name des Marktgebietes
+    */
     public void setMarktgebiet(String marktgebiet) {
         this.marktgebiet = marktgebiet;
     }
 
     /**
-     * Der Name des Marktgebietes
-     */
+    * Der Name des Marktgebietes
+    */
     public String getMarktgebietcode() {
         return marktgebietcode;
     }
 
     /**
-     * Der Name des Marktgebietes
-     */
+    * Der Name des Marktgebietes
+    */
     public void setMarktgebietcode(String marktgebietcode) {
         this.marktgebietcode = marktgebietcode;
     }
@@ -72,30 +72,16 @@ public class MarktgebietInfo extends COM {
         }
 
         /**
-         * Der Name des Marktgebietes
-         */
-        public String getMarktgebiet() {
-            return marktgebiet;
-        }
-
-        /**
-         * Der Name des Marktgebietes
-         */
+        * Der Name des Marktgebietes
+        */
         public MarktgebietInfoBuilder setMarktgebiet(String marktgebiet) {
             this.marktgebiet = marktgebiet;
             return this;
         }
 
         /**
-         * Der Name des Marktgebietes
-         */
-        public String getMarktgebietcode() {
-            return marktgebietcode;
-        }
-
-        /**
-         * Der Name des Marktgebietes
-         */
+        * Der Name des Marktgebietes
+        */
         public MarktgebietInfoBuilder setMarktgebietcode(String marktgebietcode) {
             this.marktgebietcode = marktgebietcode;
             return this;

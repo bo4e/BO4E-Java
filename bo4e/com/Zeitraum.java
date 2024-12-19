@@ -8,21 +8,21 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 /**
- * Diese Komponente wird zur Abbildung von Zeiträumen in Form von Dauern oder der Angabe von
- * Start und Ende verwendet.
- * Es muss daher eine der drei Möglichkeiten angegeben sein:
- * - Einheit und Dauer oder
- * - Zeitraum: Startdatum bis Enddatum oder
- * - Zeitraum: Startzeitpunkt (Datum und Uhrzeit) bis Endzeitpunkt (Datum und Uhrzeit)
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Zeitraum.svg" type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Zeitraum JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zeitraum.json>`_
- */
+* Diese Komponente wird zur Abbildung von Zeiträumen in Form von Dauern oder der Angabe von
+* Start und Ende verwendet.
+* Es muss daher eine der drei Möglichkeiten angegeben sein:
+* - Einheit und Dauer oder
+* - Zeitraum: Startdatum bis Enddatum oder
+* - Zeitraum: Startzeitpunkt (Datum und Uhrzeit) bis Endzeitpunkt (Datum und Uhrzeit)
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Zeitraum.svg" type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Zeitraum JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zeitraum.json>`_
+*/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zeitraum extends COM {
     private Double dauer;
@@ -109,17 +109,9 @@ public class Zeitraum extends COM {
         private ZeitraumBuilder() {
         }
 
-        public Double getDauer() {
-            return dauer;
-        }
-
         public ZeitraumBuilder setDauer(Double dauer) {
             this.dauer = dauer;
             return this;
-        }
-
-        public Mengeneinheit getEinheit() {
-            return einheit;
         }
 
         public ZeitraumBuilder setEinheit(Mengeneinheit einheit) {
@@ -127,17 +119,9 @@ public class Zeitraum extends COM {
             return this;
         }
 
-        public OffsetDateTime getEnddatum() {
-            return enddatum;
-        }
-
         public ZeitraumBuilder setEnddatum(OffsetDateTime enddatum) {
             this.enddatum = enddatum;
             return this;
-        }
-
-        public OffsetDateTime getEndzeitpunkt() {
-            return endzeitpunkt;
         }
 
         public ZeitraumBuilder setEndzeitpunkt(OffsetDateTime endzeitpunkt) {
@@ -145,17 +129,9 @@ public class Zeitraum extends COM {
             return this;
         }
 
-        public OffsetDateTime getStartdatum() {
-            return startdatum;
-        }
-
         public ZeitraumBuilder setStartdatum(OffsetDateTime startdatum) {
             this.startdatum = startdatum;
             return this;
-        }
-
-        public OffsetDateTime getStartzeitpunkt() {
-            return startzeitpunkt;
         }
 
         public ZeitraumBuilder setStartzeitpunkt(OffsetDateTime startzeitpunkt) {

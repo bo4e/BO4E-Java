@@ -6,18 +6,18 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
 
 /**
- * Abbildung für Vertragskonditionen. Die Komponente wird sowohl im Vertrag als auch im
- * Tarif verwendet.
- *
- * .. raw:: html
- *
- * <object data="../_static/images/bo4e/com/Vertragskonditionen.svg"
- * type="image/svg+xml"></object>
- *
- * .. HINT::
- * `Vertragskonditionen JSON Schema
- * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Vertragskonditionen.json>`_
- */
+* Abbildung für Vertragskonditionen. Die Komponente wird sowohl im Vertrag als auch im
+* Tarif verwendet.
+*
+* .. raw:: html
+*
+* <object data="../_static/images/bo4e/com/Vertragskonditionen.svg"
+* type="image/svg+xml"></object>
+*
+* .. HINT::
+* `Vertragskonditionen JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Vertragskonditionen.json>`_
+*/
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Vertragskonditionen extends COM {
     private Zeitraum abschlagszyklus;
@@ -41,89 +41,89 @@ public class Vertragskonditionen extends COM {
     }
 
     /**
-     * In diesen Zyklen werden Abschläge gestellt. Alternativ kann auch die Anzahl in den
-     * Konditionen angeben werden.
-     */
+    * In diesen Zyklen werden Abschläge gestellt. Alternativ kann auch die Anzahl in den
+    * Konditionen angeben werden.
+    */
     public Zeitraum getAbschlagszyklus() {
         return abschlagszyklus;
     }
 
     /**
-     * In diesen Zyklen werden Abschläge gestellt. Alternativ kann auch die Anzahl in den
-     * Konditionen angeben werden.
-     */
+    * In diesen Zyklen werden Abschläge gestellt. Alternativ kann auch die Anzahl in den
+    * Konditionen angeben werden.
+    */
     public void setAbschlagszyklus(Zeitraum abschlagszyklus) {
         this.abschlagszyklus = abschlagszyklus;
     }
 
     /**
-     * Anzahl der vereinbarten Abschläge pro Jahr, z.B. 12
-     */
+    * Anzahl der vereinbarten Abschläge pro Jahr, z.B. 12
+    */
     public Double getAnzahlAbschlaege() {
         return anzahlAbschlaege;
     }
 
     /**
-     * Anzahl der vereinbarten Abschläge pro Jahr, z.B. 12
-     */
+    * Anzahl der vereinbarten Abschläge pro Jahr, z.B. 12
+    */
     public void setAnzahlAbschlaege(Double anzahlAbschlaege) {
         this.anzahlAbschlaege = anzahlAbschlaege;
     }
 
     /**
-     * Freitext zur Beschreibung der Konditionen, z.B. "Standardkonditionen Gas"
-     */
+    * Freitext zur Beschreibung der Konditionen, z.B. "Standardkonditionen Gas"
+    */
     public String getBeschreibung() {
         return beschreibung;
     }
 
     /**
-     * Freitext zur Beschreibung der Konditionen, z.B. "Standardkonditionen Gas"
-     */
+    * Freitext zur Beschreibung der Konditionen, z.B. "Standardkonditionen Gas"
+    */
     public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
     }
 
     /**
-     * Innerhalb dieser Frist kann der Vertrag gekündigt werden
-     */
+    * Innerhalb dieser Frist kann der Vertrag gekündigt werden
+    */
     public Zeitraum getKuendigungsfrist() {
         return kuendigungsfrist;
     }
 
     /**
-     * Innerhalb dieser Frist kann der Vertrag gekündigt werden
-     */
+    * Innerhalb dieser Frist kann der Vertrag gekündigt werden
+    */
     public void setKuendigungsfrist(Zeitraum kuendigungsfrist) {
         this.kuendigungsfrist = kuendigungsfrist;
     }
 
     /**
-     * Über diesen Zeitraum läuft der Vertrag
-     */
+    * Über diesen Zeitraum läuft der Vertrag
+    */
     public Zeitraum getVertragslaufzeit() {
         return vertragslaufzeit;
     }
 
     /**
-     * Über diesen Zeitraum läuft der Vertrag
-     */
+    * Über diesen Zeitraum läuft der Vertrag
+    */
     public void setVertragslaufzeit(Zeitraum vertragslaufzeit) {
         this.vertragslaufzeit = vertragslaufzeit;
     }
 
     /**
-     * Falls der Vertrag nicht gekündigt wird, verlängert er sich automatisch um die hier
-     * angegebene Zeit
-     */
+    * Falls der Vertrag nicht gekündigt wird, verlängert er sich automatisch um die hier
+    * angegebene Zeit
+    */
     public Zeitraum getVertragsverlaengerung() {
         return vertragsverlaengerung;
     }
 
     /**
-     * Falls der Vertrag nicht gekündigt wird, verlängert er sich automatisch um die hier
-     * angegebene Zeit
-     */
+    * Falls der Vertrag nicht gekündigt wird, verlängert er sich automatisch um die hier
+    * angegebene Zeit
+    */
     public void setVertragsverlaengerung(Zeitraum vertragsverlaengerung) {
         this.vertragsverlaengerung = vertragsverlaengerung;
     }
@@ -145,94 +145,50 @@ public class Vertragskonditionen extends COM {
         }
 
         /**
-         * In diesen Zyklen werden Abschläge gestellt. Alternativ kann auch die Anzahl in den
-         * Konditionen angeben werden.
-         */
-        public Zeitraum getAbschlagszyklus() {
-            return abschlagszyklus;
-        }
-
-        /**
-         * In diesen Zyklen werden Abschläge gestellt. Alternativ kann auch die Anzahl in den
-         * Konditionen angeben werden.
-         */
+        * In diesen Zyklen werden Abschläge gestellt. Alternativ kann auch die Anzahl in den
+        * Konditionen angeben werden.
+        */
         public VertragskonditionenBuilder setAbschlagszyklus(Zeitraum abschlagszyklus) {
             this.abschlagszyklus = abschlagszyklus;
             return this;
         }
 
         /**
-         * Anzahl der vereinbarten Abschläge pro Jahr, z.B. 12
-         */
-        public Double getAnzahlAbschlaege() {
-            return anzahlAbschlaege;
-        }
-
-        /**
-         * Anzahl der vereinbarten Abschläge pro Jahr, z.B. 12
-         */
+        * Anzahl der vereinbarten Abschläge pro Jahr, z.B. 12
+        */
         public VertragskonditionenBuilder setAnzahlAbschlaege(Double anzahlAbschlaege) {
             this.anzahlAbschlaege = anzahlAbschlaege;
             return this;
         }
 
         /**
-         * Freitext zur Beschreibung der Konditionen, z.B. "Standardkonditionen Gas"
-         */
-        public String getBeschreibung() {
-            return beschreibung;
-        }
-
-        /**
-         * Freitext zur Beschreibung der Konditionen, z.B. "Standardkonditionen Gas"
-         */
+        * Freitext zur Beschreibung der Konditionen, z.B. "Standardkonditionen Gas"
+        */
         public VertragskonditionenBuilder setBeschreibung(String beschreibung) {
             this.beschreibung = beschreibung;
             return this;
         }
 
         /**
-         * Innerhalb dieser Frist kann der Vertrag gekündigt werden
-         */
-        public Zeitraum getKuendigungsfrist() {
-            return kuendigungsfrist;
-        }
-
-        /**
-         * Innerhalb dieser Frist kann der Vertrag gekündigt werden
-         */
+        * Innerhalb dieser Frist kann der Vertrag gekündigt werden
+        */
         public VertragskonditionenBuilder setKuendigungsfrist(Zeitraum kuendigungsfrist) {
             this.kuendigungsfrist = kuendigungsfrist;
             return this;
         }
 
         /**
-         * Über diesen Zeitraum läuft der Vertrag
-         */
-        public Zeitraum getVertragslaufzeit() {
-            return vertragslaufzeit;
-        }
-
-        /**
-         * Über diesen Zeitraum läuft der Vertrag
-         */
+        * Über diesen Zeitraum läuft der Vertrag
+        */
         public VertragskonditionenBuilder setVertragslaufzeit(Zeitraum vertragslaufzeit) {
             this.vertragslaufzeit = vertragslaufzeit;
             return this;
         }
 
         /**
-         * Falls der Vertrag nicht gekündigt wird, verlängert er sich automatisch um die hier
-         * angegebene Zeit
-         */
-        public Zeitraum getVertragsverlaengerung() {
-            return vertragsverlaengerung;
-        }
-
-        /**
-         * Falls der Vertrag nicht gekündigt wird, verlängert er sich automatisch um die hier
-         * angegebene Zeit
-         */
+        * Falls der Vertrag nicht gekündigt wird, verlängert er sich automatisch um die hier
+        * angegebene Zeit
+        */
         public VertragskonditionenBuilder setVertragsverlaengerung(Zeitraum vertragsverlaengerung) {
             this.vertragsverlaengerung = vertragsverlaengerung;
             return this;
