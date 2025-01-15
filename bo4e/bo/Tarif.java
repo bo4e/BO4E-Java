@@ -33,7 +33,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tarif extends Geschaeftsobjekt {
-    private final Typ typ = Typ.TARIF;
+    private final Typ _typ = Typ.TARIF;
     private Marktteilnehmer anbieter;
     private String anbietername;
     private OffsetDateTime anwendungVon;
@@ -82,8 +82,8 @@ public class Tarif extends Geschaeftsobjekt {
         this.zeitlicheGueltigkeit = builder.zeitlicheGueltigkeit;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

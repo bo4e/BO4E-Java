@@ -30,7 +30,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Preisblatt extends Geschaeftsobjekt {
-    private final Typ typ = Typ.PREISBLATT;
+    private final Typ _typ = Typ.PREISBLATT;
     private String bezeichnung;
     private Zeitraum gueltigkeit;
     private Marktteilnehmer herausgeber;
@@ -51,8 +51,8 @@ public class Preisblatt extends Geschaeftsobjekt {
         this.sparte = builder.sparte;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

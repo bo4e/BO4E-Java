@@ -26,7 +26,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zeitreihe extends Geschaeftsobjekt {
-    private final Typ typ = Typ.ZEITREIHE;
+    private final Typ _typ = Typ.ZEITREIHE;
     private String beschreibung;
     private String bezeichnung;
     private Mengeneinheit einheit;
@@ -53,8 +53,8 @@ public class Zeitreihe extends Geschaeftsobjekt {
         this.wertherkunft = builder.wertherkunft;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

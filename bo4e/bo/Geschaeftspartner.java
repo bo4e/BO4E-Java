@@ -29,7 +29,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Geschaeftspartner extends Geschaeftsobjekt {
-    private final Typ typ = Typ.GESCHAEFTSPARTNER;
+    private final Typ _typ = Typ.GESCHAEFTSPARTNER;
     private Adresse adresse;
     private String amtsgericht;
     private Anrede anrede;
@@ -70,8 +70,8 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
         this.website = builder.website;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

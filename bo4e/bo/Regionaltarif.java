@@ -32,7 +32,7 @@ import java.util.List;
     */
     @JsonInclude(JsonInclude.Include.NON_NULL)
     public class Regionaltarif extends Geschaeftsobjekt {
-        private final Typ typ = Typ.REGIONALTARIF;
+        private final Typ _typ = Typ.REGIONALTARIF;
         private Marktteilnehmer anbieter;
         private String anbietername;
         private OffsetDateTime anwendungVon;
@@ -81,8 +81,8 @@ import java.util.List;
             this.zeitlicheGueltigkeit = builder.zeitlicheGueltigkeit;
         }
 
-        public Typ getTyp() {
-            return typ;
+        public Typ get_typ() {
+            return _typ;
         }
 
         /**

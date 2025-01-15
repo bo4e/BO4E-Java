@@ -27,7 +27,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PreisblattNetznutzung extends Geschaeftsobjekt {
-    private final Typ typ = Typ.PREISBLATTNETZNUTZUNG;
+    private final Typ _typ = Typ.PREISBLATTNETZNUTZUNG;
     private String bezeichnung;
     private Bilanzierungsmethode bilanzierungsmethode;
     private Zeitraum gueltigkeit;
@@ -54,8 +54,8 @@ public class PreisblattNetznutzung extends Geschaeftsobjekt {
         this.sparte = builder.sparte;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

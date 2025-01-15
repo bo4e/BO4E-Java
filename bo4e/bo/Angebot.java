@@ -28,7 +28,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Angebot extends Geschaeftsobjekt {
-    private final Typ typ = Typ.ANGEBOT;
+    private final Typ _typ = Typ.ANGEBOT;
     private String anfragereferenz;
     private OffsetDateTime angebotsdatum;
     private Geschaeftspartner angebotsgeber;
@@ -57,8 +57,8 @@ public class Angebot extends Geschaeftsobjekt {
         this.varianten = builder.varianten;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

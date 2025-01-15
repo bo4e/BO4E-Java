@@ -28,7 +28,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PreisblattMessung extends Geschaeftsobjekt {
-    private final Typ typ = Typ.PREISBLATTMESSUNG;
+    private final Typ _typ = Typ.PREISBLATTMESSUNG;
     private String bezeichnung;
     private Bilanzierungsmethode bilanzierungsmethode;
     private Zeitraum gueltigkeit;
@@ -59,8 +59,8 @@ public class PreisblattMessung extends Geschaeftsobjekt {
         this.zaehler = builder.zaehler;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

@@ -25,7 +25,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Messlokation extends Geschaeftsobjekt {
-    private final Typ typ = Typ.MESSLOKATION;
+    private final Typ _typ = Typ.MESSLOKATION;
     private Geokoordinaten geoadresse;
     private List<Geraet> geraete;
     private String grundzustaendigerMsbCodenr;
@@ -62,8 +62,8 @@ public class Messlokation extends Geschaeftsobjekt {
         this.sparte = builder.sparte;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     public Geokoordinaten getGeoadresse() {

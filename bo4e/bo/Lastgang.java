@@ -26,7 +26,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Lastgang extends Geschaeftsobjekt {
-    private final Typ typ = Typ.LASTGANG;
+    private final Typ _typ = Typ.LASTGANG;
     private Marktlokation marktlokation;
     private Mengeneinheit messgroesse;
     private Messlokation messlokation;
@@ -51,8 +51,8 @@ public class Lastgang extends Geschaeftsobjekt {
         this.zeitIntervallLaenge = builder.zeitIntervallLaenge;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

@@ -29,7 +29,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zaehler extends Geschaeftsobjekt {
-    private final Typ typ = Typ.ZAEHLER;
+    private final Typ _typ = Typ.ZAEHLER;
     private Befestigungsart befestigungsart;
     private OffsetDateTime eichungBis;
     private List<Geraet> geraete;
@@ -70,8 +70,8 @@ public class Zaehler extends Geschaeftsobjekt {
         this.zaehlwerke = builder.zaehlwerke;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

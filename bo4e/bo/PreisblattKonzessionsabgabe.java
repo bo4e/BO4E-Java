@@ -25,7 +25,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PreisblattKonzessionsabgabe extends Geschaeftsobjekt {
-    private final Typ typ = Typ.PREISBLATTKONZESSIONSABGABE;
+    private final Typ _typ = Typ.PREISBLATTKONZESSIONSABGABE;
     private String bezeichnung;
     private Zeitraum gueltigkeit;
     private Marktteilnehmer herausgeber;
@@ -48,8 +48,8 @@ public class PreisblattKonzessionsabgabe extends Geschaeftsobjekt {
         this.sparte = builder.sparte;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

@@ -20,7 +20,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Region extends Geschaeftsobjekt {
-    private final Typ typ = Typ.REGION;
+    private final Typ _typ = Typ.REGION;
     private String bezeichnung;
     private List<Regionskriterium> negativListe;
     private List<Regionskriterium> positivListe;
@@ -35,8 +35,8 @@ public class Region extends Geschaeftsobjekt {
         this.positivListe = builder.positivListe;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

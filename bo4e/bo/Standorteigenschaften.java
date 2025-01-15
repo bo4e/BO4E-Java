@@ -22,7 +22,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Standorteigenschaften extends Geschaeftsobjekt {
-    private final Typ typ = Typ.STANDORTEIGENSCHAFTEN;
+    private final Typ _typ = Typ.STANDORTEIGENSCHAFTEN;
     private StandorteigenschaftenGas eigenschaftenGas;
     private List<StandorteigenschaftenStrom> eigenschaftenStrom;
 
@@ -35,8 +35,8 @@ public class Standorteigenschaften extends Geschaeftsobjekt {
         this.eigenschaftenStrom = builder.eigenschaftenStrom;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

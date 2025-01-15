@@ -25,7 +25,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Kosten extends Geschaeftsobjekt {
-    private final Typ typ = Typ.KOSTEN;
+    private final Typ _typ = Typ.KOSTEN;
     private Zeitraum gueltigkeit;
     private List<Kostenblock> kostenbloecke;
     private Kostenklasse kostenklasse;
@@ -42,8 +42,8 @@ public class Kosten extends Geschaeftsobjekt {
         this.summeKosten = builder.summeKosten;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

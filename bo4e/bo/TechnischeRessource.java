@@ -27,7 +27,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TechnischeRessource extends Geschaeftsobjekt {
-    private final Typ typ = Typ.TECHNISCHERESSOURCE;
+    private final Typ _typ = Typ.TECHNISCHERESSOURCE;
     private EMobilitaetsart emobilitaetsart;
     private Erzeugungsart erzeugungsart;
     private String lokationsbuendelObjektcode;
@@ -66,8 +66,8 @@ public class TechnischeRessource extends Geschaeftsobjekt {
         this.zugeordneteSteuerbareRessourceId = builder.zugeordneteSteuerbareRessourceId;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

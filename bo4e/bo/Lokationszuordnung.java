@@ -24,7 +24,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Lokationszuordnung extends Geschaeftsobjekt {
-    private final Typ typ = Typ.LOKATIONSZUORDNUNG;
+    private final Typ _typ = Typ.LOKATIONSZUORDNUNG;
     private Zeitspanne gueltigkeit;
     private String lokationsbuendelcode;
     private List<Marktlokation> marktlokationen;
@@ -49,8 +49,8 @@ public class Lokationszuordnung extends Geschaeftsobjekt {
         this.zuordnungstyp = builder.zuordnungstyp;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

@@ -21,7 +21,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Geraet extends Geschaeftsobjekt {
-    private final Typ typ = Typ.GERAET;
+    private final Typ _typ = Typ.GERAET;
     private String bezeichnung;
     private Geraeteklasse geraeteklasse;
     private String geraetenummer;
@@ -38,8 +38,8 @@ public class Geraet extends Geschaeftsobjekt {
         this.geraetetyp = builder.geraetetyp;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

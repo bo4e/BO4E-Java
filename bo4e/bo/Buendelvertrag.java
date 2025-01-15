@@ -28,7 +28,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Buendelvertrag extends Geschaeftsobjekt {
-    private final Typ typ = Typ.BUENDELVERTRAG;
+    private final Typ _typ = Typ.BUENDELVERTRAG;
     private String beschreibung;
     private List<Vertrag> einzelvertraege;
     private Sparte sparte;
@@ -63,8 +63,8 @@ public class Buendelvertrag extends Geschaeftsobjekt {
         this.vertragsstatus = builder.vertragsstatus;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

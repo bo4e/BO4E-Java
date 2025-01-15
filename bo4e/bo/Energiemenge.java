@@ -21,7 +21,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Energiemenge extends Geschaeftsobjekt {
-    private final Typ typ = Typ.ENERGIEMENGE;
+    private final Typ _typ = Typ.ENERGIEMENGE;
     private List<Verbrauch> energieverbrauch;
     private String lokationsId;
     private Lokationstyp lokationstyp;
@@ -36,8 +36,8 @@ public class Energiemenge extends Geschaeftsobjekt {
         this.lokationstyp = builder.lokationstyp;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

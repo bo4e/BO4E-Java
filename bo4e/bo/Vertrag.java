@@ -28,7 +28,7 @@ import java.util.List;
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Vertrag extends Geschaeftsobjekt {
-    private final Typ typ = Typ.VERTRAG;
+    private final Typ _typ = Typ.VERTRAG;
     private String beschreibung;
     private Sparte sparte;
     private List<Unterschrift> unterzeichnervp1;
@@ -63,8 +63,8 @@ public class Vertrag extends Geschaeftsobjekt {
         this.vertragsteile = builder.vertragsteile;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**
