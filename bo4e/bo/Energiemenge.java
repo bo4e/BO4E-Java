@@ -19,7 +19,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Energiemenge.json>`_
 */
 public class Energiemenge extends Geschaeftsobjekt {
-    private final Typ typ = Typ.ENERGIEMENGE;
+    private final Typ _typ = Typ.ENERGIEMENGE;
     private List<Verbrauch> energieverbrauch;
     private String lokationsId;
     private Lokationstyp lokationstyp;
@@ -34,8 +34,8 @@ public class Energiemenge extends Geschaeftsobjekt {
         this.lokationstyp = builder.lokationstyp;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

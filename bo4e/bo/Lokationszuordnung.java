@@ -22,7 +22,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Lokationszuordnung.json>`_
 */
 public class Lokationszuordnung extends Geschaeftsobjekt {
-    private final Typ typ = Typ.LOKATIONSZUORDNUNG;
+    private final Typ _typ = Typ.LOKATIONSZUORDNUNG;
     private Zeitspanne gueltigkeit;
     private String lokationsbuendelcode;
     private List<Marktlokation> marktlokationen;
@@ -47,8 +47,8 @@ public class Lokationszuordnung extends Geschaeftsobjekt {
         this.zuordnungstyp = builder.zuordnungstyp;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

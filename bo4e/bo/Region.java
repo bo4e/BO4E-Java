@@ -18,7 +18,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Region.json>`_
 */
 public class Region extends Geschaeftsobjekt {
-    private final Typ typ = Typ.REGION;
+    private final Typ _typ = Typ.REGION;
     private String bezeichnung;
     private List<Regionskriterium> negativListe;
     private List<Regionskriterium> positivListe;
@@ -33,8 +33,8 @@ public class Region extends Geschaeftsobjekt {
         this.positivListe = builder.positivListe;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

@@ -28,7 +28,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Rechnung.json>`_
 */
 public class Rechnung extends Geschaeftsobjekt {
-    private final Typ typ = Typ.RECHNUNG;
+    private final Typ _typ = Typ.RECHNUNG;
     private OffsetDateTime faelligkeitsdatum;
     private Betrag gesamtbrutto;
     private Betrag gesamtnetto;
@@ -89,8 +89,8 @@ public class Rechnung extends Geschaeftsobjekt {
         this.zuZahlen = builder.zuZahlen;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

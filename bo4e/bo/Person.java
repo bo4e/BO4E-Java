@@ -23,7 +23,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Person.json>`_
 */
 public class Person extends Geschaeftsobjekt {
-    private final Typ typ = Typ.PERSON;
+    private final Typ _typ = Typ.PERSON;
     private Adresse adresse;
     private Anrede anrede;
     private OffsetDateTime geburtsdatum;
@@ -52,8 +52,8 @@ public class Person extends Geschaeftsobjekt {
         this.zustaendigkeiten = builder.zustaendigkeiten;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

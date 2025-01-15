@@ -26,7 +26,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Tarifkosten.json>`_
 */
 public class Tarifkosten extends Geschaeftsobjekt {
-    private final Typ typ = Typ.TARIFKOSTEN;
+    private final Typ _typ = Typ.TARIFKOSTEN;
     private Marktteilnehmer anbieter;
     private String anbietername;
     private OffsetDateTime anwendungVon;
@@ -65,8 +65,8 @@ public class Tarifkosten extends Geschaeftsobjekt {
         this.zeitlicheGueltigkeit = builder.zeitlicheGueltigkeit;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

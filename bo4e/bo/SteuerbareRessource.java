@@ -21,7 +21,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/SteuerbareRessource.json>`_
 */
 public class SteuerbareRessource extends Geschaeftsobjekt {
-    private final Typ typ = Typ.STEUERBARERESSOURCE;
+    private final Typ _typ = Typ.STEUERBARERESSOURCE;
     private Marktrolle eigenschaftMsbLokation;
     private List<Konfigurationsprodukt> konfigurationsprodukte;
     private String lokationsbuendelObjektcode;
@@ -44,8 +44,8 @@ public class SteuerbareRessource extends Geschaeftsobjekt {
         this.zugeordneteMsbCodenummer = builder.zugeordneteMsbCodenummer;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

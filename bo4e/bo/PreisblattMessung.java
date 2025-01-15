@@ -26,7 +26,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/PreisblattMessung.json>`_
 */
 public class PreisblattMessung extends Geschaeftsobjekt {
-    private final Typ typ = Typ.PREISBLATTMESSUNG;
+    private final Typ _typ = Typ.PREISBLATTMESSUNG;
     private String bezeichnung;
     private Bilanzierungsmethode bilanzierungsmethode;
     private Zeitraum gueltigkeit;
@@ -57,8 +57,8 @@ public class PreisblattMessung extends Geschaeftsobjekt {
         this.zaehler = builder.zaehler;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

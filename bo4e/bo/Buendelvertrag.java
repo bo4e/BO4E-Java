@@ -26,7 +26,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Buendelvertrag.json>`_
 */
 public class Buendelvertrag extends Geschaeftsobjekt {
-    private final Typ typ = Typ.BUENDELVERTRAG;
+    private final Typ _typ = Typ.BUENDELVERTRAG;
     private String beschreibung;
     private List<Vertrag> einzelvertraege;
     private Sparte sparte;
@@ -61,8 +61,8 @@ public class Buendelvertrag extends Geschaeftsobjekt {
         this.vertragsstatus = builder.vertragsstatus;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

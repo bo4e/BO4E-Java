@@ -20,7 +20,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Standorteigenschaften.json>`_
 */
 public class Standorteigenschaften extends Geschaeftsobjekt {
-    private final Typ typ = Typ.STANDORTEIGENSCHAFTEN;
+    private final Typ _typ = Typ.STANDORTEIGENSCHAFTEN;
     private StandorteigenschaftenGas eigenschaftenGas;
     private List<StandorteigenschaftenStrom> eigenschaftenStrom;
 
@@ -33,8 +33,8 @@ public class Standorteigenschaften extends Geschaeftsobjekt {
         this.eigenschaftenStrom = builder.eigenschaftenStrom;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

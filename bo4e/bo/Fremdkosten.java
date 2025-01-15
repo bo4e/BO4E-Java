@@ -24,7 +24,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Fremdkosten.json>`_
 */
 public class Fremdkosten extends Geschaeftsobjekt {
-    private final Typ typ = Typ.FREMDKOSTEN;
+    private final Typ _typ = Typ.FREMDKOSTEN;
     private Zeitraum gueltigkeit;
     private List<Fremdkostenblock> kostenbloecke;
     private Betrag summeKosten;
@@ -39,8 +39,8 @@ public class Fremdkosten extends Geschaeftsobjekt {
         this.summeKosten = builder.summeKosten;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

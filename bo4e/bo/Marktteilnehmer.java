@@ -21,7 +21,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Marktteilnehmer.json>`_
 */
 public class Marktteilnehmer extends Geschaeftsobjekt {
-    private final Typ typ = Typ.MARKTTEILNEHMER;
+    private final Typ _typ = Typ.MARKTTEILNEHMER;
     private Geschaeftspartner geschaeftspartner;
     private List<String> makoadresse;
     private Marktrolle marktrolle;
@@ -42,8 +42,8 @@ public class Marktteilnehmer extends Geschaeftsobjekt {
         this.sparte = builder.sparte;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

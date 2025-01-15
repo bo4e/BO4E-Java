@@ -25,7 +25,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Ausschreibung.json>`_
 */
 public class Ausschreibung extends Geschaeftsobjekt {
-    private final Typ typ = Typ.AUSSCHREIBUNG;
+    private final Typ _typ = Typ.AUSSCHREIBUNG;
     private Zeitraum abgabefrist;
     private Geschaeftspartner ausschreibender;
     private Ausschreibungsportal ausschreibungportal;
@@ -56,8 +56,8 @@ public class Ausschreibung extends Geschaeftsobjekt {
         this.webseite = builder.webseite;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     public Zeitraum getAbgabefrist() {

@@ -27,7 +27,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Geschaeftspartner.json>`_
 */
 public class Geschaeftspartner extends Geschaeftsobjekt {
-    private final Typ typ = Typ.GESCHAEFTSPARTNER;
+    private final Typ _typ = Typ.GESCHAEFTSPARTNER;
     private Adresse adresse;
     private String amtsgericht;
     private Anrede anrede;
@@ -68,8 +68,8 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
         this.website = builder.website;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**

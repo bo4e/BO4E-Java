@@ -23,7 +23,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Kosten.json>`_
 */
 public class Kosten extends Geschaeftsobjekt {
-    private final Typ typ = Typ.KOSTEN;
+    private final Typ _typ = Typ.KOSTEN;
     private Zeitraum gueltigkeit;
     private List<Kostenblock> kostenbloecke;
     private Kostenklasse kostenklasse;
@@ -40,8 +40,8 @@ public class Kosten extends Geschaeftsobjekt {
         this.summeKosten = builder.summeKosten;
     }
 
-    public Typ getTyp() {
-        return typ;
+    public Typ get_typ() {
+        return _typ;
     }
 
     /**
