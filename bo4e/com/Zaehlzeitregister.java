@@ -17,7 +17,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Zaehlzeitregister JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zaehlzeitregister.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Zaehlzeitregister.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zaehlzeitregister extends COM {
@@ -36,14 +36,14 @@ public class Zaehlzeitregister extends COM {
     }
 
     /**
-    * Zählzeitregister
+    * Schwachlastfaehigkeit
     */
     public Boolean getIstSchwachlastfaehig() {
         return istSchwachlastfaehig;
     }
 
     /**
-    * Zählzeitregister
+    * Schwachlastfaehigkeit
     */
     public void setIstSchwachlastfaehig(Boolean istSchwachlastfaehig) {
         this.istSchwachlastfaehig = istSchwachlastfaehig;
@@ -64,14 +64,14 @@ public class Zaehlzeitregister extends COM {
     }
 
     /**
-    * Zählzeitdefinition
+    * Zählzeitregister
     */
     public String getZaehlzeitRegister() {
         return zaehlzeitRegister;
     }
 
     /**
-    * Zählzeitdefinition
+    * Zählzeitregister
     */
     public void setZaehlzeitRegister(String zaehlzeitRegister) {
         this.zaehlzeitRegister = zaehlzeitRegister;
@@ -91,7 +91,7 @@ public class Zaehlzeitregister extends COM {
         }
 
         /**
-        * Zählzeitregister
+        * Schwachlastfaehigkeit
         */
         public ZaehlzeitregisterBuilder setIstSchwachlastfaehig(Boolean istSchwachlastfaehig) {
             this.istSchwachlastfaehig = istSchwachlastfaehig;
@@ -107,15 +107,15 @@ public class Zaehlzeitregister extends COM {
         }
 
         /**
-        * Zählzeitdefinition
+        * Zählzeitregister
         */
         public ZaehlzeitregisterBuilder setZaehlzeitRegister(String zaehlzeitRegister) {
             this.zaehlzeitRegister = zaehlzeitRegister;
             return this;
         }
 
-        public ZaehlzeitregisterBuilder setId(String id) {
-            super.setId(id);
+        public ZaehlzeitregisterBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

@@ -21,6 +21,8 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 /**
+* Abbildung eines Tarifs mit regionaler Zuordnung von Preisen und Auf- und Abschlägen.
+*
 * .. raw:: html
 *
 * <object data="../_static/images/bo4e/bo/Regionaltarif.svg"
@@ -113,10 +115,20 @@ import java.util.List;
             this.anbietername = anbietername;
         }
 
+        /**
+        * Angabe des inklusiven Zeitpunkts, ab dem der Tarif bzw. der Preis angewendet und
+        * abgerechnet wird,
+        * z.B. "2021-07-20T18:31:48Z"
+        */
         public OffsetDateTime getAnwendungVon() {
             return anwendungVon;
         }
 
+        /**
+        * Angabe des inklusiven Zeitpunkts, ab dem der Tarif bzw. der Preis angewendet und
+        * abgerechnet wird,
+        * z.B. "2021-07-20T18:31:48Z"
+        */
         public void setAnwendungVon(OffsetDateTime anwendungVon) {
             this.anwendungVon = anwendungVon;
         }
@@ -135,10 +147,16 @@ import java.util.List;
             this.bemerkung = bemerkung;
         }
 
+        /**
+        * Für die Berechnung der Kosten sind die hier abgebildeten Parameter heranzuziehen
+        */
         public Tarifberechnungsparameter getBerechnungsparameter() {
             return berechnungsparameter;
         }
 
+        /**
+        * Für die Berechnung der Kosten sind die hier abgebildeten Parameter heranzuziehen
+        */
         public void setBerechnungsparameter(Tarifberechnungsparameter berechnungsparameter) {
             this.berechnungsparameter = berechnungsparameter;
         }
@@ -185,18 +203,30 @@ import java.util.List;
             this.kundentypen = kundentypen;
         }
 
+        /**
+        * Festlegung von Garantien für bestimmte Preisanteile
+        */
         public List<RegionalePreisgarantie> getPreisgarantien() {
             return preisgarantien;
         }
 
+        /**
+        * Festlegung von Garantien für bestimmte Preisanteile
+        */
         public void setPreisgarantien(List<RegionalePreisgarantie> preisgarantien) {
             this.preisgarantien = preisgarantien;
         }
 
+        /**
+        * Gibt an, wann der Preis zuletzt angepasst wurde
+        */
         public OffsetDateTime getPreisstand() {
             return preisstand;
         }
 
+        /**
+        * Gibt an, wann der Preis zuletzt angepasst wurde
+        */
         public void setPreisstand(OffsetDateTime preisstand) {
             this.preisstand = preisstand;
         }
@@ -229,18 +259,30 @@ import java.util.List;
             this.sparte = sparte;
         }
 
+        /**
+        * Auf- und Abschläge auf die Preise oder Kosten mit regionaler Eingrenzung
+        */
         public List<RegionalerAufAbschlag> getTarifAufAbschlaege() {
             return tarifAufAbschlaege;
         }
 
+        /**
+        * Auf- und Abschläge auf die Preise oder Kosten mit regionaler Eingrenzung
+        */
         public void setTarifAufAbschlaege(List<RegionalerAufAbschlag> tarifAufAbschlaege) {
             this.tarifAufAbschlaege = tarifAufAbschlaege;
         }
 
+        /**
+        * Die Bedingungen und Einschränkungen unter denen ein Tarif angewendet werden kann
+        */
         public Tarifeinschraenkung getTarifeinschraenkung() {
             return tarifeinschraenkung;
         }
 
+        /**
+        * Die Bedingungen und Einschränkungen unter denen ein Tarif angewendet werden kann
+        */
         public void setTarifeinschraenkung(Tarifeinschraenkung tarifeinschraenkung) {
             this.tarifeinschraenkung = tarifeinschraenkung;
         }
@@ -259,10 +301,16 @@ import java.util.List;
             this.tarifmerkmale = tarifmerkmale;
         }
 
+        /**
+        * Die festgelegten Preise mit regionaler Eingrenzung, z.B. für Arbeitspreis, Grundpreis etc.
+        */
         public List<RegionaleTarifpreisposition> getTarifpreise() {
             return tarifpreise;
         }
 
+        /**
+        * Die festgelegten Preise mit regionaler Eingrenzung, z.B. für Arbeitspreis, Grundpreis etc.
+        */
         public void setTarifpreise(List<RegionaleTarifpreisposition> tarifpreise) {
             this.tarifpreise = tarifpreise;
         }
@@ -369,6 +417,11 @@ import java.util.List;
                 return this;
             }
 
+            /**
+            * Angabe des inklusiven Zeitpunkts, ab dem der Tarif bzw. der Preis angewendet und
+            * abgerechnet wird,
+            * z.B. "2021-07-20T18:31:48Z"
+            */
             public RegionaltarifBuilder setAnwendungVon(OffsetDateTime anwendungVon) {
                 this.anwendungVon = anwendungVon;
                 return this;
@@ -382,6 +435,9 @@ import java.util.List;
                 return this;
             }
 
+            /**
+            * Für die Berechnung der Kosten sind die hier abgebildeten Parameter heranzuziehen
+            */
             public RegionaltarifBuilder setBerechnungsparameter(Tarifberechnungsparameter berechnungsparameter) {
                 this.berechnungsparameter = berechnungsparameter;
                 return this;
@@ -411,11 +467,17 @@ import java.util.List;
                 return this;
             }
 
+            /**
+            * Festlegung von Garantien für bestimmte Preisanteile
+            */
             public RegionaltarifBuilder setPreisgarantien(List<RegionalePreisgarantie> preisgarantien) {
                 this.preisgarantien = preisgarantien;
                 return this;
             }
 
+            /**
+            * Gibt an, wann der Preis zuletzt angepasst wurde
+            */
             public RegionaltarifBuilder setPreisstand(OffsetDateTime preisstand) {
                 this.preisstand = preisstand;
                 return this;
@@ -437,11 +499,17 @@ import java.util.List;
                 return this;
             }
 
+            /**
+            * Auf- und Abschläge auf die Preise oder Kosten mit regionaler Eingrenzung
+            */
             public RegionaltarifBuilder setTarifAufAbschlaege(List<RegionalerAufAbschlag> tarifAufAbschlaege) {
                 this.tarifAufAbschlaege = tarifAufAbschlaege;
                 return this;
             }
 
+            /**
+            * Die Bedingungen und Einschränkungen unter denen ein Tarif angewendet werden kann
+            */
             public RegionaltarifBuilder setTarifeinschraenkung(Tarifeinschraenkung tarifeinschraenkung) {
                 this.tarifeinschraenkung = tarifeinschraenkung;
                 return this;
@@ -455,6 +523,9 @@ import java.util.List;
                 return this;
             }
 
+            /**
+            * Die festgelegten Preise mit regionaler Eingrenzung, z.B. für Arbeitspreis, Grundpreis etc.
+            */
             public RegionaltarifBuilder setTarifpreise(List<RegionaleTarifpreisposition> tarifpreise) {
                 this.tarifpreise = tarifpreise;
                 return this;
@@ -492,8 +563,8 @@ import java.util.List;
                 return this;
             }
 
-            public RegionaltarifBuilder setId(String id) {
-                super.setId(id);
+            public RegionaltarifBuilder set_id(String _id) {
+                super.set_id(_id);
                 return this;
             }
 

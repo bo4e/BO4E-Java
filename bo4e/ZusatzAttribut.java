@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 *
 * .. HINT::
 * `ZusatzAttribut JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/ZusatzAttribut.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/ZusatzAttribut.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ZusatzAttribut {
@@ -30,30 +30,18 @@ public class ZusatzAttribut {
         this.wert = builder.wert;
     }
 
-    /**
-    * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
-    */
     public String getName() {
         return name;
     }
 
-    /**
-    * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
-    */
     public void setName(String name) {
         this.name = name;
     }
 
-    /**
-    * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
-    */
     public Object getWert() {
         return wert;
     }
 
-    /**
-    * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
-    */
     public void setWert(Object wert) {
         this.wert = wert;
     }
@@ -70,17 +58,11 @@ public class ZusatzAttribut {
         private ZusatzAttributBuilder() {
         }
 
-        /**
-        * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
-        */
         public ZusatzAttributBuilder setName(String name) {
             this.name = name;
             return this;
         }
 
-        /**
-        * Bezeichnung der externen Referenz (z.B. "microservice xyz" oder "SAP CRM GP-Nummer")
-        */
         public ZusatzAttributBuilder setWert(Object wert) {
             this.wert = wert;
             return this;

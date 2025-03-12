@@ -22,7 +22,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Lastgang JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Lastgang.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Lastgang.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Lastgang extends Geschaeftsobjekt {
@@ -55,16 +55,10 @@ public class Lastgang extends Geschaeftsobjekt {
         return _typ;
     }
 
-    /**
-    * Marktlokation, zu der der Lastgang gehört
-    */
     public Marktlokation getMarktlokation() {
         return marktlokation;
     }
 
-    /**
-    * Marktlokation, zu der der Lastgang gehört
-    */
     public void setMarktlokation(Marktlokation marktlokation) {
         this.marktlokation = marktlokation;
     }
@@ -83,16 +77,10 @@ public class Lastgang extends Geschaeftsobjekt {
         this.messgroesse = messgroesse;
     }
 
-    /**
-    * Marktlokation, zu der der Lastgang gehört
-    */
     public Messlokation getMesslokation() {
         return messlokation;
     }
 
-    /**
-    * Marktlokation, zu der der Lastgang gehört
-    */
     public void setMesslokation(Messlokation messlokation) {
         this.messlokation = messlokation;
     }
@@ -181,9 +169,6 @@ public class Lastgang extends Geschaeftsobjekt {
         private LastgangBuilder() {
         }
 
-        /**
-        * Marktlokation, zu der der Lastgang gehört
-        */
         public LastgangBuilder setMarktlokation(Marktlokation marktlokation) {
             this.marktlokation = marktlokation;
             return this;
@@ -197,9 +182,6 @@ public class Lastgang extends Geschaeftsobjekt {
             return this;
         }
 
-        /**
-        * Marktlokation, zu der der Lastgang gehört
-        */
         public LastgangBuilder setMesslokation(Messlokation messlokation) {
             this.messlokation = messlokation;
             return this;
@@ -243,8 +225,8 @@ public class Lastgang extends Geschaeftsobjekt {
             return this;
         }
 
-        public LastgangBuilder setId(String id) {
-            super.setId(id);
+        public LastgangBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

@@ -18,7 +18,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Zaehlwerk JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zaehlwerk.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Zaehlwerk.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zaehlwerk extends COM {
@@ -67,44 +67,56 @@ public class Zaehlwerk extends COM {
     }
 
     /**
-    * Abrechnungsrelevant
+    * Anzahl Ablesungen pro Jahr
     */
     public Long getAnzahlAblesungen() {
         return anzahlAblesungen;
     }
 
     /**
-    * Abrechnungsrelevant
+    * Anzahl Ablesungen pro Jahr
     */
     public void setAnzahlAblesungen(Long anzahlAblesungen) {
         this.anzahlAblesungen = anzahlAblesungen;
     }
 
+    /**
+    * Zusätzliche Bezeichnung, z.B. Zählwerk_Wirkarbeit.
+    */
     public String getBezeichnung() {
         return bezeichnung;
     }
 
+    /**
+    * Zusätzliche Bezeichnung, z.B. Zählwerk_Wirkarbeit.
+    */
     public void setBezeichnung(String bezeichnung) {
         this.bezeichnung = bezeichnung;
     }
 
+    /**
+    * Die Einheit der gemessenen Größe, z.B. kWh
+    */
     public Mengeneinheit getEinheit() {
         return einheit;
     }
 
+    /**
+    * Die Einheit der gemessenen Größe, z.B. kWh
+    */
     public void setEinheit(Mengeneinheit einheit) {
         this.einheit = einheit;
     }
 
     /**
-    * Anzahl der Nachkommastellen
+    * Abrechnungsrelevant
     */
     public Boolean getIstAbrechnungsrelevant() {
         return istAbrechnungsrelevant;
     }
 
     /**
-    * Anzahl der Nachkommastellen
+    * Abrechnungsrelevant
     */
     public void setIstAbrechnungsrelevant(Boolean istAbrechnungsrelevant) {
         this.istAbrechnungsrelevant = istAbrechnungsrelevant;
@@ -125,73 +137,89 @@ public class Zaehlwerk extends COM {
     }
 
     /**
-    * Konzessionsabgabe
+    * Steuerbefreiung
     */
     public Boolean getIstSteuerbefreit() {
         return istSteuerbefreit;
     }
 
     /**
-    * Konzessionsabgabe
+    * Steuerbefreiung
     */
     public void setIstSteuerbefreit(Boolean istSteuerbefreit) {
         this.istSteuerbefreit = istSteuerbefreit;
     }
 
     /**
-    * Stromverbrauchsart/Verbrauchsart Marktlokation
+    * Unterbrechbarkeit Marktlokation
     */
     public Boolean getIstUnterbrechbar() {
         return istUnterbrechbar;
     }
 
     /**
-    * Stromverbrauchsart/Verbrauchsart Marktlokation
+    * Unterbrechbarkeit Marktlokation
     */
     public void setIstUnterbrechbar(Boolean istUnterbrechbar) {
         this.istUnterbrechbar = istUnterbrechbar;
     }
 
     /**
-    * Wärmenutzung Marktlokation
+    * Konzessionsabgabe
     */
     public Konzessionsabgabe getKonzessionsabgabe() {
         return konzessionsabgabe;
     }
 
     /**
-    * Wärmenutzung Marktlokation
+    * Konzessionsabgabe
     */
     public void setKonzessionsabgabe(Konzessionsabgabe konzessionsabgabe) {
         this.konzessionsabgabe = konzessionsabgabe;
     }
 
     /**
-    * Anzahl der Vorkommastellen
+    * Anzahl der Nachkommastellen
     */
     public Long getNachkommastelle() {
         return nachkommastelle;
     }
 
     /**
-    * Anzahl der Vorkommastellen
+    * Anzahl der Nachkommastellen
     */
     public void setNachkommastelle(Long nachkommastelle) {
         this.nachkommastelle = nachkommastelle;
     }
 
+    /**
+    * Die OBIS-Kennzahl für das Zählwerk, die festlegt, welche auf die gemessene Größe mit dem
+    * Stand gemeldet wird.
+    * Nur Zählwerkstände mit dieser OBIS-Kennzahl werden an diesem Zählwerk registriert.
+    */
     public String getObisKennzahl() {
         return obisKennzahl;
     }
 
+    /**
+    * Die OBIS-Kennzahl für das Zählwerk, die festlegt, welche auf die gemessene Größe mit dem
+    * Stand gemeldet wird.
+    * Nur Zählwerkstände mit dieser OBIS-Kennzahl werden an diesem Zählwerk registriert.
+    */
     public void setObisKennzahl(String obisKennzahl) {
         this.obisKennzahl = obisKennzahl;
     }
 
+    /**
+    * Die Energierichtung, Einspeisung oder Ausspeisung.
+    */
     public Energierichtung getRichtung() {
         return richtung;
     }
 
+    /**
+    * Die Energierichtung, Einspeisung oder Ausspeisung.
+    */
     public void setRichtung(Energierichtung richtung) {
         this.richtung = richtung;
     }
@@ -211,72 +239,90 @@ public class Zaehlwerk extends COM {
     }
 
     /**
-    * Schwachlastfaehigkeit
+    * Verwendungungszweck der Werte Marktlokation
     */
     public List<VerwendungszweckProMarktrolle> getVerwendungszwecke() {
         return verwendungszwecke;
     }
 
     /**
-    * Schwachlastfaehigkeit
+    * Verwendungungszweck der Werte Marktlokation
     */
     public void setVerwendungszwecke(List<VerwendungszweckProMarktrolle> verwendungszwecke) {
         this.verwendungszwecke = verwendungszwecke;
     }
 
     /**
-    * Steuerbefreiung
+    * Anzahl der Vorkommastellen
     */
     public Long getVorkommastelle() {
         return vorkommastelle;
     }
 
     /**
-    * Steuerbefreiung
+    * Anzahl der Vorkommastellen
     */
     public void setVorkommastelle(Long vorkommastelle) {
         this.vorkommastelle = vorkommastelle;
     }
 
     /**
-    * Unterbrechbarkeit Marktlokation
+    * Wärmenutzung Marktlokation
     */
     public Waermenutzung getWaermenutzung() {
         return waermenutzung;
     }
 
     /**
-    * Unterbrechbarkeit Marktlokation
+    * Wärmenutzung Marktlokation
     */
     public void setWaermenutzung(Waermenutzung waermenutzung) {
         this.waermenutzung = waermenutzung;
     }
 
+    /**
+    * Mit diesem Faktor wird eine Zählerstandsdifferenz multipliziert, um zum eigentlichen
+    * Verbrauch im Zeitraum
+    * zu kommen.
+    */
     public Double getWandlerfaktor() {
         return wandlerfaktor;
     }
 
+    /**
+    * Mit diesem Faktor wird eine Zählerstandsdifferenz multipliziert, um zum eigentlichen
+    * Verbrauch im Zeitraum
+    * zu kommen.
+    */
     public void setWandlerfaktor(Double wandlerfaktor) {
         this.wandlerfaktor = wandlerfaktor;
     }
 
+    /**
+    * Identifikation des Zählwerks (Registers) innerhalb des Zählers.
+    * Oftmals eine laufende Nummer hinter der Zählernummer. Z.B. 47110815_1
+    */
     public String getZaehlwerkId() {
         return zaehlwerkId;
     }
 
+    /**
+    * Identifikation des Zählwerks (Registers) innerhalb des Zählers.
+    * Oftmals eine laufende Nummer hinter der Zählernummer. Z.B. 47110815_1
+    */
     public void setZaehlwerkId(String zaehlwerkId) {
         this.zaehlwerkId = zaehlwerkId;
     }
 
     /**
-    * Anzahl Ablesungen pro Jahr
+    * Erweiterte Definition der Zählzeit in Bezug auf ein Register
     */
     public Zaehlzeitregister getZaehlzeitregister() {
         return zaehlzeitregister;
     }
 
     /**
-    * Anzahl Ablesungen pro Jahr
+    * Erweiterte Definition der Zählzeit in Bezug auf ein Register
     */
     public void setZaehlzeitregister(Zaehlzeitregister zaehlzeitregister) {
         this.zaehlzeitregister = zaehlzeitregister;
@@ -311,25 +357,31 @@ public class Zaehlwerk extends COM {
         }
 
         /**
-        * Abrechnungsrelevant
+        * Anzahl Ablesungen pro Jahr
         */
         public ZaehlwerkBuilder setAnzahlAblesungen(Long anzahlAblesungen) {
             this.anzahlAblesungen = anzahlAblesungen;
             return this;
         }
 
+        /**
+        * Zusätzliche Bezeichnung, z.B. Zählwerk_Wirkarbeit.
+        */
         public ZaehlwerkBuilder setBezeichnung(String bezeichnung) {
             this.bezeichnung = bezeichnung;
             return this;
         }
 
+        /**
+        * Die Einheit der gemessenen Größe, z.B. kWh
+        */
         public ZaehlwerkBuilder setEinheit(Mengeneinheit einheit) {
             this.einheit = einheit;
             return this;
         }
 
         /**
-        * Anzahl der Nachkommastellen
+        * Abrechnungsrelevant
         */
         public ZaehlwerkBuilder setIstAbrechnungsrelevant(Boolean istAbrechnungsrelevant) {
             this.istAbrechnungsrelevant = istAbrechnungsrelevant;
@@ -345,7 +397,7 @@ public class Zaehlwerk extends COM {
         }
 
         /**
-        * Konzessionsabgabe
+        * Steuerbefreiung
         */
         public ZaehlwerkBuilder setIstSteuerbefreit(Boolean istSteuerbefreit) {
             this.istSteuerbefreit = istSteuerbefreit;
@@ -353,7 +405,7 @@ public class Zaehlwerk extends COM {
         }
 
         /**
-        * Stromverbrauchsart/Verbrauchsart Marktlokation
+        * Unterbrechbarkeit Marktlokation
         */
         public ZaehlwerkBuilder setIstUnterbrechbar(Boolean istUnterbrechbar) {
             this.istUnterbrechbar = istUnterbrechbar;
@@ -361,7 +413,7 @@ public class Zaehlwerk extends COM {
         }
 
         /**
-        * Wärmenutzung Marktlokation
+        * Konzessionsabgabe
         */
         public ZaehlwerkBuilder setKonzessionsabgabe(Konzessionsabgabe konzessionsabgabe) {
             this.konzessionsabgabe = konzessionsabgabe;
@@ -369,18 +421,26 @@ public class Zaehlwerk extends COM {
         }
 
         /**
-        * Anzahl der Vorkommastellen
+        * Anzahl der Nachkommastellen
         */
         public ZaehlwerkBuilder setNachkommastelle(Long nachkommastelle) {
             this.nachkommastelle = nachkommastelle;
             return this;
         }
 
+        /**
+        * Die OBIS-Kennzahl für das Zählwerk, die festlegt, welche auf die gemessene Größe mit dem
+        * Stand gemeldet wird.
+        * Nur Zählwerkstände mit dieser OBIS-Kennzahl werden an diesem Zählwerk registriert.
+        */
         public ZaehlwerkBuilder setObisKennzahl(String obisKennzahl) {
             this.obisKennzahl = obisKennzahl;
             return this;
         }
 
+        /**
+        * Die Energierichtung, Einspeisung oder Ausspeisung.
+        */
         public ZaehlwerkBuilder setRichtung(Energierichtung richtung) {
             this.richtung = richtung;
             return this;
@@ -395,7 +455,7 @@ public class Zaehlwerk extends COM {
         }
 
         /**
-        * Schwachlastfaehigkeit
+        * Verwendungungszweck der Werte Marktlokation
         */
         public ZaehlwerkBuilder setVerwendungszwecke(List<VerwendungszweckProMarktrolle> verwendungszwecke) {
             this.verwendungszwecke = verwendungszwecke;
@@ -403,7 +463,7 @@ public class Zaehlwerk extends COM {
         }
 
         /**
-        * Steuerbefreiung
+        * Anzahl der Vorkommastellen
         */
         public ZaehlwerkBuilder setVorkommastelle(Long vorkommastelle) {
             this.vorkommastelle = vorkommastelle;
@@ -411,33 +471,42 @@ public class Zaehlwerk extends COM {
         }
 
         /**
-        * Unterbrechbarkeit Marktlokation
+        * Wärmenutzung Marktlokation
         */
         public ZaehlwerkBuilder setWaermenutzung(Waermenutzung waermenutzung) {
             this.waermenutzung = waermenutzung;
             return this;
         }
 
+        /**
+        * Mit diesem Faktor wird eine Zählerstandsdifferenz multipliziert, um zum eigentlichen
+        * Verbrauch im Zeitraum
+        * zu kommen.
+        */
         public ZaehlwerkBuilder setWandlerfaktor(Double wandlerfaktor) {
             this.wandlerfaktor = wandlerfaktor;
             return this;
         }
 
+        /**
+        * Identifikation des Zählwerks (Registers) innerhalb des Zählers.
+        * Oftmals eine laufende Nummer hinter der Zählernummer. Z.B. 47110815_1
+        */
         public ZaehlwerkBuilder setZaehlwerkId(String zaehlwerkId) {
             this.zaehlwerkId = zaehlwerkId;
             return this;
         }
 
         /**
-        * Anzahl Ablesungen pro Jahr
+        * Erweiterte Definition der Zählzeit in Bezug auf ein Register
         */
         public ZaehlwerkBuilder setZaehlzeitregister(Zaehlzeitregister zaehlzeitregister) {
             this.zaehlzeitregister = zaehlzeitregister;
             return this;
         }
 
-        public ZaehlwerkBuilder setId(String id) {
-            super.setId(id);
+        public ZaehlwerkBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

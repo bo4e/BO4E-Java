@@ -26,7 +26,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Rechnung JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Rechnung.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Rechnung.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Rechnung extends Geschaeftsobjekt {
@@ -180,14 +180,18 @@ public class Rechnung extends Geschaeftsobjekt {
     }
 
     /**
-    * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
+    * Kennzeichnung, ob es sich um eine Stornorechnung handelt;
+    * im Falle "true" findet sich im Attribut "originalrechnungsnummer" die Nummer der
+    * Originalrechnung.
     */
     public Boolean getIstStorno() {
         return istStorno;
     }
 
     /**
-    * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
+    * Kennzeichnung, ob es sich um eine Stornorechnung handelt;
+    * im Falle "true" findet sich im Attribut "originalrechnungsnummer" die Nummer der
+    * Originalrechnung.
     */
     public void setIstStorno(Boolean istStorno) {
         this.istStorno = istStorno;
@@ -424,14 +428,16 @@ public class Rechnung extends Geschaeftsobjekt {
     }
 
     /**
-    * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
+    * Eine Liste mit Steuerbeträgen pro Steuerkennzeichen/Steuersatz;
+    * die Summe dieser Beträge ergibt den Wert für gesamtsteuer.
     */
     public List<Steuerbetrag> getSteuerbetraege() {
         return steuerbetraege;
     }
 
     /**
-    * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
+    * Eine Liste mit Steuerbeträgen pro Steuerkennzeichen/Steuersatz;
+    * die Summe dieser Beträge ergibt den Wert für gesamtsteuer.
     */
     public void setSteuerbetraege(List<Steuerbetrag> steuerbetraege) {
         this.steuerbetraege = steuerbetraege;
@@ -550,7 +556,9 @@ public class Rechnung extends Geschaeftsobjekt {
         }
 
         /**
-        * Eine im Verwendungskontext eindeutige Nummer für die Rechnung
+        * Kennzeichnung, ob es sich um eine Stornorechnung handelt;
+        * im Falle "true" findet sich im Attribut "originalrechnungsnummer" die Nummer der
+        * Originalrechnung.
         */
         public RechnungBuilder setIstStorno(Boolean istStorno) {
             this.istStorno = istStorno;
@@ -689,7 +697,8 @@ public class Rechnung extends Geschaeftsobjekt {
         }
 
         /**
-        * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
+        * Eine Liste mit Steuerbeträgen pro Steuerkennzeichen/Steuersatz;
+        * die Summe dieser Beträge ergibt den Wert für gesamtsteuer.
         */
         public RechnungBuilder setSteuerbetraege(List<Steuerbetrag> steuerbetraege) {
             this.steuerbetraege = steuerbetraege;
@@ -712,8 +721,8 @@ public class Rechnung extends Geschaeftsobjekt {
             return this;
         }
 
-        public RechnungBuilder setId(String id) {
-            super.setId(id);
+        public RechnungBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

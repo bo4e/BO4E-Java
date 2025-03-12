@@ -15,7 +15,7 @@ import java.util.List;
 *
 * .. HINT::
 * `StandorteigenschaftenGas JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/StandorteigenschaftenGas.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/StandorteigenschaftenGas.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StandorteigenschaftenGas extends COM {
@@ -32,14 +32,14 @@ public class StandorteigenschaftenGas extends COM {
     }
 
     /**
-    * Netzkontonummern der Gasnetze
+    * Die Informationen zu Marktgebieten in dem Netz.
     */
     public List<MarktgebietInfo> getMarktgebiete() {
         return marktgebiete;
     }
 
     /**
-    * Netzkontonummern der Gasnetze
+    * Die Informationen zu Marktgebieten in dem Netz.
     */
     public void setMarktgebiete(List<MarktgebietInfo> marktgebiete) {
         this.marktgebiete = marktgebiete;
@@ -72,7 +72,7 @@ public class StandorteigenschaftenGas extends COM {
         }
 
         /**
-        * Netzkontonummern der Gasnetze
+        * Die Informationen zu Marktgebieten in dem Netz.
         */
         public StandorteigenschaftenGasBuilder setMarktgebiete(List<MarktgebietInfo> marktgebiete) {
             this.marktgebiete = marktgebiete;
@@ -87,8 +87,8 @@ public class StandorteigenschaftenGas extends COM {
             return this;
         }
 
-        public StandorteigenschaftenGasBuilder setId(String id) {
-            super.setId(id);
+        public StandorteigenschaftenGasBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

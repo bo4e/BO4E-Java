@@ -24,7 +24,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Buendelvertrag JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Buendelvertrag.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Buendelvertrag.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Buendelvertrag extends Geschaeftsobjekt {
@@ -208,6 +208,7 @@ public class Buendelvertrag extends Geschaeftsobjekt {
     }
 
     /**
+    * Der "erstgenannte" Vertragspartner. In der Regel der Aussteller des Vertrags.
     * Beispiel: "Vertrag zwischen Vertagspartner 1 ..."
     */
     public Geschaeftspartner getVertragspartner1() {
@@ -215,6 +216,7 @@ public class Buendelvertrag extends Geschaeftsobjekt {
     }
 
     /**
+    * Der "erstgenannte" Vertragspartner. In der Regel der Aussteller des Vertrags.
     * Beispiel: "Vertrag zwischen Vertagspartner 1 ..."
     */
     public void setVertragspartner1(Geschaeftspartner vertragspartner1) {
@@ -222,6 +224,7 @@ public class Buendelvertrag extends Geschaeftsobjekt {
     }
 
     /**
+    * Der "zweitgenannte" Vertragspartner. In der Regel der Empfänger des Vertrags.
     * Beispiel "Vertrag zwischen Vertagspartner 1 und Vertragspartner 2"
     */
     public Geschaeftspartner getVertragspartner2() {
@@ -229,6 +232,7 @@ public class Buendelvertrag extends Geschaeftsobjekt {
     }
 
     /**
+    * Der "zweitgenannte" Vertragspartner. In der Regel der Empfänger des Vertrags.
     * Beispiel "Vertrag zwischen Vertagspartner 1 und Vertragspartner 2"
     */
     public void setVertragspartner2(Geschaeftspartner vertragspartner2) {
@@ -353,6 +357,7 @@ public class Buendelvertrag extends Geschaeftsobjekt {
         }
 
         /**
+        * Der "erstgenannte" Vertragspartner. In der Regel der Aussteller des Vertrags.
         * Beispiel: "Vertrag zwischen Vertagspartner 1 ..."
         */
         public BuendelvertragBuilder setVertragspartner1(Geschaeftspartner vertragspartner1) {
@@ -361,6 +366,7 @@ public class Buendelvertrag extends Geschaeftsobjekt {
         }
 
         /**
+        * Der "zweitgenannte" Vertragspartner. In der Regel der Empfänger des Vertrags.
         * Beispiel "Vertrag zwischen Vertagspartner 1 und Vertragspartner 2"
         */
         public BuendelvertragBuilder setVertragspartner2(Geschaeftspartner vertragspartner2) {
@@ -376,8 +382,8 @@ public class Buendelvertrag extends Geschaeftsobjekt {
             return this;
         }
 
-        public BuendelvertragBuilder setId(String id) {
-            super.setId(id);
+        public BuendelvertragBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

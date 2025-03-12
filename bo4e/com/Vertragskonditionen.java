@@ -16,7 +16,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Vertragskonditionen JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Vertragskonditionen.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Vertragskonditionen.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Vertragskonditionen extends COM {
@@ -194,8 +194,8 @@ public class Vertragskonditionen extends COM {
             return this;
         }
 
-        public VertragskonditionenBuilder setId(String id) {
-            super.setId(id);
+        public VertragskonditionenBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

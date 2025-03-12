@@ -19,7 +19,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Zeitspanne JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zeitspanne.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Zeitspanne.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zeitspanne extends COM {
@@ -36,14 +36,14 @@ public class Zeitspanne extends COM {
     }
 
     /**
-    * inklusiver Beginn
+    * exklusives Ende
     */
     public OffsetDateTime getEnde() {
         return ende;
     }
 
     /**
-    * inklusiver Beginn
+    * exklusives Ende
     */
     public void setEnde(OffsetDateTime ende) {
         this.ende = ende;
@@ -76,7 +76,7 @@ public class Zeitspanne extends COM {
         }
 
         /**
-        * inklusiver Beginn
+        * exklusives Ende
         */
         public ZeitspanneBuilder setEnde(OffsetDateTime ende) {
             this.ende = ende;
@@ -91,8 +91,8 @@ public class Zeitspanne extends COM {
             return this;
         }
 
-        public ZeitspanneBuilder setId(String id) {
-            super.setId(id);
+        public ZeitspanneBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

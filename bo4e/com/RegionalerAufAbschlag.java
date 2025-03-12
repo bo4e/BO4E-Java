@@ -23,7 +23,7 @@ import java.util.List;
 *
 * .. HINT::
 * `RegionalerAufAbschlag JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/RegionalerAufAbschlag.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/RegionalerAufAbschlag.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RegionalerAufAbschlag extends COM {
@@ -444,8 +444,8 @@ public class RegionalerAufAbschlag extends COM {
             return this;
         }
 
-        public RegionalerAufAbschlagBuilder setId(String id) {
-            super.setId(id);
+        public RegionalerAufAbschlagBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

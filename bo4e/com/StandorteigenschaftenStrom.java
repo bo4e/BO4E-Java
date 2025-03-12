@@ -15,7 +15,7 @@ import java.util.List;
 *
 * .. HINT::
 * `StandorteigenschaftenStrom JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StandorteigenschaftenStrom extends COM {
@@ -112,8 +112,8 @@ public class StandorteigenschaftenStrom extends COM {
             return this;
         }
 
-        public StandorteigenschaftenStromBuilder setId(String id) {
-            super.setId(id);
+        public StandorteigenschaftenStromBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

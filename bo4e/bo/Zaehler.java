@@ -25,7 +25,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Zaehler JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Zaehler.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Zaehler.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zaehler extends Geschaeftsobjekt {
@@ -75,84 +75,84 @@ public class Zaehler extends Geschaeftsobjekt {
     }
 
     /**
-    * Besondere Spezifikation des Zählers
+    * Befestigungsart
     */
     public Befestigungsart getBefestigungsart() {
         return befestigungsart;
     }
 
     /**
-    * Besondere Spezifikation des Zählers
+    * Befestigungsart
     */
     public void setBefestigungsart(Befestigungsart befestigungsart) {
         this.befestigungsart = befestigungsart;
     }
 
     /**
-    * Zählerkonstante auf dem Zähler
+    * Bis zu diesem Datum (exklusiv) ist der Zähler geeicht.
     */
     public OffsetDateTime getEichungBis() {
         return eichungBis;
     }
 
     /**
-    * Zählerkonstante auf dem Zähler
+    * Bis zu diesem Datum (exklusiv) ist der Zähler geeicht.
     */
     public void setEichungBis(OffsetDateTime eichungBis) {
         this.eichungBis = eichungBis;
     }
 
     /**
-    * Größe des Zählers
+    * Liste der Geräte, die zu diesem Zähler gehören, bspw. Smartmeter-Gateway
     */
     public List<Geraet> getGeraete() {
         return geraete;
     }
 
     /**
-    * Größe des Zählers
+    * Liste der Geräte, die zu diesem Zähler gehören, bspw. Smartmeter-Gateway
     */
     public void setGeraete(List<Geraet> geraete) {
         this.geraete = geraete;
     }
 
     /**
-    * Der Hersteller des Zählers
+    * Fernschaltung
     */
     public Boolean getIstFernschaltbar() {
         return istFernschaltbar;
     }
 
     /**
-    * Der Hersteller des Zählers
+    * Fernschaltung
     */
     public void setIstFernschaltbar(Boolean istFernschaltbar) {
         this.istFernschaltbar = istFernschaltbar;
     }
 
     /**
-    * Bis zu diesem Datum (exklusiv) ist der Zähler geeicht.
+    * Zu diesem Datum fand die letzte Eichprüfung des Zählers statt.
     */
     public OffsetDateTime getLetzteEichung() {
         return letzteEichung;
     }
 
     /**
-    * Bis zu diesem Datum (exklusiv) ist der Zähler geeicht.
+    * Zu diesem Datum fand die letzte Eichprüfung des Zählers statt.
     */
     public void setLetzteEichung(OffsetDateTime letzteEichung) {
         this.letzteEichung = letzteEichung;
     }
 
     /**
-    * Fernschaltung
+    * Messwerterfassung des Zählers
     */
     public Messwerterfassung getMesswerterfassung() {
         return messwerterfassung;
     }
 
     /**
-    * Fernschaltung
+    * Messwerterfassung des Zählers
     */
     public void setMesswerterfassung(Messwerterfassung messwerterfassung) {
         this.messwerterfassung = messwerterfassung;
@@ -173,42 +173,42 @@ public class Zaehler extends Geschaeftsobjekt {
     }
 
     /**
-    * Nummerierung des Zählers,vergeben durch den Messstellenbetreiber
+    * Strom oder Gas
     */
     public Sparte getSparte() {
         return sparte;
     }
 
     /**
-    * Nummerierung des Zählers,vergeben durch den Messstellenbetreiber
+    * Strom oder Gas
     */
     public void setSparte(Sparte sparte) {
         this.sparte = sparte;
     }
 
     /**
-    * Strom oder Gas
+    * Spezifikation die Richtung des Zählers betreffend
     */
     public Zaehlerauspraegung getZaehlerauspraegung() {
         return zaehlerauspraegung;
     }
 
     /**
-    * Strom oder Gas
+    * Spezifikation die Richtung des Zählers betreffend
     */
     public void setZaehlerauspraegung(Zaehlerauspraegung zaehlerauspraegung) {
         this.zaehlerauspraegung = zaehlerauspraegung;
     }
 
     /**
-    * Befestigungsart
+    * Größe des Zählers
     */
     public Zaehlergroesse getZaehlergroesse() {
         return zaehlergroesse;
     }
 
     /**
-    * Befestigungsart
+    * Größe des Zählers
     */
     public void setZaehlergroesse(Zaehlergroesse zaehlergroesse) {
         this.zaehlergroesse = zaehlergroesse;
@@ -229,14 +229,14 @@ public class Zaehler extends Geschaeftsobjekt {
     }
 
     /**
-    * Spezifikation bezüglich unterstützter Tarif
+    * Zählerkonstante auf dem Zähler
     */
     public Double getZaehlerkonstante() {
         return zaehlerkonstante;
     }
 
     /**
-    * Spezifikation bezüglich unterstützter Tarif
+    * Zählerkonstante auf dem Zähler
     */
     public void setZaehlerkonstante(Double zaehlerkonstante) {
         this.zaehlerkonstante = zaehlerkonstante;
@@ -257,43 +257,37 @@ public class Zaehler extends Geschaeftsobjekt {
     }
 
     /**
-    * Spezifikation die Richtung des Zählers betreffend
+    * Typisierung des Zählers
     */
     public Zaehlertyp getZaehlertyp() {
         return zaehlertyp;
     }
 
     /**
-    * Spezifikation die Richtung des Zählers betreffend
+    * Typisierung des Zählers
     */
     public void setZaehlertyp(Zaehlertyp zaehlertyp) {
         this.zaehlertyp = zaehlertyp;
     }
 
     /**
-    * Messwerterfassung des Zählers
+    * Besondere Spezifikation des Zählers
     */
     public ZaehlertypSpezifikation getZaehlertypSpezifikation() {
         return zaehlertypSpezifikation;
     }
 
     /**
-    * Messwerterfassung des Zählers
+    * Besondere Spezifikation des Zählers
     */
     public void setZaehlertypSpezifikation(ZaehlertypSpezifikation zaehlertypSpezifikation) {
         this.zaehlertypSpezifikation = zaehlertypSpezifikation;
     }
 
-    /**
-    * Typisierung des Zählers
-    */
     public List<Zaehlwerk> getZaehlwerke() {
         return zaehlwerke;
     }
 
-    /**
-    * Typisierung des Zählers
-    */
     public void setZaehlwerke(List<Zaehlwerk> zaehlwerke) {
         this.zaehlwerke = zaehlwerke;
     }
@@ -325,7 +319,7 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
-        * Besondere Spezifikation des Zählers
+        * Befestigungsart
         */
         public ZaehlerBuilder setBefestigungsart(Befestigungsart befestigungsart) {
             this.befestigungsart = befestigungsart;
@@ -333,7 +327,7 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
-        * Zählerkonstante auf dem Zähler
+        * Bis zu diesem Datum (exklusiv) ist der Zähler geeicht.
         */
         public ZaehlerBuilder setEichungBis(OffsetDateTime eichungBis) {
             this.eichungBis = eichungBis;
@@ -341,7 +335,7 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
-        * Größe des Zählers
+        * Liste der Geräte, die zu diesem Zähler gehören, bspw. Smartmeter-Gateway
         */
         public ZaehlerBuilder setGeraete(List<Geraet> geraete) {
             this.geraete = geraete;
@@ -349,7 +343,7 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
-        * Der Hersteller des Zählers
+        * Fernschaltung
         */
         public ZaehlerBuilder setIstFernschaltbar(Boolean istFernschaltbar) {
             this.istFernschaltbar = istFernschaltbar;
@@ -357,7 +351,7 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
-        * Bis zu diesem Datum (exklusiv) ist der Zähler geeicht.
+        * Zu diesem Datum fand die letzte Eichprüfung des Zählers statt.
         */
         public ZaehlerBuilder setLetzteEichung(OffsetDateTime letzteEichung) {
             this.letzteEichung = letzteEichung;
@@ -365,7 +359,7 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
-        * Fernschaltung
+        * Messwerterfassung des Zählers
         */
         public ZaehlerBuilder setMesswerterfassung(Messwerterfassung messwerterfassung) {
             this.messwerterfassung = messwerterfassung;
@@ -381,7 +375,7 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
-        * Nummerierung des Zählers,vergeben durch den Messstellenbetreiber
+        * Strom oder Gas
         */
         public ZaehlerBuilder setSparte(Sparte sparte) {
             this.sparte = sparte;
@@ -389,7 +383,7 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
-        * Strom oder Gas
+        * Spezifikation die Richtung des Zählers betreffend
         */
         public ZaehlerBuilder setZaehlerauspraegung(Zaehlerauspraegung zaehlerauspraegung) {
             this.zaehlerauspraegung = zaehlerauspraegung;
@@ -397,7 +391,7 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
-        * Befestigungsart
+        * Größe des Zählers
         */
         public ZaehlerBuilder setZaehlergroesse(Zaehlergroesse zaehlergroesse) {
             this.zaehlergroesse = zaehlergroesse;
@@ -413,7 +407,7 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
-        * Spezifikation bezüglich unterstützter Tarif
+        * Zählerkonstante auf dem Zähler
         */
         public ZaehlerBuilder setZaehlerkonstante(Double zaehlerkonstante) {
             this.zaehlerkonstante = zaehlerkonstante;
@@ -429,7 +423,7 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
-        * Spezifikation die Richtung des Zählers betreffend
+        * Typisierung des Zählers
         */
         public ZaehlerBuilder setZaehlertyp(Zaehlertyp zaehlertyp) {
             this.zaehlertyp = zaehlertyp;
@@ -437,23 +431,20 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
-        * Messwerterfassung des Zählers
+        * Besondere Spezifikation des Zählers
         */
         public ZaehlerBuilder setZaehlertypSpezifikation(ZaehlertypSpezifikation zaehlertypSpezifikation) {
             this.zaehlertypSpezifikation = zaehlertypSpezifikation;
             return this;
         }
 
-        /**
-        * Typisierung des Zählers
-        */
         public ZaehlerBuilder setZaehlwerke(List<Zaehlwerk> zaehlwerke) {
             this.zaehlwerke = zaehlwerke;
             return this;
         }
 
-        public ZaehlerBuilder setId(String id) {
-            super.setId(id);
+        public ZaehlerBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

@@ -12,8 +12,8 @@ import bo4e.com.Zeitraum;
 import bo4e.enums.Kundentyp;
 import bo4e.enums.Registeranzahl;
 import bo4e.enums.Sparte;
+import bo4e.enums.TarifTyp;
 import bo4e.enums.Tarifmerkmal;
-import bo4e.enums.Tariftyp;
 import bo4e.enums.Typ;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -30,7 +30,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Tarifpreisblatt JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Tarifpreisblatt.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Tarifpreisblatt.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tarifpreisblatt extends Geschaeftsobjekt {
@@ -115,10 +115,20 @@ public class Tarifpreisblatt extends Geschaeftsobjekt {
         this.anbietername = anbietername;
     }
 
+    /**
+    * Angabe des inklusiven Zeitpunkts, ab dem der Tarif bzw. der Preis angewendet und
+    * abgerechnet wird,
+    * z.B. "2021-07-20T18:31:48Z"
+    */
     public OffsetDateTime getAnwendungVon() {
         return anwendungVon;
     }
 
+    /**
+    * Angabe des inklusiven Zeitpunkts, ab dem der Tarif bzw. der Preis angewendet und
+    * abgerechnet wird,
+    * z.B. "2021-07-20T18:31:48Z"
+    */
     public void setAnwendungVon(OffsetDateTime anwendungVon) {
         this.anwendungVon = anwendungVon;
     }
@@ -407,6 +417,11 @@ public class Tarifpreisblatt extends Geschaeftsobjekt {
             return this;
         }
 
+        /**
+        * Angabe des inklusiven Zeitpunkts, ab dem der Tarif bzw. der Preis angewendet und
+        * abgerechnet wird,
+        * z.B. "2021-07-20T18:31:48Z"
+        */
         public TarifpreisblattBuilder setAnwendungVon(OffsetDateTime anwendungVon) {
             this.anwendungVon = anwendungVon;
             return this;
@@ -548,8 +563,8 @@ public class Tarifpreisblatt extends Geschaeftsobjekt {
             return this;
         }
 
-        public TarifpreisblattBuilder setId(String id) {
-            super.setId(id);
+        public TarifpreisblattBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

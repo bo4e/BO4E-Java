@@ -23,12 +23,15 @@ import java.util.List;
 public abstract class Geschaeftsobjekt {
     private String _id;
     private final Typ _typ = Typ.GESCHAEFTSOBJEKT;
-    private final String _version = "202401.4.0";
+    private final String _version = "202401.5.0";
     private List<ZusatzAttribut> zusatzAttribute;
 
     protected Geschaeftsobjekt(GeschaeftsobjektBuilder builder) {
         this._id = builder._id;
         this.zusatzAttribute = builder.zusatzAttribute;
+    }
+
+    protected Geschaeftsobjekt() {
     }
 
     /**
@@ -83,5 +86,7 @@ public abstract class Geschaeftsobjekt {
             this.zusatzAttribute = value;
             return this;
         }
+
+        public abstract Geschaeftsobjekt build();
     }
 }

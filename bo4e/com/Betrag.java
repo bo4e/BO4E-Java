@@ -17,7 +17,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Betrag JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Betrag.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Betrag.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Betrag extends COM {
@@ -34,14 +34,14 @@ public class Betrag extends COM {
     }
 
     /**
-    * Gibt den Betrag des Preises an.
+    * Die entsprechende Waehrung
     */
     public Waehrungscode getWaehrung() {
         return waehrung;
     }
 
     /**
-    * Gibt den Betrag des Preises an.
+    * Die entsprechende Waehrung
     */
     public void setWaehrung(Waehrungscode waehrung) {
         this.waehrung = waehrung;
@@ -74,7 +74,7 @@ public class Betrag extends COM {
         }
 
         /**
-        * Gibt den Betrag des Preises an.
+        * Die entsprechende Waehrung
         */
         public BetragBuilder setWaehrung(Waehrungscode waehrung) {
             this.waehrung = waehrung;
@@ -89,8 +89,8 @@ public class Betrag extends COM {
             return this;
         }
 
-        public BetragBuilder setId(String id) {
-            super.setId(id);
+        public BetragBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

@@ -15,7 +15,7 @@ import java.util.List;
 *
 * .. HINT::
 * `MarktgebietInfo JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/MarktgebietInfo.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/MarktgebietInfo.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class MarktgebietInfo extends COM {
@@ -46,14 +46,14 @@ public class MarktgebietInfo extends COM {
     }
 
     /**
-    * Der Name des Marktgebietes
+    * Die standardisierte Codenummer des Marktgebietes
     */
     public String getMarktgebietcode() {
         return marktgebietcode;
     }
 
     /**
-    * Der Name des Marktgebietes
+    * Die standardisierte Codenummer des Marktgebietes
     */
     public void setMarktgebietcode(String marktgebietcode) {
         this.marktgebietcode = marktgebietcode;
@@ -80,15 +80,15 @@ public class MarktgebietInfo extends COM {
         }
 
         /**
-        * Der Name des Marktgebietes
+        * Die standardisierte Codenummer des Marktgebietes
         */
         public MarktgebietInfoBuilder setMarktgebietcode(String marktgebietcode) {
             this.marktgebietcode = marktgebietcode;
             return this;
         }
 
-        public MarktgebietInfoBuilder setId(String id) {
-            super.setId(id);
+        public MarktgebietInfoBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

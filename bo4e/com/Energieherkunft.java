@@ -16,7 +16,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Energieherkunft JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Energieherkunft.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Energieherkunft.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Energieherkunft extends COM {
@@ -88,8 +88,8 @@ public class Energieherkunft extends COM {
             return this;
         }
 
-        public EnergieherkunftBuilder setId(String id) {
-            super.setId(id);
+        public EnergieherkunftBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

@@ -21,7 +21,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Messlokation JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Messlokation.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Messlokation.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Messlokation extends Geschaeftsobjekt {
@@ -66,10 +66,20 @@ public class Messlokation extends Geschaeftsobjekt {
         return _typ;
     }
 
+    /**
+    * Alternativ zu einer postalischen Adresse kann hier ein Ort mittels Geokoordinaten
+    * angegeben werden
+    * (z.B. zur Identifikation von Sendemasten).
+    */
     public Geokoordinaten getGeoadresse() {
         return geoadresse;
     }
 
+    /**
+    * Alternativ zu einer postalischen Adresse kann hier ein Ort mittels Geokoordinaten
+    * angegeben werden
+    * (z.B. zur Identifikation von Sendemasten).
+    */
     public void setGeoadresse(Geokoordinaten geoadresse) {
         this.geoadresse = geoadresse;
     }
@@ -88,31 +98,61 @@ public class Messlokation extends Geschaeftsobjekt {
         this.geraete = geraete;
     }
 
+    /**
+    * Codenummer des grundzuständigen Messstellenbetreibers, der für diese Messlokation
+    * zuständig ist.
+    * (Dieser ist immer dann Messstellenbetreiber, wenn kein anderer MSB die Einrichtungen an
+    * der Messlokation betreibt.)
+    */
     public String getGrundzustaendigerMsbCodenr() {
         return grundzustaendigerMsbCodenr;
     }
 
+    /**
+    * Codenummer des grundzuständigen Messstellenbetreibers, der für diese Messlokation
+    * zuständig ist.
+    * (Dieser ist immer dann Messstellenbetreiber, wenn kein anderer MSB die Einrichtungen an
+    * der Messlokation betreibt.)
+    */
     public void setGrundzustaendigerMsbCodenr(String grundzustaendigerMsbCodenr) {
         this.grundzustaendigerMsbCodenr = grundzustaendigerMsbCodenr;
     }
 
+    /**
+    * Codenummer des grundzuständigen Messstellenbetreibers für intelligente Messsysteme, der
+    * für diese Messlokation
+    * zuständig ist.
+    * (Dieser ist immer dann Messstellenbetreiber, wenn kein anderer MSB die Einrichtungen an
+    * der Messlokation betreibt.)
+    */
     public String getGrundzustaendigerMsbimCodenr() {
         return grundzustaendigerMsbimCodenr;
     }
 
+    /**
+    * Codenummer des grundzuständigen Messstellenbetreibers für intelligente Messsysteme, der
+    * für diese Messlokation
+    * zuständig ist.
+    * (Dieser ist immer dann Messstellenbetreiber, wenn kein anderer MSB die Einrichtungen an
+    * der Messlokation betreibt.)
+    */
     public void setGrundzustaendigerMsbimCodenr(String grundzustaendigerMsbimCodenr) {
         this.grundzustaendigerMsbimCodenr = grundzustaendigerMsbimCodenr;
     }
 
     /**
-    * Lokationszuordnung, um bspw. die zugehörigen Marktlokationen anzugeben
+    * Alternativ zu einer postalischen Adresse und Geokoordinaten kann hier eine Ortsangabe
+    * mittels Gemarkung und
+    * Flurstück erfolgen.
     */
     public Katasteradresse getKatasterinformation() {
         return katasterinformation;
     }
 
     /**
-    * Lokationszuordnung, um bspw. die zugehörigen Marktlokationen anzugeben
+    * Alternativ zu einer postalischen Adresse und Geokoordinaten kann hier eine Ortsangabe
+    * mittels Gemarkung und
+    * Flurstück erfolgen.
     */
     public void setKatasterinformation(Katasteradresse katasterinformation) {
         this.katasterinformation = katasterinformation;
@@ -148,10 +188,18 @@ public class Messlokation extends Geschaeftsobjekt {
         this.lokationszuordnungen = lokationszuordnungen;
     }
 
+    /**
+    * Die Adresse, an der die Messeinrichtungen zu finden sind.
+    * (Nur angeben, wenn diese von der Adresse der Marktlokation abweicht.)
+    */
     public Adresse getMessadresse() {
         return messadresse;
     }
 
+    /**
+    * Die Adresse, an der die Messeinrichtungen zu finden sind.
+    * (Nur angeben, wenn diese von der Adresse der Marktlokation abweicht.)
+    */
     public void setMessadresse(Adresse messadresse) {
         this.messadresse = messadresse;
     }
@@ -264,6 +312,11 @@ public class Messlokation extends Geschaeftsobjekt {
         private MesslokationBuilder() {
         }
 
+        /**
+        * Alternativ zu einer postalischen Adresse kann hier ein Ort mittels Geokoordinaten
+        * angegeben werden
+        * (z.B. zur Identifikation von Sendemasten).
+        */
         public MesslokationBuilder setGeoadresse(Geokoordinaten geoadresse) {
             this.geoadresse = geoadresse;
             return this;
@@ -277,18 +330,33 @@ public class Messlokation extends Geschaeftsobjekt {
             return this;
         }
 
+        /**
+        * Codenummer des grundzuständigen Messstellenbetreibers, der für diese Messlokation
+        * zuständig ist.
+        * (Dieser ist immer dann Messstellenbetreiber, wenn kein anderer MSB die Einrichtungen an
+        * der Messlokation betreibt.)
+        */
         public MesslokationBuilder setGrundzustaendigerMsbCodenr(String grundzustaendigerMsbCodenr) {
             this.grundzustaendigerMsbCodenr = grundzustaendigerMsbCodenr;
             return this;
         }
 
+        /**
+        * Codenummer des grundzuständigen Messstellenbetreibers für intelligente Messsysteme, der
+        * für diese Messlokation
+        * zuständig ist.
+        * (Dieser ist immer dann Messstellenbetreiber, wenn kein anderer MSB die Einrichtungen an
+        * der Messlokation betreibt.)
+        */
         public MesslokationBuilder setGrundzustaendigerMsbimCodenr(String grundzustaendigerMsbimCodenr) {
             this.grundzustaendigerMsbimCodenr = grundzustaendigerMsbimCodenr;
             return this;
         }
 
         /**
-        * Lokationszuordnung, um bspw. die zugehörigen Marktlokationen anzugeben
+        * Alternativ zu einer postalischen Adresse und Geokoordinaten kann hier eine Ortsangabe
+        * mittels Gemarkung und
+        * Flurstück erfolgen.
         */
         public MesslokationBuilder setKatasterinformation(Katasteradresse katasterinformation) {
             this.katasterinformation = katasterinformation;
@@ -312,6 +380,10 @@ public class Messlokation extends Geschaeftsobjekt {
             return this;
         }
 
+        /**
+        * Die Adresse, an der die Messeinrichtungen zu finden sind.
+        * (Nur angeben, wenn diese von der Adresse der Marktlokation abweicht.)
+        */
         public MesslokationBuilder setMessadresse(Adresse messadresse) {
             this.messadresse = messadresse;
             return this;
@@ -365,8 +437,8 @@ public class Messlokation extends Geschaeftsobjekt {
             return this;
         }
 
-        public MesslokationBuilder setId(String id) {
-            super.setId(id);
+        public MesslokationBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

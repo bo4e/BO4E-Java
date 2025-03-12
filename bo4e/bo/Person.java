@@ -21,7 +21,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Person JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Person.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Person.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Person extends Geschaeftsobjekt {
@@ -100,10 +100,20 @@ public class Person extends Geschaeftsobjekt {
         this.geburtsdatum = geburtsdatum;
     }
 
+    /**
+    * Im Falle einer nicht standardisierten Anrede kann hier eine frei definierbare Anrede
+    * vorgegeben werden.
+    * Beispiel: "Vereinsgemeinschaft", "Pfarrer", "Hochwürdigster Herr Abt".
+    */
     public String getIndividuelleAnrede() {
         return individuelleAnrede;
     }
 
+    /**
+    * Im Falle einer nicht standardisierten Anrede kann hier eine frei definierbare Anrede
+    * vorgegeben werden.
+    * Beispiel: "Vereinsgemeinschaft", "Pfarrer", "Hochwürdigster Herr Abt".
+    */
     public void setIndividuelleAnrede(String individuelleAnrede) {
         this.individuelleAnrede = individuelleAnrede;
     }
@@ -236,6 +246,11 @@ public class Person extends Geschaeftsobjekt {
             return this;
         }
 
+        /**
+        * Im Falle einer nicht standardisierten Anrede kann hier eine frei definierbare Anrede
+        * vorgegeben werden.
+        * Beispiel: "Vereinsgemeinschaft", "Pfarrer", "Hochwürdigster Herr Abt".
+        */
         public PersonBuilder setIndividuelleAnrede(String individuelleAnrede) {
             this.individuelleAnrede = individuelleAnrede;
             return this;
@@ -289,8 +304,8 @@ public class Person extends Geschaeftsobjekt {
             return this;
         }
 
-        public PersonBuilder setId(String id) {
-            super.setId(id);
+        public PersonBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

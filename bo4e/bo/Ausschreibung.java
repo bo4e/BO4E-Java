@@ -23,7 +23,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Ausschreibung JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Ausschreibung.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Ausschreibung.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Ausschreibung extends Geschaeftsobjekt {
@@ -62,18 +62,38 @@ public class Ausschreibung extends Geschaeftsobjekt {
         return _typ;
     }
 
+    /**
+    * Diese Komponente wird zur Abbildung von Zeiträumen in Form von Dauern oder der Angabe von
+    * Start und Ende verwendet.
+    * Es muss daher entweder eine Dauer oder ein Zeitraum in Form von Start und Ende angegeben
+    * sein
+    */
     public Zeitraum getAbgabefrist() {
         return abgabefrist;
     }
 
+    /**
+    * Diese Komponente wird zur Abbildung von Zeiträumen in Form von Dauern oder der Angabe von
+    * Start und Ende verwendet.
+    * Es muss daher entweder eine Dauer oder ein Zeitraum in Form von Start und Ende angegeben
+    * sein
+    */
     public void setAbgabefrist(Zeitraum abgabefrist) {
         this.abgabefrist = abgabefrist;
     }
 
+    /**
+    * Mit diesem Objekt können Geschäftspartner übertragen werden.
+    * Sowohl Unternehmen, als auch Privatpersonen können Geschäftspartner sein
+    */
     public Geschaeftspartner getAusschreibender() {
         return ausschreibender;
     }
 
+    /**
+    * Mit diesem Objekt können Geschäftspartner übertragen werden.
+    * Sowohl Unternehmen, als auch Privatpersonen können Geschäftspartner sein
+    */
     public void setAusschreibender(Geschaeftspartner ausschreibender) {
         this.ausschreibender = ausschreibender;
     }
@@ -135,14 +155,20 @@ public class Ausschreibung extends Geschaeftsobjekt {
     }
 
     /**
-    * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
+    * Diese Komponente wird zur Abbildung von Zeiträumen in Form von Dauern oder der Angabe von
+    * Start und Ende verwendet.
+    * Es muss daher entweder eine Dauer oder ein Zeitraum in Form von Start und Ende angegeben
+    * sein
     */
     public Zeitraum getBindefrist() {
         return bindefrist;
     }
 
     /**
-    * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
+    * Diese Komponente wird zur Abbildung von Zeiträumen in Form von Dauern oder der Angabe von
+    * Start und Ende verwendet.
+    * Es muss daher entweder eine Dauer oder ein Zeitraum in Form von Start und Ende angegeben
+    * sein
     */
     public void setBindefrist(Zeitraum bindefrist) {
         this.bindefrist = bindefrist;
@@ -225,11 +251,21 @@ public class Ausschreibung extends Geschaeftsobjekt {
         private AusschreibungBuilder() {
         }
 
+        /**
+        * Diese Komponente wird zur Abbildung von Zeiträumen in Form von Dauern oder der Angabe von
+        * Start und Ende verwendet.
+        * Es muss daher entweder eine Dauer oder ein Zeitraum in Form von Start und Ende angegeben
+        * sein
+        */
         public AusschreibungBuilder setAbgabefrist(Zeitraum abgabefrist) {
             this.abgabefrist = abgabefrist;
             return this;
         }
 
+        /**
+        * Mit diesem Objekt können Geschäftspartner übertragen werden.
+        * Sowohl Unternehmen, als auch Privatpersonen können Geschäftspartner sein
+        */
         public AusschreibungBuilder setAusschreibender(Geschaeftspartner ausschreibender) {
             this.ausschreibender = ausschreibender;
             return this;
@@ -268,7 +304,10 @@ public class Ausschreibung extends Geschaeftsobjekt {
         }
 
         /**
-        * Die einzelnen Lose, aus denen sich die Ausschreibung zusammensetzt
+        * Diese Komponente wird zur Abbildung von Zeiträumen in Form von Dauern oder der Angabe von
+        * Start und Ende verwendet.
+        * Es muss daher entweder eine Dauer oder ein Zeitraum in Form von Start und Ende angegeben
+        * sein
         */
         public AusschreibungBuilder setBindefrist(Zeitraum bindefrist) {
             this.bindefrist = bindefrist;
@@ -307,8 +346,8 @@ public class Ausschreibung extends Geschaeftsobjekt {
             return this;
         }
 
-        public AusschreibungBuilder setId(String id) {
-            super.setId(id);
+        public AusschreibungBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

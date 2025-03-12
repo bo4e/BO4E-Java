@@ -17,7 +17,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Energiemix JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Energiemix.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Energiemix.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Energiemix extends COM {
@@ -339,8 +339,8 @@ public class Energiemix extends COM {
             return this;
         }
 
-        public EnergiemixBuilder setId(String id) {
-            super.setId(id);
+        public EnergiemixBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 
