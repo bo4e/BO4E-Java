@@ -14,9 +14,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Preisstaffel JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Preisstaffel.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Preisstaffel.json>`_
 */
 public class Preisstaffel extends COM {
+    private String artikelId;
     private Double einheitspreis;
     private Sigmoidparameter sigmoidparameter;
     private Double staffelgrenzeBis;
@@ -27,10 +28,27 @@ public class Preisstaffel extends COM {
 
     private Preisstaffel(PreisstaffelBuilder builder) {
         super(builder);
+        this.artikelId = builder.artikelId;
         this.einheitspreis = builder.einheitspreis;
         this.sigmoidparameter = builder.sigmoidparameter;
         this.staffelgrenzeBis = builder.staffelgrenzeBis;
         this.staffelgrenzeVon = builder.staffelgrenzeVon;
+    }
+
+    /**
+    * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
+    * BDEW-Artikelnummer ablöst
+    */
+    public String getArtikelId() {
+        return artikelId;
+    }
+
+    /**
+    * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
+    * BDEW-Artikelnummer ablöst
+    */
+    public void setArtikelId(String artikelId) {
+        this.artikelId = artikelId;
     }
 
     /**
@@ -96,12 +114,22 @@ public class Preisstaffel extends COM {
     }
 
     public static class PreisstaffelBuilder extends COMBuilder {
+        private String artikelId;
         private Double einheitspreis;
         private Sigmoidparameter sigmoidparameter;
         private Double staffelgrenzeBis;
         private Double staffelgrenzeVon;
 
         private PreisstaffelBuilder() {
+        }
+
+        /**
+        * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
+        * BDEW-Artikelnummer ablöst
+        */
+        public PreisstaffelBuilder setArtikelId(String artikelId) {
+            this.artikelId = artikelId;
+            return this;
         }
 
         /**
@@ -137,8 +165,8 @@ public class Preisstaffel extends COM {
             return this;
         }
 
-        public PreisstaffelBuilder setId(String id) {
-            super.setId(id);
+        public PreisstaffelBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

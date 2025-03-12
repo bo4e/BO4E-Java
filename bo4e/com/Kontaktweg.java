@@ -15,7 +15,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Kontakt JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Kontakt.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Kontakt.json>`_
 */
 public class Kontaktweg extends COM {
     private String beschreibung;
@@ -135,8 +135,8 @@ public class Kontaktweg extends COM {
             return this;
         }
 
-        public KontaktwegBuilder setId(String id) {
-            super.setId(id);
+        public KontaktwegBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

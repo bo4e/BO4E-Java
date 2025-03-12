@@ -13,7 +13,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Kostenblock JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Kostenblock.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Kostenblock.json>`_
 */
 public class Kostenblock extends COM {
     private String kostenblockbezeichnung;
@@ -114,8 +114,8 @@ public class Kostenblock extends COM {
             return this;
         }
 
-        public KostenblockBuilder setId(String id) {
-            super.setId(id);
+        public KostenblockBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

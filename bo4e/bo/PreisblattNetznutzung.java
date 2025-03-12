@@ -22,7 +22,7 @@ import java.util.List;
 *
 * .. HINT::
 * `PreisblattNetznutzung JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/PreisblattNetznutzung.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/PreisblattNetznutzung.json>`_
 */
 public class PreisblattNetznutzung extends Geschaeftsobjekt {
     private final Typ _typ = Typ.PREISBLATTNETZNUTZUNG;
@@ -266,8 +266,8 @@ public class PreisblattNetznutzung extends Geschaeftsobjekt {
             return this;
         }
 
-        public PreisblattNetznutzungBuilder setId(String id) {
-            super.setId(id);
+        public PreisblattNetznutzungBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

@@ -17,7 +17,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Verbrauch JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Verbrauch.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Verbrauch.json>`_
 */
 public class Verbrauch extends COM {
     private Mengeneinheit einheit;
@@ -215,8 +215,8 @@ public class Verbrauch extends COM {
             return this;
         }
 
-        public VerbrauchBuilder setId(String id) {
-            super.setId(id);
+        public VerbrauchBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

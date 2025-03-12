@@ -9,6 +9,7 @@ import java.util.List;
 /**
 * In dieser Komponente sind die Berechnungsparameter für die Ermittlung der Tarifkosten
 * zusammengefasst.
+*
 * .. raw:: html
 *
 * <object data="../_static/images/bo4e/com/Tarifberechnungsparameter.svg"
@@ -16,7 +17,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Tarifberechnungsparameter JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Tarifberechnungsparameter.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Tarifberechnungsparameter.json>`_
 */
 public class Tarifberechnungsparameter extends COM {
     private Tarifkalkulationsmethode berechnungsmethode;
@@ -295,8 +296,8 @@ public class Tarifberechnungsparameter extends COM {
             return this;
         }
 
-        public TarifberechnungsparameterBuilder setId(String id) {
-            super.setId(id);
+        public TarifberechnungsparameterBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

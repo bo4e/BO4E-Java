@@ -15,7 +15,7 @@ import java.util.List;
 *
 * .. HINT::
 * `RegionalePreisgarantie JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/RegionalePreisgarantie.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/RegionalePreisgarantie.json>`_
 */
 public class RegionalePreisgarantie extends COM {
     private String beschreibung;
@@ -138,8 +138,8 @@ public class RegionalePreisgarantie extends COM {
             return this;
         }
 
-        public RegionalePreisgarantieBuilder setId(String id) {
-            super.setId(id);
+        public RegionalePreisgarantieBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

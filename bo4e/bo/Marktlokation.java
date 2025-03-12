@@ -28,7 +28,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Marktlokation JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Marktlokation.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Marktlokation.json>`_
 */
 public class Marktlokation extends Geschaeftsobjekt {
     private final Typ _typ = Typ.MARKTLOKATION;
@@ -178,10 +178,20 @@ public class Marktlokation extends Geschaeftsobjekt {
         this.gebietstyp = gebietstyp;
     }
 
+    /**
+    * Alternativ zu einer postalischen Adresse kann hier ein Ort mittels Geokoordinaten
+    * angegeben werden
+    * (z.B. zur Identifikation von Sendemasten).
+    */
     public Geokoordinaten getGeoadresse() {
         return geoadresse;
     }
 
+    /**
+    * Alternativ zu einer postalischen Adresse kann hier ein Ort mittels Geokoordinaten
+    * angegeben werden
+    * (z.B. zur Identifikation von Sendemasten).
+    */
     public void setGeoadresse(Geokoordinaten geoadresse) {
         this.geoadresse = geoadresse;
     }
@@ -214,10 +224,20 @@ public class Marktlokation extends Geschaeftsobjekt {
         this.istUnterbrechbar = istUnterbrechbar;
     }
 
+    /**
+    * Alternativ zu einer postalischen Adresse und Geokoordinaten kann hier eine Ortsangabe
+    * mittels Gemarkung und
+    * Flurstück erfolgen.
+    */
     public Katasteradresse getKatasterinformation() {
         return katasterinformation;
     }
 
+    /**
+    * Alternativ zu einer postalischen Adresse und Geokoordinaten kann hier eine Ortsangabe
+    * mittels Gemarkung und
+    * Flurstück erfolgen.
+    */
     public void setKatasterinformation(Katasteradresse katasterinformation) {
         this.katasterinformation = katasterinformation;
     }
@@ -324,10 +344,20 @@ public class Marktlokation extends Geschaeftsobjekt {
         this.netzbetreibercodenr = netzbetreibercodenr;
     }
 
+    /**
+    * Netzebene, in der der Bezug der Energie erfolgt.
+    * Bei Strom Spannungsebene der Lieferung, bei Gas Druckstufe.
+    * Beispiel Strom: Niederspannung Beispiel Gas: Niederdruck.
+    */
     public Netzebene getNetzebene() {
         return netzebene;
     }
 
+    /**
+    * Netzebene, in der der Bezug der Energie erfolgt.
+    * Bei Strom Spannungsebene der Lieferung, bei Gas Druckstufe.
+    * Beispiel Strom: Niederspannung Beispiel Gas: Niederdruck.
+    */
     public void setNetzebene(Netzebene netzebene) {
         this.netzebene = netzebene;
     }
@@ -347,14 +377,16 @@ public class Marktlokation extends Geschaeftsobjekt {
     }
 
     /**
-    * Kundengruppen der Marktlokation
+    * für Strom. Code vom EIC,
+    * https://www.entsoe.eu/data/energy-identification-codes-eic/eic-approved-codes/
     */
     public String getRegelzone() {
         return regelzone;
     }
 
     /**
-    * Kundengruppen der Marktlokation
+    * für Strom. Code vom EIC,
+    * https://www.entsoe.eu/data/energy-identification-codes-eic/eic-approved-codes/
     */
     public void setRegelzone(String regelzone) {
         this.regelzone = regelzone;
@@ -396,30 +428,18 @@ public class Marktlokation extends Geschaeftsobjekt {
         this.verbrauchsmengen = verbrauchsmengen;
     }
 
-    /**
-    * für Gas. Code vom EIC, https://www.entsog.eu/data/data-portal/codes-list
-    */
     public List<Zaehlwerk> getZaehlwerke() {
         return zaehlwerke;
     }
 
-    /**
-    * für Gas. Code vom EIC, https://www.entsog.eu/data/data-portal/codes-list
-    */
     public void setZaehlwerke(List<Zaehlwerk> zaehlwerke) {
         this.zaehlwerke = zaehlwerke;
     }
 
-    /**
-    * Lokationszuordnung, um bspw. die zugehörigen Messlokationen anzugeben
-    */
     public List<Zaehlwerk> getZaehlwerkeDerBeteiligtenMarktrolle() {
         return zaehlwerkeDerBeteiligtenMarktrolle;
     }
 
-    /**
-    * Lokationszuordnung, um bspw. die zugehörigen Messlokationen anzugeben
-    */
     public void setZaehlwerkeDerBeteiligtenMarktrolle(List<Zaehlwerk> zaehlwerkeDerBeteiligtenMarktrolle) {
         this.zaehlwerkeDerBeteiligtenMarktrolle = zaehlwerkeDerBeteiligtenMarktrolle;
     }
@@ -506,6 +526,11 @@ public class Marktlokation extends Geschaeftsobjekt {
             return this;
         }
 
+        /**
+        * Alternativ zu einer postalischen Adresse kann hier ein Ort mittels Geokoordinaten
+        * angegeben werden
+        * (z.B. zur Identifikation von Sendemasten).
+        */
         public MarktlokationBuilder setGeoadresse(Geokoordinaten geoadresse) {
             this.geoadresse = geoadresse;
             return this;
@@ -527,6 +552,11 @@ public class Marktlokation extends Geschaeftsobjekt {
             return this;
         }
 
+        /**
+        * Alternativ zu einer postalischen Adresse und Geokoordinaten kann hier eine Ortsangabe
+        * mittels Gemarkung und
+        * Flurstück erfolgen.
+        */
         public MarktlokationBuilder setKatasterinformation(Katasteradresse katasterinformation) {
             this.katasterinformation = katasterinformation;
             return this;
@@ -590,6 +620,11 @@ public class Marktlokation extends Geschaeftsobjekt {
             return this;
         }
 
+        /**
+        * Netzebene, in der der Bezug der Energie erfolgt.
+        * Bei Strom Spannungsebene der Lieferung, bei Gas Druckstufe.
+        * Beispiel Strom: Niederspannung Beispiel Gas: Niederdruck.
+        */
         public MarktlokationBuilder setNetzebene(Netzebene netzebene) {
             this.netzebene = netzebene;
             return this;
@@ -604,7 +639,8 @@ public class Marktlokation extends Geschaeftsobjekt {
         }
 
         /**
-        * Kundengruppen der Marktlokation
+        * für Strom. Code vom EIC,
+        * https://www.entsoe.eu/data/energy-identification-codes-eic/eic-approved-codes/
         */
         public MarktlokationBuilder setRegelzone(String regelzone) {
             this.regelzone = regelzone;
@@ -632,24 +668,18 @@ public class Marktlokation extends Geschaeftsobjekt {
             return this;
         }
 
-        /**
-        * für Gas. Code vom EIC, https://www.entsog.eu/data/data-portal/codes-list
-        */
         public MarktlokationBuilder setZaehlwerke(List<Zaehlwerk> zaehlwerke) {
             this.zaehlwerke = zaehlwerke;
             return this;
         }
 
-        /**
-        * Lokationszuordnung, um bspw. die zugehörigen Messlokationen anzugeben
-        */
         public MarktlokationBuilder setZaehlwerkeDerBeteiligtenMarktrolle(List<Zaehlwerk> zaehlwerkeDerBeteiligtenMarktrolle) {
             this.zaehlwerkeDerBeteiligtenMarktrolle = zaehlwerkeDerBeteiligtenMarktrolle;
             return this;
         }
 
-        public MarktlokationBuilder setId(String id) {
-            super.setId(id);
+        public MarktlokationBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

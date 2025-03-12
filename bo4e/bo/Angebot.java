@@ -23,7 +23,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Angebot JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Angebot.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Angebot.json>`_
 */
 public class Angebot extends Geschaeftsobjekt {
     private final Typ _typ = Typ.ANGEBOT;
@@ -60,14 +60,18 @@ public class Angebot extends Geschaeftsobjekt {
     }
 
     /**
-    * Bis zu diesem Zeitpunkt (Tag/Uhrzeit) inklusive gilt das Angebot
+    * Referenz auf eine Anfrage oder Ausschreibung;
+    * Kann dem Empfänger des Angebotes bei Zuordnung des Angebotes zur Anfrage bzw.
+    * Ausschreibung helfen.
     */
     public String getAnfragereferenz() {
         return anfragereferenz;
     }
 
     /**
-    * Bis zu diesem Zeitpunkt (Tag/Uhrzeit) inklusive gilt das Angebot
+    * Referenz auf eine Anfrage oder Ausschreibung;
+    * Kann dem Empfänger des Angebotes bei Zuordnung des Angebotes zur Anfrage bzw.
+    * Ausschreibung helfen.
     */
     public void setAnfragereferenz(String anfragereferenz) {
         this.anfragereferenz = anfragereferenz;
@@ -185,10 +189,18 @@ public class Angebot extends Geschaeftsobjekt {
         this.unterzeichnerAngebotsnehmer = unterzeichnerAngebotsnehmer;
     }
 
+    /**
+    * Eine oder mehrere Varianten des Angebots mit den Angebotsteilen;
+    * Ein Angebot besteht mindestens aus einer Variante.
+    */
     public List<Angebotsvariante> getVarianten() {
         return varianten;
     }
 
+    /**
+    * Eine oder mehrere Varianten des Angebots mit den Angebotsteilen;
+    * Ein Angebot besteht mindestens aus einer Variante.
+    */
     public void setVarianten(List<Angebotsvariante> varianten) {
         this.varianten = varianten;
     }
@@ -213,7 +225,9 @@ public class Angebot extends Geschaeftsobjekt {
         }
 
         /**
-        * Bis zu diesem Zeitpunkt (Tag/Uhrzeit) inklusive gilt das Angebot
+        * Referenz auf eine Anfrage oder Ausschreibung;
+        * Kann dem Empfänger des Angebotes bei Zuordnung des Angebotes zur Anfrage bzw.
+        * Ausschreibung helfen.
         */
         public AngebotBuilder setAnfragereferenz(String anfragereferenz) {
             this.anfragereferenz = anfragereferenz;
@@ -284,13 +298,17 @@ public class Angebot extends Geschaeftsobjekt {
             return this;
         }
 
+        /**
+        * Eine oder mehrere Varianten des Angebots mit den Angebotsteilen;
+        * Ein Angebot besteht mindestens aus einer Variante.
+        */
         public AngebotBuilder setVarianten(List<Angebotsvariante> varianten) {
             this.varianten = varianten;
             return this;
         }
 
-        public AngebotBuilder setId(String id) {
-            super.setId(id);
+        public AngebotBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

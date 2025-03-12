@@ -15,7 +15,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Unterschrift JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Unterschrift.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Unterschrift.json>`_
 */
 public class Unterschrift extends COM {
     private OffsetDateTime datum;
@@ -33,14 +33,14 @@ public class Unterschrift extends COM {
     }
 
     /**
-    * Ort, an dem die Unterschrift geleistet wird
+    * Datum der Unterschrift
     */
     public OffsetDateTime getDatum() {
         return datum;
     }
 
     /**
-    * Ort, an dem die Unterschrift geleistet wird
+    * Datum der Unterschrift
     */
     public void setDatum(OffsetDateTime datum) {
         this.datum = datum;
@@ -87,7 +87,7 @@ public class Unterschrift extends COM {
         }
 
         /**
-        * Ort, an dem die Unterschrift geleistet wird
+        * Datum der Unterschrift
         */
         public UnterschriftBuilder setDatum(OffsetDateTime datum) {
             this.datum = datum;
@@ -110,8 +110,8 @@ public class Unterschrift extends COM {
             return this;
         }
 
-        public UnterschriftBuilder setId(String id) {
-            super.setId(id);
+        public UnterschriftBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

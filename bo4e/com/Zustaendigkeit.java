@@ -16,7 +16,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Zustaendigkeit JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Zustaendigkeit.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Zustaendigkeit.json>`_
 */
 public class Zustaendigkeit extends COM {
     private String abteilung;
@@ -34,14 +34,14 @@ public class Zustaendigkeit extends COM {
     }
 
     /**
-    * Berufliche Rolle des Ansprechpartners/ der Person
+    * Abteilung, in der der Ansprechpartner/ die Person tätig ist
     */
     public String getAbteilung() {
         return abteilung;
     }
 
     /**
-    * Berufliche Rolle des Ansprechpartners/ der Person
+    * Abteilung, in der der Ansprechpartner/ die Person tätig ist
     */
     public void setAbteilung(String abteilung) {
         this.abteilung = abteilung;
@@ -88,7 +88,7 @@ public class Zustaendigkeit extends COM {
         }
 
         /**
-        * Berufliche Rolle des Ansprechpartners/ der Person
+        * Abteilung, in der der Ansprechpartner/ die Person tätig ist
         */
         public ZustaendigkeitBuilder setAbteilung(String abteilung) {
             this.abteilung = abteilung;
@@ -111,8 +111,8 @@ public class Zustaendigkeit extends COM {
             return this;
         }
 
-        public ZustaendigkeitBuilder setId(String id) {
-            super.setId(id);
+        public ZustaendigkeitBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

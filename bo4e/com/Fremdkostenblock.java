@@ -14,7 +14,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Fremdkostenblock JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Fremdkostenblock.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Fremdkostenblock.json>`_
 */
 public class Fremdkostenblock extends COM {
     private String kostenblockbezeichnung;
@@ -115,8 +115,8 @@ public class Fremdkostenblock extends COM {
             return this;
         }
 
-        public FremdkostenblockBuilder setId(String id) {
-            super.setId(id);
+        public FremdkostenblockBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

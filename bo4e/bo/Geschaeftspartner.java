@@ -24,7 +24,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Geschaeftspartner JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Geschaeftspartner.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Geschaeftspartner.json>`_
 */
 public class Geschaeftspartner extends Geschaeftsobjekt {
     private final Typ _typ = Typ.GESCHAEFTSPARTNER;
@@ -164,10 +164,20 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
         this.handelsregisternummer = handelsregisternummer;
     }
 
+    /**
+    * Im Falle einer nicht standardisierten Anrede kann hier eine frei definierbare Anrede
+    * vorgegeben werden.
+    * Beispiel: "Vereinsgemeinschaft", "Pfarrer", "Hochwürdigster Herr Abt".
+    */
     public String getIndividuelleAnrede() {
         return individuelleAnrede;
     }
 
+    /**
+    * Im Falle einer nicht standardisierten Anrede kann hier eine frei definierbare Anrede
+    * vorgegeben werden.
+    * Beispiel: "Vereinsgemeinschaft", "Pfarrer", "Hochwürdigster Herr Abt".
+    */
     public void setIndividuelleAnrede(String individuelleAnrede) {
         this.individuelleAnrede = individuelleAnrede;
     }
@@ -201,23 +211,31 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
     }
 
     /**
-    * Kontaktwege des Geschäftspartners
+    * Name der Firma, wenn Gewerbe oder andere Organisation.
     */
     public String getOrganisationsname() {
         return organisationsname;
     }
 
     /**
-    * Kontaktwege des Geschäftspartners
+    * Name der Firma, wenn Gewerbe oder andere Organisation.
     */
     public void setOrganisationsname(String organisationsname) {
         this.organisationsname = organisationsname;
     }
 
+    /**
+    * Kennzeichnung ob es sich um ein Gewerbe/Unternehmen, eine Privatperson oder eine andere
+    * Art von Organisation handelt.
+    */
     public Organisationstyp getOrganisationstyp() {
         return organisationstyp;
     }
 
+    /**
+    * Kennzeichnung ob es sich um ein Gewerbe/Unternehmen, eine Privatperson oder eine andere
+    * Art von Organisation handelt.
+    */
     public void setOrganisationstyp(Organisationstyp organisationstyp) {
         this.organisationstyp = organisationstyp;
     }
@@ -356,6 +374,11 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
             return this;
         }
 
+        /**
+        * Im Falle einer nicht standardisierten Anrede kann hier eine frei definierbare Anrede
+        * vorgegeben werden.
+        * Beispiel: "Vereinsgemeinschaft", "Pfarrer", "Hochwürdigster Herr Abt".
+        */
         public GeschaeftspartnerBuilder setIndividuelleAnrede(String individuelleAnrede) {
             this.individuelleAnrede = individuelleAnrede;
             return this;
@@ -378,13 +401,17 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
         }
 
         /**
-        * Kontaktwege des Geschäftspartners
+        * Name der Firma, wenn Gewerbe oder andere Organisation.
         */
         public GeschaeftspartnerBuilder setOrganisationsname(String organisationsname) {
             this.organisationsname = organisationsname;
             return this;
         }
 
+        /**
+        * Kennzeichnung ob es sich um ein Gewerbe/Unternehmen, eine Privatperson oder eine andere
+        * Art von Organisation handelt.
+        */
         public GeschaeftspartnerBuilder setOrganisationstyp(Organisationstyp organisationstyp) {
             this.organisationstyp = organisationstyp;
             return this;
@@ -422,8 +449,8 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
             return this;
         }
 
-        public GeschaeftspartnerBuilder setId(String id) {
-            super.setId(id);
+        public GeschaeftspartnerBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

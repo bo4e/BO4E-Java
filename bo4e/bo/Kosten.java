@@ -20,7 +20,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Kosten JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Kosten.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Kosten.json>`_
 */
 public class Kosten extends Geschaeftsobjekt {
     private final Typ _typ = Typ.KOSTEN;
@@ -148,8 +148,8 @@ public class Kosten extends Geschaeftsobjekt {
             return this;
         }
 
-        public KostenBuilder setId(String id) {
-            super.setId(id);
+        public KostenBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

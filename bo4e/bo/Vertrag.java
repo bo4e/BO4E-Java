@@ -23,7 +23,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Vertrag JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/bo/Vertrag.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/Vertrag.json>`_
 */
 public class Vertrag extends Geschaeftsobjekt {
     private final Typ _typ = Typ.VERTRAG;
@@ -191,18 +191,38 @@ public class Vertrag extends Geschaeftsobjekt {
         this.vertragsnummer = vertragsnummer;
     }
 
+    /**
+    * Der "erstgenannte" Vertragspartner.
+    * In der Regel der Aussteller des Vertrags.
+    * Beispiel: "Vertrag zwischen Vertragspartner 1 ..."
+    */
     public Geschaeftspartner getVertragspartner1() {
         return vertragspartner1;
     }
 
+    /**
+    * Der "erstgenannte" Vertragspartner.
+    * In der Regel der Aussteller des Vertrags.
+    * Beispiel: "Vertrag zwischen Vertragspartner 1 ..."
+    */
     public void setVertragspartner1(Geschaeftspartner vertragspartner1) {
         this.vertragspartner1 = vertragspartner1;
     }
 
+    /**
+    * Der "zweitgenannte" Vertragspartner.
+    * In der Regel der Empfänger des Vertrags.
+    * Beispiel "Vertrag zwischen Vertragspartner 1 und Vertragspartner 2".
+    */
     public Geschaeftspartner getVertragspartner2() {
         return vertragspartner2;
     }
 
+    /**
+    * Der "zweitgenannte" Vertragspartner.
+    * In der Regel der Empfänger des Vertrags.
+    * Beispiel "Vertrag zwischen Vertragspartner 1 und Vertragspartner 2".
+    */
     public void setVertragspartner2(Geschaeftspartner vertragspartner2) {
         this.vertragspartner2 = vertragspartner2;
     }
@@ -222,14 +242,18 @@ public class Vertrag extends Geschaeftsobjekt {
     }
 
     /**
-    * Beschreibung zum Vertrag
+    * Der Vertragsteil wird dazu verwendet, eine vertragliche Leistung in Bezug zu einer
+    * Lokation
+    * (Markt- oder Messlokation) festzulegen.
     */
     public List<Vertragsteil> getVertragsteile() {
         return vertragsteile;
     }
 
     /**
-    * Beschreibung zum Vertrag
+    * Der Vertragsteil wird dazu verwendet, eine vertragliche Leistung in Bezug zu einer
+    * Lokation
+    * (Markt- oder Messlokation) festzulegen.
     */
     public void setVertragsteile(List<Vertragsteil> vertragsteile) {
         this.vertragsteile = vertragsteile;
@@ -329,11 +353,21 @@ public class Vertrag extends Geschaeftsobjekt {
             return this;
         }
 
+        /**
+        * Der "erstgenannte" Vertragspartner.
+        * In der Regel der Aussteller des Vertrags.
+        * Beispiel: "Vertrag zwischen Vertragspartner 1 ..."
+        */
         public VertragBuilder setVertragspartner1(Geschaeftspartner vertragspartner1) {
             this.vertragspartner1 = vertragspartner1;
             return this;
         }
 
+        /**
+        * Der "zweitgenannte" Vertragspartner.
+        * In der Regel der Empfänger des Vertrags.
+        * Beispiel "Vertrag zwischen Vertragspartner 1 und Vertragspartner 2".
+        */
         public VertragBuilder setVertragspartner2(Geschaeftspartner vertragspartner2) {
             this.vertragspartner2 = vertragspartner2;
             return this;
@@ -348,15 +382,17 @@ public class Vertrag extends Geschaeftsobjekt {
         }
 
         /**
-        * Beschreibung zum Vertrag
+        * Der Vertragsteil wird dazu verwendet, eine vertragliche Leistung in Bezug zu einer
+        * Lokation
+        * (Markt- oder Messlokation) festzulegen.
         */
         public VertragBuilder setVertragsteile(List<Vertragsteil> vertragsteile) {
             this.vertragsteile = vertragsteile;
             return this;
         }
 
-        public VertragBuilder setId(String id) {
-            super.setId(id);
+        public VertragBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

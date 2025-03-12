@@ -15,7 +15,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Sigmoidparameter JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Sigmoidparameter.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Sigmoidparameter.json>`_
 */
 public class Sigmoidparameter extends COM {
     private Double a;
@@ -49,42 +49,42 @@ public class Sigmoidparameter extends COM {
     }
 
     /**
-    * Briefmarke Ortsverteilnetz (EUR/kWh)
+    * Wendepunkt für die bepreiste Menge (kW)
     */
     public Double getB() {
         return b;
     }
 
     /**
-    * Briefmarke Ortsverteilnetz (EUR/kWh)
+    * Wendepunkt für die bepreiste Menge (kW)
     */
     public void setB(Double b) {
         this.b = b;
     }
 
     /**
-    * Wendepunkt für die bepreiste Menge (kW)
+    * Exponent (einheitenlos)
     */
     public Double getC() {
         return c;
     }
 
     /**
-    * Wendepunkt für die bepreiste Menge (kW)
+    * Exponent (einheitenlos)
     */
     public void setC(Double c) {
         this.c = c;
     }
 
     /**
-    * Exponent (einheitenlos)
+    * Briefmarke Transportnetz (EUR/kWh)
     */
     public Double getD() {
         return d;
     }
 
     /**
-    * Exponent (einheitenlos)
+    * Briefmarke Transportnetz (EUR/kWh)
     */
     public void setD(Double d) {
         this.d = d;
@@ -112,7 +112,7 @@ public class Sigmoidparameter extends COM {
         }
 
         /**
-        * Briefmarke Ortsverteilnetz (EUR/kWh)
+        * Wendepunkt für die bepreiste Menge (kW)
         */
         public SigmoidparameterBuilder setB(Double b) {
             this.b = b;
@@ -120,7 +120,7 @@ public class Sigmoidparameter extends COM {
         }
 
         /**
-        * Wendepunkt für die bepreiste Menge (kW)
+        * Exponent (einheitenlos)
         */
         public SigmoidparameterBuilder setC(Double c) {
             this.c = c;
@@ -128,15 +128,15 @@ public class Sigmoidparameter extends COM {
         }
 
         /**
-        * Exponent (einheitenlos)
+        * Briefmarke Transportnetz (EUR/kWh)
         */
         public SigmoidparameterBuilder setD(Double d) {
             this.d = d;
             return this;
         }
 
-        public SigmoidparameterBuilder setId(String id) {
-            super.setId(id);
+        public SigmoidparameterBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

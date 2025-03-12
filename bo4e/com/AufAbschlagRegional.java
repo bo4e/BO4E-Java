@@ -20,7 +20,7 @@ import java.util.List;
 *
 * .. HINT::
 * `AufAbschlagRegional JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/AufAbschlagRegional.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/AufAbschlagRegional.json>`_
 */
 public class AufAbschlagRegional extends COM {
     private AufAbschlagstyp aufAbschlagstyp;
@@ -61,16 +61,10 @@ public class AufAbschlagRegional extends COM {
         this.zusatzprodukte = builder.zusatzprodukte;
     }
 
-    /**
-    * Typ des Aufabschlages (z.B. absolut oder prozentual)
-    */
     public AufAbschlagstyp getAufAbschlagstyp() {
         return aufAbschlagstyp;
     }
 
-    /**
-    * Typ des Aufabschlages (z.B. absolut oder prozentual)
-    */
     public void setAufAbschlagstyp(AufAbschlagstyp aufAbschlagstyp) {
         this.aufAbschlagstyp = aufAbschlagstyp;
     }
@@ -309,9 +303,6 @@ public class AufAbschlagRegional extends COM {
         private AufAbschlagRegionalBuilder() {
         }
 
-        /**
-        * Typ des Aufabschlages (z.B. absolut oder prozentual)
-        */
         public AufAbschlagRegionalBuilder setAufAbschlagstyp(AufAbschlagstyp aufAbschlagstyp) {
             this.aufAbschlagstyp = aufAbschlagstyp;
             return this;
@@ -436,8 +427,8 @@ public class AufAbschlagRegional extends COM {
             return this;
         }
 
-        public AufAbschlagRegionalBuilder setId(String id) {
-            super.setId(id);
+        public AufAbschlagRegionalBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

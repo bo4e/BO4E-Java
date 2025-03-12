@@ -17,7 +17,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Tarifpreisposition JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Tarifpreisposition.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Tarifpreisposition.json>`_
 */
 public class Tarifpreisposition extends COM {
     private Mengeneinheit bezugseinheit;
@@ -165,8 +165,8 @@ public class Tarifpreisposition extends COM {
             return this;
         }
 
-        public TarifpreispositionBuilder setId(String id) {
-            super.setId(id);
+        public TarifpreispositionBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

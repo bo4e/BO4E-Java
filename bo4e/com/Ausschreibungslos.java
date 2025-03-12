@@ -18,7 +18,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Ausschreibungslos JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/Ausschreibungslos.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/Ausschreibungslos.json>`_
 */
 public class Ausschreibungslos extends COM {
     private Long anzahlLieferstellen;
@@ -469,8 +469,8 @@ public class Ausschreibungslos extends COM {
             return this;
         }
 
-        public AusschreibungslosBuilder setId(String id) {
-            super.setId(id);
+        public AusschreibungslosBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

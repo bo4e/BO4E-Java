@@ -16,7 +16,7 @@ import java.util.List;
 *
 * .. HINT::
 * `RegionaleGueltigkeit JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/RegionaleGueltigkeit.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/RegionaleGueltigkeit.json>`_
 */
 public class RegionaleGueltigkeit extends COM {
     private Gueltigkeitstyp gueltigkeitstyp;
@@ -86,8 +86,8 @@ public class RegionaleGueltigkeit extends COM {
             return this;
         }
 
-        public RegionaleGueltigkeitBuilder setId(String id) {
-            super.setId(id);
+        public RegionaleGueltigkeitBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

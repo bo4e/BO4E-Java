@@ -14,9 +14,10 @@ import java.util.List;
 *
 * .. HINT::
 * `RegionalePreisstaffel JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/RegionalePreisstaffel.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/RegionalePreisstaffel.json>`_
 */
 public class RegionalePreisstaffel extends COM {
+    private String artikelId;
     private Double einheitspreis;
     private RegionaleGueltigkeit regionaleGueltigkeit;
     private Sigmoidparameter sigmoidparameter;
@@ -28,11 +29,28 @@ public class RegionalePreisstaffel extends COM {
 
     private RegionalePreisstaffel(RegionalePreisstaffelBuilder builder) {
         super(builder);
+        this.artikelId = builder.artikelId;
         this.einheitspreis = builder.einheitspreis;
         this.regionaleGueltigkeit = builder.regionaleGueltigkeit;
         this.sigmoidparameter = builder.sigmoidparameter;
         this.staffelgrenzeBis = builder.staffelgrenzeBis;
         this.staffelgrenzeVon = builder.staffelgrenzeVon;
+    }
+
+    /**
+    * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
+    * BDEW-Artikelnummer ablöst
+    */
+    public String getArtikelId() {
+        return artikelId;
+    }
+
+    /**
+    * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
+    * BDEW-Artikelnummer ablöst
+    */
+    public void setArtikelId(String artikelId) {
+        this.artikelId = artikelId;
     }
 
     /**
@@ -112,6 +130,7 @@ public class RegionalePreisstaffel extends COM {
     }
 
     public static class RegionalePreisstaffelBuilder extends COMBuilder {
+        private String artikelId;
         private Double einheitspreis;
         private RegionaleGueltigkeit regionaleGueltigkeit;
         private Sigmoidparameter sigmoidparameter;
@@ -119,6 +138,15 @@ public class RegionalePreisstaffel extends COM {
         private Double staffelgrenzeVon;
 
         private RegionalePreisstaffelBuilder() {
+        }
+
+        /**
+        * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
+        * BDEW-Artikelnummer ablöst
+        */
+        public RegionalePreisstaffelBuilder setArtikelId(String artikelId) {
+            this.artikelId = artikelId;
+            return this;
         }
 
         /**
@@ -162,8 +190,8 @@ public class RegionalePreisstaffel extends COM {
             return this;
         }
 
-        public RegionalePreisstaffelBuilder setId(String id) {
-            super.setId(id);
+        public RegionalePreisstaffelBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 

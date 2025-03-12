@@ -15,7 +15,7 @@ import java.util.List;
 *
 * .. HINT::
 * `KriteriumWert JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.4.0/src/bo4e_schemas/com/KriteriumWert.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/KriteriumWert.json>`_
 */
 public class KriteriumWert extends COM {
     private Tarifregionskriterium kriterium;
@@ -85,8 +85,8 @@ public class KriteriumWert extends COM {
             return this;
         }
 
-        public KriteriumWertBuilder setId(String id) {
-            super.setId(id);
+        public KriteriumWertBuilder set_id(String _id) {
+            super.set_id(_id);
             return this;
         }
 
