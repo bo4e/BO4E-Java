@@ -20,7 +20,7 @@ import java.util.List;
 *
 * .. HINT::
 * `PreisblattKonzessionsabgabe JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/PreisblattKonzessionsabgabe.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/PreisblattKonzessionsabgabe.json>`_
 */
 public class PreisblattKonzessionsabgabe extends Geschaeftsobjekt {
     private final Typ _typ = Typ.PREISBLATTKONZESSIONSABGABE;

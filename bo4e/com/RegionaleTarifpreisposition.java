@@ -19,7 +19,7 @@ import java.util.List;
 *
 * .. HINT::
 * `RegionaleTarifpreisposition JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/RegionaleTarifpreisposition.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/RegionaleTarifpreisposition.json>`_
 */
 public class RegionaleTarifpreisposition extends COM {
     private Mengeneinheit bezugseinheit;

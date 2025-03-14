@@ -15,7 +15,7 @@ import java.util.List;
 *
 * .. HINT::
 * `AufAbschlagProOrt JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/AufAbschlagProOrt.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/AufAbschlagProOrt.json>`_
 */
 public class AufAbschlagProOrt extends COM {
     private String netznr;

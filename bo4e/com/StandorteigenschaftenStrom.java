@@ -14,7 +14,7 @@ import java.util.List;
 *
 * .. HINT::
 * `StandorteigenschaftenStrom JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_
 */
 public class StandorteigenschaftenStrom extends COM {
     private String bilanzierungsgebietEic;

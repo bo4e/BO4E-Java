@@ -22,7 +22,7 @@ import java.util.List;
 *
 * .. HINT::
 * `TechnischeRessource JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/TechnischeRessource.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/TechnischeRessource.json>`_
 */
 public class TechnischeRessource extends Geschaeftsobjekt {
     private final Typ _typ = Typ.TECHNISCHERESSOURCE;

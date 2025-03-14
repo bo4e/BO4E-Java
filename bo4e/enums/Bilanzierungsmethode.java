@@ -7,10 +7,11 @@ import java.io.IOException;
  * unterschieden werden.
  */
 public enum Bilanzierungsmethode {
-    PAUSCHAL, RLM, SLP, TLP_GEMEINSAM, TLP_GETRENNT;
+    IMS, PAUSCHAL, RLM, SLP, TLP_GEMEINSAM, TLP_GETRENNT;
 
     public String toValue() {
         switch (this) {
+            case IMS: return "IMS";
             case PAUSCHAL: return "PAUSCHAL";
             case RLM: return "RLM";
             case SLP: return "SLP";
@@ -21,6 +22,7 @@ public enum Bilanzierungsmethode {
     }
 
     public static Bilanzierungsmethode forValue(String value) throws IOException {
+        if (value.equals("IMS")) return IMS;
         if (value.equals("PAUSCHAL")) return PAUSCHAL;
         if (value.equals("RLM")) return RLM;
         if (value.equals("SLP")) return SLP;
