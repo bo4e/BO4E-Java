@@ -24,7 +24,7 @@ import java.util.List;
 *
 * .. HINT::
 * `PreisblattMessung JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.5.0/src/bo4e_schemas/bo/PreisblattMessung.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/PreisblattMessung.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PreisblattMessung extends Geschaeftsobjekt {

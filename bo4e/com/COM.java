@@ -18,7 +18,7 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class COM {
     private String _id;
-    private final String _version = "202401.5.0";
+    private final String _version = "202401.6.0";
     private List<ZusatzAttribut> zusatzAttribute;
 
     protected COM(COMBuilder builder) {
