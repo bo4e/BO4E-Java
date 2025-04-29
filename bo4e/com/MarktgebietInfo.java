@@ -15,7 +15,7 @@ import java.util.List;
 *
 * .. HINT::
 * `MarktgebietInfo JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/MarktgebietInfo.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/MarktgebietInfo.json>`_
 */
 public class MarktgebietInfo extends COM {
     private final ComTyp _typ = ComTyp.MARKTGEBIETINFO;

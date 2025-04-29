@@ -28,7 +28,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Tarif JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Tarif.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/bo/Tarif.json>`_
 */
 public class Tarif extends Geschaeftsobjekt {
     private final BoTyp _typ = BoTyp.TARIF;

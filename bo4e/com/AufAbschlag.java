@@ -19,7 +19,7 @@ import java.util.List;
 *
 * .. HINT::
 * `AufAbschlag JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/AufAbschlag.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/AufAbschlag.json>`_
 */
 public class AufAbschlag extends COM {
     private final ComTyp _typ = ComTyp.AUFABSCHLAG;

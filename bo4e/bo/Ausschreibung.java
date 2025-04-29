@@ -22,7 +22,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Ausschreibung JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Ausschreibung.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/bo/Ausschreibung.json>`_
 */
 public class Ausschreibung extends Geschaeftsobjekt {
     private final BoTyp _typ = BoTyp.AUSSCHREIBUNG;
