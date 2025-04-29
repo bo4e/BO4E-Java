@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 
 import java.util.List;
 
@@ -14,9 +15,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Geokoordinaten JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Geokoordinaten.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Geokoordinaten.json>`_
 */
 public class Geokoordinaten extends COM {
+    private final ComTyp _typ = ComTyp.GEOKOORDINATEN;
     private Double breitengrad;
     private Double laengengrad;
 
@@ -27,6 +29,10 @@ public class Geokoordinaten extends COM {
         super(builder);
         this.breitengrad = builder.breitengrad;
         this.laengengrad = builder.laengengrad;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     public Double getBreitengrad() {

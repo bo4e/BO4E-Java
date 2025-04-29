@@ -4,12 +4,12 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Energiemix;
 import bo4e.com.Vertragskonditionen;
 import bo4e.com.Zeitraum;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Kundentyp;
 import bo4e.enums.Registeranzahl;
 import bo4e.enums.Sparte;
-import bo4e.enums.TarifTyp;
 import bo4e.enums.Tarifmerkmal;
-import bo4e.enums.Typ;
+import bo4e.enums.Tariftyp;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -24,10 +24,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Tarifinfo JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Tarifinfo.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Tarifinfo.json>`_
 */
 public class Tarifinfo extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.TARIFINFO;
+    private final BoTyp _typ = BoTyp.TARIFINFO;
     private Marktteilnehmer anbieter;
     private String anbietername;
     private OffsetDateTime anwendungVon;
@@ -64,7 +64,7 @@ public class Tarifinfo extends Geschaeftsobjekt {
         this.zeitlicheGueltigkeit = builder.zeitlicheGueltigkeit;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Gueltigkeitstyp;
 
 import java.util.List;
@@ -16,9 +17,10 @@ import java.util.List;
 *
 * .. HINT::
 * `RegionaleGueltigkeit JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/RegionaleGueltigkeit.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/RegionaleGueltigkeit.json>`_
 */
 public class RegionaleGueltigkeit extends COM {
+    private final ComTyp _typ = ComTyp.REGIONALEGUELTIGKEIT;
     private Gueltigkeitstyp gueltigkeitstyp;
     private List<KriteriumWert> kriteriumsWerte;
 
@@ -29,6 +31,10 @@ public class RegionaleGueltigkeit extends COM {
         super(builder);
         this.gueltigkeitstyp = builder.gueltigkeitstyp;
         this.kriteriumsWerte = builder.kriteriumsWerte;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

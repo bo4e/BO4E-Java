@@ -4,7 +4,7 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Betrag;
 import bo4e.com.Fremdkostenblock;
 import bo4e.com.Zeitraum;
-import bo4e.enums.Typ;
+import bo4e.enums.BoTyp;
 
 import java.util.List;
 
@@ -21,10 +21,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Fremdkosten JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Fremdkosten.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Fremdkosten.json>`_
 */
 public class Fremdkosten extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.FREMDKOSTEN;
+    private final BoTyp _typ = BoTyp.FREMDKOSTEN;
     private Zeitraum gueltigkeit;
     private List<Fremdkostenblock> kostenbloecke;
     private Betrag summeKosten;
@@ -39,7 +39,7 @@ public class Fremdkosten extends Geschaeftsobjekt {
         this.summeKosten = builder.summeKosten;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -15,9 +16,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Fremdkostenposition JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Fremdkostenposition.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Fremdkostenposition.json>`_
 */
 public class Fremdkostenposition extends COM {
+    private final ComTyp _typ = ComTyp.FREMDKOSTENPOSITION;
     private String artikelbezeichnung;
     private String artikeldetail;
     private Betrag betragKostenposition;
@@ -50,6 +52,10 @@ public class Fremdkostenposition extends COM {
         this.positionstitel = builder.positionstitel;
         this.von = builder.von;
         this.zeitmenge = builder.zeitmenge;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

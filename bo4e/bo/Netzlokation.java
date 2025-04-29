@@ -4,9 +4,9 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Konfigurationsprodukt;
 import bo4e.com.Menge;
 import bo4e.com.VerwendungszweckProMarktrolle;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Marktrolle;
 import bo4e.enums.Sparte;
-import bo4e.enums.Typ;
 
 import java.util.List;
 
@@ -19,10 +19,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Netzlokation JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Netzlokation.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Netzlokation.json>`_
 */
 public class Netzlokation extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.NETZLOKATION;
+    private final BoTyp _typ = BoTyp.NETZLOKATION;
     private Marktrolle eigenschaftMsbLokation;
     private String grundzustaendigerMsbCodenr;
     private List<Konfigurationsprodukt> konfigurationsprodukte;
@@ -53,7 +53,7 @@ public class Netzlokation extends Geschaeftsobjekt {
         this.verwendungszweck = builder.verwendungszweck;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

@@ -3,9 +3,9 @@ package bo4e.bo;
 import bo4e.ZusatzAttribut;
 import bo4e.com.Menge;
 import bo4e.com.Zeitreihenwert;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Mengeneinheit;
 import bo4e.enums.Sparte;
-import bo4e.enums.Typ;
 
 import java.util.List;
 
@@ -21,10 +21,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Lastgang JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Lastgang.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Lastgang.json>`_
 */
 public class Lastgang extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.LASTGANG;
+    private final BoTyp _typ = BoTyp.LASTGANG;
     private Marktlokation marktlokation;
     private Mengeneinheit messgroesse;
     private Messlokation messlokation;
@@ -49,7 +49,7 @@ public class Lastgang extends Geschaeftsobjekt {
         this.zeitIntervallLaenge = builder.zeitIntervallLaenge;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

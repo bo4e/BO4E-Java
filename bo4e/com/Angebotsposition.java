@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 
 import java.util.List;
 
@@ -18,9 +19,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Angebotsposition JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Angebotsposition.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Angebotsposition.json>`_
 */
 public class Angebotsposition extends COM {
+    private final ComTyp _typ = ComTyp.ANGEBOTSPOSITION;
     private String positionsbezeichnung;
     private Betrag positionskosten;
     private Menge positionsmenge;
@@ -35,6 +37,10 @@ public class Angebotsposition extends COM {
         this.positionskosten = builder.positionskosten;
         this.positionsmenge = builder.positionsmenge;
         this.positionspreis = builder.positionspreis;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

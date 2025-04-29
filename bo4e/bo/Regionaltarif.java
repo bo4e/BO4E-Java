@@ -9,12 +9,12 @@ import bo4e.com.Tarifberechnungsparameter;
 import bo4e.com.Tarifeinschraenkung;
 import bo4e.com.Vertragskonditionen;
 import bo4e.com.Zeitraum;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Kundentyp;
 import bo4e.enums.Registeranzahl;
 import bo4e.enums.Sparte;
 import bo4e.enums.Tarifmerkmal;
 import bo4e.enums.Tariftyp;
-import bo4e.enums.Typ;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -32,7 +32,7 @@ import java.util.List;
 * <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/{__gh_version__}/src/bo4e_schemas/bo/Regionaltarif.json>`_
     */
     public class Regionaltarif extends Geschaeftsobjekt {
-        private final Typ _typ = Typ.REGIONALTARIF;
+        private final BoTyp _typ = BoTyp.REGIONALTARIF;
         private Marktteilnehmer anbieter;
         private String anbietername;
         private OffsetDateTime anwendungVon;
@@ -81,7 +81,7 @@ import java.util.List;
             this.zeitlicheGueltigkeit = builder.zeitlicheGueltigkeit;
         }
 
-        public Typ get_typ() {
+        public BoTyp get_typ() {
             return _typ;
         }
 

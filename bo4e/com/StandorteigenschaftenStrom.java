@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 
 import java.util.List;
 
@@ -14,9 +15,10 @@ import java.util.List;
 *
 * .. HINT::
 * `StandorteigenschaftenStrom JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/StandorteigenschaftenStrom.json>`_
 */
 public class StandorteigenschaftenStrom extends COM {
+    private final ComTyp _typ = ComTyp.STANDORTEIGENSCHAFTENSTROM;
     private String bilanzierungsgebietEic;
     private String regelzone;
     private String regelzoneEic;
@@ -29,6 +31,10 @@ public class StandorteigenschaftenStrom extends COM {
         this.bilanzierungsgebietEic = builder.bilanzierungsgebietEic;
         this.regelzone = builder.regelzone;
         this.regelzoneEic = builder.regelzoneEic;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

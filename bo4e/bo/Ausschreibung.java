@@ -6,7 +6,7 @@ import bo4e.com.Zeitraum;
 import bo4e.enums.Ausschreibungsportal;
 import bo4e.enums.Ausschreibungsstatus;
 import bo4e.enums.Ausschreibungstyp;
-import bo4e.enums.Typ;
+import bo4e.enums.BoTyp;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -22,10 +22,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Ausschreibung JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Ausschreibung.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Ausschreibung.json>`_
 */
 public class Ausschreibung extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.AUSSCHREIBUNG;
+    private final BoTyp _typ = BoTyp.AUSSCHREIBUNG;
     private Zeitraum abgabefrist;
     private Geschaeftspartner ausschreibender;
     private Ausschreibungsportal ausschreibungportal;
@@ -56,7 +56,7 @@ public class Ausschreibung extends Geschaeftsobjekt {
         this.webseite = builder.webseite;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

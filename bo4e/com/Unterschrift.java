@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -15,9 +16,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Unterschrift JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Unterschrift.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Unterschrift.json>`_
 */
 public class Unterschrift extends COM {
+    private final ComTyp _typ = ComTyp.UNTERSCHRIFT;
     private OffsetDateTime datum;
     private String name;
     private String ort;
@@ -30,6 +32,10 @@ public class Unterschrift extends COM {
         this.datum = builder.datum;
         this.name = builder.name;
         this.ort = builder.ort;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

@@ -1,8 +1,8 @@
 package bo4e.bo;
 
 import bo4e.ZusatzAttribut;
-import bo4e.com.Zeitspanne;
-import bo4e.enums.Typ;
+import bo4e.com.Zeitraum;
+import bo4e.enums.BoTyp;
 
 import java.util.List;
 
@@ -19,11 +19,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Lokationszuordnung JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Lokationszuordnung.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Lokationszuordnung.json>`_
 */
 public class Lokationszuordnung extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.LOKATIONSZUORDNUNG;
-    private Zeitspanne gueltigkeit;
+    private final BoTyp _typ = BoTyp.LOKATIONSZUORDNUNG;
+    private Zeitraum gueltigkeit;
     private String lokationsbuendelcode;
     private List<Marktlokation> marktlokationen;
     private List<Messlokation> messlokationen;
@@ -47,21 +47,21 @@ public class Lokationszuordnung extends Geschaeftsobjekt {
         this.zuordnungstyp = builder.zuordnungstyp;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 
     /**
-    * Zeitspanne der Gültigkeit
+    * Zeitraum der Gültigkeit
     */
-    public Zeitspanne getGueltigkeit() {
+    public Zeitraum getGueltigkeit() {
         return gueltigkeit;
     }
 
     /**
-    * Zeitspanne der Gültigkeit
+    * Zeitraum der Gültigkeit
     */
-    public void setGueltigkeit(Zeitspanne gueltigkeit) {
+    public void setGueltigkeit(Zeitraum gueltigkeit) {
         this.gueltigkeit = gueltigkeit;
     }
 
@@ -170,7 +170,7 @@ public class Lokationszuordnung extends Geschaeftsobjekt {
     }
 
     public static class LokationszuordnungBuilder extends GeschaeftsobjektBuilder {
-        private Zeitspanne gueltigkeit;
+        private Zeitraum gueltigkeit;
         private String lokationsbuendelcode;
         private List<Marktlokation> marktlokationen;
         private List<Messlokation> messlokationen;
@@ -183,9 +183,9 @@ public class Lokationszuordnung extends Geschaeftsobjekt {
         }
 
         /**
-        * Zeitspanne der Gültigkeit
+        * Zeitraum der Gültigkeit
         */
-        public LokationszuordnungBuilder setGueltigkeit(Zeitspanne gueltigkeit) {
+        public LokationszuordnungBuilder setGueltigkeit(Zeitraum gueltigkeit) {
             this.gueltigkeit = gueltigkeit;
             return this;
         }

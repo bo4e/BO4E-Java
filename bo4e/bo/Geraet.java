@@ -1,9 +1,9 @@
 package bo4e.bo;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Geraeteklasse;
 import bo4e.enums.Geraetetyp;
-import bo4e.enums.Typ;
 
 import java.util.List;
 
@@ -16,10 +16,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Geraet JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Geraet.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Geraet.json>`_
 */
 public class Geraet extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.GERAET;
+    private final BoTyp _typ = BoTyp.GERAET;
     private String bezeichnung;
     private Geraeteklasse geraeteklasse;
     private String geraetenummer;
@@ -36,7 +36,7 @@ public class Geraet extends Geschaeftsobjekt {
         this.geraetetyp = builder.geraetetyp;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

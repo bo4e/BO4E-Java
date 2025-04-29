@@ -4,14 +4,20 @@ import java.io.IOException;
 
 /**
  * Auflistung sämtlicher existierender Geschäftsobjekte.
+ *
+ * .. HINT::
+ * Die Unterscheidung zwischen Komponenten und Geschäftsobjekten ist, dass Komponenten immer
+ * in einem Geschäftsobjekt enthalten sind.
+ * Geschäftsobjekte können auch ohne Komponenten existieren.
  */
-public enum Typ {
-    ANGEBOT, AUSSCHREIBUNG, BUENDELVERTRAG, ENERGIEMENGE, FREMDKOSTEN, GERAET, GESCHAEFTSOBJEKT, GESCHAEFTSPARTNER, KOSTEN, LASTGANG, LOKATIONSZUORDNUNG, MARKTLOKATION, MARKTTEILNEHMER, MESSLOKATION, NETZLOKATION, NETZNUTZUNGSRECHNUNG, PERSON, PREISBLATT, PREISBLATTDIENSTLEISTUNG, PREISBLATTHARDWARE, PREISBLATTKONZESSIONSABGABE, PREISBLATTMESSUNG, PREISBLATTNETZNUTZUNG, PREISBLATTUMLAGEN, RECHNUNG, REGION, REGIONALTARIF, STANDORTEIGENSCHAFTEN, STEUERBARERESSOURCE, TARIF, TARIFINFO, TARIFKOSTEN, TARIFPREISBLATT, TECHNISCHERESSOURCE, VERTRAG, ZAEHLER, ZEITREIHE;
+public enum BoTyp {
+    ANGEBOT, AUSSCHREIBUNG, BILANZIERUNG, BUENDELVERTRAG, ENERGIEMENGE, FREMDKOSTEN, GERAET, GESCHAEFTSOBJEKT, GESCHAEFTSPARTNER, KOSTEN, LASTGANG, LOKATIONSZUORDNUNG, MARKTLOKATION, MARKTTEILNEHMER, MESSLOKATION, NETZLOKATION, NETZNUTZUNGSRECHNUNG, PERSON, PREISBLATT, PREISBLATTDIENSTLEISTUNG, PREISBLATTHARDWARE, PREISBLATTKONZESSIONSABGABE, PREISBLATTMESSUNG, PREISBLATTNETZNUTZUNG, PREISBLATTUMLAGEN, RECHNUNG, REGION, REGIONALTARIF, STANDORTEIGENSCHAFTEN, STEUERBARERESSOURCE, TARIF, TARIFINFO, TARIFKOSTEN, TARIFPREISBLATT, TECHNISCHERESSOURCE, VERTRAG, ZAEHLER, ZEITREIHE;
 
     public String toValue() {
         switch (this) {
             case ANGEBOT: return "ANGEBOT";
             case AUSSCHREIBUNG: return "AUSSCHREIBUNG";
+            case BILANZIERUNG: return "BILANZIERUNG";
             case BUENDELVERTRAG: return "BUENDELVERTRAG";
             case ENERGIEMENGE: return "ENERGIEMENGE";
             case FREMDKOSTEN: return "FREMDKOSTEN";
@@ -51,9 +57,10 @@ public enum Typ {
         return null;
     }
 
-    public static Typ forValue(String value) throws IOException {
+    public static BoTyp forValue(String value) throws IOException {
         if (value.equals("ANGEBOT")) return ANGEBOT;
         if (value.equals("AUSSCHREIBUNG")) return AUSSCHREIBUNG;
+        if (value.equals("BILANZIERUNG")) return BILANZIERUNG;
         if (value.equals("BUENDELVERTRAG")) return BUENDELVERTRAG;
         if (value.equals("ENERGIEMENGE")) return ENERGIEMENGE;
         if (value.equals("FREMDKOSTEN")) return FREMDKOSTEN;
@@ -89,6 +96,6 @@ public enum Typ {
         if (value.equals("VERTRAG")) return VERTRAG;
         if (value.equals("ZAEHLER")) return ZAEHLER;
         if (value.equals("ZEITREIHE")) return ZEITREIHE;
-        throw new IOException("Cannot deserialize Typ");
+        throw new IOException("Cannot deserialize BoTyp");
     }
 }

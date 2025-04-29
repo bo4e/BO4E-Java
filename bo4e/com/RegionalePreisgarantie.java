@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Preisgarantietyp;
 
 import java.util.List;
@@ -15,9 +16,10 @@ import java.util.List;
 *
 * .. HINT::
 * `RegionalePreisgarantie JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/RegionalePreisgarantie.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/RegionalePreisgarantie.json>`_
 */
 public class RegionalePreisgarantie extends COM {
+    private final ComTyp _typ = ComTyp.REGIONALEPREISGARANTIE;
     private String beschreibung;
     private Preisgarantietyp preisgarantietyp;
     private RegionaleGueltigkeit regionaleGueltigkeit;
@@ -32,6 +34,10 @@ public class RegionalePreisgarantie extends COM {
         this.preisgarantietyp = builder.preisgarantietyp;
         this.regionaleGueltigkeit = builder.regionaleGueltigkeit;
         this.zeitlicheGueltigkeit = builder.zeitlicheGueltigkeit;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

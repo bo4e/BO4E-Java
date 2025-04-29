@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Erzeugungsart;
 
 import java.util.List;
@@ -15,9 +16,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Energieherkunft JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Energieherkunft.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Energieherkunft.json>`_
 */
 public class Energieherkunft extends COM {
+    private final ComTyp _typ = ComTyp.ENERGIEHERKUNFT;
     private Double anteilProzent;
     private Erzeugungsart erzeugungsart;
 
@@ -28,6 +30,10 @@ public class Energieherkunft extends COM {
         super(builder);
         this.anteilProzent = builder.anteilProzent;
         this.erzeugungsart = builder.erzeugungsart;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

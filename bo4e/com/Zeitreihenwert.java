@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Messwertstatus;
 import bo4e.enums.Messwertstatuszusatz;
 
@@ -16,13 +17,14 @@ import java.util.List;
 *
 * .. HINT::
 * `Zeitreihenwert JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Zeitreihenwert.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Zeitreihenwert.json>`_
 */
 public class Zeitreihenwert extends COM {
+    private final ComTyp _typ = ComTyp.ZEITREIHENWERT;
     private Messwertstatus status;
     private Messwertstatuszusatz statuszusatz;
     private Double wert;
-    private Zeitspanne zeitspanne;
+    private Zeitraum zeitraum;
 
     public Zeitreihenwert() {
     }
@@ -32,7 +34,11 @@ public class Zeitreihenwert extends COM {
         this.status = builder.status;
         this.statuszusatz = builder.statuszusatz;
         this.wert = builder.wert;
-        this.zeitspanne = builder.zeitspanne;
+        this.zeitraum = builder.zeitraum;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**
@@ -64,31 +70,31 @@ public class Zeitreihenwert extends COM {
     }
 
     /**
-    * Der in der Zeitspanne gültige Wert.
+    * Der in dem Zeitraum gültige Wert.
     */
     public Double getWert() {
         return wert;
     }
 
     /**
-    * Der in der Zeitspanne gültige Wert.
+    * Der in dem Zeitraum gültige Wert.
     */
     public void setWert(Double wert) {
         this.wert = wert;
     }
 
     /**
-    * Zeitespanne für das Messintervall
+    * Zeitraum für das Messintervall
     */
-    public Zeitspanne getZeitspanne() {
-        return zeitspanne;
+    public Zeitraum getZeitraum() {
+        return zeitraum;
     }
 
     /**
-    * Zeitespanne für das Messintervall
+    * Zeitraum für das Messintervall
     */
-    public void setZeitspanne(Zeitspanne zeitspanne) {
-        this.zeitspanne = zeitspanne;
+    public void setZeitraum(Zeitraum zeitraum) {
+        this.zeitraum = zeitraum;
     }
 
     public static ZeitreihenwertBuilder builder() {
@@ -99,7 +105,7 @@ public class Zeitreihenwert extends COM {
         private Messwertstatus status;
         private Messwertstatuszusatz statuszusatz;
         private Double wert;
-        private Zeitspanne zeitspanne;
+        private Zeitraum zeitraum;
 
         private ZeitreihenwertBuilder() {
         }
@@ -121,7 +127,7 @@ public class Zeitreihenwert extends COM {
         }
 
         /**
-        * Der in der Zeitspanne gültige Wert.
+        * Der in dem Zeitraum gültige Wert.
         */
         public ZeitreihenwertBuilder setWert(Double wert) {
             this.wert = wert;
@@ -129,10 +135,10 @@ public class Zeitreihenwert extends COM {
         }
 
         /**
-        * Zeitespanne für das Messintervall
+        * Zeitraum für das Messintervall
         */
-        public ZeitreihenwertBuilder setZeitspanne(Zeitspanne zeitspanne) {
-            this.zeitspanne = zeitspanne;
+        public ZeitreihenwertBuilder setZeitraum(Zeitraum zeitraum) {
+            this.zeitraum = zeitraum;
             return this;
         }
 

@@ -3,8 +3,8 @@ package bo4e.bo;
 import bo4e.ZusatzAttribut;
 import bo4e.com.Unterschrift;
 import bo4e.com.Vertragskonditionen;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Sparte;
-import bo4e.enums.Typ;
 import bo4e.enums.Vertragsart;
 import bo4e.enums.Vertragsstatus;
 
@@ -23,10 +23,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Buendelvertrag JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Buendelvertrag.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Buendelvertrag.json>`_
 */
 public class Buendelvertrag extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.BUENDELVERTRAG;
+    private final BoTyp _typ = BoTyp.BUENDELVERTRAG;
     private String beschreibung;
     private List<Vertrag> einzelvertraege;
     private Sparte sparte;
@@ -61,7 +61,7 @@ public class Buendelvertrag extends Geschaeftsobjekt {
         this.vertragsstatus = builder.vertragsstatus;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

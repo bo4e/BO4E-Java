@@ -2,8 +2,8 @@ package bo4e.bo;
 
 import bo4e.ZusatzAttribut;
 import bo4e.com.Verbrauch;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Lokationstyp;
-import bo4e.enums.Typ;
 
 import java.util.List;
 
@@ -16,10 +16,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Energiemenge JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Energiemenge.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Energiemenge.json>`_
 */
 public class Energiemenge extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.ENERGIEMENGE;
+    private final BoTyp _typ = BoTyp.ENERGIEMENGE;
     private List<Verbrauch> energieverbrauch;
     private String lokationsId;
     private Lokationstyp lokationstyp;
@@ -34,7 +34,7 @@ public class Energiemenge extends Geschaeftsobjekt {
         this.lokationstyp = builder.lokationstyp;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

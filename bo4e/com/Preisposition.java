@@ -3,6 +3,7 @@ package bo4e.com;
 import bo4e.ZusatzAttribut;
 import bo4e.enums.BDEWArtikelnummer;
 import bo4e.enums.Bemessungsgroesse;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Kalkulationsmethode;
 import bo4e.enums.Leistungstyp;
 import bo4e.enums.Mengeneinheit;
@@ -21,9 +22,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Preisposition JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Preisposition.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Preisposition.json>`_
 */
 public class Preisposition extends COM {
+    private final ComTyp _typ = ComTyp.PREISPOSITION;
     private BDEWArtikelnummer bdewArtikelnummer;
     private Kalkulationsmethode berechnungsmethode;
     private Mengeneinheit bezugsgroesse;
@@ -56,6 +58,10 @@ public class Preisposition extends COM {
         this.tarifzeit = builder.tarifzeit;
         this.zeitbasis = builder.zeitbasis;
         this.zonungsgroesse = builder.zonungsgroesse;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

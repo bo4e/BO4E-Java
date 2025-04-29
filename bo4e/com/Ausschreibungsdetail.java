@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Zaehlertyp;
 
 import java.util.List;
@@ -17,9 +18,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Ausschreibungsdetail JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Ausschreibungsdetail.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Ausschreibungsdetail.json>`_
 */
 public class Ausschreibungsdetail extends COM {
+    private final ComTyp _typ = ComTyp.AUSSCHREIBUNGSDETAIL;
     private Boolean istLastgangVorhanden;
     private String kunde;
     private Zeitraum lieferzeitraum;
@@ -56,6 +58,10 @@ public class Ausschreibungsdetail extends COM {
         this.rechnungsadresse = builder.rechnungsadresse;
         this.zaehlernummer = builder.zaehlernummer;
         this.zaehlertechnik = builder.zaehlertechnik;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

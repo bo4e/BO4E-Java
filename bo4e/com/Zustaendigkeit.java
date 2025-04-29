@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Themengebiet;
 
 import java.util.List;
@@ -16,9 +17,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Zustaendigkeit JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Zustaendigkeit.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Zustaendigkeit.json>`_
 */
 public class Zustaendigkeit extends COM {
+    private final ComTyp _typ = ComTyp.ZUSTAENDIGKEIT;
     private String abteilung;
     private String position;
     private Themengebiet themengebiet;
@@ -31,6 +33,10 @@ public class Zustaendigkeit extends COM {
         this.abteilung = builder.abteilung;
         this.position = builder.position;
         this.themengebiet = builder.themengebiet;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

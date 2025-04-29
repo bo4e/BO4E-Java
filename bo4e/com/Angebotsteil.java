@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.bo.Marktlokation;
+import bo4e.enums.ComTyp;
 
 import java.util.List;
 
@@ -20,9 +21,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Angebotsteil JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Angebotsteil.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Angebotsteil.json>`_
 */
 public class Angebotsteil extends COM {
+    private final ComTyp _typ = ComTyp.ANGEBOTSTEIL;
     private String anfrageSubreferenz;
     private Betrag gesamtkostenangebotsteil;
     private Menge gesamtmengeangebotsteil;
@@ -41,6 +43,10 @@ public class Angebotsteil extends COM {
         this.lieferstellenangebotsteil = builder.lieferstellenangebotsteil;
         this.lieferzeitraum = builder.lieferzeitraum;
         this.positionen = builder.positionen;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

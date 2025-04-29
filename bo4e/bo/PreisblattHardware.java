@@ -4,11 +4,11 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Preisposition;
 import bo4e.com.Zeitraum;
 import bo4e.enums.Bilanzierungsmethode;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Dienstleistungstyp;
 import bo4e.enums.Netzebene;
 import bo4e.enums.Preisstatus;
 import bo4e.enums.Sparte;
-import bo4e.enums.Typ;
 
 import java.util.List;
 
@@ -22,10 +22,10 @@ import java.util.List;
 *
 * .. HINT::
 * `PreisblattHardware JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/PreisblattHardware.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/PreisblattHardware.json>`_
 */
 public class PreisblattHardware extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.PREISBLATTHARDWARE;
+    private final BoTyp _typ = BoTyp.PREISBLATTHARDWARE;
     private Geraet basisgeraet;
     private String bezeichnung;
     private Bilanzierungsmethode bilanzierungsmethode;
@@ -56,7 +56,7 @@ public class PreisblattHardware extends Geschaeftsobjekt {
         this.sparte = builder.sparte;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

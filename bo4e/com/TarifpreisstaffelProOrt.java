@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 
 import java.util.List;
 
@@ -14,9 +15,10 @@ import java.util.List;
 *
 * .. HINT::
 * `TarifpreisstaffelProOrt JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/TarifpreisstaffelProOrt.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/TarifpreisstaffelProOrt.json>`_
 */
 public class TarifpreisstaffelProOrt extends COM {
+    private final ComTyp _typ = ComTyp.TARIFPREISSTAFFELPROORT;
     private Double arbeitspreis;
     private Double arbeitspreisNT;
     private Double grundpreis;
@@ -33,6 +35,10 @@ public class TarifpreisstaffelProOrt extends COM {
         this.grundpreis = builder.grundpreis;
         this.staffelgrenzeBis = builder.staffelgrenzeBis;
         this.staffelgrenzeVon = builder.staffelgrenzeVon;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

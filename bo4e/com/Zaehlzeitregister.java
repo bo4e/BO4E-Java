@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 
 import java.util.List;
 
@@ -16,9 +17,10 @@ import java.util.List;
 *
 * .. HINT::
 * `Zaehlzeitregister JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Zaehlzeitregister.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Zaehlzeitregister.json>`_
 */
 public class Zaehlzeitregister extends COM {
+    private final ComTyp _typ = ComTyp.ZAEHLZEITREGISTER;
     private Boolean istSchwachlastfaehig;
     private String zaehlzeitDefinition;
     private String zaehlzeitRegister;
@@ -31,6 +33,10 @@ public class Zaehlzeitregister extends COM {
         this.istSchwachlastfaehig = builder.istSchwachlastfaehig;
         this.zaehlzeitDefinition = builder.zaehlzeitDefinition;
         this.zaehlzeitRegister = builder.zaehlzeitRegister;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**
