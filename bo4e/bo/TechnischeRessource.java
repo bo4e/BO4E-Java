@@ -2,12 +2,12 @@ package bo4e.bo;
 
 import bo4e.ZusatzAttribut;
 import bo4e.com.Menge;
+import bo4e.enums.BoTyp;
 import bo4e.enums.EMobilitaetsart;
 import bo4e.enums.Erzeugungsart;
 import bo4e.enums.Speicherart;
 import bo4e.enums.TechnischeRessourceNutzung;
 import bo4e.enums.TechnischeRessourceVerbrauchsart;
-import bo4e.enums.Typ;
 import bo4e.enums.Waermenutzung;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -23,11 +23,11 @@ import java.util.List;
 *
 * .. HINT::
 * `TechnischeRessource JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/TechnischeRessource.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/TechnischeRessource.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TechnischeRessource extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.TECHNISCHERESSOURCE;
+    private final BoTyp _typ = BoTyp.TECHNISCHERESSOURCE;
     private EMobilitaetsart emobilitaetsart;
     private Erzeugungsart erzeugungsart;
     private String lokationsbuendelObjektcode;
@@ -66,7 +66,7 @@ public class TechnischeRessource extends Geschaeftsobjekt {
         this.zugeordneteSteuerbareRessourceId = builder.zugeordneteSteuerbareRessourceId;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

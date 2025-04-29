@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.enums.AufAbschlagstyp;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Waehrungseinheit;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -21,10 +22,11 @@ import java.util.List;
 *
 * .. HINT::
 * `PositionsAufAbschlag JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/PositionsAufAbschlag.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/PositionsAufAbschlag.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PositionsAufAbschlag extends COM {
+    private final ComTyp _typ = ComTyp.POSITIONSAUFABSCHLAG;
     private AufAbschlagstyp aufAbschlagstyp;
     private Waehrungseinheit aufAbschlagswaehrung;
     private Double aufAbschlagswert;
@@ -41,6 +43,10 @@ public class PositionsAufAbschlag extends COM {
         this.aufAbschlagswert = builder.aufAbschlagswert;
         this.beschreibung = builder.beschreibung;
         this.bezeichnung = builder.bezeichnung;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

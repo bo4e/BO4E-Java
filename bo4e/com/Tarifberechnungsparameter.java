@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Messpreistyp;
 import bo4e.enums.Tarifkalkulationsmethode;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -18,10 +19,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Tarifberechnungsparameter JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Tarifberechnungsparameter.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Tarifberechnungsparameter.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tarifberechnungsparameter extends COM {
+    private final ComTyp _typ = ComTyp.TARIFBERECHNUNGSPARAMETER;
     private Tarifkalkulationsmethode berechnungsmethode;
     private Preis hoechstpreisHT;
     private Preis hoechstpreisNT;
@@ -48,6 +50,10 @@ public class Tarifberechnungsparameter extends COM {
         this.messpreistyp = builder.messpreistyp;
         this.mindestpreis = builder.mindestpreis;
         this.zusatzpreise = builder.zusatzpreise;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

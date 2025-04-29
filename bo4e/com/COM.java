@@ -1,5 +1,7 @@
 package bo4e.com;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
+import bo4e.enums.ComTyp;
 import bo4e.ZusatzAttribut;
 
 import java.util.List;
@@ -18,7 +20,8 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class COM {
     private String _id;
-    private final String _version = "202401.6.0";
+    private final ComTyp _typ = null;
+    private final String _version = "202401.7.0";
     private List<ZusatzAttribut> zusatzAttribute;
 
     protected COM(COMBuilder builder) {
@@ -41,6 +44,13 @@ public abstract class COM {
      */
     public void set_id(String value) {
         this._id = value;
+    }
+
+    /**
+     * Typ der Komponente
+     */
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

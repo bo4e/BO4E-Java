@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Mengeneinheit;
 import bo4e.enums.Preistyp;
 import bo4e.enums.Waehrungseinheit;
@@ -18,10 +19,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Tarifpreisposition JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Tarifpreisposition.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Tarifpreisposition.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tarifpreisposition extends COM {
+    private final ComTyp _typ = ComTyp.TARIFPREISPOSITION;
     private Mengeneinheit bezugseinheit;
     private Waehrungseinheit einheit;
     private Mengeneinheit mengeneinheitstaffel;
@@ -38,6 +40,10 @@ public class Tarifpreisposition extends COM {
         this.mengeneinheitstaffel = builder.mengeneinheitstaffel;
         this.preisstaffeln = builder.preisstaffeln;
         this.preistyp = builder.preistyp;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

@@ -9,12 +9,12 @@ import bo4e.com.Tarifeinschraenkung;
 import bo4e.com.Tarifpreisposition;
 import bo4e.com.Vertragskonditionen;
 import bo4e.com.Zeitraum;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Kundentyp;
 import bo4e.enums.Registeranzahl;
 import bo4e.enums.Sparte;
-import bo4e.enums.TarifTyp;
 import bo4e.enums.Tarifmerkmal;
-import bo4e.enums.Typ;
+import bo4e.enums.Tariftyp;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
@@ -30,11 +30,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Tarifpreisblatt JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Tarifpreisblatt.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Tarifpreisblatt.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tarifpreisblatt extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.TARIFPREISBLATT;
+    private final BoTyp _typ = BoTyp.TARIFPREISBLATT;
     private Marktteilnehmer anbieter;
     private String anbietername;
     private OffsetDateTime anwendungVon;
@@ -83,7 +83,7 @@ public class Tarifpreisblatt extends Geschaeftsobjekt {
         this.zeitlicheGueltigkeit = builder.zeitlicheGueltigkeit;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

@@ -4,10 +4,10 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Adresse;
 import bo4e.com.Kontaktweg;
 import bo4e.enums.Anrede;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Geschaeftspartnerrolle;
 import bo4e.enums.Organisationstyp;
 import bo4e.enums.Titel;
-import bo4e.enums.Typ;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
@@ -25,11 +25,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Geschaeftspartner JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Geschaeftspartner.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Geschaeftspartner.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Geschaeftspartner extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.GESCHAEFTSPARTNER;
+    private final BoTyp _typ = BoTyp.GESCHAEFTSPARTNER;
     private Adresse adresse;
     private String amtsgericht;
     private Anrede anrede;
@@ -70,7 +70,7 @@ public class Geschaeftspartner extends Geschaeftsobjekt {
         this.website = builder.website;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

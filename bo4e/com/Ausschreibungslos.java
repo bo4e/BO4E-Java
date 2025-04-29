@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Preismodell;
 import bo4e.enums.Rechnungslegung;
 import bo4e.enums.Sparte;
@@ -19,10 +20,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Ausschreibungslos JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Ausschreibungslos.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Ausschreibungslos.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Ausschreibungslos extends COM {
+    private final ComTyp _typ = ComTyp.AUSSCHREIBUNGSLOS;
     private Long anzahlLieferstellen;
     private String bemerkung;
     private String betreutDurch;
@@ -63,6 +65,10 @@ public class Ausschreibungslos extends COM {
         this.wunschRechnungslegung = builder.wunschRechnungslegung;
         this.wunschVertragsform = builder.wunschVertragsform;
         this.wunschZahlungsziel = builder.wunschZahlungsziel;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Energierichtung;
 import bo4e.enums.Mengeneinheit;
 import bo4e.enums.Verbrauchsart;
@@ -18,10 +19,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Zaehlwerk JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Zaehlwerk.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Zaehlwerk.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zaehlwerk extends COM {
+    private final ComTyp _typ = ComTyp.ZAEHLWERK;
     private Long anzahlAblesungen;
     private String bezeichnung;
     private Mengeneinheit einheit;
@@ -64,6 +66,10 @@ public class Zaehlwerk extends COM {
         this.wandlerfaktor = builder.wandlerfaktor;
         this.zaehlwerkId = builder.zaehlwerkId;
         this.zaehlzeitregister = builder.zaehlzeitregister;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

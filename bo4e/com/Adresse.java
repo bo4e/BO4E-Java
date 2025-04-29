@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Landescode;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -15,10 +16,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Adresse JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Adresse.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Adresse.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Adresse extends COM {
+    private final ComTyp _typ = ComTyp.ADRESSE;
     private String adresszusatz;
     private String coErgaenzung;
     private String hausnummer;
@@ -43,6 +45,10 @@ public class Adresse extends COM {
         this.postfach = builder.postfach;
         this.postleitzahl = builder.postleitzahl;
         this.strasse = builder.strasse;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

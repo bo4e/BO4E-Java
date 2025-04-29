@@ -2,9 +2,9 @@ package bo4e.bo;
 
 import bo4e.ZusatzAttribut;
 import bo4e.com.Konfigurationsprodukt;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Marktrolle;
 import bo4e.enums.SteuerkanalLeistungsbeschreibung;
-import bo4e.enums.Typ;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
@@ -19,11 +19,11 @@ import java.util.List;
 *
 * .. HINT::
 * `SteuerbareRessource JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/SteuerbareRessource.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/SteuerbareRessource.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class SteuerbareRessource extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.STEUERBARERESSOURCE;
+    private final BoTyp _typ = BoTyp.STEUERBARERESSOURCE;
     private Marktrolle eigenschaftMsbLokation;
     private List<Konfigurationsprodukt> konfigurationsprodukte;
     private String lokationsbuendelObjektcode;
@@ -46,7 +46,7 @@ public class SteuerbareRessource extends Geschaeftsobjekt {
         this.zugeordneteMsbCodenummer = builder.zugeordneteMsbCodenummer;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

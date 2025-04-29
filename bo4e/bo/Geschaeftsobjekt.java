@@ -1,7 +1,7 @@
 package bo4e.bo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import bo4e.enums.Typ;
+import bo4e.enums.BoTyp;
 import bo4e.ZusatzAttribut;
 
 import java.util.List;
@@ -22,8 +22,8 @@ import java.util.List;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public abstract class Geschaeftsobjekt {
     private String _id;
-    private final Typ _typ = Typ.GESCHAEFTSOBJEKT;
-    private final String _version = "202401.6.0";
+    private final BoTyp _typ = BoTyp.GESCHAEFTSOBJEKT;
+    private final String _version = "202401.7.0";
     private List<ZusatzAttribut> zusatzAttribute;
 
     protected Geschaeftsobjekt(GeschaeftsobjektBuilder builder) {
@@ -51,7 +51,7 @@ public abstract class Geschaeftsobjekt {
     /**
      * Typ des Geschaeftsobjekts
      */
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

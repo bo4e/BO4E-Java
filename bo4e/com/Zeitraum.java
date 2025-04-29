@@ -1,10 +1,11 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
-import bo4e.enums.Mengeneinheit;
+import bo4e.enums.ComTyp;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
+import java.time.OffsetTime;
 import java.util.List;
 
 /**
@@ -21,16 +22,16 @@ import java.util.List;
 *
 * .. HINT::
 * `Zeitraum JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Zeitraum.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Zeitraum.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zeitraum extends COM {
-    private Double dauer;
-    private Mengeneinheit einheit;
-    private OffsetDateTime enddatum;
-    private OffsetDateTime endzeitpunkt;
-    private OffsetDateTime startdatum;
-    private OffsetDateTime startzeitpunkt;
+    private final ComTyp _typ = ComTyp.ZEITRAUM;
+    private String dauer;
+    private LocalDate enddatum;
+    private OffsetTime enduhrzeit;
+    private LocalDate startdatum;
+    private OffsetTime startuhrzeit;
 
     public Zeitraum() {
     }
@@ -38,59 +39,122 @@ public class Zeitraum extends COM {
     private Zeitraum(ZeitraumBuilder builder) {
         super(builder);
         this.dauer = builder.dauer;
-        this.einheit = builder.einheit;
         this.enddatum = builder.enddatum;
-        this.endzeitpunkt = builder.endzeitpunkt;
+        this.enduhrzeit = builder.enduhrzeit;
         this.startdatum = builder.startdatum;
-        this.startzeitpunkt = builder.startzeitpunkt;
+        this.startuhrzeit = builder.startuhrzeit;
     }
 
-    public Double getDauer() {
+    public ComTyp get_typ() {
+        return _typ;
+    }
+
+    /**
+    * Dauer in ISO 8601 Format.
+    *
+    * Example:
+    * 'P1DT30H4S'
+    *
+    * See `RFC 3339 <https://datatracker.ietf.org/doc/html/rfc3339>`_
+    */
+    public String getDauer() {
         return dauer;
     }
 
-    public void setDauer(Double dauer) {
+    /**
+    * Dauer in ISO 8601 Format.
+    *
+    * Example:
+    * 'P1DT30H4S'
+    *
+    * See `RFC 3339 <https://datatracker.ietf.org/doc/html/rfc3339>`_
+    */
+    public void setDauer(String dauer) {
         this.dauer = dauer;
     }
 
-    public Mengeneinheit getEinheit() {
-        return einheit;
-    }
-
-    public void setEinheit(Mengeneinheit einheit) {
-        this.einheit = einheit;
-    }
-
-    public OffsetDateTime getEnddatum() {
+    /**
+    * Enddatum des betrachteten Zeitraums ist **inklusiv**.
+    *
+    * Example:
+    * '2025-01-01'
+    */
+    public LocalDate getEnddatum() {
         return enddatum;
     }
 
-    public void setEnddatum(OffsetDateTime enddatum) {
+    /**
+    * Enddatum des betrachteten Zeitraums ist **inklusiv**.
+    *
+    * Example:
+    * '2025-01-01'
+    */
+    public void setEnddatum(LocalDate enddatum) {
         this.enddatum = enddatum;
     }
 
-    public OffsetDateTime getEndzeitpunkt() {
-        return endzeitpunkt;
+    /**
+    * Enduhrzeit mit Zeitzone. Die angegebene Uhrzeit ist im betrachteten Zeitraum
+    * **exklusiv**.
+    *
+    * Example:
+    * '19:00:00+01:00'
+    */
+    public OffsetTime getEnduhrzeit() {
+        return enduhrzeit;
     }
 
-    public void setEndzeitpunkt(OffsetDateTime endzeitpunkt) {
-        this.endzeitpunkt = endzeitpunkt;
+    /**
+    * Enduhrzeit mit Zeitzone. Die angegebene Uhrzeit ist im betrachteten Zeitraum
+    * **exklusiv**.
+    *
+    * Example:
+    * '19:00:00+01:00'
+    */
+    public void setEnduhrzeit(OffsetTime enduhrzeit) {
+        this.enduhrzeit = enduhrzeit;
     }
 
-    public OffsetDateTime getStartdatum() {
+    /**
+    * Startdatum des betrachteten Zeitraums ist **inklusiv**.
+    *
+    * Example:
+    * '2025-01-01'
+    */
+    public LocalDate getStartdatum() {
         return startdatum;
     }
 
-    public void setStartdatum(OffsetDateTime startdatum) {
+    /**
+    * Startdatum des betrachteten Zeitraums ist **inklusiv**.
+    *
+    * Example:
+    * '2025-01-01'
+    */
+    public void setStartdatum(LocalDate startdatum) {
         this.startdatum = startdatum;
     }
 
-    public OffsetDateTime getStartzeitpunkt() {
-        return startzeitpunkt;
+    /**
+    * Startuhrzeit mit Zeitzone. Die angegebene Uhrzeit ist im betrachteten Zeitraum
+    * **inklusiv**.
+    *
+    * Example:
+    * '18:00:00+01:00'
+    */
+    public OffsetTime getStartuhrzeit() {
+        return startuhrzeit;
     }
 
-    public void setStartzeitpunkt(OffsetDateTime startzeitpunkt) {
-        this.startzeitpunkt = startzeitpunkt;
+    /**
+    * Startuhrzeit mit Zeitzone. Die angegebene Uhrzeit ist im betrachteten Zeitraum
+    * **inklusiv**.
+    *
+    * Example:
+    * '18:00:00+01:00'
+    */
+    public void setStartuhrzeit(OffsetTime startuhrzeit) {
+        this.startuhrzeit = startuhrzeit;
     }
 
     public static ZeitraumBuilder builder() {
@@ -99,43 +163,71 @@ public class Zeitraum extends COM {
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class ZeitraumBuilder extends COMBuilder {
-        private Double dauer;
-        private Mengeneinheit einheit;
-        private OffsetDateTime enddatum;
-        private OffsetDateTime endzeitpunkt;
-        private OffsetDateTime startdatum;
-        private OffsetDateTime startzeitpunkt;
+        private String dauer;
+        private LocalDate enddatum;
+        private OffsetTime enduhrzeit;
+        private LocalDate startdatum;
+        private OffsetTime startuhrzeit;
 
         private ZeitraumBuilder() {
         }
 
-        public ZeitraumBuilder setDauer(Double dauer) {
+        /**
+        * Dauer in ISO 8601 Format.
+        *
+        * Example:
+        * 'P1DT30H4S'
+        *
+        * See `RFC 3339 <https://datatracker.ietf.org/doc/html/rfc3339>`_
+        */
+        public ZeitraumBuilder setDauer(String dauer) {
             this.dauer = dauer;
             return this;
         }
 
-        public ZeitraumBuilder setEinheit(Mengeneinheit einheit) {
-            this.einheit = einheit;
-            return this;
-        }
-
-        public ZeitraumBuilder setEnddatum(OffsetDateTime enddatum) {
+        /**
+        * Enddatum des betrachteten Zeitraums ist **inklusiv**.
+        *
+        * Example:
+        * '2025-01-01'
+        */
+        public ZeitraumBuilder setEnddatum(LocalDate enddatum) {
             this.enddatum = enddatum;
             return this;
         }
 
-        public ZeitraumBuilder setEndzeitpunkt(OffsetDateTime endzeitpunkt) {
-            this.endzeitpunkt = endzeitpunkt;
+        /**
+        * Enduhrzeit mit Zeitzone. Die angegebene Uhrzeit ist im betrachteten Zeitraum
+        * **exklusiv**.
+        *
+        * Example:
+        * '19:00:00+01:00'
+        */
+        public ZeitraumBuilder setEnduhrzeit(OffsetTime enduhrzeit) {
+            this.enduhrzeit = enduhrzeit;
             return this;
         }
 
-        public ZeitraumBuilder setStartdatum(OffsetDateTime startdatum) {
+        /**
+        * Startdatum des betrachteten Zeitraums ist **inklusiv**.
+        *
+        * Example:
+        * '2025-01-01'
+        */
+        public ZeitraumBuilder setStartdatum(LocalDate startdatum) {
             this.startdatum = startdatum;
             return this;
         }
 
-        public ZeitraumBuilder setStartzeitpunkt(OffsetDateTime startzeitpunkt) {
-            this.startzeitpunkt = startzeitpunkt;
+        /**
+        * Startuhrzeit mit Zeitzone. Die angegebene Uhrzeit ist im betrachteten Zeitraum
+        * **inklusiv**.
+        *
+        * Example:
+        * '18:00:00+01:00'
+        */
+        public ZeitraumBuilder setStartuhrzeit(OffsetTime startuhrzeit) {
+            this.startuhrzeit = startuhrzeit;
             return this;
         }
 

@@ -3,10 +3,10 @@ package bo4e.bo;
 import bo4e.ZusatzAttribut;
 import bo4e.com.Zaehlwerk;
 import bo4e.enums.Befestigungsart;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Messwerterfassung;
 import bo4e.enums.Registeranzahl;
 import bo4e.enums.Sparte;
-import bo4e.enums.Typ;
 import bo4e.enums.Zaehlerauspraegung;
 import bo4e.enums.Zaehlergroesse;
 import bo4e.enums.Zaehlertyp;
@@ -25,11 +25,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Zaehler JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Zaehler.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Zaehler.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zaehler extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.ZAEHLER;
+    private final BoTyp _typ = BoTyp.ZAEHLER;
     private Befestigungsart befestigungsart;
     private OffsetDateTime eichungBis;
     private List<Geraet> geraete;
@@ -70,7 +70,7 @@ public class Zaehler extends Geschaeftsobjekt {
         this.zaehlwerke = builder.zaehlwerke;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

@@ -5,11 +5,11 @@ import bo4e.com.Adresse;
 import bo4e.com.Kontaktweg;
 import bo4e.com.Zustaendigkeit;
 import bo4e.enums.Anrede;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Titel;
-import bo4e.enums.Typ;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 /**
@@ -21,14 +21,14 @@ import java.util.List;
 *
 * .. HINT::
 * `Person JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Person.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Person.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Person extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.PERSON;
+    private final BoTyp _typ = BoTyp.PERSON;
     private Adresse adresse;
     private Anrede anrede;
-    private OffsetDateTime geburtsdatum;
+    private LocalDate geburtsdatum;
     private String individuelleAnrede;
     private String kommentar;
     private List<Kontaktweg> kontaktwege;
@@ -54,7 +54,7 @@ public class Person extends Geschaeftsobjekt {
         this.zustaendigkeiten = builder.zustaendigkeiten;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 
@@ -89,14 +89,14 @@ public class Person extends Geschaeftsobjekt {
     /**
     * Geburtsdatum der Person
     */
-    public OffsetDateTime getGeburtsdatum() {
+    public LocalDate getGeburtsdatum() {
         return geburtsdatum;
     }
 
     /**
     * Geburtsdatum der Person
     */
-    public void setGeburtsdatum(OffsetDateTime geburtsdatum) {
+    public void setGeburtsdatum(LocalDate geburtsdatum) {
         this.geburtsdatum = geburtsdatum;
     }
 
@@ -210,7 +210,7 @@ public class Person extends Geschaeftsobjekt {
     public static class PersonBuilder extends GeschaeftsobjektBuilder {
         private Adresse adresse;
         private Anrede anrede;
-        private OffsetDateTime geburtsdatum;
+        private LocalDate geburtsdatum;
         private String individuelleAnrede;
         private String kommentar;
         private List<Kontaktweg> kontaktwege;
@@ -241,7 +241,7 @@ public class Person extends Geschaeftsobjekt {
         /**
         * Geburtsdatum der Person
         */
-        public PersonBuilder setGeburtsdatum(OffsetDateTime geburtsdatum) {
+        public PersonBuilder setGeburtsdatum(LocalDate geburtsdatum) {
             this.geburtsdatum = geburtsdatum;
             return this;
         }

@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.enums.BDEWArtikelnummer;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Mengeneinheit;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -19,10 +20,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Rechnungsposition JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Rechnungsposition.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Rechnungsposition.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Rechnungsposition extends COM {
+    private final ComTyp _typ = ComTyp.RECHNUNGSPOSITION;
     private String artikelId;
     private BDEWArtikelnummer artikelnummer;
     private Preis einzelpreis;
@@ -57,6 +59,10 @@ public class Rechnungsposition extends COM {
         this.teilsummeSteuer = builder.teilsummeSteuer;
         this.zeitbezogeneMenge = builder.zeitbezogeneMenge;
         this.zeiteinheit = builder.zeiteinheit;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

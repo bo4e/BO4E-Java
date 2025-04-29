@@ -3,6 +3,7 @@ package bo4e.com;
 import bo4e.ZusatzAttribut;
 import bo4e.enums.AufAbschlagstyp;
 import bo4e.enums.AufAbschlagsziel;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Waehrungseinheit;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -21,10 +22,11 @@ import java.util.List;
 *
 * .. HINT::
 * `AufAbschlagRegional JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/AufAbschlagRegional.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/AufAbschlagRegional.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AufAbschlagRegional extends COM {
+    private final ComTyp _typ = ComTyp.AUFABSCHLAGREGIONAL;
     private AufAbschlagstyp aufAbschlagstyp;
     private AufAbschlagsziel aufAbschlagsziel;
     private String beschreibung;
@@ -61,6 +63,10 @@ public class AufAbschlagRegional extends COM {
         this.voraussetzungen = builder.voraussetzungen;
         this.website = builder.website;
         this.zusatzprodukte = builder.zusatzprodukte;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     public AufAbschlagstyp getAufAbschlagstyp() {

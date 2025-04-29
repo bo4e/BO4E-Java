@@ -2,12 +2,12 @@ package bo4e.bo;
 
 import bo4e.ZusatzAttribut;
 import bo4e.com.Zeitreihenwert;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Medium;
 import bo4e.enums.Mengeneinheit;
 import bo4e.enums.Messart;
 import bo4e.enums.Messgroesse;
-import bo4e.enums.Typ;
-import bo4e.enums.Wertermittlungsverfahren;
+import bo4e.enums.Messwertstatus;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
@@ -22,11 +22,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Zeitreihe JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Zeitreihe.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Zeitreihe.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zeitreihe extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.ZEITREIHE;
+    private final BoTyp _typ = BoTyp.ZEITREIHE;
     private String beschreibung;
     private String bezeichnung;
     private Mengeneinheit einheit;
@@ -35,7 +35,7 @@ public class Zeitreihe extends Geschaeftsobjekt {
     private Messgroesse messgroesse;
     private String version;
     private List<Zeitreihenwert> werte;
-    private Wertermittlungsverfahren wertherkunft;
+    private Messwertstatus wertherkunft;
 
     public Zeitreihe() {
     }
@@ -53,7 +53,7 @@ public class Zeitreihe extends Geschaeftsobjekt {
         this.wertherkunft = builder.wertherkunft;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 
@@ -170,16 +170,16 @@ public class Zeitreihe extends Geschaeftsobjekt {
     }
 
     /**
-    * Kennzeichnung, wie die Werte entstanden sind, z.B. durch Messung
+    * Kennzeichnung, wie die Werte entstanden sind, z.B. ABGELESEN oder PROGNOSEWERT
     */
-    public Wertermittlungsverfahren getWertherkunft() {
+    public Messwertstatus getWertherkunft() {
         return wertherkunft;
     }
 
     /**
-    * Kennzeichnung, wie die Werte entstanden sind, z.B. durch Messung
+    * Kennzeichnung, wie die Werte entstanden sind, z.B. ABGELESEN oder PROGNOSEWERT
     */
-    public void setWertherkunft(Wertermittlungsverfahren wertherkunft) {
+    public void setWertherkunft(Messwertstatus wertherkunft) {
         this.wertherkunft = wertherkunft;
     }
 
@@ -197,7 +197,7 @@ public class Zeitreihe extends Geschaeftsobjekt {
         private Messgroesse messgroesse;
         private String version;
         private List<Zeitreihenwert> werte;
-        private Wertermittlungsverfahren wertherkunft;
+        private Messwertstatus wertherkunft;
 
         private ZeitreiheBuilder() {
         }
@@ -267,9 +267,9 @@ public class Zeitreihe extends Geschaeftsobjekt {
         }
 
         /**
-        * Kennzeichnung, wie die Werte entstanden sind, z.B. durch Messung
+        * Kennzeichnung, wie die Werte entstanden sind, z.B. ABGELESEN oder PROGNOSEWERT
         */
-        public ZeitreiheBuilder setWertherkunft(Wertermittlungsverfahren wertherkunft) {
+        public ZeitreiheBuilder setWertherkunft(Messwertstatus wertherkunft) {
             this.wertherkunft = wertherkunft;
             return this;
         }

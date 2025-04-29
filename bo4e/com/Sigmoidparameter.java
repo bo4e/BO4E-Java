@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
@@ -16,10 +17,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Sigmoidparameter JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Sigmoidparameter.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Sigmoidparameter.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Sigmoidparameter extends COM {
+    private final ComTyp _typ = ComTyp.SIGMOIDPARAMETER;
     private Double a;
     private Double b;
     private Double c;
@@ -34,6 +36,10 @@ public class Sigmoidparameter extends COM {
         this.b = builder.b;
         this.c = builder.c;
         this.d = builder.d;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

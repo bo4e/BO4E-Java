@@ -7,13 +7,13 @@ import bo4e.com.Katasteradresse;
 import bo4e.com.Verbrauch;
 import bo4e.com.Zaehlwerk;
 import bo4e.enums.Bilanzierungsmethode;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Energierichtung;
 import bo4e.enums.Gasqualitaet;
 import bo4e.enums.Gebiettyp;
 import bo4e.enums.Kundentyp;
 import bo4e.enums.Netzebene;
 import bo4e.enums.Sparte;
-import bo4e.enums.Typ;
 import bo4e.enums.Verbrauchsart;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -29,11 +29,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Marktlokation JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Marktlokation.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Marktlokation.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Marktlokation extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.MARKTLOKATION;
+    private final BoTyp _typ = BoTyp.MARKTLOKATION;
     private String bilanzierungsgebiet;
     private Bilanzierungsmethode bilanzierungsmethode;
     private Geschaeftspartner endkunde;
@@ -92,7 +92,7 @@ public class Marktlokation extends Geschaeftsobjekt {
         this.zaehlwerkeDerBeteiligtenMarktrolle = builder.zaehlwerkeDerBeteiligtenMarktrolle;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

@@ -2,6 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.bo.Marktteilnehmer;
+import bo4e.enums.ComTyp;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
@@ -16,10 +17,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Konfigurationsprodukt JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Konfigurationsprodukt.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Konfigurationsprodukt.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Konfigurationsprodukt extends COM {
+    private final ComTyp _typ = ComTyp.KONFIGURATIONSPRODUKT;
     private String leistungskurvendefinition;
     private Marktteilnehmer marktpartner;
     private String produktcode;
@@ -34,6 +36,10 @@ public class Konfigurationsprodukt extends COM {
         this.marktpartner = builder.marktpartner;
         this.produktcode = builder.produktcode;
         this.schaltzeitdefinition = builder.schaltzeitdefinition;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     public String getLeistungskurvendefinition() {

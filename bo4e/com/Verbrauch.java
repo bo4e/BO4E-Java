@@ -1,9 +1,9 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Mengeneinheit;
 import bo4e.enums.Messwertstatus;
-import bo4e.enums.Wertermittlungsverfahren;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
@@ -18,17 +18,17 @@ import java.util.List;
 *
 * .. HINT::
 * `Verbrauch JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Verbrauch.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Verbrauch.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Verbrauch extends COM {
+    private final ComTyp _typ = ComTyp.VERBRAUCH;
     private Mengeneinheit einheit;
     private OffsetDateTime enddatum;
     private Messwertstatus messwertstatus;
     private String obisKennzahl;
     private OffsetDateTime startdatum;
     private Double wert;
-    private Wertermittlungsverfahren wertermittlungsverfahren;
 
     public Verbrauch() {
     }
@@ -41,7 +41,10 @@ public class Verbrauch extends COM {
         this.obisKennzahl = builder.obisKennzahl;
         this.startdatum = builder.startdatum;
         this.wert = builder.wert;
-        this.wertermittlungsverfahren = builder.wertermittlungsverfahren;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**
@@ -130,20 +133,6 @@ public class Verbrauch extends COM {
         this.wert = wert;
     }
 
-    /**
-    * Gibt an, ob es sich um eine PROGNOSE oder eine MESSUNG handelt
-    */
-    public Wertermittlungsverfahren getWertermittlungsverfahren() {
-        return wertermittlungsverfahren;
-    }
-
-    /**
-    * Gibt an, ob es sich um eine PROGNOSE oder eine MESSUNG handelt
-    */
-    public void setWertermittlungsverfahren(Wertermittlungsverfahren wertermittlungsverfahren) {
-        this.wertermittlungsverfahren = wertermittlungsverfahren;
-    }
-
     public static VerbrauchBuilder builder() {
         return new VerbrauchBuilder();
     }
@@ -156,7 +145,6 @@ public class Verbrauch extends COM {
         private String obisKennzahl;
         private OffsetDateTime startdatum;
         private Double wert;
-        private Wertermittlungsverfahren wertermittlungsverfahren;
 
         private VerbrauchBuilder() {
         }
@@ -207,14 +195,6 @@ public class Verbrauch extends COM {
         */
         public VerbrauchBuilder setWert(Double wert) {
             this.wert = wert;
-            return this;
-        }
-
-        /**
-        * Gibt an, ob es sich um eine PROGNOSE oder eine MESSUNG handelt
-        */
-        public VerbrauchBuilder setWertermittlungsverfahren(Wertermittlungsverfahren wertermittlungsverfahren) {
-            this.wertermittlungsverfahren = wertermittlungsverfahren;
             return this;
         }
 

@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
@@ -15,10 +16,11 @@ import java.util.List;
 *
 * .. HINT::
 * `StandorteigenschaftenGas JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/StandorteigenschaftenGas.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/StandorteigenschaftenGas.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class StandorteigenschaftenGas extends COM {
+    private final ComTyp _typ = ComTyp.STANDORTEIGENSCHAFTENGAS;
     private List<MarktgebietInfo> marktgebiete;
     private List<String> netzkontonummern;
 
@@ -29,6 +31,10 @@ public class StandorteigenschaftenGas extends COM {
         super(builder);
         this.marktgebiete = builder.marktgebiete;
         this.netzkontonummern = builder.netzkontonummern;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

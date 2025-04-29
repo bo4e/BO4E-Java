@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Preisgarantietyp;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
@@ -16,10 +17,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Preisgarantie JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Preisgarantie.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Preisgarantie.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Preisgarantie extends COM {
+    private final ComTyp _typ = ComTyp.PREISGARANTIE;
     private String beschreibung;
     private Preisgarantietyp preisgarantietyp;
     private Zeitraum zeitlicheGueltigkeit;
@@ -32,6 +34,10 @@ public class Preisgarantie extends COM {
         this.beschreibung = builder.beschreibung;
         this.preisgarantietyp = builder.preisgarantietyp;
         this.zeitlicheGueltigkeit = builder.zeitlicheGueltigkeit;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

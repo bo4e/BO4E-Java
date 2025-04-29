@@ -3,7 +3,7 @@ package bo4e.bo;
 import bo4e.ZusatzAttribut;
 import bo4e.com.StandorteigenschaftenGas;
 import bo4e.com.StandorteigenschaftenStrom;
-import bo4e.enums.Typ;
+import bo4e.enums.BoTyp;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
@@ -18,11 +18,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Standorteigenschaften JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Standorteigenschaften.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Standorteigenschaften.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Standorteigenschaften extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.STANDORTEIGENSCHAFTEN;
+    private final BoTyp _typ = BoTyp.STANDORTEIGENSCHAFTEN;
     private StandorteigenschaftenGas eigenschaftenGas;
     private List<StandorteigenschaftenStrom> eigenschaftenStrom;
 
@@ -35,7 +35,7 @@ public class Standorteigenschaften extends Geschaeftsobjekt {
         this.eigenschaftenStrom = builder.eigenschaftenStrom;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

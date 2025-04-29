@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
@@ -14,10 +15,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Kostenblock JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Kostenblock.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Kostenblock.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Kostenblock extends COM {
+    private final ComTyp _typ = ComTyp.KOSTENBLOCK;
     private String kostenblockbezeichnung;
     private List<Kostenposition> kostenpositionen;
     private Betrag summeKostenblock;
@@ -30,6 +32,10 @@ public class Kostenblock extends COM {
         this.kostenblockbezeichnung = builder.kostenblockbezeichnung;
         this.kostenpositionen = builder.kostenpositionen;
         this.summeKostenblock = builder.summeKostenblock;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

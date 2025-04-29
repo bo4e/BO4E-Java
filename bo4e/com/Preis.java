@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import bo4e.enums.Mengeneinheit;
 import bo4e.enums.Preisstatus;
 import bo4e.enums.Waehrungseinheit;
@@ -17,10 +18,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Preis JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/Preis.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/Preis.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Preis extends COM {
+    private final ComTyp _typ = ComTyp.PREIS;
     private Mengeneinheit bezugswert;
     private Waehrungseinheit einheit;
     private Preisstatus status;
@@ -35,6 +37,10 @@ public class Preis extends COM {
         this.einheit = builder.einheit;
         this.status = builder.status;
         this.wert = builder.wert;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

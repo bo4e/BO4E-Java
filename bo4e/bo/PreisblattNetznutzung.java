@@ -4,11 +4,11 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Preisposition;
 import bo4e.com.Zeitraum;
 import bo4e.enums.Bilanzierungsmethode;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Kundengruppe;
 import bo4e.enums.Netzebene;
 import bo4e.enums.Preisstatus;
 import bo4e.enums.Sparte;
-import bo4e.enums.Typ;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
@@ -23,11 +23,11 @@ import java.util.List;
 *
 * .. HINT::
 * `PreisblattNetznutzung JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/PreisblattNetznutzung.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/PreisblattNetznutzung.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class PreisblattNetznutzung extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.PREISBLATTNETZNUTZUNG;
+    private final BoTyp _typ = BoTyp.PREISBLATTNETZNUTZUNG;
     private String bezeichnung;
     private Bilanzierungsmethode bilanzierungsmethode;
     private Zeitraum gueltigkeit;
@@ -54,7 +54,7 @@ public class PreisblattNetznutzung extends Geschaeftsobjekt {
         this.sparte = builder.sparte;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

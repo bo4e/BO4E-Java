@@ -1,6 +1,7 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
@@ -15,10 +16,11 @@ import java.util.List;
 *
 * .. HINT::
 * `AufAbschlagstaffelProOrt JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/AufAbschlagstaffelProOrt.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/AufAbschlagstaffelProOrt.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AufAbschlagstaffelProOrt extends COM {
+    private final ComTyp _typ = ComTyp.AUFABSCHLAGSTAFFELPROORT;
     private Double staffelgrenzeBis;
     private Double staffelgrenzeVon;
     private Double wert;
@@ -31,6 +33,10 @@ public class AufAbschlagstaffelProOrt extends COM {
         this.staffelgrenzeBis = builder.staffelgrenzeBis;
         this.staffelgrenzeVon = builder.staffelgrenzeVon;
         this.wert = builder.wert;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

@@ -5,12 +5,12 @@ import bo4e.com.Betrag;
 import bo4e.com.Rechnungsposition;
 import bo4e.com.Steuerbetrag;
 import bo4e.com.Zeitraum;
+import bo4e.enums.BoTyp;
 import bo4e.enums.NetznutzungRechnungsart;
 import bo4e.enums.NetznutzungRechnungstyp;
 import bo4e.enums.Rechnungsstatus;
 import bo4e.enums.Rechnungstyp;
 import bo4e.enums.Sparte;
-import bo4e.enums.Typ;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.time.OffsetDateTime;
@@ -26,11 +26,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Rechnung JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Rechnung.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Rechnung.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Rechnung extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.RECHNUNG;
+    private final BoTyp _typ = BoTyp.RECHNUNG;
     private OffsetDateTime faelligkeitsdatum;
     private Betrag gesamtbrutto;
     private Betrag gesamtnetto;
@@ -91,7 +91,7 @@ public class Rechnung extends Geschaeftsobjekt {
         this.zuZahlen = builder.zuZahlen;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 

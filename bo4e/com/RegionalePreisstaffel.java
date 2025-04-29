@@ -1,12 +1,14 @@
 package bo4e.com;
 
 import bo4e.ZusatzAttribut;
+import bo4e.enums.ComTyp;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
 
 /**
-* Abbildung einer Preisstaffel mit regionaler Abgrenzung
+* Mit dieser Komponente können Staffelpreise abgebildet werden, die sich auf eine Region
+* beziehen.
 *
 * .. raw:: html
 *
@@ -15,10 +17,11 @@ import java.util.List;
 *
 * .. HINT::
 * `RegionalePreisstaffel JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/com/RegionalePreisstaffel.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/com/RegionalePreisstaffel.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RegionalePreisstaffel extends COM {
+    private final ComTyp _typ = ComTyp.REGIONALEPREISSTAFFEL;
     private String artikelId;
     private Double einheitspreis;
     private RegionaleGueltigkeit regionaleGueltigkeit;
@@ -37,6 +40,10 @@ public class RegionalePreisstaffel extends COM {
         this.sigmoidparameter = builder.sigmoidparameter;
         this.staffelgrenzeBis = builder.staffelgrenzeBis;
         this.staffelgrenzeVon = builder.staffelgrenzeVon;
+    }
+
+    public ComTyp get_typ() {
+        return _typ;
     }
 
     /**

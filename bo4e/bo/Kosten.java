@@ -4,8 +4,8 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Betrag;
 import bo4e.com.Kostenblock;
 import bo4e.com.Zeitraum;
+import bo4e.enums.BoTyp;
 import bo4e.enums.Kostenklasse;
-import bo4e.enums.Typ;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 import java.util.List;
@@ -21,11 +21,11 @@ import java.util.List;
 *
 * .. HINT::
 * `Kosten JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.6.0/src/bo4e_schemas/bo/Kosten.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202401.7.0/src/bo4e_schemas/bo/Kosten.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Kosten extends Geschaeftsobjekt {
-    private final Typ _typ = Typ.KOSTEN;
+    private final BoTyp _typ = BoTyp.KOSTEN;
     private Zeitraum gueltigkeit;
     private List<Kostenblock> kostenbloecke;
     private Kostenklasse kostenklasse;
@@ -42,7 +42,7 @@ public class Kosten extends Geschaeftsobjekt {
         this.summeKosten = builder.summeKosten;
     }
 
-    public Typ get_typ() {
+    public BoTyp get_typ() {
         return _typ;
     }
 
