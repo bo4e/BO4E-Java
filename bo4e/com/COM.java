@@ -21,7 +21,7 @@ import java.util.List;
 public abstract class COM {
     private String _id;
     private final ComTyp _typ = null;
-    private final String _version = "202401.7.0";
+    private final String _version = "202501.0.0";
     private List<ZusatzAttribut> zusatzAttribute;
 
     protected COM(COMBuilder builder) {
