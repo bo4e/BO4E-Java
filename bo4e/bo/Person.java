@@ -21,7 +21,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Person JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/bo/Person.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Person.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Person extends Geschaeftsobjekt {

@@ -18,7 +18,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Verbrauch JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/Verbrauch.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Verbrauch.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Verbrauch extends COM {
@@ -62,14 +62,16 @@ public class Verbrauch extends COM {
     }
 
     /**
-    * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird
+    * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird.
+    * Ein ZeitPUNKT kann mit start==ende angegeben werden.
     */
     public OffsetDateTime getEnddatum() {
         return enddatum;
     }
 
     /**
-    * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird
+    * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird.
+    * Ein ZeitPUNKT kann mit start==ende angegeben werden.
     */
     public void setEnddatum(OffsetDateTime enddatum) {
         this.enddatum = enddatum;
@@ -158,7 +160,8 @@ public class Verbrauch extends COM {
         }
 
         /**
-        * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird
+        * Exklusives Ende des Zeitraumes, für den der Verbrauch angegeben wird.
+        * Ein ZeitPUNKT kann mit start==ende angegeben werden.
         */
         public VerbrauchBuilder setEnddatum(OffsetDateTime enddatum) {
             this.enddatum = enddatum;
