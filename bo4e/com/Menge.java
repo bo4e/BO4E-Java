@@ -15,7 +15,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Menge JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/com/Menge.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Menge.json>`_
 */
 public class Menge extends COM {
     private final ComTyp _typ = ComTyp.MENGE;

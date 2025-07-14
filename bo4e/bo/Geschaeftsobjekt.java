@@ -21,7 +21,7 @@ import java.util.List;
 public abstract class Geschaeftsobjekt {
     private String _id;
     private final BoTyp _typ = BoTyp.GESCHAEFTSOBJEKT;
-    private final String _version = "202501.0.0";
+    private final String _version = "202501.1.0-rc1";
     private List<ZusatzAttribut> zusatzAttribute;
 
     protected Geschaeftsobjekt(GeschaeftsobjektBuilder builder) {

@@ -23,7 +23,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Vertrag JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.0.0/src/bo4e_schemas/bo/Vertrag.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Vertrag.json>`_
 */
 public class Vertrag extends Geschaeftsobjekt {
     private final BoTyp _typ = BoTyp.VERTRAG;
