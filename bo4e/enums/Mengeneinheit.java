@@ -6,11 +6,13 @@ import java.io.IOException;
  * Einheit: Messgrößen, die per Messung oder Vorgabe ermittelt werden können.
  */
 public enum Mengeneinheit {
-    HALBJAHR, JAHR, KUBIKMETER, KVAR, KVARH, KW, KWH, KWHK, MINUTE, MONAT, MW, MWH, PROZENT, QUARTAL, SEKUNDE, STUECK, STUNDE, TAG, VAR, VARH, VIERTEL_STUNDE, W, WH, WOCHE;
+    DIMENSIONSLOS, HALBJAHR, HZ, JAHR, KUBIKMETER, KVAR, KVARH, KW, KWH, KWHK, MINUTE, MONAT, MW, MWH, PROZENT, QUARTAL, SEKUNDE, STUECK, STUNDE, TAG, VAR, VARH, VIERTEL_STUNDE, W, WH, WOCHE;
 
     public String toValue() {
         switch (this) {
+            case DIMENSIONSLOS: return "DIMENSIONSLOS";
             case HALBJAHR: return "HALBJAHR";
+            case HZ: return "HZ";
             case JAHR: return "JAHR";
             case KUBIKMETER: return "KUBIKMETER";
             case KVAR: return "KVAR";
@@ -39,7 +41,9 @@ public enum Mengeneinheit {
     }
 
     public static Mengeneinheit forValue(String value) throws IOException {
+        if (value.equals("DIMENSIONSLOS")) return DIMENSIONSLOS;
         if (value.equals("HALBJAHR")) return HALBJAHR;
+        if (value.equals("HZ")) return HZ;
         if (value.equals("JAHR")) return JAHR;
         if (value.equals("KUBIKMETER")) return KUBIKMETER;
         if (value.equals("KVAR")) return KVAR;
