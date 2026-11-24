@@ -20,7 +20,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Person JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/bo/Person.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/bo/Person.json>`_
 */
 public class Person extends Geschaeftsobjekt {
     private final BoTyp _typ = BoTyp.PERSON;

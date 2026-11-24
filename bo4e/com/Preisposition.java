@@ -22,7 +22,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Preisposition JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Preisposition.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Preisposition.json>`_
 */
 public class Preisposition extends COM {
     private final ComTyp _typ = ComTyp.PREISPOSITION;
