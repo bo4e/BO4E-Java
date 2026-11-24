@@ -17,7 +17,7 @@ import java.util.List;
 *
 * .. HINT::
 * `ZeitvariablePreisposition JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/com/ZeitvariablePreisposition.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0/src/bo4e_schemas/com/ZeitvariablePreisposition.json>`_
 */
 public class ZeitvariablePreisposition extends COM {
     private final ComTyp _typ = ComTyp.ZEITVARIABLEPREISPOSITION;
