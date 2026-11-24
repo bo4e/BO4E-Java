@@ -28,7 +28,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Marktlokation JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Marktlokation.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/bo/Marktlokation.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Marktlokation extends Geschaeftsobjekt {
@@ -41,7 +41,6 @@ public class Marktlokation extends Geschaeftsobjekt {
     private Gebiettyp gebietstyp;
     private Geokoordinaten geoadresse;
     private String grundversorgercodenr;
-    private Boolean istUnterbrechbar;
     private Katasteradresse katasterinformation;
     private List<Kundentyp> kundengruppen;
     private Adresse lokationsadresse;
@@ -72,7 +71,6 @@ public class Marktlokation extends Geschaeftsobjekt {
         this.gebietstyp = builder.gebietstyp;
         this.geoadresse = builder.geoadresse;
         this.grundversorgercodenr = builder.grundversorgercodenr;
-        this.istUnterbrechbar = builder.istUnterbrechbar;
         this.katasterinformation = builder.katasterinformation;
         this.kundengruppen = builder.kundengruppen;
         this.lokationsadresse = builder.lokationsadresse;
@@ -209,20 +207,6 @@ public class Marktlokation extends Geschaeftsobjekt {
     */
     public void setGrundversorgercodenr(String grundversorgercodenr) {
         this.grundversorgercodenr = grundversorgercodenr;
-    }
-
-    /**
-    * Gibt an, ob es sich um eine unterbrechbare Belieferung handelt
-    */
-    public Boolean getIstUnterbrechbar() {
-        return istUnterbrechbar;
-    }
-
-    /**
-    * Gibt an, ob es sich um eine unterbrechbare Belieferung handelt
-    */
-    public void setIstUnterbrechbar(Boolean istUnterbrechbar) {
-        this.istUnterbrechbar = istUnterbrechbar;
     }
 
     /**
@@ -459,7 +443,6 @@ public class Marktlokation extends Geschaeftsobjekt {
         private Gebiettyp gebietstyp;
         private Geokoordinaten geoadresse;
         private String grundversorgercodenr;
-        private Boolean istUnterbrechbar;
         private Katasteradresse katasterinformation;
         private List<Kundentyp> kundengruppen;
         private Adresse lokationsadresse;
@@ -543,14 +526,6 @@ public class Marktlokation extends Geschaeftsobjekt {
         */
         public MarktlokationBuilder setGrundversorgercodenr(String grundversorgercodenr) {
             this.grundversorgercodenr = grundversorgercodenr;
-            return this;
-        }
-
-        /**
-        * Gibt an, ob es sich um eine unterbrechbare Belieferung handelt
-        */
-        public MarktlokationBuilder setIstUnterbrechbar(Boolean istUnterbrechbar) {
-            this.istUnterbrechbar = istUnterbrechbar;
             return this;
         }
 

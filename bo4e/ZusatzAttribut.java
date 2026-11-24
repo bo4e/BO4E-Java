@@ -10,12 +10,11 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 *
 * .. raw:: html
 *
-* <object data="../_static/images/bo4e/com/ZusatzAttribut.svg"
-* type="image/svg+xml"></object>
+* <object data="../_static/images/bo4e/ZusatzAttribut.svg" type="image/svg+xml"></object>
 *
 * .. HINT::
 * `ZusatzAttribut JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/ZusatzAttribut.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/ZusatzAttribut.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ZusatzAttribut {

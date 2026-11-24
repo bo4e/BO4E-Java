@@ -23,13 +23,15 @@ import java.util.List;
 *
 * .. HINT::
 * `TechnischeRessource JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/TechnischeRessource.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/bo/TechnischeRessource.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class TechnischeRessource extends Geschaeftsobjekt {
     private final BoTyp _typ = BoTyp.TECHNISCHERESSOURCE;
     private EMobilitaetsart emobilitaetsart;
     private Erzeugungsart erzeugungsart;
+    private Boolean istFernschaltbar;
+    private Boolean istUnterbrechbar;
     private String lokationsbuendelObjektcode;
     private List<Lokationszuordnung> lokationszuordnungen;
     private Menge nennleistungabgabe;
@@ -51,6 +53,8 @@ public class TechnischeRessource extends Geschaeftsobjekt {
         super(builder);
         this.emobilitaetsart = builder.emobilitaetsart;
         this.erzeugungsart = builder.erzeugungsart;
+        this.istFernschaltbar = builder.istFernschaltbar;
+        this.istUnterbrechbar = builder.istUnterbrechbar;
         this.lokationsbuendelObjektcode = builder.lokationsbuendelObjektcode;
         this.lokationszuordnungen = builder.lokationszuordnungen;
         this.nennleistungabgabe = builder.nennleistungabgabe;
@@ -96,6 +100,34 @@ public class TechnischeRessource extends Geschaeftsobjekt {
     */
     public void setErzeugungsart(Erzeugungsart erzeugungsart) {
         this.erzeugungsart = erzeugungsart;
+    }
+
+    /**
+    * Fernschaltbarkeit
+    */
+    public Boolean getIstFernschaltbar() {
+        return istFernschaltbar;
+    }
+
+    /**
+    * Fernschaltbarkeit
+    */
+    public void setIstFernschaltbar(Boolean istFernschaltbar) {
+        this.istFernschaltbar = istFernschaltbar;
+    }
+
+    /**
+    * Unterbrechbarkeit
+    */
+    public Boolean getIstUnterbrechbar() {
+        return istUnterbrechbar;
+    }
+
+    /**
+    * Unterbrechbarkeit
+    */
+    public void setIstUnterbrechbar(Boolean istUnterbrechbar) {
+        this.istUnterbrechbar = istUnterbrechbar;
     }
 
     /**
@@ -290,6 +322,8 @@ public class TechnischeRessource extends Geschaeftsobjekt {
     public static class TechnischeRessourceBuilder extends GeschaeftsobjektBuilder {
         private EMobilitaetsart emobilitaetsart;
         private Erzeugungsart erzeugungsart;
+        private Boolean istFernschaltbar;
+        private Boolean istUnterbrechbar;
         private String lokationsbuendelObjektcode;
         private List<Lokationszuordnung> lokationszuordnungen;
         private Menge nennleistungabgabe;
@@ -320,6 +354,22 @@ public class TechnischeRessource extends Geschaeftsobjekt {
         */
         public TechnischeRessourceBuilder setErzeugungsart(Erzeugungsart erzeugungsart) {
             this.erzeugungsart = erzeugungsart;
+            return this;
+        }
+
+        /**
+        * Fernschaltbarkeit
+        */
+        public TechnischeRessourceBuilder setIstFernschaltbar(Boolean istFernschaltbar) {
+            this.istFernschaltbar = istFernschaltbar;
+            return this;
+        }
+
+        /**
+        * Unterbrechbarkeit
+        */
+        public TechnischeRessourceBuilder setIstUnterbrechbar(Boolean istUnterbrechbar) {
+            this.istUnterbrechbar = istUnterbrechbar;
             return this;
         }
 

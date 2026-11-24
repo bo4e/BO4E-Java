@@ -16,13 +16,14 @@ import java.util.List;
 *
 * .. HINT::
 * `Preisstaffel JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Preisstaffel.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Preisstaffel.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Preisstaffel extends COM {
     private final ComTyp _typ = ComTyp.PREISSTAFFEL;
     private String artikelId;
-    private Double einheitspreis;
+    private String bezeichnung;
+    private Double preis;
     private Sigmoidparameter sigmoidparameter;
     private Double staffelgrenzeBis;
     private Double staffelgrenzeVon;
@@ -33,7 +34,8 @@ public class Preisstaffel extends COM {
     private Preisstaffel(PreisstaffelBuilder builder) {
         super(builder);
         this.artikelId = builder.artikelId;
-        this.einheitspreis = builder.einheitspreis;
+        this.bezeichnung = builder.bezeichnung;
+        this.preis = builder.preis;
         this.sigmoidparameter = builder.sigmoidparameter;
         this.staffelgrenzeBis = builder.staffelgrenzeBis;
         this.staffelgrenzeVon = builder.staffelgrenzeVon;
@@ -45,7 +47,7 @@ public class Preisstaffel extends COM {
 
     /**
     * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
-    * BDEW-Artikelnummer ablöst
+    * BDEW-Artikelnummer ablöst.
     */
     public String getArtikelId() {
         return artikelId;
@@ -53,24 +55,40 @@ public class Preisstaffel extends COM {
 
     /**
     * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
-    * BDEW-Artikelnummer ablöst
+    * BDEW-Artikelnummer ablöst.
     */
     public void setArtikelId(String artikelId) {
         this.artikelId = artikelId;
     }
 
     /**
-    * Preis pro abgerechneter Mengeneinheit
+    * Eine (beliebige) Bezeichnung für die Preisstaffel.
     */
-    public Double getEinheitspreis() {
-        return einheitspreis;
+    public String getBezeichnung() {
+        return bezeichnung;
     }
 
     /**
-    * Preis pro abgerechneter Mengeneinheit
+    * Eine (beliebige) Bezeichnung für die Preisstaffel.
     */
-    public void setEinheitspreis(Double einheitspreis) {
-        this.einheitspreis = einheitspreis;
+    public void setBezeichnung(String bezeichnung) {
+        this.bezeichnung = bezeichnung;
+    }
+
+    /**
+    * Preis pro abgerechneter Mengeneinheit. Die Mengeneinheit wird durch das übergeordnete
+    * Objekt angegeben.
+    */
+    public Double getPreis() {
+        return preis;
+    }
+
+    /**
+    * Preis pro abgerechneter Mengeneinheit. Die Mengeneinheit wird durch das übergeordnete
+    * Objekt angegeben.
+    */
+    public void setPreis(Double preis) {
+        this.preis = preis;
     }
 
     /**
@@ -90,28 +108,36 @@ public class Preisstaffel extends COM {
     }
 
     /**
-    * Exklusiver oberer Wert, bis zu dem die Staffel gilt
+    * Exklusiver oberer Wert, bis zu dem die Staffel gilt (inklusiv).
+    * Grenzen werden bspw. wie folgt angegeben: `0 - 1000, 1001 - 2000, etc.`
+    * Werte zwischen den Grenzen (z.B. `1000,6`) rutschen in die obere Zone / Staffel.
     */
     public Double getStaffelgrenzeBis() {
         return staffelgrenzeBis;
     }
 
     /**
-    * Exklusiver oberer Wert, bis zu dem die Staffel gilt
+    * Exklusiver oberer Wert, bis zu dem die Staffel gilt (inklusiv).
+    * Grenzen werden bspw. wie folgt angegeben: `0 - 1000, 1001 - 2000, etc.`
+    * Werte zwischen den Grenzen (z.B. `1000,6`) rutschen in die obere Zone / Staffel.
     */
     public void setStaffelgrenzeBis(Double staffelgrenzeBis) {
         this.staffelgrenzeBis = staffelgrenzeBis;
     }
 
     /**
-    * Inklusiver unterer Wert, ab dem die Staffel gilt
+    * Inklusiver unterer Wert, ab dem die Staffel gilt (inklusiv).
+    * Grenzen werden bspw. wie folgt angegeben: `0 - 1000, 1001 - 2000, etc.`
+    * Werte zwischen den Grenzen (z.B. `1000,6`) rutschen in die obere Zone / Staffel.
     */
     public Double getStaffelgrenzeVon() {
         return staffelgrenzeVon;
     }
 
     /**
-    * Inklusiver unterer Wert, ab dem die Staffel gilt
+    * Inklusiver unterer Wert, ab dem die Staffel gilt (inklusiv).
+    * Grenzen werden bspw. wie folgt angegeben: `0 - 1000, 1001 - 2000, etc.`
+    * Werte zwischen den Grenzen (z.B. `1000,6`) rutschen in die obere Zone / Staffel.
     */
     public void setStaffelgrenzeVon(Double staffelgrenzeVon) {
         this.staffelgrenzeVon = staffelgrenzeVon;
@@ -124,7 +150,8 @@ public class Preisstaffel extends COM {
     @JsonInclude(JsonInclude.Include.NON_NULL)
     public static class PreisstaffelBuilder extends COMBuilder {
         private String artikelId;
-        private Double einheitspreis;
+        private String bezeichnung;
+        private Double preis;
         private Sigmoidparameter sigmoidparameter;
         private Double staffelgrenzeBis;
         private Double staffelgrenzeVon;
@@ -134,7 +161,7 @@ public class Preisstaffel extends COM {
 
         /**
         * Standardisierte vom BDEW herausgegebene Liste, welche im Strommarkt die
-        * BDEW-Artikelnummer ablöst
+        * BDEW-Artikelnummer ablöst.
         */
         public PreisstaffelBuilder setArtikelId(String artikelId) {
             this.artikelId = artikelId;
@@ -142,10 +169,19 @@ public class Preisstaffel extends COM {
         }
 
         /**
-        * Preis pro abgerechneter Mengeneinheit
+        * Eine (beliebige) Bezeichnung für die Preisstaffel.
         */
-        public PreisstaffelBuilder setEinheitspreis(Double einheitspreis) {
-            this.einheitspreis = einheitspreis;
+        public PreisstaffelBuilder setBezeichnung(String bezeichnung) {
+            this.bezeichnung = bezeichnung;
+            return this;
+        }
+
+        /**
+        * Preis pro abgerechneter Mengeneinheit. Die Mengeneinheit wird durch das übergeordnete
+        * Objekt angegeben.
+        */
+        public PreisstaffelBuilder setPreis(Double preis) {
+            this.preis = preis;
             return this;
         }
 
@@ -159,7 +195,9 @@ public class Preisstaffel extends COM {
         }
 
         /**
-        * Exklusiver oberer Wert, bis zu dem die Staffel gilt
+        * Exklusiver oberer Wert, bis zu dem die Staffel gilt (inklusiv).
+        * Grenzen werden bspw. wie folgt angegeben: `0 - 1000, 1001 - 2000, etc.`
+        * Werte zwischen den Grenzen (z.B. `1000,6`) rutschen in die obere Zone / Staffel.
         */
         public PreisstaffelBuilder setStaffelgrenzeBis(Double staffelgrenzeBis) {
             this.staffelgrenzeBis = staffelgrenzeBis;
@@ -167,7 +205,9 @@ public class Preisstaffel extends COM {
         }
 
         /**
-        * Inklusiver unterer Wert, ab dem die Staffel gilt
+        * Inklusiver unterer Wert, ab dem die Staffel gilt (inklusiv).
+        * Grenzen werden bspw. wie folgt angegeben: `0 - 1000, 1001 - 2000, etc.`
+        * Werte zwischen den Grenzen (z.B. `1000,6`) rutschen in die obere Zone / Staffel.
         */
         public PreisstaffelBuilder setStaffelgrenzeVon(Double staffelgrenzeVon) {
             this.staffelgrenzeVon = staffelgrenzeVon;
