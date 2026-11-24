@@ -2,7 +2,7 @@ package bo4e.com;
 
 import bo4e.ZusatzAttribut;
 import bo4e.enums.ComTyp;
-import bo4e.enums.Steuerkennzeichen;
+import bo4e.enums.Steuerart;
 import bo4e.enums.Waehrungscode;
 
 import java.util.List;
@@ -17,14 +17,15 @@ import java.util.List;
 *
 * .. HINT::
 * `Steuerbetrag JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Steuerbetrag.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Steuerbetrag.json>`_
 */
 public class Steuerbetrag extends COM {
     private final ComTyp _typ = ComTyp.STEUERBETRAG;
     private Double basiswert;
-    private Steuerkennzeichen steuerkennzeichen;
+    private Steuerart steuerart;
+    private Double steuersatz;
     private Double steuerwert;
-    private Waehrungscode waehrung;
+    private Waehrungscode waehrungscode;
 
     public Steuerbetrag() {
     }
@@ -32,9 +33,10 @@ public class Steuerbetrag extends COM {
     private Steuerbetrag(SteuerbetragBuilder builder) {
         super(builder);
         this.basiswert = builder.basiswert;
-        this.steuerkennzeichen = builder.steuerkennzeichen;
+        this.steuerart = builder.steuerart;
+        this.steuersatz = builder.steuersatz;
         this.steuerwert = builder.steuerwert;
-        this.waehrung = builder.waehrung;
+        this.waehrungscode = builder.waehrungscode;
     }
 
     public ComTyp get_typ() {
@@ -56,17 +58,31 @@ public class Steuerbetrag extends COM {
     }
 
     /**
-    * Kennzeichnung des Steuersatzes, bzw. Verfahrens.
+    * Kennzeichnung der Steuerart, bzw. Verfahrens.
     */
-    public Steuerkennzeichen getSteuerkennzeichen() {
-        return steuerkennzeichen;
+    public Steuerart getSteuerart() {
+        return steuerart;
     }
 
     /**
-    * Kennzeichnung des Steuersatzes, bzw. Verfahrens.
+    * Kennzeichnung der Steuerart, bzw. Verfahrens.
     */
-    public void setSteuerkennzeichen(Steuerkennzeichen steuerkennzeichen) {
-        this.steuerkennzeichen = steuerkennzeichen;
+    public void setSteuerart(Steuerart steuerart) {
+        this.steuerart = steuerart;
+    }
+
+    /**
+    * Angabe des Steuersatzes in %
+    */
+    public Double getSteuersatz() {
+        return steuersatz;
+    }
+
+    /**
+    * Angabe des Steuersatzes in %
+    */
+    public void setSteuersatz(Double steuersatz) {
+        this.steuersatz = steuersatz;
     }
 
     /**
@@ -86,15 +102,15 @@ public class Steuerbetrag extends COM {
     /**
     * Währung. Z.B. Euro.
     */
-    public Waehrungscode getWaehrung() {
-        return waehrung;
+    public Waehrungscode getWaehrungscode() {
+        return waehrungscode;
     }
 
     /**
     * Währung. Z.B. Euro.
     */
-    public void setWaehrung(Waehrungscode waehrung) {
-        this.waehrung = waehrung;
+    public void setWaehrungscode(Waehrungscode waehrungscode) {
+        this.waehrungscode = waehrungscode;
     }
 
     public static SteuerbetragBuilder builder() {
@@ -103,9 +119,10 @@ public class Steuerbetrag extends COM {
 
     public static class SteuerbetragBuilder extends COMBuilder {
         private Double basiswert;
-        private Steuerkennzeichen steuerkennzeichen;
+        private Steuerart steuerart;
+        private Double steuersatz;
         private Double steuerwert;
-        private Waehrungscode waehrung;
+        private Waehrungscode waehrungscode;
 
         private SteuerbetragBuilder() {
         }
@@ -119,10 +136,18 @@ public class Steuerbetrag extends COM {
         }
 
         /**
-        * Kennzeichnung des Steuersatzes, bzw. Verfahrens.
+        * Kennzeichnung der Steuerart, bzw. Verfahrens.
         */
-        public SteuerbetragBuilder setSteuerkennzeichen(Steuerkennzeichen steuerkennzeichen) {
-            this.steuerkennzeichen = steuerkennzeichen;
+        public SteuerbetragBuilder setSteuerart(Steuerart steuerart) {
+            this.steuerart = steuerart;
+            return this;
+        }
+
+        /**
+        * Angabe des Steuersatzes in %
+        */
+        public SteuerbetragBuilder setSteuersatz(Double steuersatz) {
+            this.steuersatz = steuersatz;
             return this;
         }
 
@@ -137,8 +162,8 @@ public class Steuerbetrag extends COM {
         /**
         * Währung. Z.B. Euro.
         */
-        public SteuerbetragBuilder setWaehrung(Waehrungscode waehrung) {
-            this.waehrung = waehrung;
+        public SteuerbetragBuilder setWaehrungscode(Waehrungscode waehrungscode) {
+            this.waehrungscode = waehrungscode;
             return this;
         }
 

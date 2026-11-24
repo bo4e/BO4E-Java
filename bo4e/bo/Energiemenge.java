@@ -1,9 +1,9 @@
 package bo4e.bo;
 
 import bo4e.ZusatzAttribut;
-import bo4e.com.Verbrauch;
+import bo4e.com.Menge;
+import bo4e.com.Zeitraum;
 import bo4e.enums.BoTyp;
-import bo4e.enums.Lokationstyp;
 
 import java.util.List;
 
@@ -16,22 +16,24 @@ import java.util.List;
 *
 * .. HINT::
 * `Energiemenge JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Energiemenge.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Energiemenge.json>`_
 */
 public class Energiemenge extends Geschaeftsobjekt {
     private final BoTyp _typ = BoTyp.ENERGIEMENGE;
-    private List<Verbrauch> energieverbrauch;
-    private String lokationsId;
-    private Lokationstyp lokationstyp;
+    private String beschreibung;
+    private Menge menge;
+    private String obisKennzahl;
+    private Zeitraum zeitraum;
 
     public Energiemenge() {
     }
 
     private Energiemenge(EnergiemengeBuilder builder) {
         super(builder);
-        this.energieverbrauch = builder.energieverbrauch;
-        this.lokationsId = builder.lokationsId;
-        this.lokationstyp = builder.lokationstyp;
+        this.beschreibung = builder.beschreibung;
+        this.menge = builder.menge;
+        this.obisKennzahl = builder.obisKennzahl;
+        this.zeitraum = builder.zeitraum;
     }
 
     public BoTyp get_typ() {
@@ -39,45 +41,59 @@ public class Energiemenge extends Geschaeftsobjekt {
     }
 
     /**
-    * Gibt den Verbrauch in einer Zeiteinheit an
+    * Ergänzende Beschreibung zur Energiemenge
     */
-    public List<Verbrauch> getEnergieverbrauch() {
-        return energieverbrauch;
+    public String getBeschreibung() {
+        return beschreibung;
     }
 
     /**
-    * Gibt den Verbrauch in einer Zeiteinheit an
+    * Ergänzende Beschreibung zur Energiemenge
     */
-    public void setEnergieverbrauch(List<Verbrauch> energieverbrauch) {
-        this.energieverbrauch = energieverbrauch;
+    public void setBeschreibung(String beschreibung) {
+        this.beschreibung = beschreibung;
     }
 
     /**
-    * Eindeutige Nummer der Marktlokation bzw. der Messlokation, zu der die Energiemenge gehört
+    * Die angefallene/gemessene Menge
     */
-    public String getLokationsId() {
-        return lokationsId;
+    public Menge getMenge() {
+        return menge;
     }
 
     /**
-    * Eindeutige Nummer der Marktlokation bzw. der Messlokation, zu der die Energiemenge gehört
+    * Die angefallene/gemessene Menge
     */
-    public void setLokationsId(String lokationsId) {
-        this.lokationsId = lokationsId;
+    public void setMenge(Menge menge) {
+        this.menge = menge;
     }
 
     /**
-    * Gibt an, ob es sich um eine Markt- oder Messlokation handelt
+    * Die OBIS-Kennzahl der Energiemenge
     */
-    public Lokationstyp getLokationstyp() {
-        return lokationstyp;
+    public String getObisKennzahl() {
+        return obisKennzahl;
     }
 
     /**
-    * Gibt an, ob es sich um eine Markt- oder Messlokation handelt
+    * Die OBIS-Kennzahl der Energiemenge
     */
-    public void setLokationstyp(Lokationstyp lokationstyp) {
-        this.lokationstyp = lokationstyp;
+    public void setObisKennzahl(String obisKennzahl) {
+        this.obisKennzahl = obisKennzahl;
+    }
+
+    /**
+    * Zeitraum, in dem die Energiemenge angefallen ist/gemessen wurde
+    */
+    public Zeitraum getZeitraum() {
+        return zeitraum;
+    }
+
+    /**
+    * Zeitraum, in dem die Energiemenge angefallen ist/gemessen wurde
+    */
+    public void setZeitraum(Zeitraum zeitraum) {
+        this.zeitraum = zeitraum;
     }
 
     public static EnergiemengeBuilder builder() {
@@ -85,34 +101,43 @@ public class Energiemenge extends Geschaeftsobjekt {
     }
 
     public static class EnergiemengeBuilder extends GeschaeftsobjektBuilder {
-        private List<Verbrauch> energieverbrauch;
-        private String lokationsId;
-        private Lokationstyp lokationstyp;
+        private String beschreibung;
+        private Menge menge;
+        private String obisKennzahl;
+        private Zeitraum zeitraum;
 
         private EnergiemengeBuilder() {
         }
 
         /**
-        * Gibt den Verbrauch in einer Zeiteinheit an
+        * Ergänzende Beschreibung zur Energiemenge
         */
-        public EnergiemengeBuilder setEnergieverbrauch(List<Verbrauch> energieverbrauch) {
-            this.energieverbrauch = energieverbrauch;
+        public EnergiemengeBuilder setBeschreibung(String beschreibung) {
+            this.beschreibung = beschreibung;
             return this;
         }
 
         /**
-        * Eindeutige Nummer der Marktlokation bzw. der Messlokation, zu der die Energiemenge gehört
+        * Die angefallene/gemessene Menge
         */
-        public EnergiemengeBuilder setLokationsId(String lokationsId) {
-            this.lokationsId = lokationsId;
+        public EnergiemengeBuilder setMenge(Menge menge) {
+            this.menge = menge;
             return this;
         }
 
         /**
-        * Gibt an, ob es sich um eine Markt- oder Messlokation handelt
+        * Die OBIS-Kennzahl der Energiemenge
         */
-        public EnergiemengeBuilder setLokationstyp(Lokationstyp lokationstyp) {
-            this.lokationstyp = lokationstyp;
+        public EnergiemengeBuilder setObisKennzahl(String obisKennzahl) {
+            this.obisKennzahl = obisKennzahl;
+            return this;
+        }
+
+        /**
+        * Zeitraum, in dem die Energiemenge angefallen ist/gemessen wurde
+        */
+        public EnergiemengeBuilder setZeitraum(Zeitraum zeitraum) {
+            this.zeitraum = zeitraum;
             return this;
         }
 

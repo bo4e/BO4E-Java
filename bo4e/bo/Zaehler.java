@@ -4,7 +4,6 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Zaehlwerk;
 import bo4e.enums.Befestigungsart;
 import bo4e.enums.BoTyp;
-import bo4e.enums.Messwerterfassung;
 import bo4e.enums.Registeranzahl;
 import bo4e.enums.Sparte;
 import bo4e.enums.Zaehlerauspraegung;
@@ -24,16 +23,16 @@ import java.util.List;
 *
 * .. HINT::
 * `Zaehler JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Zaehler.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Zaehler.json>`_
 */
 public class Zaehler extends Geschaeftsobjekt {
     private final BoTyp _typ = BoTyp.ZAEHLER;
     private Befestigungsart befestigungsart;
     private OffsetDateTime eichungBis;
     private List<Geraet> geraete;
+    private Boolean istFernauslesbar;
     private Boolean istFernschaltbar;
     private OffsetDateTime letzteEichung;
-    private Messwerterfassung messwerterfassung;
     private Registeranzahl registeranzahl;
     private Sparte sparte;
     private Zaehlerauspraegung zaehlerauspraegung;
@@ -53,9 +52,9 @@ public class Zaehler extends Geschaeftsobjekt {
         this.befestigungsart = builder.befestigungsart;
         this.eichungBis = builder.eichungBis;
         this.geraete = builder.geraete;
+        this.istFernauslesbar = builder.istFernauslesbar;
         this.istFernschaltbar = builder.istFernschaltbar;
         this.letzteEichung = builder.letzteEichung;
-        this.messwerterfassung = builder.messwerterfassung;
         this.registeranzahl = builder.registeranzahl;
         this.sparte = builder.sparte;
         this.zaehlerauspraegung = builder.zaehlerauspraegung;
@@ -115,6 +114,20 @@ public class Zaehler extends Geschaeftsobjekt {
     }
 
     /**
+    * Fernauslesung
+    */
+    public Boolean getIstFernauslesbar() {
+        return istFernauslesbar;
+    }
+
+    /**
+    * Fernauslesung
+    */
+    public void setIstFernauslesbar(Boolean istFernauslesbar) {
+        this.istFernauslesbar = istFernauslesbar;
+    }
+
+    /**
     * Fernschaltung
     */
     public Boolean getIstFernschaltbar() {
@@ -140,20 +153,6 @@ public class Zaehler extends Geschaeftsobjekt {
     */
     public void setLetzteEichung(OffsetDateTime letzteEichung) {
         this.letzteEichung = letzteEichung;
-    }
-
-    /**
-    * Messwerterfassung des Zählers
-    */
-    public Messwerterfassung getMesswerterfassung() {
-        return messwerterfassung;
-    }
-
-    /**
-    * Messwerterfassung des Zählers
-    */
-    public void setMesswerterfassung(Messwerterfassung messwerterfassung) {
-        this.messwerterfassung = messwerterfassung;
     }
 
     /**
@@ -298,9 +297,9 @@ public class Zaehler extends Geschaeftsobjekt {
         private Befestigungsart befestigungsart;
         private OffsetDateTime eichungBis;
         private List<Geraet> geraete;
+        private Boolean istFernauslesbar;
         private Boolean istFernschaltbar;
         private OffsetDateTime letzteEichung;
-        private Messwerterfassung messwerterfassung;
         private Registeranzahl registeranzahl;
         private Sparte sparte;
         private Zaehlerauspraegung zaehlerauspraegung;
@@ -340,6 +339,14 @@ public class Zaehler extends Geschaeftsobjekt {
         }
 
         /**
+        * Fernauslesung
+        */
+        public ZaehlerBuilder setIstFernauslesbar(Boolean istFernauslesbar) {
+            this.istFernauslesbar = istFernauslesbar;
+            return this;
+        }
+
+        /**
         * Fernschaltung
         */
         public ZaehlerBuilder setIstFernschaltbar(Boolean istFernschaltbar) {
@@ -352,14 +359,6 @@ public class Zaehler extends Geschaeftsobjekt {
         */
         public ZaehlerBuilder setLetzteEichung(OffsetDateTime letzteEichung) {
             this.letzteEichung = letzteEichung;
-            return this;
-        }
-
-        /**
-        * Messwerterfassung des Zählers
-        */
-        public ZaehlerBuilder setMesswerterfassung(Messwerterfassung messwerterfassung) {
-            this.messwerterfassung = messwerterfassung;
             return this;
         }
 

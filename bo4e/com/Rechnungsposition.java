@@ -5,7 +5,6 @@ import bo4e.enums.BDEWArtikelnummer;
 import bo4e.enums.ComTyp;
 import bo4e.enums.Mengeneinheit;
 
-import java.time.OffsetDateTime;
 import java.util.List;
 
 /**
@@ -19,22 +18,19 @@ import java.util.List;
 *
 * .. HINT::
 * `Rechnungsposition JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Rechnungsposition.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Rechnungsposition.json>`_
 */
 public class Rechnungsposition extends COM {
     private final ComTyp _typ = ComTyp.RECHNUNGSPOSITION;
     private String artikelId;
     private BDEWArtikelnummer artikelnummer;
     private Preis einzelpreis;
-    private OffsetDateTime lieferungBis;
-    private OffsetDateTime lieferungVon;
-    private String lokationsId;
+    private Betrag gesamtpreis;
+    private Zeitraum lieferungszeitraum;
     private Menge positionsMenge;
     private Long positionsnummer;
     private String positionstext;
-    private Betrag teilrabattNetto;
-    private Betrag teilsummeNetto;
-    private Steuerbetrag teilsummeSteuer;
+    private Steuerbetrag steuerbetrag;
     private Menge zeitbezogeneMenge;
     private Mengeneinheit zeiteinheit;
 
@@ -46,15 +42,12 @@ public class Rechnungsposition extends COM {
         this.artikelId = builder.artikelId;
         this.artikelnummer = builder.artikelnummer;
         this.einzelpreis = builder.einzelpreis;
-        this.lieferungBis = builder.lieferungBis;
-        this.lieferungVon = builder.lieferungVon;
-        this.lokationsId = builder.lokationsId;
+        this.gesamtpreis = builder.gesamtpreis;
+        this.lieferungszeitraum = builder.lieferungszeitraum;
         this.positionsMenge = builder.positionsMenge;
         this.positionsnummer = builder.positionsnummer;
         this.positionstext = builder.positionstext;
-        this.teilrabattNetto = builder.teilrabattNetto;
-        this.teilsummeNetto = builder.teilsummeNetto;
-        this.teilsummeSteuer = builder.teilsummeSteuer;
+        this.steuerbetrag = builder.steuerbetrag;
         this.zeitbezogeneMenge = builder.zeitbezogeneMenge;
         this.zeiteinheit = builder.zeiteinheit;
     }
@@ -108,45 +101,35 @@ public class Rechnungsposition extends COM {
     }
 
     /**
-    * Ende der Lieferung für die abgerechnete Leistung (exklusiv)
+    * Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus
+    * zeitbezogeneMenge).
+    * Z.B. 12,60€ * 120 kW * 3/12 (für 3 Monate).
     */
-    public OffsetDateTime getLieferungBis() {
-        return lieferungBis;
+    public Betrag getGesamtpreis() {
+        return gesamtpreis;
     }
 
     /**
-    * Ende der Lieferung für die abgerechnete Leistung (exklusiv)
+    * Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus
+    * zeitbezogeneMenge).
+    * Z.B. 12,60€ * 120 kW * 3/12 (für 3 Monate).
     */
-    public void setLieferungBis(OffsetDateTime lieferungBis) {
-        this.lieferungBis = lieferungBis;
+    public void setGesamtpreis(Betrag gesamtpreis) {
+        this.gesamtpreis = gesamtpreis;
     }
 
     /**
-    * Start der Lieferung für die abgerechnete Leistung (inklusiv)
+    * Zeitraum der Lieferung für die abgerechnete Leistung
     */
-    public OffsetDateTime getLieferungVon() {
-        return lieferungVon;
+    public Zeitraum getLieferungszeitraum() {
+        return lieferungszeitraum;
     }
 
     /**
-    * Start der Lieferung für die abgerechnete Leistung (inklusiv)
+    * Zeitraum der Lieferung für die abgerechnete Leistung
     */
-    public void setLieferungVon(OffsetDateTime lieferungVon) {
-        this.lieferungVon = lieferungVon;
-    }
-
-    /**
-    * Marktlokation, die zu dieser Position gehört
-    */
-    public String getLokationsId() {
-        return lokationsId;
-    }
-
-    /**
-    * Marktlokation, die zu dieser Position gehört
-    */
-    public void setLokationsId(String lokationsId) {
-        this.lokationsId = lokationsId;
+    public void setLieferungszeitraum(Zeitraum lieferungszeitraum) {
+        this.lieferungszeitraum = lieferungszeitraum;
     }
 
     /**
@@ -192,49 +175,17 @@ public class Rechnungsposition extends COM {
     }
 
     /**
-    * Nettobetrag für den Rabatt dieser Position
+    * Auf die Position entfallende Steuer, bestehend aus Steuersatz und Betrag
     */
-    public Betrag getTeilrabattNetto() {
-        return teilrabattNetto;
-    }
-
-    /**
-    * Nettobetrag für den Rabatt dieser Position
-    */
-    public void setTeilrabattNetto(Betrag teilrabattNetto) {
-        this.teilrabattNetto = teilrabattNetto;
-    }
-
-    /**
-    * Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus
-    * zeitbezogeneMenge).
-    * Z.B. 12,60€ * 120 kW * 3/12 (für 3 Monate).
-    */
-    public Betrag getTeilsummeNetto() {
-        return teilsummeNetto;
-    }
-
-    /**
-    * Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus
-    * zeitbezogeneMenge).
-    * Z.B. 12,60€ * 120 kW * 3/12 (für 3 Monate).
-    */
-    public void setTeilsummeNetto(Betrag teilsummeNetto) {
-        this.teilsummeNetto = teilsummeNetto;
+    public Steuerbetrag getSteuerbetrag() {
+        return steuerbetrag;
     }
 
     /**
     * Auf die Position entfallende Steuer, bestehend aus Steuersatz und Betrag
     */
-    public Steuerbetrag getTeilsummeSteuer() {
-        return teilsummeSteuer;
-    }
-
-    /**
-    * Auf die Position entfallende Steuer, bestehend aus Steuersatz und Betrag
-    */
-    public void setTeilsummeSteuer(Steuerbetrag teilsummeSteuer) {
-        this.teilsummeSteuer = teilsummeSteuer;
+    public void setSteuerbetrag(Steuerbetrag steuerbetrag) {
+        this.steuerbetrag = steuerbetrag;
     }
 
     /**
@@ -277,15 +228,12 @@ public class Rechnungsposition extends COM {
         private String artikelId;
         private BDEWArtikelnummer artikelnummer;
         private Preis einzelpreis;
-        private OffsetDateTime lieferungBis;
-        private OffsetDateTime lieferungVon;
-        private String lokationsId;
+        private Betrag gesamtpreis;
+        private Zeitraum lieferungszeitraum;
         private Menge positionsMenge;
         private Long positionsnummer;
         private String positionstext;
-        private Betrag teilrabattNetto;
-        private Betrag teilsummeNetto;
-        private Steuerbetrag teilsummeSteuer;
+        private Steuerbetrag steuerbetrag;
         private Menge zeitbezogeneMenge;
         private Mengeneinheit zeiteinheit;
 
@@ -318,26 +266,20 @@ public class Rechnungsposition extends COM {
         }
 
         /**
-        * Ende der Lieferung für die abgerechnete Leistung (exklusiv)
+        * Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus
+        * zeitbezogeneMenge).
+        * Z.B. 12,60€ * 120 kW * 3/12 (für 3 Monate).
         */
-        public RechnungspositionBuilder setLieferungBis(OffsetDateTime lieferungBis) {
-            this.lieferungBis = lieferungBis;
+        public RechnungspositionBuilder setGesamtpreis(Betrag gesamtpreis) {
+            this.gesamtpreis = gesamtpreis;
             return this;
         }
 
         /**
-        * Start der Lieferung für die abgerechnete Leistung (inklusiv)
+        * Zeitraum der Lieferung für die abgerechnete Leistung
         */
-        public RechnungspositionBuilder setLieferungVon(OffsetDateTime lieferungVon) {
-            this.lieferungVon = lieferungVon;
-            return this;
-        }
-
-        /**
-        * Marktlokation, die zu dieser Position gehört
-        */
-        public RechnungspositionBuilder setLokationsId(String lokationsId) {
-            this.lokationsId = lokationsId;
+        public RechnungspositionBuilder setLieferungszeitraum(Zeitraum lieferungszeitraum) {
+            this.lieferungszeitraum = lieferungszeitraum;
             return this;
         }
 
@@ -366,28 +308,10 @@ public class Rechnungsposition extends COM {
         }
 
         /**
-        * Nettobetrag für den Rabatt dieser Position
-        */
-        public RechnungspositionBuilder setTeilrabattNetto(Betrag teilrabattNetto) {
-            this.teilrabattNetto = teilrabattNetto;
-            return this;
-        }
-
-        /**
-        * Das Ergebnis der Multiplikation aus einzelpreis * positionsMenge * (Faktor aus
-        * zeitbezogeneMenge).
-        * Z.B. 12,60€ * 120 kW * 3/12 (für 3 Monate).
-        */
-        public RechnungspositionBuilder setTeilsummeNetto(Betrag teilsummeNetto) {
-            this.teilsummeNetto = teilsummeNetto;
-            return this;
-        }
-
-        /**
         * Auf die Position entfallende Steuer, bestehend aus Steuersatz und Betrag
         */
-        public RechnungspositionBuilder setTeilsummeSteuer(Steuerbetrag teilsummeSteuer) {
-            this.teilsummeSteuer = teilsummeSteuer;
+        public RechnungspositionBuilder setSteuerbetrag(Steuerbetrag steuerbetrag) {
+            this.steuerbetrag = steuerbetrag;
             return this;
         }
 

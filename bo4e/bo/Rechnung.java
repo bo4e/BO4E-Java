@@ -4,6 +4,8 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Betrag;
 import bo4e.com.Rechnungsposition;
 import bo4e.com.Steuerbetrag;
+import bo4e.com.Vorauszahlung;
+import bo4e.com.Zahlungsinformation;
 import bo4e.com.Zeitraum;
 import bo4e.enums.BoTyp;
 import bo4e.enums.NetznutzungRechnungsart;
@@ -25,23 +27,31 @@ import java.util.List;
 *
 * .. HINT::
 * `Rechnung JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Rechnung.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Rechnung.json>`_
 */
 public class Rechnung extends Geschaeftsobjekt {
     private final BoTyp _typ = BoTyp.RECHNUNG;
+    private Energiemenge aktuellerVerbrauch;
+    private Energiemenge anfangszaehlerstand;
+    private Energiemenge endzaehlerstand;
     private OffsetDateTime faelligkeitsdatum;
+    private Fremdkosten fremdkosten;
     private Betrag gesamtbrutto;
     private Betrag gesamtnetto;
     private Betrag gesamtsteuer;
     private Boolean istOriginal;
     private Boolean istSimuliert;
     private Boolean istStorno;
+    private Energiemenge jahresverbrauch;
+    private String kaeuferreferenz;
     private Marktlokation marktlokation;
     private Messlokation messlokation;
+    private Marktteilnehmer messstellenbetreiber;
+    private Marktteilnehmer netzbetreiber;
     private NetznutzungRechnungsart netznutzungrechnungsart;
     private NetznutzungRechnungstyp netznutzungrechnungstyp;
     private String originalRechnungsnummer;
-    private Betrag rabattBrutto;
+    private Betrag rabattNetto;
     private OffsetDateTime rechnungsdatum;
     private Geschaeftspartner rechnungsempfaenger;
     private Geschaeftspartner rechnungsersteller;
@@ -51,9 +61,16 @@ public class Rechnung extends Geschaeftsobjekt {
     private Rechnungsstatus rechnungsstatus;
     private String rechnungstitel;
     private Rechnungstyp rechnungstyp;
+    private List<Energiemenge> referenzverbraeuche;
     private Sparte sparte;
     private List<Steuerbetrag> steuerbetraege;
-    private Betrag vorausgezahlt;
+    private List<Rechnung> teilrechnungen;
+    private Vertrag vertrag;
+    private List<Vorauszahlung> vorauszahlungen;
+    private Energiemenge vorjahresverbrauch;
+    private List<Zaehler> zaehler;
+    private List<Zahlungsinformation> zahlungsinformationen;
+    private Betrag zukuenftigerAbschlag;
     private Betrag zuZahlen;
 
     public Rechnung() {
@@ -61,19 +78,27 @@ public class Rechnung extends Geschaeftsobjekt {
 
     private Rechnung(RechnungBuilder builder) {
         super(builder);
+        this.aktuellerVerbrauch = builder.aktuellerVerbrauch;
+        this.anfangszaehlerstand = builder.anfangszaehlerstand;
+        this.endzaehlerstand = builder.endzaehlerstand;
         this.faelligkeitsdatum = builder.faelligkeitsdatum;
+        this.fremdkosten = builder.fremdkosten;
         this.gesamtbrutto = builder.gesamtbrutto;
         this.gesamtnetto = builder.gesamtnetto;
         this.gesamtsteuer = builder.gesamtsteuer;
         this.istOriginal = builder.istOriginal;
         this.istSimuliert = builder.istSimuliert;
         this.istStorno = builder.istStorno;
+        this.jahresverbrauch = builder.jahresverbrauch;
+        this.kaeuferreferenz = builder.kaeuferreferenz;
         this.marktlokation = builder.marktlokation;
         this.messlokation = builder.messlokation;
+        this.messstellenbetreiber = builder.messstellenbetreiber;
+        this.netzbetreiber = builder.netzbetreiber;
         this.netznutzungrechnungsart = builder.netznutzungrechnungsart;
         this.netznutzungrechnungstyp = builder.netznutzungrechnungstyp;
         this.originalRechnungsnummer = builder.originalRechnungsnummer;
-        this.rabattBrutto = builder.rabattBrutto;
+        this.rabattNetto = builder.rabattNetto;
         this.rechnungsdatum = builder.rechnungsdatum;
         this.rechnungsempfaenger = builder.rechnungsempfaenger;
         this.rechnungsersteller = builder.rechnungsersteller;
@@ -83,14 +108,67 @@ public class Rechnung extends Geschaeftsobjekt {
         this.rechnungsstatus = builder.rechnungsstatus;
         this.rechnungstitel = builder.rechnungstitel;
         this.rechnungstyp = builder.rechnungstyp;
+        this.referenzverbraeuche = builder.referenzverbraeuche;
         this.sparte = builder.sparte;
         this.steuerbetraege = builder.steuerbetraege;
-        this.vorausgezahlt = builder.vorausgezahlt;
+        this.teilrechnungen = builder.teilrechnungen;
+        this.vertrag = builder.vertrag;
+        this.vorauszahlungen = builder.vorauszahlungen;
+        this.vorjahresverbrauch = builder.vorjahresverbrauch;
+        this.zaehler = builder.zaehler;
+        this.zahlungsinformationen = builder.zahlungsinformationen;
+        this.zukuenftigerAbschlag = builder.zukuenftigerAbschlag;
         this.zuZahlen = builder.zuZahlen;
     }
 
     public BoTyp get_typ() {
         return _typ;
+    }
+
+    /**
+    * Verbrauch des abgerechneten Zeitraums, Pflicht für Rechnungen gemäß EnWG § 40
+    */
+    public Energiemenge getAktuellerVerbrauch() {
+        return aktuellerVerbrauch;
+    }
+
+    /**
+    * Verbrauch des abgerechneten Zeitraums, Pflicht für Rechnungen gemäß EnWG § 40
+    */
+    public void setAktuellerVerbrauch(Energiemenge aktuellerVerbrauch) {
+        this.aktuellerVerbrauch = aktuellerVerbrauch;
+    }
+
+    /**
+    * Für Verbrauchsbasierte Rechnungen der Zählerstand zur Beginn des abgerechneten Zeitraums,
+    * Pflicht für Rechnungen gemäß EnWG § 40
+    */
+    public Energiemenge getAnfangszaehlerstand() {
+        return anfangszaehlerstand;
+    }
+
+    /**
+    * Für Verbrauchsbasierte Rechnungen der Zählerstand zur Beginn des abgerechneten Zeitraums,
+    * Pflicht für Rechnungen gemäß EnWG § 40
+    */
+    public void setAnfangszaehlerstand(Energiemenge anfangszaehlerstand) {
+        this.anfangszaehlerstand = anfangszaehlerstand;
+    }
+
+    /**
+    * Für Verbrauchsbasierte Rechnungen der Zählerstand zum Ende des abgerechneten Zeitraums,
+    * Pflicht für Rechnungen gemäß EnWG § 40
+    */
+    public Energiemenge getEndzaehlerstand() {
+        return endzaehlerstand;
+    }
+
+    /**
+    * Für Verbrauchsbasierte Rechnungen der Zählerstand zum Ende des abgerechneten Zeitraums,
+    * Pflicht für Rechnungen gemäß EnWG § 40
+    */
+    public void setEndzaehlerstand(Energiemenge endzaehlerstand) {
+        this.endzaehlerstand = endzaehlerstand;
     }
 
     /**
@@ -105,6 +183,20 @@ public class Rechnung extends Geschaeftsobjekt {
     */
     public void setFaelligkeitsdatum(OffsetDateTime faelligkeitsdatum) {
         this.faelligkeitsdatum = faelligkeitsdatum;
+    }
+
+    /**
+    * Zur Ausweisung der in die Kalkulation eingeflossenen Preise gemäß EnWG § 40
+    */
+    public Fremdkosten getFremdkosten() {
+        return fremdkosten;
+    }
+
+    /**
+    * Zur Ausweisung der in die Kalkulation eingeflossenen Preise gemäß EnWG § 40
+    */
+    public void setFremdkosten(Fremdkosten fremdkosten) {
+        this.fremdkosten = fremdkosten;
     }
 
     /**
@@ -196,6 +288,30 @@ public class Rechnung extends Geschaeftsobjekt {
     }
 
     /**
+    * ggf. auf einen Vergleichszeitraum hochgerechneter Verbrauch des abgerechneten Zeitraums
+    * zu Vergleichszwecken mit dem Vorjahr, gemäß EnWG § 40
+    */
+    public Energiemenge getJahresverbrauch() {
+        return jahresverbrauch;
+    }
+
+    /**
+    * ggf. auf einen Vergleichszeitraum hochgerechneter Verbrauch des abgerechneten Zeitraums
+    * zu Vergleichszwecken mit dem Vorjahr, gemäß EnWG § 40
+    */
+    public void setJahresverbrauch(Energiemenge jahresverbrauch) {
+        this.jahresverbrauch = jahresverbrauch;
+    }
+
+    public String getKaeuferreferenz() {
+        return kaeuferreferenz;
+    }
+
+    public void setKaeuferreferenz(String kaeuferreferenz) {
+        this.kaeuferreferenz = kaeuferreferenz;
+    }
+
+    /**
     * Marktlokation, auf die sich die Rechnung bezieht
     */
     public Marktlokation getMarktlokation() {
@@ -221,6 +337,34 @@ public class Rechnung extends Geschaeftsobjekt {
     */
     public void setMesslokation(Messlokation messlokation) {
         this.messlokation = messlokation;
+    }
+
+    /**
+    * der Messtellenbetreiber an der Lieferstelle, relevant für Rechnungen gemäß EnWG § 40
+    */
+    public Marktteilnehmer getMessstellenbetreiber() {
+        return messstellenbetreiber;
+    }
+
+    /**
+    * der Messtellenbetreiber an der Lieferstelle, relevant für Rechnungen gemäß EnWG § 40
+    */
+    public void setMessstellenbetreiber(Marktteilnehmer messstellenbetreiber) {
+        this.messstellenbetreiber = messstellenbetreiber;
+    }
+
+    /**
+    * der Netzbetreiber an der Lieferstelle, relevant für Rechnungen gemäß EnWG § 40
+    */
+    public Marktteilnehmer getNetzbetreiber() {
+        return netzbetreiber;
+    }
+
+    /**
+    * der Netzbetreiber an der Lieferstelle, relevant für Rechnungen gemäß EnWG § 40
+    */
+    public void setNetzbetreiber(Marktteilnehmer netzbetreiber) {
+        this.netzbetreiber = netzbetreiber;
     }
 
     /**
@@ -268,17 +412,17 @@ public class Rechnung extends Geschaeftsobjekt {
     }
 
     /**
-    * Gesamtrabatt auf den Bruttobetrag
+    * Gesamtrabatt auf den Nettobetrag
     */
-    public Betrag getRabattBrutto() {
-        return rabattBrutto;
+    public Betrag getRabattNetto() {
+        return rabattNetto;
     }
 
     /**
-    * Gesamtrabatt auf den Bruttobetrag
+    * Gesamtrabatt auf den Nettobetrag
     */
-    public void setRabattBrutto(Betrag rabattBrutto) {
-        this.rabattBrutto = rabattBrutto;
+    public void setRabattNetto(Betrag rabattNetto) {
+        this.rabattNetto = rabattNetto;
     }
 
     /**
@@ -296,32 +440,32 @@ public class Rechnung extends Geschaeftsobjekt {
     }
 
     /**
-    * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
-    * verlinkten Marktteilnehmer
+    * Der Aussteller der Rechnung. Die Rollencodenummer kennt man über den im Geschäftspartner
+    * verlinkten Marktteilnehmer.
     */
     public Geschaeftspartner getRechnungsempfaenger() {
         return rechnungsempfaenger;
     }
 
     /**
-    * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
-    * verlinkten Marktteilnehmer
+    * Der Aussteller der Rechnung. Die Rollencodenummer kennt man über den im Geschäftspartner
+    * verlinkten Marktteilnehmer.
     */
     public void setRechnungsempfaenger(Geschaeftspartner rechnungsempfaenger) {
         this.rechnungsempfaenger = rechnungsempfaenger;
     }
 
     /**
-    * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
-    * verlinkten Marktteilnehmer
+    * Der Aussteller der Rechnung. Die Rollencodenummer kennt man über den im Geschäftspartner
+    * verlinkten Marktteilnehmer.
     */
     public Geschaeftspartner getRechnungsersteller() {
         return rechnungsersteller;
     }
 
     /**
-    * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
-    * verlinkten Marktteilnehmer
+    * Der Aussteller der Rechnung. Die Rollencodenummer kennt man über den im Geschäftspartner
+    * verlinkten Marktteilnehmer.
     */
     public void setRechnungsersteller(Geschaeftspartner rechnungsersteller) {
         this.rechnungsersteller = rechnungsersteller;
@@ -412,6 +556,20 @@ public class Rechnung extends Geschaeftsobjekt {
     }
 
     /**
+    * Verbräuche von Referenzkundengruppen gemäß EnWG § 40
+    */
+    public List<Energiemenge> getReferenzverbraeuche() {
+        return referenzverbraeuche;
+    }
+
+    /**
+    * Verbräuche von Referenzkundengruppen gemäß EnWG § 40
+    */
+    public void setReferenzverbraeuche(List<Energiemenge> referenzverbraeuche) {
+        this.referenzverbraeuche = referenzverbraeuche;
+    }
+
+    /**
     * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
     */
     public Sparte getSparte() {
@@ -442,17 +600,93 @@ public class Rechnung extends Geschaeftsobjekt {
     }
 
     /**
-    * Die Summe evtl. vorausgezahlter Beträge, z.B. Abschläge. Angabe als Bruttowert
+    * Rechnungen, die durch diese Rechnung zusammengefasst werden
     */
-    public Betrag getVorausgezahlt() {
-        return vorausgezahlt;
+    public List<Rechnung> getTeilrechnungen() {
+        return teilrechnungen;
+    }
+
+    /**
+    * Rechnungen, die durch diese Rechnung zusammengefasst werden
+    */
+    public void setTeilrechnungen(List<Rechnung> teilrechnungen) {
+        this.teilrechnungen = teilrechnungen;
+    }
+
+    /**
+    * enthält Informationen über den der Rechnung zugrundeliegenden Vertrag für Rechnungen nach
+    * EnWG § 40
+    */
+    public Vertrag getVertrag() {
+        return vertrag;
+    }
+
+    /**
+    * enthält Informationen über den der Rechnung zugrundeliegenden Vertrag für Rechnungen nach
+    * EnWG § 40
+    */
+    public void setVertrag(Vertrag vertrag) {
+        this.vertrag = vertrag;
     }
 
     /**
     * Die Summe evtl. vorausgezahlter Beträge, z.B. Abschläge. Angabe als Bruttowert
     */
-    public void setVorausgezahlt(Betrag vorausgezahlt) {
-        this.vorausgezahlt = vorausgezahlt;
+    public List<Vorauszahlung> getVorauszahlungen() {
+        return vorauszahlungen;
+    }
+
+    /**
+    * Die Summe evtl. vorausgezahlter Beträge, z.B. Abschläge. Angabe als Bruttowert
+    */
+    public void setVorauszahlungen(List<Vorauszahlung> vorauszahlungen) {
+        this.vorauszahlungen = vorauszahlungen;
+    }
+
+    /**
+    * ggf. auf einen Vergleichszeitraum hochgerechneter Verbrauch des vorherigen Jahres zu
+    * Vergleichszwecken mit dem aktuellen Jahr, gemäß EnWG § 40
+    */
+    public Energiemenge getVorjahresverbrauch() {
+        return vorjahresverbrauch;
+    }
+
+    /**
+    * ggf. auf einen Vergleichszeitraum hochgerechneter Verbrauch des vorherigen Jahres zu
+    * Vergleichszwecken mit dem aktuellen Jahr, gemäß EnWG § 40
+    */
+    public void setVorjahresverbrauch(Energiemenge vorjahresverbrauch) {
+        this.vorjahresverbrauch = vorjahresverbrauch;
+    }
+
+    public List<Zaehler> getZaehler() {
+        return zaehler;
+    }
+
+    public void setZaehler(List<Zaehler> zaehler) {
+        this.zaehler = zaehler;
+    }
+
+    /**
+    * Informationen wie eine Rechnung bezahlt werden soll
+    */
+    public List<Zahlungsinformation> getZahlungsinformationen() {
+        return zahlungsinformationen;
+    }
+
+    /**
+    * Informationen wie eine Rechnung bezahlt werden soll
+    */
+    public void setZahlungsinformationen(List<Zahlungsinformation> zahlungsinformationen) {
+        this.zahlungsinformationen = zahlungsinformationen;
+    }
+
+    public Betrag getZukuenftigerAbschlag() {
+        return zukuenftigerAbschlag;
+    }
+
+    public void setZukuenftigerAbschlag(Betrag zukuenftigerAbschlag) {
+        this.zukuenftigerAbschlag = zukuenftigerAbschlag;
     }
 
     /**
@@ -474,19 +708,27 @@ public class Rechnung extends Geschaeftsobjekt {
     }
 
     public static class RechnungBuilder extends GeschaeftsobjektBuilder {
+        private Energiemenge aktuellerVerbrauch;
+        private Energiemenge anfangszaehlerstand;
+        private Energiemenge endzaehlerstand;
         private OffsetDateTime faelligkeitsdatum;
+        private Fremdkosten fremdkosten;
         private Betrag gesamtbrutto;
         private Betrag gesamtnetto;
         private Betrag gesamtsteuer;
         private Boolean istOriginal;
         private Boolean istSimuliert;
         private Boolean istStorno;
+        private Energiemenge jahresverbrauch;
+        private String kaeuferreferenz;
         private Marktlokation marktlokation;
         private Messlokation messlokation;
+        private Marktteilnehmer messstellenbetreiber;
+        private Marktteilnehmer netzbetreiber;
         private NetznutzungRechnungsart netznutzungrechnungsart;
         private NetznutzungRechnungstyp netznutzungrechnungstyp;
         private String originalRechnungsnummer;
-        private Betrag rabattBrutto;
+        private Betrag rabattNetto;
         private OffsetDateTime rechnungsdatum;
         private Geschaeftspartner rechnungsempfaenger;
         private Geschaeftspartner rechnungsersteller;
@@ -496,12 +738,45 @@ public class Rechnung extends Geschaeftsobjekt {
         private Rechnungsstatus rechnungsstatus;
         private String rechnungstitel;
         private Rechnungstyp rechnungstyp;
+        private List<Energiemenge> referenzverbraeuche;
         private Sparte sparte;
         private List<Steuerbetrag> steuerbetraege;
-        private Betrag vorausgezahlt;
+        private List<Rechnung> teilrechnungen;
+        private Vertrag vertrag;
+        private List<Vorauszahlung> vorauszahlungen;
+        private Energiemenge vorjahresverbrauch;
+        private List<Zaehler> zaehler;
+        private List<Zahlungsinformation> zahlungsinformationen;
+        private Betrag zukuenftigerAbschlag;
         private Betrag zuZahlen;
 
         private RechnungBuilder() {
+        }
+
+        /**
+        * Verbrauch des abgerechneten Zeitraums, Pflicht für Rechnungen gemäß EnWG § 40
+        */
+        public RechnungBuilder setAktuellerVerbrauch(Energiemenge aktuellerVerbrauch) {
+            this.aktuellerVerbrauch = aktuellerVerbrauch;
+            return this;
+        }
+
+        /**
+        * Für Verbrauchsbasierte Rechnungen der Zählerstand zur Beginn des abgerechneten Zeitraums,
+        * Pflicht für Rechnungen gemäß EnWG § 40
+        */
+        public RechnungBuilder setAnfangszaehlerstand(Energiemenge anfangszaehlerstand) {
+            this.anfangszaehlerstand = anfangszaehlerstand;
+            return this;
+        }
+
+        /**
+        * Für Verbrauchsbasierte Rechnungen der Zählerstand zum Ende des abgerechneten Zeitraums,
+        * Pflicht für Rechnungen gemäß EnWG § 40
+        */
+        public RechnungBuilder setEndzaehlerstand(Energiemenge endzaehlerstand) {
+            this.endzaehlerstand = endzaehlerstand;
+            return this;
         }
 
         /**
@@ -509,6 +784,14 @@ public class Rechnung extends Geschaeftsobjekt {
         */
         public RechnungBuilder setFaelligkeitsdatum(OffsetDateTime faelligkeitsdatum) {
             this.faelligkeitsdatum = faelligkeitsdatum;
+            return this;
+        }
+
+        /**
+        * Zur Ausweisung der in die Kalkulation eingeflossenen Preise gemäß EnWG § 40
+        */
+        public RechnungBuilder setFremdkosten(Fremdkosten fremdkosten) {
+            this.fremdkosten = fremdkosten;
             return this;
         }
 
@@ -563,6 +846,20 @@ public class Rechnung extends Geschaeftsobjekt {
         }
 
         /**
+        * ggf. auf einen Vergleichszeitraum hochgerechneter Verbrauch des abgerechneten Zeitraums
+        * zu Vergleichszwecken mit dem Vorjahr, gemäß EnWG § 40
+        */
+        public RechnungBuilder setJahresverbrauch(Energiemenge jahresverbrauch) {
+            this.jahresverbrauch = jahresverbrauch;
+            return this;
+        }
+
+        public RechnungBuilder setKaeuferreferenz(String kaeuferreferenz) {
+            this.kaeuferreferenz = kaeuferreferenz;
+            return this;
+        }
+
+        /**
         * Marktlokation, auf die sich die Rechnung bezieht
         */
         public RechnungBuilder setMarktlokation(Marktlokation marktlokation) {
@@ -575,6 +872,22 @@ public class Rechnung extends Geschaeftsobjekt {
         */
         public RechnungBuilder setMesslokation(Messlokation messlokation) {
             this.messlokation = messlokation;
+            return this;
+        }
+
+        /**
+        * der Messtellenbetreiber an der Lieferstelle, relevant für Rechnungen gemäß EnWG § 40
+        */
+        public RechnungBuilder setMessstellenbetreiber(Marktteilnehmer messstellenbetreiber) {
+            this.messstellenbetreiber = messstellenbetreiber;
+            return this;
+        }
+
+        /**
+        * der Netzbetreiber an der Lieferstelle, relevant für Rechnungen gemäß EnWG § 40
+        */
+        public RechnungBuilder setNetzbetreiber(Marktteilnehmer netzbetreiber) {
+            this.netzbetreiber = netzbetreiber;
             return this;
         }
 
@@ -604,10 +917,10 @@ public class Rechnung extends Geschaeftsobjekt {
         }
 
         /**
-        * Gesamtrabatt auf den Bruttobetrag
+        * Gesamtrabatt auf den Nettobetrag
         */
-        public RechnungBuilder setRabattBrutto(Betrag rabattBrutto) {
-            this.rabattBrutto = rabattBrutto;
+        public RechnungBuilder setRabattNetto(Betrag rabattNetto) {
+            this.rabattNetto = rabattNetto;
             return this;
         }
 
@@ -620,8 +933,8 @@ public class Rechnung extends Geschaeftsobjekt {
         }
 
         /**
-        * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
-        * verlinkten Marktteilnehmer
+        * Der Aussteller der Rechnung. Die Rollencodenummer kennt man über den im Geschäftspartner
+        * verlinkten Marktteilnehmer.
         */
         public RechnungBuilder setRechnungsempfaenger(Geschaeftspartner rechnungsempfaenger) {
             this.rechnungsempfaenger = rechnungsempfaenger;
@@ -629,8 +942,8 @@ public class Rechnung extends Geschaeftsobjekt {
         }
 
         /**
-        * Der Aussteller der Rechnung, die Rollencodenummer kennt man über den im Geschäftspartner
-        * verlinkten Marktteilnehmer
+        * Der Aussteller der Rechnung. Die Rollencodenummer kennt man über den im Geschäftspartner
+        * verlinkten Marktteilnehmer.
         */
         public RechnungBuilder setRechnungsersteller(Geschaeftspartner rechnungsersteller) {
             this.rechnungsersteller = rechnungsersteller;
@@ -686,6 +999,14 @@ public class Rechnung extends Geschaeftsobjekt {
         }
 
         /**
+        * Verbräuche von Referenzkundengruppen gemäß EnWG § 40
+        */
+        public RechnungBuilder setReferenzverbraeuche(List<Energiemenge> referenzverbraeuche) {
+            this.referenzverbraeuche = referenzverbraeuche;
+            return this;
+        }
+
+        /**
         * Sparte (Strom, Gas ...) für die die Rechnung ausgestellt ist
         */
         public RechnungBuilder setSparte(Sparte sparte) {
@@ -703,10 +1024,54 @@ public class Rechnung extends Geschaeftsobjekt {
         }
 
         /**
+        * Rechnungen, die durch diese Rechnung zusammengefasst werden
+        */
+        public RechnungBuilder setTeilrechnungen(List<Rechnung> teilrechnungen) {
+            this.teilrechnungen = teilrechnungen;
+            return this;
+        }
+
+        /**
+        * enthält Informationen über den der Rechnung zugrundeliegenden Vertrag für Rechnungen nach
+        * EnWG § 40
+        */
+        public RechnungBuilder setVertrag(Vertrag vertrag) {
+            this.vertrag = vertrag;
+            return this;
+        }
+
+        /**
         * Die Summe evtl. vorausgezahlter Beträge, z.B. Abschläge. Angabe als Bruttowert
         */
-        public RechnungBuilder setVorausgezahlt(Betrag vorausgezahlt) {
-            this.vorausgezahlt = vorausgezahlt;
+        public RechnungBuilder setVorauszahlungen(List<Vorauszahlung> vorauszahlungen) {
+            this.vorauszahlungen = vorauszahlungen;
+            return this;
+        }
+
+        /**
+        * ggf. auf einen Vergleichszeitraum hochgerechneter Verbrauch des vorherigen Jahres zu
+        * Vergleichszwecken mit dem aktuellen Jahr, gemäß EnWG § 40
+        */
+        public RechnungBuilder setVorjahresverbrauch(Energiemenge vorjahresverbrauch) {
+            this.vorjahresverbrauch = vorjahresverbrauch;
+            return this;
+        }
+
+        public RechnungBuilder setZaehler(List<Zaehler> zaehler) {
+            this.zaehler = zaehler;
+            return this;
+        }
+
+        /**
+        * Informationen wie eine Rechnung bezahlt werden soll
+        */
+        public RechnungBuilder setZahlungsinformationen(List<Zahlungsinformation> zahlungsinformationen) {
+            this.zahlungsinformationen = zahlungsinformationen;
+            return this;
+        }
+
+        public RechnungBuilder setZukuenftigerAbschlag(Betrag zukuenftigerAbschlag) {
+            this.zukuenftigerAbschlag = zukuenftigerAbschlag;
             return this;
         }
 
