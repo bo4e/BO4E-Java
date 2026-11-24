@@ -6,17 +6,19 @@ import java.io.IOException;
  * Gibt die physikalische Größe an, die gemessen wurde.
  */
 public enum Messgroesse {
-    BLINDLEISTUNG, BRENNWERT, DRUCK, GRADTZAGSZAHLEN, LASTGANG, LASTPROFIL, PREISE, SPANNUNG, STROM, TEMPERATUR, VOLUMENSTROM, WIRKLEISTUNG, ZZAHL;
+    BLINDLEISTUNG, BRENNWERT, DRUCK, FREQUENZ, GRADTZAGSZAHLEN, LASTGANG, LASTPROFIL, LEISTUNGSFAKTOR, PHASENWINKEL, SPANNUNG, STROM, TEMPERATUR, VOLUMENSTROM, WIRKLEISTUNG, ZZAHL;
 
     public String toValue() {
         switch (this) {
             case BLINDLEISTUNG: return "BLINDLEISTUNG";
             case BRENNWERT: return "BRENNWERT";
             case DRUCK: return "DRUCK";
+            case FREQUENZ: return "FREQUENZ";
             case GRADTZAGSZAHLEN: return "GRADTZAGSZAHLEN";
             case LASTGANG: return "LASTGANG";
             case LASTPROFIL: return "LASTPROFIL";
-            case PREISE: return "PREISE";
+            case LEISTUNGSFAKTOR: return "LEISTUNGSFAKTOR";
+            case PHASENWINKEL: return "PHASENWINKEL";
             case SPANNUNG: return "SPANNUNG";
             case STROM: return "STROM";
             case TEMPERATUR: return "TEMPERATUR";
@@ -31,10 +33,12 @@ public enum Messgroesse {
         if (value.equals("BLINDLEISTUNG")) return BLINDLEISTUNG;
         if (value.equals("BRENNWERT")) return BRENNWERT;
         if (value.equals("DRUCK")) return DRUCK;
+        if (value.equals("FREQUENZ")) return FREQUENZ;
         if (value.equals("GRADTZAGSZAHLEN")) return GRADTZAGSZAHLEN;
         if (value.equals("LASTGANG")) return LASTGANG;
         if (value.equals("LASTPROFIL")) return LASTPROFIL;
-        if (value.equals("PREISE")) return PREISE;
+        if (value.equals("LEISTUNGSFAKTOR")) return LEISTUNGSFAKTOR;
+        if (value.equals("PHASENWINKEL")) return PHASENWINKEL;
         if (value.equals("SPANNUNG")) return SPANNUNG;
         if (value.equals("STROM")) return STROM;
         if (value.equals("TEMPERATUR")) return TEMPERATUR;

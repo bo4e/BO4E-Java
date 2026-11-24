@@ -27,7 +27,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Marktlokation JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/bo/Marktlokation.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/bo/Marktlokation.json>`_
 */
 public class Marktlokation extends Geschaeftsobjekt {
     private final BoTyp _typ = BoTyp.MARKTLOKATION;
