@@ -55,7 +55,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Tarif JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0-rc2/src/bo4e_schemas/bo/Tarif.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.1.0/src/bo4e_schemas/bo/Tarif.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Tarif extends Geschaeftsobjekt {
