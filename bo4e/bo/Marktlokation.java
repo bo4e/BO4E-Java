@@ -4,7 +4,6 @@ import bo4e.ZusatzAttribut;
 import bo4e.com.Adresse;
 import bo4e.com.Geokoordinaten;
 import bo4e.com.Katasteradresse;
-import bo4e.com.Verbrauch;
 import bo4e.com.Zaehlwerk;
 import bo4e.enums.Bilanzierungsmethode;
 import bo4e.enums.BoTyp;
@@ -29,7 +28,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Marktlokation JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/bo/Marktlokation.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Marktlokation.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Marktlokation extends Geschaeftsobjekt {
@@ -56,7 +55,7 @@ public class Marktlokation extends Geschaeftsobjekt {
     private String regelzone;
     private Sparte sparte;
     private Verbrauchsart verbrauchsart;
-    private List<Verbrauch> verbrauchsmengen;
+    private List<Energiemenge> verbrauchsmengen;
     private List<Zaehlwerk> zaehlwerke;
     private List<Zaehlwerk> zaehlwerkeDerBeteiligtenMarktrolle;
 
@@ -422,11 +421,11 @@ public class Marktlokation extends Geschaeftsobjekt {
         this.verbrauchsart = verbrauchsart;
     }
 
-    public List<Verbrauch> getVerbrauchsmengen() {
+    public List<Energiemenge> getVerbrauchsmengen() {
         return verbrauchsmengen;
     }
 
-    public void setVerbrauchsmengen(List<Verbrauch> verbrauchsmengen) {
+    public void setVerbrauchsmengen(List<Energiemenge> verbrauchsmengen) {
         this.verbrauchsmengen = verbrauchsmengen;
     }
 
@@ -474,7 +473,7 @@ public class Marktlokation extends Geschaeftsobjekt {
         private String regelzone;
         private Sparte sparte;
         private Verbrauchsart verbrauchsart;
-        private List<Verbrauch> verbrauchsmengen;
+        private List<Energiemenge> verbrauchsmengen;
         private List<Zaehlwerk> zaehlwerke;
         private List<Zaehlwerk> zaehlwerkeDerBeteiligtenMarktrolle;
 
@@ -666,7 +665,7 @@ public class Marktlokation extends Geschaeftsobjekt {
             return this;
         }
 
-        public MarktlokationBuilder setVerbrauchsmengen(List<Verbrauch> verbrauchsmengen) {
+        public MarktlokationBuilder setVerbrauchsmengen(List<Energiemenge> verbrauchsmengen) {
             this.verbrauchsmengen = verbrauchsmengen;
             return this;
         }

@@ -14,12 +14,12 @@ import java.util.List;
 *
 * .. raw:: html
 *
-* <object data="../_static/images/bo4e/com/Verwendungszweck.svg"
+* <object data="../_static/images/bo4e/com/VerwendungszweckProMarktrolle.svg"
 * type="image/svg+xml"></object>
 *
 * .. HINT::
-* `Verwendungszweck JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Verwendungszweck.json>`_
+* `VerwendungszweckProMarktrolle JSON Schema
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/VerwendungszweckProMarktrolle.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class VerwendungszweckProMarktrolle extends COM {

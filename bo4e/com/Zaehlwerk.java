@@ -19,7 +19,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Zaehlwerk JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc1/src/bo4e_schemas/com/Zaehlwerk.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Zaehlwerk.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Zaehlwerk extends COM {
@@ -32,6 +32,7 @@ public class Zaehlwerk extends COM {
     private Boolean istSteuerbefreit;
     private Boolean istUnterbrechbar;
     private Konzessionsabgabe konzessionsabgabe;
+    private List<Messwert> messwerte;
     private Long nachkommastelle;
     private String obisKennzahl;
     private Energierichtung richtung;
@@ -56,6 +57,7 @@ public class Zaehlwerk extends COM {
         this.istSteuerbefreit = builder.istSteuerbefreit;
         this.istUnterbrechbar = builder.istUnterbrechbar;
         this.konzessionsabgabe = builder.konzessionsabgabe;
+        this.messwerte = builder.messwerte;
         this.nachkommastelle = builder.nachkommastelle;
         this.obisKennzahl = builder.obisKennzahl;
         this.richtung = builder.richtung;
@@ -182,6 +184,20 @@ public class Zaehlwerk extends COM {
     */
     public void setKonzessionsabgabe(Konzessionsabgabe konzessionsabgabe) {
         this.konzessionsabgabe = konzessionsabgabe;
+    }
+
+    /**
+    * Gemessene Werte des Zählwerks
+    */
+    public List<Messwert> getMesswerte() {
+        return messwerte;
+    }
+
+    /**
+    * Gemessene Werte des Zählwerks
+    */
+    public void setMesswerte(List<Messwert> messwerte) {
+        this.messwerte = messwerte;
     }
 
     /**
@@ -348,6 +364,7 @@ public class Zaehlwerk extends COM {
         private Boolean istSteuerbefreit;
         private Boolean istUnterbrechbar;
         private Konzessionsabgabe konzessionsabgabe;
+        private List<Messwert> messwerte;
         private Long nachkommastelle;
         private String obisKennzahl;
         private Energierichtung richtung;
@@ -423,6 +440,14 @@ public class Zaehlwerk extends COM {
         */
         public ZaehlwerkBuilder setKonzessionsabgabe(Konzessionsabgabe konzessionsabgabe) {
             this.konzessionsabgabe = konzessionsabgabe;
+            return this;
+        }
+
+        /**
+        * Gemessene Werte des Zählwerks
+        */
+        public ZaehlwerkBuilder setMesswerte(List<Messwert> messwerte) {
+            this.messwerte = messwerte;
             return this;
         }
 
