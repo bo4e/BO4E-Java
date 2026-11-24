@@ -24,7 +24,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Regionsoperation JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Regionsoperation.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Regionsoperation.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Regionsoperation extends COM {

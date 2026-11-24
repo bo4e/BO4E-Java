@@ -19,7 +19,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Rechnungsposition JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Rechnungsposition.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202607.0.0/src/bo4e_schemas/com/Rechnungsposition.json>`_
 */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Rechnungsposition extends COM {
