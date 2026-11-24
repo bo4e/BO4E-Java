@@ -23,7 +23,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Zaehler JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/bo/Zaehler.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/bo/Zaehler.json>`_
 */
 public class Zaehler extends Geschaeftsobjekt {
     private final BoTyp _typ = BoTyp.ZAEHLER;
@@ -31,7 +31,6 @@ public class Zaehler extends Geschaeftsobjekt {
     private OffsetDateTime eichungBis;
     private List<Geraet> geraete;
     private Boolean istFernauslesbar;
-    private Boolean istFernschaltbar;
     private OffsetDateTime letzteEichung;
     private Registeranzahl registeranzahl;
     private Sparte sparte;
@@ -53,7 +52,6 @@ public class Zaehler extends Geschaeftsobjekt {
         this.eichungBis = builder.eichungBis;
         this.geraete = builder.geraete;
         this.istFernauslesbar = builder.istFernauslesbar;
-        this.istFernschaltbar = builder.istFernschaltbar;
         this.letzteEichung = builder.letzteEichung;
         this.registeranzahl = builder.registeranzahl;
         this.sparte = builder.sparte;
@@ -125,20 +123,6 @@ public class Zaehler extends Geschaeftsobjekt {
     */
     public void setIstFernauslesbar(Boolean istFernauslesbar) {
         this.istFernauslesbar = istFernauslesbar;
-    }
-
-    /**
-    * Fernschaltung
-    */
-    public Boolean getIstFernschaltbar() {
-        return istFernschaltbar;
-    }
-
-    /**
-    * Fernschaltung
-    */
-    public void setIstFernschaltbar(Boolean istFernschaltbar) {
-        this.istFernschaltbar = istFernschaltbar;
     }
 
     /**
@@ -298,7 +282,6 @@ public class Zaehler extends Geschaeftsobjekt {
         private OffsetDateTime eichungBis;
         private List<Geraet> geraete;
         private Boolean istFernauslesbar;
-        private Boolean istFernschaltbar;
         private OffsetDateTime letzteEichung;
         private Registeranzahl registeranzahl;
         private Sparte sparte;
@@ -343,14 +326,6 @@ public class Zaehler extends Geschaeftsobjekt {
         */
         public ZaehlerBuilder setIstFernauslesbar(Boolean istFernauslesbar) {
             this.istFernauslesbar = istFernauslesbar;
-            return this;
-        }
-
-        /**
-        * Fernschaltung
-        */
-        public ZaehlerBuilder setIstFernschaltbar(Boolean istFernschaltbar) {
-            this.istFernschaltbar = istFernschaltbar;
             return this;
         }
 

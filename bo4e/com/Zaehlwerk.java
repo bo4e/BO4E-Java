@@ -18,7 +18,7 @@ import java.util.List;
 *
 * .. HINT::
 * `Zaehlwerk JSON Schema
-* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202501.1.0-rc2/src/bo4e_schemas/com/Zaehlwerk.json>`_
+* <https://json-schema.app/view/%23?url=https://raw.githubusercontent.com/BO4E/BO4E-Schemas/v202601.0.0/src/bo4e_schemas/com/Zaehlwerk.json>`_
 */
 public class Zaehlwerk extends COM {
     private final ComTyp _typ = ComTyp.ZAEHLWERK;
@@ -28,7 +28,6 @@ public class Zaehlwerk extends COM {
     private Boolean istAbrechnungsrelevant;
     private Boolean istSchwachlastfaehig;
     private Boolean istSteuerbefreit;
-    private Boolean istUnterbrechbar;
     private Konzessionsabgabe konzessionsabgabe;
     private List<Messwert> messwerte;
     private Long nachkommastelle;
@@ -53,7 +52,6 @@ public class Zaehlwerk extends COM {
         this.istAbrechnungsrelevant = builder.istAbrechnungsrelevant;
         this.istSchwachlastfaehig = builder.istSchwachlastfaehig;
         this.istSteuerbefreit = builder.istSteuerbefreit;
-        this.istUnterbrechbar = builder.istUnterbrechbar;
         this.konzessionsabgabe = builder.konzessionsabgabe;
         this.messwerte = builder.messwerte;
         this.nachkommastelle = builder.nachkommastelle;
@@ -154,20 +152,6 @@ public class Zaehlwerk extends COM {
     */
     public void setIstSteuerbefreit(Boolean istSteuerbefreit) {
         this.istSteuerbefreit = istSteuerbefreit;
-    }
-
-    /**
-    * Unterbrechbarkeit Marktlokation
-    */
-    public Boolean getIstUnterbrechbar() {
-        return istUnterbrechbar;
-    }
-
-    /**
-    * Unterbrechbarkeit Marktlokation
-    */
-    public void setIstUnterbrechbar(Boolean istUnterbrechbar) {
-        this.istUnterbrechbar = istUnterbrechbar;
     }
 
     /**
@@ -359,7 +343,6 @@ public class Zaehlwerk extends COM {
         private Boolean istAbrechnungsrelevant;
         private Boolean istSchwachlastfaehig;
         private Boolean istSteuerbefreit;
-        private Boolean istUnterbrechbar;
         private Konzessionsabgabe konzessionsabgabe;
         private List<Messwert> messwerte;
         private Long nachkommastelle;
@@ -421,14 +404,6 @@ public class Zaehlwerk extends COM {
         */
         public ZaehlwerkBuilder setIstSteuerbefreit(Boolean istSteuerbefreit) {
             this.istSteuerbefreit = istSteuerbefreit;
-            return this;
-        }
-
-        /**
-        * Unterbrechbarkeit Marktlokation
-        */
-        public ZaehlwerkBuilder setIstUnterbrechbar(Boolean istUnterbrechbar) {
-            this.istUnterbrechbar = istUnterbrechbar;
             return this;
         }
 
